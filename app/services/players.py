@@ -2,16 +2,16 @@ from datetime import datetime
 from dataclasses import dataclass, field
 from xml.etree import ElementTree
 
-from app.utils.utils import clean_dict, request_player_page
+from app.utils.utils import clean_dict, request_url_page
 from app.utils.xpath import Players
 
 
 @dataclass
 class TransfermarktPlayers:
     player_id: str
-    player_name: str
+    player_code: str
 
-    player_url: str = ''
+    player_url: str = ""
     player_info: dict = field(default_factory=lambda: {"type": "player"})
     player_page: ElementTree = None
 
@@ -67,10 +67,10 @@ class TransfermarktPlayers:
         return clean_dict(self.player_info)
 
     def _build_player_url(self):
-        self.player_url = f"https://www.transfermarkt.com/{self.player_name}/profil/spieler/{self.player_id}"
+        self.player_url = f"https://www.transfermarkt.com/{self.player_code}/profil/spieler/{self.player_id}"
 
     def _request_player_page(self):
-        self.player_page = request_player_page(url=self.player_url)
+        self.player_page = request_url_page(url=self.player_url)
 
     def _get_player_name(self):
         player_header_data = self.player_page.xpath(Players.Header.PLAYER_NAME)
@@ -80,7 +80,7 @@ class TransfermarktPlayers:
     def _get_text_by_xpath(self, xpath: str):
         try:
             element: str = self.player_page.xpath(xpath)[0].strip()
-            return element.replace('\xa0', '')
+            return element.replace("\xa0", "")
         except IndexError:
             return None
 

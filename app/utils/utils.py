@@ -12,7 +12,7 @@ def _make_request(url: str) -> Response:
     return response
 
 
-def request_player_page(url: str) -> ElementTree:
+def request_url_page(url: str) -> ElementTree:
     response: Response = _make_request(url=url)
     bsoup: BeautifulSoup = BeautifulSoup(markup=response.content, features="html.parser")
     tree: ElementTree = etree.HTML(str(bsoup))

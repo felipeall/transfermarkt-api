@@ -35,3 +35,8 @@ class Players(object):
         CURRENT_CLUB_URL: str = "//span[contains(text(),'Current club:')]//following::span[1]//a[2]//@href"
         OUTFITTER: str = "//span[contains(text(),'Outfitter:')]//following::span[1]//text()"
         SOCIAL_MEDIA: str = "//div[@class='socialmedia-icons']//@href"
+
+
+class Search(object):
+    class Players(object):
+        RESULT_PLAYERS: str = "//div[h2[contains(text(), 'players')]]"
