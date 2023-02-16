@@ -1,0 +1,5 @@
+lxml
+beautifulsoup4
+requests
+fastapi
+uvicorn[standard]

@@ -929,14 +929,14 @@ qtconsole = "*"
 
 [[package]]
 name = "jupyter-client"
-version = "8.0.2"
+version = "8.0.3"
 description = "Jupyter protocol implementation and client libraries"
 category = "dev"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "jupyter_client-8.0.2-py3-none-any.whl", hash = "sha256:c53731eb590b68839b0ce04bf46ff8c4f03278f5d9fe5c3b0f268a57cc2bd97e"},
-    {file = "jupyter_client-8.0.2.tar.gz", hash = "sha256:47ac9f586dbcff4d79387ec264faf0fdeb5f14845fa7345fd7d1e378f8096011"},
+    {file = "jupyter_client-8.0.3-py3-none-any.whl", hash = "sha256:be48ac6bd659cbbddb7a674cf06b3b8afbf53f228253cf58bde604c03bd487b0"},
+    {file = "jupyter_client-8.0.3.tar.gz", hash = "sha256:ed65498bea6d876ef9d8da3e0db3dd33c5d129f5b2645f56ae03993782966bd0"},
 ]
 
 [package.dependencies]
@@ -2580,4 +2580,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "890252974e666e9dc135efac907ce1f4ad34672233bf19b1a1b637adc6388036"
+content-hash = "27ebbae7ebce5997d98fa89ec04e61122ea2928eaea6bbb3a338f0b5de5265e4"
