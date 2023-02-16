@@ -29,13 +29,28 @@ class TransfermarktPlayerSearch(TransfermarktSearch):
         players_names: list = result_players[0].xpath(".//td[@class='hauptlink']//a//@title")
         players_urls: list = result_players[0].xpath(".//td[@class='hauptlink']//a//@href")
         players_clubs: list = result_players[0].xpath(".//img[@class='tiny_wappen']//@title")
+        players_market_values: list = result_players[0].xpath(".//td[@class='rechts hauptlink']//text()")
         player_nationalities: list = [nationality.xpath(".//img//@title") for nationality in result_nationalities]
         players_ids: list = [url.split("/")[-1] for url in players_urls]
         players_codes: list = [url.split("/")[1] for url in players_urls]
 
         return [
-            {"id": idx, "code": code, "name": name, "nationality": nationality, "url": url, "current_club": club}
-            for idx, code, name, nationality, url, club in zip(
-                players_ids, players_codes, players_names, player_nationalities, players_urls, players_clubs
+            {
+                "id": idx,
+                "code": code,
+                "name": name,
+                "market_value": market_value,
+                "nationality": nationality,
+                "current_club": club,
+                "url": url,
+            }
+            for idx, code, name, market_value, nationality, club, url in zip(
+                players_ids,
+                players_codes,
+                players_names,
+                players_market_values,
+                player_nationalities,
+                players_clubs,
+                players_urls,
             )
         ]
