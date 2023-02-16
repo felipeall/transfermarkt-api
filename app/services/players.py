@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field
 from datetime import datetime
+from typing import Optional
 from xml.etree import ElementTree
 
 from app.utils.utils import clean_dict, request_url_page
@@ -10,13 +11,11 @@ from app.utils.xpath import Players
 class TransfermarktPlayers:
     player_id: str
     player_code: str
-
     player_url: str = ""
     player_info: dict = field(default_factory=lambda: {"type": "player"})
     player_page: ElementTree = None
 
-    def get_player_info(self):
-        self._build_player_url()
+    def get_player_info(self) -> dict:
         self._request_player_page()
 
         # Profile
@@ -66,26 +65,27 @@ class TransfermarktPlayers:
 
         return clean_dict(self.player_info)
 
-    def _build_player_url(self):
-        self.player_url = f"https://www.transfermarkt.com/{self.player_code}/profil/spieler/{self.player_id}"
+    def _request_player_page(self) -> None:
+        player_url = f"https://www.transfermarkt.com/{self.player_code}/profil/spieler/{self.player_id}"
+        self.player_page = request_url_page(url=player_url)
 
-    def _request_player_page(self):
-        self.player_page = request_url_page(url=self.player_url)
+    def _get_player_name(self) -> str:
+        player_header_data: list = self.player_page.xpath(Players.Header.PLAYER_NAME)
+        player_header_data_valid: list = [e.strip() for e in player_header_data if e.strip()]
+        player_name = " ".join(player_header_data_valid[1:])
 
-    def _get_player_name(self):
-        player_header_data = self.player_page.xpath(Players.Header.PLAYER_NAME)
-        player_header_data = [e.strip() for e in player_header_data if e.strip()]
-        return " ".join(player_header_data[1:])
+        return player_name
 
-    def _get_text_by_xpath(self, xpath: str):
-        try:
-            element: str = self.player_page.xpath(xpath)[0].strip()
-            return element.replace("\xa0", "")
-        except IndexError:
+    def _get_text_by_xpath(self, xpath: str) -> Optional[str]:
+        element: ElementTree = self.player_page.xpath(xpath)
+
+        if element:
+            return self.player_page.xpath(xpath)[0].strip().replace("\xa0", "")
+        else:
             return None
 
     def _get_list_by_xpath(self, xpath: str) -> list:
-        elements = self.player_page.xpath(xpath)
-        elements = [e.strip() for e in elements if e.strip()]
+        elements: list = self.player_page.xpath(xpath)
+        elements_valid: list = [e.strip() for e in elements if e.strip()]
 
-        return elements
+        return elements_valid
