@@ -2,10 +2,10 @@ import json
 import re
 from dataclasses import dataclass, field
 from typing import Optional
+from xml.etree import ElementTree
 
 from bs4 import ResultSet
 from lxml import etree
-from xml.etree import ElementTree
 
 from app.utils.utils import request_url_bsoup, zip_lists_into_dict
 from app.utils.xpath import MarketValue
