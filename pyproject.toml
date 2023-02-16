@@ -5,7 +5,6 @@ description = ""
 authors = ["Felipe Allegretti <felipe@allegretti.me>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "transfermarkt_api"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"

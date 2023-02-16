@@ -1,8 +1,8 @@
 from dataclasses import dataclass, field
 from xml.etree import ElementTree
 
-from transfermarkt_api.utils.utils import clean_dict, request_player_page
-from transfermarkt_api.utils.xpath import Players
+from app.utils.utils import clean_dict, request_player_page
+from app.utils.xpath import Players
 
 
 @dataclass

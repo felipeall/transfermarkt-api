@@ -3,6 +3,6 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get("/")
-def root():
+@app.get("/players/{player_url}")
+def get_player_info():
     return {"message": "Hello World"}
