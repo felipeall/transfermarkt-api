@@ -1,5 +1,5 @@
-from datetime import datetime
 from dataclasses import dataclass, field
+from datetime import datetime
 from xml.etree import ElementTree
 
 from app.utils.utils import clean_dict, request_url_page
