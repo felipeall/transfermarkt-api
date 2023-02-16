@@ -7,7 +7,7 @@ from app.utils.xpath import Search
 
 @dataclass
 class TransfermarktSearch:
-    query: str  # https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query=messi
+    query: str
     search_page: ElementTree = None
 
     def _request_search_page(self):
@@ -19,23 +19,20 @@ class TransfermarktPlayerSearch(TransfermarktSearch):
     def search_player(self):
         self._request_search_page()
 
-        result_players: ElementTree = self.search_page.xpath(Search.Players.RESULT_PLAYERS)[0]
+        result_players: ElementTree = self.search_page.xpath(Search.Players.RESULT_PLAYERS)
 
-        players_names: list = result_players.xpath(".//td[@class='hauptlink']//a//@title")
-        players_urls: list = result_players.xpath(".//td[@class='hauptlink']//a//@href")
+        if not result_players:
+            return None
+
+        players_names: list = result_players[0].xpath(".//td[@class='hauptlink']//a//@title")
+        players_urls: list = result_players[0].xpath(".//td[@class='hauptlink']//a//@href")
+        players_clubs: list = result_players[0].xpath(".//img[@class='tiny_wappen']//@title")
         players_ids: list = [url.split("/")[-1] for url in players_urls]
         players_codes: list = [url.split("/")[1] for url in players_urls]
-        players_clubs: list = result_players.xpath(".//img[@class='tiny_wappen']//@title")
 
-        return {
-            id: {"code": code, "name": name, "current_club": club}
-            for id, name, code, club in zip(players_ids, players_names, players_codes, players_clubs)
-        }
-
-        # return dict(zip(players_ids, players_names))
-
-        # return {
-        #     "players_names": players_names,
-        #     "players_urls": players_urls,
-        #     "players_ids": players_ids,
-        # }
+        return [
+            {"id": idx, "code": code, "name": name, "url": url, "current_club": club}
+            for idx, code, name, url, club in zip(
+                players_ids, players_codes, players_names, players_urls, players_clubs
+            )
+        ]

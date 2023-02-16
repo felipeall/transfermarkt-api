@@ -12,9 +12,9 @@ async def docs_redirect():
     return RedirectResponse(url="/docs")
 
 
-@app.get("/players/{query}", tags=["Players"])
-def search_players(query: str):
-    tfmkt = TransfermarktPlayerSearch(query=query)
+@app.get("/players/{player_name}", tags=["Players"])
+def search_players(player_name: str):
+    tfmkt = TransfermarktPlayerSearch(query=player_name)
     return tfmkt.search_player()
 
 
