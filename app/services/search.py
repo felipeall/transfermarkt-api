@@ -16,7 +16,7 @@ class TransfermarktSearch:
 
 
 class TransfermarktPlayerSearch(TransfermarktSearch):
-    def search_player(self):
+    def search_players(self):
         self._request_search_page()
 
         result_players: ElementTree = self.search_page.xpath(Search.Players.RESULT_PLAYERS)
