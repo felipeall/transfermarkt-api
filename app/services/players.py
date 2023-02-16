@@ -1,3 +1,4 @@
+from datetime import datetime
 from dataclasses import dataclass, field
 from xml.etree import ElementTree
 
@@ -7,13 +8,16 @@ from app.utils.xpath import Players
 
 @dataclass
 class TransfermarktPlayers:
-    player_url: str
+    player_id: str
+    player_name: str
 
+    player_url: str = ''
     player_info: dict = field(default_factory=lambda: {"type": "player"})
     player_page: ElementTree = None
 
     def get_player_info(self):
-        self.player_page = request_player_page(url=self.player_url)
+        self._build_player_url()
+        self._request_player_page()
 
         # Profile
         self.player_info["id"] = self._get_text_by_xpath(Players.Profile.PLAYER_ID)
@@ -58,8 +62,15 @@ class TransfermarktPlayers:
         }
         self.player_info["outfitter"] = self._get_text_by_xpath(Players.Data.OUTFITTER)
         self.player_info["social_media"] = self._get_list_by_xpath(Players.Data.SOCIAL_MEDIA)
+        self.player_info["updated_on"] = datetime.now()
 
         return clean_dict(self.player_info)
+
+    def _build_player_url(self):
+        self.player_url = f"https://www.transfermarkt.com/{self.player_name}/profil/spieler/{self.player_id}"
+
+    def _request_player_page(self):
+        self.player_page = request_player_page(url=self.player_url)
 
     def _get_player_name(self):
         player_header_data = self.player_page.xpath(Players.Header.PLAYER_NAME)
