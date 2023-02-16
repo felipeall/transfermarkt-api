@@ -46,3 +46,11 @@ class Search(object):
         PLAYERS_CLUB: str = ".//img[@class='tiny_wappen']//@title"
         PLAYERS_MARKET_VALUES: str = ".//td[@class='rechts hauptlink']//text()"
         PLAYERS_NATIONALITIES: str = ".//img//@title"
+
+
+class MarketValue(object):
+    class Players(object):
+        MARKET_VALUE_URL: str = "//a[@class='data-header__market-value-wrapper']//@href"
+        CURRENT_VALUE_AND_UPDATED: str = "//a[@class='data-header__market-value-wrapper']//text()"
+        RANKINGS_NAMES: str = "//h3[@class='quick-fact__headline']//text()"
+        RANKINGS_POSITIONS: str = "//span[contains(@class, 'quick-fact__content--large')]//text()"

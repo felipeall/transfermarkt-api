@@ -2,6 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 
+from app.services.market_value import TransfermarktMarketValue
 from app.services.players import TransfermarktPlayers
 from app.services.search import TransfermarktPlayerSearch
 
@@ -20,11 +21,18 @@ def search_players(player_name: str):
     return found_players
 
 
-@app.get("/players/{player_id}/{player_code}", tags=["Players"])
-def get_player_info(player_id: str, player_code: str):
-    tfmkt = TransfermarktPlayers(player_id=player_id, player_code=player_code)
+@app.get("/players/{player_code}/{player_id}", tags=["Players"])
+def get_player_info(player_code: str, player_id: str):
+    tfmkt = TransfermarktPlayers(player_code=player_code, player_id=player_id)
     player_info = tfmkt.get_player_info()
     return player_info
+
+
+@app.get("/market_value/{player_code}/{player_id}", tags=["Players"])
+def get_player_market_value(player_code: str, player_id: str):
+    tfmkt = TransfermarktMarketValue(player_code=player_code, player_id=player_id)
+    player_market_value = tfmkt.get_player_market_value()
+    return player_market_value
 
 
 if __name__ == "__main__":

@@ -38,17 +38,17 @@ class TransfermarktPlayerSearch(TransfermarktSearch):
 
         return [
             {
-                "id": idx,
                 "code": code,
+                "id": idx,
                 "name": name,
                 "market_value": market_value,
                 "nationality": nationality,
                 "current_club": club,
                 "url": url,
             }
-            for idx, code, name, market_value, nationality, club, url in zip(
-                players_ids,
+            for code, idx, name, market_value, nationality, club, url in zip(
                 players_codes,
+                players_ids,
                 players_names,
                 players_market_values,
                 player_nationalities,
