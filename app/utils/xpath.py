@@ -30,7 +30,7 @@ class Players(object):
         MARKET_VALUE_CURRENT: str = "//div[@class='tm-player-market-value-development__current-value']//text()"
         MARKET_VALUE_HIGHEST: str = "//div[@class='tm-player-market-value-development__max-value']//text()"
         PLAYER_AGENT_NAME: str = "//span[text()='Player agent:']//following::span[1]//a//text()"
-        PLAYER_AGENT_URL: str = "//span[text()='Player agent:']//following::span[1]//a//text()"
+        PLAYER_AGENT_URL: str = "//span[text()='Player agent:']//following::span[1]//a//@href"
         CURRENT_CLUB_NAME: str = "//span[contains(text(),'Current club:')]//following::span[1]//a[2]//text()"
         CURRENT_CLUB_URL: str = "//span[contains(text(),'Current club:')]//following::span[1]//a[2]//@href"
         OUTFITTER: str = "//span[contains(text(),'Outfitter:')]//following::span[1]//text()"
