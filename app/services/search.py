@@ -24,13 +24,15 @@ class TransfermarktPlayerSearch(TransfermarktSearch):
         if not result_players:
             return None
 
-        result_nationalities: ElementTree = result_players[0].xpath(".//td[img[@class='flaggenrahmen']]")
+        result_nationalities: ElementTree = result_players[0].xpath(Search.Players.RESULT_NATIONALITIES)
 
-        players_names: list = result_players[0].xpath(".//td[@class='hauptlink']//a//@title")
-        players_urls: list = result_players[0].xpath(".//td[@class='hauptlink']//a//@href")
-        players_clubs: list = result_players[0].xpath(".//img[@class='tiny_wappen']//@title")
-        players_market_values: list = result_players[0].xpath(".//td[@class='rechts hauptlink']//text()")
-        player_nationalities: list = [nationality.xpath(".//img//@title") for nationality in result_nationalities]
+        players_names: list = result_players[0].xpath(Search.Players.PLAYERS_NAMES)
+        players_urls: list = result_players[0].xpath(Search.Players.PLAYERS_URLS)
+        players_clubs: list = result_players[0].xpath(Search.Players.PLAYERS_CLUB)
+        players_market_values: list = result_players[0].xpath(Search.Players.PLAYERS_MARKET_VALUES)
+        player_nationalities: list = [
+            nationality.xpath(Search.Players.PLAYERS_NATIONALITIES) for nationality in result_nationalities
+        ]
         players_ids: list = [url.split("/")[-1] for url in players_urls]
         players_codes: list = [url.split("/")[1] for url in players_urls]
 
