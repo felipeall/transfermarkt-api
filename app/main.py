@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 
@@ -22,3 +23,7 @@ def search_players(player_name: str):
 def get_player_info(player_id: str, player_code: str):
     tfmkt = TransfermarktPlayers(player_id=player_id, player_code=player_code)
     return tfmkt.get_player_info()
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
