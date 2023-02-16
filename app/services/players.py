@@ -9,11 +9,9 @@ from app.utils.xpath import Players
 
 @dataclass
 class TransfermarktPlayers:
-    player_id: str
     player_code: str
-    player_url: str = ""
+    player_id: str
     player_info: dict = field(default_factory=lambda: {"type": "player"})
-    player_page: ElementTree = None
 
     def get_player_info(self) -> dict:
         self._request_player_page()
@@ -61,7 +59,7 @@ class TransfermarktPlayers:
         }
         self.player_info["outfitter"] = self._get_text_by_xpath(Players.Data.OUTFITTER)
         self.player_info["social_media"] = self._get_list_by_xpath(Players.Data.SOCIAL_MEDIA)
-        self.player_info["updated_on"] = datetime.now()
+        self.player_info["last_update"] = datetime.now()
 
         return clean_dict(self.player_info)
 
