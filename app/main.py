@@ -14,21 +14,21 @@ def docs_redirect():
     return RedirectResponse(url="/docs")
 
 
-@app.get("/players/{player_name}", tags=["Players"])
+@app.get("/players/search/{player_name}", tags=["Players"])
 def search_players(player_name: str):
     tfmkt = TransfermarktPlayerSearch(query=player_name)
     found_players = tfmkt.search_players()
     return found_players
 
 
-@app.get("/players/{player_code}/{player_id}", tags=["Players"])
-def get_player_info(player_code: str, player_id: str):
+@app.get("/players/{player_code}/{player_id}/profile", tags=["Players"])
+def get_player_profile(player_code: str, player_id: str):
     tfmkt = TransfermarktPlayers(player_code=player_code, player_id=player_id)
-    player_info = tfmkt.get_player_info()
+    player_info = tfmkt.get_player_profile()
     return player_info
 
 
-@app.get("/market_value/{player_code}/{player_id}", tags=["Players"])
+@app.get("/players/{player_code}/{player_id}/market_value", tags=["Players"])
 def get_player_market_value(player_code: str, player_id: str):
     tfmkt = TransfermarktMarketValue(player_code=player_code, player_id=player_id)
     player_market_value = tfmkt.get_player_market_value()

@@ -13,7 +13,7 @@ class TransfermarktPlayers:
     player_id: str
     player_info: dict = field(default_factory=lambda: {"type": "player"})
 
-    def get_player_info(self) -> dict:
+    def get_player_profile(self) -> dict:
         self._request_player_page()
 
         # Profile
