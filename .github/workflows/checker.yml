@@ -19,3 +19,7 @@ jobs:
         run: |
           pip install isort
           isort --check --verbose .
+      - name: pflake8
+        run: |
+          pip install pyproject-flake8
+          pflake8 --verbose .
