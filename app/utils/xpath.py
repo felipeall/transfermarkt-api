@@ -46,6 +46,14 @@ class Search(object):
         PLAYERS_MARKET_VALUES: str = ".//td[@class='rechts hauptlink']//text()"
         PLAYERS_NATIONALITIES: str = ".//img//@title"
 
+    class Clubs(object):
+        RESULT: str = "//div[h2[contains(text(), 'Clubs')]]"
+        NAMES: str = ".//td[@class='hauptlink']//a//@title"
+        URLS: str = ".//td[@class='hauptlink']//a//@href"
+        COUNTRIES: str = ".//td[@class='zentriert']//img[@class='flaggenrahmen']//@title"
+        MARKET_VALUES: str = ".//td[@class='rechts']//text()"
+        SQUADS: str = ".//td[@class='zentriert']//text()"
+
 
 class MarketValue(object):
     class Players(object):
