@@ -39,3 +39,11 @@ def clean_dict(dict_nested: dict) -> dict:
 
 def zip_lists_into_dict(list_keys: list, list_values: list) -> dict:
     return {k: v for k, v in zip(list_keys, list_values)}
+
+
+def extract_code_from_tfmkt_url(tfmkt_url: str):
+    return tfmkt_url.split("/")[1]
+
+
+def extract_id_from_tfmkt_url(tfmkt_url: str):
+    return tfmkt_url.split("/")[-1]

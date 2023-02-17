@@ -3,7 +3,12 @@ from datetime import datetime
 from typing import Optional
 from xml.etree import ElementTree
 
-from app.utils.utils import clean_dict, request_url_page
+from app.utils.utils import (
+    clean_dict,
+    extract_code_from_tfmkt_url,
+    extract_id_from_tfmkt_url,
+    request_url_page,
+)
 from app.utils.xpath import Players
 
 
@@ -25,9 +30,9 @@ class TransfermarktPlayers:
         self.player_info["image_url"] = self._get_text_by_xpath(Players.Header.PLAYER_IMAGE_URL)
         self.player_info["shirt_number"] = self._get_text_by_xpath(Players.Header.SHIRT_NUMBER)
         self.player_info["current_club"] = {
-            "id": self._get_text_by_xpath(Players.Profile.CURRENT_CLUB_ID),
-            "url": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_URL),
-            "name": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_NAME),
+            "club_id": extract_id_from_tfmkt_url(self._get_text_by_xpath(Players.Header.CURRENT_CLUB_URL)),
+            "club_code": extract_code_from_tfmkt_url(self._get_text_by_xpath(Players.Header.CURRENT_CLUB_URL)),
+            "club_name": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_NAME),
             "joined": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_JOINED),
             "contract_expires": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_CONTRACT_EXPIRES),
             "contract_option": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_CONTRACT_OPTION),

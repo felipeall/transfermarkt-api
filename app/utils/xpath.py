@@ -12,7 +12,6 @@ class Players(object):
     class Profile(object):
         PLAYER_ID: str = "//div[@data-action='profil']//@data-id"
         PLAYER_URL: str = "//a[@class='tm-subnav-item megamenu']//@href"
-        CURRENT_CLUB_ID: str = "//tm-quick-select-bar//@default-club"
 
     class Data(object):
         NAME_IN_HOME_COUNTRY: str = "//span[text()='Name in home country:']//following::span[1]//text()"
