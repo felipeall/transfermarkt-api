@@ -9,8 +9,6 @@ from app.utils.xpath import Search
 @dataclass
 class TransfermarktPlayerSearch(TransfermarktSearch):
     def search_players(self) -> Optional[list]:
-        self._request_search_page()
-
         result_players: ElementTree = self.search_page.xpath(Search.Players.RESULT_PLAYERS)
 
         if not result_players:
