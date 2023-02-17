@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from xml.etree import ElementTree
 
 from app.utils.utils import request_url_page
 

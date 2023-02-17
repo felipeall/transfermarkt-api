@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from xml.etree import ElementTree
 
 from app.services.commons.search import TransfermarktSearch
-from app.utils.xpath import Search
 from app.utils.utils import extract_id_from_tfmkt_url, trim
+from app.utils.xpath import Search
 
 
 @dataclass
