@@ -12,8 +12,7 @@ from app.utils.xpath import MarketValue
 
 
 @dataclass
-class TransfermarktMarketValue:
-    player_code: str
+class TransfermarktPlayerMarketValue:
     player_id: str
     player_marketvalue: dict = field(default_factory=lambda: {"type": "player_marketvalue"})
 
@@ -23,7 +22,6 @@ class TransfermarktMarketValue:
 
         self.player_marketvalue["url"] = self._get_text_by_xpath(MarketValue.Players.MARKET_VALUE_URL)
         self.player_marketvalue["player_id"] = self.player_id
-        self.player_marketvalue["player_code"] = self.player_code
         self.player_marketvalue["current"] = "".join(
             self._get_list_by_xpath(MarketValue.Players.CURRENT_VALUE_AND_UPDATED)[:-1]
         )
@@ -39,9 +37,7 @@ class TransfermarktMarketValue:
         return self.player_marketvalue
 
     def _request_marketvalue_page(self) -> None:
-        marketvalue_url: str = (
-            f"https://www.transfermarkt.com/{self.player_code}/marktwertverlauf/spieler/{self.player_id}"
-        )
+        marketvalue_url: str = f"https://www.transfermarkt.com/-/marktwertverlauf/spieler/{self.player_id}"
         self.marketvalue_bsoup = request_url_bsoup(url=marketvalue_url)
         self.marketvalue_page = etree.HTML(str(self.marketvalue_bsoup))
 
