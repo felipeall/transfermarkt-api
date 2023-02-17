@@ -5,6 +5,7 @@ from starlette.responses import RedirectResponse
 from app.services.market_value import TransfermarktMarketValue
 from app.services.players import TransfermarktPlayers
 from app.services.search import TransfermarktPlayerSearch
+from app.services.transfers import TransfermarktPlayerTransfers
 
 app = FastAPI()
 
@@ -32,6 +33,13 @@ def get_player_profile(player_code: str, player_id: str):
 def get_player_market_value(player_code: str, player_id: str):
     tfmkt = TransfermarktMarketValue(player_code=player_code, player_id=player_id)
     player_market_value = tfmkt.get_player_market_value()
+    return player_market_value
+
+
+@app.get("/players/{player_code}/{player_id}/transfers", tags=["Players"])
+def get_player_transfers(player_code: str, player_id: str):
+    tfmkt = TransfermarktPlayerTransfers(player_code=player_code, player_id=player_id)
+    player_market_value = tfmkt.get_player_transfers()
     return player_market_value
 
 
