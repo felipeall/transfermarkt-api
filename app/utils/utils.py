@@ -43,3 +43,7 @@ def zip_lists_into_dict(list_keys: list, list_values: list) -> dict:
 
 def extract_id_from_tfmkt_url(tfmkt_url: str):
     return tfmkt_url.split("/")[-1]
+
+
+def trim(text: str):
+    return text.strip().replace("\xa0", "")
