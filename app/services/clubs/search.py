@@ -3,7 +3,7 @@ from xml.etree import ElementTree
 
 from app.services.commons.search import TransfermarktSearch
 from app.utils.utils import extract_id_from_tfmkt_url, trim
-from app.utils.xpath import Search
+from app.utils.xpath import Clubs
 
 
 @dataclass
@@ -11,18 +11,18 @@ class TransfermarktClubSearch(TransfermarktSearch):
     result_clubs = None
 
     def search_clubs(self):
-        self.result_clubs: ElementTree = self.search_page.xpath(Search.Clubs.RESULT)
+        self.result_clubs: ElementTree = self.search_page.xpath(Clubs.Search.RESULT)
 
         if not self.result_clubs:
             return None
         else:
             self.result_clubs = self.result_clubs[0]
 
-        clubs_names: list = self._get_list_by_xpath(Search.Clubs.NAMES)
-        clubs_urls: list = self._get_list_by_xpath(Search.Clubs.URLS)
-        clubs_countries: list = self._get_list_by_xpath(Search.Clubs.COUNTRIES)
-        clubs_squads: list = self._get_list_by_xpath(Search.Clubs.SQUADS)
-        clubs_market_values: list = self._get_list_by_xpath(Search.Clubs.MARKET_VALUES)
+        clubs_names: list = self._get_list_by_xpath(Clubs.Search.NAMES)
+        clubs_urls: list = self._get_list_by_xpath(Clubs.Search.URLS)
+        clubs_countries: list = self._get_list_by_xpath(Clubs.Search.COUNTRIES)
+        clubs_squads: list = self._get_list_by_xpath(Clubs.Search.SQUADS)
+        clubs_market_values: list = self._get_list_by_xpath(Clubs.Search.MARKET_VALUES)
         clubs_ids: list = [extract_id_from_tfmkt_url(url) for url in clubs_urls]
 
         return [

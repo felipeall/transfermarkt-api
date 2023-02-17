@@ -8,7 +8,7 @@ from bs4 import ResultSet
 from lxml import etree
 
 from app.utils.utils import request_url_bsoup, zip_lists_into_dict
-from app.utils.xpath import MarketValue, Players
+from app.utils.xpath import Players
 
 
 @dataclass
@@ -20,19 +20,19 @@ class TransfermarktPlayerMarketValue:
         self._request_marketvalue_page()
         self._parse_marketvalue_history()
 
-        self.player_marketvalue["url"] = self._get_text_by_xpath(MarketValue.Players.MARKET_VALUE_URL)
+        self.player_marketvalue["url"] = self._get_text_by_xpath(Players.MarketValue.URL)
         self.player_marketvalue["player_id"] = self.player_id
-        self.player_marketvalue["player_name"] = " ".join(self._get_list_by_xpath(Players.Header.PLAYER_NAME)[1:])
+        self.player_marketvalue["player_name"] = " ".join(self._get_list_by_xpath(Players.Profile.NAME)[1:])
         self.player_marketvalue["current"] = "".join(
-            self._get_list_by_xpath(MarketValue.Players.CURRENT_VALUE_AND_UPDATED)[:-1]
+            self._get_list_by_xpath(Players.MarketValue.CURRENT_VALUE_AND_UPDATED)[:-1]
         )
         self.player_marketvalue["ranking"] = zip_lists_into_dict(
-            self._get_list_by_xpath(MarketValue.Players.RANKINGS_NAMES),
-            self._get_list_by_xpath(MarketValue.Players.RANKINGS_POSITIONS),
+            self._get_list_by_xpath(Players.MarketValue.RANKINGS_NAMES),
+            self._get_list_by_xpath(Players.MarketValue.RANKINGS_POSITIONS),
         )
         self.player_marketvalue["history"] = self.marketvalue_history
         self.player_marketvalue["last_update"] = (
-            self._get_list_by_xpath(MarketValue.Players.CURRENT_VALUE_AND_UPDATED)[-1].split(":")[-1].strip()
+            self._get_list_by_xpath(Players.MarketValue.CURRENT_VALUE_AND_UPDATED)[-1].split(":")[-1].strip()
         )
 
         return self.player_marketvalue

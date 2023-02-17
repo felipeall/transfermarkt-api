@@ -3,25 +3,25 @@ from typing import Optional
 from xml.etree import ElementTree
 
 from app.services.commons.search import TransfermarktSearch
-from app.utils.xpath import Search
+from app.utils.xpath import Players
 
 
 @dataclass
 class TransfermarktPlayerSearch(TransfermarktSearch):
     def search_players(self) -> Optional[list]:
-        result_players: ElementTree = self.search_page.xpath(Search.Players.RESULT_PLAYERS)
+        result_players: ElementTree = self.search_page.xpath(Players.Search.RESULT)
 
         if not result_players:
             return None
 
-        result_nationalities: ElementTree = result_players[0].xpath(Search.Players.RESULT_NATIONALITIES)
+        result_nationalities: ElementTree = result_players[0].xpath(Players.Search.RESULT_NATIONALITIES)
 
-        players_names: list = result_players[0].xpath(Search.Players.PLAYERS_NAMES)
-        players_urls: list = result_players[0].xpath(Search.Players.PLAYERS_URLS)
-        players_clubs: list = result_players[0].xpath(Search.Players.PLAYERS_CLUB)
-        players_market_values: list = result_players[0].xpath(Search.Players.PLAYERS_MARKET_VALUES)
+        players_names: list = result_players[0].xpath(Players.Search.NAMES)
+        players_urls: list = result_players[0].xpath(Players.Search.URLS)
+        players_clubs: list = result_players[0].xpath(Players.Search.CLUB)
+        players_market_values: list = result_players[0].xpath(Players.Search.MARKET_VALUES)
         player_nationalities: list = [
-            nationality.xpath(Search.Players.PLAYERS_NATIONALITIES) for nationality in result_nationalities
+            nationality.xpath(Players.Search.NATIONALITIES) for nationality in result_nationalities
         ]
         players_ids: list = [url.split("/")[-1] for url in players_urls]
 
