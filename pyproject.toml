@@ -18,8 +18,6 @@ uvicorn = {extras = ["standard"], version = "==0.20.0"}
 black = "==23.1.0"
 isort = "==5.12.0"
 jupyter = "==1.0.0"
-flake8 = "==6.0.0"
-pyproject-flake8 = "==6.0.0.post1"
 
 [tool.black]
 line-length = 120
@@ -28,6 +26,3 @@ preview = true
 
 [tool.isort]
 profile = "black"
-
-[tool.flake8]
-max-line-length = 120

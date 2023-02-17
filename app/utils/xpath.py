@@ -65,12 +65,13 @@ class Transfers(object):
             "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__date']//text()"
         )
         TRANSFERS_FROM_CLUBS_NAMES: str = (
-            "//div[@class='grid__cell grid__cell--center"
-            " tm-player-transfer-history-grid__old-club']//a[@class='tm-player-transfer-history-grid__club-link']//text()"
+            "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__old-club']"
+            "//a[@class='tm-player-transfer-history-grid__club-link']//text()"
         )
         TRANSFERS_FROM_CLUBS_URLS: str = (
             "//div[@class='grid__cell grid__cell--center"
-            " tm-player-transfer-history-grid__old-club']//a[@class='tm-player-transfer-history-grid__club-link']//@href"
+            "tm-player-transfer-history-grid__old-club']//a["
+            "@class='tm-player-transfer-history-grid__club-link']//@href "
         )
         TRANSFERS_TO_CLUBS_NAMES: str = (
             "//div[@class='grid__cell grid__cell--center"

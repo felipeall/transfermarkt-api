@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Optional
 from xml.etree import ElementTree
 
 from app.utils.utils import request_url_page
@@ -16,7 +17,7 @@ class TransfermarktSearch:
 
 
 class TransfermarktPlayerSearch(TransfermarktSearch):
-    def search_players(self):
+    def search_players(self) -> Optional[list]:
         self._request_search_page()
 
         result_players: ElementTree = self.search_page.xpath(Search.Players.RESULT_PLAYERS)
