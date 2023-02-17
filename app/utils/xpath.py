@@ -57,6 +57,7 @@ class MarketValue(object):
 
 class Transfers(object):
     class Players(object):
+        PLAYER_URL: str = "//li[@id='transfers']//a//@href"
         TRANSFERS_URLS: str = "//a[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__link']//@href"
         TRANSFERS_SEASONS: str = (
             "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__season']//text()"

@@ -26,25 +26,22 @@ class TransfermarktPlayerSearch(TransfermarktSearch):
             nationality.xpath(Search.Players.PLAYERS_NATIONALITIES) for nationality in result_nationalities
         ]
         players_ids: list = [url.split("/")[-1] for url in players_urls]
-        players_codes: list = [url.split("/")[1] for url in players_urls]
 
         return [
             {
-                "code": code,
                 "id": idx,
+                "url": url,
                 "name": name,
                 "market_value": market_value,
                 "nationality": nationality,
                 "current_club": club,
-                "url": url,
             }
-            for code, idx, name, market_value, nationality, club, url in zip(
-                players_codes,
+            for idx, url, name, market_value, nationality, club, in zip(
                 players_ids,
+                players_urls,
                 players_names,
                 players_market_values,
                 player_nationalities,
                 players_clubs,
-                players_urls,
             )
         ]

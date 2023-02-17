@@ -1,12 +1,10 @@
 from dataclasses import dataclass, field
 from datetime import datetime
+from typing import Optional
+from xml.etree import ElementTree
 
-from app.utils.utils import (
-    extract_code_from_tfmkt_url,
-    extract_id_from_tfmkt_url,
-    request_url_page,
-)
-from app.utils.xpath import Transfers
+from app.utils.utils import extract_id_from_tfmkt_url, request_url_page
+from app.utils.xpath import Players, Transfers
 
 
 @dataclass
@@ -17,7 +15,9 @@ class TransfermarktPlayerTransfers:
     def get_player_transfers(self) -> dict:
         self._request_player_transfers_page()
 
+        self.player_transfers["url"] = self._get_text_by_xpath(Transfers.Players.PLAYER_URL)
         self.player_transfers["player_id"] = self.player_id
+        self.player_transfers["player_name"] = " ".join(self._get_list_by_xpath(Players.Header.PLAYER_NAME)[1:])
         self.player_transfers["history"] = self._parse_player_transfers_history()
         self.player_transfers["youth_clubs"] = self._get_list_by_xpath(Transfers.Players.YOUTH_CLUBS)
         self.player_transfers["last_update"] = datetime.now()
@@ -28,11 +28,19 @@ class TransfermarktPlayerTransfers:
         player_transfers_url = f"https://www.transfermarkt.com/-/transfers/spieler/{self.player_id}"
         self.player_transfers_page = request_url_page(url=player_transfers_url)
 
-    def _get_list_by_xpath(self, xpath: str) -> list:
-        elements: list = self.player_transfers_page.xpath(xpath)
-        elements_valid: list = [e.strip().split(",")[0] for e in elements if e.strip()]
+    def _get_text_by_xpath(self, xpath: str) -> Optional[str]:
+        element: ElementTree = self.player_transfers_page.xpath(xpath)
 
-        return elements_valid
+        if element:
+            return self.player_transfers_page.xpath(xpath)[0].strip().replace("\xa0", "")
+        else:
+            return None
+
+    def _get_list_by_xpath(self, xpath: str) -> Optional[list]:
+        elements: list = self.player_transfers_page.xpath(xpath)
+        elements_valid: list = [e.strip() for e in elements if e.strip()]
+
+        return elements_valid or None
 
     def _parse_player_transfers_history(self) -> list:
         urls: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_URLS)
@@ -46,9 +54,7 @@ class TransfermarktPlayerTransfers:
         fees: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_FEES)
 
         ids: list = [extract_id_from_tfmkt_url(url) for url in urls]
-        from_clubs_codes: list = [extract_code_from_tfmkt_url(url) for url in from_clubs_urls]
         from_clubs_ids: list = [extract_id_from_tfmkt_url(url) for url in from_clubs_urls]
-        to_clubs_codes: list = [extract_code_from_tfmkt_url(url) for url in to_clubs_urls]
         to_clubs_ids: list = [extract_id_from_tfmkt_url(url) for url in to_clubs_urls]
 
         return [
@@ -57,26 +63,22 @@ class TransfermarktPlayerTransfers:
                 "season": season,
                 "date": date,
                 "from": {
-                    "club_code": from_club_code,
                     "club_id": from_club_id,
                     "club_name": from_club_name,
                 },
                 "to": {
-                    "club_code": to_club_code,
                     "club_id": to_club_id,
                     "club_name": to_club_name,
                 },
                 "market_value": market_value,
                 "fee": fee,
             }
-            for idx, season, date, from_club_code, from_club_id, from_club_name, to_club_code, to_club_id, to_club_name, market_value, fee in zip(
+            for idx, season, date, from_club_id, from_club_name, to_club_id, to_club_name, market_value, fee in zip(
                 ids,
                 seasons,
                 dates,
-                from_clubs_codes,
                 from_clubs_ids,
                 from_clubs_names,
-                to_clubs_codes,
                 to_clubs_ids,
                 to_clubs_names,
                 market_values,

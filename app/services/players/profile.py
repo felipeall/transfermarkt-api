@@ -3,12 +3,7 @@ from datetime import datetime
 from typing import Optional
 from xml.etree import ElementTree
 
-from app.utils.utils import (
-    clean_dict,
-    extract_code_from_tfmkt_url,
-    extract_id_from_tfmkt_url,
-    request_url_page,
-)
+from app.utils.utils import clean_dict, extract_id_from_tfmkt_url, request_url_page
 from app.utils.xpath import Players
 
 
@@ -20,26 +15,12 @@ class TransfermarktPlayerProfile:
     def get_player_profile(self) -> dict:
         self._request_player_page()
 
-        # Profile
-        self.player_info["id"] = self._get_text_by_xpath(Players.Profile.PLAYER_ID)
         self.player_info["url"] = self._get_text_by_xpath(Players.Profile.PLAYER_URL)
-
-        # Header
-        self.player_info["name"] = self._get_player_name()
-        self.player_info["image_url"] = self._get_text_by_xpath(Players.Header.PLAYER_IMAGE_URL)
-        self.player_info["shirt_number"] = self._get_text_by_xpath(Players.Header.SHIRT_NUMBER)
-        self.player_info["current_club"] = {
-            "club_id": extract_id_from_tfmkt_url(self._get_text_by_xpath(Players.Header.CURRENT_CLUB_URL)),
-            "club_code": extract_code_from_tfmkt_url(self._get_text_by_xpath(Players.Header.CURRENT_CLUB_URL)),
-            "club_name": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_NAME),
-            "joined": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_JOINED),
-            "contract_expires": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_CONTRACT_EXPIRES),
-            "contract_option": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_CONTRACT_OPTION),
-        }
-
-        # Data
+        self.player_info["id"] = self._get_text_by_xpath(Players.Profile.PLAYER_ID)
+        self.player_info["name"] = self._parse_player_name()
         self.player_info["full_name"] = self._get_text_by_xpath(Players.Data.FULL_NAME)
         self.player_info["name_in_home_country"] = self._get_text_by_xpath(Players.Data.NAME_IN_HOME_COUNTRY)
+        self.player_info["image_url"] = self._get_text_by_xpath(Players.Header.PLAYER_IMAGE_URL)
         self.player_info["date_of_birth"] = self._get_text_by_xpath(Players.Data.DATE_OF_BIRTH)
         self.player_info["place_of_birth"] = {
             "city": self._get_text_by_xpath(Players.Data.PLACE_OF_BIRTH_CITY),
@@ -53,6 +34,14 @@ class TransfermarktPlayerProfile:
             "other": self._get_list_by_xpath(Players.Data.POSITION_OTHER),
         }
         self.player_info["foot"] = self._get_text_by_xpath(Players.Data.FOOT)
+        self.player_info["shirt_number"] = self._get_text_by_xpath(Players.Header.SHIRT_NUMBER)
+        self.player_info["current_club"] = {
+            "club_id": extract_id_from_tfmkt_url(self._get_text_by_xpath(Players.Header.CURRENT_CLUB_URL)),
+            "club_name": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_NAME),
+            "joined": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_JOINED),
+            "contract_expires": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_CONTRACT_EXPIRES),
+            "contract_option": self._get_text_by_xpath(Players.Header.CURRENT_CLUB_CONTRACT_OPTION),
+        }
         self.player_info["market_value"] = {
             "current": self._get_text_by_xpath(Players.Data.MARKET_VALUE_CURRENT),
             "highest": self._get_text_by_xpath(Players.Data.MARKET_VALUE_HIGHEST),
@@ -71,7 +60,7 @@ class TransfermarktPlayerProfile:
         player_url = f"https://www.transfermarkt.com/-/profil/spieler/{self.player_id}"
         self.player_page = request_url_page(url=player_url)
 
-    def _get_player_name(self) -> str:
+    def _parse_player_name(self) -> str:
         player_header_data: list = self.player_page.xpath(Players.Header.PLAYER_NAME)
         player_header_data_valid: list = [e.strip() for e in player_header_data if e.strip()]
         player_name = " ".join(player_header_data_valid[1:])
@@ -86,8 +75,8 @@ class TransfermarktPlayerProfile:
         else:
             return None
 
-    def _get_list_by_xpath(self, xpath: str) -> list:
+    def _get_list_by_xpath(self, xpath: str) -> Optional[list]:
         elements: list = self.player_page.xpath(xpath)
         elements_valid: list = [e.strip() for e in elements if e.strip()]
 
-        return elements_valid
+        return elements_valid or None
