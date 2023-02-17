@@ -11,14 +11,12 @@ from app.utils.xpath import Transfers
 
 @dataclass
 class TransfermarktPlayerTransfers:
-    player_code: str
     player_id: str
     player_transfers: dict = field(default_factory=lambda: {"type": "player_transfers"})
 
     def get_player_transfers(self) -> dict:
         self._request_player_transfers_page()
 
-        self.player_transfers["player_code"] = self.player_code
         self.player_transfers["player_id"] = self.player_id
         self.player_transfers["history"] = self._parse_player_transfers_history()
         self.player_transfers["youth_clubs"] = self._get_list_by_xpath(Transfers.Players.YOUTH_CLUBS)
@@ -27,7 +25,7 @@ class TransfermarktPlayerTransfers:
         return self.player_transfers
 
     def _request_player_transfers_page(self) -> None:
-        player_transfers_url = f"https://www.transfermarkt.com/{self.player_code}/transfers/spieler/{self.player_id}"
+        player_transfers_url = f"https://www.transfermarkt.com/-/transfers/spieler/{self.player_id}"
         self.player_transfers_page = request_url_page(url=player_transfers_url)
 
     def _get_list_by_xpath(self, xpath: str) -> list:

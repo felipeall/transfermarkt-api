@@ -13,8 +13,7 @@ from app.utils.xpath import Players
 
 
 @dataclass
-class TransfermarktPlayers:
-    player_code: str
+class TransfermarktPlayerProfile:
     player_id: str
     player_info: dict = field(default_factory=lambda: {"type": "player"})
 
@@ -69,7 +68,7 @@ class TransfermarktPlayers:
         return clean_dict(self.player_info)
 
     def _request_player_page(self) -> None:
-        player_url = f"https://www.transfermarkt.com/{self.player_code}/profil/spieler/{self.player_id}"
+        player_url = f"https://www.transfermarkt.com/-/profil/spieler/{self.player_id}"
         self.player_page = request_url_page(url=player_url)
 
     def _get_player_name(self) -> str:
