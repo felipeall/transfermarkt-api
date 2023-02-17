@@ -36,22 +36,23 @@ class TransfermarktPlayerTransfers:
 
         return elements_valid
 
-    def _parse_player_transfers_history(self):
+    def _parse_player_transfers_history(self) -> list:
         urls: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_URLS)
         seasons: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_SEASONS)
         dates: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_DATES)
-        from_clubs_names: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_FROM_CLUBS_NAMES)
+        from_clubs_names: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_CLUBS_NAMES)[::2]
         from_clubs_urls: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_FROM_CLUBS_URLS)
-        to_clubs_names: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_TO_CLUBS_NAMES)
+        to_clubs_names: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_CLUBS_NAMES)[1::2]
         to_clubs_urls: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_TO_CLUBS_URLS)
         market_values: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_MARKET_VALUES)
         fees: list = self._get_list_by_xpath(Transfers.Players.TRANSFERS_FEES)
 
         ids: list = [extract_id_from_tfmkt_url(url) for url in urls]
-        from_clubs_codes = [extract_code_from_tfmkt_url(url) for url in from_clubs_urls]
-        from_clubs_ids = [extract_id_from_tfmkt_url(url) for url in from_clubs_urls]
-        to_clubs_codes = [extract_code_from_tfmkt_url(url) for url in to_clubs_urls]
-        to_clubs_ids = [extract_id_from_tfmkt_url(url) for url in to_clubs_urls]
+        from_clubs_codes: list = [extract_code_from_tfmkt_url(url) for url in from_clubs_urls]
+        from_clubs_ids: list = [extract_id_from_tfmkt_url(url) for url in from_clubs_urls]
+        to_clubs_codes: list = [extract_code_from_tfmkt_url(url) for url in to_clubs_urls]
+        to_clubs_ids: list = [extract_id_from_tfmkt_url(url) for url in to_clubs_urls]
+
         return [
             {
                 "id": idx,

@@ -64,22 +64,12 @@ class Transfers(object):
         TRANSFERS_DATES: str = (
             "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__date']//text()"
         )
-        TRANSFERS_FROM_CLUBS_NAMES: str = (
-            "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__old-club']"
-            "//a[@class='tm-player-transfer-history-grid__club-link']//text()"
-        )
+        TRANSFERS_CLUBS_NAMES: str = "//*[@class='tm-player-transfer-history-grid__club-link']//text()"
         TRANSFERS_FROM_CLUBS_URLS: str = (
-            "//div[@class='grid__cell grid__cell--center"
-            "tm-player-transfer-history-grid__old-club']//a["
-            "@class='tm-player-transfer-history-grid__club-link']//@href "
-        )
-        TRANSFERS_TO_CLUBS_NAMES: str = (
-            "//div[@class='grid__cell grid__cell--center"
-            " tm-player-transfer-history-grid__new-club']//a[contains(@class, 'club-link')]//text()"
+            "//*[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__old-club']//a[1]//@href"
         )
         TRANSFERS_TO_CLUBS_URLS: str = (
-            "//div[@class='grid__cell grid__cell--center"
-            " tm-player-transfer-history-grid__new-club']//a[contains(@class, 'club-link')]//@href"
+            "//*[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__new-club']//a[1]//@href"
         )
         TRANSFERS_MARKET_VALUES: str = (
             "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__market-value']//text()"
