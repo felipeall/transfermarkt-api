@@ -2,8 +2,8 @@ import uvicorn
 from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 
-from app.services.players.profile import TransfermarktPlayerProfile
 from app.services.players.market_value import TransfermarktPlayerMarketValue
+from app.services.players.profile import TransfermarktPlayerProfile
 from app.services.players.search import TransfermarktPlayerSearch
 from app.services.players.transfers import TransfermarktPlayerTransfers
 
