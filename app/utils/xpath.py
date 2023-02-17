@@ -53,3 +53,37 @@ class MarketValue(object):
         CURRENT_VALUE_AND_UPDATED: str = "//a[@class='data-header__market-value-wrapper']//text()"
         RANKINGS_NAMES: str = "//h3[@class='quick-fact__headline']//text()"
         RANKINGS_POSITIONS: str = "//span[contains(@class, 'quick-fact__content--large')]//text()"
+
+
+class Transfers(object):
+    class Players(object):
+        TRANSFERS_URLS: str = "//a[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__link']//@href"
+        TRANSFERS_SEASONS: str = (
+            "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__season']//text()"
+        )
+        TRANSFERS_DATES: str = (
+            "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__date']//text()"
+        )
+        TRANSFERS_FROM_CLUBS_NAMES: str = (
+            "//div[@class='grid__cell grid__cell--center"
+            " tm-player-transfer-history-grid__old-club']//a[@class='tm-player-transfer-history-grid__club-link']//text()"
+        )
+        TRANSFERS_FROM_CLUBS_URLS: str = (
+            "//div[@class='grid__cell grid__cell--center"
+            " tm-player-transfer-history-grid__old-club']//a[@class='tm-player-transfer-history-grid__club-link']//@href"
+        )
+        TRANSFERS_TO_CLUBS_NAMES: str = (
+            "//div[@class='grid__cell grid__cell--center"
+            " tm-player-transfer-history-grid__new-club']//a[contains(@class, 'club-link')]//text()"
+        )
+        TRANSFERS_TO_CLUBS_URLS: str = (
+            "//div[@class='grid__cell grid__cell--center"
+            " tm-player-transfer-history-grid__new-club']//a[contains(@class, 'club-link')]//@href"
+        )
+        TRANSFERS_MARKET_VALUES: str = (
+            "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__market-value']//text()"
+        )
+        TRANSFERS_FEES: str = (
+            "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__fee']//text()"
+        )
+        YOUTH_CLUBS: str = "//div[@data-viewport='Jugendvereine']//div//text()"
