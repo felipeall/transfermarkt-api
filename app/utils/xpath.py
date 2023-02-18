@@ -32,9 +32,13 @@ class Players(object):
     class Search(object):
         RESULT: str = "//div[h2[contains(text(), 'players')]]"
         RESULT_NATIONALITIES: str = ".//td[img[@class='flaggenrahmen']]"
+        RESULT_CLUBS: str = ".//td[@class='zentriert'][2]"
         NAMES: str = ".//td[@class='hauptlink']//a//@title"
         URLS: str = ".//td[@class='hauptlink']//a//@href"
-        CLUB: str = ".//img[@class='tiny_wappen']//@title"
+        AGES: str = ".//td[@class='zentriert'][3]//text()"
+        POSITIONS: str = ".//td[@class='zentriert'][1]//text()"
+        CLUBS_URLS: str = ".//a//@href"
+        CLUBS_NAMES: str = ".//img[@class='tiny_wappen']//@title"
         MARKET_VALUES: str = ".//td[@class='rechts hauptlink']//text()"
         NATIONALITIES: str = ".//img//@title"
 
