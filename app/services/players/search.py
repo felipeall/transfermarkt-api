@@ -3,23 +3,26 @@ from typing import Optional
 from xml.etree import ElementTree
 
 from app.services.commons.search import TransfermarktSearch
+from app.utils.utils import get_list_by_xpath
 from app.utils.xpath import Players
 
 
 @dataclass
 class TransfermarktPlayerSearch(TransfermarktSearch):
     def search_players(self) -> Optional[list]:
-        result_players: ElementTree = self.search_page.xpath(Players.Search.RESULT)
+        result_players: ElementTree = self.page.xpath(Players.Search.RESULT)
 
         if not result_players:
             return None
+        else:
+            self.page = result_players[0]
 
-        result_nationalities: ElementTree = result_players[0].xpath(Players.Search.RESULT_NATIONALITIES)
+        result_nationalities: ElementTree = self.page.xpath(Players.Search.RESULT_NATIONALITIES)
 
-        players_names: list = result_players[0].xpath(Players.Search.NAMES)
-        players_urls: list = result_players[0].xpath(Players.Search.URLS)
-        players_clubs: list = result_players[0].xpath(Players.Search.CLUB)
-        players_market_values: list = result_players[0].xpath(Players.Search.MARKET_VALUES)
+        players_names: list = get_list_by_xpath(self, Players.Search.NAMES)
+        players_urls: list = get_list_by_xpath(self, Players.Search.URLS)
+        players_clubs: list = get_list_by_xpath(self, Players.Search.CLUB)
+        players_market_values: list = get_list_by_xpath(self, Players.Search.MARKET_VALUES)
         player_nationalities: list = [
             nationality.xpath(Players.Search.NATIONALITIES) for nationality in result_nationalities
         ]

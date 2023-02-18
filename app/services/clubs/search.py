@@ -2,28 +2,26 @@ from dataclasses import dataclass
 from xml.etree import ElementTree
 
 from app.services.commons.search import TransfermarktSearch
-from app.utils.utils import extract_id_from_tfmkt_url, trim
+from app.utils.utils import extract_from_url, get_list_by_xpath
 from app.utils.xpath import Clubs
 
 
 @dataclass
 class TransfermarktClubSearch(TransfermarktSearch):
-    result_clubs = None
-
     def search_clubs(self):
-        self.result_clubs: ElementTree = self.search_page.xpath(Clubs.Search.RESULT)
+        result_clubs: ElementTree = self.page.xpath(Clubs.Search.RESULT)
 
-        if not self.result_clubs:
+        if not result_clubs:
             return None
         else:
-            self.result_clubs = self.result_clubs[0]
+            self.page = result_clubs[0]
 
-        clubs_names: list = self._get_list_by_xpath(Clubs.Search.NAMES)
-        clubs_urls: list = self._get_list_by_xpath(Clubs.Search.URLS)
-        clubs_countries: list = self._get_list_by_xpath(Clubs.Search.COUNTRIES)
-        clubs_squads: list = self._get_list_by_xpath(Clubs.Search.SQUADS)
-        clubs_market_values: list = self._get_list_by_xpath(Clubs.Search.MARKET_VALUES)
-        clubs_ids: list = [extract_id_from_tfmkt_url(url) for url in clubs_urls]
+        clubs_names: list = get_list_by_xpath(self, Clubs.Search.NAMES)
+        clubs_urls: list = get_list_by_xpath(self, Clubs.Search.URLS)
+        clubs_countries: list = get_list_by_xpath(self, Clubs.Search.COUNTRIES)
+        clubs_squads: list = get_list_by_xpath(self, Clubs.Search.SQUADS)
+        clubs_market_values: list = get_list_by_xpath(self, Clubs.Search.MARKET_VALUES)
+        clubs_ids: list = [extract_from_url(url) for url in clubs_urls]
 
         return [
             {
@@ -43,9 +41,3 @@ class TransfermarktClubSearch(TransfermarktSearch):
                 clubs_market_values,
             )
         ]
-
-    def _get_list_by_xpath(self, xpath: str):
-        elements: list = self.result_clubs.xpath(xpath)
-        elements_valid: list = [trim(e) for e in elements if trim(e)]
-
-        return elements_valid or None
