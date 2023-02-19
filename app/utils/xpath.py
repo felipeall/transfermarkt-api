@@ -75,3 +75,17 @@ class Clubs(object):
         COUNTRIES: str = ".//td[@class='zentriert']//img[@class='flaggenrahmen']//@title"
         MARKET_VALUES: str = ".//td[@class='rechts']//text()"
         SQUADS: str = ".//td[@class='zentriert']//text()"
+
+    class Players(object):
+        CLUB_NAME: str = "//header//h1//text()"
+        CLUB_URL: str = "//li[@id='overview']//@href"
+        PAGE_NATIONALITIES: str = "//td[img[@class='flaggenrahmen']]"
+        PAGE_INFOS: str = "//td[@class='posrela']"
+        NAMES: str = "//td[@class='posrela']//a//text()"
+        URLS: str = "//td[@class='hauptlink']//@href"
+        POSITIONS: str = "//td[@class='posrela']//tr[2]//text()"
+        AGES: str = "//div[@id='yw1']//td[3]//text()"
+        NATIONALITIES: str = ".//img//@title"
+        MARKET_VALUES: str = "//td[@class='rechts hauptlink']//text()"
+        JOINED: str = ".//span/node()/@title"
+        STATUSES: str = ".//td[@class='hauptlink']//span//@title"
