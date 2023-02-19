@@ -2,6 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 
+from app.services.clubs.players import TransfermarktClubPlayers
 from app.services.clubs.search import TransfermarktClubSearch
 from app.services.players.market_value import TransfermarktPlayerMarketValue
 from app.services.players.profile import TransfermarktPlayerProfile
@@ -49,6 +50,13 @@ def search_clubs(club_name: str):
     tfmkt = TransfermarktClubSearch(query=club_name)
     found_clubs = tfmkt.search_clubs()
     return found_clubs
+
+
+@app.get("/clubs/{club_id}/players", tags=["Clubs"])
+def get_club_players(club_id: str):
+    tfmkt = TransfermarktClubPlayers(club_id=club_id)
+    club_players = tfmkt.get_club_players()
+    return club_players
 
 
 if __name__ == "__main__":
