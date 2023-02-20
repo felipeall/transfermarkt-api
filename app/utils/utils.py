@@ -1,5 +1,5 @@
 import re
-from typing import Optional
+from typing import Optional, Union
 from xml.etree import ElementTree
 
 import requests
@@ -27,14 +27,12 @@ def request_url_page(url: str) -> ElementTree:
     return convert_bsoup_to_page(bsoup=bsoup)
 
 
-def clean_dict(dict_nested: dict) -> Optional[dict]:
-    dict_clean: dict = {}
-    for k, v in dict_nested.items():
-        if isinstance(v, dict):
-            v: dict = clean_dict(v)
-        if v is not None:
-            dict_clean[k] = v
-    return dict_clean or None
+def clean_dict(dict_nested: dict) -> Union[dict, list]:
+    if isinstance(dict_nested, dict):
+        return {k: v for k, v in ((k, clean_dict(v)) for k, v in dict_nested.items()) if v}
+    if isinstance(dict_nested, list):
+        return [v for v in map(clean_dict, dict_nested) if v]
+    return dict_nested
 
 
 def zip_lists_into_dict(list_keys: list, list_values: list) -> dict:
