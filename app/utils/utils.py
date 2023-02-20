@@ -44,7 +44,7 @@ def extract_from_url(tfmkt_url: str, element: str = "id") -> Optional[str]:
         r"/(?P<code>.+)"
         r"/(?P<category>\D+)"
         r"/(?P<type>\D+)"
-        r"/(?P<id>\d+)"
+        r"/(?P<id>\w+)"
         r"(/saison_id/(?P<season_id>\d{4}))?"
         r"(/transfer_id/(?P<transfer_id>\d+))?"
     )
@@ -59,12 +59,65 @@ def trim(text: str) -> str:
 def get_list_by_xpath(self, xpath: str) -> Optional[list]:
     elements: list = self.page.xpath(xpath)
     elements_valid: list = [trim(e) for e in elements if trim(e)]
-    return elements_valid or None
+    return elements_valid or []
 
 
-def get_text_by_xpath(self, xpath: str) -> Optional[str]:
+def get_text_by_xpath(
+    self,
+    xpath: str,
+    pos: int = 0,
+    iloc: Optional[int] = None,
+    iloc_from: Optional[int] = None,
+    iloc_to: Optional[int] = None,
+    join_str: Optional[str] = None,
+) -> Optional[str]:
     element: ElementTree = self.page.xpath(xpath)
-    if element:
-        return trim(element[0])
-    else:
+    if not element:
         return None
+
+    if isinstance(iloc, int):
+        element = element[iloc]
+
+    if isinstance(iloc_from, int) and isinstance(iloc_to, int):
+        element = element[iloc_from:iloc_to]
+
+    if isinstance(iloc_to, int):
+        element = element[:iloc_to]
+
+    if isinstance(iloc_from, int):
+        element = element[iloc_from:]
+
+    if isinstance(join_str, str):
+        return join_str.join([trim(e) for e in element])
+
+    try:
+        return trim(element[pos])
+    except IndexError:
+        return None
+
+
+def safe_regex(text: Optional[str], regex, group: str) -> Optional[str]:
+    if not isinstance(text, str):
+        return None
+
+    groups = re.search(regex, text).groupdict()
+    return groups.get(group)
+
+
+def remove_str(text: Optional[str], strings_to_remove: Union[str, list]) -> Optional[str]:
+    if not isinstance(text, str):
+        return None
+
+    strings_to_remove = list(strings_to_remove)
+
+    for string in strings_to_remove:
+        text = text.replace(string, "")
+
+    return trim(text)
+
+
+def safe_split(text: Optional[str], delimiter: str) -> Optional[list]:
+    if not isinstance(text, str):
+        return None
+
+    return [trim(t) for t in text.split(delimiter)]
