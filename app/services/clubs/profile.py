@@ -1,14 +1,14 @@
 from dataclasses import dataclass, field
 
 from app.utils.utils import (
+    clean_dict,
+    extract_from_url,
+    get_list_by_xpath,
+    get_text_by_xpath,
     remove_str,
     request_url_page,
-    clean_dict,
-    get_text_by_xpath,
-    get_list_by_xpath,
     safe_regex,
     safe_split,
-    extract_from_url,
 )
 from app.utils.xpath import Clubs
 

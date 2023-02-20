@@ -60,7 +60,7 @@ class TransfermarktPlayerMarketValue:
         all_data: list = json.loads(data)
         for entry in all_data:
             entry["date"] = entry.pop("datum_mw")
-            entry["club_id"] = re.search("(?P<club_id>\d+)", entry["marker"]["symbol"]).groupdict().get("club_id")
+            entry["club_id"] = re.search(r"(?P<club_id>\d+)", entry["marker"]["symbol"]).groupdict().get("club_id")
             entry["club_name"] = entry.pop("verein")
             entry["value"] = entry.pop("mw")
 

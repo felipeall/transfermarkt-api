@@ -3,8 +3,8 @@ from typing import Optional
 from fastapi import APIRouter
 
 from app.services.clubs.players import TransfermarktClubPlayers
-from app.services.clubs.search import TransfermarktClubSearch
 from app.services.clubs.profile import TransfermarktClubProfile
+from app.services.clubs.search import TransfermarktClubSearch
 
 router = APIRouter()
 
