@@ -68,6 +68,44 @@ class Players(object):
 
 
 class Clubs(object):
+    class Profile(object):
+        URL: str = "//div[@class='datenfakten-wappen']//@href"
+        NAME: str = "//header//h1//text()"
+        NAME_OFFICIAL: str = "//th[text()='Official club name:']//following::td[1]//text()"
+        IMAGE: str = "//div[@class='datenfakten-wappen']//@src"
+        LEGAL_FORM: str = "//th[text()='Legal form:']//following::td[1]//text()"
+        ADDRESS_LINE_1: str = "//th[text()='Address:']//following::td[1]//text()"
+        ADDRESS_LINE_2: str = "//th[text()='Address:']//following::td[2]//text()"
+        ADDRESS_LINE_3: str = "//th[text()='Address:']//following::td[3]//text()"
+        TEL: str = "//th[text()='Tel:']//following::td[1]//text()"
+        FAX: str = "//th[text()='Fax:']//following::td[1]//text()"
+        WEBSITE: str = "//th[text()='Website:']//following::td[1]//text()"
+        FOUNDED_ON: str = "//th[text()='Founded:']//following::td[1]//text()"
+        MEMBERS: str = "//th[text()='Members:']//following::td[1]//text()"
+        MEMBERS_DATE: str = "//th[text()='Members:']//following::td[1]//text()"
+        OTHER_SPORTS: str = "//th[text()='Other sports:']//following::td[1]//text()"
+        COLORS: str = "//p[@class='vereinsfarbe']//@style"
+        STADIUM_NAME: str = "//li[contains(text(), 'Stadium:')]//span//a//text()"
+        STADIUM_SEATS: str = "//li[contains(text(), 'Stadium:')]//span//span//text()"
+        TRANSFER_RECORD: str = "//li[contains(text(), 'Current transfer record:')]//a//text()"
+        MARKET_VALUE: str = "//a[@class='data-header__market-value-wrapper']//text()"
+        CONFEDERATION: str = "//li[contains(text(), 'Konföderation:')]//span//text()"
+        RANKING: str = "//li[contains(text(), 'FIFA World Ranking:')]//span//a//text()"
+        SQUAD_SIZE: str = "//li[contains(text(), 'Squad size:')]//span//text()"
+        SQUAD_AVG_AGE: str = "//li[contains(text(), 'Average age:')]//span//text()"
+        SQUAD_FOREIGNERS: str = "//li[contains(text(), 'Foreigners:')]//span[1]//a//text()"
+        SQUAD_NATIONAL_PLAYERS: str = "//li[contains(text(), 'National team players:')]//span//a//text()"
+        LEAGUE_ID: str = "//span[@itemprop='affiliation']//a//@href"
+        LEAGUE_NAME: str = "//span[@itemprop='affiliation']//a//text()"
+        LEAGUE_COUNTRY_ID: str = (
+            "//div[@class='data-header__club-info']//img[contains(@class, 'flaggenrahmen')]//@data-src"
+        )
+        LEAGUE_COUNTRY_NAME: str = (
+            "//div[@class='data-header__club-info']//img[contains(@class, 'flaggenrahmen')]//@title"
+        )
+        LEAGUE_TIER: str = "//div[@class='data-header__club-info']//strong//text()//following::span[1]/a/text()[2]"
+        CRESTS_HISTORICAL: str = "//div[@class='wappen-datenfakten-wappen']//@src"
+
     class Search(object):
         RESULT: str = "//div[h2[contains(text(), 'Clubs')]]"
         NAMES: str = ".//td[@class='hauptlink']//a//@title"
