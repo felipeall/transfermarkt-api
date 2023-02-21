@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 
 from app.utils.utils import (
-    clean_dict,
+    clean_response,
     extract_from_url,
     get_list_by_xpath,
     get_text_by_xpath,
@@ -73,7 +73,7 @@ class TransfermarktClubProfile:
             safe_split(e, "?")[0] for e in get_list_by_xpath(self, Clubs.Profile.CRESTS_HISTORICAL)
         ]
 
-        return clean_dict(self.club_profile)
+        return clean_response(self.club_profile)
 
     def _request_page(self) -> None:
         player_url = f"https://www.transfermarkt.us/-/datenfakten/verein/{self.club_id}"
