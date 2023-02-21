@@ -127,3 +127,13 @@ class Clubs(object):
         MARKET_VALUES: str = "//td[@class='rechts hauptlink']//text()"
         JOINED: str = ".//span/node()/@title"
         STATUSES: str = ".//td[@class='hauptlink']//span//@title"
+
+
+class Competitions(object):
+    class Profile(object):
+        URL: str = "//li[@id='overview']//@href"
+        NAME: str = "//div[@class='data-header__headline-container']//h1//text()"
+
+    class Clubs(object):
+        URLS: str = "//td[@class='hauptlink no-border-links']//a[1]//@href"
+        NAMES: str = "//td[@class='hauptlink no-border-links']//a//text()"
