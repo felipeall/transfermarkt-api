@@ -3,8 +3,16 @@ from typing import Optional
 from fastapi import APIRouter
 
 from app.services.competitions.clubs import TransfermarktCompetitionClubs
+from app.services.competitions.search import TransfermarktCompetitionSearch
 
 router = APIRouter()
+
+
+@router.get("/search/{competition_name}")
+def search_competition(competition_name: str):
+    tfmkt = TransfermarktCompetitionSearch(query=competition_name)
+    competitions = tfmkt.search_competitions()
+    return competitions
 
 
 @router.get("/{competition_id}/clubs")

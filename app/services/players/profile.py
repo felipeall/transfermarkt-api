@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 
 from app.utils.utils import (
-    clean_dict,
+    clean_response,
     extract_from_url,
     get_list_by_xpath,
     get_text_by_xpath,
@@ -58,7 +58,7 @@ class TransfermarktPlayerProfile:
         self.player_info["social_media"] = get_list_by_xpath(self, Players.Profile.SOCIAL_MEDIA)
         self.player_info["last_update"] = datetime.now()
 
-        return clean_dict(self.player_info)
+        return clean_response(self.player_info)
 
     def _request_player_page(self) -> None:
         player_url = f"https://www.transfermarkt.com/-/profil/spieler/{self.player_id}"

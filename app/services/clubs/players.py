@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 
 from app.utils.utils import (
-    clean_dict,
+    clean_response,
     extract_from_url,
     get_list_by_xpath,
     get_text_by_xpath,
@@ -25,7 +25,7 @@ class TransfermarktClubPlayers:
         self.club_players["club_name"] = get_text_by_xpath(self, Clubs.Players.CLUB_NAME)
         self.club_players["players"] = self._parse_club_players()
 
-        return clean_dict(self.club_players)
+        return clean_response(self.club_players)
 
     def _request_page(self) -> None:
         club_players_url = f"https://www.transfermarkt.com/-/kader/verein/{self.club_id}"

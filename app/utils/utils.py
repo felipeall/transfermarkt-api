@@ -27,12 +27,12 @@ def request_url_page(url: str) -> ElementTree:
     return convert_bsoup_to_page(bsoup=bsoup)
 
 
-def clean_dict(dict_nested: dict) -> Union[dict, list]:
-    if isinstance(dict_nested, dict):
-        return {k: v for k, v in ((k, clean_dict(v)) for k, v in dict_nested.items()) if v}
-    if isinstance(dict_nested, list):
-        return [v for v in map(clean_dict, dict_nested) if v]
-    return dict_nested
+def clean_response(nested: Union[dict, list]) -> Union[dict, list]:
+    if isinstance(nested, dict):
+        return {k: v for k, v in ((k, clean_response(v)) for k, v in nested.items()) if v}
+    if isinstance(nested, list):
+        return [v for v in map(clean_response, nested) if v]
+    return nested
 
 
 def zip_lists_into_dict(list_keys: list, list_values: list) -> dict:
@@ -52,7 +52,10 @@ def extract_from_url(tfmkt_url: str, element: str = "id") -> Optional[str]:
     return groups.get(element)
 
 
-def trim(text: str) -> str:
+def trim(text: Union[list, str]) -> str:
+    if isinstance(text, list):
+        text = "".join(text)
+
     return text.strip().replace("\xa0", "")
 
 

@@ -134,6 +134,21 @@ class Competitions(object):
         URL: str = "//li[@id='overview']//@href"
         NAME: str = "//div[@class='data-header__headline-container']//h1//text()"
 
+    class Search(object):
+        RESULT: str = "//div[h2[contains(text(), 'competitions')]]"
+        RESULT_COUNTRIES: str = ".//td[@class='zentriert'][1]"
+        RESULT_CLUBS: str = ".//td[@class='zentriert'][2]"
+        RESULT_PLAYERS: str = ".//td[@class='rechts']"
+        RESULT_MARKETVALUES: str = ".//td[@class='zentriert'][3]"
+        RESULT_CONTINENTS: str = ".//td[@class='zentriert'][5]"
+        NAMES: str = ".//td//a//@title"
+        URLS: str = ".//td//a//@href"
+        COUNTRIES: str = ".//@title"
+        CLUBS: str = ".//text()"
+        PLAYERS: str = ".//text()"
+        MARKETVALUES: str = ".//text()"
+        CONTINENTS: str = ".//text()"
+
     class Clubs(object):
         URLS: str = "//td[@class='hauptlink no-border-links']//a[1]//@href"
         NAMES: str = "//td[@class='hauptlink no-border-links']//a//text()"
