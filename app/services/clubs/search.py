@@ -30,7 +30,7 @@ class TransfermarktClubSearch(TransfermarktSearch):
                 "name": name,
                 "country": country,
                 "squad": squad,
-                "market_value": market_value,
+                "marketValue": market_value,
             }
             for idx, url, name, country, squad, market_value in zip(
                 clubs_ids,

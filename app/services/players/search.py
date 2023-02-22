@@ -51,7 +51,7 @@ class TransfermarktPlayerSearch(TransfermarktSearch):
                 "position": position,
                 "age": age,
                 "nationality": nationality,
-                "market_value": market_value,
+                "marketValue": market_value,
             }
             for idx, url, name, club_id, club_name, position, age, nationality, market_value in zip(
                 players_ids,

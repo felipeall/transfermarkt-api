@@ -14,15 +14,15 @@ from app.utils.xpath import Clubs
 class TransfermarktClubPlayers:
     club_id: str
     season_id: str = None
-    club_players: dict = field(default_factory=lambda: {"type": "club_players"})
+    club_players: dict = field(default_factory=lambda: {})
 
     def get_club_players(self) -> dict:
         self._request_page()
         self._update_season_id()
 
-        self.club_players["season_id"] = self.season_id
-        self.club_players["club_id"] = self.club_id
-        self.club_players["club_name"] = get_text_by_xpath(self, Clubs.Players.CLUB_NAME)
+        self.club_players["id"] = self.club_id
+        self.club_players["clubName"] = get_text_by_xpath(self, Clubs.Players.CLUB_NAME)
+        self.club_players["seasonYear"] = self.season_id
         self.club_players["players"] = self._parse_club_players()
 
         return clean_response(self.club_players)
@@ -60,7 +60,7 @@ class TransfermarktClubPlayers:
                 "position": position,
                 "age": age,
                 "nationality": nationality,
-                "market_value": market_value,
+                "marketValue": market_value,
                 "joined": joined,
                 "status": status,
             }

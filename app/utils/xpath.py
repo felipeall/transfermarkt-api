@@ -2,7 +2,7 @@ class Players(object):
     class Profile(object):
         ID: str = "//div[@data-action='profil']//@data-id"
         URL: str = "//a[@class='tm-subnav-item megamenu']//@href"
-        NAME: str = "//h1[@class='data-header__headline-wrapper']//text()"
+        NAME: str = "//h1[@class='data-header__headline-wrapper']//strong//text()"
         IMAGE_URL: str = "//div[@id='fotoauswahlOeffnen']//img//@src"
         SHIRT_NUMBER: str = "//span[@class='data-header__shirt-number']//text()"
         CURRENT_CLUB_NAME: str = "//span[@class='data-header__club']//a//text()"
@@ -44,7 +44,10 @@ class Players(object):
 
     class MarketValue(object):
         URL: str = "//a[@class='data-header__market-value-wrapper']//@href"
-        CURRENT_VALUE_AND_UPDATED: str = "//a[@class='data-header__market-value-wrapper']//text()"
+        CURRENT: str = (
+            "//a[@class='data-header__market-value-wrapper']//text()[not(parent::p/@class='data-header__last-update')]"
+        )
+        UPDATED: str = "//a[@class='data-header__market-value-wrapper']//p//text()"
         RANKINGS_NAMES: str = "//h3[@class='quick-fact__headline']//text()"
         RANKINGS_POSITIONS: str = "//span[contains(@class, 'quick-fact__content--large')]//text()"
 

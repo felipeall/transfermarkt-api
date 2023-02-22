@@ -7,6 +7,7 @@ from app.utils.utils import (
     get_list_by_xpath,
     get_text_by_xpath,
     request_url_page,
+    safe_split,
 )
 from app.utils.xpath import Players
 
@@ -14,17 +15,16 @@ from app.utils.xpath import Players
 @dataclass
 class TransfermarktPlayerTransfers:
     player_id: str
-    player_transfers: dict = field(default_factory=lambda: {"type": "player_transfers"})
+    player_transfers: dict = field(default_factory=lambda: {})
 
     def get_player_transfers(self) -> dict:
         self._request_player_transfers_page()
 
-        self.player_transfers["url"] = get_text_by_xpath(self, Players.Transfers.PLAYER_URL)
-        self.player_transfers["player_id"] = self.player_id
-        self.player_transfers["player_name"] = " ".join(get_list_by_xpath(self, Players.Profile.NAME)[1:])
+        self.player_transfers["id"] = self.player_id
+        self.player_transfers["name"] = get_text_by_xpath(self, Players.Profile.NAME)
         self.player_transfers["history"] = self._parse_player_transfers_history()
-        self.player_transfers["youth_clubs"] = get_list_by_xpath(self, Players.Transfers.YOUTH_CLUBS)
-        self.player_transfers["last_update"] = datetime.now()
+        self.player_transfers["youthClubs"] = safe_split(get_text_by_xpath(self, Players.Transfers.YOUTH_CLUBS), ",")
+        self.player_transfers["lastUpdate"] = datetime.now()
 
         return clean_response(self.player_transfers)
 
@@ -49,18 +49,14 @@ class TransfermarktPlayerTransfers:
 
         return [
             {
-                "id": idx,
-                "season": season,
-                "date": date,
-                "from": {
-                    "club_id": from_club_id,
-                    "club_name": from_club_name,
-                },
-                "to": {
-                    "club_id": to_club_id,
-                    "club_name": to_club_name,
-                },
-                "market_value": market_value,
+                "transferID": idx,
+                "transferSeason": season,
+                "transferDate": date,
+                "oldClubID": from_club_id,
+                "oldClubName": from_club_name,
+                "newClubID": to_club_id,
+                "newClubName": to_club_name,
+                "marketValue": market_value,
                 "fee": fee,
             }
             for idx, season, date, from_club_id, from_club_name, to_club_id, to_club_name, market_value, fee in zip(

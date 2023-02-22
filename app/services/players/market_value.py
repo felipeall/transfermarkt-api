@@ -8,6 +8,7 @@ from app.utils.utils import (
     convert_bsoup_to_page,
     get_list_by_xpath,
     get_text_by_xpath,
+    remove_str,
     request_url_bsoup,
     zip_lists_into_dict,
 )
@@ -17,24 +18,21 @@ from app.utils.xpath import Players
 @dataclass
 class TransfermarktPlayerMarketValue:
     player_id: str
-    player_marketvalue: dict = field(default_factory=lambda: {"type": "player_marketvalue"})
+    player_marketvalue: dict = field(default_factory=lambda: {})
 
     def get_player_market_value(self) -> dict:
         self._request_marketvalue_page()
 
-        self.player_marketvalue["url"] = get_text_by_xpath(self, Players.MarketValue.URL)
-        self.player_marketvalue["player_id"] = self.player_id
-        self.player_marketvalue["player_name"] = " ".join(get_list_by_xpath(self, Players.Profile.NAME)[1:])
-        self.player_marketvalue["current"] = "".join(
-            get_list_by_xpath(self, Players.MarketValue.CURRENT_VALUE_AND_UPDATED)[:-1]
-        )
+        self.player_marketvalue["id"] = self.player_id
+        self.player_marketvalue["playerName"] = get_text_by_xpath(self, Players.Profile.NAME)
+        self.player_marketvalue["marketValue"] = get_text_by_xpath(self, Players.MarketValue.CURRENT, join_str="")
+        self.player_marketvalue["marketValueHistory"] = self._parse_marketvalue_history()
         self.player_marketvalue["ranking"] = zip_lists_into_dict(
             get_list_by_xpath(self, Players.MarketValue.RANKINGS_NAMES),
             get_list_by_xpath(self, Players.MarketValue.RANKINGS_POSITIONS),
         )
-        self.player_marketvalue["history"] = self._parse_marketvalue_history()
-        self.player_marketvalue["last_update"] = (
-            get_list_by_xpath(self, Players.MarketValue.CURRENT_VALUE_AND_UPDATED)[-1].split(":")[-1].strip()
+        self.player_marketvalue["lastUpdate"] = remove_str(
+            get_text_by_xpath(self, Players.MarketValue.UPDATED), ["Last", "update", ":"]
         )
 
         return self.player_marketvalue
@@ -60,8 +58,8 @@ class TransfermarktPlayerMarketValue:
         all_data: list = json.loads(data)
         for entry in all_data:
             entry["date"] = entry.pop("datum_mw")
-            entry["club_id"] = re.search(r"(?P<club_id>\d+)", entry["marker"]["symbol"]).groupdict().get("club_id")
-            entry["club_name"] = entry.pop("verein")
+            entry["clubID"] = re.search(r"(?P<club_id>\d+)", entry["marker"]["symbol"]).groupdict().get("club_id")
+            entry["clubName"] = entry.pop("verein")
             entry["value"] = entry.pop("mw")
 
         return [

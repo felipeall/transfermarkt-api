@@ -13,16 +13,16 @@ from app.utils.xpath import Competitions
 class TransfermarktCompetitionClubs:
     competition_id: str
     season_id: str = None
-    competition_clubs: dict = field(default_factory=lambda: {"type": "competition_clubs"})
+    competition_clubs: dict = field(default_factory=lambda: {})
 
     def get_competition_clubs(self):
         self._request_page()
 
         self.competition_clubs["id"] = self.competition_id
-        self.competition_clubs["season_id"] = extract_from_url(
+        self.competition_clubs["name"] = get_text_by_xpath(self, Competitions.Profile.NAME)
+        self.competition_clubs["seasonID"] = extract_from_url(
             get_text_by_xpath(self, Competitions.Profile.URL), "season_id"
         )
-        self.competition_clubs["name"] = get_text_by_xpath(self, Competitions.Profile.NAME)
         self.competition_clubs["clubs"] = self._parse_competition_clubs()
 
         return self.competition_clubs

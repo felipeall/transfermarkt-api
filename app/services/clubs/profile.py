@@ -16,7 +16,7 @@ from app.utils.xpath import Clubs
 @dataclass
 class TransfermarktClubProfile:
     club_id: str
-    club_profile: dict = field(default_factory=lambda: {"type": "club"})
+    club_profile: dict = field(default_factory=lambda: {})
 
     def get_club_profile(self):
         self._request_page()
