@@ -46,6 +46,9 @@ class TransfermarktPlayerMarketValue:
         pages: ResultSet = self.bsoup.findAll("script", type="text/javascript")
         page_highcharts: list = [page for page in pages if str(page).__contains__("Highcharts.Chart")]
 
+        if (not pages) or (not page_highcharts):
+            return []
+
         data: str = (
             re.search("data':(.*?)}],'", str(page_highcharts))
             .group(1)
