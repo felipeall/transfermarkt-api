@@ -1,0 +1,14 @@
+# fly.toml app configuration file generated for transfermarkt-api on 2023-05-25T17:57:38-03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "transfermarkt-api"
+primary_region = "gru"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
