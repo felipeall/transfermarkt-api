@@ -21,6 +21,9 @@ $ poetry shell
 # Install the dependencies
 $ poetry install
 
+# (optional) Append the current directory to PYTHONPATH
+$ export PYTHONPATH=$PYTHONPATH:$(pwd)
+
 # Start the API server
 $ python app/main.py
 
