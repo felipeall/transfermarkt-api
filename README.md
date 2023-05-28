@@ -30,3 +30,22 @@ $ python app/main.py
 # Access the API local page
 $ open http://localhost:8000/
 ````
+
+### Running via Docker
+
+````bash
+# Clone the repository
+$ git clone https://github.com/felipeall/transfermarkt-api.git
+
+# Go to the project's root folder
+$ cd transfermarkt-api
+
+# Build the Docker image
+$ docker build -t transfermarkt-api . 
+
+# Instantiate the Docker container
+$ docker run -d -p 8000:8000 transfermarkt-api
+
+# Access the API local page
+$ open http://localhost:8000/
+````
