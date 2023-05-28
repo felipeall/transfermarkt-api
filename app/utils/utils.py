@@ -4,11 +4,12 @@ from xml.etree import ElementTree
 
 import requests
 from bs4 import BeautifulSoup
+from fastapi import HTTPException
 from lxml import etree
 from requests import Response
 
 
-def _make_request(url: str) -> Response:
+def make_request(url: str) -> Response:
     response: Response = requests.get(
         url=url,
         headers={
@@ -20,12 +21,15 @@ def _make_request(url: str) -> Response:
             )
         },
     )
-    response.raise_for_status()
+    if 400 <= response.status_code < 500:
+        raise HTTPException(status_code=response.status_code, detail=f"Client Error. {response.reason} for url: {url}")
+    elif 500 <= response.status_code < 600:
+        raise HTTPException(status_code=response.status_code, detail=f"Server Error. {response.reason} for url: {url}")
     return response
 
 
 def request_url_bsoup(url: str) -> BeautifulSoup:
-    response: Response = _make_request(url=url)
+    response: Response = make_request(url=url)
     return BeautifulSoup(markup=response.content, features="html.parser")
 
 
