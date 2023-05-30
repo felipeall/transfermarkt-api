@@ -1,13 +1,17 @@
-class Players(object):
-    class Profile(object):
+class Players:
+    class Profile:
         ID: str = "//div[@data-action='profil']//@data-id"
         URL: str = "//a[@class='tm-subnav-item megamenu']//@href"
         NAME: str = "//h1[@class='data-header__headline-wrapper']//strong//text()"
         IMAGE_URL: str = "//div[@id='fotoauswahlOeffnen']//img//@src"
         SHIRT_NUMBER: str = "//span[@class='data-header__shirt-number']//text()"
-        CURRENT_CLUB_NAME: str = "//span[@class='data-header__club']//a//text()"
+        CURRENT_CLUB_NAME: str = "//span[@class='data-header__club']//text()"
         CURRENT_CLUB_URL: str = "//span[@class='data-header__club']//a//@href"
         CURRENT_CLUB_JOINED: str = "//span[text()='Joined: ']//span//text()"
+        LAST_CLUB_NAME: str = "//span[contains(text(),'Last club:')]//span//a//@title"
+        LAST_CLUB_URL: str = "//span[contains(text(),'Last club:')]//span//a//@href"
+        MOST_GAMES_FOR_CLUB_NAME: str = "//span[contains(text(),'Most games for:')]//span//a//text()"
+        RETIRED_SINCE_DATE: str = "//span[contains(text(),'Retired since:')]//span//text()"
         CURRENT_CLUB_CONTRACT_EXPIRES: str = "//span[text()='Contract expires: ']//span//text()"
         CURRENT_CLUB_CONTRACT_OPTION: str = "//span[contains(text(),'Contract option:')]//following::span[1]//text()"
         NAME_IN_HOME_COUNTRY: str = "//span[text()='Name in home country:']//following::span[1]//text()"
@@ -29,7 +33,7 @@ class Players(object):
         OUTFITTER: str = "//span[contains(text(),'Outfitter:')]//following::span[1]//text()"
         SOCIAL_MEDIA: str = "//div[@class='socialmedia-icons']//@href"
 
-    class Search(object):
+    class Search:
         RESULT: str = "//div[h2[contains(text(), 'players')]]"
         RESULT_NATIONALITIES: str = ".//td[img[@class='flaggenrahmen']]"
         RESULT_CLUBS: str = ".//td[@class='zentriert'][2]"
@@ -42,7 +46,7 @@ class Players(object):
         MARKET_VALUES: str = ".//td[@class='rechts hauptlink']//text()"
         NATIONALITIES: str = ".//img//@title"
 
-    class MarketValue(object):
+    class MarketValue:
         URL: str = "//a[@class='data-header__market-value-wrapper']//@href"
         CURRENT: str = (
             "//a[@class='data-header__market-value-wrapper']//text()[not(parent::p/@class='data-header__last-update')]"
@@ -51,7 +55,7 @@ class Players(object):
         RANKINGS_NAMES: str = "//h3[@class='quick-fact__headline']//text()"
         RANKINGS_POSITIONS: str = "//span[contains(@class, 'quick-fact__content--large')]//text()"
 
-    class Transfers(object):
+    class Transfers:
         PLAYER_URL: str = "//li[@id='transfers']//a//@href"
         TRANSFERS_URLS: str = "//a[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__link']//@href"
         SEASONS: str = "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__season']//text()"
@@ -70,8 +74,8 @@ class Players(object):
         )
 
 
-class Clubs(object):
-    class Profile(object):
+class Clubs:
+    class Profile:
         URL: str = "//div[@class='datenfakten-wappen']//@href"
         NAME: str = "//header//h1//text()"
         NAME_OFFICIAL: str = "//th[text()='Official club name:']//following::td[1]//text()"
@@ -109,7 +113,7 @@ class Clubs(object):
         LEAGUE_TIER: str = "//div[@class='data-header__club-info']//strong//text()//following::span[1]/a/text()[2]"
         CRESTS_HISTORICAL: str = "//div[@class='wappen-datenfakten-wappen']//@src"
 
-    class Search(object):
+    class Search:
         RESULT: str = "//div[h2[contains(text(), 'Clubs')]]"
         NAMES: str = ".//td[@class='hauptlink']//a//@title"
         URLS: str = ".//td[@class='hauptlink']//a//@href"
@@ -117,7 +121,7 @@ class Clubs(object):
         MARKET_VALUES: str = ".//td[@class='rechts']//text()"
         SQUADS: str = ".//td[@class='zentriert']//text()"
 
-    class Players(object):
+    class Players:
         CLUB_NAME: str = "//header//h1//text()"
         CLUB_URL: str = "//li[@id='overview']//@href"
         PAGE_NATIONALITIES: str = "//td[img[@class='flaggenrahmen']]"
@@ -132,12 +136,12 @@ class Clubs(object):
         STATUSES: str = ".//td[@class='hauptlink']//span//@title"
 
 
-class Competitions(object):
-    class Profile(object):
+class Competitions:
+    class Profile:
         URL: str = "//li[@id='overview']//@href"
         NAME: str = "//div[@class='data-header__headline-container']//h1//text()"
 
-    class Search(object):
+    class Search:
         RESULT: str = "//div[h2[contains(text(), 'competitions')]]"
         RESULT_COUNTRIES: str = ".//td[@class='zentriert'][1]"
         RESULT_CLUBS: str = ".//td[@class='zentriert'][2]"
@@ -152,6 +156,6 @@ class Competitions(object):
         MARKETVALUES: str = ".//text()"
         CONTINENTS: str = ".//text()"
 
-    class Clubs(object):
+    class Clubs:
         URLS: str = "//td[@class='hauptlink no-border-links']//a[1]//@href"
         NAMES: str = "//td[@class='hauptlink no-border-links']//a//text()"

@@ -33,18 +33,23 @@ class TransfermarktPlayerProfile:
         self.player_info["age"] = get_text_by_xpath(self, Players.Profile.AGE)
         self.player_info["height"] = get_text_by_xpath(self, Players.Profile.HEIGHT)
         self.player_info["citizenship"] = get_list_by_xpath(self, Players.Profile.CITIZENSHIP)
+        self.player_info["isRetired"] = get_text_by_xpath(self, Players.Profile.RETIRED_SINCE_DATE) is not None
+        self.player_info["retiredSince"] = get_text_by_xpath(self, Players.Profile.RETIRED_SINCE_DATE)
         self.player_info["position"] = {
             "main": get_text_by_xpath(self, Players.Profile.POSITION_MAIN),
             "other": get_list_by_xpath(self, Players.Profile.POSITION_OTHER),
         }
         self.player_info["foot"] = get_text_by_xpath(self, Players.Profile.FOOT)
         self.player_info["shirtNumber"] = get_text_by_xpath(self, Players.Profile.SHIRT_NUMBER)
-        self.player_info["currentClub"] = {
+        self.player_info["club"] = {
             "id": extract_from_url(get_text_by_xpath(self, Players.Profile.CURRENT_CLUB_URL)),
             "name": get_text_by_xpath(self, Players.Profile.CURRENT_CLUB_NAME),
             "joined": get_text_by_xpath(self, Players.Profile.CURRENT_CLUB_JOINED),
             "contractExpires": get_text_by_xpath(self, Players.Profile.CURRENT_CLUB_CONTRACT_EXPIRES),
             "contractOption": get_text_by_xpath(self, Players.Profile.CURRENT_CLUB_CONTRACT_OPTION),
+            "lastClub": get_text_by_xpath(self, Players.Profile.LAST_CLUB_NAME),
+            "lastClubId": extract_from_url(get_text_by_xpath(self, Players.Profile.LAST_CLUB_URL)),
+            "mostGamesFor": get_text_by_xpath(self, Players.Profile.MOST_GAMES_FOR_CLUB_NAME),
         }
         self.player_info["marketValue"] = {
             "current": get_text_by_xpath(self, Players.Profile.MARKET_VALUE_CURRENT),

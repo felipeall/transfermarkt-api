@@ -5,6 +5,7 @@ from dataclasses import dataclass, field
 from bs4 import ResultSet
 
 from app.utils.utils import (
+    clean_response,
     convert_bsoup_to_page,
     get_list_by_xpath,
     get_text_by_xpath,
@@ -35,7 +36,7 @@ class TransfermarktPlayerMarketValue:
             get_text_by_xpath(self, Players.MarketValue.UPDATED), ["Last", "update", ":"]
         )
 
-        return self.player_marketvalue
+        return clean_response(self.player_marketvalue)
 
     def _request_marketvalue_page(self) -> None:
         marketvalue_url: str = f"https://www.transfermarkt.com/-/marktwertverlauf/spieler/{self.player_id}"
