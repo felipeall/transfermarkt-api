@@ -1,6 +1,8 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 
+from fastapi import HTTPException
+
 from app.utils.utils import (
     clean_response,
     extract_from_url,
@@ -18,8 +20,10 @@ class TransfermarktPlayerProfile:
 
     def get_player_profile(self) -> dict:
         self._request_player_page()
-
         self.player_info["url"] = get_text_by_xpath(self, Players.Profile.URL)
+
+        self._check_player_found()
+
         self.player_info["id"] = get_text_by_xpath(self, Players.Profile.ID)
         self.player_info["name"] = get_text_by_xpath(self, Players.Profile.NAME)
         self.player_info["fullName"] = get_text_by_xpath(self, Players.Profile.FULL_NAME)
@@ -68,3 +72,7 @@ class TransfermarktPlayerProfile:
     def _request_player_page(self) -> None:
         player_url = f"https://www.transfermarkt.com/-/profil/spieler/{self.player_id}"
         self.page = request_url_page(url=player_url)
+
+    def _check_player_found(self) -> None:
+        if not self.player_info["url"]:
+            raise HTTPException(status_code=404, detail=f"Player Profile not found for id: {self.player_id}")

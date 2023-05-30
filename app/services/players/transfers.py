@@ -1,6 +1,8 @@
 from dataclasses import dataclass, field
 from datetime import datetime
 
+from fastapi import HTTPException
+
 from app.utils.utils import (
     clean_response,
     extract_from_url,
@@ -19,9 +21,11 @@ class TransfermarktPlayerTransfers:
 
     def get_player_transfers(self) -> dict:
         self._request_player_transfers_page()
-
         self.player_transfers["id"] = self.player_id
         self.player_transfers["name"] = get_text_by_xpath(self, Players.Profile.NAME)
+
+        self._check_player_found()
+
         self.player_transfers["history"] = self._parse_player_transfers_history()
         self.player_transfers["youthClubs"] = safe_split(get_text_by_xpath(self, Players.Transfers.YOUTH_CLUBS), ",")
         self.player_transfers["lastUpdate"] = datetime.now()
@@ -31,6 +35,10 @@ class TransfermarktPlayerTransfers:
     def _request_player_transfers_page(self) -> None:
         player_transfers_url = f"https://www.transfermarkt.com/-/transfers/spieler/{self.player_id}"
         self.page = request_url_page(url=player_transfers_url)
+
+    def _check_player_found(self) -> None:
+        if not self.player_transfers["name"]:
+            raise HTTPException(status_code=404, detail=f"Player Transfers not found for id: {self.player_id}")
 
     def _parse_player_transfers_history(self) -> list:
         urls: list = get_list_by_xpath(self, Players.Transfers.TRANSFERS_URLS)
