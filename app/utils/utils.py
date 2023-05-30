@@ -44,9 +44,9 @@ def request_url_page(url: str) -> ElementTree:
 
 def clean_response(nested: Union[dict, list]) -> Union[dict, list]:
     if isinstance(nested, dict):
-        return {k: v for k, v in ((k, clean_response(v)) for k, v in nested.items()) if v}
+        return {k: v for k, v in ((k, clean_response(v)) for k, v in nested.items()) if v or isinstance(v, bool)}
     if isinstance(nested, list):
-        return [v for v in map(clean_response, nested) if v]
+        return [v for v in map(clean_response, nested) if v or isinstance(v, bool)]
     return nested
 
 
@@ -63,7 +63,10 @@ def extract_from_url(tfmkt_url: str, element: str = "id") -> Optional[str]:
         r"(/saison_id/(?P<season_id>\d{4}))?"
         r"(/transfer_id/(?P<transfer_id>\d+))?"
     )
-    groups: dict = re.match(regex, tfmkt_url).groupdict()
+    try:
+        groups: dict = re.match(regex, tfmkt_url).groupdict()
+    except TypeError:
+        return None
     return groups.get(element)
 
 
