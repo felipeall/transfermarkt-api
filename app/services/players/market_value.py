@@ -3,6 +3,7 @@ import re
 from dataclasses import dataclass, field
 
 from bs4 import ResultSet
+from fastapi import HTTPException
 
 from app.utils.utils import (
     clean_response,
@@ -23,9 +24,11 @@ class TransfermarktPlayerMarketValue:
 
     def get_player_market_value(self) -> dict:
         self._request_marketvalue_page()
-
         self.player_marketvalue["id"] = self.player_id
         self.player_marketvalue["playerName"] = get_text_by_xpath(self, Players.Profile.NAME)
+
+        self._check_player_found()
+
         self.player_marketvalue["marketValue"] = get_text_by_xpath(self, Players.MarketValue.CURRENT, join_str="")
         self.player_marketvalue["marketValueHistory"] = self._parse_marketvalue_history()
         self.player_marketvalue["ranking"] = zip_lists_into_dict(
@@ -42,6 +45,10 @@ class TransfermarktPlayerMarketValue:
         marketvalue_url: str = f"https://www.transfermarkt.com/-/marktwertverlauf/spieler/{self.player_id}"
         self.bsoup = request_url_bsoup(url=marketvalue_url)
         self.page = convert_bsoup_to_page(self.bsoup)
+
+    def _check_player_found(self) -> None:
+        if not self.player_marketvalue["playerName"]:
+            raise HTTPException(status_code=404, detail=f"Player Market Value not found for id: {self.player_id}")
 
     def _parse_marketvalue_history(self) -> list:
         pages: ResultSet = self.bsoup.findAll("script", type="text/javascript")
