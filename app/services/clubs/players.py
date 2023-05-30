@@ -1,5 +1,7 @@
 from dataclasses import dataclass, field
 
+from fastapi import HTTPException
+
 from app.utils.utils import (
     clean_response,
     extract_from_url,
@@ -22,6 +24,9 @@ class TransfermarktClubPlayers:
 
         self.club_players["id"] = self.club_id
         self.club_players["clubName"] = get_text_by_xpath(self, Clubs.Players.CLUB_NAME)
+
+        self._check_club_found()
+
         self.club_players["seasonYear"] = self.season_id
         self.club_players["players"] = self._parse_club_players()
 
@@ -75,3 +80,7 @@ class TransfermarktClubPlayers:
                 players_statuses,
             )
         ]
+
+    def _check_club_found(self):
+        if not self.club_players["clubName"]:
+            raise HTTPException(status_code=404, detail=f"Club Players not found for id: {self.club_id}")

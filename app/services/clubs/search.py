@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from xml.etree import ElementTree
 
+from fastapi import HTTPException
+
 from app.services.commons.search import TransfermarktSearch
 from app.utils.utils import extract_from_url, get_list_by_xpath
 from app.utils.xpath import Clubs
@@ -9,12 +11,9 @@ from app.utils.xpath import Clubs
 @dataclass
 class TransfermarktClubSearch(TransfermarktSearch):
     def search_clubs(self):
-        result_clubs: ElementTree = self.page.xpath(Clubs.Search.RESULT)
+        self.result_clubs: ElementTree = self.page.xpath(Clubs.Search.RESULT)
 
-        if not result_clubs:
-            return None
-        else:
-            self.page = result_clubs[0]
+        self._check_player_found()
 
         clubs_names: list = get_list_by_xpath(self, Clubs.Search.NAMES)
         clubs_urls: list = get_list_by_xpath(self, Clubs.Search.URLS)
@@ -41,3 +40,9 @@ class TransfermarktClubSearch(TransfermarktSearch):
                 clubs_market_values,
             )
         ]
+
+    def _check_player_found(self):
+        if not self.result_clubs:
+            raise HTTPException(status_code=404, detail=f"Club Search not found for name: {self.query}")
+        else:
+            self.page = self.result_clubs[0]
