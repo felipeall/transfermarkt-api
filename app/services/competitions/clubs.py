@@ -1,5 +1,7 @@
 from dataclasses import dataclass, field
 
+from fastapi import HTTPException
+
 from app.utils.utils import (
     extract_from_url,
     get_list_by_xpath,
@@ -20,6 +22,9 @@ class TransfermarktCompetitionClubs:
 
         self.competition_clubs["id"] = self.competition_id
         self.competition_clubs["name"] = get_text_by_xpath(self, Competitions.Profile.NAME)
+
+        self._check_competition_found()
+
         self.competition_clubs["seasonID"] = extract_from_url(
             get_text_by_xpath(self, Competitions.Profile.URL), "season_id"
         )
@@ -32,6 +37,10 @@ class TransfermarktCompetitionClubs:
         if self.season_id:
             url += f"/plus/?saison_id={self.season_id}"
         self.page = request_url_page(url=url)
+
+    def _check_competition_found(self) -> None:
+        if not self.competition_clubs["name"]:
+            raise HTTPException(status_code=404, detail=f"Competition Clubs not found for id: {self.competition_id}")
 
     def _parse_competition_clubs(self):
         urls = get_list_by_xpath(self, Competitions.Clubs.URLS)
