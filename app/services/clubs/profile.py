@@ -1,5 +1,7 @@
 from dataclasses import dataclass, field
 
+from fastapi import HTTPException
+
 from app.utils.utils import (
     clean_response,
     extract_from_url,
@@ -23,6 +25,7 @@ class TransfermarktClubProfile:
 
         self.club_profile["id"] = self.club_id
         self.club_profile["url"] = get_text_by_xpath(self, Clubs.Profile.URL)
+        self._check_club_found()
         self.club_profile["name"] = get_text_by_xpath(self, Clubs.Profile.NAME)
         self.club_profile["officialName"] = get_text_by_xpath(self, Clubs.Profile.NAME_OFFICIAL)
         self.club_profile["image"] = safe_split(get_text_by_xpath(self, Clubs.Profile.IMAGE), "?")[0]
@@ -78,3 +81,7 @@ class TransfermarktClubProfile:
     def _request_page(self) -> None:
         player_url = f"https://www.transfermarkt.us/-/datenfakten/verein/{self.club_id}"
         self.page = request_url_page(url=player_url)
+
+    def _check_club_found(self) -> None:
+        if not self.club_profile["url"]:
+            raise HTTPException(status_code=404, detail=f"Club Profile not found for id: {self.club_id}")
