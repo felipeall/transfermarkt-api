@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from xml.etree import ElementTree
 
+from fastapi import HTTPException
+
 from app.services.commons.search import TransfermarktSearch
 from app.utils.utils import clean_response, extract_from_url, get_list_by_xpath, trim
 from app.utils.xpath import Competitions
@@ -9,12 +11,9 @@ from app.utils.xpath import Competitions
 @dataclass
 class TransfermarktCompetitionSearch(TransfermarktSearch):
     def search_competitions(self):
-        result_competitions: ElementTree = self.page.xpath(Competitions.Search.RESULT)
+        self.result_competitions: ElementTree = self.page.xpath(Competitions.Search.RESULT)
 
-        if not result_competitions:
-            return []
-        else:
-            self.page = result_competitions[0]
+        self._check_competition_found()
 
         result_countries: ElementTree = self.page.xpath(Competitions.Search.RESULT_COUNTRIES)
         result_clubs: ElementTree = self.page.xpath(Competitions.Search.RESULT_CLUBS)
@@ -55,3 +54,9 @@ class TransfermarktCompetitionSearch(TransfermarktSearch):
                 )
             ]
         )
+
+    def _check_competition_found(self) -> None:
+        if not self.result_competitions:
+            raise HTTPException(status_code=404, detail=f"Competition Search not found for name: {self.query}")
+        else:
+            self.page = self.result_competitions[0]
