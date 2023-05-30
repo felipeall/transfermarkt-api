@@ -51,7 +51,7 @@ class TransfermarktClubProfile:
 
         self.club_profile["currentTransferRecord"] = get_text_by_xpath(self, Clubs.Profile.TRANSFER_RECORD)
         self.club_profile["currentMarketValue"] = get_text_by_xpath(
-            self, Clubs.Profile.MARKET_VALUE, iloc=-2, join_str=""
+            self, Clubs.Profile.MARKET_VALUE, iloc_to=3, join_str=""
         )
 
         self.club_profile["confederation"] = get_text_by_xpath(self, Clubs.Profile.CONFEDERATION)
@@ -79,8 +79,8 @@ class TransfermarktClubProfile:
         return clean_response(self.club_profile)
 
     def _request_page(self) -> None:
-        player_url = f"https://www.transfermarkt.us/-/datenfakten/verein/{self.club_id}"
-        self.page = request_url_page(url=player_url)
+        club_url = f"https://www.transfermarkt.us/-/datenfakten/verein/{self.club_id}"
+        self.page = request_url_page(url=club_url)
 
     def _check_club_found(self) -> None:
         if not self.club_profile["url"]:

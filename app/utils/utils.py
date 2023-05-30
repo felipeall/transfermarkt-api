@@ -6,21 +6,24 @@ import requests
 from bs4 import BeautifulSoup
 from fastapi import HTTPException
 from lxml import etree
-from requests import Response
+from requests import Response, TooManyRedirects
 
 
 def make_request(url: str) -> Response:
-    response: Response = requests.get(
-        url=url,
-        headers={
-            "User-Agent": (
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/113.0.0.0 "
-                "Safari/537.36"
-            )
-        },
-    )
+    try:
+        response: Response = requests.get(
+            url=url,
+            headers={
+                "User-Agent": (
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/113.0.0.0 "
+                    "Safari/537.36"
+                )
+            },
+        )
+    except TooManyRedirects:
+        raise HTTPException(status_code=404, detail=f"Not found for url: {url}")
     if 400 <= response.status_code < 500:
         raise HTTPException(status_code=response.status_code, detail=f"Client Error. {response.reason} for url: {url}")
     elif 500 <= response.status_code < 600:
@@ -92,9 +95,13 @@ def get_text_by_xpath(
     iloc_to: Optional[int] = None,
     join_str: Optional[str] = None,
 ) -> Optional[str]:
-    element: ElementTree = self.page.xpath(xpath)
+    element = self.page.xpath(xpath)
+
     if not element:
         return None
+
+    if isinstance(element, list):
+        element = [trim(e) for e in element if trim(e)]
 
     if isinstance(iloc, int):
         element = element[iloc]

@@ -1,4 +1,4 @@
-name: GitHub Formatting Checker
+name: Formatting Checker
 on:
   push:
     branches: [ main ]
