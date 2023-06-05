@@ -40,7 +40,7 @@ def test_players_search_ronaldo():
             "country": "Brazil",
             "continent": "CONMEBOL",
             "clubs": "16",
-            "players": "439",
+            "players": "440",
             "marketValue": "€531.43m",
         },
         {
@@ -49,7 +49,7 @@ def test_players_search_ronaldo():
             "country": "Brazil",
             "continent": "CONMEBOL",
             "clubs": "8",
-            "players": "236",
+            "players": "235",
             "marketValue": "€429.18m",
         },
         {
@@ -67,8 +67,8 @@ def test_players_search_ronaldo():
             "country": "Ecuador",
             "continent": "CONMEBOL",
             "clubs": "16",
-            "players": "459",
-            "marketValue": "€165.30m",
+            "players": "458",
+            "marketValue": "€165.15m",
         },
         {
             "id": "PT3A",
@@ -77,7 +77,7 @@ def test_players_search_ronaldo():
             "continent": "UEFA",
             "clubs": "24",
             "players": "685",
-            "marketValue": "€29.23m",
+            "marketValue": "€29.48m",
         },
         {
             "id": "BCP2",
@@ -85,12 +85,11 @@ def test_players_search_ronaldo():
             "country": "Brazil",
             "continent": "CONMEBOL",
             "clubs": "6",
-            "players": "167",
+            "players": "168",
             "marketValue": "€22.90m",
         },
         {"id": "ECPE", "name": "Serie A Primera Etapa", "country": "Ecuador"},
         {"id": "ECSE", "name": "Serie A Segunda Etapa", "country": "Ecuador"},
     ]
 
-    print(result)
     assert result == expected

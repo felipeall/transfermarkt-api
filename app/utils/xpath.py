@@ -122,6 +122,7 @@ class Clubs:
         SQUADS: str = ".//td[@class='zentriert']//text()"
 
     class Players:
+        PAST_FLAG: str = "//div[@id='yw1']//thead//text()"
         CLUB_NAME: str = "//header//h1//text()"
         CLUB_URL: str = "//li[@id='overview']//@href"
         PAGE_NATIONALITIES: str = "//td[img[@class='flaggenrahmen']]"
@@ -129,11 +130,27 @@ class Clubs:
         NAMES: str = "//td[@class='posrela']//a//text()"
         URLS: str = "//td[@class='hauptlink']//@href"
         POSITIONS: str = "//td[@class='posrela']//tr[2]//text()"
-        AGES: str = "//div[@id='yw1']//td[3]//text()"
+        DOB_AGE: str = "//div[@id='yw1']//td[3]//text()"
         NATIONALITIES: str = ".//img//@title"
-        MARKET_VALUES: str = "//td[@class='rechts hauptlink']//text()"
         JOINED: str = ".//span/node()/@title"
+        SIGNED_FROM: str = ".//a//img//@title"
+        MARKET_VALUES: str = "//td[@class='rechts hauptlink']//text()"
         STATUSES: str = ".//td[@class='hauptlink']//span//@title"
+
+        class Present:
+            PAGE_SIGNED_FROM: str = "//div[@id='yw1']//td[8]"
+            HEIGHTS: str = "//div[@id='yw1']//td[5]//text()"
+            FOOTS: str = "//div[@id='yw1']//td[6]//text()"
+            JOINED_ON: str = "//div[@id='yw1']//td[7]//text()"
+            CONTRACTS: str = "//div[@id='yw1']//td[9]//text()"
+
+        class Past:
+            PAGE_SIGNED_FROM: str = "//div[@id='yw1']//td[9]"
+            CURRENT_CLUB = "//div[@id='yw1']//td[5]//img//@title"
+            HEIGHTS: str = "//div[@id='yw1']//td[6]/text()"
+            FOOTS: str = "//div[@id='yw1']//td[7]//text()"
+            JOINED_ON: str = "//div[@id='yw1']//td[8]//text()"
+            CONTRACTS: str = "//div[@id='yw1']//td[10]//text()"
 
 
 class Competitions:

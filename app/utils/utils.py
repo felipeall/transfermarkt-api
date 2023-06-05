@@ -128,8 +128,11 @@ def safe_regex(text: Optional[str], regex, group: str) -> Optional[str]:
     if not isinstance(text, str):
         return None
 
-    groups = re.search(regex, text).groupdict()
-    return groups.get(group)
+    try:
+        groups = re.search(regex, text).groupdict()
+        return groups.get(group)
+    except AttributeError:
+        return None
 
 
 def remove_str(text: Optional[str], strings_to_remove: Union[str, list]) -> Optional[str]:
