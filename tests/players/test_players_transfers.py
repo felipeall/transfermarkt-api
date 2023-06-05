@@ -149,6 +149,17 @@ def test_get_player_transfers_id_28003():
         "name": "Messi",
         "history": [
             {
+                "transferID": "4418847",
+                "transferSeason": "23/24",
+                "transferDate": "Jul 1, 2023",
+                "oldClubID": "583",
+                "oldClubName": "Paris SG",
+                "newClubID": "515",
+                "newClubName": "Without Club",
+                "marketValue": "€45.00m",
+                "fee": "-",
+            },
+            {
                 "transferID": "3489998",
                 "transferSeason": "21/22",
                 "transferDate": "Aug 10, 2021",

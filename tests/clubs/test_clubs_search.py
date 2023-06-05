@@ -37,7 +37,7 @@ def test_clubs_search_gremio():
             "url": "/gremio-esportivo-brasil-rs-/startseite/verein/10560",
             "name": "Grêmio Esportivo Brasil (RS)",
             "country": "Brazil",
-            "squad": "25",
+            "squad": "23",
             "marketValue": "€1.00m",
         },
         {
@@ -45,7 +45,7 @@ def test_clubs_search_gremio():
             "url": "/gremio-desportivo-prudente-sp-/startseite/verein/36166",
             "name": "Grêmio Desportivo Prudente (SP)",
             "country": "Brazil",
-            "squad": "15",
+            "squad": "17",
             "marketValue": "€650k",
         },
         {
@@ -69,8 +69,16 @@ def test_clubs_search_gremio():
             "url": "/gremio-esportivo-juventus-sc-/startseite/verein/10117",
             "name": "Grêmio Esportivo Juventus (SC)",
             "country": "Brazil",
-            "squad": "24",
+            "squad": "25",
             "marketValue": "€200k",
+        },
+        {
+            "id": "76417",
+            "url": "/gremio-desportivo-sao-carlense/startseite/verein/76417",
+            "name": "Grêmio Desportivo São-Carlense (SP)",
+            "country": "Brazil",
+            "squad": "18",
+            "marketValue": "€125k",
         },
         {
             "id": "96879",
@@ -78,14 +86,6 @@ def test_clubs_search_gremio():
             "name": "Grêmio Desportivo São-Carlense (SP) U20",
             "country": "Brazil",
             "squad": "22",
-            "marketValue": "€100k",
-        },
-        {
-            "id": "76417",
-            "url": "/gremio-desportivo-sao-carlense/startseite/verein/76417",
-            "name": "Grêmio Desportivo São-Carlense (SP)",
-            "country": "Brazil",
-            "squad": "16",
             "marketValue": "€100k",
         },
         {
@@ -97,5 +97,4 @@ def test_clubs_search_gremio():
             "marketValue": "€75k",
         },
     ]
-
     assert result == expected
