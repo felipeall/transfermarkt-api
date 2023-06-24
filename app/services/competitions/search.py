@@ -52,7 +52,7 @@ class TransfermarktCompetitionSearch(TransfermarktSearch):
                     players,
                     marketvalues,
                 )
-            ]
+            ],
         )
 
     def _check_competition_found(self) -> None:

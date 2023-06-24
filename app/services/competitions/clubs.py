@@ -26,7 +26,8 @@ class TransfermarktCompetitionClubs:
         self._check_competition_found()
 
         self.competition_clubs["seasonID"] = extract_from_url(
-            get_text_by_xpath(self, Competitions.Profile.URL), "season_id"
+            get_text_by_xpath(self, Competitions.Profile.URL),
+            "season_id",
         )
         self.competition_clubs["clubs"] = self._parse_competition_clubs()
 

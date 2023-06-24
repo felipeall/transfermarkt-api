@@ -39,7 +39,8 @@ class TransfermarktClubProfile:
         self.club_profile["foundedOn"] = get_text_by_xpath(self, Clubs.Profile.FOUNDED_ON)
         self.club_profile["members"] = get_text_by_xpath(self, Clubs.Profile.MEMBERS)
         self.club_profile["membersDate"] = remove_str(
-            get_text_by_xpath(self, Clubs.Profile.MEMBERS_DATE, pos=1), ["(", "Score", ":", ")"]
+            get_text_by_xpath(self, Clubs.Profile.MEMBERS_DATE, pos=1),
+            ["(", "Score", ":", ")"],
         )
         self.club_profile["otherSports"] = safe_split(get_text_by_xpath(self, Clubs.Profile.OTHER_SPORTS), ",")
         self.club_profile["colors"] = [
@@ -51,7 +52,10 @@ class TransfermarktClubProfile:
 
         self.club_profile["currentTransferRecord"] = get_text_by_xpath(self, Clubs.Profile.TRANSFER_RECORD)
         self.club_profile["currentMarketValue"] = get_text_by_xpath(
-            self, Clubs.Profile.MARKET_VALUE, iloc_to=3, join_str=""
+            self,
+            Clubs.Profile.MARKET_VALUE,
+            iloc_to=3,
+            join_str="",
         )
 
         self.club_profile["confederation"] = get_text_by_xpath(self, Clubs.Profile.CONFEDERATION)
