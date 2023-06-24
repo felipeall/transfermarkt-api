@@ -51,7 +51,7 @@ class TransfermarktClubPlayers:
         page_nationalities = self.page.xpath(Clubs.Players.PAGE_NATIONALITIES)
         page_players_infos = self.page.xpath(Clubs.Players.PAGE_INFOS)
         page_players_signed_from = self.page.xpath(
-            Clubs.Players.Past.PAGE_SIGNED_FROM if self.past else Clubs.Players.Present.PAGE_SIGNED_FROM
+            Clubs.Players.Past.PAGE_SIGNED_FROM if self.past else Clubs.Players.Present.PAGE_SIGNED_FROM,
         )
 
         players_urls: list = get_list_by_xpath(self, Clubs.Players.URLS)
@@ -75,18 +75,22 @@ class TransfermarktClubPlayers:
             get_list_by_xpath(self, Clubs.Players.Past.CURRENT_CLUB) if self.past else [None] * len(players_ids)
         )
         players_heights: list = get_list_by_xpath(
-            self, Clubs.Players.Past.HEIGHTS if self.past else Clubs.Players.Present.HEIGHTS
+            self,
+            Clubs.Players.Past.HEIGHTS if self.past else Clubs.Players.Present.HEIGHTS,
         )
         players_foots: list = get_list_by_xpath(
-            self, Clubs.Players.Past.FOOTS if self.past else Clubs.Players.Present.FOOTS
+            self,
+            Clubs.Players.Past.FOOTS if self.past else Clubs.Players.Present.FOOTS,
         )
         players_joined_on: list = get_list_by_xpath(
-            self, Clubs.Players.Past.JOINED_ON if self.past else Clubs.Players.Present.JOINED_ON
+            self,
+            Clubs.Players.Past.JOINED_ON if self.past else Clubs.Players.Present.JOINED_ON,
         )
         players_joined: list = ["; ".join(e.xpath(Clubs.Players.JOINED)) for e in page_players_infos]
         players_signed_from: list = ["; ".join(e.xpath(Clubs.Players.SIGNED_FROM)) for e in page_players_signed_from]
         players_contracts: list = get_list_by_xpath(
-            self, Clubs.Players.Past.CONTRACTS if self.past else Clubs.Players.Present.CONTRACTS
+            self,
+            Clubs.Players.Past.CONTRACTS if self.past else Clubs.Players.Present.CONTRACTS,
         )
         players_marketvalues: list = get_list_by_xpath(self, Clubs.Players.MARKET_VALUES)
         players_statuses: list = ["; ".join(e.xpath(Clubs.Players.STATUSES)) for e in page_players_infos]

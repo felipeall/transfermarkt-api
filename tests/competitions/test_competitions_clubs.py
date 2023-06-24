@@ -11,7 +11,7 @@ def test_competitions_clubs_id_0():
         tfmkt.get_competition_clubs()
 
 
-def test_competitions_clubs_id_BRA1_season_2023():
+def test_competitions_clubs_id_bra1_season_2023():
     tfmkt = TransfermarktCompetitionClubs(competition_id="BRA1", season_id="2023")
     result = tfmkt.get_competition_clubs()
 

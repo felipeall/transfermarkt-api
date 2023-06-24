@@ -19,7 +19,7 @@ def make_request(url: str) -> Response:
                     "AppleWebKit/537.36 (KHTML, like Gecko) "
                     "Chrome/113.0.0.0 "
                     "Safari/537.36"
-                )
+                ),
             },
         )
     except TooManyRedirects:

@@ -1,0 +1,17 @@
+name: Ruff
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ruff:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - name: ruff
+        run: |
+          pip install ruff
+          ruff check .

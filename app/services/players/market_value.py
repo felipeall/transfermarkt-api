@@ -36,7 +36,8 @@ class TransfermarktPlayerMarketValue:
             get_list_by_xpath(self, Players.MarketValue.RANKINGS_POSITIONS),
         )
         self.player_marketvalue["lastUpdate"] = remove_str(
-            get_text_by_xpath(self, Players.MarketValue.UPDATED), ["Last", "update", ":"]
+            get_text_by_xpath(self, Players.MarketValue.UPDATED),
+            ["Last", "update", ":"],
         )
 
         return clean_response(self.player_marketvalue)
