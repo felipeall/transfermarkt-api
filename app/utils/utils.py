@@ -80,9 +80,12 @@ def trim(text: Union[list, str]) -> str:
     return text.strip().replace("\xa0", "")
 
 
-def get_list_by_xpath(self, xpath: str) -> Optional[list]:
+def get_list_by_xpath(self, xpath: str, remove_empty: Optional[bool] = True) -> Optional[list]:
     elements: list = self.page.xpath(xpath)
-    elements_valid: list = [trim(e) for e in elements if trim(e)]
+    if remove_empty:
+        elements_valid: list = [trim(e) for e in elements if trim(e)]
+    else:
+        elements_valid: list = [trim(e) for e in elements]
     return elements_valid or []
 
 
