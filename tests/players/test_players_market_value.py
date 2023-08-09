@@ -52,7 +52,7 @@ def test_players_market_value_id_28003():
     expected = {
         "id": "28003",
         "playerName": "Messi",
-        "marketValue": "€45.00m",
+        "marketValue": "€35.00m",
         "marketValueHistory": [
             {"age": "17", "date": "Dec 20, 2004", "value": "€3.00m"},
             {"age": "18", "date": "Dec 28, 2005", "value": "€5.00m"},
@@ -95,16 +95,17 @@ def test_players_market_value_id_28003():
             {"age": "34", "date": "May 30, 2022", "value": "€50.00m"},
             {"age": "35", "date": "Nov 2, 2022", "value": "€50.00m"},
             {"age": "35", "date": "Mar 27, 2023", "value": "€45.00m"},
+            {"age": "36", "date": "Jun 27, 2023", "value": "€35.00m"},
         ],
         "ranking": {
-            "Worldwide": "103",
-            "Ligue 1": "9",
-            "Paris SG": "8",
-            "Argentina": "6",
-            "Right Winger": "11",
+            "Worldwide": "171",
+            "MLS": "1",
+            "Miami": "1",
+            "Argentina": "8",
+            "Right Winger": "14",
             "Year 1987": "1",
         },
-        "lastUpdate": "Mar 27, 2023",
+        "lastUpdate": "Jun 27, 2023",
     }
 
     assert result == expected

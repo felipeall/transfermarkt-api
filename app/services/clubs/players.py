@@ -81,6 +81,7 @@ class TransfermarktClubPlayers:
         players_foots: list = get_list_by_xpath(
             self,
             Clubs.Players.Past.FOOTS if self.past else Clubs.Players.Present.FOOTS,
+            remove_empty=False,
         )
         players_joined_on: list = get_list_by_xpath(
             self,

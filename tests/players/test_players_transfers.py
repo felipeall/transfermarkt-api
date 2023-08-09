@@ -151,13 +151,13 @@ def test_get_player_transfers_id_28003():
             {
                 "transferID": "4418847",
                 "transferSeason": "23/24",
-                "transferDate": "Jul 1, 2023",
+                "transferDate": "Jul 15, 2023",
                 "oldClubID": "583",
                 "oldClubName": "Paris SG",
-                "newClubID": "515",
-                "newClubName": "Without Club",
-                "marketValue": "€45.00m",
-                "fee": "-",
+                "newClubID": "69261",
+                "newClubName": "Miami",
+                "marketValue": "€35.00m",
+                "fee": "free transfer",
             },
             {
                 "transferID": "3489998",

@@ -11,8 +11,8 @@ def test_players_search_0():
         tfmkt.search_competitions()
 
 
-def test_players_search_ronaldo():
-    tfmkt = TransfermarktCompetitionSearch(query="serie a")
+def test_players_search_serie_a():
+    tfmkt = TransfermarktCompetitionSearch(query="Serie A")
     result = tfmkt.search_competitions()
 
     expected = [
@@ -22,8 +22,8 @@ def test_players_search_ronaldo():
             "country": "Italy",
             "continent": "UEFA",
             "clubs": "20",
-            "players": "561",
-            "marketValue": "€4.63bn",
+            "players": "607",
+            "marketValue": "€4.59bn",
         },
         {
             "id": "BRA1",
@@ -31,8 +31,8 @@ def test_players_search_ronaldo():
             "country": "Brazil",
             "continent": "CONMEBOL",
             "clubs": "20",
-            "players": "661",
-            "marketValue": "€1.41bn",
+            "players": "670",
+            "marketValue": "€1.47bn",
         },
         {
             "id": "BCP1",
@@ -40,8 +40,8 @@ def test_players_search_ronaldo():
             "country": "Brazil",
             "continent": "CONMEBOL",
             "clubs": "16",
-            "players": "440",
-            "marketValue": "€531.43m",
+            "players": "476",
+            "marketValue": "€548.45m",
         },
         {
             "id": "BCPF",
@@ -49,17 +49,8 @@ def test_players_search_ronaldo():
             "country": "Brazil",
             "continent": "CONMEBOL",
             "clubs": "8",
-            "players": "235",
-            "marketValue": "€429.18m",
-        },
-        {
-            "id": "POSB",
-            "name": "Serie B Play-off",
-            "country": "Italy",
-            "continent": "UEFA",
-            "clubs": "6",
-            "players": "169",
-            "marketValue": "€184.75m",
+            "players": "238",
+            "marketValue": "€457.35m",
         },
         {
             "id": "EL1A",
@@ -67,17 +58,17 @@ def test_players_search_ronaldo():
             "country": "Ecuador",
             "continent": "CONMEBOL",
             "clubs": "16",
-            "players": "458",
-            "marketValue": "€165.15m",
+            "players": "475",
+            "marketValue": "€175.30m",
         },
         {
-            "id": "PT3A",
-            "name": "3. Liga",
-            "country": "Portugal",
-            "continent": "UEFA",
-            "clubs": "24",
-            "players": "685",
-            "marketValue": "€29.48m",
+            "id": "EL1S",
+            "name": "LigaPro Serie A Segunda Etapa",
+            "country": "Ecuador",
+            "continent": "CONMEBOL",
+            "clubs": "16",
+            "players": "475",
+            "marketValue": "€175.30m",
         },
         {
             "id": "BCP2",
@@ -85,11 +76,20 @@ def test_players_search_ronaldo():
             "country": "Brazil",
             "continent": "CONMEBOL",
             "clubs": "6",
-            "players": "168",
-            "marketValue": "€22.90m",
+            "players": "187",
+            "marketValue": "€24.20m",
         },
+        {
+            "id": "PT3A",
+            "name": "Liga 3",
+            "country": "Portugal",
+            "continent": "UEFA",
+            "clubs": "20",
+            "players": "568",
+            "marketValue": "€19.65m",
+        },
+        {"id": "POSB", "name": "Serie B Play-off", "country": "Italy"},
         {"id": "ECPE", "name": "Serie A Primera Etapa", "country": "Ecuador"},
-        {"id": "ECSE", "name": "Serie A Segunda Etapa", "country": "Ecuador"},
     ]
 
     assert result == expected
