@@ -12,7 +12,7 @@ def test_players_search_0():
 
 
 def test_players_search_ronaldo():
-    tfmkt = TransfermarktPlayerSearch(query="ronaldo")
+    tfmkt = TransfermarktPlayerSearch(query="Ronaldo")
     result = tfmkt.search_players()
 
     expected = [
@@ -24,7 +24,7 @@ def test_players_search_ronaldo():
             "position": "CF",
             "age": "38",
             "nationality": ["Portugal"],
-            "marketValue": "€20.00m",
+            "marketValue": "€15.00m",
         },
         {
             "id": "3140",
@@ -52,7 +52,7 @@ def test_players_search_ronaldo():
             "name": "Ronaldao",
             "club": {"id": "515", "name": "Retired"},
             "position": "CB",
-            "age": "57",
+            "age": "58",
             "nationality": ["Brazil"],
             "marketValue": "-",
         },
@@ -60,11 +60,11 @@ def test_players_search_ronaldo():
             "id": "27300",
             "url": "/rolando/profil/spieler/27300",
             "name": "Rolando",
-            "club": {"id": "515", "name": "Without Club"},
+            "club": {"id": "515", "name": "Retired"},
             "position": "CB",
             "age": "37",
             "nationality": ["Portugal", "Cape Verde"],
-            "marketValue": "€200k",
+            "marketValue": "-",
         },
         {
             "id": "356772",
@@ -90,11 +90,11 @@ def test_players_search_ronaldo():
             "id": "434676",
             "url": "/ronaldo-vieira/profil/spieler/434676",
             "name": "Ronaldo Vieira",
-            "club": {"id": "416", "name": "Torino FC"},
+            "club": {"id": "1038", "name": "UC Sampdoria"},
             "position": "CM",
-            "age": "24",
+            "age": "25",
             "nationality": ["England", "Guinea-Bissau"],
-            "marketValue": "€3.00m",
+            "marketValue": "€2.00m",
         },
         {
             "id": "405768",
