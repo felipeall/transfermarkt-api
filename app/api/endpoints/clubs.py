@@ -10,8 +10,8 @@ router = APIRouter()
 
 
 @router.get("/search/{club_name}")
-def search_clubs(club_name: str):
-    tfmkt = TransfermarktClubSearch(query=club_name)
+def search_clubs(club_name: str, page_number: Optional[int] = 1):
+    tfmkt = TransfermarktClubSearch(query=club_name, page_number=page_number)
     found_clubs = tfmkt.search_clubs()
     return found_clubs
 

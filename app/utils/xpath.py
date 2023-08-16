@@ -45,6 +45,10 @@ class Players:
         CLUBS_NAMES: str = ".//img[@class='tiny_wappen']//@title"
         MARKET_VALUES: str = ".//td[@class='rechts hauptlink']//text()"
         NATIONALITIES: str = ".//img//@title"
+        PAGE_NUMBER_LAST: str = (
+            ".//li[@class='tm-pagination__list-item tm-pagination__list-item--icon-last-page']//@href"
+        )
+        PAGE_NUMBER_ACTIVE: str = ".//li[@class='tm-pagination__list-item tm-pagination__list-item--active']//@href"
 
     class MarketValue:
         URL: str = "//a[@class='data-header__market-value-wrapper']//@href"
@@ -120,6 +124,10 @@ class Clubs:
         COUNTRIES: str = ".//td[@class='zentriert']//img[@class='flaggenrahmen']//@title"
         MARKET_VALUES: str = ".//td[@class='rechts']//text()"
         SQUADS: str = ".//td[@class='zentriert']//text()"
+        PAGE_NUMBER_LAST: str = (
+            ".//li[@class='tm-pagination__list-item tm-pagination__list-item--icon-last-page']//@href"
+        )
+        PAGE_NUMBER_ACTIVE: str = ".//li[@class='tm-pagination__list-item tm-pagination__list-item--active']//@href"
 
     class Players:
         PAST_FLAG: str = "//div[@id='yw1']//thead//text()"
@@ -172,6 +180,10 @@ class Competitions:
         PLAYERS: str = ".//text()"
         MARKETVALUES: str = ".//text()"
         CONTINENTS: str = ".//text()"
+        PAGE_NUMBER_LAST: str = (
+            ".//li[@class='tm-pagination__list-item tm-pagination__list-item--icon-last-page']//@href"
+        )
+        PAGE_NUMBER_ACTIVE: str = ".//li[@class='tm-pagination__list-item tm-pagination__list-item--active']//@href"
 
     class Clubs:
         URLS: str = "//td[@class='hauptlink no-border-links']//a[1]//@href"

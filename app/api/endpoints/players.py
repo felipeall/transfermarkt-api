@@ -1,3 +1,5 @@
+from typing import Optional
+
 from fastapi import APIRouter
 
 from app.services.players.market_value import TransfermarktPlayerMarketValue
@@ -9,8 +11,8 @@ router = APIRouter()
 
 
 @router.get("/search/{player_name}")
-def search_players(player_name: str):
-    tfmkt = TransfermarktPlayerSearch(query=player_name)
+def search_players(player_name: str, page_number: Optional[int] = 1):
+    tfmkt = TransfermarktPlayerSearch(query=player_name, page_number=page_number)
     found_players = tfmkt.search_players()
     return found_players
 
