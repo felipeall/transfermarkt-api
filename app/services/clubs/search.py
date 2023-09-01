@@ -62,8 +62,8 @@ class TransfermarktClubSearch:
         url_page_number_active: list = self.page.xpath(Clubs.Search.PAGE_NUMBER_ACTIVE)
 
         if url_page_number_last:
-            last_page_number = int(url_page_number_last[0].split("=")[-1])
+            return int(url_page_number_last[0].split("=")[-1])
+        elif url_page_number_active:
+            return int(url_page_number_active[0].split("=")[-1])
         else:
-            last_page_number = int(url_page_number_active[0].split("=")[-1])
-
-        return last_page_number
+            return 1
