@@ -59,9 +59,9 @@ def zip_lists_into_dict(list_keys: list, list_values: list) -> dict:
 
 def extract_from_url(tfmkt_url: str, element: str = "id") -> Optional[str]:
     regex: str = (
-        r"/(?P<code>.+)"
-        r"/(?P<category>\D+)"
-        r"/(?P<type>\D+)"
+        r"/(?P<code>[\w-]+)"
+        r"/(?P<category>[\w-]+)"
+        r"/(?P<type>[\w-]+)"
         r"/(?P<id>\w+)"
         r"(/saison_id/(?P<season_id>\d{4}))?"
         r"(/transfer_id/(?P<transfer_id>\d+))?"
@@ -98,7 +98,10 @@ def get_text_by_xpath(
     iloc_to: Optional[int] = None,
     join_str: Optional[str] = None,
 ) -> Optional[str]:
-    element = self.page.xpath(xpath)
+    try:
+        element = self.page.xpath(xpath)
+    except AttributeError:
+        element = self.xpath(xpath)
 
     if not element:
         return None
