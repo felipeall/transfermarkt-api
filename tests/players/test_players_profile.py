@@ -64,7 +64,7 @@ def test_players_profile_id_28003():
         "id": "28003",
         "name": "Messi",
         "nameInHomeCountry": "Lionel Andrés Messi Cuccitini",
-        "imageURL": "https://img.a.transfermarkt.technology/portrait/header/28003-1690045464.jpg?lm=1",
+        "imageURL": "https://img.a.transfermarkt.technology/portrait/header/28003-1694590254.jpg?lm=1",
         "dateOfBirth": "Jun 24, 1987",
         "placeOfBirth": {"city": "Rosario", "country": "Argentina"},
         "age": "36",

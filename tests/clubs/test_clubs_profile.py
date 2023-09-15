@@ -33,8 +33,8 @@ def test_clubs_profile_id_210():
         "stadiumName": "Arena do Grêmio",
         "stadiumSeats": "60.540",
         "currentTransferRecord": "+€344k",
-        "currentMarketValue": "€65.45m",
-        "squad": {"size": "33", "averageAge": "26.2", "foreigners": "8", "nationalTeamPlayers": "3"},
+        "currentMarketValue": "€57.75m",
+        "squad": {"size": "31", "averageAge": "26.5", "foreigners": "8", "nationalTeamPlayers": "3"},
         "league": {
             "id": "BRA1",
             "name": "Campeonato Brasileiro Série A",
