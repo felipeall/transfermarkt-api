@@ -77,6 +77,14 @@ class Players:
             "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__market-value']//text()"
         )
 
+    class Stats:
+        PLAYER_STATS: str = "//table[@class='items']//tbody//td"
+        COMPETITIONS_IDS: str = ".//a//@href"
+        COMPETITIONS_NAMES: str = ".//a//text()"
+        CLUBS_IDS: str = ".//a/@href"
+        CLUBS_NAMES: str = ".//a//@title"
+        APPEARANCES: str = ".//a//text()"
+
 
 class Clubs:
     class Profile:

@@ -96,16 +96,17 @@ def test_players_market_value_id_28003():
             {"age": "35", "date": "Nov 2, 2022", "value": "€50.00m"},
             {"age": "35", "date": "Mar 27, 2023", "value": "€45.00m"},
             {"age": "36", "date": "Jun 27, 2023", "value": "€35.00m"},
+            {"age": "36", "date": "Aug 22, 2023", "value": "€35.00m"},
         ],
         "ranking": {
             "Worldwide": "171",
             "MLS": "1",
             "Miami": "1",
             "Argentina": "8",
-            "Right Winger": "14",
+            "Right Winger": "16",
             "Year 1987": "1",
         },
-        "lastUpdate": "Jun 27, 2023",
+        "lastUpdate": "Aug 22, 2023",
     }
 
     assert result == expected
