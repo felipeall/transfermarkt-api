@@ -84,6 +84,7 @@ class Players:
         CLUBS_IDS: str = ".//a/@href"
         CLUBS_NAMES: str = ".//a//@title"
         APPEARANCES: str = ".//a//text()"
+        GOALKEEPER: str = "//li[contains(text(), 'Position:')]//span//text()"
 
 
 class Clubs:
