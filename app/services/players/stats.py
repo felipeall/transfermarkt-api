@@ -83,7 +83,6 @@ class TransfermarktPlayerStats:
             )
         ]
 
-
     def parse_player_stats_goalkeeper(self) -> list:
         stats: list[ElementTree] = self.page.xpath(Players.Stats.PLAYER_STATS)
 
@@ -108,9 +107,9 @@ class TransfermarktPlayerStats:
         return [
             {
                 "season": season,
-                "competitionId": competition_id,
+                "competitionID": competition_id,
                 "competitionName": competition_name,
-                "clubId": club_id,
+                "clubID": club_id,
                 "clubName": club_name,
                 "appearances": appearance,
                 "goals": goal,
