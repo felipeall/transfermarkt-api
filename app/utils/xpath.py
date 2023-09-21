@@ -102,7 +102,7 @@ class Clubs:
         WEBSITE: str = "//th[text()='Website:']//following::td[1]//text()"
         FOUNDED_ON: str = "//th[text()='Founded:']//following::td[1]//text()"
         MEMBERS: str = "//th[text()='Members:']//following::td[1]//text()"
-        MEMBERS_DATE: str = "//th[text()='Members:']//following::td[1]//text()"
+        MEMBERS_DATE: str = "//th[text()='Members:']//following::td[1]//span//text()"
         OTHER_SPORTS: str = "//th[text()='Other sports:']//following::td[1]//text()"
         COLORS: str = "//p[@class='vereinsfarbe']//@style"
         STADIUM_NAME: str = "//li[contains(text(), 'Stadium:')]//span//a//text()"

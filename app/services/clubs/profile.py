@@ -1,91 +1,74 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from datetime import datetime
 
-from fastapi import HTTPException
-
-from app.utils.utils import (
-    clean_response,
-    extract_from_url,
-    get_list_by_xpath,
-    get_text_by_xpath,
-    remove_str,
-    request_url_page,
-    safe_regex,
-    safe_split,
-)
+from app.services.base import TransfermarktBase
+from app.utils.regex import REGEX_BG_COLOR, REGEX_COUNTRY_ID, REGEX_MEMBERS_DATE
+from app.utils.utils import clean_response, extract_from_url, remove_str, safe_regex, safe_split
 from app.utils.xpath import Clubs
 
 
 @dataclass
-class TransfermarktClubProfile:
-    club_id: str
-    club_profile: dict = field(default_factory=lambda: {})
+class TransfermarktClubProfile(TransfermarktBase):
+    club_id: str = None
+    URL: str = "https://www.transfermarkt.us/-/datenfakten/verein/{club_id}"
+
+    def __post_init__(self):
+        self.URL = self.URL.format(club_id=self.club_id)
+        self.page = self.request_url_page()
+        self.raise_exception_if_not_found(xpath=Clubs.Profile.URL)
 
     def get_club_profile(self):
-        self._request_page()
-
-        self.club_profile["id"] = self.club_id
-        self.club_profile["url"] = get_text_by_xpath(self, Clubs.Profile.URL)
-        self._check_club_found()
-        self.club_profile["name"] = get_text_by_xpath(self, Clubs.Profile.NAME)
-        self.club_profile["officialName"] = get_text_by_xpath(self, Clubs.Profile.NAME_OFFICIAL)
-        self.club_profile["image"] = safe_split(get_text_by_xpath(self, Clubs.Profile.IMAGE), "?")[0]
-        self.club_profile["legalForm"] = get_text_by_xpath(self, Clubs.Profile.LEGAL_FORM)
-        self.club_profile["addressLine1"] = get_text_by_xpath(self, Clubs.Profile.ADDRESS_LINE_1)
-        self.club_profile["addressLine2"] = get_text_by_xpath(self, Clubs.Profile.ADDRESS_LINE_2)
-        self.club_profile["addressLine3"] = get_text_by_xpath(self, Clubs.Profile.ADDRESS_LINE_3)
-        self.club_profile["tel"] = get_text_by_xpath(self, Clubs.Profile.TEL)
-        self.club_profile["fax"] = get_text_by_xpath(self, Clubs.Profile.FAX)
-        self.club_profile["website"] = get_text_by_xpath(self, Clubs.Profile.WEBSITE)
-        self.club_profile["foundedOn"] = get_text_by_xpath(self, Clubs.Profile.FOUNDED_ON)
-        self.club_profile["members"] = get_text_by_xpath(self, Clubs.Profile.MEMBERS)
-        self.club_profile["membersDate"] = remove_str(
-            get_text_by_xpath(self, Clubs.Profile.MEMBERS_DATE, pos=1),
-            ["(", "Score", ":", ")"],
+        self.response["id"] = self.club_id
+        self.response["url"] = self.get_text_by_xpath(Clubs.Profile.URL)
+        self.response["name"] = self.get_text_by_xpath(Clubs.Profile.NAME)
+        self.response["officialName"] = self.get_text_by_xpath(Clubs.Profile.NAME_OFFICIAL)
+        self.response["image"] = safe_split(self.get_text_by_xpath(Clubs.Profile.IMAGE), "?")[0]
+        self.response["legalForm"] = self.get_text_by_xpath(Clubs.Profile.LEGAL_FORM)
+        self.response["addressLine1"] = self.get_text_by_xpath(Clubs.Profile.ADDRESS_LINE_1)
+        self.response["addressLine2"] = self.get_text_by_xpath(Clubs.Profile.ADDRESS_LINE_2)
+        self.response["addressLine3"] = self.get_text_by_xpath(Clubs.Profile.ADDRESS_LINE_3)
+        self.response["tel"] = self.get_text_by_xpath(Clubs.Profile.TEL)
+        self.response["fax"] = self.get_text_by_xpath(Clubs.Profile.FAX)
+        self.response["website"] = self.get_text_by_xpath(Clubs.Profile.WEBSITE)
+        self.response["foundedOn"] = self.get_text_by_xpath(Clubs.Profile.FOUNDED_ON)
+        self.response["members"] = self.get_text_by_xpath(Clubs.Profile.MEMBERS)
+        self.response["membersDate"] = safe_regex(
+            self.get_text_by_xpath(Clubs.Profile.MEMBERS_DATE),
+            REGEX_MEMBERS_DATE,
+            "date",
         )
-        self.club_profile["otherSports"] = safe_split(get_text_by_xpath(self, Clubs.Profile.OTHER_SPORTS), ",")
-        self.club_profile["colors"] = [
-            remove_str(e, ["background-color:", ";"]) for e in get_list_by_xpath(self, Clubs.Profile.COLORS) if "#" in e
+        self.response["otherSports"] = safe_split(self.get_text_by_xpath(Clubs.Profile.OTHER_SPORTS), ",")
+        self.response["colors"] = [
+            safe_regex(color, REGEX_BG_COLOR, "color")
+            for color in self.get_list_by_xpath(Clubs.Profile.COLORS)
+            if "#" in color
         ]
-
-        self.club_profile["stadiumName"] = get_text_by_xpath(self, Clubs.Profile.STADIUM_NAME)
-        self.club_profile["stadiumSeats"] = remove_str(get_text_by_xpath(self, Clubs.Profile.STADIUM_SEATS), "Seats")
-
-        self.club_profile["currentTransferRecord"] = get_text_by_xpath(self, Clubs.Profile.TRANSFER_RECORD)
-        self.club_profile["currentMarketValue"] = get_text_by_xpath(
-            self,
+        self.response["stadiumName"] = self.get_text_by_xpath(Clubs.Profile.STADIUM_NAME)
+        self.response["stadiumSeats"] = remove_str(self.get_text_by_xpath(Clubs.Profile.STADIUM_SEATS), ["Seats", "."])
+        self.response["currentTransferRecord"] = self.get_text_by_xpath(Clubs.Profile.TRANSFER_RECORD)
+        self.response["currentMarketValue"] = self.get_text_by_xpath(
             Clubs.Profile.MARKET_VALUE,
             iloc_to=3,
             join_str="",
         )
-
-        self.club_profile["confederation"] = get_text_by_xpath(self, Clubs.Profile.CONFEDERATION)
-        self.club_profile["fifaWorldRanking"] = remove_str(get_text_by_xpath(self, Clubs.Profile.RANKING), "Pos")
-
-        self.club_profile["squad"] = {
-            "size": get_text_by_xpath(self, Clubs.Profile.SQUAD_SIZE),
-            "averageAge": get_text_by_xpath(self, Clubs.Profile.SQUAD_AVG_AGE),
-            "foreigners": get_text_by_xpath(self, Clubs.Profile.SQUAD_FOREIGNERS),
-            "nationalTeamPlayers": get_text_by_xpath(self, Clubs.Profile.SQUAD_NATIONAL_PLAYERS),
+        self.response["confederation"] = self.get_text_by_xpath(Clubs.Profile.CONFEDERATION)
+        self.response["fifaWorldRanking"] = remove_str(self.get_text_by_xpath(Clubs.Profile.RANKING), "Pos")
+        self.response["squad"] = {
+            "size": self.get_text_by_xpath(Clubs.Profile.SQUAD_SIZE),
+            "averageAge": self.get_text_by_xpath(Clubs.Profile.SQUAD_AVG_AGE),
+            "foreigners": self.get_text_by_xpath(Clubs.Profile.SQUAD_FOREIGNERS),
+            "nationalTeamPlayers": self.get_text_by_xpath(Clubs.Profile.SQUAD_NATIONAL_PLAYERS),
         }
-
-        self.club_profile["league"] = {
-            "id": extract_from_url(get_text_by_xpath(self, Clubs.Profile.LEAGUE_ID)),
-            "name": get_text_by_xpath(self, Clubs.Profile.LEAGUE_NAME),
-            "countryID": safe_regex(get_text_by_xpath(self, Clubs.Profile.LEAGUE_COUNTRY_ID), r"(?P<id>\d)", "id"),
-            "countryName": get_text_by_xpath(self, Clubs.Profile.LEAGUE_COUNTRY_NAME),
-            "tier": get_text_by_xpath(self, Clubs.Profile.LEAGUE_TIER),
+        self.response["league"] = {
+            "id": extract_from_url(self.get_text_by_xpath(Clubs.Profile.LEAGUE_ID)),
+            "name": self.get_text_by_xpath(Clubs.Profile.LEAGUE_NAME),
+            "countryID": safe_regex(self.get_text_by_xpath(Clubs.Profile.LEAGUE_COUNTRY_ID), REGEX_COUNTRY_ID, "id"),
+            "countryName": self.get_text_by_xpath(Clubs.Profile.LEAGUE_COUNTRY_NAME),
+            "tier": self.get_text_by_xpath(Clubs.Profile.LEAGUE_TIER),
         }
-
-        self.club_profile["historicalCrests"] = [
-            safe_split(e, "?")[0] for e in get_list_by_xpath(self, Clubs.Profile.CRESTS_HISTORICAL)
+        self.response["historicalCrests"] = [
+            safe_split(crest, "?")[0] for crest in self.get_list_by_xpath(Clubs.Profile.CRESTS_HISTORICAL)
         ]
+        self.response["updatedAt"] = datetime.now()
 
-        return clean_response(self.club_profile)
-
-    def _request_page(self) -> None:
-        club_url = f"https://www.transfermarkt.us/-/datenfakten/verein/{self.club_id}"
-        self.page = request_url_page(url=club_url)
-
-    def _check_club_found(self) -> None:
-        if not self.club_profile["url"]:
-            raise HTTPException(status_code=404, detail=f"Club Profile not found for id: {self.club_id}")
+        return clean_response(self.response)
