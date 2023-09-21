@@ -197,3 +197,11 @@ class Competitions:
     class Clubs:
         URLS: str = "//td[@class='hauptlink no-border-links']//a[1]//@href"
         NAMES: str = "//td[@class='hauptlink no-border-links']//a//text()"
+
+
+class Commons:
+    class Search:
+        PAGE_NUMBER_LAST: str = (
+            "//li[@class='tm-pagination__list-item tm-pagination__list-item--icon-last-page']//@href"
+        )
+        PAGE_NUMBER_ACTIVE: str = "//li[@class='tm-pagination__list-item tm-pagination__list-item--active']//@href"

@@ -45,12 +45,16 @@ def request_url_page(url: str) -> ElementTree:
     return convert_bsoup_to_page(bsoup=bsoup)
 
 
-def clean_response(nested: Union[dict, list]) -> Union[dict, list]:
-    if isinstance(nested, dict):
-        return {k: v for k, v in ((k, clean_response(v)) for k, v in nested.items()) if v or isinstance(v, bool)}
-    if isinstance(nested, list):
-        return [v for v in map(clean_response, nested) if v or isinstance(v, bool)]
-    return nested
+def clean_response(response: Union[dict, list]) -> Union[dict, list]:
+    if isinstance(response, dict):
+        return {
+            k: v
+            for k, v in ((k, clean_response(v)) for k, v in response.items())
+            if (v or isinstance(v, bool)) and v != "-"
+        }
+    if isinstance(response, list):
+        return [v for v in map(clean_response, response) if (v or isinstance(v, bool)) and v != "-"]
+    return response
 
 
 def zip_lists_into_dict(list_keys: list, list_values: list) -> dict:
