@@ -1,6 +1,7 @@
 import re
 from typing import Optional, Union
 from xml.etree import ElementTree
+from urllib.parse import unquote
 
 import requests
 from bs4 import BeautifulSoup
@@ -58,6 +59,8 @@ def zip_lists_into_dict(list_keys: list, list_values: list) -> dict:
 
 
 def extract_from_url(tfmkt_url: str, element: str = "id") -> Optional[str]:
+    decoded_tfmkt_url = unquote(tfmkt_url)
+
     regex: str = (
         r"/(?P<code>[\w-]+)"
         r"/(?P<category>[\w-]+)"
@@ -67,7 +70,7 @@ def extract_from_url(tfmkt_url: str, element: str = "id") -> Optional[str]:
         r"(/transfer_id/(?P<transfer_id>\d+))?"
     )
     try:
-        groups: dict = re.match(regex, tfmkt_url).groupdict()
+        groups: dict = re.match(regex, decoded_tfmkt_url).groupdict()
     except TypeError:
         return None
     return groups.get(element)
