@@ -172,23 +172,15 @@ class Competitions:
         NAME: str = "//div[@class='data-header__headline-container']//h1//text()"
 
     class Search:
-        RESULT: str = "//div[h2[contains(text(), 'competitions')]]"
-        RESULT_COUNTRIES: str = ".//td[@class='zentriert'][1]"
-        RESULT_CLUBS: str = ".//td[@class='zentriert'][2]"
-        RESULT_PLAYERS: str = ".//td[@class='rechts']"
-        RESULT_MARKETVALUES: str = ".//td[@class='zentriert'][3]"
-        RESULT_CONTINENTS: str = ".//td[@class='zentriert'][5]"
-        NAMES: str = ".//td//a//@title"
-        URLS: str = ".//td//a//@href"
-        COUNTRIES: str = ".//@title"
-        CLUBS: str = ".//text()"
-        PLAYERS: str = ".//text()"
-        MARKETVALUES: str = ".//text()"
-        CONTINENTS: str = ".//text()"
-        PAGE_NUMBER_LAST: str = (
-            ".//li[@class='tm-pagination__list-item tm-pagination__list-item--icon-last-page']//@href"
-        )
-        PAGE_NUMBER_ACTIVE: str = ".//li[@class='tm-pagination__list-item tm-pagination__list-item--active']//@href"
+        BASE: str = "//div[@class='box'][h2[contains(text(), 'competitions')]]"
+        URLS: str = BASE + "//td//a//@href"
+        NAMES: str = BASE + "//td//a//@title"
+        COUNTRIES: str = BASE + "//td[@class='zentriert'][1]//@title"
+        CLUBS: str = BASE + "//td[@class='zentriert'][2]//text()"
+        PLAYERS: str = BASE + "//td[@class='rechts']//text()"
+        TOTAL_MARKET_VALUES: str = BASE + "//td[@class='zentriert'][3]//text()"
+        MEAN_MARKET_VALUES: str = BASE + "//td[@class='zentriert'][4]//text()"
+        CONTINENTS: str = BASE + "//td[@class='zentriert'][5]//text()"
 
     class Clubs:
         URLS: str = "//td[@class='hauptlink no-border-links']//a[1]//@href"
