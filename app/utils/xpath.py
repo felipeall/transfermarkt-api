@@ -127,16 +127,12 @@ class Clubs:
         CRESTS_HISTORICAL: str = "//div[@class='wappen-datenfakten-wappen']//@src"
 
     class Search:
-        RESULT: str = "//div[h2[contains(text(), 'Clubs')]]"
-        NAMES: str = ".//td[@class='hauptlink']//a//@title"
-        URLS: str = ".//td[@class='hauptlink']//a//@href"
-        COUNTRIES: str = ".//td[@class='zentriert']//img[@class='flaggenrahmen']//@title"
-        MARKET_VALUES: str = ".//td[@class='rechts']//text()"
-        SQUADS: str = ".//td[@class='zentriert']//text()"
-        PAGE_NUMBER_LAST: str = (
-            ".//li[@class='tm-pagination__list-item tm-pagination__list-item--icon-last-page']//@href"
-        )
-        PAGE_NUMBER_ACTIVE: str = ".//li[@class='tm-pagination__list-item tm-pagination__list-item--active']//@href"
+        BASE: str = "//div[@class='box'][h2[contains(text(), 'Clubs')]]"
+        NAMES: str = BASE + "//td[@class='hauptlink']//a//@title"
+        URLS: str = BASE + "//td[@class='hauptlink']//a//@href"
+        COUNTRIES: str = BASE + "//td[@class='zentriert']//img[@class='flaggenrahmen']//@title"
+        MARKET_VALUES: str = BASE + "//td[@class='rechts']//text()"
+        SQUADS: str = BASE + "//td[@class='zentriert']//text()"
 
     class Players:
         PAST_FLAG: str = "//div[@id='yw1']//thead//text()"
