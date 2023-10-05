@@ -1,51 +1,37 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from datetime import datetime
 
-from fastapi import HTTPException
-
-from app.utils.utils import (
-    extract_from_url,
-    get_list_by_xpath,
-    get_text_by_xpath,
-    request_url_page,
-)
+from app.services.base import TransfermarktBase
+from app.utils.utils import extract_from_url
 from app.utils.xpath import Competitions
 
 
 @dataclass
-class TransfermarktCompetitionClubs:
-    competition_id: str
+class TransfermarktCompetitionClubs(TransfermarktBase):
+    competition_id: str = None
     season_id: str = None
-    competition_clubs: dict = field(default_factory=lambda: {})
+    URL: str = "https://www.transfermarkt.com/-/startseite/wettbewerb/{competition_id}/plus/?saison_id={season_id}"
 
-    def get_competition_clubs(self):
-        self._request_page()
+    def __post_init__(self):
+        self.URL = self.URL.format(competition_id=self.competition_id, season_id=self.season_id)
+        self.page = self.request_url_page()
+        self.raise_exception_if_not_found(xpath=Competitions.Profile.NAME)
 
-        self.competition_clubs["id"] = self.competition_id
-        self.competition_clubs["name"] = get_text_by_xpath(self, Competitions.Profile.NAME)
-
-        self._check_competition_found()
-
-        self.competition_clubs["seasonID"] = extract_from_url(
-            get_text_by_xpath(self, Competitions.Profile.URL),
-            "season_id",
-        )
-        self.competition_clubs["clubs"] = self._parse_competition_clubs()
-
-        return self.competition_clubs
-
-    def _request_page(self) -> None:
-        url = f"https://www.transfermarkt.com/-/startseite/wettbewerb/{self.competition_id}"
-        if self.season_id:
-            url += f"/plus/?saison_id={self.season_id}"
-        self.page = request_url_page(url=url)
-
-    def _check_competition_found(self) -> None:
-        if not self.competition_clubs["name"]:
-            raise HTTPException(status_code=404, detail=f"Competition Clubs not found for id: {self.competition_id}")
-
-    def _parse_competition_clubs(self):
-        urls = get_list_by_xpath(self, Competitions.Clubs.URLS)
-        names = get_list_by_xpath(self, Competitions.Clubs.NAMES)
+    def __parse_competition_clubs(self) -> list:
+        urls = self.get_list_by_xpath(Competitions.Clubs.URLS)
+        names = self.get_list_by_xpath(Competitions.Clubs.NAMES)
         ids = [extract_from_url(url) for url in urls]
 
         return [{"id": idx, "name": name} for idx, name in zip(ids, names)]
+
+    def get_competition_clubs(self) -> dict:
+        self.response["id"] = self.competition_id
+        self.response["name"] = self.get_text_by_xpath(Competitions.Profile.NAME)
+        self.response["seasonID"] = extract_from_url(
+            self.get_text_by_xpath(Competitions.Profile.URL),
+            "season_id",
+        )
+        self.response["clubs"] = self.__parse_competition_clubs()
+        self.response["updatedAt"] = datetime.now()
+
+        return self.response
