@@ -1,78 +1,66 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime
 
-from fastapi import HTTPException
-
+from app.services.base import TransfermarktBase
 from app.utils.utils import (
     clean_response,
     extract_from_url,
     get_list_by_xpath,
-    get_text_by_xpath,
-    request_url_page,
 )
 from app.utils.xpath import Players
 
 
 @dataclass
-class TransfermarktPlayerProfile:
-    player_id: str
-    player_info: dict = field(default_factory=lambda: {})
+class TransfermarktPlayerProfile(TransfermarktBase):
+    player_id: str = None
+    URL: str = "https://www.transfermarkt.com/-/profil/spieler/{player_id}"
+
+    def __post_init__(self):
+        self.URL = self.URL.format(player_id=self.player_id)
+        self.page = self.request_url_page()
+        self.raise_exception_if_not_found(xpath=Players.Profile.URL)
 
     def get_player_profile(self) -> dict:
-        self._request_player_page()
-        self.player_info["url"] = get_text_by_xpath(self, Players.Profile.URL)
-
-        self._check_player_found()
-
-        self.player_info["id"] = get_text_by_xpath(self, Players.Profile.ID)
-        self.player_info["name"] = get_text_by_xpath(self, Players.Profile.NAME)
-        self.player_info["fullName"] = get_text_by_xpath(self, Players.Profile.FULL_NAME)
-        self.player_info["nameInHomeCountry"] = get_text_by_xpath(self, Players.Profile.NAME_IN_HOME_COUNTRY)
-        self.player_info["imageURL"] = get_text_by_xpath(self, Players.Profile.IMAGE_URL)
-        self.player_info["dateOfBirth"] = get_text_by_xpath(self, Players.Profile.DATE_OF_BIRTH)
-        self.player_info["placeOfBirth"] = {
-            "city": get_text_by_xpath(self, Players.Profile.PLACE_OF_BIRTH_CITY),
-            "country": get_text_by_xpath(self, Players.Profile.PLACE_OF_BIRTH_COUNTRY),
+        self.response["id"] = self.get_text_by_xpath(Players.Profile.ID)
+        self.response["url"] = self.get_text_by_xpath(Players.Profile.URL)
+        self.response["name"] = self.get_text_by_xpath(Players.Profile.NAME)
+        self.response["description"] = self.get_text_by_xpath(Players.Profile.DESCRIPTION)
+        self.response["fullName"] = self.get_text_by_xpath(Players.Profile.FULL_NAME)
+        self.response["nameInHomeCountry"] = self.get_text_by_xpath(Players.Profile.NAME_IN_HOME_COUNTRY)
+        self.response["imageURL"] = self.get_text_by_xpath(Players.Profile.IMAGE_URL)
+        self.response["dateOfBirth"] = self.get_text_by_xpath(Players.Profile.DATE_OF_BIRTH)
+        self.response["placeOfBirth"] = {
+            "city": self.get_text_by_xpath(Players.Profile.PLACE_OF_BIRTH_CITY),
+            "country": self.get_text_by_xpath(Players.Profile.PLACE_OF_BIRTH_COUNTRY),
         }
-        self.player_info["age"] = get_text_by_xpath(self, Players.Profile.AGE)
-        self.player_info["height"] = get_text_by_xpath(self, Players.Profile.HEIGHT)
-        self.player_info["citizenship"] = get_list_by_xpath(self, Players.Profile.CITIZENSHIP)
-        self.player_info["isRetired"] = get_text_by_xpath(self, Players.Profile.RETIRED_SINCE_DATE) is not None
-        self.player_info["retiredSince"] = get_text_by_xpath(self, Players.Profile.RETIRED_SINCE_DATE)
-        self.player_info["position"] = {
-            "main": get_text_by_xpath(self, Players.Profile.POSITION_MAIN),
+        self.response["age"] = self.get_text_by_xpath(Players.Profile.AGE)
+        self.response["height"] = self.get_text_by_xpath(Players.Profile.HEIGHT)
+        self.response["citizenship"] = get_list_by_xpath(self, Players.Profile.CITIZENSHIP)
+        self.response["isRetired"] = self.get_text_by_xpath(Players.Profile.RETIRED_SINCE_DATE) is not None
+        self.response["retiredSince"] = self.get_text_by_xpath(Players.Profile.RETIRED_SINCE_DATE)
+        self.response["position"] = {
+            "main": self.get_text_by_xpath(Players.Profile.POSITION_MAIN),
             "other": get_list_by_xpath(self, Players.Profile.POSITION_OTHER),
         }
-        self.player_info["foot"] = get_text_by_xpath(self, Players.Profile.FOOT)
-        self.player_info["shirtNumber"] = get_text_by_xpath(self, Players.Profile.SHIRT_NUMBER)
-        self.player_info["club"] = {
-            "id": extract_from_url(get_text_by_xpath(self, Players.Profile.CURRENT_CLUB_URL)),
-            "name": get_text_by_xpath(self, Players.Profile.CURRENT_CLUB_NAME),
-            "joined": get_text_by_xpath(self, Players.Profile.CURRENT_CLUB_JOINED),
-            "contractExpires": get_text_by_xpath(self, Players.Profile.CURRENT_CLUB_CONTRACT_EXPIRES),
-            "contractOption": get_text_by_xpath(self, Players.Profile.CURRENT_CLUB_CONTRACT_OPTION),
-            "lastClub": get_text_by_xpath(self, Players.Profile.LAST_CLUB_NAME),
-            "lastClubId": extract_from_url(get_text_by_xpath(self, Players.Profile.LAST_CLUB_URL)),
-            "mostGamesFor": get_text_by_xpath(self, Players.Profile.MOST_GAMES_FOR_CLUB_NAME),
+        self.response["foot"] = self.get_text_by_xpath(Players.Profile.FOOT)
+        self.response["shirtNumber"] = self.get_text_by_xpath(Players.Profile.SHIRT_NUMBER)
+        self.response["club"] = {
+            "id": extract_from_url(self.get_text_by_xpath(Players.Profile.CURRENT_CLUB_URL)),
+            "name": self.get_text_by_xpath(Players.Profile.CURRENT_CLUB_NAME),
+            "joined": self.get_text_by_xpath(Players.Profile.CURRENT_CLUB_JOINED),
+            "contractExpires": self.get_text_by_xpath(Players.Profile.CURRENT_CLUB_CONTRACT_EXPIRES),
+            "contractOption": self.get_text_by_xpath(Players.Profile.CURRENT_CLUB_CONTRACT_OPTION),
+            "lastClubID": extract_from_url(self.get_text_by_xpath(Players.Profile.LAST_CLUB_URL)),
+            "lastClubName": self.get_text_by_xpath(Players.Profile.LAST_CLUB_NAME),
+            "mostGamesFor": self.get_text_by_xpath(Players.Profile.MOST_GAMES_FOR_CLUB_NAME),
         }
-        self.player_info["marketValue"] = {
-            "current": get_text_by_xpath(self, Players.Profile.MARKET_VALUE_CURRENT),
-            "highest": get_text_by_xpath(self, Players.Profile.MARKET_VALUE_HIGHEST),
+        self.response["marketValue"] = self.get_text_by_xpath(Players.Profile.MARKET_VALUE, iloc_to=3, join_str="")
+        self.response["agent"] = {
+            "name": self.get_text_by_xpath(Players.Profile.AGENT_NAME),
+            "url": self.get_text_by_xpath(Players.Profile.AGENT_URL),
         }
-        self.player_info["agent"] = {
-            "name": get_text_by_xpath(self, Players.Profile.AGENT_NAME),
-            "url": get_text_by_xpath(self, Players.Profile.AGENT_URL),
-        }
-        self.player_info["outfitter"] = get_text_by_xpath(self, Players.Profile.OUTFITTER)
-        self.player_info["socialMedia"] = get_list_by_xpath(self, Players.Profile.SOCIAL_MEDIA)
-        self.player_info["lastUpdate"] = datetime.now()
+        self.response["outfitter"] = self.get_text_by_xpath(Players.Profile.OUTFITTER)
+        self.response["socialMedia"] = get_list_by_xpath(self, Players.Profile.SOCIAL_MEDIA)
+        self.response["updatedAt"] = datetime.now()
 
-        return clean_response(self.player_info)
-
-    def _request_player_page(self) -> None:
-        player_url = f"https://www.transfermarkt.com/-/profil/spieler/{self.player_id}"
-        self.page = request_url_page(url=player_url)
-
-    def _check_player_found(self) -> None:
-        if not self.player_info["url"]:
-            raise HTTPException(status_code=404, detail=f"Player Profile not found for id: {self.player_id}")
+        return clean_response(self.response)
