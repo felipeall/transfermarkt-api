@@ -162,3 +162,8 @@ def safe_split(text: Optional[str], delimiter: str) -> Optional[list]:
         return None
 
     return [trim(t) for t in text.split(delimiter)]
+
+
+def to_camel_case(headers: list) -> list:
+    camel_case_headers = ["".join(word.capitalize() for word in header.split()) for header in headers]
+    return [header[0].lower() + header[1:] for header in camel_case_headers]
