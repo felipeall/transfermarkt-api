@@ -2,7 +2,6 @@ import json
 import re
 from dataclasses import dataclass, field
 
-from bs4 import ResultSet
 from fastapi import HTTPException
 
 from app.utils.utils import (
@@ -10,6 +9,7 @@ from app.utils.utils import (
     convert_bsoup_to_page,
     get_list_by_xpath,
     get_text_by_xpath,
+    make_request,
     remove_str,
     request_url_bsoup,
     zip_lists_into_dict,
@@ -52,29 +52,21 @@ class TransfermarktPlayerMarketValue:
             raise HTTPException(status_code=404, detail=f"Player Market Value not found for id: {self.player_id}")
 
     def _parse_marketvalue_history(self) -> list:
-        pages: ResultSet = self.bsoup.findAll("script", type="text/javascript")
-        page_highcharts: list = [page for page in pages if str(page).__contains__("Highcharts.Chart")]
+        response = make_request(f"https://www.transfermarkt.com/ceapi/marketValueDevelopment/graph/{self.player_id}")
+        data: list = json.loads(response.content).get("list")
 
-        if (not pages) or (not page_highcharts):
-            return []
-
-        data: str = (
-            re.search("data':(.*?)}],'", str(page_highcharts))
-            .group(1)
-            .replace("\\x27", "`")
-            .encode("raw_unicode_escape")
-            .decode("unicode_escape")
-            .replace("'", '"')
-        )
-
-        all_data: list = json.loads(data)
-        for entry in all_data:
+        wappen = None
+        for entry in data:
             entry["date"] = entry.pop("datum_mw")
-            entry["clubID"] = re.search(r"(?P<club_id>\d+)", entry["marker"]["symbol"]).groupdict().get("club_id")
             entry["clubName"] = entry.pop("verein")
             entry["value"] = entry.pop("mw")
+            if not entry.get("wappen"):
+                entry["wappen"] = wappen
+            else:
+                wappen = entry["wappen"]
+            entry["clubID"] = re.search(r"(?P<club_id>\d+)", entry["wappen"]).groupdict().get("club_id")
 
         return [
-            {key: entry[key] for key in entry if key in ["date", "age", "club_id", "club_name", "value"]}
-            for entry in all_data
+            {key: entry[key] for key in entry if key in ["date", "age", "clubID", "clubName", "value"]}
+            for entry in data
         ]
