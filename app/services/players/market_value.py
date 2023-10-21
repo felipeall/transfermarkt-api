@@ -1,5 +1,6 @@
 import json
 from dataclasses import dataclass
+from datetime import datetime
 
 from app.services.base import TransfermarktBase
 from app.utils.regex import REGEX_CHART_CLUB_ID
@@ -50,5 +51,6 @@ class TransfermarktPlayerMarketValue(TransfermarktBase):
             self.get_list_by_xpath(Players.MarketValue.RANKINGS_NAMES),
             self.get_list_by_xpath(Players.MarketValue.RANKINGS_POSITIONS),
         )
+        self.response["updatedAt"] = datetime.now()
 
         return clean_response(self.response)

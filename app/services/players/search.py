@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import datetime
 
 from app.services.base import TransfermarktBase
 from app.utils.regex import REGEX_CHART_CLUB_ID
@@ -61,5 +62,6 @@ class TransfermarktPlayerSearch(TransfermarktBase):
         self.response["pageNumber"] = self.page_number
         self.response["lastPageNumber"] = self.get_search_last_page_number(Players.Search.BASE)
         self.response["results"] = self.__parse_search_results()
+        self.response["updatedAt"] = datetime.now()
 
         return self.response

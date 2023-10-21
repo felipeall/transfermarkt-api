@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import datetime
 
 from app.services.base import TransfermarktBase
 from app.utils.utils import extract_from_url
@@ -49,5 +50,6 @@ class TransfermarktClubSearch(TransfermarktBase):
         self.response["pageNumber"] = self.page_number
         self.response["lastPageNumber"] = self.get_search_last_page_number(Clubs.Search.BASE)
         self.response["results"] = self.__parse_search_results()
+        self.response["updatedAt"] = datetime.now()
 
         return self.response
