@@ -8,7 +8,7 @@ from fastapi import HTTPException
 from lxml import etree
 from requests import Response, TooManyRedirects
 
-from app.utils.utils import get_text_by_xpath, trim
+from app.utils.utils import trim
 from app.utils.xpath import Commons
 
 
@@ -59,7 +59,7 @@ class TransfermarktBase:
         return self.convert_bsoup_to_page(bsoup=bsoup)
 
     def raise_exception_if_not_found(self, xpath: str):
-        if not get_text_by_xpath(self, xpath):
+        if not self.get_text_by_xpath(xpath):
             raise HTTPException(status_code=404, detail=f"Invalid request (url: {self.URL})")
 
     def get_list_by_xpath(self, xpath: str, remove_empty: Optional[bool] = True) -> Optional[list]:

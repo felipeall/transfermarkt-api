@@ -5,7 +5,6 @@ from app.services.base import TransfermarktBase
 from app.utils.utils import (
     clean_response,
     extract_from_url,
-    get_list_by_xpath,
 )
 from app.utils.xpath import Players
 
@@ -35,12 +34,12 @@ class TransfermarktPlayerProfile(TransfermarktBase):
         }
         self.response["age"] = self.get_text_by_xpath(Players.Profile.AGE)
         self.response["height"] = self.get_text_by_xpath(Players.Profile.HEIGHT)
-        self.response["citizenship"] = get_list_by_xpath(self, Players.Profile.CITIZENSHIP)
+        self.response["citizenship"] = self.get_list_by_xpath(Players.Profile.CITIZENSHIP)
         self.response["isRetired"] = self.get_text_by_xpath(Players.Profile.RETIRED_SINCE_DATE) is not None
         self.response["retiredSince"] = self.get_text_by_xpath(Players.Profile.RETIRED_SINCE_DATE)
         self.response["position"] = {
             "main": self.get_text_by_xpath(Players.Profile.POSITION_MAIN),
-            "other": get_list_by_xpath(self, Players.Profile.POSITION_OTHER),
+            "other": self.get_list_by_xpath(Players.Profile.POSITION_OTHER),
         }
         self.response["foot"] = self.get_text_by_xpath(Players.Profile.FOOT)
         self.response["shirtNumber"] = self.get_text_by_xpath(Players.Profile.SHIRT_NUMBER)
@@ -60,7 +59,7 @@ class TransfermarktPlayerProfile(TransfermarktBase):
             "url": self.get_text_by_xpath(Players.Profile.AGENT_URL),
         }
         self.response["outfitter"] = self.get_text_by_xpath(Players.Profile.OUTFITTER)
-        self.response["socialMedia"] = get_list_by_xpath(self, Players.Profile.SOCIAL_MEDIA)
+        self.response["socialMedia"] = self.get_list_by_xpath(Players.Profile.SOCIAL_MEDIA)
         self.response["updatedAt"] = datetime.now()
 
         return clean_response(self.response)
