@@ -2,83 +2,193 @@ from datetime import datetime
 
 import pytest
 from fastapi import HTTPException
+from schema import And, Schema
 
 from app.services.players.profile import TransfermarktPlayerProfile
 
 
-def test_players_profile_id_0():
-    tfmkt = TransfermarktPlayerProfile(player_id="0")
-
+def test_players_profile_not_found():
     with pytest.raises(HTTPException):
-        tfmkt.get_player_profile()
+        TransfermarktPlayerProfile(player_id="0")
 
 
-def test_players_profile_id_3373():
-    tfmkt = TransfermarktPlayerProfile(player_id="3373")
-    result = tfmkt.get_player_profile()
-    last_update = result.pop("lastUpdate")
+def test_get_player_profile_28003(len_greater_than_0):
+    tfmk = TransfermarktPlayerProfile(player_id="28003")
+    result = tfmk.get_player_profile()
 
-    expected = {
-        "url": "/ronaldinho/profil/spieler/3373",
-        "id": "3373",
-        "name": "Ronaldinho",
-        "fullName": "Ronaldo de Assís Moreira",
-        "imageURL": "https://img.a.transfermarkt.technology/portrait/header/3373-1515762355.jpg?lm=1",
-        "dateOfBirth": "Mar 21, 1980",
-        "placeOfBirth": {"city": "Porto Alegre", "country": "Brazil"},
-        "age": "43",
-        "height": "1,79m",
-        "citizenship": ["Brazil", "Spain"],
-        "isRetired": True,
-        "retiredSince": "Jan 16, 2018",
-        "position": {"main": "Left Winger", "other": ["Attacking Midfield", "Second Striker"]},
-        "foot": "right",
-        "club": {
-            "name": "Retired",
-            "lastClub": "Fluminense Football Club",
-            "lastClubId": "2462",
-            "mostGamesFor": "Barcelona",
+    expected_schema = Schema(
+        {
+            "id": And(str, len_greater_than_0),
+            "url": And(str, len_greater_than_0),
+            "name": And(str, len_greater_than_0),
+            "description": And(str, len_greater_than_0),
+            "nameInHomeCountry": And(str, len_greater_than_0),
+            "imageURL": And(str, len_greater_than_0),
+            "dateOfBirth": And(str, len_greater_than_0),
+            "placeOfBirth": {
+                "city": And(str, len_greater_than_0),
+                "country": And(str, len_greater_than_0),
+            },
+            "age": And(str, len_greater_than_0),
+            "height": And(str, len_greater_than_0),
+            "citizenship": And(list, len_greater_than_0),
+            "isRetired": bool,
+            "position": {
+                "main": And(str, len_greater_than_0),
+                "other": And(list, len_greater_than_0),
+            },
+            "foot": And(str, len_greater_than_0),
+            "shirtNumber": And(str, len_greater_than_0),
+            "club": {
+                "id": And(str, len_greater_than_0),
+                "name": And(str, len_greater_than_0),
+                "joined": And(str, len_greater_than_0),
+                "contractExpires": And(str, len_greater_than_0),
+            },
+            "marketValue": And(str, len_greater_than_0),
+            "agent": {
+                "name": And(str, len_greater_than_0),
+            },
+            "outfitter": And(str, len_greater_than_0),
+            "socialMedia": And(list, len_greater_than_0),
+            "updatedAt": datetime,
         },
-        "marketValue": {"current": "-", "highest": "€80.00m"},
-        "outfitter": "Nike",
-        "socialMedia": [
-            "http://twitter.com/10Ronaldinho",
-            "http://facebook.com/ronaldinho/",
-            "http://instagram.com/ronaldinho/",
-            "http://www.ronaldinho.com/",
-            "http://www.tiktok.com/@ronaldinho",
-        ],
-    }
+    )
 
-    assert isinstance(last_update, datetime)
-    assert result == expected
+    assert expected_schema.validate(result)
 
 
-def test_players_profile_id_28003():
-    tfmkt = TransfermarktPlayerProfile(player_id="28003")
-    result = tfmkt.get_player_profile()
-    last_update = result.pop("lastUpdate")
+def test_get_player_profile_8198(len_greater_than_0):
+    tfmk = TransfermarktPlayerProfile(player_id="8198")
+    result = tfmk.get_player_profile()
 
-    expected = {
-        "url": "/lionel-messi/profil/spieler/28003",
-        "id": "28003",
-        "name": "Messi",
-        "nameInHomeCountry": "Lionel Andrés Messi Cuccitini",
-        "imageURL": "https://img.a.transfermarkt.technology/portrait/header/28003-1694590254.jpg?lm=1",
-        "dateOfBirth": "Jun 24, 1987",
-        "placeOfBirth": {"city": "Rosario", "country": "Argentina"},
-        "age": "36",
-        "height": "1,70m",
-        "citizenship": ["Argentina", "Spain"],
-        "isRetired": False,
-        "position": {"main": "Right Winger", "other": ["Centre-Forward", "Second Striker"]},
-        "foot": "left",
-        "shirtNumber": "#10",
-        "club": {"id": "69261", "name": "Miami", "joined": "Jul 15, 2023", "contractExpires": "Dec 31, 2025"},
-        "marketValue": {"current": "€35.00m", "highest": "€180.00m"},
-        "outfitter": "adidas",
-        "socialMedia": ["http://www.facebook.com/LeoMessi", "http://instagram.com/leomessi", "http://www.leomessi.com"],
-    }
+    expected_schema = Schema(
+        {
+            "id": And(str, len_greater_than_0),
+            "url": And(str, len_greater_than_0),
+            "name": And(str, len_greater_than_0),
+            "description": And(str, len_greater_than_0),
+            "fullName": And(str, len_greater_than_0),
+            "imageURL": And(str, len_greater_than_0),
+            "dateOfBirth": And(str, len_greater_than_0),
+            "placeOfBirth": {
+                "city": And(str, len_greater_than_0),
+                "country": And(str, len_greater_than_0),
+            },
+            "age": And(str, len_greater_than_0),
+            "height": And(str, len_greater_than_0),
+            "citizenship": And(list, len_greater_than_0),
+            "isRetired": bool,
+            "position": {
+                "main": And(str, len_greater_than_0),
+                "other": And(list, len_greater_than_0),
+            },
+            "foot": And(str, len_greater_than_0),
+            "shirtNumber": And(str, len_greater_than_0),
+            "club": {
+                "id": And(str, len_greater_than_0),
+                "name": And(str, len_greater_than_0),
+                "joined": And(str, len_greater_than_0),
+                "contractExpires": And(str, len_greater_than_0),
+            },
+            "marketValue": And(str, len_greater_than_0),
+            "agent": {
+                "name": And(str, len_greater_than_0),
+                "url": And(str, len_greater_than_0),
+            },
+            "outfitter": And(str, len_greater_than_0),
+            "socialMedia": And(list, len_greater_than_0),
+            "updatedAt": datetime,
+        },
+    )
 
-    assert isinstance(last_update, datetime)
-    assert result == expected
+    assert expected_schema.validate(result)
+
+
+def test_get_player_profile_68290(len_greater_than_0):
+    tfmk = TransfermarktPlayerProfile(player_id="68290")
+    result = tfmk.get_player_profile()
+
+    expected_schema = Schema(
+        {
+            "id": And(str, len_greater_than_0),
+            "url": And(str, len_greater_than_0),
+            "name": And(str, len_greater_than_0),
+            "description": And(str, len_greater_than_0),
+            "fullName": And(str, len_greater_than_0),
+            "imageURL": And(str, len_greater_than_0),
+            "dateOfBirth": And(str, len_greater_than_0),
+            "placeOfBirth": {
+                "city": And(str, len_greater_than_0),
+                "country": And(str, len_greater_than_0),
+            },
+            "age": And(str, len_greater_than_0),
+            "height": And(str, len_greater_than_0),
+            "citizenship": And(list, len_greater_than_0),
+            "isRetired": bool,
+            "position": {
+                "main": And(str, len_greater_than_0),
+                "other": And(list, len_greater_than_0),
+            },
+            "foot": And(str, len_greater_than_0),
+            "shirtNumber": And(str, len_greater_than_0),
+            "club": {
+                "id": And(str, len_greater_than_0),
+                "name": And(str, len_greater_than_0),
+                "joined": And(str, len_greater_than_0),
+                "contractExpires": And(str, len_greater_than_0),
+                "contractOption": And(str, len_greater_than_0),
+            },
+            "marketValue": And(str, len_greater_than_0),
+            "agent": {
+                "name": And(str, len_greater_than_0),
+            },
+            "outfitter": And(str, len_greater_than_0),
+            "socialMedia": And(list, len_greater_than_0),
+            "updatedAt": datetime,
+        },
+    )
+
+    assert expected_schema.validate(result)
+
+
+def test_get_player_profile_3373(len_greater_than_0):
+    tfmk = TransfermarktPlayerProfile(player_id="3373")
+    result = tfmk.get_player_profile()
+
+    expected_schema = Schema(
+        {
+            "id": And(str, len_greater_than_0),
+            "url": And(str, len_greater_than_0),
+            "name": And(str, len_greater_than_0),
+            "description": And(str, len_greater_than_0),
+            "fullName": And(str, len_greater_than_0),
+            "imageURL": And(str, len_greater_than_0),
+            "dateOfBirth": And(str, len_greater_than_0),
+            "placeOfBirth": {
+                "city": And(str, len_greater_than_0),
+                "country": And(str, len_greater_than_0),
+            },
+            "age": And(str, len_greater_than_0),
+            "height": And(str, len_greater_than_0),
+            "citizenship": And(list, len_greater_than_0),
+            "isRetired": bool,
+            "retiredSince": And(str, len_greater_than_0),
+            "position": {
+                "main": And(str, len_greater_than_0),
+                "other": And(list, len_greater_than_0),
+            },
+            "foot": And(str, len_greater_than_0),
+            "club": {
+                "name": And(str, len_greater_than_0),
+                "lastClubID": And(str, len_greater_than_0),
+                "lastClubName": And(str, len_greater_than_0),
+                "mostGamesFor": And(str, len_greater_than_0),
+            },
+            "outfitter": And(str, len_greater_than_0),
+            "socialMedia": And(list, len_greater_than_0),
+            "updatedAt": datetime,
+        },
+    )
+
+    assert expected_schema.validate(result)

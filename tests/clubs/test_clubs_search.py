@@ -1,104 +1,50 @@
+from datetime import datetime
+
 import pytest
-from fastapi import HTTPException
+from schema import And, Schema
 
 from app.services.clubs.search import TransfermarktClubSearch
 
 
-def test_clubs_search_0():
-    with pytest.raises(HTTPException):
-        TransfermarktClubSearch(query="0")
-
-
-def test_clubs_search_gremio():
-    tfmkt = TransfermarktClubSearch(query="gremio")
+def test_search_clubs_empty(len_greater_than_0, len_equal_to_0):
+    tfmkt = TransfermarktClubSearch(query="0")
     result = tfmkt.search_clubs()
 
-    expected = {
-        "query": "gremio",
-        "pageNumber": 1,
-        "lastPageNumber": 4,
-        "results": [
-            {
-                "id": "210",
-                "url": "/gremio-porto-alegre/startseite/verein/210",
-                "name": "Grêmio Foot-Ball Porto Alegrense",
-                "country": "Brazil",
-                "squad": "31",
-                "marketValue": "€57.75m",
-            },
-            {
-                "id": "37474",
-                "url": "/gremio-novorizontino-sp-/startseite/verein/37474",
-                "name": "Grêmio Novorizontino",
-                "country": "Brazil",
-                "squad": "34",
-                "marketValue": "€11.10m",
-            },
-            {
-                "id": "14704",
-                "url": "/gremio-porto-alegre-b/startseite/verein/14704",
-                "name": "Grêmio Foot-Ball Porto Alegrense B (-2022)",
-                "country": "Brazil",
-                "squad": "2",
-                "marketValue": "€950k",
-            },
-            {
-                "id": "10560",
-                "url": "/gremio-esportivo-brasil-rs-/startseite/verein/10560",
-                "name": "Grêmio Esportivo Brasil (RS)",
-                "country": "Brazil",
-                "squad": "19",
-                "marketValue": "€750k",
-            },
-            {
-                "id": "16083",
-                "url": "/gremio-osasco-audax-sp-/startseite/verein/16083",
-                "name": "Grêmio Osasco Audax (SP)",
-                "country": "Brazil",
-                "squad": "12",
-                "marketValue": "€450k",
-            },
-            {
-                "id": "12690",
-                "url": "/gremio-porto-alegre-u20/startseite/verein/12690",
-                "name": "Grêmio FBPA U20",
-                "country": "Brazil",
-                "squad": "51",
-                "marketValue": "€400k",
-            },
-            {
-                "id": "36166",
-                "url": "/gremio-desportivo-prudente-sp-/startseite/verein/36166",
-                "name": "Grêmio Desportivo Prudente (SP)",
-                "country": "Brazil",
-                "squad": "24",
-                "marketValue": "€300k",
-            },
-            {
-                "id": "76417",
-                "url": "/gremio-desportivo-sao-carlense/startseite/verein/76417",
-                "name": "Grêmio Desportivo São-Carlense (SP)",
-                "country": "Brazil",
-                "squad": "20",
-                "marketValue": "€125k",
-            },
-            {
-                "id": "96879",
-                "url": "/gremio-desportivo-sao-carlense-sp-u20/startseite/verein/96879",
-                "name": "Grêmio Desportivo São-Carlense (SP) U20",
-                "country": "Brazil",
-                "squad": "21",
-                "marketValue": "€100k",
-            },
-            {
-                "id": "94170",
-                "url": "/gremio-pague-menos/startseite/verein/94170",
-                "name": "Grêmio Pague Menos",
-                "country": "Brazil",
-                "squad": "13",
-                "marketValue": "€75k",
-            },
-        ],
-    }
+    expected_schema = Schema(
+        {
+            "query": And(str, len_greater_than_0),
+            "pageNumber": 1,
+            "lastPageNumber": 1,
+            "results": And(list, len_equal_to_0),
+            "updatedAt": datetime,
+        },
+    )
 
-    assert result == expected
+    assert expected_schema.validate(result)
+
+
+@pytest.mark.parametrize("query,page_number", [("gremio", 1), ("atletico", 2)])
+def test_search_clubs(query, page_number, regex_club_url, regex_integer, regex_market_value, len_greater_than_0):
+    tfmkt = TransfermarktClubSearch(query=query, page_number=page_number)
+    result = tfmkt.search_clubs()
+
+    expected_schema = Schema(
+        {
+            "query": query,
+            "pageNumber": page_number,
+            "lastPageNumber": And(int, lambda x: x > 1),
+            "results": [
+                {
+                    "id": And(str, len_greater_than_0, regex_integer),
+                    "url": And(str, len_greater_than_0, regex_club_url),
+                    "name": And(str, len_greater_than_0),
+                    "country": And(str, len_greater_than_0),
+                    "squad": And(str, len_greater_than_0, regex_integer),
+                    "marketValue": And(str, len_greater_than_0, regex_market_value),
+                },
+            ],
+            "updatedAt": datetime,
+        },
+    )
+
+    assert expected_schema.validate(result)

@@ -1,114 +1,52 @@
+from datetime import datetime
+
 import pytest
-from fastapi import HTTPException
+from schema import And, Schema
 
 from app.services.competitions.search import TransfermarktCompetitionSearch
 
 
-def test_competitions_search_0():
-    with pytest.raises(HTTPException):
-        TransfermarktCompetitionSearch(query="0")
-
-
-def test_competitions_search_serie_a():
-    tfmkt = TransfermarktCompetitionSearch(query="Serie A")
+def test_search_competitions_not_found(len_greater_than_0, len_equal_to_0):
+    tfmkt = TransfermarktCompetitionSearch(query="0")
     result = tfmkt.search_competitions()
 
-    expected = {
-        "query": "Serie A",
-        "pageNumber": 1,
-        "lastPageNumber": 2,
-        "results": [
-            {
-                "id": "IT1",
-                "name": "Serie A",
-                "country": "Italy",
-                "continent": "UEFA",
-                "clubs": "20",
-                "players": "562",
-                "marketValue": "€4.58bn",
-            },
-            {
-                "id": "BRA1",
-                "name": "Campeonato Brasileiro Série A",
-                "country": "Brazil",
-                "continent": "CONMEBOL",
-                "clubs": "20",
-                "players": "664",
-                "marketValue": "€1.44bn",
-            },
-            {
-                "id": "BCP1",
-                "name": "Campeonato Paulista - Série A1",
-                "country": "Brazil",
-                "continent": "CONMEBOL",
-                "clubs": "16",
-                "players": "474",
-                "marketValue": "€531.30m",
-            },
-            {
-                "id": "BCPF",
-                "name": "Campeonato Paulista - Série A1 - Fase final",
-                "country": "Brazil",
-                "continent": "CONMEBOL",
-                "clubs": "8",
-                "players": "242",
-                "marketValue": "€436.30m",
-            },
-            {
-                "id": "EL1A",
-                "name": "LigaPro Serie A Primera Etapa",
-                "country": "Ecuador",
-                "continent": "CONMEBOL",
-                "clubs": "16",
-                "players": "467",
-                "marketValue": "€173.88m",
-            },
-            {
-                "id": "EL1S",
-                "name": "LigaPro Serie A Segunda Etapa",
-                "country": "Ecuador",
-                "continent": "CONMEBOL",
-                "clubs": "16",
-                "players": "467",
-                "marketValue": "€173.88m",
-            },
-            {
-                "id": "BCP2",
-                "name": "Campeonato Paulista - Troféu Independência",
-                "country": "Brazil",
-                "continent": "CONMEBOL",
-                "clubs": "6",
-                "players": "180",
-                "marketValue": "€24.15m",
-            },
-            {
-                "id": "PT3A",
-                "name": "Liga 3",
-                "country": "Portugal",
-                "continent": "UEFA",
-                "clubs": "20",
-                "players": "545",
-                "marketValue": "€20.65m",
-            },
-            {
-                "id": "POSB",
-                "name": "Serie B Play-off",
-                "country": "Italy",
-                "continent": "",
-                "clubs": "",
-                "players": "",
-                "marketValue": "",
-            },
-            {
-                "id": "ECPE",
-                "name": "Serie A Primera Etapa",
-                "country": "Ecuador",
-                "continent": "",
-                "clubs": "",
-                "players": "",
-                "marketValue": "",
-            },
-        ],
-    }
+    expected_schema = Schema(
+        {
+            "query": And(str, len_greater_than_0),
+            "pageNumber": 1,
+            "lastPageNumber": 1,
+            "results": And(list, len_equal_to_0),
+            "updatedAt": datetime,
+        },
+    )
 
-    assert result == expected
+    assert expected_schema.validate(result)
+
+
+@pytest.mark.parametrize("query,page_number", [("Serie A", 1), ("Liga", 2)])
+def test_search_competitions(query, page_number, len_greater_than_0, regex_integer, regex_market_value):
+    tfmkt = TransfermarktCompetitionSearch(query=query, page_number=page_number)
+    result = tfmkt.search_competitions()
+
+    expected_schema = Schema(
+        {
+            "query": query,
+            "pageNumber": page_number,
+            "lastPageNumber": And(int, lambda x: x > 1),
+            "results": [
+                {
+                    "id": And(str, len_greater_than_0),
+                    "name": And(str, len_greater_than_0),
+                    "country": And(str, len_greater_than_0),
+                    "continent": And(str, len_greater_than_0),
+                    "clubs": And(str, len_greater_than_0, regex_integer, regex_integer),
+                    "players": And(str, len_greater_than_0, regex_integer, regex_integer),
+                    "totalMarketValue": And(str, len_greater_than_0, regex_market_value),
+                    "meanMarketValue": And(str, len_greater_than_0, regex_market_value),
+                },
+            ],
+            "updatedAt": datetime,
+        },
+    )
+
+    assert expected_schema.validate(result)

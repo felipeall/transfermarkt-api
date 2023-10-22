@@ -24,6 +24,7 @@ ruff = "==0.0.275"
 [tool.poetry.group.tests.dependencies]
 pytest = "==7.3.1"
 pytest-cov = "==4.1.0"
+schema = "==0.7.5"
 
 [tool.black]
 line-length = 120
@@ -44,3 +45,6 @@ select = [
 
 [tool.pytest.ini_options]
 addopts = "--cov --cov-report term-missing --exitfirst"
+testpaths = [
+    "tests",
+]
