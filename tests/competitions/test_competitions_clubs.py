@@ -1,47 +1,35 @@
+from datetime import datetime
+
 import pytest
 from fastapi import HTTPException
+from schema import And, Schema
 
 from app.services.competitions.clubs import TransfermarktCompetitionClubs
 
 
-def test_competitions_clubs_id_0():
-    tfmkt = TransfermarktCompetitionClubs(competition_id="0")
-
+def test_get_competition_clubs_not_found():
     with pytest.raises(HTTPException):
-        tfmkt.get_competition_clubs()
+        TransfermarktCompetitionClubs(competition_id="0")
 
 
-def test_competitions_clubs_id_bra1_season_2023():
-    tfmkt = TransfermarktCompetitionClubs(competition_id="BRA1", season_id="2023")
+@pytest.mark.parametrize("competition_id,season_id", [("ES1", None), ("GB1", "2016"), ("BRA1", "2023")])
+def test_get_competition_clubs(competition_id, season_id, len_greater_than_0, regex_integer):
+    tfmkt = TransfermarktCompetitionClubs(competition_id=competition_id, season_id=season_id)
     result = tfmkt.get_competition_clubs()
-    result["clubs"] = sorted(result["clubs"], key=lambda club: int(club["id"]))
 
-    expected = {
-        "id": "BRA1",
-        "name": "Campeonato Brasileiro Série A",
-        "seasonID": "2022",
-        "clubs": [
-            {"id": "199", "name": "Sport Club Corinthians Paulista"},
-            {"id": "210", "name": "Grêmio Foot-Ball Porto Alegrense"},
-            {"id": "221", "name": "Santos FC"},
-            {"id": "330", "name": "Clube Atlético Mineiro"},
-            {"id": "537", "name": "Botafogo de Futebol e Regatas"},
-            {"id": "585", "name": "São Paulo Futebol Clube"},
-            {"id": "609", "name": "Cruzeiro Esporte Clube"},
-            {"id": "614", "name": "CR Flamengo"},
-            {"id": "679", "name": "Club Athletico Paranaense"},
-            {"id": "776", "name": "Coritiba Foot Ball Club"},
-            {"id": "978", "name": "Clube de Regatas Vasco da Gama"},
-            {"id": "1023", "name": "Sociedade Esportiva Palmeiras"},
-            {"id": "2462", "name": "Fluminense Football Club"},
-            {"id": "2863", "name": "América Futebol Clube (MG)"},
-            {"id": "3197", "name": "Goiás EC"},
-            {"id": "6600", "name": "Sport Club Internacional"},
-            {"id": "8793", "name": "Red Bull Bragantino"},
-            {"id": "10010", "name": "Esporte Clube Bahia"},
-            {"id": "10870", "name": "Fortaleza Esporte Clube"},
-            {"id": "28022", "name": "Cuiabá Esporte Clube (MT)"},
-        ],
-    }
+    expected_schema = Schema(
+        {
+            "id": And(str, len_greater_than_0),
+            "name": And(str, len_greater_than_0),
+            "seasonID": And(str, len_greater_than_0, regex_integer),
+            "clubs": [
+                {
+                    "id": And(str, len_greater_than_0, regex_integer),
+                    "name": And(str, len_greater_than_0),
+                },
+            ],
+            "updatedAt": datetime,
+        },
+    )
 
-    assert result == expected
+    assert expected_schema.validate(result)

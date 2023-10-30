@@ -1,81 +1,61 @@
 from dataclasses import dataclass
-from typing import Optional
-from xml.etree import ElementTree
+from datetime import datetime
 
-from fastapi import HTTPException
-
-from app.utils.utils import extract_from_url, get_list_by_xpath, request_url_page, trim
+from app.services.base import TransfermarktBase
+from app.utils.utils import extract_from_url
 from app.utils.xpath import Competitions
 
 
 @dataclass
-class TransfermarktCompetitionSearch:
-    query: str
-    page_number: Optional[int] = 1
+class TransfermarktCompetitionSearch(TransfermarktBase):
+    query: str = None
+    URL: str = (
+        "https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query={query}&Wettbewerb_page={page_number}"
+    )
+    page_number: int = 1
 
     def __post_init__(self):
-        search_url = f"https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query={self.query}&Wettbewerb_page={self.page_number}"
-        self.page = request_url_page(url=search_url)
-        self._check_competition_found()
+        self.URL = self.URL.format(query=self.query, page_number=self.page_number)
+        self.page = self.request_url_page()
+
+    def __parse_search_results(self) -> list:
+        idx = [extract_from_url(url) for url in self.get_list_by_xpath(Competitions.Search.URLS)]
+        name = self.get_list_by_xpath(Competitions.Search.NAMES)
+        country = self.get_list_by_xpath(Competitions.Search.COUNTRIES)
+        clubs = self.get_list_by_xpath(Competitions.Search.CLUBS)
+        players = self.get_list_by_xpath(Competitions.Search.PLAYERS)
+        total_market_value = self.get_list_by_xpath(Competitions.Search.TOTAL_MARKET_VALUES)
+        mean_market_value = self.get_list_by_xpath(Competitions.Search.MEAN_MARKET_VALUES)
+        continent = self.get_list_by_xpath(Competitions.Search.CONTINENTS)
+
+        return [
+            {
+                "id": idx,
+                "name": name,
+                "country": country,
+                "clubs": clubs,
+                "players": players,
+                "totalMarketValue": total_market_value,
+                "meanMarketValue": mean_market_value,
+                "continent": continent,
+            }
+            for idx, name, country, clubs, players, total_market_value, mean_market_value, continent in zip(
+                idx,
+                name,
+                country,
+                clubs,
+                players,
+                total_market_value,
+                mean_market_value,
+                continent,
+            )
+        ]
 
     def search_competitions(self):
-        result_countries: ElementTree = self.page.xpath(Competitions.Search.RESULT_COUNTRIES)
-        result_clubs: ElementTree = self.page.xpath(Competitions.Search.RESULT_CLUBS)
-        result_players: ElementTree = self.page.xpath(Competitions.Search.RESULT_PLAYERS)
-        result_marketvalues: ElementTree = self.page.xpath(Competitions.Search.RESULT_MARKETVALUES)
-        result_continents: ElementTree = self.page.xpath(Competitions.Search.RESULT_CONTINENTS)
+        self.response["query"] = self.query
+        self.response["pageNumber"] = self.page_number
+        self.response["lastPageNumber"] = self.get_search_last_page_number(Competitions.Search.BASE)
+        self.response["results"] = self.__parse_search_results()
+        self.response["updatedAt"] = datetime.now()
 
-        names: list = get_list_by_xpath(self, Competitions.Search.NAMES)
-        urls: list = get_list_by_xpath(self, Competitions.Search.URLS)
-
-        countries: list = [trim(e.xpath(Competitions.Search.COUNTRIES)) for e in result_countries]
-        clubs: list = [trim(e.xpath(Competitions.Search.CLUBS)) for e in result_clubs]
-        players: list = [trim(e.xpath(Competitions.Search.PLAYERS)) for e in result_players]
-        marketvalues: list = [trim(e.xpath(Competitions.Search.MARKETVALUES)) for e in result_marketvalues]
-        continents: list = [trim(e.xpath(Competitions.Search.CONTINENTS)) for e in result_continents]
-
-        ids: list = [extract_from_url(url) for url in urls]
-
-        return {
-            "query": self.query,
-            "pageNumber": self.page_number,
-            "lastPageNumber": self._get_last_page_number(),
-            "results": [
-                {
-                    "id": idx,
-                    "name": name,
-                    "country": country,
-                    "continent": continent,
-                    "clubs": clubs,
-                    "players": players,
-                    "marketValue": marketvalue,
-                }
-                for idx, name, country, continent, clubs, players, marketvalue, in zip(
-                    ids,
-                    names,
-                    countries,
-                    continents,
-                    clubs,
-                    players,
-                    marketvalues,
-                )
-            ],
-        }
-
-    def _check_competition_found(self) -> None:
-        result_competitions: ElementTree = self.page.xpath(Competitions.Search.RESULT)
-        if not result_competitions:
-            raise HTTPException(status_code=404, detail=f"Competition Search not found for name: {self.query}")
-        else:
-            self.page = result_competitions[0]
-
-    def _get_last_page_number(self) -> int:
-        url_page_number_last: list = self.page.xpath(Competitions.Search.PAGE_NUMBER_LAST)
-        url_page_number_active: list = self.page.xpath(Competitions.Search.PAGE_NUMBER_ACTIVE)
-
-        if url_page_number_last:
-            return int(url_page_number_last[0].split("=")[-1])
-        elif url_page_number_active:
-            return int(url_page_number_active[0].split("=")[-1])
-        else:
-            return 1
+        return self.response

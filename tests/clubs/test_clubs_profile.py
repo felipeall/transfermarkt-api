@@ -1,47 +1,74 @@
+from datetime import datetime
+from unittest.mock import patch
+
 import pytest
 from fastapi import HTTPException
+from schema import And, Optional, Schema
 
 from app.services.clubs.profile import TransfermarktClubProfile
 
 
-def test_clubs_profile_id_0():
-    tfmkt = TransfermarktClubProfile(club_id="0")
-
+def test_get_club_profile_not_found():
     with pytest.raises(HTTPException):
-        tfmkt.get_club_profile()
+        TransfermarktClubProfile(club_id="0")
 
 
-def test_clubs_profile_id_210():
-    tfmkt = TransfermarktClubProfile(club_id="210")
+@pytest.mark.parametrize("club_id", ["210", "131", "31", "27", "5"])
+@patch("app.utils.utils.clean_response", side_effect=lambda x: x)
+def test_get_club_profile(
+    mock_clean_response,
+    club_id,
+    regex_club_url,
+    regex_date_mmm_dd_yyyy,
+    regex_market_value,
+    regex_value_variation,
+    regex_integer,
+    len_greater_than_0,
+):
+    tfmkt = TransfermarktClubProfile(club_id=club_id)
     result = tfmkt.get_club_profile()
 
-    expected = {
-        "id": "210",
-        "url": "/gremio-porto-alegre/startseite/verein/210",
-        "name": "Grêmio Foot-Ball Porto Alegrense",
-        "officialName": "Grêmio Foot-Ball Porto Alegrense",
-        "image": "https://tmssl.akamaized.net/images/wappen/big/210.png",
-        "addressLine1": "Rua Largo dos Campeões 1",
-        "addressLine2": "90880-440 Porto Alegre",
-        "addressLine3": "Brazil",
-        "tel": "+55 51 32172244",
-        "fax": "+55 51 32232364",
-        "website": "www.gremio.net",
-        "foundedOn": "Sep 15, 1903",
-        "members": "148.613",
-        "membersDate": "Jan 26, 2019",
-        "stadiumName": "Arena do Grêmio",
-        "stadiumSeats": "60.540",
-        "currentTransferRecord": "+€344k",
-        "currentMarketValue": "€57.75m",
-        "squad": {"size": "31", "averageAge": "26.5", "foreigners": "8", "nationalTeamPlayers": "3"},
-        "league": {
-            "id": "BRA1",
-            "name": "Campeonato Brasileiro Série A",
-            "countryID": "2",
-            "countryName": "Brazil",
-            "tier": "First Tier",
+    expected_schema = Schema(
+        {
+            "id": And(str, len_greater_than_0),
+            "url": And(str, len_greater_than_0, regex_club_url),
+            "name": And(str, len_greater_than_0),
+            "officialName": And(str, len_greater_than_0),
+            "image": And(str, len_greater_than_0),
+            Optional("legalForm"): And(str, len_greater_than_0),
+            "addressLine1": And(str, len_greater_than_0),
+            "addressLine2": And(str, len_greater_than_0),
+            "addressLine3": And(str, len_greater_than_0),
+            "tel": And(str, len_greater_than_0),
+            "fax": And(str, len_greater_than_0),
+            "website": And(str, len_greater_than_0),
+            "foundedOn": And(str, len_greater_than_0, regex_date_mmm_dd_yyyy),
+            Optional("members"): And(str, len_greater_than_0),
+            Optional("membersDate"): And(str, len_greater_than_0, regex_date_mmm_dd_yyyy),
+            Optional("otherSports"): list,
+            Optional("colors"): list,
+            "stadiumName": And(str, len_greater_than_0),
+            "stadiumSeats": And(str, len_greater_than_0, regex_integer),
+            "currentTransferRecord": And(str, len_greater_than_0, regex_value_variation),
+            "currentMarketValue": And(str, len_greater_than_0, regex_market_value),
+            Optional("confederation"): str,
+            Optional("fifaWorldRanking"): str,
+            "squad": {
+                "size": And(str, len_greater_than_0),
+                "averageAge": And(str, len_greater_than_0),
+                "foreigners": And(str, len_greater_than_0),
+                "nationalTeamPlayers": And(str, len_greater_than_0),
+            },
+            "league": {
+                "id": And(str, len_greater_than_0),
+                "name": And(str, len_greater_than_0),
+                "countryID": And(str, len_greater_than_0),
+                "countryName": And(str, len_greater_than_0),
+                "tier": And(str, len_greater_than_0),
+            },
+            Optional("historicalCrests"): list,
+            "updatedAt": datetime,
         },
-    }
+    )
 
-    assert result == expected
+    assert expected_schema.validate(result)
