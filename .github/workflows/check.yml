@@ -1,4 +1,4 @@
-name: Linter Check
+name: Code Check
 on:
   push:
     branches: [ main ]
@@ -19,3 +19,7 @@ jobs:
         run: |
           pip install black
           black --check .
+      - name: interrogate
+        run: |
+          pip install interrogate
+          interrogate app/services -vv
