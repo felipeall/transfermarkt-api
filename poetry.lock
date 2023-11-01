@@ -801,6 +801,31 @@ files = [
 ]
 
 [[package]]
+name = "interrogate"
+version = "1.5.0"
+description = "Interrogate a codebase for docstring coverage."
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "interrogate-1.5.0-py3-none-any.whl", hash = "sha256:a4ccc5cbd727c74acc98dee6f5e79ef264c0bcfa66b68d4e123069b2af89091a"},
+    {file = "interrogate-1.5.0.tar.gz", hash = "sha256:b6f325f0aa84ac3ac6779d8708264d366102226c5af7d69058cecffcff7a6d6c"},
+]
+
+[package.dependencies]
+attrs = "*"
+click = ">=7.1"
+colorama = "*"
+py = "*"
+tabulate = "*"
+toml = "*"
+
+[package.extras]
+dev = ["cairosvg", "pre-commit", "pytest", "pytest-cov", "pytest-mock", "sphinx", "sphinx-autobuild", "wheel"]
+docs = ["sphinx", "sphinx-autobuild"]
+png = ["cairosvg"]
+tests = ["pytest", "pytest-cov", "pytest-mock"]
+
+[[package]]
 name = "ipykernel"
 version = "6.26.0"
 description = "IPython Kernel for Jupyter"
@@ -1825,6 +1850,17 @@ files = [
 tests = ["pytest"]
 
 [[package]]
+name = "py"
+version = "1.11.0"
+description = "library with cross-python path, ini-parsing, io, code, log facilities"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+files = [
+    {file = "py-1.11.0-py2.py3-none-any.whl", hash = "sha256:607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378"},
+    {file = "py-1.11.0.tar.gz", hash = "sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"},
+]
+
+[[package]]
 name = "pycparser"
 version = "2.21"
 description = "C parser in Python"
@@ -2622,6 +2658,20 @@ typing-extensions = {version = ">=3.10.0", markers = "python_version < \"3.10\""
 full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart", "pyyaml"]
 
 [[package]]
+name = "tabulate"
+version = "0.9.0"
+description = "Pretty-print tabular data"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tabulate-0.9.0-py3-none-any.whl", hash = "sha256:024ca478df22e9340661486f85298cff5f6dcdba14f3813e8830015b9ed1948f"},
+    {file = "tabulate-0.9.0.tar.gz", hash = "sha256:0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"},
+]
+
+[package.extras]
+widechars = ["wcwidth"]
+
+[[package]]
 name = "terminado"
 version = "0.17.1"
 description = "Tornado websocket backend for the Xterm.js Javascript terminal emulator library."
@@ -2658,6 +2708,17 @@ webencodings = ">=0.4"
 [package.extras]
 doc = ["sphinx", "sphinx_rtd_theme"]
 test = ["flake8", "isort", "pytest"]
+
+[[package]]
+name = "toml"
+version = "0.10.2"
+description = "Python Library for Tom's Obvious, Minimal Language"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+files = [
+    {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
+    {file = "toml-0.10.2.tar.gz", hash = "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"},
+]
 
 [[package]]
 name = "tomli"
@@ -3078,4 +3139,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "cded2a39a481e21a18fccd57d0d20a29ae49f4256d94aca426d677cbf202d2aa"
+content-hash = "f27a5c6a06c7b3457a246496257330c175724129dcd96005862abc832d9a8f20"

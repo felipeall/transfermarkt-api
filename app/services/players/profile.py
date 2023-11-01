@@ -11,15 +11,34 @@ from app.utils.xpath import Players
 
 @dataclass
 class TransfermarktPlayerProfile(TransfermarktBase):
+    """
+    Represents a service for retrieving and parsing the profile information of a football player on Transfermarkt.
+
+    Args:
+        player_id (str): The unique identifier of the player.
+
+    Attributes:
+        URL (str): The URL to fetch the player's profile data.
+    """
+
     player_id: str = None
     URL: str = "https://www.transfermarkt.com/-/profil/spieler/{player_id}"
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
+        """Initialize the TransfermarktPlayerProfile class."""
         self.URL = self.URL.format(player_id=self.player_id)
         self.page = self.request_url_page()
         self.raise_exception_if_not_found(xpath=Players.Profile.URL)
 
     def get_player_profile(self) -> dict:
+        """
+        Retrieve and parse the player's profile information, including their personal details,
+        club affiliations, market value, agent information, social media links, and more.
+
+        Returns:
+            dict: A dictionary containing the player's unique identifier, profile information, and the timestamp of when
+                the data was last updated.
+        """
         self.response["id"] = self.get_text_by_xpath(Players.Profile.ID)
         self.response["url"] = self.get_text_by_xpath(Players.Profile.URL)
         self.response["name"] = self.get_text_by_xpath(Players.Profile.NAME)

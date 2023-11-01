@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "transfermarkt-api"
-version = "2.0.0"
+version = "2.0.1"
 description = "API service to get data from Transfermarkt"
 authors = ["Felipe Allegretti <felipe@allegretti.me>"]
 license = "MIT"
@@ -21,6 +21,7 @@ setuptools = "==68.2.2"
 [tool.poetry.group.check.dependencies]
 black = "==23.1.0"
 ruff = "==0.0.275"
+interrogate = "==1.5.0"
 
 [tool.poetry.group.tests.dependencies]
 pytest = "==7.3.1"
@@ -49,3 +50,8 @@ addopts = "--cov --cov-report term-missing --exitfirst"
 testpaths = [
     "tests",
 ]
+
+[tool.interrogate]
+ignore-init-module = true
+ignore-module = true
+fail-under = 100

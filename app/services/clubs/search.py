@@ -8,17 +8,35 @@ from app.utils.xpath import Clubs
 
 @dataclass
 class TransfermarktClubSearch(TransfermarktBase):
+    """
+    A class for searching football clubs on Transfermarkt and retrieving search results.
+
+    Args:
+        query (str): The search query for finding football clubs.
+        URL (str): The URL template for the search query.
+        page_number (int): The page number of search results (default is 1).
+    """
+
     query: str = None
     URL: str = (
         "https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query={query}&Verein_page={page_number}"
     )
     page_number: int = 1
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
+        """Initialize the TransfermarktClubSearch class."""
         self.URL = self.URL.format(query=self.query, page_number=self.page_number)
         self.page = self.request_url_page()
 
     def __parse_search_results(self) -> list:
+        """
+        Parse the search results page and extract information about the found football clubs.
+
+        Returns:
+            list: A list of dictionaries, where each dictionary contains information about a
+                football club found in the search results, including the club's unique identifier,
+                URL, name, country, squad size, and market value.
+        """
         clubs_names = self.get_list_by_xpath(Clubs.Search.NAMES)
         clubs_urls = self.get_list_by_xpath(Clubs.Search.URLS)
         clubs_countries = self.get_list_by_xpath(Clubs.Search.COUNTRIES)
@@ -46,6 +64,13 @@ class TransfermarktClubSearch(TransfermarktBase):
         ]
 
     def search_clubs(self) -> dict:
+        """
+        Perform a search for football clubs on Transfermarkt and retrieve search results.
+
+        Returns:
+            dict: A dictionary containing the search query, current page number, last page number,
+                search results, and the timestamp of when the search was conducted.
+        """
         self.response["query"] = self.query
         self.response["pageNumber"] = self.page_number
         self.response["lastPageNumber"] = self.get_search_last_page_number(Clubs.Search.BASE)

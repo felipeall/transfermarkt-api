@@ -9,11 +9,21 @@ from app.utils.xpath import Clubs
 
 @dataclass
 class TransfermarktClubPlayers(TransfermarktBase):
+    """
+    A class for retrieving and parsing the players of a football club from Transfermarkt.
+
+    Args:
+        club_id (str): The unique identifier of the football club.
+        season_id (str): The unique identifier of the season.
+        URL (str): The URL template for the club's players page on Transfermarkt.
+    """
+
     club_id: str = None
     season_id: str = None
     URL: str = "https://www.transfermarkt.com/-/kader/verein/{club_id}/saison_id/{season_id}/plus/1"
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
+        """Initialize the TransfermarktClubPlayers class."""
         self.URL = self.URL.format(club_id=self.club_id, season_id=self.season_id)
         self.page = self.request_url_page()
         self.raise_exception_if_not_found(xpath=Clubs.Players.CLUB_NAME)
@@ -21,13 +31,21 @@ class TransfermarktClubPlayers(TransfermarktBase):
         self.__update_past_flag()
 
     def __update_season_id(self):
+        """Update the season ID if it's not provided by extracting it from the website."""
         if self.season_id is None:
             self.season_id = extract_from_url(self.get_text_by_xpath(Clubs.Players.CLUB_URL), "season_id")
 
-    def __update_past_flag(self):
+    def __update_past_flag(self) -> None:
+        """Check if the season is the current or if it's a past one and update the flag accordingly."""
         self.past = "Current club" in self.get_list_by_xpath(Clubs.Players.PAST_FLAG)
 
-    def __parse_club_players(self) -> list:
+    def __parse_club_players(self) -> list[dict]:
+        """
+        Parse player information from the webpage and return a list of dictionaries, each representing a player.
+
+        Returns:
+            list[dict]: A list of player information dictionaries.
+        """
         page_nationalities = self.page.xpath(Clubs.Players.PAGE_NATIONALITIES)
         page_players_infos = self.page.xpath(Clubs.Players.PAGE_INFOS)
         page_players_signed_from = self.page.xpath(
@@ -102,6 +120,13 @@ class TransfermarktClubPlayers(TransfermarktBase):
         ]
 
     def get_club_players(self) -> dict:
+        """
+        Retrieve and parse player information for the specified football club.
+
+        Returns:
+            dict: A dictionary containing the club's unique identifier, player information, and the timestamp of when
+                  the data was last updated.
+        """
         self.response["id"] = self.club_id
         self.response["players"] = self.__parse_club_players()
         self.response["updatedAt"] = datetime.now()
