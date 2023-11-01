@@ -49,8 +49,9 @@ def test_get_player_stats(player_id, len_greater_than_0, regex_integer):
     assert any("minutesPlayed" in stat for stat in result.get("stats"))
 
 
-def test_get_player_stats_goalkeeper(len_greater_than_0, regex_integer):
-    tfmkt = TransfermarktPlayerStats(player_id="5023")
+@pytest.mark.parametrize("player_id", ["5023", "13811"])
+def test_get_player_stats_goalkeeper(player_id, len_greater_than_0, regex_integer):
+    tfmkt = TransfermarktPlayerStats(player_id=player_id)
     result = tfmkt.get_player_stats()
 
     expected_schema = Schema(
