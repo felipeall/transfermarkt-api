@@ -32,9 +32,9 @@ class TransfermarktPlayerStats(TransfermarktBase):
         clubs_urls = self.get_list_by_xpath(Players.Stats.CLUBS_URLS)
         competitions_ids = [extract_from_url(url) for url in competitions_urls]
         clubs_ids = [extract_from_url(url) for url in clubs_urls]
-
         stats = [
-            [item for text in row.xpath(Players.Stats.DATA) for item in text.split("\xa0/\xa0")][1:] for row in rows
+            [item for text in row.xpath(Players.Stats.DATA) if text != "\xa0" for item in text.split("\xa0/\xa0")][1:]
+            for row in rows
         ]
         data = [
             [comp_url, club_url] + stats for comp_url, club_url, stats in list(zip(competitions_ids, clubs_ids, stats))
