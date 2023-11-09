@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "transfermarkt-api"
-version = "2.0.1"
+version = "2.0.2"
 description = "API service to get data from Transfermarkt"
 authors = ["Felipe Allegretti <felipe@allegretti.me>"]
 license = "MIT"
