@@ -23,12 +23,17 @@ def test_get_player_transfers(player_id, len_greater_than_0, regex_integer, rege
             "transfers": [
                 {
                     "id": And(str, len_greater_than_0, regex_integer),
-                    "seasonID": And(str, len_greater_than_0),
+                    "season": And(str, len_greater_than_0),
                     "date": And(str, len_greater_than_0, regex_date_mmm_dd_yyyy),
-                    "oldClubID": And(str, len_greater_than_0, regex_integer),
-                    "oldClubName": And(str, len_greater_than_0),
-                    "newClubID": And(str, len_greater_than_0, regex_integer),
-                    "newClubName": And(str, len_greater_than_0),
+                    "from": {
+                        "clubID": And(str, len_greater_than_0, regex_integer),
+                        "clubName": And(str, len_greater_than_0),
+                    },
+                    "to": {
+                        "clubID": And(str, len_greater_than_0, regex_integer),
+                        "clubName": And(str, len_greater_than_0),
+                    },
+                    "upcoming": bool,
                     Optional("marketValue"): And(str, len_greater_than_0, regex_market_value),
                     Optional("fee"): And(str, len_greater_than_0),
                 },

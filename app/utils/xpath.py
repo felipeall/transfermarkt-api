@@ -55,29 +55,6 @@ class Players:
         RANKINGS_POSITIONS = "//span[contains(@class, 'quick-fact__content--large')]//text()"
 
     class Transfers:
-        TRANSFERS_URLS = "//a[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__link']//@href"
-        SEASONS = "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__season']//text()"
-        DATES = "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__date']//text()"
-        OLD_CLUBS_URLS = (
-            "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__old-club']"
-            "/a[@class='tm-player-transfer-history-grid__club-link']/@href"
-        )
-        OLD_CLUBS_NAMES = (
-            "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__old-club']"
-            "/a[@class='tm-player-transfer-history-grid__club-link']/text()"
-        )
-        NEW_CLUBS_URLS = (
-            "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__new-club']"
-            "/a[@class='tm-player-transfer-history-grid__club-link']/@href"
-        )
-        NEW_CLUBS_NAMES = (
-            "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__new-club']"
-            "/a[@class='tm-player-transfer-history-grid__club-link']/text()"
-        )
-        MARKET_VALUES = (
-            "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__market-value']//text()"
-        )
-        FEES = "//div[@class='grid__cell grid__cell--center tm-player-transfer-history-grid__fee']//text()"
         YOUTH_CLUBS = "//div[@data-viewport='Jugendvereine']//div//text()"
 
     class Stats:
