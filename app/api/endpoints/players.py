@@ -7,6 +7,7 @@ from app.services.players.profile import TransfermarktPlayerProfile
 from app.services.players.search import TransfermarktPlayerSearch
 from app.services.players.stats import TransfermarktPlayerStats
 from app.services.players.transfers import TransfermarktPlayerTransfers
+from app.services.players.injuries import TransfermarktPlayerInjuries
 
 router = APIRouter()
 
@@ -44,3 +45,9 @@ def get_player_stats(player_id: str):
     tfmkt = TransfermarktPlayerStats(player_id=player_id)
     player_market_value = tfmkt.get_player_stats()
     return player_market_value
+
+# Define the endpoint for injuries
+@router.get("/{player_id}/injuries")
+def get_player_injuries(player_id: str):
+    injuries_service = TransfermarktPlayerInjuries(player_id=player_id)
+    return injuries_service.get_player_injuries()
