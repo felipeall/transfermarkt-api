@@ -2,10 +2,8 @@ from dataclasses import dataclass
 from datetime import datetime
 
 from app.services.base import TransfermarktBase
-from app.utils.utils import (
-    clean_response,
-    extract_from_url,
-)
+from app.utils.regex import REGEX_DOB_AGE
+from app.utils.utils import clean_response, extract_from_url, safe_regex
 from app.utils.xpath import Players
 
 
@@ -46,12 +44,20 @@ class TransfermarktPlayerProfile(TransfermarktBase):
         self.response["fullName"] = self.get_text_by_xpath(Players.Profile.FULL_NAME)
         self.response["nameInHomeCountry"] = self.get_text_by_xpath(Players.Profile.NAME_IN_HOME_COUNTRY)
         self.response["imageURL"] = self.get_text_by_xpath(Players.Profile.IMAGE_URL)
-        self.response["dateOfBirth"] = self.get_text_by_xpath(Players.Profile.DATE_OF_BIRTH)
+        self.response["dateOfBirth"] = safe_regex(
+            self.get_text_by_xpath(Players.Profile.DATE_OF_BIRTH_AGE),
+            REGEX_DOB_AGE,
+            "dob",
+        )
         self.response["placeOfBirth"] = {
             "city": self.get_text_by_xpath(Players.Profile.PLACE_OF_BIRTH_CITY),
             "country": self.get_text_by_xpath(Players.Profile.PLACE_OF_BIRTH_COUNTRY),
         }
-        self.response["age"] = self.get_text_by_xpath(Players.Profile.AGE)
+        self.response["age"] = safe_regex(
+            self.get_text_by_xpath(Players.Profile.DATE_OF_BIRTH_AGE),
+            REGEX_DOB_AGE,
+            "age",
+        )
         self.response["height"] = self.get_text_by_xpath(Players.Profile.HEIGHT)
         self.response["citizenship"] = self.get_list_by_xpath(Players.Profile.CITIZENSHIP)
         self.response["isRetired"] = self.get_text_by_xpath(Players.Profile.RETIRED_SINCE_DATE) is not None
