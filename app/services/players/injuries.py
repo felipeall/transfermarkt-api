@@ -1,59 +1,57 @@
 from dataclasses import dataclass
+from datetime import datetime
 from typing import List, Optional
 from xml.etree import ElementTree
 
-from fastapi import HTTPException
-from lxml import etree
-
 from app.services.base import TransfermarktBase
+from app.utils.utils import clean_response, extract_from_url, trim
 from app.utils.xpath import Players
 
 
 @dataclass
 class TransfermarktPlayerInjuries(TransfermarktBase):
-
     player_id: str = None
-    URL: str = "https://www.transfermarkt.com/player/verletzungen/spieler/{player_id}"
+    URL: str = "https://www.transfermarkt.com/player/verletzungen/spieler/{player_id}/plus/1/page/{page_number}"
+    page_number: int = 1
 
     def __post_init__(self):
-        # injuries_url = f"https://www.transfermarkt.com/player/verletzungen/spieler/{self.player_id}"
-        self.URL = self.URL.format(player_id=self.player_id)
+        self.URL = self.URL.format(player_id=self.player_id, page_number=self.page_number)
         self.page = self.request_url_page()
-        self._check_injuries_found()
+        self.raise_exception_if_not_found(xpath=Players.Profile.URL)
 
-    def get_player_injuries(self) -> Optional[List[dict]]:
-        injuries_elements: ElementTree = self.page.xpath(Players.Injuries.RESULTS)
-        injuries = []
+    def __parse_player_injuries(self) -> Optional[List[dict]]:
+        injuries: ElementTree = self.page.xpath(Players.Injuries.RESULTS)
+        player_injuries = []
 
-        for injury_element in injuries_elements:
-            season = injury_element.xpath(Players.Injuries.SEASONS)[0].text
-            type_ = injury_element.xpath(Players.Injuries.INJURY)[0].text
-            from_ = injury_element.xpath(Players.Injuries.FROM)[0].text
-            to_ = injury_element.xpath(Players.Injuries.UNTIL)[0].text
-            days = injury_element.xpath(Players.Injuries.DAYS)[0].text
-            games_missed_list = injury_element.xpath(Players.Injuries.GAMES_MISSED)
-            games_missed = games_missed_list[0].text.strip() if games_missed_list else "0"  # Handle missing span
+        for injury in injuries:
+            season = trim(injury.xpath(Players.Injuries.SEASONS))
+            injury_type = trim(injury.xpath(Players.Injuries.INJURY))
+            date_from = trim(injury.xpath(Players.Injuries.FROM))
+            date_until = trim(injury.xpath(Players.Injuries.UNTIL))
+            days = trim(injury.xpath(Players.Injuries.DAYS))
+            games_missed = trim(injury.xpath(Players.Injuries.GAMES_MISSED))
+            games_missed_clubs_urls = injury.xpath(Players.Injuries.GAMES_MISSED_CLUBS_URLS)
+            games_missed_clubs_ids = [extract_from_url(club_url) for club_url in games_missed_clubs_urls]
 
-            injuries.append({
-                "season": season,
-                "type": type_,
-                "from": from_,
-                "to": to_,
-                "days": days,
-                "games_missed": games_missed,
-            })
+            player_injuries.append(
+                {
+                    "season": season,
+                    "injury": injury_type,
+                    "from": date_from,
+                    "until": date_until,
+                    "days": days,
+                    "gamesMissed": games_missed,
+                    "gamesMissedClubs": games_missed_clubs_ids,
+                },
+            )
 
-        return injuries
+        return player_injuries
 
-    def _check_injuries_found(self) -> None:
-        result_injuries: ElementTree = self.page.xpath(Players.Injuries.RESULTS)
-        if not result_injuries:
-            raise HTTPException(status_code=404, detail=f"Injury data not found for player ID: {self.player_id}")
+    def get_player_injuries(self) -> dict:
+        self.response["id"] = self.player_id
+        self.response["pageNumber"] = self.page_number
+        self.response["lastPageNumber"] = self.get_last_page_number()
+        self.response["injuries"] = self.__parse_player_injuries()
+        self.response["updatedAt"] = datetime.now()
 
-        # Debug print
-        for inj in result_injuries:
-            print(etree.tostring(inj, pretty_print=True).decode("utf-8"))
-
-
-
-
+        return clean_response(self.response)

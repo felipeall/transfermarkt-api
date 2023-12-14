@@ -85,7 +85,7 @@ class TransfermarktPlayerSearch(TransfermarktBase):
         """
         self.response["query"] = self.query
         self.response["pageNumber"] = self.page_number
-        self.response["lastPageNumber"] = self.get_search_last_page_number(Players.Search.BASE)
+        self.response["lastPageNumber"] = self.get_last_page_number(Players.Search.BASE)
         self.response["results"] = self.__parse_search_results()
         self.response["updatedAt"] = datetime.now()
 
