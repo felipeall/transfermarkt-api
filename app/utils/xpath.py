@@ -1,12 +1,12 @@
 class Players:
     class Injuries:
         RESULTS = ".//*[@id='yw1']/table/tbody/tr"
-        SEASONS = ".//td[1]" 
+        SEASONS = ".//td[1]"
         INJURY = ".//td[2]"
         FROM = ".//td[3]"
         UNTIL = ".//td[4]"
         DAYS = ".//td[5]"
-        GAMES_MISSED = ".//td[6]/span"  
+        GAMES_MISSED = ".//td[6]/span"
     class Profile:
         ID = "//div[@data-action='profil']//@data-id"
         URL = "//a[@class='tm-subnav-item megamenu']//@href"

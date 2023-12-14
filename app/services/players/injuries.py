@@ -1,22 +1,13 @@
-import json
 from dataclasses import dataclass
-from datetime import datetime
+from typing import List, Optional
+from xml.etree import ElementTree
+
+from fastapi import HTTPException
+from lxml import etree
 
 from app.services.base import TransfermarktBase
-from app.utils.regex import REGEX_CHART_CLUB_ID
-from app.utils.utils import (
-    clean_response,
-    safe_regex,
-    zip_lists_into_dict,
-)
 from app.utils.xpath import Players
 
-
-from dataclasses import dataclass
-from typing import Optional, List
-from xml.etree import ElementTree
-from lxml import etree
-from fastapi import APIRouter, HTTPException
 
 @dataclass
 class TransfermarktPlayerInjuries(TransfermarktBase):
@@ -41,7 +32,7 @@ class TransfermarktPlayerInjuries(TransfermarktBase):
             to_ = injury_element.xpath(Players.Injuries.UNTIL)[0].text
             days = injury_element.xpath(Players.Injuries.DAYS)[0].text
             games_missed_list = injury_element.xpath(Players.Injuries.GAMES_MISSED)
-            games_missed = games_missed_list[0].text.strip() if games_missed_list else '0'  # Handle missing span
+            games_missed = games_missed_list[0].text.strip() if games_missed_list else "0"  # Handle missing span
 
             injuries.append({
                 "season": season,
@@ -49,7 +40,7 @@ class TransfermarktPlayerInjuries(TransfermarktBase):
                 "from": from_,
                 "to": to_,
                 "days": days,
-                "games_missed": games_missed
+                "games_missed": games_missed,
             })
 
         return injuries
@@ -61,7 +52,7 @@ class TransfermarktPlayerInjuries(TransfermarktBase):
 
         # Debug print
         for inj in result_injuries:
-            print(etree.tostring(inj, pretty_print=True).decode('utf-8'))
+            print(etree.tostring(inj, pretty_print=True).decode("utf-8"))
 
 
 

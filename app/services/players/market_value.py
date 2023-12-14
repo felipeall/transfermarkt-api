@@ -4,11 +4,7 @@ from datetime import datetime
 
 from app.services.base import TransfermarktBase
 from app.utils.regex import REGEX_CHART_CLUB_ID
-from app.utils.utils import (
-    clean_response,
-    safe_regex,
-    zip_lists_into_dict,
-)
+from app.utils.utils import clean_response, safe_regex, zip_lists_into_dict
 from app.utils.xpath import Players
 
 

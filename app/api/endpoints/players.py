@@ -2,12 +2,12 @@ from typing import Optional
 
 from fastapi import APIRouter
 
+from app.services.players.injuries import TransfermarktPlayerInjuries
 from app.services.players.market_value import TransfermarktPlayerMarketValue
 from app.services.players.profile import TransfermarktPlayerProfile
 from app.services.players.search import TransfermarktPlayerSearch
 from app.services.players.stats import TransfermarktPlayerStats
 from app.services.players.transfers import TransfermarktPlayerTransfers
-from app.services.players.injuries import TransfermarktPlayerInjuries
 
 router = APIRouter()
 
