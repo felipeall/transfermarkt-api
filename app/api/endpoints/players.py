@@ -2,6 +2,7 @@ from typing import Optional
 
 from fastapi import APIRouter
 
+from app.services.players.injuries import TransfermarktPlayerInjuries
 from app.services.players.market_value import TransfermarktPlayerMarketValue
 from app.services.players.profile import TransfermarktPlayerProfile
 from app.services.players.search import TransfermarktPlayerSearch
@@ -42,5 +43,13 @@ def get_player_transfers(player_id: str):
 @router.get("/{player_id}/stats")
 def get_player_stats(player_id: str):
     tfmkt = TransfermarktPlayerStats(player_id=player_id)
-    player_market_value = tfmkt.get_player_stats()
-    return player_market_value
+    player_stats = tfmkt.get_player_stats()
+    return player_stats
+
+
+# Define the endpoint for injuries
+@router.get("/{player_id}/injuries")
+def get_player_injuries(player_id: str, page_number: Optional[int] = 1):
+    tfmkt = TransfermarktPlayerInjuries(player_id=player_id, page_number=page_number)
+    players_injuries = tfmkt.get_player_injuries()
+    return players_injuries

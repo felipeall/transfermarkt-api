@@ -1,4 +1,14 @@
 class Players:
+    class Injuries:
+        RESULTS = "//div[@id='yw1']//tbody//tr"
+        SEASONS = ".//td[1]//text()"
+        INJURY = ".//td[2]//text()"
+        FROM = ".//td[3]//text()"
+        UNTIL = ".//td[4]//text()"
+        DAYS = ".//td[5]//text()"
+        GAMES_MISSED = ".//td[6]//span//text()"
+        GAMES_MISSED_CLUBS_URLS = ".//td[6]//a//@href"
+
     class Profile:
         ID = "//div[@data-action='profil']//@data-id"
         URL = "//a[@class='tm-subnav-item megamenu']//@href"
@@ -160,7 +170,6 @@ class Competitions:
         NAMES = "//td[@class='hauptlink no-border-links']//a//text()"
 
 
-class Commons:
-    class Search:
-        PAGE_NUMBER_LAST = "//li[@class='tm-pagination__list-item tm-pagination__list-item--icon-last-page']//@href"
-        PAGE_NUMBER_ACTIVE = "//li[@class='tm-pagination__list-item tm-pagination__list-item--active']//@href"
+class Pagination:
+    PAGE_NUMBER_LAST = "//li[contains(@class, 'list-item--icon-last-page')]//@href"
+    PAGE_NUMBER_ACTIVE = "//li[contains(@class, 'list-item--active')]//@href"
