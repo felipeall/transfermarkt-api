@@ -47,7 +47,6 @@ def get_player_stats(player_id: str):
     return player_stats
 
 
-# Define the endpoint for injuries
 @router.get("/{player_id}/injuries")
 def get_player_injuries(player_id: str, page_number: Optional[int] = 1):
     tfmkt = TransfermarktPlayerInjuries(player_id=player_id, page_number=page_number)

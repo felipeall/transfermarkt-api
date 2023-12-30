@@ -4,6 +4,9 @@ This project provides a lightweight and easy-to-use interface for extracting dat
 by applying web scraping processes and offering a RESTful API service via FastAPI. With this service, developers can 
 seamlessly integrate Transfermarkt data into their applications, websites, or data analysis pipelines.
 
+Please note that the deployed application is used only for testing purposes and has a rate limiting 
+feature enabled. If you'd like to customize it, consider hosting in your own cloud service. 
+
 ### API Swagger
 https://transfermarkt-api.vercel.app/
 
@@ -50,3 +53,10 @@ $ docker run -d -p 8000:8000 transfermarkt-api
 # Access the API local page
 $ open http://localhost:8000/
 ````
+
+### Environment Variables
+
+| Variable                  | Description                                               | Default      |
+|---------------------------|-----------------------------------------------------------|--------------|
+| `RATE_LIMITING_ENABLE`    | Enable rate limiting feature for API calls                | `false`      |
+| `RATE_LIMITING_FREQUENCY` | Delay allowed between each API call. See [slowapi](https://slowapi.readthedocs.io/en/latest/) for more | `2/3seconds` |
