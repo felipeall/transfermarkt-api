@@ -43,7 +43,7 @@ def test_players_search(query, page_number, len_greater_than_0, regex_integer, r
                         "name": And(str, len_greater_than_0),
                     },
                     "age": And(str, len_greater_than_0, regex_integer),
-                    "nationality": And(str, len_greater_than_0),
+                    "nationalities": And(list, len_greater_than_0),
                     "marketValue": And(str, len_greater_than_0, regex_market_value),
                 },
             ],

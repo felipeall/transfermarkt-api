@@ -34,7 +34,7 @@ def regex_value_variation():
 
 @pytest.fixture
 def regex_integer():
-    return Regex(r"^\d+$")
+    return Regex(r"^(\d+|-)$")
 
 
 @pytest.fixture
