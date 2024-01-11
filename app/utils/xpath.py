@@ -43,16 +43,17 @@ class Players:
         SOCIAL_MEDIA = "//div[@class='socialmedia-icons']//@href"
 
     class Search:
-        BASE = "//div[@class='box'][h2[contains(text(), 'players')]]"
         FOUND = "//text()"
-        URL = BASE + "//td[@class='hauptlink']//a//@href"
-        NAME = BASE + "//td[@class='hauptlink']//a//@title"
-        POSITION = BASE + "//td[@class='zentriert'][1]//text()"
-        CLUB_IMAGE = BASE + "//td[@class='zentriert'][2]//img//@src"
-        CLUB_NAME = BASE + "//img[@class='tiny_wappen']//@title"
-        AGE = BASE + "//td[@class='zentriert'][3]//text()"
-        NATIONALITY = BASE + "//img//@title"
-        MARKET_VALUE = BASE + "//td[@class='rechts hauptlink']//text()"
+        BASE = "//div[@class='box'][h2[contains(text(), 'players')]]"
+        RESULTS = BASE + "//tbody//tr[@class='odd' or @class='even']"
+        ID = ".//td[@class='hauptlink']//a/@href"
+        NAME = ".//td[@class='hauptlink']//a//@title"
+        POSITION = ".//td[@class='zentriert'][1]//text()"
+        CLUB_NAME = ".//img[@class='tiny_wappen']//@title"
+        CLUB_IMAGE = ".//img[@class='tiny_wappen']//@src"
+        AGE = ".//td[@class='zentriert'][3]//text()"
+        NATIONALITIES = ".//img[@class='flaggenrahmen']/@title"
+        MARKET_VALUE = ".//td[@class='rechts hauptlink']//text()"
 
     class MarketValue:
         URL = "//a[@class='data-header__market-value-wrapper']//@href"
