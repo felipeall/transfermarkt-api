@@ -37,7 +37,7 @@ def zip_lists_into_dict(list_keys: list, list_values: list) -> dict:
     return {k: v for k, v in zip(list_keys, list_values)}
 
 
-def extract_from_url(tfmkt_url: str, element: str = "id") -> Optional[str]:
+def extract_from_url(tfmkt_url: Optional[str], element: str = "id") -> Optional[str]:
     """
     Extract a specific element from a Transfermarkt URL using regular expressions.
 
@@ -48,6 +48,9 @@ def extract_from_url(tfmkt_url: str, element: str = "id") -> Optional[str]:
     Returns:
         Optional[str]: The extracted element value or None if not found.
     """
+    if not tfmkt_url:
+        return None
+
     regex: str = (
         r"/(?P<code>[\w%-]+)"
         r"/(?P<category>[\w-]+)"
@@ -56,8 +59,9 @@ def extract_from_url(tfmkt_url: str, element: str = "id") -> Optional[str]:
         r"(/saison_id/(?P<season_id>\d{4}))?"
         r"(/transfer_id/(?P<transfer_id>\d+))?"
     )
+
     try:
-        groups: dict = re.match(regex, tfmkt_url).groupdict()
+        groups: dict = re.match(regex, trim(tfmkt_url)).groupdict()
     except TypeError:
         return None
     return groups.get(element)
@@ -79,7 +83,7 @@ def trim(text: Union[list, str]) -> str:
     return text.strip().replace("\xa0", "")
 
 
-def safe_regex(text: Optional[str], regex, group: str) -> Optional[str]:
+def safe_regex(text: Optional[Union[str, list]], regex, group: str) -> Optional[str]:
     """
     Safely apply a regular expression and extract a specific group from the matched text.
 
@@ -91,11 +95,11 @@ def safe_regex(text: Optional[str], regex, group: str) -> Optional[str]:
     Returns:
         Optional[str]: The extracted group value or None if not found or if the input is not a string.
     """
-    if not isinstance(text, str):
+    if not isinstance(text, (str, list)) or not text:
         return None
 
     try:
-        groups = re.search(regex, text).groupdict()
+        groups = re.search(regex, trim(text)).groupdict()
         return groups.get(group)
     except AttributeError:
         return None
