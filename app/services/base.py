@@ -58,6 +58,10 @@ class TransfermarktBase:
             )
         except TooManyRedirects:
             raise HTTPException(status_code=404, detail=f"Not found for url: {url}")
+        except ConnectionError:
+            raise HTTPException(status_code=500, detail=f"Connection error for url: {url}")
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Error for url: {url}. {e}")
         if 400 <= response.status_code < 500:
             raise HTTPException(
                 status_code=response.status_code,
