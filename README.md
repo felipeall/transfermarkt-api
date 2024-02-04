@@ -23,7 +23,7 @@ $ cd transfermarkt-api
 $ poetry shell
 
 # Install the dependencies
-$ poetry install
+$ poetry install --no-root
 
 # (optional) Append the current directory to PYTHONPATH
 $ export PYTHONPATH=$PYTHONPATH:$(pwd)
