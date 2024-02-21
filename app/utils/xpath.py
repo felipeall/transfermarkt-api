@@ -10,8 +10,8 @@ class Players:
         GAMES_MISSED_CLUBS_URLS = ".//td[6]//a//@href"
 
     class Profile:
-        ID = "//div[@data-action='profil']//@data-id"
-        URL = "//a[@class='tm-subnav-item megamenu']//@href"
+        ID = "//tm-subnavigation[@controller='spieler']//@id"
+        URL = "//meta[@property='og:url']//@content"
         NAME = "//h1[@class='data-header__headline-wrapper']//strong//text()"
         DESCRIPTION = "//meta[@name='description']//@content"
         IMAGE_URL = "//div[@id='fotoauswahlOeffnen']//img//@src"
