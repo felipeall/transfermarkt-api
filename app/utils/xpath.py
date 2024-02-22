@@ -152,7 +152,7 @@ class Clubs:
 
 class Competitions:
     class Profile:
-        URL = "//li[@id='overview']//@href"
+        URL = "//a[@class='tm-tab']//@href"
         NAME = "//div[@class='data-header__headline-container']//h1//text()"
 
     class Search:
