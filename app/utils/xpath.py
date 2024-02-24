@@ -74,6 +74,16 @@ class Players:
         CLUBS_URLS = "//table[@class='items']//td[@class='hauptlink no-border-rechts zentriert']//a//@href"
         DATA = ".//text()"
 
+    class Achievements:
+        ACHIEVEMENTS = "//div[@class='box'][descendant::table[@class='auflistung']]"
+        TITLE = ".//h2//text()"
+        DETAILS = ".//table[@class='auflistung']//tr"
+        SEASON = ".//td[contains(@class, 'erfolg_table_saison')]//text()"
+        CLUB_NAME = ".//a[contains(@href, '/verein/')][not(img)]/@title"
+        CLUB_URL = ".//a[contains(@href, '/verein/')][not(img)]/@href"
+        COMPETITION_NAME = ".//a[contains(@href, '/wettbewerb/') or contains(@href, '/pokalwettbewerb/')]/text()"
+        COMPETITION_URL = ".//a[contains(@href, '/wettbewerb/') or contains(@href, '/pokalwettbewerb/')]/@href"
+
 
 class Clubs:
     class Profile:

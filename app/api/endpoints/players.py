@@ -2,6 +2,7 @@ from typing import Optional
 
 from fastapi import APIRouter
 
+from app.services.players.achievements import TransfermarktPlayerAchievements
 from app.services.players.injuries import TransfermarktPlayerInjuries
 from app.services.players.market_value import TransfermarktPlayerMarketValue
 from app.services.players.profile import TransfermarktPlayerProfile
@@ -52,3 +53,10 @@ def get_player_injuries(player_id: str, page_number: Optional[int] = 1):
     tfmkt = TransfermarktPlayerInjuries(player_id=player_id, page_number=page_number)
     players_injuries = tfmkt.get_player_injuries()
     return players_injuries
+
+
+@router.get("/{player_id}/achievements")
+def get_player_achievements(player_id: str):
+    tfmkt = TransfermarktPlayerAchievements(player_id=player_id)
+    player_achievements = tfmkt.get_player_achievements()
+    return player_achievements
