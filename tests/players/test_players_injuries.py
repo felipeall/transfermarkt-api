@@ -7,7 +7,7 @@ from schema import And, Optional, Schema
 from app.services.players.injuries import TransfermarktPlayerInjuries
 
 
-def test_get_player_market_value_not_found():
+def test_get_player_injuries_not_found():
     with pytest.raises(HTTPException):
         TransfermarktPlayerInjuries(player_id="0")
 
