@@ -21,8 +21,8 @@ jupyter = "==1.0.0"
 setuptools = "==68.2.2"
 
 [tool.poetry.group.check.dependencies]
-black = "==23.1.0"
-ruff = "==0.0.275"
+black = "==24.2.0"
+ruff = "==0.2.2"
 interrogate = "==1.5.0"
 
 [tool.poetry.group.tests.dependencies]
@@ -37,7 +37,7 @@ preview = true
 
 [tool.ruff]
 line-length = 120
-select = [
+lint.select = [
     "F",  # pyflakes
     "E",  # pycodestyle errors
     "W",  # pycodestyle warnings
