@@ -4,6 +4,7 @@ from fastapi import APIRouter
 
 from app.services.players.achievements import TransfermarktPlayerAchievements
 from app.services.players.injuries import TransfermarktPlayerInjuries
+from app.services.players.jersey_numbers import TransfermarktPlayerJerseyNumbers
 from app.services.players.market_value import TransfermarktPlayerMarketValue
 from app.services.players.profile import TransfermarktPlayerProfile
 from app.services.players.search import TransfermarktPlayerSearch
@@ -39,6 +40,13 @@ def get_player_transfers(player_id: str):
     tfmkt = TransfermarktPlayerTransfers(player_id=player_id)
     player_market_value = tfmkt.get_player_transfers()
     return player_market_value
+
+
+@router.get("/{player_id}/jersey_numbers")
+def get_player_jersey_numbers(player_id: str):
+    tfmkt = TransfermarktPlayerJerseyNumbers(player_id=player_id)
+    player_jerseynumbers = tfmkt.get_player_jersey_numbers()
+    return player_jerseynumbers
 
 
 @router.get("/{player_id}/stats")

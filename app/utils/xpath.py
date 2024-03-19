@@ -9,6 +9,12 @@ class Players:
         GAMES_MISSED = ".//td[6]//span//text()"
         GAMES_MISSED_CLUBS_URLS = ".//td[6]//a//@href"
 
+    class JerseyNumbers:
+        HEADERS = "//table[@class='items']//thead//tr//@title"
+        SEASONS = "//table[@class='items']//td[@class='zentriert']//text()"
+        CLUBS_URLS = "//table[@class='items']//td[@class='hauptlink no-border-links']//a//@href"
+        DATA = "//table[@class='items']//td[@class='zentriert hauptlink']//text()"
+
     class Profile:
         ID = "//tm-subnavigation[@controller='spieler']//@id"
         URL = "//link[@rel='canonical']//@href"
