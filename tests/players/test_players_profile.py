@@ -20,7 +20,8 @@ def test_get_player_profile_28003(len_greater_than_0):
         {
             "id": And(str, len_greater_than_0),
             "url": And(str, len_greater_than_0),
-            "name": And(str, len_greater_than_0),
+            "lastName": And(str, len_greater_than_0),
+            "firstName": And(str, len_greater_than_0),
             "description": And(str, len_greater_than_0),
             "nameInHomeCountry": And(str, len_greater_than_0),
             "imageURL": And(str, len_greater_than_0),
@@ -66,7 +67,8 @@ def test_get_player_profile_8198(len_greater_than_0):
         {
             "id": And(str, len_greater_than_0),
             "url": And(str, len_greater_than_0),
-            "name": And(str, len_greater_than_0),
+            "lastName": And(str, len_greater_than_0),
+            "firstName": And(str, len_greater_than_0),
             "description": And(str, len_greater_than_0),
             "fullName": And(str, len_greater_than_0),
             "imageURL": And(str, len_greater_than_0),
@@ -113,7 +115,8 @@ def test_get_player_profile_68290(len_greater_than_0):
         {
             "id": And(str, len_greater_than_0),
             "url": And(str, len_greater_than_0),
-            "name": And(str, len_greater_than_0),
+            "lastName": And(str, len_greater_than_0),
+            "firstName": And(str, len_greater_than_0),
             "description": And(str, len_greater_than_0),
             "fullName": And(str, len_greater_than_0),
             "imageURL": And(str, len_greater_than_0),
@@ -160,7 +163,8 @@ def test_get_player_profile_3373(len_greater_than_0):
         {
             "id": And(str, len_greater_than_0),
             "url": And(str, len_greater_than_0),
-            "name": And(str, len_greater_than_0),
+            "lastName": And(str, len_greater_than_0),
+            "firstName": And(str, len_greater_than_0),
             "description": And(str, len_greater_than_0),
             "fullName": And(str, len_greater_than_0),
             "imageURL": And(str, len_greater_than_0),

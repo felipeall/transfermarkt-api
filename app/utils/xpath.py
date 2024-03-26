@@ -18,7 +18,8 @@ class Players:
     class Profile:
         ID = "//tm-subnavigation[@controller='spieler']//@id"
         URL = "//link[@rel='canonical']//@href"
-        NAME = "//h1[@class='data-header__headline-wrapper']//strong//text()"
+        LAST_NAME = "//h1[@class='data-header__headline-wrapper']//strong//text()"
+        FIRST_NAME = "//h1[@class='data-header__headline-wrapper']/text()"
         DESCRIPTION = "//meta[@name='description']//@content"
         IMAGE_URL = "//div[@id='fotoauswahlOeffnen']//img//@src"
         SHIRT_NUMBER = "//span[@class='data-header__shirt-number']//text()"

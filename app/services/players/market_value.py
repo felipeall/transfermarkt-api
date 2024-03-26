@@ -29,7 +29,7 @@ class TransfermarktPlayerMarketValue(TransfermarktBase):
         """Initialize the TransfermarktPlayerMarketValue class."""
         self.URL = self.URL.format(player_id=self.player_id)
         self.page = self.request_url_page()
-        self.raise_exception_if_not_found(xpath=Players.Profile.NAME)
+        self.raise_exception_if_not_found(xpath=Players.Profile.LAST_NAME)
         self.market_value_chart = self.make_request(url=self.URL_MARKET_VALUE.format(player_id=self.player_id))
 
     def __parse_market_value_history(self) -> list:
