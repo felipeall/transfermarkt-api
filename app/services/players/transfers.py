@@ -24,7 +24,7 @@ class TransfermarktPlayerTransfers(TransfermarktBase):
         """Initialize the TransfermarktPlayerTransfers class."""
         self.URL = self.URL.format(player_id=self.player_id)
         self.page = self.request_url_page()
-        self.raise_exception_if_not_found(xpath=Players.Profile.NAME)
+        self.raise_exception_if_not_found(xpath=Players.Profile.LAST_NAME)
         self.transfer_history = self.make_request(url=self.URL_TRANSFERS.format(player_id=self.player_id))
 
     def __parse_player_transfer_history(self) -> list:
