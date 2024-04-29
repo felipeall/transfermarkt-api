@@ -39,7 +39,7 @@ class TransfermarktPlayerProfile(TransfermarktBase):
         """
         self.response["id"] = self.get_text_by_xpath(Players.Profile.ID)
         self.response["url"] = self.get_text_by_xpath(Players.Profile.URL)
-        self.response["name"] = self.get_text_by_xpath(Players.Profile.NAME)
+        self.response["name"] = self.get_text_by_xpath(Players.Profile.NAME, join_str=" ")
         self.response["description"] = self.get_text_by_xpath(Players.Profile.DESCRIPTION)
         self.response["fullName"] = self.get_text_by_xpath(Players.Profile.FULL_NAME)
         self.response["nameInHomeCountry"] = self.get_text_by_xpath(Players.Profile.NAME_IN_HOME_COUNTRY)
