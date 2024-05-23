@@ -13,9 +13,6 @@ https://transfermarkt-api.vercel.app/
 ### Running Locally
 
 ````bash
-# Clone the repository
-$ git clone https://github.com/felipeall/transfermarkt-api.git
-
 # Go to the project's root folder
 $ cd transfermarkt-api
 
@@ -38,9 +35,6 @@ $ open http://localhost:8000/
 ### Running via Docker
 
 ````bash
-# Clone the repository
-$ git clone https://github.com/felipeall/transfermarkt-api.git
-
 # Go to the project's root folder
 $ cd transfermarkt-api
 
