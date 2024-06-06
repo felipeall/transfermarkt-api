@@ -8,7 +8,7 @@ Please note that the deployed application is used only for testing purposes and 
 feature enabled. If you'd like to customize it, consider hosting in your own cloud service. 
 
 ### API Swagger
-https://transfermarkt-api.vercel.app/
+https://transfermarkt-api.fly.dev/
 
 ### Running Locally
 
