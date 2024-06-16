@@ -51,6 +51,9 @@ class TransfermarktClubPlayers(TransfermarktBase):
         page_players_signed_from = self.page.xpath(
             Clubs.Players.Past.PAGE_SIGNED_FROM if self.past else Clubs.Players.Present.PAGE_SIGNED_FROM,
         )
+        page_players_joined_on = self.page.xpath(
+            Clubs.Players.Past.PAGE_SIGNED_FROM if self.past else Clubs.Players.Present.PAGE_SIGNED_FROM,
+        )
         players_ids = [extract_from_url(url) for url in self.get_list_by_xpath(Clubs.Players.URLS)]
         players_names = self.get_list_by_xpath(Clubs.Players.NAMES)
         players_positions = self.get_list_by_xpath(Clubs.Players.POSITIONS)
@@ -71,9 +74,7 @@ class TransfermarktClubPlayers(TransfermarktBase):
             Clubs.Players.Past.FOOTS if self.past else Clubs.Players.Present.FOOTS,
             remove_empty=False,
         )
-        players_joined_on = self.get_list_by_xpath(
-            Clubs.Players.Past.JOINED_ON if self.past else Clubs.Players.Present.JOINED_ON,
-        )
+        players_joined_on = ["; ".join(e.xpath(Clubs.Players.JOINED_ON)) for e in page_players_joined_on]
         players_joined = ["; ".join(e.xpath(Clubs.Players.JOINED)) for e in page_players_infos]
         players_signed_from = ["; ".join(e.xpath(Clubs.Players.SIGNED_FROM)) for e in page_players_signed_from]
         players_contracts = (

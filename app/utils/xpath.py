@@ -149,20 +149,21 @@ class Clubs:
         SIGNED_FROM = ".//a//img//@title"
         MARKET_VALUES = "//td[@class='rechts hauptlink']//text()"
         STATUSES = ".//td[@class='hauptlink']//span//@title"
+        JOINED_ON = ".//text()"
 
         class Present:
             PAGE_SIGNED_FROM = "//div[@id='yw1']//td[8]"
+            PAGE_JOINED_ON = "//div[@id='yw1']//td[7]"
             HEIGHTS = "//div[@id='yw1']//td[5]//text()"
             FOOTS = "//div[@id='yw1']//td[6]//text()"
-            JOINED_ON = "//div[@id='yw1']//td[7]//text()"
             CONTRACTS = "//div[@id='yw1']//td[9]//text()"
 
         class Past:
             PAGE_SIGNED_FROM = "//div[@id='yw1']//td[9]"
+            PAGE_JOINED_ON = "//div[@id='yw1']//td[8]"
             CURRENT_CLUB = "//div[@id='yw1']//td[5]//img//@title"
             HEIGHTS = "//div[@id='yw1']//td[6]/text()"
             FOOTS = "//div[@id='yw1']//td[7]//text()"
-            JOINED_ON = "//div[@id='yw1']//td[8]//text()"
             CONTRACTS = "//div[@id='yw1']//td[10]//text()"
 
 
