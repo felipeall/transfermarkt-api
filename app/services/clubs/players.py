@@ -38,6 +38,7 @@ class TransfermarktClubPlayers(TransfermarktBase):
     def __update_past_flag(self) -> None:
         """Check if the season is the current or if it's a past one and update the flag accordingly."""
         self.past = "Current club" in self.get_list_by_xpath(Clubs.Players.PAST_FLAG)
+        print(f"{self.past=}")
 
     def __parse_club_players(self) -> list[dict]:
         """
@@ -49,6 +50,9 @@ class TransfermarktClubPlayers(TransfermarktBase):
         page_nationalities = self.page.xpath(Clubs.Players.PAGE_NATIONALITIES)
         page_players_infos = self.page.xpath(Clubs.Players.PAGE_INFOS)
         page_players_signed_from = self.page.xpath(
+            Clubs.Players.Past.PAGE_SIGNED_FROM if self.past else Clubs.Players.Present.PAGE_SIGNED_FROM,
+        )
+        page_players_joined_on = self.page.xpath(
             Clubs.Players.Past.PAGE_SIGNED_FROM if self.past else Clubs.Players.Present.PAGE_SIGNED_FROM,
         )
         players_ids = [extract_from_url(url) for url in self.get_list_by_xpath(Clubs.Players.URLS)]
@@ -71,9 +75,7 @@ class TransfermarktClubPlayers(TransfermarktBase):
             Clubs.Players.Past.FOOTS if self.past else Clubs.Players.Present.FOOTS,
             remove_empty=False,
         )
-        players_joined_on = self.get_list_by_xpath(
-            Clubs.Players.Past.JOINED_ON if self.past else Clubs.Players.Present.JOINED_ON,
-        )
+        players_joined_on = ["; ".join(e.xpath(Clubs.Players.JOINED_ON)) for e in page_players_joined_on]
         players_joined = ["; ".join(e.xpath(Clubs.Players.JOINED)) for e in page_players_infos]
         players_signed_from = ["; ".join(e.xpath(Clubs.Players.SIGNED_FROM)) for e in page_players_signed_from]
         players_contracts = (
