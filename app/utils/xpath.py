@@ -156,7 +156,6 @@ class Clubs:
             PAGE_JOINED_ON = "//div[@id='yw1']//td[7]"
             HEIGHTS = "//div[@id='yw1']//td[5]//text()"
             FOOTS = "//div[@id='yw1']//td[6]//text()"
-            CONTRACTS = "//div[@id='yw1']//td[9]//text()"
 
         class Past:
             PAGE_SIGNED_FROM = "//div[@id='yw1']//td[9]"
@@ -164,7 +163,6 @@ class Clubs:
             CURRENT_CLUB = "//div[@id='yw1']//td[5]//img//@title"
             HEIGHTS = "//div[@id='yw1']//td[6]/text()"
             FOOTS = "//div[@id='yw1']//td[7]//text()"
-            CONTRACTS = "//div[@id='yw1']//td[10]//text()"
 
 
 class Competitions:
