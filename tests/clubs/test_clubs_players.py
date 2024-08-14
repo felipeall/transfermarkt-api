@@ -45,6 +45,7 @@ def test_get_club_players(
                     "joinedOn": Or("", And(str, len_greater_than_0, regex_date_mmm_dd_yyyy)),
                     "joined": Or("", And(str, len_greater_than_0)),
                     "signedFrom": Or("", And(str, len_greater_than_0)),
+                    "contract": Or(None, And(str, regex_date_mmm_dd_yyyy)),
                     "marketValue": And(str, len_greater_than_0, regex_market_value),
                     "status": Or("", And(str, len_greater_than_0)),
                 },

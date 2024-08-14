@@ -77,6 +77,9 @@ class TransfermarktClubPlayers(TransfermarktBase):
         players_joined_on = ["; ".join(e.xpath(Clubs.Players.JOINED_ON)) for e in page_players_joined_on]
         players_joined = ["; ".join(e.xpath(Clubs.Players.JOINED)) for e in page_players_infos]
         players_signed_from = ["; ".join(e.xpath(Clubs.Players.SIGNED_FROM)) for e in page_players_signed_from]
+        players_contracts = (
+            [None] * len(players_ids) if self.past else self.get_list_by_xpath(Clubs.Players.Present.CONTRACTS)
+        )
         players_marketvalues = self.get_list_by_xpath(Clubs.Players.MARKET_VALUES)
         players_statuses = ["; ".join(e.xpath(Clubs.Players.STATUSES)) for e in page_players_infos]
 
@@ -94,10 +97,11 @@ class TransfermarktClubPlayers(TransfermarktBase):
                 "joinedOn": joined_on,
                 "joined": joined,
                 "signedFrom": signed_from,
+                "contract": contract,
                 "marketValue": market_value,
                 "status": status,
             }
-            for idx, name, position, dob, age, nationality, current_club, height, foot, joined_on, joined, signed_from, market_value, status, in zip(  # noqa: E501
+            for idx, name, position, dob, age, nationality, current_club, height, foot, joined_on, joined, signed_from, contract, market_value, status, in zip(  # noqa: E501
                 players_ids,
                 players_names,
                 players_positions,
@@ -110,6 +114,7 @@ class TransfermarktClubPlayers(TransfermarktBase):
                 players_joined_on,
                 players_joined,
                 players_signed_from,
+                players_contracts,
                 players_marketvalues,
                 players_statuses,
             )
