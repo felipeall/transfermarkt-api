@@ -30,7 +30,7 @@ def test_get_player_injuries(player_id, page_number, len_greater_than_0, regex_i
                     "season": And(str, len_greater_than_0),
                     "injury": And(str, len_greater_than_0),
                     "from": And(str, len_greater_than_0, regex_date_mmm_dd_yyyy),
-                    "until": And(str, len_greater_than_0, regex_date_mmm_dd_yyyy),
+                    Optional("until"): And(str, len_greater_than_0, regex_date_mmm_dd_yyyy),
                     "days": And(str, len_greater_than_0),
                     Optional("gamesMissed"): And(str, len_greater_than_0, regex_integer),
                     Optional("gamesMissedClubs"): list[str],
