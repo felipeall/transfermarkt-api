@@ -124,6 +124,8 @@ class Clubs:
         LEAGUE_COUNTRY_ID = "//div[@class='data-header__club-info']//img[contains(@class, 'flaggenrahmen')]//@data-src"
         LEAGUE_COUNTRY_NAME = "//div[@class='data-header__club-info']//img[contains(@class, 'flaggenrahmen')]//@title"
         LEAGUE_TIER = "//div[@class='data-header__club-info']//strong//text()//following::span[1]/a/text()[2]"
+        LEAGUE_POSITION = "//div[@class='data-header__club-info']//following::span[3]//text()//following::span[1]/a/text()[1]"
+        IN_LEAGUE_SINCE = "//div[@class='data-header__club-info']//following::span[4]//text()//following::span[1]/a/text()[1]"
         CRESTS_HISTORICAL = "//div[@class='wappen-datenfakten-wappen']//@src"
 
     class Search:
