@@ -37,7 +37,7 @@ class TransfermarktClubStaffs(TransfermarktBase):
             safe_regex(ids, REGEX_STAFF_ID, "id") for ids in self.get_list_by_xpath(Clubs.Staff.ID)
         ]
         staffs_names = self.page.xpath(Clubs.Staff.NAME)
-        staffs_jobs = self.page.xpath(Clubs.Players.PAGE_INFOS)
+        staffs_jobs = self.page.xpath(Clubs.Staff.JOB)
         staffs_ages = self.page.xpath(Clubs.Staff.AGE)
         staffs_nationalities = self.page.xpath(Clubs.Staff.NATIONALITIES)
         staffs_appointed = self.page.xpath(Clubs.Staff.APPOINTED)
