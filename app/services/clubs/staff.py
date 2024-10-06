@@ -55,7 +55,7 @@ class TransfermarktClubStaffs(TransfermarktBase):
                 "contract": contract,
                 "lastClub": last_club,
             }
-            for idx, name, job, age, nationality, appointed, contract, last_club, in zip(  # noqa: E501
+            for idx, name, job, age, nationality, appointed, contract, last_club in zip(  # noqa: E501
                 staffs_ids,
                 staffs_names,
                 staffs_jobs,
