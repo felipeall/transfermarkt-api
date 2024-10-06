@@ -92,6 +92,17 @@ class Players:
 
 
 class Clubs:
+    class Staff:
+        CLUB_NAME = "//header//h1//text()"
+        ID = "//div[@class='large-12 columns']//table[@class='inline-table']//td[@rowspan='2']/img/@src"
+        NAME = "//div[@class='large-12 columns']//table[@class='inline-table']//td[@class='hauptlink']/a/text()"
+        JOB = "//div[@class='large-12 columns']//table[@class='inline-table']//td[@class='hauptlink']/following-sibling::tr[1]/td/text()"
+        AGE = "//div[@class='large-12 columns']//td[@class='zentriert'][2]/text()"
+        NATIONALITIES = "//div[@class='large-12 columns']//td[@class='zentriert'][3]/img/@title"
+        APPOINTED = "//div[@class='large-12 columns']//td[@class='zentriert'][4]/text()"
+        CONTRACT = "//div[@class='large-12 columns']//td[@class='zentriert'][5]/text()"
+        LAST_CLUB = "//div[@class='large-12 columns']//td[@class='zentriert'][6]/a/@title"
+
     class Profile:
         URL = "//div[@class='datenfakten-wappen']//@href"
         NAME = "//header//h1//text()"
@@ -142,9 +153,9 @@ class Clubs:
         CLUB_URL = "//li[@id='overview']//@href"
         PAGE_NATIONALITIES = "//td[img[@class='flaggenrahmen']]"
         PAGE_INFOS = "//td[@class='posrela']"
-        NAMES = "//td[@class='posrela']//a//text()"
+        NAMES = "//table[@class='inline-table']//a//text()"
         URLS = "//td[@class='hauptlink']//@href"
-        POSITIONS = "//td[@class='posrela']//tr[2]//text()"
+        POSITIONS = "//table[@class='inline-table']//tr[2]//text()"
         DOB_AGE = "//div[@id='yw1']//td[3]//text()"
         NATIONALITIES = ".//img//@title"
         JOINED = ".//span/node()/@title"
@@ -170,6 +181,20 @@ class Clubs:
 
 class Competitions:
     class Profile:
+        LEAGUE_COUNTRY_NAME = "//div[@class='data-header__club-info']//following::span[1]/a/text()[1]"
+        LEAGUE_COUNTRY_ID = "//div[@class='data-header__club-info']//following::span[1]/a//@href"
+        LEAGUE_TIER = "//div[@class='data-header__club-info']//following::span[2]//span[2]/text()"
+        REIGNING_CHAMPION = "//div[@class='data-header__club-info']//following::span[3]//text()//following::span[1]/a/text()[1]"
+        RECORD_HOLDING_CHAMPION = "//div[@class='data-header__club-info']//following::span[4]//text()//following::a/text()[1]"
+        UEFA_COEFFICIENT_POSITION = "//div[@class='data-header__club-info']//following::span[5]//text()//following::a/text()[1]"
+        UEFA_COEFFICIENT_POINT = "//div[@class='data-header__club-info']//following::span[5]//text()//following::span[1]//following::span[1]/text()[1]"
+        NUMBER_OF_TEAMS = "//div[@class='data-header__info-box']//div[@class='data-header__details']//li[1]/span/text()"
+        NUMBER_OF_PLAYERS = "//div[@class='data-header__info-box']//div[@class='data-header__details']//li[2]/span/text()"
+        NUMBER_OF_FOREIGNERS = "//div[@class='data-header__info-box']//div[@class='data-header__details']//li[3]/span/a/text()"
+        TOTAL_MARKET_VALUE = "//div[@class='data-header__box--small']/text()[2]"
+        TOTAL_MARKET_VALUE_UNIT = "//div[@class='data-header__box--small']//span[@class='waehrung'][2]/text()"
+        AVERAGE_MARKET_VALUE = "//div[@class='data-header__info-box']//div[@class='data-header__details']//ul[2]//li[1]/span/text()"
+        AVERAGE_AGE = "//div[@class='data-header__info-box']//div[@class='data-header__details']//ul[2]//li[2]/span/text()"
         URL = "//a[@class='tm-tab']//@href"
         NAME = "//div[@class='data-header__headline-container']//h1//text()"
 
