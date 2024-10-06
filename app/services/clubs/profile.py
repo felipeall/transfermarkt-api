@@ -83,6 +83,8 @@ class TransfermarktClubProfile(TransfermarktBase):
             "countryID": safe_regex(self.get_text_by_xpath(Clubs.Profile.LEAGUE_COUNTRY_ID), REGEX_COUNTRY_ID, "id"),
             "countryName": self.get_text_by_xpath(Clubs.Profile.LEAGUE_COUNTRY_NAME),
             "tier": self.get_text_by_xpath(Clubs.Profile.LEAGUE_TIER),
+            "position": self.get_text_by_xpath(Clubs.Profile.LEAGUE_POSITION),
+            "inLeagueSince": self.get_text_by_xpath(Clubs.Profile.IN_LEAGUE_SINCE),
         }
         self.response["historicalCrests"] = [
             safe_split(crest, "?")[0] for crest in self.get_list_by_xpath(Clubs.Profile.CRESTS_HISTORICAL)

@@ -28,3 +28,10 @@ def get_club_players(club_id: str, season_id: Optional[str] = None) -> dict:
     tfmkt = TransfermarktClubPlayers(club_id=club_id, season_id=season_id)
     club_players = tfmkt.get_club_players()
     return club_players
+
+
+@router.get("/{club_id}/staffs")
+def get_club_staffs(club_id: str) -> dict:
+    tfmkt = TransfermarktClubPlayers(club_id=club_id)
+    club_staffs = tfmkt.get_club_staffs()
+    return club_staffs
