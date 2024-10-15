@@ -52,11 +52,10 @@ class TransfermarktCompetitionClubs(TransfermarktBase):
         """
         self.response["id"] = self.competition_id
         self.response["name"] = self.get_text_by_xpath(Competitions.Profile.NAME)
-        self.response["seasonID"] = extract_from_url(
+        self.response["seasonId"] = extract_from_url(
             self.get_text_by_xpath(Competitions.Profile.URL),
             "season_id",
         )
         self.response["clubs"] = self.__parse_competition_clubs()
-        self.response["updatedAt"] = datetime.now()
 
         return self.response

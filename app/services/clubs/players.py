@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from datetime import datetime
 
 from app.services.base import TransfermarktBase
 from app.utils.regex import REGEX_DOB
@@ -130,6 +129,5 @@ class TransfermarktClubPlayers(TransfermarktBase):
         """
         self.response["id"] = self.club_id
         self.response["players"] = self.__parse_club_players()
-        self.response["updatedAt"] = datetime.now()
 
         return clean_response(self.response)

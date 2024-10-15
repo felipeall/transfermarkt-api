@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from datetime import datetime
 
 from app.services.base import TransfermarktBase
 from app.utils.regex import REGEX_BG_COLOR, REGEX_COUNTRY_ID, REGEX_MEMBERS_DATE
@@ -80,13 +79,12 @@ class TransfermarktClubProfile(TransfermarktBase):
         self.response["league"] = {
             "id": extract_from_url(self.get_text_by_xpath(Clubs.Profile.LEAGUE_ID)),
             "name": self.get_text_by_xpath(Clubs.Profile.LEAGUE_NAME),
-            "countryID": safe_regex(self.get_text_by_xpath(Clubs.Profile.LEAGUE_COUNTRY_ID), REGEX_COUNTRY_ID, "id"),
+            "countryId": safe_regex(self.get_text_by_xpath(Clubs.Profile.LEAGUE_COUNTRY_ID), REGEX_COUNTRY_ID, "id"),
             "countryName": self.get_text_by_xpath(Clubs.Profile.LEAGUE_COUNTRY_NAME),
             "tier": self.get_text_by_xpath(Clubs.Profile.LEAGUE_TIER),
         }
         self.response["historicalCrests"] = [
             safe_split(crest, "?")[0] for crest in self.get_list_by_xpath(Clubs.Profile.CRESTS_HISTORICAL)
         ]
-        self.response["updatedAt"] = datetime.now()
 
         return clean_response(self.response)
