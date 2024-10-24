@@ -68,7 +68,7 @@ def test_get_player_profile_8198(len_greater_than_0):
             "url": And(str, len_greater_than_0),
             "name": And(str, len_greater_than_0),
             "description": And(str, len_greater_than_0),
-            "nameInHomeCountry": And(str, len_greater_than_0),
+            "fullName": And(str, len_greater_than_0),
             "imageURL": And(str, len_greater_than_0),
             "dateOfBirth": And(str, len_greater_than_0),
             "placeOfBirth": {
