@@ -71,7 +71,10 @@ class Players:
         RANKINGS_POSITIONS = "//span[contains(@class, 'quick-fact__content--large')]//text()"
 
     class Transfers:
-        YOUTH_CLUBS = "//div[@class='box tm-player-additional-data'][descendant::*[contains(text(), 'Youth')]]//div[@class='content']//text()"
+        YOUTH_CLUBS = (
+            "//div[@class='box tm-player-additional-data'][descendant::*[contains(text(), 'Youth')]]"
+            "//div[@class='content']//text()"
+        )
 
     class Stats:
         ROWS = "//table[@class='items']//tbody//tr"
