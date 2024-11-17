@@ -1,10 +1,9 @@
 from dataclasses import dataclass
-from datetime import datetime
 from typing import List, Optional
 from xml.etree import ElementTree
 
 from app.services.base import TransfermarktBase
-from app.utils.utils import clean_response, extract_from_url, trim
+from app.utils.utils import extract_from_url, trim
 from app.utils.xpath import Players
 
 
@@ -58,8 +57,8 @@ class TransfermarktPlayerInjuries(TransfermarktBase):
                 {
                     "season": season,
                     "injury": injury_type,
-                    "from": date_from,
-                    "until": date_until,
+                    "fromDate": date_from,
+                    "untilDate": date_until,
                     "days": days,
                     "gamesMissed": games_missed,
                     "gamesMissedClubs": games_missed_clubs_ids,
@@ -81,6 +80,5 @@ class TransfermarktPlayerInjuries(TransfermarktBase):
         self.response["pageNumber"] = self.page_number
         self.response["lastPageNumber"] = self.get_last_page_number()
         self.response["injuries"] = self.__parse_player_injuries()
-        self.response["updatedAt"] = datetime.now()
 
-        return clean_response(self.response)
+        return self.response

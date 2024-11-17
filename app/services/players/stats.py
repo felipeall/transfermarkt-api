@@ -1,8 +1,7 @@
 from dataclasses import dataclass
-from datetime import datetime
 
 from app.services.base import TransfermarktBase
-from app.utils.utils import clean_response, extract_from_url, to_camel_case, zip_lists_into_dict
+from app.utils.utils import extract_from_url, to_camel_case, zip_lists_into_dict
 from app.utils.xpath import Players
 
 
@@ -64,6 +63,5 @@ class TransfermarktPlayerStats(TransfermarktBase):
         """
         self.response["id"] = self.player_id
         self.response["stats"] = self.__parse_player_stats()
-        self.response["updatedAt"] = datetime.now()
 
-        return clean_response(self.response)
+        return self.response

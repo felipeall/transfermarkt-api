@@ -1,8 +1,7 @@
 from dataclasses import dataclass
-from datetime import datetime
 
 from app.services.base import TransfermarktBase
-from app.utils.utils import clean_response, extract_from_url, trim
+from app.utils.utils import extract_from_url, trim
 from app.utils.xpath import Players
 
 
@@ -46,26 +45,34 @@ class TransfermarktPlayerAchievements(TransfermarktBase):
 
             achievement_details = []
             for detail in details:
-                season = trim(detail.xpath(Players.Achievements.SEASON))
-                club_name = trim(detail.xpath(Players.Achievements.CLUB_NAME))
-                club_url = trim(detail.xpath(Players.Achievements.CLUB_URL))
                 competition_name = trim(detail.xpath(Players.Achievements.COMPETITION_NAME))
                 competition_url = trim(detail.xpath(Players.Achievements.COMPETITION_URL))
+                competition_id = extract_from_url(competition_url)
+                season_name = trim(detail.xpath(Players.Achievements.SEASON))
+                club_name = trim(detail.xpath(Players.Achievements.CLUB_NAME))
+                club_url = trim(detail.xpath(Players.Achievements.CLUB_URL))
+                club_id = extract_from_url(club_url)
 
-                achievement_details.append(
-                    {
-                        "season": {
-                            "id": extract_from_url(club_url, "season_id")
-                            or extract_from_url(
-                                competition_url,
-                                "season_id",
-                            ),
-                            "name": season,
-                        },
-                        "club": {"id": extract_from_url(club_url), "name": club_name},
-                        "competition": {"id": extract_from_url(competition_url), "name": competition_name},
+                achievement_detail = {
+                    "season": {
+                        "id": extract_from_url(club_url, "season_id") or extract_from_url(competition_url, "season_id"),
+                        "name": season_name,
                     },
-                )
+                }
+
+                if club_id or club_name:
+                    achievement_detail["club"] = {
+                        "id": club_id,
+                        "name": club_name,
+                    }
+
+                if competition_id or competition_name:
+                    achievement_detail["competition"] = {
+                        "id": competition_id,
+                        "name": competition_name or None,
+                    }
+
+                achievement_details.append(achievement_detail)
 
             player_achievements.append(
                 {
@@ -87,6 +94,5 @@ class TransfermarktPlayerAchievements(TransfermarktBase):
 
         self.response["id"] = self.player_id
         self.response["achievements"] = self.__parse_player_achievements()
-        self.response["updatedAt"] = datetime.now()
 
-        return clean_response(self.response)
+        return self.response
