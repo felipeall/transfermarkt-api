@@ -2,27 +2,6 @@ import re
 from typing import Optional, Union
 
 
-def clean_response(response: Union[dict, list]) -> Union[dict, list]:
-    """
-    Recursively clean a dictionary or list by removing empty values and certain placeholders.
-
-    Args:
-        response (Union[dict, list]): The dictionary or list to be cleaned.
-
-    Returns:
-        Union[dict, list]: The cleaned dictionary or list.
-    """
-    if isinstance(response, dict):
-        return {
-            k: v
-            for k, v in ((k, clean_response(v)) for k, v in response.items())
-            if (v or isinstance(v, bool)) and v != "-" and v != "N/A" and v != "m"
-        }
-    if isinstance(response, list):
-        return [v for v in map(clean_response, response) if (v or isinstance(v, bool)) and v != "-"]
-    return response
-
-
 def zip_lists_into_dict(list_keys: list, list_values: list) -> dict:
     """
     Create a dictionary by pairing elements from two lists.
@@ -153,9 +132,9 @@ def to_camel_case(headers: list) -> list:
         headers (list): A list of headers in snake_case or space-separated format.
 
     Returns:
-        list: A list of headers in camelCase format with special handling for 'Id' to 'ID'.
+        list: A list of headers in camelCase format.
     """
     camel_case_headers = ["".join(word.capitalize() for word in header.split()) for header in headers]
     camel_case_headers = [header[0].lower() + header[1:] for header in camel_case_headers]
 
-    return [header.replace("Id", "ID") for header in camel_case_headers]
+    return [header for header in camel_case_headers]
