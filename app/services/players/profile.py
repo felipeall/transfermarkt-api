@@ -85,6 +85,11 @@ class TransfermarktPlayerProfile(TransfermarktBase):
         }
         self.response["outfitter"] = self.get_text_by_xpath(Players.Profile.OUTFITTER)
         self.response["socialMedia"] = self.get_list_by_xpath(Players.Profile.SOCIAL_MEDIA)
+        self.response["trainerProfile"] = {
+            "id": extract_from_url(self.get_text_by_xpath(Players.Profile.TRAINER_PROFILE_URL)),
+            "url": self.get_text_by_xpath(Players.Profile.TRAINER_PROFILE_URL),
+            "position": self.get_text_by_xpath(Players.Profile.TRAINER_PROFILE_POSITION),
+        }
         self.response["updatedAt"] = datetime.now()
 
         return clean_response(self.response)
