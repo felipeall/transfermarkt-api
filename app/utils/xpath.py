@@ -46,7 +46,7 @@ class Players:
         AGENT_NAME = "//span[text()='Player agent:']//following::span[1]//text()"
         AGENT_URL = "//span[text()='Player agent:']//following::span[1]//a//@href"
         OUTFITTER = "//span[contains(text(),'Outfitter:')]//following::span[1]//text()"
-        SOCIAL_MEDIA = "//div[@class='socialmedia-icons']//@href"
+        SOCIAL_MEDIA = "//div[@class='social-media-toolbar__icons']//@href"
 
     class Search:
         FOUND = "//text()"

@@ -181,6 +181,7 @@ def test_get_player_profile_3373(len_greater_than_0):
             "foot": And(str, len_greater_than_0),
             "club": {
                 "name": And(str, len_greater_than_0),
+                "joined": And(str, len_greater_than_0),
                 "lastClubID": And(str, len_greater_than_0),
                 "lastClubName": And(str, len_greater_than_0),
                 "mostGamesFor": And(str, len_greater_than_0),
