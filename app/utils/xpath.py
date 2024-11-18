@@ -49,6 +49,9 @@ class Players:
         SOCIAL_MEDIA = "//div[@class='social-media-toolbar__icons']//@href"
         TRAINER_PROFILE_URL = "//a[@class='data-header__box--link']//@href"
         TRAINER_PROFILE_POSITION = "//div[@class='dataProfileDaten']//span[1]//text()"
+        RELATED_PLAYERS_URLS = (
+            "//div[@class='box tm-player-additional-data']//a[contains(@href, 'profil/spieler')]//@href"
+        )
 
     class Search:
         FOUND = "//text()"

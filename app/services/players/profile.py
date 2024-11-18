@@ -28,6 +28,25 @@ class TransfermarktPlayerProfile(TransfermarktBase):
         self.page = self.request_url_page()
         self.raise_exception_if_not_found(xpath=Players.Profile.URL)
 
+    def __parse_player_related_players(self) -> list:
+        """
+        Parse the list of related players from the 'Further information' section on the player page
+        Returns:
+            list: A list of dictionaries, each containing player ID and player profile URL
+        """
+        player_urls = self.page.xpath(Players.Profile.RELATED_PLAYERS_URLS)
+
+        result = []
+        for player_url in player_urls:
+            result.append(
+                {
+                    "id": extract_from_url(player_url),
+                    "url": player_url,
+                }
+            )
+
+        return result
+
     def get_player_profile(self) -> dict:
         """
         Retrieve and parse the player's profile information, including their personal details,
@@ -90,6 +109,7 @@ class TransfermarktPlayerProfile(TransfermarktBase):
             "url": self.get_text_by_xpath(Players.Profile.TRAINER_PROFILE_URL),
             "position": self.get_text_by_xpath(Players.Profile.TRAINER_PROFILE_POSITION),
         }
+        self.response["relatedPlayers"] = self.__parse_player_related_players()
         self.response["updatedAt"] = datetime.now()
 
         return clean_response(self.response)
