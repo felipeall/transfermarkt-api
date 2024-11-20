@@ -51,7 +51,14 @@ def test_get_player_profile_28003(len_greater_than_0):
             },
             "outfitter": And(str, len_greater_than_0),
             "socialMedia": And(list, len_greater_than_0),
-            "relatedPlayers": And(list, len_greater_than_0),
+            "relatedPlayers": [
+                {
+                    "id": And(str, len_greater_than_0),
+                    "url": And(str, len_greater_than_0),
+                    "name": And(str, len_greater_than_0),
+                    "profileType": And(str, len_greater_than_0),
+                }
+            ],
             "updatedAt": datetime,
         },
     )
@@ -194,7 +201,14 @@ def test_get_player_profile_3373(len_greater_than_0):
                 "url": And(str, len_greater_than_0),
                 "position": And(str, len_greater_than_0),
             },
-            "relatedPlayers": And(list, len_greater_than_0),
+            "relatedPlayers": [
+                {
+                    "id": And(str, len_greater_than_0),
+                    "url": And(str, len_greater_than_0),
+                    "name": And(str, len_greater_than_0),
+                    "profileType": And(str, len_greater_than_0),
+                }
+            ],
             "updatedAt": datetime,
         },
     )
