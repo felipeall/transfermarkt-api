@@ -46,7 +46,7 @@ class TransfermarktPlayerProfile(TransfermarktBase):
                     "url": url,
                     "name": name,
                     "profileType": "player" if "spieler" in url else "trainer",
-                }
+                },
             )
 
         return result
