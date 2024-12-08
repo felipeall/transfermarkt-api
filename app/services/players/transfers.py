@@ -1,8 +1,7 @@
 from dataclasses import dataclass
-from datetime import datetime
 
 from app.services.base import TransfermarktBase
-from app.utils.utils import clean_response, extract_from_url, safe_split
+from app.utils.utils import extract_from_url, safe_split
 from app.utils.xpath import Players
 
 
@@ -42,13 +41,13 @@ class TransfermarktPlayerTransfers(TransfermarktBase):
         return [
             {
                 "id": extract_from_url(transfer["url"], "transfer_id"),
-                "from": {
-                    "clubID": extract_from_url(transfer["from"]["href"]),
-                    "clubName": transfer["from"]["clubName"],
+                "clubFrom": {
+                    "id": extract_from_url(transfer["from"]["href"]),
+                    "name": transfer["from"]["clubName"],
                 },
-                "to": {
-                    "clubID": extract_from_url(transfer["to"]["href"]),
-                    "clubName": transfer["to"]["clubName"],
+                "clubTo": {
+                    "id": extract_from_url(transfer["to"]["href"]),
+                    "name": transfer["to"]["clubName"],
                 },
                 "date": transfer["date"],
                 "upcoming": transfer["upcoming"],
@@ -70,6 +69,5 @@ class TransfermarktPlayerTransfers(TransfermarktBase):
         self.response["id"] = self.player_id
         self.response["transfers"] = self.__parse_player_transfer_history()
         self.response["youthClubs"] = safe_split(self.get_text_by_xpath(Players.Transfers.YOUTH_CLUBS), ",")
-        self.response["updatedAt"] = datetime.now()
 
-        return clean_response(self.response)
+        return self.response

@@ -1,10 +1,9 @@
 import json
 from dataclasses import dataclass
-from datetime import datetime
 
 from app.services.base import TransfermarktBase
 from app.utils.regex import REGEX_CHART_CLUB_ID
-from app.utils.utils import clean_response, safe_regex, zip_lists_into_dict
+from app.utils.utils import safe_regex, zip_lists_into_dict
 from app.utils.xpath import Players
 
 
@@ -47,15 +46,15 @@ class TransfermarktPlayerMarketValue(TransfermarktBase):
         for entry in data:
             entry["date"] = entry.pop("datum_mw")
             entry["clubName"] = entry.pop("verein")
-            entry["value"] = entry.pop("mw")
+            entry["marketValue"] = entry.pop("mw")
             if not entry.get("wappen"):
                 entry["wappen"] = club_image
             else:
                 club_image = entry["wappen"]
-            entry["clubID"] = safe_regex(entry["wappen"], REGEX_CHART_CLUB_ID, "club_id")
+            entry["clubId"] = safe_regex(entry["wappen"], REGEX_CHART_CLUB_ID, "club_id")
 
         return [
-            {key: entry[key] for key in entry if key in ["date", "age", "clubID", "clubName", "value"]}
+            {key: entry[key] for key in entry if key in ["date", "age", "clubId", "clubName", "marketValue"]}
             for entry in data
         ]
 
@@ -74,6 +73,5 @@ class TransfermarktPlayerMarketValue(TransfermarktBase):
             self.get_list_by_xpath(Players.MarketValue.RANKINGS_NAMES),
             self.get_list_by_xpath(Players.MarketValue.RANKINGS_POSITIONS),
         )
-        self.response["updatedAt"] = datetime.now()
 
-        return clean_response(self.response)
+        return self.response
