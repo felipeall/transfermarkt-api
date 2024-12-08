@@ -51,6 +51,14 @@ def test_get_player_profile_28003(len_greater_than_0):
             },
             "outfitter": And(str, len_greater_than_0),
             "socialMedia": And(list, len_greater_than_0),
+            "relatives": [
+                {
+                    "id": And(str, len_greater_than_0),
+                    "url": And(str, len_greater_than_0),
+                    "name": And(str, len_greater_than_0),
+                    "profileType": And(str, len_greater_than_0),
+                }
+            ],
             "updatedAt": datetime,
         },
     )
@@ -181,12 +189,26 @@ def test_get_player_profile_3373(len_greater_than_0):
             "foot": And(str, len_greater_than_0),
             "club": {
                 "name": And(str, len_greater_than_0),
+                "joined": And(str, len_greater_than_0),
                 "lastClubID": And(str, len_greater_than_0),
                 "lastClubName": And(str, len_greater_than_0),
                 "mostGamesFor": And(str, len_greater_than_0),
             },
             "outfitter": And(str, len_greater_than_0),
             "socialMedia": And(list, len_greater_than_0),
+            "trainerProfile": {
+                "id": And(str, len_greater_than_0),
+                "url": And(str, len_greater_than_0),
+                "position": And(str, len_greater_than_0),
+            },
+            "relatives": [
+                {
+                    "id": And(str, len_greater_than_0),
+                    "url": And(str, len_greater_than_0),
+                    "name": And(str, len_greater_than_0),
+                    "profileType": And(str, len_greater_than_0),
+                }
+            ],
             "updatedAt": datetime,
         },
     )

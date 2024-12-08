@@ -46,7 +46,15 @@ class Players:
         AGENT_NAME = "//span[text()='Player agent:']//following::span[1]//text()"
         AGENT_URL = "//span[text()='Player agent:']//following::span[1]//a//@href"
         OUTFITTER = "//span[contains(text(),'Outfitter:')]//following::span[1]//text()"
-        SOCIAL_MEDIA = "//div[@class='socialmedia-icons']//@href"
+        SOCIAL_MEDIA = "//div[@class='social-media-toolbar__icons']//@href"
+        TRAINER_PROFILE_URL = "//a[@class='data-header__box--link']//@href"
+        TRAINER_PROFILE_POSITION = "//div[@class='dataProfileDaten']//span[1]//text()"
+        RELATIVES = (
+            "//div[@class='box tm-player-additional-data']"
+            "//a[contains(@href, 'profil/spieler') or contains(@href, 'profil/trainer')]"
+        )
+        RELATIVE_URL = ".//@href"
+        RELATIVE_NAME = ".//text()"
 
     class Search:
         FOUND = "//text()"

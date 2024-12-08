@@ -3,7 +3,7 @@ from datetime import datetime
 
 from app.services.base import TransfermarktBase
 from app.utils.regex import REGEX_DOB_AGE
-from app.utils.utils import clean_response, extract_from_url, safe_regex
+from app.utils.utils import clean_response, extract_from_url, safe_regex, trim
 from app.utils.xpath import Players
 
 
@@ -27,6 +27,29 @@ class TransfermarktPlayerProfile(TransfermarktBase):
         self.URL = self.URL.format(player_id=self.player_id)
         self.page = self.request_url_page()
         self.raise_exception_if_not_found(xpath=Players.Profile.URL)
+
+    def __parse_player_relatives(self) -> list:
+        """
+        Parse the list of related players or trainers from the 'Further information' section on the player page
+        Returns:
+            list: A list of dictionaries, each containing ID, profile URL, name, and profile type
+        """
+        relatives = self.page.xpath(Players.Profile.RELATIVES)
+
+        result = []
+        for relative in relatives:
+            url = trim(relative.xpath(Players.Profile.RELATIVE_URL))
+            name = trim(relative.xpath(Players.Profile.RELATIVE_NAME))
+            result.append(
+                {
+                    "id": extract_from_url(url),
+                    "url": url,
+                    "name": name,
+                    "profileType": "player" if "spieler" in url else "trainer",
+                }
+            )
+
+        return result
 
     def get_player_profile(self) -> dict:
         """
@@ -85,6 +108,12 @@ class TransfermarktPlayerProfile(TransfermarktBase):
         }
         self.response["outfitter"] = self.get_text_by_xpath(Players.Profile.OUTFITTER)
         self.response["socialMedia"] = self.get_list_by_xpath(Players.Profile.SOCIAL_MEDIA)
+        self.response["trainerProfile"] = {
+            "id": extract_from_url(self.get_text_by_xpath(Players.Profile.TRAINER_PROFILE_URL)),
+            "url": self.get_text_by_xpath(Players.Profile.TRAINER_PROFILE_URL),
+            "position": self.get_text_by_xpath(Players.Profile.TRAINER_PROFILE_POSITION),
+        }
+        self.response["relatives"] = self.__parse_player_relatives()
         self.response["updatedAt"] = datetime.now()
 
         return clean_response(self.response)
