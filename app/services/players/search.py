@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from datetime import datetime
 from xml.etree import ElementTree
 
 from app.services.base import TransfermarktBase
@@ -82,6 +81,5 @@ class TransfermarktPlayerSearch(TransfermarktBase):
         self.response["pageNumber"] = self.page_number
         self.response["lastPageNumber"] = self.get_last_page_number(Players.Search.BASE)
         self.response["results"] = self.__parse_search_results()
-        self.response["updatedAt"] = datetime.now()
 
         return self.response
