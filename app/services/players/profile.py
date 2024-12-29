@@ -1,9 +1,8 @@
 from dataclasses import dataclass
-from datetime import datetime
 
 from app.services.base import TransfermarktBase
 from app.utils.regex import REGEX_DOB_AGE
-from app.utils.utils import clean_response, extract_from_url, safe_regex, trim
+from app.utils.utils import extract_from_url, safe_regex, trim
 from app.utils.xpath import Players
 
 
@@ -66,7 +65,7 @@ class TransfermarktPlayerProfile(TransfermarktBase):
         self.response["description"] = self.get_text_by_xpath(Players.Profile.DESCRIPTION)
         self.response["fullName"] = self.get_text_by_xpath(Players.Profile.FULL_NAME)
         self.response["nameInHomeCountry"] = self.get_text_by_xpath(Players.Profile.NAME_IN_HOME_COUNTRY)
-        self.response["imageURL"] = self.get_text_by_xpath(Players.Profile.IMAGE_URL)
+        self.response["imageUrl"] = self.get_text_by_xpath(Players.Profile.IMAGE_URL)
         self.response["dateOfBirth"] = safe_regex(
             self.get_text_by_xpath(Players.Profile.DATE_OF_BIRTH_AGE),
             REGEX_DOB_AGE,
@@ -97,7 +96,7 @@ class TransfermarktPlayerProfile(TransfermarktBase):
             "joined": self.get_text_by_xpath(Players.Profile.CURRENT_CLUB_JOINED),
             "contractExpires": self.get_text_by_xpath(Players.Profile.CURRENT_CLUB_CONTRACT_EXPIRES),
             "contractOption": self.get_text_by_xpath(Players.Profile.CURRENT_CLUB_CONTRACT_OPTION),
-            "lastClubID": extract_from_url(self.get_text_by_xpath(Players.Profile.LAST_CLUB_URL)),
+            "lastClubId": extract_from_url(self.get_text_by_xpath(Players.Profile.LAST_CLUB_URL)),
             "lastClubName": self.get_text_by_xpath(Players.Profile.LAST_CLUB_NAME),
             "mostGamesFor": self.get_text_by_xpath(Players.Profile.MOST_GAMES_FOR_CLUB_NAME),
         }
@@ -114,6 +113,5 @@ class TransfermarktPlayerProfile(TransfermarktBase):
             "position": self.get_text_by_xpath(Players.Profile.TRAINER_PROFILE_POSITION),
         }
         self.response["relatives"] = self.__parse_player_relatives()
-        self.response["updatedAt"] = datetime.now()
 
-        return clean_response(self.response)
+        return self.response
