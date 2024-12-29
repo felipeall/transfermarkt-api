@@ -57,7 +57,7 @@ def test_get_player_profile_28003(len_greater_than_0):
                     "url": And(str, len_greater_than_0),
                     "name": And(str, len_greater_than_0),
                     "profileType": And(str, len_greater_than_0),
-                }
+                },
             ],
             "updatedAt": datetime,
         },
@@ -207,7 +207,7 @@ def test_get_player_profile_3373(len_greater_than_0):
                     "url": And(str, len_greater_than_0),
                     "name": And(str, len_greater_than_0),
                     "profileType": And(str, len_greater_than_0),
-                }
+                },
             ],
             "updatedAt": datetime,
         },
