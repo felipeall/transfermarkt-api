@@ -23,4 +23,4 @@ class PlayerTransfer(TransfermarktBaseModel):
 class PlayerTransfers(TransfermarktBaseModel, AuditMixin):
     id: str
     transfers: list[PlayerTransfer]
-    youth_clubs: list[str]
+    youth_clubs: Optional[list[str]]

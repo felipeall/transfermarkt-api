@@ -71,7 +71,7 @@ class TransfermarktBaseModel(BaseModel):
 
     @field_validator("height", mode="before", check_fields=False)
     def parse_height(cls, v: str):
-        if not any(char.isdigit() for char in v):
+        if not v or not any(char.isdigit() for char in v):
             return None
         return int(v.replace(",", "").replace("m", ""))
 

@@ -8,8 +8,8 @@ from app.schemas.base import AuditMixin, TransfermarktBaseModel
 
 
 class PlayerPlaceOfBirth(TransfermarktBaseModel):
-    city: str
-    country: str
+    city: Optional[str]
+    country: Optional[str]
 
 
 class PlayerPosition(TransfermarktBaseModel):
@@ -20,7 +20,7 @@ class PlayerPosition(TransfermarktBaseModel):
 class PlayerClub(TransfermarktBaseModel):
     id: Optional[str]
     name: str
-    joined: date
+    joined: Optional[date]
     contract_expires: Optional[date]
     contract_option: Optional[str]
     # Retired player
@@ -59,7 +59,7 @@ class PlayerProfile(TransfermarktBaseModel, AuditMixin):
     description: str
     full_name: Optional[str]
     name_in_home_country: Optional[str]
-    image_url: HttpUrl
+    image_url: Optional[HttpUrl]
     date_of_birth: date
     place_of_birth: PlayerPlaceOfBirth
     age: int
