@@ -68,7 +68,7 @@ class PlayerProfile(TransfermarktBaseModel, AuditMixin):
     is_retired: bool
     retired_since: Optional[date]
     position: PlayerPosition
-    foot: str
+    foot: Optional[str]
     shirt_number: Optional[str]
     club: PlayerClub
     market_value: Optional[int]
