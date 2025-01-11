@@ -1,0 +1,51 @@
+{
+  "id": "31",
+  "url": "/fc-liverpool/startseite/verein/31",
+  "name": "Liverpool FC",
+  "officialName": "Liverpool Football Club",
+  "image": "https://tmssl.akamaized.net//images/wappen/big/31.png",
+  "legalForm": null,
+  "addressLine1": "Anfield Road",
+  "addressLine2": "L4 OTH Liverpool",
+  "addressLine3": "England",
+  "tel": "+44 151 2632361",
+  "fax": "+44 151 2608813",
+  "website": "liverpoolfc.com",
+  "foundedOn": "Mar 15, 1892",
+  "members": null,
+  "membersDate": null,
+  "otherSports": null,
+  "colors": [
+    "#E6001E",
+    "#39403B",
+    "#FFFFFF"
+  ],
+  "stadiumName": "Anfield",
+  "stadiumSeats": "61276",
+  "currentTransferRecord": "+€5.00m",
+  "currentMarketValue": "€970.00m",
+  "confederation": null,
+  "fifaWorldRanking": null,
+  "squad": {
+    "size": "25",
+    "averageAge": "26.4",
+    "foreigners": "19",
+    "nationalTeamPlayers": "22"
+  },
+  "league": {
+    "id": "GB1",
+    "name": "Premier League",
+    "countryId": "1",
+    "countryName": "England",
+    "tier": "First Tier"
+  },
+  "historicalCrests": [
+    "https://tmssl.akamaized.net//images/wappen/medium/31_1400911510.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/31_1400911516.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/31_1400911528.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/31_1400911535.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/31_1400911539.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/31_1400911547.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/31_1727777132.png"
+  ]
+}

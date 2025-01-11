@@ -1,0 +1,60 @@
+{
+  "id": "27",
+  "url": "/fc-bayern-munchen/startseite/verein/27",
+  "name": "Bayern Munich",
+  "officialName": "FC Bayern München",
+  "image": "https://tmssl.akamaized.net//images/wappen/big/27.png",
+  "legalForm": "AG",
+  "addressLine1": "Säbener Straße 51-57",
+  "addressLine2": "81547 München",
+  "addressLine3": "Germany",
+  "tel": "+49 89 69931-0",
+  "fax": "+49 89 644165",
+  "website": "fcbayern.com",
+  "foundedOn": "Feb 27, 1900",
+  "members": "360.000",
+  "membersDate": "Jun 3, 2024",
+  "otherSports": [
+    "Basketball",
+    "Handball",
+    "Kegeln",
+    "Schach",
+    "Schiedsrichter",
+    "Tischtennis",
+    "Turnen (Abteilung Turnen im Januar 2014 aufgelöst)"
+  ],
+  "colors": [
+    "#DB072D",
+    "#FFFFFF"
+  ],
+  "stadiumName": "Allianz Arena",
+  "stadiumSeats": "75000",
+  "currentTransferRecord": "€-67.65m",
+  "currentMarketValue": "€887.00m",
+  "confederation": null,
+  "fifaWorldRanking": null,
+  "squad": {
+    "size": "27",
+    "averageAge": "27.0",
+    "foreigners": "16",
+    "nationalTeamPlayers": "17"
+  },
+  "league": {
+    "id": "L1",
+    "name": "Bundesliga",
+    "countryId": "4",
+    "countryName": "Germany",
+    "tier": "First Tier"
+  },
+  "historicalCrests": [
+    "https://tmssl.akamaized.net//images/wappen/medium/27_1400571755.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/27_1400571770.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/27_1400571796.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/27_1400571805.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/27_1400571817.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/27_1400571838.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/27_1400571853.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/27_1498251266.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/27_1729503630.png"
+  ]
+}

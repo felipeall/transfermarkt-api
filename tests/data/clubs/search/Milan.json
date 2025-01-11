@@ -1,0 +1,87 @@
+{
+  "query": "Milan",
+  "pageNumber": 1,
+  "lastPageNumber": 8,
+  "results": [
+    {
+      "id": "46",
+      "url": "/inter-mailand/startseite/verein/46",
+      "name": "Inter Milan",
+      "country": "Italy",
+      "squad": "26",
+      "marketValue": "€675.30m"
+    },
+    {
+      "id": "5",
+      "url": "/ac-mailand/startseite/verein/5",
+      "name": "AC Milan",
+      "country": "Italy",
+      "squad": "26",
+      "marketValue": "€533.00m"
+    },
+    {
+      "id": "41107",
+      "url": "/ac-mailand-weitere/startseite/verein/41107",
+      "name": "Milan Futuro",
+      "country": "Italy",
+      "squad": "31",
+      "marketValue": "€36.70m"
+    },
+    {
+      "id": "41579",
+      "url": "/ac-mailand-uefa-u19/startseite/verein/41579",
+      "name": "AC Milan UEFA U19",
+      "country": "Italy",
+      "squad": "22",
+      "marketValue": "€16.37m"
+    },
+    {
+      "id": "52687",
+      "url": "/asd-alcione-milano/startseite/verein/52687",
+      "name": "Alcione Milano",
+      "country": "Italy",
+      "squad": "28",
+      "marketValue": "€3.83m"
+    },
+    {
+      "id": "5380",
+      "url": "/inter-mailand-u19/startseite/verein/5380",
+      "name": "Inter Milan Primavera",
+      "country": "Italy",
+      "squad": "27",
+      "marketValue": "€2.45m"
+    },
+    {
+      "id": "62104",
+      "url": "/inter-mailand-uefa-u19/startseite/verein/62104",
+      "name": "Inter Milan UEFA U19",
+      "country": "Italy",
+      "squad": "24",
+      "marketValue": "€1.80m"
+    },
+    {
+      "id": "83737",
+      "url": "/club-milano/startseite/verein/83737",
+      "name": "Club Milano",
+      "country": "Italy",
+      "squad": "31",
+      "marketValue": "€1.65m"
+    },
+    {
+      "id": "10958",
+      "url": "/ac-mailand-u19/startseite/verein/10958",
+      "name": "AC Milan Primavera",
+      "country": "Italy",
+      "squad": "31",
+      "marketValue": "€1.60m"
+    },
+    {
+      "id": "12135",
+      "url": "/fk-metalac-gornji-milanovac/startseite/verein/12135",
+      "name": "FK Metalac Gornji Milanovac",
+      "country": "Serbia",
+      "squad": "23",
+      "marketValue": "€100k"
+    }
+  ]
+}

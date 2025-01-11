@@ -1,4 +1,5 @@
 name: Code Check
+
 on:
   push:
     branches: [ main ]
@@ -7,19 +8,27 @@ on:
 
 jobs:
   check:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-      - name: ruff
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9.16'
+          cache: 'pip'
+
+      - name: Install dependencies
         run: |
-          pip install ruff
-          ruff check .
-      - name: black
-        run: |
-          pip install black
-          black --check .
-      - name: interrogate
-        run: |
-          pip install interrogate
-          interrogate app/services -vv
+          python -m pip install --upgrade pip
+          pip install ruff black interrogate
+
+      - name: Check code style with Ruff
+        run: ruff check .
+
+      - name: Check formatting with Black
+        run: black --check .
+
+      - name: Check docstring coverage with Interrogate
+        run: interrogate app/services -vv -f 100

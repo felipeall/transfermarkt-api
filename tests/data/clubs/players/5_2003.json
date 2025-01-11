@@ -1,0 +1,734 @@
+{
+  "id": "5",
+  "players": [
+    {
+      "id": "5799",
+      "name": "Valerio Fiori",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Apr 27, 1969",
+      "age": "35",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,85m",
+      "foot": "",
+      "joinedOn": "Jul 1, 1999",
+      "joined": "",
+      "signedFrom": "Piacenza FC",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5800",
+      "name": "Dida",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Oct 7, 1973",
+      "age": "30",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retired",
+      "height": "1,96m",
+      "foot": "left",
+      "joinedOn": "Jul 1, 1999",
+      "joined": "",
+      "signedFrom": "Cruzeiro Esporte Clube",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "610010",
+      "name": "Marco Taddonio",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Apr 13, 1985",
+      "age": "19",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Unknown",
+      "height": "-",
+      "foot": "",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "561952",
+      "name": "Davide Gobbato",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Jul 7, 1985",
+      "age": "18",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Without Club",
+      "height": "-",
+      "foot": "",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "3507",
+      "name": "Christian Abbiati",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Jul 8, 1977",
+      "age": "26",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,91m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 1998",
+      "joined": "",
+      "signedFrom": ": Ablöse €1.67m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "537644",
+      "name": "Davide Canini",
+      "position": "Defender",
+      "dateOfBirth": "Apr 1, 1985",
+      "age": "19",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Unknown",
+      "height": "-",
+      "foot": "",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "3430",
+      "name": "Kakhaber Kaladze",
+      "position": "Centre-Back",
+      "dateOfBirth": "Feb 27, 1978",
+      "age": "26",
+      "nationality": [
+        "Georgia"
+      ],
+      "currentClub": "Retired",
+      "height": "1,86m",
+      "foot": "left",
+      "joinedOn": "Jan 23, 2001",
+      "joined": "",
+      "signedFrom": ": Ablöse €16.00m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "4171",
+      "name": "Alessandro Nesta",
+      "position": "Centre-Back",
+      "dateOfBirth": "Mar 19, 1976",
+      "age": "28",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,87m",
+      "foot": "right",
+      "joinedOn": "Aug 31, 2002",
+      "joined": "",
+      "signedFrom": ": Ablöse €31.00m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "2540",
+      "name": "Dario Simic",
+      "position": "Centre-Back",
+      "dateOfBirth": "Nov 12, 1975",
+      "age": "28",
+      "nationality": [
+        "Croatia"
+      ],
+      "currentClub": "Retired",
+      "height": "1,80m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2002",
+      "joined": "",
+      "signedFrom": ": Ablöse €5.00m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "10055",
+      "name": "Alessandro Costacurta",
+      "position": "Centre-Back",
+      "dateOfBirth": "Apr 24, 1966",
+      "age": "38",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "m",
+      "foot": "N/A",
+      "joinedOn": "Jul 1, 1985",
+      "joined": "",
+      "signedFrom": "Milan Primavera",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "3503",
+      "name": "Martin Laursen",
+      "position": "Centre-Back",
+      "dateOfBirth": "Jul 26, 1977",
+      "age": "26",
+      "nationality": [
+        "Denmark"
+      ],
+      "currentClub": "Retired",
+      "height": "1,90m",
+      "foot": "left",
+      "joinedOn": "Jul 1, 2002",
+      "joined": "",
+      "signedFrom": ": Ablöse €11.00m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5807",
+      "name": "Roque Júnior",
+      "position": "Centre-Back",
+      "dateOfBirth": "Aug 31, 1976",
+      "age": "27",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retired",
+      "height": "1,86m",
+      "foot": "both",
+      "joinedOn": "Jul 1, 2000",
+      "joined": "",
+      "signedFrom": "Sociedade Esportiva Palmeiras",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "77970",
+      "name": "Elia Legati",
+      "position": "Centre-Back",
+      "dateOfBirth": "Jan 3, 1986",
+      "age": "18",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,88m",
+      "foot": "right",
+      "joinedOn": "Jun 1, 2010",
+      "joined": "",
+      "signedFrom": ": Ablöse €400k",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "139169",
+      "name": "Claiton",
+      "position": "Centre-Back",
+      "dateOfBirth": "Sep 7, 1984",
+      "age": "19",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,88m",
+      "foot": "left",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5803",
+      "name": "Paolo Maldini",
+      "position": "Left-Back",
+      "dateOfBirth": "Jun 26, 1968",
+      "age": "36",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,86m",
+      "foot": "both",
+      "joinedOn": "Jul 1, 1985",
+      "joined": "",
+      "signedFrom": "Milan Primavera",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5819",
+      "name": "Serginho",
+      "position": "Left-Back",
+      "dateOfBirth": "Jun 27, 1971",
+      "age": "33",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retired",
+      "height": "1,81m",
+      "foot": "left",
+      "joinedOn": "Jul 1, 1999",
+      "joined": "",
+      "signedFrom": "São Paulo Futebol Clube",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5937",
+      "name": "Cafu",
+      "position": "Right-Back",
+      "dateOfBirth": "Jun 7, 1970",
+      "age": "34",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,78m",
+      "foot": "right",
+      "joinedOn": "Jun 9, 2003",
+      "joined": "",
+      "signedFrom": ": Ablöse free transfer",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5833",
+      "name": "Giuseppe Pancaro",
+      "position": "Right-Back",
+      "dateOfBirth": "Aug 26, 1971",
+      "age": "32",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,86m",
+      "foot": "both",
+      "joinedOn": "Jul 1, 2004",
+      "joined": "",
+      "signedFrom": ": Ablöse free transfer",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "16631",
+      "name": "Ignazio Abate",
+      "position": "Right-Back",
+      "dateOfBirth": "Nov 12, 1986",
+      "age": "17",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,80m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2009",
+      "joined": "",
+      "signedFrom": "Torino FC",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5811",
+      "name": "Fernando Redondo",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "Jun 6, 1969",
+      "age": "35",
+      "nationality": [
+        "Argentina",
+        "Spain"
+      ],
+      "currentClub": "Retired",
+      "height": "1,86m",
+      "foot": "left",
+      "joinedOn": "Jul 27, 2000",
+      "joined": "",
+      "signedFrom": ": Ablöse €17.50m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5817",
+      "name": "Andrea Pirlo",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "May 19, 1979",
+      "age": "25",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,77m",
+      "foot": "both",
+      "joinedOn": "Jul 1, 2001",
+      "joined": "",
+      "signedFrom": ": Ablöse €17.04m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "148589",
+      "name": "Mattia Dal Bello",
+      "position": "Midfielder",
+      "dateOfBirth": "Jan 19, 1984",
+      "age": "20",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "---",
+      "height": "1,79m",
+      "foot": "",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5813",
+      "name": "Gennaro Gattuso",
+      "position": "Central Midfield",
+      "dateOfBirth": "Jan 9, 1978",
+      "age": "26",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,77m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 1999",
+      "joined": "",
+      "signedFrom": ": Ablöse €8.00m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "4168",
+      "name": "Clarence Seedorf",
+      "position": "Central Midfield",
+      "dateOfBirth": "Apr 1, 1976",
+      "age": "28",
+      "nationality": [
+        "Netherlands",
+        "Suriname"
+      ],
+      "currentClub": "Retired",
+      "height": "1,77m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2002",
+      "joined": "",
+      "signedFrom": ": Ablöse €22.50m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5818",
+      "name": "Massimo Ambrosini",
+      "position": "Central Midfield",
+      "dateOfBirth": "May 29, 1977",
+      "age": "27",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,82m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 1995",
+      "joined": "",
+      "signedFrom": ": Ablöse €1.91m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5812",
+      "name": "Cristian Brocchi",
+      "position": "Central Midfield",
+      "dateOfBirth": "Jan 30, 1976",
+      "age": "28",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,71m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2001",
+      "joined": "",
+      "signedFrom": ": Ablöse ?",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "45113",
+      "name": "Patrick Kalambay",
+      "position": "Right Midfield",
+      "dateOfBirth": "Jan 6, 1984",
+      "age": "20",
+      "nationality": [
+        "Italy",
+        "DR Congo"
+      ],
+      "currentClub": "Retired",
+      "height": "1,77m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2003",
+      "joined": "",
+      "signedFrom": ": Ablöse €2.12m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "3624",
+      "name": "Rui Costa",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Mar 29, 1972",
+      "age": "32",
+      "nationality": [
+        "Portugal"
+      ],
+      "currentClub": "Retired",
+      "height": "1,80m",
+      "foot": "right",
+      "joinedOn": "Jul 3, 2001",
+      "joined": "",
+      "signedFrom": ": Ablöse €41.32m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "3372",
+      "name": "Rivaldo",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Apr 19, 1972",
+      "age": "32",
+      "nationality": [
+        "Brazil",
+        "Spain"
+      ],
+      "currentClub": "Retired",
+      "height": "1,86m",
+      "foot": "left",
+      "joinedOn": "Jul 27, 2002",
+      "joined": "",
+      "signedFrom": "FC Barcelona",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "3366",
+      "name": "Kaká",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Apr 22, 1982",
+      "age": "22",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,86m",
+      "foot": "both",
+      "joinedOn": "Sep 2, 2013",
+      "joined": "",
+      "signedFrom": "Real Madrid",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "151314",
+      "name": "Michele Piccolo",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Sep 1, 1985",
+      "age": "18",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Unknown",
+      "height": "1,76m",
+      "foot": "",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "3522",
+      "name": "Andriy Shevchenko",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Sep 29, 1976",
+      "age": "27",
+      "nationality": [
+        "Ukraine"
+      ],
+      "currentClub": "Retired",
+      "height": "1,83m",
+      "foot": "both",
+      "joinedOn": "Aug 23, 2008",
+      "joined": "",
+      "signedFrom": "Chelsea FC",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5821",
+      "name": "Filippo Inzaghi",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Aug 9, 1973",
+      "age": "30",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,81m",
+      "foot": "right",
+      "joinedOn": "Jul 2, 2001",
+      "joined": "",
+      "signedFrom": ": Ablöse €36.15m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "4169",
+      "name": "Jon Dahl Tomasson",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Aug 29, 1976",
+      "age": "27",
+      "nationality": [
+        "Denmark"
+      ],
+      "currentClub": "Retired",
+      "height": "1,82m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2002",
+      "joined": "",
+      "signedFrom": ": Ablöse free transfer",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "5825",
+      "name": "Marco Borriello",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Jun 18, 1982",
+      "age": "22",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,86m",
+      "foot": "left",
+      "joinedOn": "Jul 1, 2008",
+      "joined": "",
+      "signedFrom": ": Ablöse €11.75m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "110826",
+      "name": "Roberto Bortolotto",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Apr 15, 1985",
+      "age": "19",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,79m",
+      "foot": "left",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "40660",
+      "name": "Alessandro Matri",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Aug 19, 1984",
+      "age": "19",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,83m",
+      "foot": "right",
+      "joinedOn": "Aug 30, 2013",
+      "joined": "",
+      "signedFrom": ": Ablöse €11.00m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "16117",
+      "name": "Nicola Pozzi",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Jun 30, 1986",
+      "age": "18",
+      "nationality": [
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,82m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2004",
+      "joined": "",
+      "signedFrom": ": Ablöse €2.00m",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    }
+  ]
+}
