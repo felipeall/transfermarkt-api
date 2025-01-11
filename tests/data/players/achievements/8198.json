@@ -1,0 +1,1027 @@
+{
+  "id": "8198",
+  "achievements": [
+    {
+      "title": "The Best FIFA Men's Player",
+      "count": 3,
+      "details": [
+        {
+          "season": {
+            "id": "2016",
+            "name": "2017"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2015",
+            "name": "2016"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2007",
+            "name": "2008"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Winner Ballon d'Or",
+      "count": 5,
+      "details": [
+        {
+          "season": {
+            "id": null,
+            "name": "2017"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2016"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2014"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2013"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2008"
+          }
+        }
+      ]
+    },
+    {
+      "title": "UEFA Best Player in Europe",
+      "count": 4,
+      "details": [
+        {
+          "season": {
+            "id": "2016",
+            "name": "2017"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2015",
+            "name": "2016"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2013",
+            "name": "2014"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2007",
+            "name": "2008"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Golden Boot winner (Europe)",
+      "count": 4,
+      "details": [
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2013",
+            "name": "13/14"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2007",
+            "name": "07/08"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Footballer of the Year",
+      "count": 13,
+      "details": [
+        {
+          "season": {
+            "id": null,
+            "name": "2020"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2019"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2018"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2017"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2016"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2015"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2013"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2012"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2011"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2009"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2008"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2007"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2007"
+          }
+        }
+      ]
+    },
+    {
+      "title": "FIFA Puskás Award",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": null,
+            "name": "2009"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Top goal scorer",
+      "count": 21,
+      "details": [
+        {
+          "season": {
+            "id": "2024",
+            "name": "24/25"
+          },
+          "competition": {
+            "id": "UNLA",
+            "name": "UEFA Nations League A"
+          }
+        },
+        {
+          "season": {
+            "id": "2023",
+            "name": "23/24"
+          },
+          "competition": {
+            "id": "SA1",
+            "name": "Saudi Pro League"
+          }
+        },
+        {
+          "season": {
+            "id": "2020",
+            "name": "20/21"
+          },
+          "competition": {
+            "id": "EM20",
+            "name": "EURO 2020"
+          }
+        },
+        {
+          "season": {
+            "id": "2020",
+            "name": "20/21"
+          },
+          "competition": {
+            "id": "IT1",
+            "name": "Serie A"
+          }
+        },
+        {
+          "season": {
+            "id": "2018",
+            "name": "18/19"
+          },
+          "competition": {
+            "id": "UNFI",
+            "name": "UEFA Nations League Finals"
+          }
+        },
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "competition": {
+            "id": "KLUB",
+            "name": "FIFA Club World Cup"
+          }
+        },
+        {
+          "season": {
+            "id": "2016",
+            "name": "16/17"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2016",
+            "name": "16/17"
+          },
+          "competition": {
+            "id": "KLUB",
+            "name": "FIFA Club World Cup"
+          }
+        },
+        {
+          "season": {
+            "id": "2015",
+            "name": "15/16"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "competition": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
+        },
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2013",
+            "name": "13/14"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2013",
+            "name": "13/14"
+          },
+          "competition": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
+        },
+        {
+          "season": {
+            "id": "2012",
+            "name": "12/13"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2011",
+            "name": "11/12"
+          },
+          "competition": {
+            "id": "EM12",
+            "name": "EURO 2012"
+          }
+        },
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "competition": {
+            "id": "CDR",
+            "name": "Copa del Rey"
+          }
+        },
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "competition": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
+        },
+        {
+          "season": {
+            "id": "2007",
+            "name": "07/08"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2007",
+            "name": "07/08"
+          },
+          "competition": {
+            "id": "GB1",
+            "name": "Premier League"
+          }
+        },
+        {
+          "season": {
+            "id": "2004",
+            "name": "04/05"
+          },
+          "competition": {
+            "id": "FAC",
+            "name": "FA Cup"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Player of the Year",
+      "count": 9,
+      "details": [
+        {
+          "season": {
+            "id": "2023",
+            "name": "23/24"
+          },
+          "club": {
+            "id": "18544",
+            "name": "Al-Nassr FC"
+          }
+        },
+        {
+          "season": {
+            "id": "2020",
+            "name": "20/21"
+          },
+          "club": {
+            "id": "506",
+            "name": "Juventus FC"
+          }
+        },
+        {
+          "season": {
+            "id": "2019",
+            "name": "19/20"
+          },
+          "club": {
+            "id": "506",
+            "name": "Juventus FC"
+          }
+        },
+        {
+          "season": {
+            "id": "2018",
+            "name": "18/19"
+          },
+          "club": {
+            "id": "506",
+            "name": "Juventus FC"
+          }
+        },
+        {
+          "season": {
+            "id": "2013",
+            "name": "13/14"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2012",
+            "name": "12/13"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2007",
+            "name": "07/08"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        },
+        {
+          "season": {
+            "id": "2007",
+            "name": "07/08"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        },
+        {
+          "season": {
+            "id": "2006",
+            "name": "06/07"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TM-Player of the season",
+      "count": 3,
+      "details": [
+        {
+          "season": {
+            "id": null,
+            "name": "2024"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2019"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "title": "European champion",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2015",
+            "name": "2016"
+          },
+          "club": {
+            "id": "3300",
+            "name": "Portugal"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Champions League winner",
+      "count": 5,
+      "details": [
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2016",
+            "name": "16/17"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2015",
+            "name": "15/16"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2013",
+            "name": "13/14"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2007",
+            "name": "07/08"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        }
+      ]
+    },
+    {
+      "title": "FIFA Club World Cup winner",
+      "count": 4,
+      "details": [
+        {
+          "season": {
+            "id": "2017",
+            "name": "2018"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2016",
+            "name": "2017"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2014",
+            "name": "2015"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2008",
+            "name": "2009"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        }
+      ]
+    },
+    {
+      "title": "English Champion",
+      "count": 3,
+      "details": [
+        {
+          "season": {
+            "id": "2008",
+            "name": "08/09"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        },
+        {
+          "season": {
+            "id": "2007",
+            "name": "07/08"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        },
+        {
+          "season": {
+            "id": "2006",
+            "name": "06/07"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spanish champion",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2016",
+            "name": "16/17"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2011",
+            "name": "11/12"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Italian champion",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2019",
+            "name": "19/20"
+          },
+          "club": {
+            "id": "506",
+            "name": "Juventus FC"
+          }
+        },
+        {
+          "season": {
+            "id": "2018",
+            "name": "18/19"
+          },
+          "club": {
+            "id": "506",
+            "name": "Juventus FC"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Uefa Supercup winner",
+      "count": 3,
+      "details": [
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2016",
+            "name": "16/17"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Winner UEFA Nations League",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2018",
+            "name": "2019"
+          },
+          "club": {
+            "id": "3300",
+            "name": "Portugal"
+          }
+        }
+      ]
+    },
+    {
+      "title": "English FA Cup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2003",
+            "name": "2004"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spanish cup winner",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2013",
+            "name": "13/14"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Italian cup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2020",
+            "name": "20/21"
+          },
+          "club": {
+            "id": "506",
+            "name": "Juventus FC"
+          }
+        }
+      ]
+    },
+    {
+      "title": "English League Cup winner",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2008",
+            "name": "2009"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        },
+        {
+          "season": {
+            "id": "2005",
+            "name": "2006"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spanish Super Cup winner",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        },
+        {
+          "season": {
+            "id": "2012",
+            "name": "12/13"
+          },
+          "club": {
+            "id": "418",
+            "name": "Real Madrid"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Italian Super Cup winner",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2020",
+            "name": "20/21"
+          },
+          "club": {
+            "id": "506",
+            "name": "Juventus FC"
+          }
+        },
+        {
+          "season": {
+            "id": "2018",
+            "name": "18/19"
+          },
+          "club": {
+            "id": "506",
+            "name": "Juventus FC"
+          }
+        }
+      ]
+    },
+    {
+      "title": "English Super Cup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2007",
+            "name": "07/08"
+          },
+          "club": {
+            "id": "985",
+            "name": "Manchester United"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Portuguese Super Cup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2002",
+            "name": "2003"
+          },
+          "club": {
+            "id": "336",
+            "name": "Sporting CP"
+          }
+        }
+      ]
+    }
+  ]
+}

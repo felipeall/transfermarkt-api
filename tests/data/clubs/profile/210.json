@@ -1,0 +1,39 @@
+{
+  "id": "210",
+  "url": "/gremio-porto-alegre/startseite/verein/210",
+  "name": "Grêmio Foot-Ball Porto Alegrense",
+  "officialName": "Grêmio Foot-Ball Porto Alegrense",
+  "image": "https://tmssl.akamaized.net//images/wappen/big/210.png",
+  "legalForm": null,
+  "addressLine1": "Rua Largo dos Campeões 1",
+  "addressLine2": "90880-440 Porto Alegre",
+  "addressLine3": "Brazil",
+  "tel": "+55 51 32172244",
+  "fax": "+55 51 32232364",
+  "website": "www.gremio.net",
+  "foundedOn": "Sep 15, 1903",
+  "members": "148.613",
+  "membersDate": "Jan 26, 2019",
+  "otherSports": null,
+  "colors": [],
+  "stadiumName": "Arena do Grêmio",
+  "stadiumSeats": "60540",
+  "currentTransferRecord": "+€2.66m",
+  "currentMarketValue": "€80.30m",
+  "confederation": null,
+  "fifaWorldRanking": null,
+  "squad": {
+    "size": "30",
+    "averageAge": "26.4",
+    "foreigners": "9",
+    "nationalTeamPlayers": "2"
+  },
+  "league": {
+    "id": "BRA1",
+    "name": "Campeonato Brasileiro Série A",
+    "countryId": "2",
+    "countryName": "Brazil",
+    "tier": "First Tier"
+  },
+  "historicalCrests": []
+}

@@ -1,0 +1,175 @@
+{
+  "id": "68290",
+  "pageNumber": 1,
+  "lastPageNumber": 3,
+  "injuries": [
+    {
+      "season": "24/25",
+      "injury": "Fitness",
+      "fromDate": "Dec 17, 2024",
+      "untilDate": "",
+      "days": "26 days",
+      "gamesMissed": "2",
+      "gamesMissedClubs": [
+        "1114"
+      ]
+    },
+    {
+      "season": "24/25",
+      "injury": "Hamstring injury",
+      "fromDate": "Nov 4, 2024",
+      "untilDate": "Dec 16, 2024",
+      "days": "42 days",
+      "gamesMissed": "7",
+      "gamesMissedClubs": [
+        "1114"
+      ]
+    },
+    {
+      "season": "24/25",
+      "injury": "Fitness",
+      "fromDate": "Sep 23, 2024",
+      "untilDate": "Oct 20, 2024",
+      "days": "27 days",
+      "gamesMissed": "5",
+      "gamesMissedClubs": [
+        "1114"
+      ]
+    },
+    {
+      "season": "23/24",
+      "injury": "Cruciate ligament tear",
+      "fromDate": "Oct 19, 2023",
+      "untilDate": "Sep 22, 2024",
+      "days": "339 days",
+      "gamesMissed": "48",
+      "gamesMissedClubs": [
+        "1114"
+      ]
+    },
+    {
+      "season": "23/24",
+      "injury": "muscular problems",
+      "fromDate": "Aug 4, 2023",
+      "untilDate": "Sep 3, 2023",
+      "days": "30 days",
+      "gamesMissed": "5",
+      "gamesMissedClubs": [
+        "583",
+        "1114"
+      ]
+    },
+    {
+      "season": "22/23",
+      "injury": "Ankle surgery",
+      "fromDate": "Feb 20, 2023",
+      "untilDate": "Jun 30, 2023",
+      "days": "130 days",
+      "gamesMissed": "15",
+      "gamesMissedClubs": [
+        "583"
+      ]
+    },
+    {
+      "season": "22/23",
+      "injury": "Ankle injury",
+      "fromDate": "Nov 25, 2022",
+      "untilDate": "Dec 4, 2022",
+      "days": "9 days",
+      "gamesMissed": "2",
+      "gamesMissedClubs": [
+        "3439"
+      ]
+    },
+    {
+      "season": "21/22",
+      "injury": "Ankle injury",
+      "fromDate": "Nov 29, 2021",
+      "untilDate": "Feb 13, 2022",
+      "days": "76 days",
+      "gamesMissed": "15",
+      "gamesMissedClubs": [
+        "583",
+        "3439"
+      ]
+    },
+    {
+      "season": "21/22",
+      "injury": "Adductor pain",
+      "fromDate": "Nov 15, 2021",
+      "untilDate": "Nov 18, 2021",
+      "days": "3 days",
+      "gamesMissed": "1",
+      "gamesMissedClubs": [
+        "3439"
+      ]
+    },
+    {
+      "season": "21/22",
+      "injury": "Adductor pain",
+      "fromDate": "Oct 16, 2021",
+      "untilDate": "Oct 23, 2021",
+      "days": "7 days",
+      "gamesMissed": "1",
+      "gamesMissedClubs": [
+        "583"
+      ]
+    },
+    {
+      "season": "21/22",
+      "injury": "Fitness",
+      "fromDate": "Aug 1, 2021",
+      "untilDate": "Aug 26, 2021",
+      "days": "25 days",
+      "gamesMissed": "4",
+      "gamesMissedClubs": [
+        "583"
+      ]
+    },
+    {
+      "season": "20/21",
+      "injury": "Adductor pain",
+      "fromDate": "Feb 11, 2021",
+      "untilDate": "Mar 19, 2021",
+      "days": "36 days",
+      "gamesMissed": "9",
+      "gamesMissedClubs": [
+        "583"
+      ]
+    },
+    {
+      "season": "20/21",
+      "injury": "Ankle problems",
+      "fromDate": "Dec 14, 2020",
+      "untilDate": "Jan 10, 2021",
+      "days": "27 days",
+      "gamesMissed": "5",
+      "gamesMissedClubs": [
+        "583"
+      ]
+    },
+    {
+      "season": "20/21",
+      "injury": "Rest",
+      "fromDate": "Dec 5, 2020",
+      "untilDate": "Dec 6, 2020",
+      "days": "1 days",
+      "gamesMissed": "1",
+      "gamesMissedClubs": [
+        "583"
+      ]
+    },
+    {
+      "season": "20/21",
+      "injury": "Adductor pain",
+      "fromDate": "Oct 28, 2020",
+      "untilDate": "Nov 19, 2020",
+      "days": "22 days",
+      "gamesMissed": "6",
+      "gamesMissedClubs": [
+        "583",
+        "3439"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "id": "28003",
+  "marketValue": "€20.00m",
+  "marketValueHistory": [
+    {
+      "age": "17",
+      "date": "Dec 20, 2004",
+      "clubName": "FC Barcelona B",
+      "marketValue": "€3.00m",
+      "clubId": "2464"
+    },
+    {
+      "age": "18",
+      "date": "Dec 28, 2005",
+      "clubName": "FC Barcelona",
+      "marketValue": "€5.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "18",
+      "date": "Jan 20, 2006",
+      "clubName": "FC Barcelona",
+      "marketValue": "€15.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "20",
+      "date": "Jul 26, 2007",
+      "clubName": "FC Barcelona",
+      "marketValue": "€40.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "20",
+      "date": "Sep 12, 2007",
+      "clubName": "FC Barcelona",
+      "marketValue": "€60.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "20",
+      "date": "Feb 4, 2008",
+      "clubName": "FC Barcelona",
+      "marketValue": "€55.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "21",
+      "date": "Jul 10, 2008",
+      "clubName": "FC Barcelona",
+      "marketValue": "€55.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "21",
+      "date": "Jan 26, 2009",
+      "clubName": "FC Barcelona",
+      "marketValue": "€55.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "21",
+      "date": "Apr 28, 2009",
+      "clubName": "FC Barcelona",
+      "marketValue": "€60.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "22",
+      "date": "Jul 22, 2009",
+      "clubName": "FC Barcelona",
+      "marketValue": "€70.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "22",
+      "date": "Dec 3, 2009",
+      "clubName": "FC Barcelona",
+      "marketValue": "€70.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "22",
+      "date": "Jan 7, 2010",
+      "clubName": "FC Barcelona",
+      "marketValue": "€80.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "22",
+      "date": "Apr 12, 2010",
+      "clubName": "FC Barcelona",
+      "marketValue": "€80.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "23",
+      "date": "Aug 27, 2010",
+      "clubName": "FC Barcelona",
+      "marketValue": "€100.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "23",
+      "date": "Feb 4, 2011",
+      "clubName": "FC Barcelona",
+      "marketValue": "€100.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "24",
+      "date": "Jul 29, 2011",
+      "clubName": "FC Barcelona",
+      "marketValue": "€100.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "24",
+      "date": "Feb 3, 2012",
+      "clubName": "FC Barcelona",
+      "marketValue": "€100.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "25",
+      "date": "Aug 7, 2012",
+      "clubName": "FC Barcelona",
+      "marketValue": "€120.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "25",
+      "date": "Jan 10, 2013",
+      "clubName": "FC Barcelona",
+      "marketValue": "€120.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "25",
+      "date": "Jun 12, 2013",
+      "clubName": "FC Barcelona",
+      "marketValue": "€120.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "26",
+      "date": "Jan 23, 2014",
+      "clubName": "FC Barcelona",
+      "marketValue": "€120.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "27",
+      "date": "Jul 20, 2014",
+      "clubName": "FC Barcelona",
+      "marketValue": "€120.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "27",
+      "date": "Jan 23, 2015",
+      "clubName": "FC Barcelona",
+      "marketValue": "€120.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "28",
+      "date": "Jul 1, 2015",
+      "clubName": "FC Barcelona",
+      "marketValue": "€120.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "28",
+      "date": "Feb 22, 2016",
+      "clubName": "FC Barcelona",
+      "marketValue": "€120.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "29",
+      "date": "Jul 15, 2016",
+      "clubName": "FC Barcelona",
+      "marketValue": "€120.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "29",
+      "date": "Jan 24, 2017",
+      "clubName": "FC Barcelona",
+      "marketValue": "€120.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "29",
+      "date": "Jun 5, 2017",
+      "clubName": "FC Barcelona",
+      "marketValue": "€120.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "30",
+      "date": "Jan 1, 2018",
+      "clubName": "FC Barcelona",
+      "marketValue": "€180.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "30",
+      "date": "May 30, 2018",
+      "clubName": "FC Barcelona",
+      "marketValue": "€180.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "31",
+      "date": "Dec 21, 2018",
+      "clubName": "FC Barcelona",
+      "marketValue": "€160.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "31",
+      "date": "Jun 11, 2019",
+      "clubName": "FC Barcelona",
+      "marketValue": "€150.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "32",
+      "date": "Dec 20, 2019",
+      "clubName": "FC Barcelona",
+      "marketValue": "€140.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "32",
+      "date": "Apr 8, 2020",
+      "clubName": "FC Barcelona",
+      "marketValue": "€112.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "33",
+      "date": "Oct 8, 2020",
+      "clubName": "FC Barcelona",
+      "marketValue": "€100.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "33",
+      "date": "Jan 5, 2021",
+      "clubName": "FC Barcelona",
+      "marketValue": "€80.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "33",
+      "date": "Jun 10, 2021",
+      "clubName": "FC Barcelona",
+      "marketValue": "€80.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "34",
+      "date": "Dec 16, 2021",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€60.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "34",
+      "date": "May 30, 2022",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€50.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "35",
+      "date": "Nov 2, 2022",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€50.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "35",
+      "date": "Mar 27, 2023",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€45.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "36",
+      "date": "Jun 27, 2023",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€35.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "36",
+      "date": "Aug 22, 2023",
+      "clubName": "Inter Miami CF",
+      "marketValue": "€35.00m",
+      "clubId": "69261"
+    },
+    {
+      "age": "36",
+      "date": "Dec 18, 2023",
+      "clubName": "Inter Miami CF",
+      "marketValue": "€35.00m",
+      "clubId": "69261"
+    },
+    {
+      "age": "36",
+      "date": "Mar 25, 2024",
+      "clubName": "Inter Miami CF",
+      "marketValue": "€30.00m",
+      "clubId": "69261"
+    },
+    {
+      "age": "36",
+      "date": "Jun 13, 2024",
+      "clubName": "Inter Miami CF",
+      "marketValue": "€30.00m",
+      "clubId": "69261"
+    },
+    {
+      "age": "37",
+      "date": "Sep 26, 2024",
+      "clubName": "Inter Miami CF",
+      "marketValue": "€25.00m",
+      "clubId": "69261"
+    },
+    {
+      "age": "37",
+      "date": "Dec 12, 2024",
+      "clubName": "Inter Miami CF",
+      "marketValue": "€20.00m",
+      "clubId": "69261"
+    }
+  ],
+  "ranking": {
+    "Worldwide": "478",
+    "MLS": "1",
+    "Miami": "1",
+    "Argentina": "20",
+    "Right Winger": "52",
+    "Year 1987": "1"
+  }
+}

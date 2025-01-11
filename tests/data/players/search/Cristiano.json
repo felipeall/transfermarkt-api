@@ -1,0 +1,151 @@
+{
+  "query": "Cristiano",
+  "pageNumber": 1,
+  "lastPageNumber": 42,
+  "results": [
+    {
+      "id": "8198",
+      "name": "Cristiano Ronaldo",
+      "position": "CF",
+      "club": {
+        "name": "Al-Nassr FC",
+        "id": "18544"
+      },
+      "age": "39",
+      "nationalities": [
+        "Portugal"
+      ],
+      "marketValue": "€12.00m"
+    },
+    {
+      "id": "3165",
+      "name": "Cris",
+      "position": "CB",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "47",
+      "nationalities": [
+        "Brazil",
+        "Portugal"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "21408",
+      "name": "Cristiano Lucarelli",
+      "position": "CF",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "49",
+      "nationalities": [
+        "Italy"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "124555",
+      "name": "Cristiano Biraghi",
+      "position": "LB",
+      "club": {
+        "name": "ACF Fiorentina",
+        "id": "430"
+      },
+      "age": "32",
+      "nationalities": [
+        "Italy"
+      ],
+      "marketValue": "€2.00m"
+    },
+    {
+      "id": "163086",
+      "name": "Cristiano Piccini",
+      "position": "CB",
+      "club": {
+        "name": "Atlético de San Luis",
+        "id": "40188"
+      },
+      "age": "32",
+      "nationalities": [
+        "Italy"
+      ],
+      "marketValue": "€500k"
+    },
+    {
+      "id": "504209",
+      "name": "Gianluca Busio",
+      "position": "CM",
+      "club": {
+        "name": "Venezia FC",
+        "id": "607"
+      },
+      "age": "22",
+      "nationalities": [
+        "United States",
+        "Italy"
+      ],
+      "marketValue": "€6.50m"
+    },
+    {
+      "id": "5783",
+      "name": "Cristiano Zanetti",
+      "position": "DM",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "47",
+      "nationalities": [
+        "Italy"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "6195",
+      "name": "Cristiano Doni",
+      "position": "AM",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "51",
+      "nationalities": [
+        "Italy"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "21488",
+      "name": "Tita",
+      "position": "LW",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "43",
+      "nationalities": [
+        "Brazil",
+        "Türkiye"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "33739",
+      "name": "Cristiano",
+      "position": "LW",
+      "club": {
+        "name": "AE Jataiense",
+        "id": "25244"
+      },
+      "age": "41",
+      "nationalities": [
+        "Brazil",
+        "Portugal"
+      ],
+      "marketValue": "-"
+    }
+  ]
+}

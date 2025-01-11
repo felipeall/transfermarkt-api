@@ -1,0 +1,85 @@
+{
+  "id": "3373",
+  "url": "https://www.transfermarkt.com/ronaldinho/profil/spieler/3373",
+  "name": "Ronaldinho",
+  "description": "Ronaldinho ➤ former footballer from Brazil ➤ Left Winger ➤ last club: Fluminense Football Club ➤ * Mar 21, 1980 in Porto Alegre, Brazil",
+  "fullName": "Ronaldo de Assís Moreira",
+  "nameInHomeCountry": null,
+  "imageUrl": "https://img.a.transfermarkt.technology/portrait/header/3373-1515762355.jpg?lm=1",
+  "dateOfBirth": "Mar 21, 1980",
+  "placeOfBirth": {
+    "city": "Porto Alegre",
+    "country": "Brazil"
+  },
+  "age": "44",
+  "height": "1,82m",
+  "citizenship": [
+    "Brazil",
+    "Spain"
+  ],
+  "isRetired": false,
+  "retiredSince": null,
+  "position": {
+    "main": "Left Winger",
+    "other": [
+      "Attacking Midfield",
+      "Second Striker"
+    ]
+  },
+  "foot": "right",
+  "shirtNumber": null,
+  "club": {
+    "id": null,
+    "name": "Retired",
+    "joined": "Jan 16, 2018",
+    "contractExpires": "-",
+    "contractOption": null,
+    "lastClubId": null,
+    "lastClubName": null,
+    "mostGamesFor": null
+  },
+  "marketValue": null,
+  "agent": {
+    "name": null,
+    "url": null
+  },
+  "outfitter": "Nike",
+  "socialMedia": [
+    "http://twitter.com/10Ronaldinho",
+    "http://facebook.com/ronaldinho/",
+    "http://instagram.com/ronaldinho/",
+    "http://www.ronaldinho.com/",
+    "http://www.tiktok.com/@ronaldinho"
+  ],
+  "trainerProfile": {
+    "id": "135400",
+    "url": "/ronaldinho/profil/trainer/135400",
+    "position": null
+  },
+  "relatives": [
+    {
+      "id": "155735",
+      "url": "/assis/profil/spieler/155735",
+      "name": "Assis",
+      "profileType": "player"
+    },
+    {
+      "id": "664840",
+      "url": "/joao-mendes/profil/spieler/664840",
+      "name": "João Mendes",
+      "profileType": "player"
+    },
+    {
+      "id": "70409",
+      "url": "/edmilson-neves/profil/trainer/70409",
+      "name": "Edmilson Neves",
+      "profileType": "trainer"
+    },
+    {
+      "id": "1270472",
+      "url": "/diego-assis/profil/spieler/1270472",
+      "name": "Diego Assis",
+      "profileType": "player"
+    }
+  ]
+}

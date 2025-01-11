@@ -1,0 +1,87 @@
+{
+  "query": "Barcelona",
+  "pageNumber": 1,
+  "lastPageNumber": 4,
+  "results": [
+    {
+      "id": "131",
+      "url": "/fc-barcelona/startseite/verein/131",
+      "name": "FC Barcelona",
+      "country": "Spain",
+      "squad": "28",
+      "marketValue": "€1.02bn"
+    },
+    {
+      "id": "714",
+      "url": "/espanyol-barcelona/startseite/verein/714",
+      "name": "RCD Espanyol Barcelona",
+      "country": "Spain",
+      "squad": "28",
+      "marketValue": "€69.50m"
+    },
+    {
+      "id": "3523",
+      "url": "/barcelona-sc-guayaquil/startseite/verein/3523",
+      "name": "Barcelona SC Guayaquil",
+      "country": "Ecuador",
+      "squad": "30",
+      "marketValue": "€19.85m"
+    },
+    {
+      "id": "2464",
+      "url": "/fc-barcelona-b/startseite/verein/2464",
+      "name": "FC Barcelona Atlètic",
+      "country": "Spain",
+      "squad": "35",
+      "marketValue": "€11.90m"
+    },
+    {
+      "id": "10773",
+      "url": "/espanyol-barcelona-b/startseite/verein/10773",
+      "name": "RCD Espanyol B",
+      "country": "Spain",
+      "squad": "25",
+      "marketValue": "€2.45m"
+    },
+    {
+      "id": "20528",
+      "url": "/ce-europa/startseite/verein/20528",
+      "name": "CE Europa",
+      "country": "Spain",
+      "squad": "22",
+      "marketValue": "€2.08m"
+    },
+    {
+      "id": "41584",
+      "url": "/fc-barcelona-uefa-u19/startseite/verein/41584",
+      "name": "FC Barcelona UEFA U19",
+      "country": "Spain",
+      "squad": "27",
+      "marketValue": "€750k"
+    },
+    {
+      "id": "22587",
+      "url": "/barcelona-sc-guayaquil-u20/startseite/verein/22587",
+      "name": "Barcelona SC Guayaquil U20",
+      "country": "Ecuador",
+      "squad": "21",
+      "marketValue": "€25k"
+    },
+    {
+      "id": "93588",
+      "url": "/barcelona-futebol-clube/startseite/verein/93588",
+      "name": "Barcelona FC (BA)",
+      "country": "Brazil",
+      "squad": "25",
+      "marketValue": "-"
+    },
+    {
+      "id": "14321",
+      "url": "/fc-barcelona-u16/startseite/verein/14321",
+      "name": "FC Barcelona U16",
+      "country": "Spain",
+      "squad": "22",
+      "marketValue": "-"
+    }
+  ]
+}

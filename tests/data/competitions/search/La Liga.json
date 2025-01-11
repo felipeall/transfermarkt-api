@@ -1,0 +1,47 @@
+{
+  "query": "La Liga",
+  "pageNumber": 1,
+  "lastPageNumber": 1,
+  "results": [
+    {
+      "id": "ES1",
+      "name": "LaLiga",
+      "country": "Spain",
+      "clubs": "20",
+      "players": "505",
+      "totalMarketValue": "€5.25bn",
+      "meanMarketValue": "€262.62m",
+      "continent": "UEFA"
+    },
+    {
+      "id": "ES2",
+      "name": "LaLiga2",
+      "country": "Spain",
+      "clubs": "22",
+      "players": "539",
+      "totalMarketValue": "€493.93m",
+      "meanMarketValue": "€22.45m",
+      "continent": "UEFA"
+    },
+    {
+      "id": "SL1A",
+      "name": "Primera División Apertura",
+      "country": "El Salvador",
+      "clubs": "11",
+      "players": "298",
+      "totalMarketValue": "€28.75m",
+      "meanMarketValue": "€2.61m",
+      "continent": "CONCACAF"
+    },
+    {
+      "id": "SL1C",
+      "name": "Primera División Clausura",
+      "country": "El Salvador",
+      "clubs": "11",
+      "players": "298",
+      "totalMarketValue": "€28.75m",
+      "meanMarketValue": "€2.61m",
+      "continent": "CONCACAF"
+    }
+  ]
+}
