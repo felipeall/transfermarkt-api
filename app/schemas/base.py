@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Optional
 
 from dateutil import parser
 from pydantic import BaseModel, ConfigDict, Field, field_validator
@@ -52,30 +53,26 @@ class TransfermarktBaseModel(BaseModel):
         mode="before",
         check_fields=False,
     )
-    def parse_str_to_int(cls, v: str):
-        parsed_value = (
-            (
-                v.replace("bn", "000000000")
-                .replace("m", "000000")
-                .replace("k", "000")
-                .replace("€", "")
-                .replace(".", "")
-                .replace("+", "")
-                .replace(".", "")
-                .replace("'", "")
-            )
-            if v and any(char.isdigit() for char in v)
-            else None
-        )
-        return int(parsed_value) if parsed_value else None
+    def parse_str_to_int(cls, v: str) -> Optional[int]:
+        if not v or not any(char.isdigit() for char in v):
+            return None
+        value_str = v.lower().replace("€", "").replace("+", "").replace("'", "").strip()
+        if "k" in value_str:
+            return int(float(value_str.replace("k", "")) * 1_000)
+        elif "m" in value_str:
+            return int(float(value_str.replace("m", "")) * 1_000_000)
+        elif "b" in value_str:
+            return int(float(value_str.replace("b", "")) * 1_000_000_000)
+        else:
+            return int(float(value_str))
 
     @field_validator("height", mode="before", check_fields=False)
-    def parse_height(cls, v: str):
+    def parse_height(cls, v: str) -> Optional[int]:
         if not v or not any(char.isdigit() for char in v):
             return None
         return int(v.replace(",", "").replace("m", ""))
 
     @field_validator("days", mode="before", check_fields=False)
-    def parse_days(cls, v: str):
+    def parse_days(cls, v: str) -> Optional[int]:
         days = "".join(filter(str.isdigit, v))
         return int(days) if days else None
