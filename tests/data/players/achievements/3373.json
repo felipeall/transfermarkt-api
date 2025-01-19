@@ -1,0 +1,281 @@
+{
+  "id": "3373",
+  "achievements": [
+    {
+      "title": "The Best FIFA Men's Player",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2004",
+            "name": "2005"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2003",
+            "name": "2004"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Winner Ballon d'Or",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": null,
+            "name": "2005"
+          }
+        }
+      ]
+    },
+    {
+      "title": "UEFA Best Player in Europe",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2005",
+            "name": "2006"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Top goal scorer",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2013",
+            "name": "13/14"
+          },
+          "competition": {
+            "id": "KLUB",
+            "name": "FIFA Club World Cup"
+          }
+        },
+        {
+          "season": {
+            "id": "1998",
+            "name": "98/99"
+          },
+          "competition": {
+            "id": "CC99",
+            "name": "Confederations Cup 1999"
+          }
+        }
+      ]
+    },
+    {
+      "title": "World Cup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2001",
+            "name": "2002"
+          },
+          "club": {
+            "id": "3439",
+            "name": "Brazil"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Copa América winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "1998",
+            "name": "98/99"
+          },
+          "club": {
+            "id": "3439",
+            "name": "Brazil"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Champions League winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2005",
+            "name": "05/06"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spanish champion",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2005",
+            "name": "05/06"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2004",
+            "name": "04/05"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Italian champion",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "club": {
+            "id": "5",
+            "name": "AC Milan"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spanish Super Cup winner",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2006",
+            "name": "06/07"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2005",
+            "name": "05/06"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Under-17 World Cup champion",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "1996",
+            "name": "1997"
+          },
+          "club": {
+            "id": "23130",
+            "name": "Brazil U17"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Copa Libertadores winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2012",
+            "name": "12/13"
+          },
+          "club": {
+            "id": "330",
+            "name": "Clube Atlético Mineiro"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Confederations Cup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2004",
+            "name": "2005"
+          },
+          "club": {
+            "id": "3439",
+            "name": "Brazil"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Recopa Sudamericana winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2013",
+            "name": "13/14"
+          },
+          "club": {
+            "id": "330",
+            "name": "Clube Atlético Mineiro"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Third place at the Olympic Games",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2007",
+            "name": "2008"
+          },
+          "club": {
+            "id": "53818",
+            "name": "Brazil Olympic Team"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "query": "Ronaldo",
+  "pageNumber": 1,
+  "lastPageNumber": 41,
+  "results": [
+    {
+      "id": "8198",
+      "name": "Cristiano Ronaldo",
+      "position": "CF",
+      "club": {
+        "name": "Al-Nassr FC",
+        "id": "18544"
+      },
+      "age": "39",
+      "nationalities": [
+        "Portugal"
+      ],
+      "marketValue": "€12.00m"
+    },
+    {
+      "id": "3140",
+      "name": "Ronaldo",
+      "position": "CF",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "48",
+      "nationalities": [
+        "Brazil",
+        "Spain"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "3373",
+      "name": "Ronaldinho",
+      "position": "LW",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "44",
+      "nationalities": [
+        "Brazil",
+        "Spain"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "102589",
+      "name": "Ronaldao",
+      "position": "CB",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "59",
+      "nationalities": [
+        "Brazil"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "356772",
+      "name": "Ronaldo Luiz",
+      "position": "LB",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "58",
+      "nationalities": [
+        "Brazil"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "32213",
+      "name": "Naldo",
+      "position": "CB",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "42",
+      "nationalities": [
+        "Brazil",
+        "Germany"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "434676",
+      "name": "Ronaldo Vieira",
+      "position": "CM",
+      "club": {
+        "name": "UC Sampdoria",
+        "id": "1038"
+      },
+      "age": "26",
+      "nationalities": [
+        "England",
+        "Guinea-Bissau"
+      ],
+      "marketValue": "€400k"
+    },
+    {
+      "id": "866670",
+      "name": "Ronaldo",
+      "position": "RW",
+      "club": {
+        "name": "FC Rostov",
+        "id": "1083"
+      },
+      "age": "24",
+      "nationalities": [
+        "Brazil"
+      ],
+      "marketValue": "€5.00m"
+    },
+    {
+      "id": "405768",
+      "name": "Ronaldo",
+      "position": "DM",
+      "club": {
+        "name": "Sport Club Internacional",
+        "id": "6600"
+      },
+      "age": "28",
+      "nationalities": [
+        "Brazil"
+      ],
+      "marketValue": "€700k"
+    },
+    {
+      "id": "6887",
+      "name": "Ronaldo",
+      "position": "CB",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "50",
+      "nationalities": [
+        "Brazil",
+        "Portugal"
+      ],
+      "marketValue": "-"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "query": "Messi",
+  "pageNumber": 1,
+  "lastPageNumber": 22,
+  "results": [
+    {
+      "id": "28003",
+      "name": "Lionel Messi",
+      "position": "RW",
+      "club": {
+        "name": "Inter Miami CF",
+        "id": "69261"
+      },
+      "age": "37",
+      "nationalities": [
+        "Argentina",
+        "Spain"
+      ],
+      "marketValue": "€20.00m"
+    },
+    {
+      "id": "113586",
+      "name": "Manoel",
+      "position": "CB",
+      "club": {
+        "name": "Fluminense Football Club",
+        "id": "2462"
+      },
+      "age": "34",
+      "nationalities": [
+        "Brazil"
+      ],
+      "marketValue": "€200k"
+    },
+    {
+      "id": "449151",
+      "name": "Junior Messias",
+      "position": "RW",
+      "club": {
+        "name": "Genoa CFC",
+        "id": "252"
+      },
+      "age": "33",
+      "nationalities": [
+        "Brazil",
+        "Italy"
+      ],
+      "marketValue": "€2.00m"
+    },
+    {
+      "id": "744024",
+      "name": "João Marcelo",
+      "position": "CB",
+      "club": {
+        "name": "Cruzeiro Esporte Clube",
+        "id": "609"
+      },
+      "age": "24",
+      "nationalities": [
+        "Brazil"
+      ],
+      "marketValue": "€5.50m"
+    },
+    {
+      "id": "173617",
+      "name": "Fabrício",
+      "position": "CF",
+      "club": {
+        "name": "Without Club",
+        "id": "515"
+      },
+      "age": "34",
+      "nationalities": [
+        "Brazil"
+      ],
+      "marketValue": "€75k"
+    },
+    {
+      "id": "13810",
+      "name": "Alexandre Rotweiller",
+      "position": "DM",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "45",
+      "nationalities": [
+        "Brazil"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "393581",
+      "name": "Bruno Almeida",
+      "position": "RW",
+      "club": {
+        "name": "CD Santa Clara",
+        "id": "2423"
+      },
+      "age": "28",
+      "nationalities": [
+        "Portugal"
+      ],
+      "marketValue": "€700k"
+    },
+    {
+      "id": "76071",
+      "name": "Leandro",
+      "position": "CB",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "41",
+      "nationalities": [
+        "Brazil",
+        "Poland"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "7854",
+      "name": "Messias Conceicao",
+      "position": "DM",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "47",
+      "nationalities": [
+        "Brazil"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "45240",
+      "name": "Georges Messi",
+      "position": "AM",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "44",
+      "nationalities": [
+        "Cameroon"
+      ],
+      "marketValue": "-"
+    }
+  ]
+}

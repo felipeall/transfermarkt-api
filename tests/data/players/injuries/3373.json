@@ -1,0 +1,152 @@
+{
+  "id": "3373",
+  "pageNumber": 1,
+  "lastPageNumber": 1,
+  "injuries": [
+    {
+      "season": "13/14",
+      "injury": "Hamstring injury",
+      "fromDate": "Sep 23, 2013",
+      "untilDate": "Dec 1, 2013",
+      "days": "69 days",
+      "gamesMissed": "19",
+      "gamesMissedClubs": [
+        "330",
+        "3439"
+      ]
+    },
+    {
+      "season": "13/14",
+      "injury": "unknown injury",
+      "fromDate": "Aug 18, 2013",
+      "untilDate": "Sep 1, 2013",
+      "days": "14 days",
+      "gamesMissed": "5",
+      "gamesMissedClubs": [
+        "330"
+      ]
+    },
+    {
+      "season": "11/12",
+      "injury": "unknown injury",
+      "fromDate": "Oct 8, 2011",
+      "untilDate": "Oct 13, 2011",
+      "days": "5 days",
+      "gamesMissed": "3",
+      "gamesMissedClubs": [
+        "614",
+        "3439"
+      ]
+    },
+    {
+      "season": "10/11",
+      "injury": "unknown injury",
+      "fromDate": "Jan 1, 2011",
+      "untilDate": "Jan 10, 2011",
+      "days": "9 days",
+      "gamesMissed": "2",
+      "gamesMissedClubs": [
+        "5"
+      ]
+    },
+    {
+      "season": "10/11",
+      "injury": "unknown injury",
+      "fromDate": "Oct 23, 2010",
+      "untilDate": "Oct 30, 2010",
+      "days": "7 days",
+      "gamesMissed": "2",
+      "gamesMissedClubs": [
+        "5"
+      ]
+    },
+    {
+      "season": "10/11",
+      "injury": "strain",
+      "fromDate": "Jul 29, 2010",
+      "untilDate": "Aug 5, 2010",
+      "days": "7 days",
+      "gamesMissed": "",
+      "gamesMissedClubs": []
+    },
+    {
+      "season": "09/10",
+      "injury": "unknown injury",
+      "fromDate": "Sep 12, 2009",
+      "untilDate": "Sep 21, 2009",
+      "days": "9 days",
+      "gamesMissed": "3",
+      "gamesMissedClubs": [
+        "5"
+      ]
+    },
+    {
+      "season": "08/09",
+      "injury": "unknown injury",
+      "fromDate": "Feb 19, 2009",
+      "untilDate": "Mar 9, 2009",
+      "days": "18 days",
+      "gamesMissed": "4",
+      "gamesMissedClubs": [
+        "5"
+      ]
+    },
+    {
+      "season": "08/09",
+      "injury": "muscular problems",
+      "fromDate": "Nov 30, 2008",
+      "untilDate": "Dec 12, 2008",
+      "days": "12 days",
+      "gamesMissed": "3",
+      "gamesMissedClubs": [
+        "5"
+      ]
+    },
+    {
+      "season": "08/09",
+      "injury": "unknown injury",
+      "fromDate": "Oct 26, 2008",
+      "untilDate": "Oct 30, 2008",
+      "days": "4 days",
+      "gamesMissed": "2",
+      "gamesMissedClubs": [
+        "5"
+      ]
+    },
+    {
+      "season": "07/08",
+      "injury": "Torn muscle fiber",
+      "fromDate": "Mar 10, 2008",
+      "untilDate": "Jun 22, 2008",
+      "days": "104 days",
+      "gamesMissed": "21",
+      "gamesMissedClubs": [
+        "131",
+        "3439"
+      ]
+    },
+    {
+      "season": "03/04",
+      "injury": "Hamstring injury",
+      "fromDate": "May 24, 2004",
+      "untilDate": "Jun 6, 2004",
+      "days": "13 days",
+      "gamesMissed": "1",
+      "gamesMissedClubs": [
+        "3439"
+      ]
+    },
+    {
+      "season": "03/04",
+      "injury": "Achilles tendon problems",
+      "fromDate": "Nov 10, 2003",
+      "untilDate": "Dec 7, 2003",
+      "days": "27 days",
+      "gamesMissed": "7",
+      "gamesMissedClubs": [
+        "131",
+        "3439"
+      ]
+    }
+  ]
+}

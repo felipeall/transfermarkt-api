@@ -1,0 +1,66 @@
+{
+  "id": "131",
+  "url": "/fc-barcelona/startseite/verein/131",
+  "name": "FC Barcelona",
+  "officialName": "Futbol Club Barcelona",
+  "image": "https://tmssl.akamaized.net//images/wappen/big/131.png",
+  "legalForm": null,
+  "addressLine1": "Avinguda Arístides Maillol",
+  "addressLine2": "08028 Barcelona",
+  "addressLine3": "Spain",
+  "tel": "+34 902 189900",
+  "fax": "+34 934 112219",
+  "website": "fcbarcelona.com",
+  "foundedOn": "Nov 29, 1899",
+  "members": "170.000",
+  "membersDate": "Jan 1, 2022",
+  "otherSports": [
+    "Baseball",
+    "Basketball",
+    "Eishockey",
+    "Eiskunstlauf",
+    "Feldhockey",
+    "Futsal",
+    "Handball",
+    "Leichtathletik",
+    "Rollhockey",
+    "Rollstuhlbasketball",
+    "Rugby",
+    "Volleyball"
+  ],
+  "colors": [
+    "#004C99",
+    "#A60042",
+    "#FFEE00"
+  ],
+  "stadiumName": "Olímpic Lluís Companys",
+  "stadiumSeats": "55926",
+  "currentTransferRecord": "€-19.40m",
+  "currentMarketValue": "€1.02bn",
+  "confederation": null,
+  "fifaWorldRanking": null,
+  "squad": {
+    "size": "28",
+    "averageAge": "24.5",
+    "foreigners": "8",
+    "nationalTeamPlayers": "14"
+  },
+  "league": {
+    "id": "ES1",
+    "name": "LaLiga",
+    "countryId": "1",
+    "countryName": "Spain",
+    "tier": "First Tier"
+  },
+  "historicalCrests": [
+    "https://tmssl.akamaized.net//images/wappen/medium/131_1400792132.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/131_1400792150.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/131_1400792174.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/131_1400792189.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/131_1400792227.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/131_1400792246.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/131_1400792264.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/131_1400792283.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/131_1400792355.png"
+  ]
+}
