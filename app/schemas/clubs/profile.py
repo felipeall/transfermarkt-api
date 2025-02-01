@@ -30,7 +30,7 @@ class ClubProfile(TransfermarktBaseModel):
     address_line_2: str
     address_line_3: str
     tel: str
-    fax: str
+    fax: Optional[str] = None
     website: str
     founded_on: date
     members: Optional[int] = None
