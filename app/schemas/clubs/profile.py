@@ -26,12 +26,12 @@ class ClubProfile(TransfermarktBaseModel):
     official_name: str
     image: str
     legal_form: Optional[str] = None
-    address_line_1: str
-    address_line_2: str
-    address_line_3: str
-    tel: str
+    address_line_1: Optional[str] = None
+    address_line_2: Optional[str] = None
+    address_line_3: Optional[str] = None
+    tel: Optional[str] = None
     fax: Optional[str] = None
-    website: str
+    website: Optional[str] = None
     founded_on: date
     members: Optional[int] = None
     members_date: Optional[date] = None
