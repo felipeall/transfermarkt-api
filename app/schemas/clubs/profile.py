@@ -23,7 +23,7 @@ class ClubProfile(TransfermarktBaseModel):
     id: str
     url: str
     name: str
-    official_name: str
+    official_name: Optional[str] = None
     image: str
     legal_form: Optional[str] = None
     address_line_1: Optional[str] = None
@@ -32,7 +32,7 @@ class ClubProfile(TransfermarktBaseModel):
     tel: Optional[str] = None
     fax: Optional[str] = None
     website: Optional[str] = None
-    founded_on: date
+    founded_on: Optional[date] = None
     members: Optional[int] = None
     members_date: Optional[date] = None
     other_sports: Optional[list[str]] = None
