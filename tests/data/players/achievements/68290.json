@@ -1,0 +1,509 @@
+{
+  "id": "68290",
+  "achievements": [
+    {
+      "title": "Footballer of the Year",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": null,
+            "name": "2011"
+          }
+        }
+      ]
+    },
+    {
+      "title": "FIFA Puskás Award",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": null,
+            "name": "2011"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Top goal scorer",
+      "count": 4,
+      "details": [
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "competition": {
+            "id": "CDR",
+            "name": "Copa del Rey"
+          }
+        },
+        {
+          "season": {
+            "id": "2011",
+            "name": "11/12"
+          },
+          "competition": {
+            "id": "CLI",
+            "name": "Copa Libertadores"
+          }
+        },
+        {
+          "season": {
+            "id": "2009",
+            "name": "09/10"
+          },
+          "competition": {
+            "id": "BRC",
+            "name": "Copa do Brasil"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Player of the Year",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "club": {
+            "id": "221",
+            "name": "Santos FC"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Champions League winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "FIFA Club World Cup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2015",
+            "name": "2016"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spanish champion",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2015",
+            "name": "15/16"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "French champion",
+      "count": 5,
+      "details": [
+        {
+          "season": {
+            "id": "2022",
+            "name": "22/23"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        },
+        {
+          "season": {
+            "id": "2021",
+            "name": "21/22"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        },
+        {
+          "season": {
+            "id": "2019",
+            "name": "19/20"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        },
+        {
+          "season": {
+            "id": "2018",
+            "name": "18/19"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        },
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Uefa Supercup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2015",
+            "name": "15/16"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "French cup winner",
+      "count": 3,
+      "details": [
+        {
+          "season": {
+            "id": "2020",
+            "name": "20/21"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        },
+        {
+          "season": {
+            "id": "2019",
+            "name": "19/20"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        },
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spanish cup winner",
+      "count": 3,
+      "details": [
+        {
+          "season": {
+            "id": "2016",
+            "name": "16/17"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2015",
+            "name": "15/16"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "French league cup winner",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2019",
+            "name": "19/20"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        },
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spanish Super Cup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2013",
+            "name": "13/14"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Brazilian cup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2009",
+            "name": "2010"
+          },
+          "club": {
+            "id": "221",
+            "name": "Santos FC"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Saudi Arabian champion",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2023",
+            "name": "23/24"
+          },
+          "club": {
+            "id": "1114",
+            "name": "Al-Hilal SFC"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Copa Libertadores winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "club": {
+            "id": "221",
+            "name": "Santos FC"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Confederations Cup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2012",
+            "name": "2013"
+          },
+          "club": {
+            "id": "3439",
+            "name": "Brazil"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Recopa Sudamericana winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2011",
+            "name": "11/12"
+          },
+          "club": {
+            "id": "221",
+            "name": "Santos FC"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Under-20 South American Championship winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2010",
+            "name": "2011"
+          },
+          "club": {
+            "id": "7658",
+            "name": "Brazil U20"
+          }
+        }
+      ]
+    },
+    {
+      "title": "French Super Cup winner",
+      "count": 4,
+      "details": [
+        {
+          "season": {
+            "id": "2022",
+            "name": "22/23"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        },
+        {
+          "season": {
+            "id": "2020",
+            "name": "20/21"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        },
+        {
+          "season": {
+            "id": "2019",
+            "name": "19/20"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        },
+        {
+          "season": {
+            "id": "2018",
+            "name": "18/19"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Olympic medalist",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2015",
+            "name": "2016"
+          },
+          "club": {
+            "id": "53818",
+            "name": "Brazil Olympic Team"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Second place at the Olympic Games",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2011",
+            "name": "2012"
+          },
+          "club": {
+            "id": "53818",
+            "name": "Brazil Olympic Team"
+          }
+        }
+      ]
+    }
+  ]
+}

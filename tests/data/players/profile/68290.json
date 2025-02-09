@@ -1,0 +1,60 @@
+{
+  "id": "68290",
+  "url": "https://www.transfermarkt.com/neymar/profil/spieler/68290",
+  "name": "Neymar",
+  "description": "Neymar, 32, from Brazil ➤ Al-Hilal SFC, since 2023 ➤ Left Winger ➤ Market value: €15.00m ➤ * Feb 5, 1992 in Mogi das Cruzes, Brazil",
+  "fullName": "Neymar da Silva Santos Júnior",
+  "nameInHomeCountry": null,
+  "imageUrl": "https://img.a.transfermarkt.technology/portrait/header/68290-1697056482.png?lm=1",
+  "dateOfBirth": "Feb 5, 1992",
+  "placeOfBirth": {
+    "city": "Mogi das Cruzes",
+    "country": "Brazil"
+  },
+  "age": "32",
+  "height": "1,75m",
+  "citizenship": [
+    "Brazil"
+  ],
+  "isRetired": false,
+  "retiredSince": null,
+  "position": {
+    "main": "Left Winger",
+    "other": [
+      "Second Striker",
+      "Attacking Midfield"
+    ]
+  },
+  "foot": "right",
+  "shirtNumber": "#10",
+  "club": {
+    "id": "1114",
+    "name": "Al-Hilal",
+    "joined": "Aug 15, 2023",
+    "contractExpires": "Jun 30, 2025",
+    "contractOption": "Option for a further year",
+    "lastClubId": null,
+    "lastClubName": null,
+    "mostGamesFor": null
+  },
+  "marketValue": "€15.00m",
+  "agent": {
+    "name": "Relatives",
+    "url": null
+  },
+  "outfitter": "Puma",
+  "socialMedia": [
+    "http://www.twitch.tv/Neymarjr",
+    "http://twitter.com/neymarjr",
+    "http://www.facebook.com/neymarjr",
+    "http://instagram.com/neymarjr",
+    "http://www.neymaroficial.com/",
+    "http://www.tiktok.com/@neymarjr"
+  ],
+  "trainerProfile": {
+    "id": null,
+    "url": null,
+    "position": null
+  },
+  "relatives": []
+}

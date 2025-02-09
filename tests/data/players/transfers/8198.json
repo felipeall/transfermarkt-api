@@ -1,0 +1,201 @@
+{
+  "id": "8198",
+  "transfers": [
+    {
+      "id": "4197140",
+      "clubFrom": {
+        "id": "515",
+        "name": "Without Club"
+      },
+      "clubTo": {
+        "id": "18544",
+        "name": "Al-Nassr"
+      },
+      "date": "Jan 1, 2023",
+      "upcoming": false,
+      "season": "22/23",
+      "marketValue": "€20.00m",
+      "fee": "-"
+    },
+    {
+      "id": "4152208",
+      "clubFrom": {
+        "id": "985",
+        "name": "Man Utd"
+      },
+      "clubTo": {
+        "id": "515",
+        "name": "Without Club"
+      },
+      "date": "Nov 22, 2022",
+      "upcoming": false,
+      "season": "22/23",
+      "marketValue": "€20.00m",
+      "fee": "-"
+    },
+    {
+      "id": "3527714",
+      "clubFrom": {
+        "id": "506",
+        "name": "Juventus"
+      },
+      "clubTo": {
+        "id": "985",
+        "name": "Man Utd"
+      },
+      "date": "Aug 31, 2021",
+      "upcoming": false,
+      "season": "21/22",
+      "marketValue": "€45.00m",
+      "fee": "€17.00m"
+    },
+    {
+      "id": "2168965",
+      "clubFrom": {
+        "id": "418",
+        "name": "Real Madrid"
+      },
+      "clubTo": {
+        "id": "506",
+        "name": "Juventus"
+      },
+      "date": "Jul 10, 2018",
+      "upcoming": false,
+      "season": "18/19",
+      "marketValue": "€100.00m",
+      "fee": "€117.00m"
+    },
+    {
+      "id": "308498",
+      "clubFrom": {
+        "id": "985",
+        "name": "Man Utd"
+      },
+      "clubTo": {
+        "id": "418",
+        "name": "Real Madrid"
+      },
+      "date": "Jul 6, 2009",
+      "upcoming": false,
+      "season": "09/10",
+      "marketValue": "€60.00m",
+      "fee": "€94.00m"
+    },
+    {
+      "id": "12071",
+      "clubFrom": {
+        "id": "336",
+        "name": "Sporting CP"
+      },
+      "clubTo": {
+        "id": "985",
+        "name": "Man Utd"
+      },
+      "date": "Aug 12, 2003",
+      "upcoming": false,
+      "season": "03/04",
+      "marketValue": "-",
+      "fee": "€19.00m"
+    },
+    {
+      "id": "23367",
+      "clubFrom": {
+        "id": "10283",
+        "name": "Sporting U19"
+      },
+      "clubTo": {
+        "id": "336",
+        "name": "Sporting CP"
+      },
+      "date": "Jul 1, 2002",
+      "upcoming": false,
+      "season": "02/03",
+      "marketValue": "-",
+      "fee": "-"
+    },
+    {
+      "id": "1231081",
+      "clubFrom": {
+        "id": "48365",
+        "name": "Sporting U17"
+      },
+      "clubTo": {
+        "id": "10283",
+        "name": "Sporting U19"
+      },
+      "date": "Jul 1, 2000",
+      "upcoming": false,
+      "season": "00/01",
+      "marketValue": "-",
+      "fee": "-"
+    },
+    {
+      "id": "1540403",
+      "clubFrom": {
+        "id": "53956",
+        "name": "Sporting Sub-15"
+      },
+      "clubTo": {
+        "id": "48365",
+        "name": "Sporting U17"
+      },
+      "date": "Jul 1, 1998",
+      "upcoming": false,
+      "season": "98/99",
+      "marketValue": "-",
+      "fee": "-"
+    },
+    {
+      "id": "1680678",
+      "clubFrom": {
+        "id": "57926",
+        "name": "Nacional U15"
+      },
+      "clubTo": {
+        "id": "53956",
+        "name": "Sporting Sub-15"
+      },
+      "date": "Jul 1, 1997",
+      "upcoming": false,
+      "season": "97/98",
+      "marketValue": "-",
+      "fee": "?"
+    },
+    {
+      "id": "3531985",
+      "clubFrom": {
+        "id": "63438",
+        "name": "Nacional Yth."
+      },
+      "clubTo": {
+        "id": "57926",
+        "name": "Nacional U15"
+      },
+      "date": "Jul 1, 1996",
+      "upcoming": false,
+      "season": "96/97",
+      "marketValue": "-",
+      "fee": "-"
+    },
+    {
+      "id": "3927809",
+      "clubFrom": {
+        "id": "100646",
+        "name": "Andorinha Yth."
+      },
+      "clubTo": {
+        "id": "63438",
+        "name": "Nacional Yth."
+      },
+      "date": "Jul 1, 1995",
+      "upcoming": false,
+      "season": "95/96",
+      "marketValue": "-",
+      "fee": "free transfer"
+    }
+  ],
+  "youthClubs": [
+    "CF Andorinha (1992-1995)",
+    ""
+  ]
+}

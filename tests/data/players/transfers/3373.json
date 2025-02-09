@@ -1,0 +1,166 @@
+{
+  "id": "3373",
+  "transfers": [
+    {
+      "id": "1695687",
+      "clubFrom": {
+        "id": "515",
+        "name": "Without Club"
+      },
+      "clubTo": {
+        "id": "123",
+        "name": "Retired"
+      },
+      "date": "Jan 16, 2018",
+      "upcoming": false,
+      "season": "17/18",
+      "marketValue": "-",
+      "fee": "-"
+    },
+    {
+      "id": "1352957",
+      "clubFrom": {
+        "id": "2462",
+        "name": "Fluminense"
+      },
+      "clubTo": {
+        "id": "515",
+        "name": "Without Club"
+      },
+      "date": "Sep 29, 2015",
+      "upcoming": false,
+      "season": "15/16",
+      "marketValue": "€1.50m",
+      "fee": "-"
+    },
+    {
+      "id": "1264183",
+      "clubFrom": {
+        "id": "4961",
+        "name": "Querétaro FC"
+      },
+      "clubTo": {
+        "id": "2462",
+        "name": "Fluminense"
+      },
+      "date": "Jul 11, 2015",
+      "upcoming": false,
+      "season": "15/16",
+      "marketValue": "€1.50m",
+      "fee": "free transfer"
+    },
+    {
+      "id": "1097798",
+      "clubFrom": {
+        "id": "330",
+        "name": "Atlético-MG"
+      },
+      "clubTo": {
+        "id": "4961",
+        "name": "Querétaro FC"
+      },
+      "date": "Sep 5, 2014",
+      "upcoming": false,
+      "season": "14/15",
+      "marketValue": "€1.50m",
+      "fee": "free transfer"
+    },
+    {
+      "id": "723963",
+      "clubFrom": {
+        "id": "614",
+        "name": "Flamengo"
+      },
+      "clubTo": {
+        "id": "330",
+        "name": "Atlético-MG"
+      },
+      "date": "Jun 4, 2012",
+      "upcoming": false,
+      "season": "11/12",
+      "marketValue": "€4.00m",
+      "fee": "free transfer"
+    },
+    {
+      "id": "521934",
+      "clubFrom": {
+        "id": "5",
+        "name": "AC Milan"
+      },
+      "clubTo": {
+        "id": "614",
+        "name": "Flamengo"
+      },
+      "date": "Jan 11, 2011",
+      "upcoming": false,
+      "season": "10/11",
+      "marketValue": "€27.50m",
+      "fee": "€3.00m"
+    },
+    {
+      "id": "211889",
+      "clubFrom": {
+        "id": "131",
+        "name": "Barcelona"
+      },
+      "clubTo": {
+        "id": "5",
+        "name": "AC Milan"
+      },
+      "date": "Jul 15, 2008",
+      "upcoming": false,
+      "season": "08/09",
+      "marketValue": "€35.00m",
+      "fee": "€24.15m"
+    },
+    {
+      "id": "10553",
+      "clubFrom": {
+        "id": "583",
+        "name": "Paris SG"
+      },
+      "clubTo": {
+        "id": "131",
+        "name": "Barcelona"
+      },
+      "date": "Jul 19, 2003",
+      "upcoming": false,
+      "season": "03/04",
+      "marketValue": "-",
+      "fee": "€32.25m"
+    },
+    {
+      "id": "29908",
+      "clubFrom": {
+        "id": "210",
+        "name": "Grêmio"
+      },
+      "clubTo": {
+        "id": "583",
+        "name": "Paris SG"
+      },
+      "date": "Jul 1, 2001",
+      "upcoming": false,
+      "season": "01/02",
+      "marketValue": "-",
+      "fee": "€5.00m"
+    },
+    {
+      "id": "29909",
+      "clubFrom": {
+        "id": "14704",
+        "name": "Grêmio B"
+      },
+      "clubTo": {
+        "id": "210",
+        "name": "Grêmio"
+      },
+      "date": "Jan 1, 1998",
+      "upcoming": false,
+      "season": "97/98",
+      "marketValue": "-",
+      "fee": "-"
+    }
+  ],
+  "youthClubs": null
+}

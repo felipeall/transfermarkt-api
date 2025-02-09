@@ -1,0 +1,107 @@
+{
+  "query": "Premier League",
+  "pageNumber": 1,
+  "lastPageNumber": 6,
+  "results": [
+    {
+      "id": "GB1",
+      "name": "Premier League",
+      "country": "England",
+      "clubs": "20",
+      "players": "551",
+      "totalMarketValue": "€11.82bn",
+      "meanMarketValue": "€591.19m",
+      "continent": "UEFA"
+    },
+    {
+      "id": "SC1",
+      "name": "Scottish Premiership",
+      "country": "Scotland",
+      "clubs": "12",
+      "players": "334",
+      "totalMarketValue": "€336.90m",
+      "meanMarketValue": "€28.08m",
+      "continent": "UEFA"
+    },
+    {
+      "id": "EGY1",
+      "name": "Egyptian Premier League",
+      "country": "Egypt",
+      "clubs": "18",
+      "players": "610",
+      "totalMarketValue": "€147.93m",
+      "meanMarketValue": "€8.22m",
+      "continent": "CAF"
+    },
+    {
+      "id": "AZ1",
+      "name": "Premyer Liqa",
+      "country": "Azerbaijan",
+      "clubs": "10",
+      "players": "259",
+      "totalMarketValue": "€99.40m",
+      "meanMarketValue": "€9.94m",
+      "continent": "UEFA"
+    },
+    {
+      "id": "THA1",
+      "name": "Thai League",
+      "country": "Thailand",
+      "clubs": "16",
+      "players": "504",
+      "totalMarketValue": "€79.98m",
+      "meanMarketValue": "€5.00m",
+      "continent": "AFC"
+    },
+    {
+      "id": "GB21",
+      "name": "Premier League 2",
+      "country": "England",
+      "clubs": "26",
+      "players": "607",
+      "totalMarketValue": "€60.98m",
+      "meanMarketValue": "€2.35m",
+      "continent": "UEFA"
+    },
+    {
+      "id": "ARM1",
+      "name": "Bardzraguyn khumb",
+      "country": "Armenia",
+      "clubs": "11",
+      "players": "271",
+      "totalMarketValue": "€42.94m",
+      "meanMarketValue": "€3.90m",
+      "continent": "UEFA"
+    },
+    {
+      "id": "MT1P",
+      "name": "Premier League Closing Round",
+      "country": "Malta",
+      "clubs": "12",
+      "players": "272",
+      "totalMarketValue": "€40.73m",
+      "meanMarketValue": "€3.39m",
+      "continent": "UEFA"
+    },
+    {
+      "id": "MT1N",
+      "name": "Premier League Opening Round",
+      "country": "Malta",
+      "clubs": "12",
+      "players": "272",
+      "totalMarketValue": "€40.73m",
+      "meanMarketValue": "€3.39m",
+      "continent": "UEFA"
+    },
+    {
+      "id": "OM1L",
+      "name": "Oman Professional League",
+      "country": "Oman",
+      "clubs": "12",
+      "players": "392",
+      "totalMarketValue": "€39.21m",
+      "meanMarketValue": "€3.27m",
+      "continent": "AFC"
+    }
+  ]
+}
