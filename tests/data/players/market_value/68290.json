@@ -1,0 +1,315 @@
+{
+  "id": "68290",
+  "marketValue": "€15.00m",
+  "marketValueHistory": [
+    {
+      "age": "17",
+      "date": "Feb 22, 2009",
+      "clubName": "Santos FC",
+      "marketValue": "€1.00m",
+      "clubId": "221"
+    },
+    {
+      "age": "17",
+      "date": "Jun 5, 2009",
+      "clubName": "Santos FC",
+      "marketValue": "€1.50m",
+      "clubId": "221"
+    },
+    {
+      "age": "17",
+      "date": "Sep 6, 2009",
+      "clubName": "Santos FC",
+      "marketValue": "€2.50m",
+      "clubId": "221"
+    },
+    {
+      "age": "17",
+      "date": "Dec 8, 2009",
+      "clubName": "Santos FC",
+      "marketValue": "€6.00m",
+      "clubId": "221"
+    },
+    {
+      "age": "18",
+      "date": "Apr 15, 2010",
+      "clubName": "Santos FC",
+      "marketValue": "€10.00m",
+      "clubId": "221"
+    },
+    {
+      "age": "18",
+      "date": "Sep 6, 2010",
+      "clubName": "Santos FC",
+      "marketValue": "€14.00m",
+      "clubId": "221"
+    },
+    {
+      "age": "18",
+      "date": "Dec 10, 2010",
+      "clubName": "Santos FC",
+      "marketValue": "€18.00m",
+      "clubId": "221"
+    },
+    {
+      "age": "19",
+      "date": "May 30, 2011",
+      "clubName": "Santos FC",
+      "marketValue": "€25.00m",
+      "clubId": "221"
+    },
+    {
+      "age": "19",
+      "date": "Aug 12, 2011",
+      "clubName": "Santos FC",
+      "marketValue": "€30.00m",
+      "clubId": "221"
+    },
+    {
+      "age": "19",
+      "date": "Dec 8, 2011",
+      "clubName": "Santos FC",
+      "marketValue": "€30.00m",
+      "clubId": "221"
+    },
+    {
+      "age": "20",
+      "date": "May 24, 2012",
+      "clubName": "Santos FC",
+      "marketValue": "€30.00m",
+      "clubId": "221"
+    },
+    {
+      "age": "20",
+      "date": "Aug 8, 2012",
+      "clubName": "Santos FC",
+      "marketValue": "€40.00m",
+      "clubId": "221"
+    },
+    {
+      "age": "20",
+      "date": "Dec 5, 2012",
+      "clubName": "Santos FC",
+      "marketValue": "€40.00m",
+      "clubId": "221"
+    },
+    {
+      "age": "21",
+      "date": "Feb 26, 2013",
+      "clubName": "Santos FC",
+      "marketValue": "€50.00m",
+      "clubId": "221"
+    },
+    {
+      "age": "21",
+      "date": "Jul 30, 2013",
+      "clubName": "FC Barcelona",
+      "marketValue": "€50.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "21",
+      "date": "Jan 23, 2014",
+      "clubName": "FC Barcelona",
+      "marketValue": "€60.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "22",
+      "date": "Jul 20, 2014",
+      "clubName": "FC Barcelona",
+      "marketValue": "€70.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "22",
+      "date": "Jan 23, 2015",
+      "clubName": "FC Barcelona",
+      "marketValue": "€80.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "23",
+      "date": "Jul 1, 2015",
+      "clubName": "FC Barcelona",
+      "marketValue": "€80.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "23",
+      "date": "Nov 22, 2015",
+      "clubName": "FC Barcelona",
+      "marketValue": "€100.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "24",
+      "date": "Feb 22, 2016",
+      "clubName": "FC Barcelona",
+      "marketValue": "€100.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "24",
+      "date": "Jul 15, 2016",
+      "clubName": "FC Barcelona",
+      "marketValue": "€100.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "24",
+      "date": "Jan 24, 2017",
+      "clubName": "FC Barcelona",
+      "marketValue": "€100.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "25",
+      "date": "Jun 5, 2017",
+      "clubName": "FC Barcelona",
+      "marketValue": "€100.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "25",
+      "date": "Oct 12, 2017",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€150.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "25",
+      "date": "Jan 24, 2018",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€180.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "26",
+      "date": "Jun 4, 2018",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€180.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "26",
+      "date": "Dec 17, 2018",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€180.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "27",
+      "date": "Jun 3, 2019",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€180.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "27",
+      "date": "Dec 19, 2019",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€160.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "28",
+      "date": "Apr 8, 2020",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€128.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "28",
+      "date": "Oct 15, 2020",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€128.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "29",
+      "date": "Apr 9, 2021",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€110.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "29",
+      "date": "Jun 4, 2021",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€100.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "29",
+      "date": "Dec 16, 2021",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€90.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "30",
+      "date": "May 30, 2022",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€75.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "30",
+      "date": "Nov 2, 2022",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€75.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "31",
+      "date": "Mar 27, 2023",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€70.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "31",
+      "date": "Jun 27, 2023",
+      "clubName": "Paris Saint-Germain",
+      "marketValue": "€60.00m",
+      "clubId": "583"
+    },
+    {
+      "age": "31",
+      "date": "Oct 24, 2023",
+      "clubName": "Al-Hilal SFC",
+      "marketValue": "€50.00m",
+      "clubId": "1114"
+    },
+    {
+      "age": "31",
+      "date": "Dec 15, 2023",
+      "clubName": "Al-Hilal SFC",
+      "marketValue": "€45.00m",
+      "clubId": "1114"
+    },
+    {
+      "age": "32",
+      "date": "Jun 4, 2024",
+      "clubName": "Al-Hilal SFC",
+      "marketValue": "€30.00m",
+      "clubId": "1114"
+    },
+    {
+      "age": "32",
+      "date": "Dec 13, 2024",
+      "clubName": "Al-Hilal SFC",
+      "marketValue": "€15.00m",
+      "clubId": "1114"
+    }
+  ],
+  "ranking": {
+    "Worldwide": "688",
+    "Saudi Pro League": "15",
+    "Al-Hilal": "7",
+    "Brazil": "59",
+    "Left Winger": "59",
+    "Year 1992": "7"
+  }
+}

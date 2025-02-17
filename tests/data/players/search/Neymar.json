@@ -1,0 +1,133 @@
+{
+  "query": "Neymar",
+  "pageNumber": 1,
+  "lastPageNumber": 1,
+  "results": [
+    {
+      "id": "68290",
+      "name": "Neymar",
+      "position": "LW",
+      "club": {
+        "name": "Al-Hilal SFC",
+        "id": "1114"
+      },
+      "age": "32",
+      "nationalities": [
+        "Brazil"
+      ],
+      "marketValue": "€15.00m"
+    },
+    {
+      "id": "441690",
+      "name": "Amâncio Canhemba",
+      "position": "AM",
+      "club": {
+        "name": "Clube Ferroviário de Maputo",
+        "id": "12379"
+      },
+      "age": "27",
+      "nationalities": [
+        "Mozambique"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "876462",
+      "name": "Nicolas Neymar",
+      "position": "Midfield",
+      "club": {
+        "name": "UD Songo",
+        "id": "43314"
+      },
+      "age": "23",
+      "nationalities": [
+        "Mozambique"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "896344",
+      "name": "Martín Jiménez",
+      "position": "CB",
+      "club": {
+        "name": "Without Club",
+        "id": "515"
+      },
+      "age": "29",
+      "nationalities": [
+        "Panama"
+      ],
+      "marketValue": "€50k"
+    },
+    {
+      "id": "910476",
+      "name": "Neymar Sánchez",
+      "position": "LW",
+      "club": {
+        "name": "Millonarios FC U20",
+        "id": "22899"
+      },
+      "age": "21",
+      "nationalities": [
+        "Colombia"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "1073939",
+      "name": "Neymar",
+      "position": "Midfield",
+      "club": {
+        "name": "GA Sampaio (RR)",
+        "id": "87822"
+      },
+      "age": "26",
+      "nationalities": [
+        "Brazil"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "1149306",
+      "name": "Neymar Uribe",
+      "position": "Defender",
+      "club": {
+        "name": "Envigado FC U20",
+        "id": "22573"
+      },
+      "age": "21",
+      "nationalities": [
+        "Colombia"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "1214663",
+      "name": "Júnior Neymar",
+      "position": "CF",
+      "club": {
+        "name": "Retired",
+        "id": "123"
+      },
+      "age": "30",
+      "nationalities": [
+        "Brazil"
+      ],
+      "marketValue": "-"
+    },
+    {
+      "id": "1307213",
+      "name": "Neymar",
+      "position": "Attack",
+      "club": {
+        "name": "CD Lunda Sul",
+        "id": "97257"
+      },
+      "age": "20",
+      "nationalities": [
+        "Angola"
+      ],
+      "marketValue": "-"
+    }
+  ]
+}
