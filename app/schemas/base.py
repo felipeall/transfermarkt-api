@@ -61,6 +61,8 @@ class TransfermarktBaseModel(BaseModel):
             return int(float(value_str.replace("k", "")) * 1_000)
         elif "m" in value_str:
             return int(float(value_str.replace("m", "")) * 1_000_000)
+        elif "bn" in value_str:
+            return int(float(value_str.replace("bn", "")) * 1_000_000_000)
         elif "b" in value_str:
             return int(float(value_str.replace("b", "")) * 1_000_000_000)
         else:
