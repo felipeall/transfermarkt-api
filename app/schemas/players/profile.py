@@ -74,6 +74,6 @@ class PlayerProfile(TransfermarktBaseModel, AuditMixin):
     market_value: Optional[int]
     agent: Optional[PlayerAgent]
     outfitter: Optional[str]
-    socialMedia: Optional[list[HttpUrl]]
+    socialMedia: Optional[list[str]]
     trainer_profile: Optional[TrainerProfile]
     relatives: Optional[list[Relatives]]
