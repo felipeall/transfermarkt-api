@@ -1,4 +1,7 @@
 from dataclasses import dataclass
+from bs4 import BeautifulSoup
+import re
+from typing import Tuple
 
 from app.services.base import TransfermarktBase
 from app.utils.utils import extract_from_url, safe_split
@@ -25,6 +28,50 @@ class TransfermarktPlayerTransfers(TransfermarktBase):
         self.page = self.request_url_page()
         self.raise_exception_if_not_found(xpath=Players.Profile.NAME)
         self.transfer_history = self.make_request(url=self.URL_TRANSFERS.format(player_id=self.player_id))
+
+    def __clean_html_value(self, value: str) -> Tuple[str, str]:
+        """
+        Clean HTML tags from a string value and extract just the currency value or preserve special text values.
+        Also determine the transfer type based on the fee text.
+        
+        Args:
+            value (str): The string value that may contain HTML tags.
+            
+        Returns:
+            Tuple[str, str]: A tuple containing (cleaned_fee_value, transfer_type)
+        """
+        if not value or not isinstance(value, str):
+            return value, "permanent"
+            
+        soup = BeautifulSoup(value, 'html.parser')
+        text = soup.get_text().strip()
+        
+        if "end of loan" in text.lower():
+            return "End of loan", "end_of_loan"
+            
+        if "loan transfer" in text.lower() and not any(char.isdigit() for char in text):
+            return "loan transfer", "loan"
+        
+        if "fee" in text.lower():
+            currency_match = re.search(r'(€\d+(?:\.\d+)?[km]?)', text)
+            if currency_match:
+                if "loan" in text.lower():
+                    return currency_match.group(1), "loan"
+                return currency_match.group(1), "permanent"
+                
+            number_match = re.search(r'(\d+(?:\.\d+)?[km]?)', text)
+            if number_match:
+                if "loan" in text.lower():
+                    return number_match.group(1), "loan"
+                return number_match.group(1), "permanent"
+                
+            if "loan" in text.lower() and not any(char.isdigit() for char in text):
+                return "€0", "loan"
+        
+        if "free transfer" in text.lower() or text == "-":
+            return "€0", "free_transfer"
+            
+        return text, "permanent"
 
     def __parse_player_transfer_history(self) -> list:
         """
@@ -53,10 +100,26 @@ class TransfermarktPlayerTransfers(TransfermarktBase):
                 "upcoming": transfer["upcoming"],
                 "season": transfer["season"],
                 "marketValue": transfer["marketValue"],
-                "fee": transfer["fee"],
+                **self.__process_fee_and_type(transfer["fee"]),
             }
             for transfer in transfers
         ]
+        
+    def __process_fee_and_type(self, fee_value: str) -> dict:
+        """
+        Process the fee value and determine the transfer type.
+        
+        Args:
+            fee_value (str): The raw fee value from the transfer data.
+            
+        Returns:
+            dict: A dictionary containing the cleaned fee value and transfer type.
+        """
+        fee, transfer_type = self.__clean_html_value(fee_value)
+        return {
+            "fee": fee,
+            "transferType": transfer_type
+        }
 
     def get_player_transfers(self) -> dict:
         """
