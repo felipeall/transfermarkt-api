@@ -52,3 +52,14 @@ def test_players_search(query, page_number, len_greater_than_0, regex_integer, r
     )
 
     assert expected_schema.validate(result)
+
+
+def test_get_all_players_names(len_greater_than_0):
+    tfmkt = TransfermarktPlayerSearch()
+    result = tfmkt.get_all_players_names()
+
+    expected_schema = Schema(
+        And(list, len_greater_than_0, [And(str, len_greater_than_0)])
+    )
+
+    assert expected_schema.validate(result)
