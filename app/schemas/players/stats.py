@@ -10,7 +10,7 @@ class PlayerStat(TransfermarktBaseModel):
     club_id: str
     appearances: Optional[int]
     goals: Optional[int]
-    assists: Optional[int]
+    assists: Optional[int] = None
     yellow_cards: Optional[int]
     red_cards: Optional[int]
     minutes_played: Optional[int]
