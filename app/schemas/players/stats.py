@@ -8,12 +8,12 @@ class PlayerStat(TransfermarktBaseModel):
     competition_name: str
     season_id: str
     club_id: str
-    appearances: Optional[int]
-    goals: Optional[int]
-    assists: Optional[int]
-    yellow_cards: Optional[int]
-    red_cards: Optional[int]
-    minutes_played: Optional[int]
+    appearances: Optional[int] = 0
+    goals: Optional[int] = 0
+    assists: Optional[int] = 0
+    yellow_cards: Optional[int] = 0
+    red_cards: Optional[int] = 0
+    minutes_played: Optional[int] = 0
 
 
 class PlayerStats(TransfermarktBaseModel, AuditMixin):
