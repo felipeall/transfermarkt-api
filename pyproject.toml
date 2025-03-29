@@ -1,64 +1,43 @@
-[tool.poetry]
+[project]
 name = "transfermarkt-api"
-version = "3.0.0"
-description = "API service to get data from Transfermarkt"
-authors = ["Felipe Allegretti <felipe@allegretti.me>"]
-license = "MIT"
+version = "0.1.0"
+description = "Add your description here"
 readme = "README.md"
-packages = [{include = "app"}]
-
-[tool.poetry.dependencies]
-python = "^3.9"
-lxml = "==5.3.0"
-beautifulsoup4 = "==4.12.3"
-requests = "==2.32.3"
-fastapi = "==0.115.6"
-uvicorn = {extras = ["standard"], version = "==0.34.0"}
-slowapi = "==0.1.9"
-pydantic-settings = "==2.7.1"
-pydantic= "==2.10.4"
-python-dateutil = "==2.9.0.post0"
-
-[tool.poetry.group.dev.dependencies]
-jupyter = "==1.0.0"
-setuptools = "==68.2.2"
-
-[tool.poetry.group.check.dependencies]
-black = "==24.8.0"
-ruff = "==0.6.1"
-interrogate = "==1.7.0"
-
-[tool.poetry.group.tests.dependencies]
-pytest = "==7.3.1"
-pytest-cov = "==4.1.0"
-schema = "==0.7.5"
-
-[tool.black]
-line-length = 120
-verbose = true
-preview = true
-
-[tool.ruff]
-preview = true
-unsafe-fixes = true
-line-length = 120
-lint.select = [
-    "F",  # pyflakes
-    "E",  # pycodestyle errors
-    "W",  # pycodestyle warnings
-    "I",  # isort
-    "COM",  # flake8-commas
-    "Q",  # flake8-quotes
-    "FAST",  # fastapi
+requires-python = ">=3.12"
+dependencies = [
+    "annotated-types==0.7.0 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "anyio==4.7.0 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "beautifulsoup4==4.12.3 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "certifi==2024.12.14 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "charset-normalizer==3.4.1 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "click==8.1.8 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "colorama==0.4.6 ; python_full_version >= '3.9' and python_full_version < '4.0' and sys_platform == 'win32'",
+    "deprecated==1.2.15 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "exceptiongroup==1.2.2 ; python_full_version >= '3.9' and python_full_version < '3.11'",
+    "fastapi==0.115.6 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "h11==0.14.0 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "httptools==0.6.4 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "idna==3.10 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "limits==3.14.1 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "lxml==5.3.0 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "packaging==24.2 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "pydantic==2.10.4 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "pydantic-core==2.27.2 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "pydantic-settings==2.7.1 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "python-dateutil==2.9.0.post0 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "python-dotenv==1.0.1 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "pyyaml==6.0.2 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "requests==2.32.3 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "six==1.17.0 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "slowapi==0.1.9 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "sniffio==1.3.1 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "soupsieve==2.6 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "starlette==0.41.3 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "typing-extensions==4.12.2 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "urllib3==2.3.0 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "uvicorn[standard]==0.34.0 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "uvloop==0.21.0 ; python_full_version >= '3.9' and python_full_version < '4.0' and platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'",
+    "watchfiles==1.0.3 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "websockets==14.1 ; python_full_version >= '3.9' and python_full_version < '4.0'",
+    "wrapt==1.17.0 ; python_full_version >= '3.9' and python_full_version < '4.0'",
 ]
-
-[tool.pytest.ini_options]
-addopts = "--cov --cov-report term-missing --exitfirst"
-testpaths = [
-    "tests",
-]
-
-[tool.interrogate]
-ignore-init-module = true
-ignore-module = true
-fail-under = 100

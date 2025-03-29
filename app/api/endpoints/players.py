@@ -69,3 +69,10 @@ def get_player_achievements(player_id: str):
     tfmkt = TransfermarktPlayerAchievements(player_id=player_id)
     player_achievements = tfmkt.get_player_achievements()
     return player_achievements
+
+
+@router.get("/all_players_names", response_model=list[str], response_model_exclude_none=True)
+def get_all_players_names():
+    tfmkt = TransfermarktPlayerSearch()
+    all_players_names = tfmkt.get_all_players_names()
+    return all_players_names

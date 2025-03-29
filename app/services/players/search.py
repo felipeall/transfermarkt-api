@@ -83,3 +83,14 @@ class TransfermarktPlayerSearch(TransfermarktBase):
         self.response["results"] = self.__parse_search_results()
 
         return self.response
+
+    def get_all_players_names(self) -> list:
+        """
+        Retrieve and return a list of all players' names.
+
+        Returns:
+            list: A list of player names.
+        """
+        search_results = self.search_players()
+        player_names = [player["name"] for player in search_results["results"]]
+        return player_names
