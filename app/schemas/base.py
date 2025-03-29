@@ -72,7 +72,7 @@ class TransfermarktBaseModel(BaseModel):
     def parse_height(cls, v: str) -> Optional[int]:
         if not v or not any(char.isdigit() for char in v):
             return None
-        return int(v.replace(",", "").replace("m", ""))
+        return int(v.replace(",", "").replace("m", "").replace("،", ""))
 
     @field_validator("days", mode="before", check_fields=False)
     def parse_days(cls, v: str) -> Optional[int]:
