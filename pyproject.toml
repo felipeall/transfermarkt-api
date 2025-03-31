@@ -16,7 +16,7 @@ fastapi = "==0.115.6"
 uvicorn = {extras = ["standard"], version = "==0.34.0"}
 slowapi = "==0.1.9"
 pydantic-settings = "==2.7.1"
-pydantic= "==2.10.4"
+pydantic= "==2.10.5"
 python-dateutil = "==2.9.0.post0"
 
 [tool.poetry.group.dev.dependencies]
@@ -31,7 +31,6 @@ interrogate = "==1.7.0"
 [tool.poetry.group.tests.dependencies]
 pytest = "==7.3.1"
 pytest-cov = "==4.1.0"
-schema = "==0.7.5"
 
 [tool.black]
 line-length = 120
@@ -53,7 +52,7 @@ lint.select = [
 ]
 
 [tool.pytest.ini_options]
-addopts = "--cov --cov-report term-missing --exitfirst"
+addopts = "--cov --cov-report term-missing --exitfirst -vv"
 testpaths = [
     "tests",
 ]

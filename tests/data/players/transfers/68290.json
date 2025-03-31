@@ -1,0 +1,70 @@
+{
+  "id": "68290",
+  "transfers": [
+    {
+      "id": "4585197",
+      "clubFrom": {
+        "id": "583",
+        "name": "Paris SG"
+      },
+      "clubTo": {
+        "id": "1114",
+        "name": "Al-Hilal"
+      },
+      "date": "Aug 15, 2023",
+      "upcoming": false,
+      "season": "23/24",
+      "marketValue": "€60.00m",
+      "fee": "€90.00m"
+    },
+    {
+      "id": "1866385",
+      "clubFrom": {
+        "id": "131",
+        "name": "Barcelona"
+      },
+      "clubTo": {
+        "id": "583",
+        "name": "Paris SG"
+      },
+      "date": "Aug 3, 2017",
+      "upcoming": false,
+      "season": "17/18",
+      "marketValue": "€100.00m",
+      "fee": "€222.00m"
+    },
+    {
+      "id": "874846",
+      "clubFrom": {
+        "id": "221",
+        "name": "Santos"
+      },
+      "clubTo": {
+        "id": "131",
+        "name": "Barcelona"
+      },
+      "date": "Jul 1, 2013",
+      "upcoming": false,
+      "season": "13/14",
+      "marketValue": "€50.00m",
+      "fee": "€88.00m"
+    },
+    {
+      "id": "271376",
+      "clubFrom": {
+        "id": "9540",
+        "name": "Santos U20"
+      },
+      "clubTo": {
+        "id": "221",
+        "name": "Santos"
+      },
+      "date": "Jan 1, 2009",
+      "upcoming": false,
+      "season": "08/09",
+      "marketValue": "-",
+      "fee": "-"
+    }
+  ],
+  "youthClubs": null
+}

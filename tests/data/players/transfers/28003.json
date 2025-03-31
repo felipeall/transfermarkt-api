@@ -1,0 +1,137 @@
+{
+  "id": "28003",
+  "transfers": [
+    {
+      "id": "4418847",
+      "clubFrom": {
+        "id": "583",
+        "name": "Paris SG"
+      },
+      "clubTo": {
+        "id": "69261",
+        "name": "Miami"
+      },
+      "date": "Jul 15, 2023",
+      "upcoming": false,
+      "season": "23/24",
+      "marketValue": "€35.00m",
+      "fee": "free transfer"
+    },
+    {
+      "id": "3489998",
+      "clubFrom": {
+        "id": "131",
+        "name": "Barcelona"
+      },
+      "clubTo": {
+        "id": "583",
+        "name": "Paris SG"
+      },
+      "date": "Aug 10, 2021",
+      "upcoming": false,
+      "season": "21/22",
+      "marketValue": "€80.00m",
+      "fee": "free transfer"
+    },
+    {
+      "id": "48265",
+      "clubFrom": {
+        "id": "2464",
+        "name": "Barcelona B"
+      },
+      "clubTo": {
+        "id": "131",
+        "name": "Barcelona"
+      },
+      "date": "Jul 1, 2005",
+      "upcoming": false,
+      "season": "05/06",
+      "marketValue": "€3.00m",
+      "fee": "-"
+    },
+    {
+      "id": "153557",
+      "clubFrom": {
+        "id": "63954",
+        "name": "Barcelona C"
+      },
+      "clubTo": {
+        "id": "2464",
+        "name": "Barcelona B"
+      },
+      "date": "Mar 5, 2004",
+      "upcoming": false,
+      "season": "03/04",
+      "marketValue": "-",
+      "fee": "-"
+    },
+    {
+      "id": "1993882",
+      "clubFrom": {
+        "id": "2470",
+        "name": "Barça U19"
+      },
+      "clubTo": {
+        "id": "63954",
+        "name": "Barcelona C"
+      },
+      "date": "Nov 28, 2003",
+      "upcoming": false,
+      "season": "03/04",
+      "marketValue": "-",
+      "fee": "-"
+    },
+    {
+      "id": "1136539",
+      "clubFrom": {
+        "id": "14321",
+        "name": "Barça U16"
+      },
+      "clubTo": {
+        "id": "2470",
+        "name": "Barça U19"
+      },
+      "date": "Sep 13, 2003",
+      "upcoming": false,
+      "season": "03/04",
+      "marketValue": "-",
+      "fee": "-"
+    },
+    {
+      "id": "2326361",
+      "clubFrom": {
+        "id": "70295",
+        "name": "Barça Youth"
+      },
+      "clubTo": {
+        "id": "14321",
+        "name": "Barça U16"
+      },
+      "date": "Jul 1, 2002",
+      "upcoming": false,
+      "season": "02/03",
+      "marketValue": "-",
+      "fee": "-"
+    },
+    {
+      "id": "181327",
+      "clubFrom": {
+        "id": "92364",
+        "name": "Newell's JV"
+      },
+      "clubTo": {
+        "id": "70295",
+        "name": "Barça Youth"
+      },
+      "date": "Jul 1, 2000",
+      "upcoming": false,
+      "season": "00/01",
+      "marketValue": "-",
+      "fee": "free transfer"
+    }
+  ],
+  "youthClubs": [
+    "Grandoli FC (1992-1995)",
+    "Newell's Old Boys (1995-2000)"
+  ]
+}
