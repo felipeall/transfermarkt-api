@@ -1,3 +1,4 @@
+import re
 from datetime import datetime
 from typing import Optional
 
@@ -56,7 +57,16 @@ class TransfermarktBaseModel(BaseModel):
     def parse_str_to_int(cls, v: str) -> Optional[int]:
         if not v or not any(char.isdigit() for char in v):
             return None
-        value_str = v.lower().replace("€", "").replace("+", "").replace("'", "").strip()
+
+        # Clean up HTML tags if present
+        if "<" in str(v):
+            matches = re.findall(r"€([\d,.]+[kmb]?)", v.lower())
+            if not matches:
+                return None
+            value_str = matches[0]
+        else:
+            value_str = v.lower().replace("€", "").replace("+", "").replace("'", "").strip()
+
         if "k" in value_str:
             return int(float(value_str.replace("k", "")) * 1_000)
         elif "m" in value_str:
