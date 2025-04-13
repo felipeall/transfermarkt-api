@@ -12,11 +12,11 @@ class ClubSquad(TransfermarktBaseModel):
 
 
 class ClubLeague(TransfermarktBaseModel):
-    id: str
-    name: str
-    country_id: str
-    country_name: str
-    tier: str
+    id: Optional[str] = None
+    name: Optional[str] = None
+    country_id: Optional[str] = None
+    country_name: Optional[str] = None
+    tier: Optional[str] = None
 
 
 class ClubProfile(TransfermarktBaseModel):
@@ -40,7 +40,7 @@ class ClubProfile(TransfermarktBaseModel):
     stadium_name: str
     stadium_seats: int
     current_transfer_record: int
-    current_market_value: int
+    current_market_value: Optional[int] = None
     confederation: Optional[str] = None
     fifa_world_ranking: Optional[str] = None
     squad: ClubSquad
