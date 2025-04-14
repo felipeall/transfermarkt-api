@@ -1,0 +1,1135 @@
+{
+  "id": "28003",
+  "achievements": [
+    {
+      "title": "The Best FIFA Men's Player",
+      "count": 4,
+      "details": [
+        {
+          "season": {
+            "id": "2022",
+            "name": "2023"
+          },
+          "club": {
+            "id": "69261",
+            "name": "Inter Miami CF"
+          }
+        },
+        {
+          "season": {
+            "id": "2021",
+            "name": "2022"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        },
+        {
+          "season": {
+            "id": "2018",
+            "name": "2019"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2008",
+            "name": "2009"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Winner Ballon d'Or",
+      "count": 8,
+      "details": [
+        {
+          "season": {
+            "id": null,
+            "name": "2023"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2021"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2019"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2015"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2012"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2011"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2010"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2009"
+          }
+        }
+      ]
+    },
+    {
+      "title": "UEFA Best Player in Europe",
+      "count": 3,
+      "details": [
+        {
+          "season": {
+            "id": "2014",
+            "name": "2015"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2010",
+            "name": "2011"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2008",
+            "name": "2009"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Golden Boot winner (Europe)",
+      "count": 6,
+      "details": [
+        {
+          "season": {
+            "id": "2018",
+            "name": "18/19"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2016",
+            "name": "16/17"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2012",
+            "name": "12/13"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2011",
+            "name": "11/12"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2009",
+            "name": "09/10"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "MLS MVP",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2023",
+            "name": "23/24"
+          },
+          "competition": {
+            "id": "MLS1",
+            "name": "Major League Soccer"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Top goal scorer",
+      "count": 23,
+      "details": [
+        {
+          "season": {
+            "id": "2022",
+            "name": "22/23"
+          },
+          "competition": {
+            "id": "USMX",
+            "name": "Leagues Cup"
+          }
+        },
+        {
+          "season": {
+            "id": "2020",
+            "name": "20/21"
+          },
+          "competition": {
+            "id": "CAM2",
+            "name": "Copa América 2021"
+          }
+        },
+        {
+          "season": {
+            "id": "2020",
+            "name": "20/21"
+          },
+          "competition": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
+        },
+        {
+          "season": {
+            "id": "2019",
+            "name": "19/20"
+          },
+          "competition": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
+        },
+        {
+          "season": {
+            "id": "2018",
+            "name": "18/19"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2018",
+            "name": "18/19"
+          },
+          "competition": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
+        },
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "competition": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
+        },
+        {
+          "season": {
+            "id": "2016",
+            "name": "16/17"
+          },
+          "competition": {
+            "id": "CDR",
+            "name": "Copa del Rey"
+          }
+        },
+        {
+          "season": {
+            "id": "2016",
+            "name": "16/17"
+          },
+          "competition": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
+        },
+        {
+          "season": {
+            "id": "2015",
+            "name": "15/16"
+          },
+          "competition": {
+            "id": "CDR",
+            "name": "Copa del Rey"
+          }
+        },
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2013",
+            "name": "13/14"
+          },
+          "competition": {
+            "id": "CDR",
+            "name": "Copa del Rey"
+          }
+        },
+        {
+          "season": {
+            "id": "2012",
+            "name": "12/13"
+          },
+          "competition": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
+        },
+        {
+          "season": {
+            "id": "2011",
+            "name": "11/12"
+          },
+          "competition": {
+            "id": "KLUB",
+            "name": "FIFA Club World Cup"
+          }
+        },
+        {
+          "season": {
+            "id": "2011",
+            "name": "11/12"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2011",
+            "name": "11/12"
+          },
+          "competition": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
+        },
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "competition": {
+            "id": "CDR",
+            "name": "Copa del Rey"
+          }
+        },
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2009",
+            "name": "09/10"
+          },
+          "competition": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
+        },
+        {
+          "season": {
+            "id": "2009",
+            "name": "09/10"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2008",
+            "name": "08/09"
+          },
+          "competition": {
+            "id": "CDR",
+            "name": "Copa del Rey"
+          }
+        },
+        {
+          "season": {
+            "id": "2008",
+            "name": "08/09"
+          },
+          "competition": {
+            "id": "CL",
+            "name": "UEFA Champions League"
+          }
+        },
+        {
+          "season": {
+            "id": "2004",
+            "name": "04/05"
+          },
+          "competition": {
+            "id": "U20N",
+            "name": "U20-Weltmeisterschaft 2005"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Player of the Year",
+      "count": 9,
+      "details": [
+        {
+          "season": {
+            "id": "2018",
+            "name": "18/19"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2016",
+            "name": "16/17"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2012",
+            "name": "12/13"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2011",
+            "name": "11/12"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2009",
+            "name": "09/10"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2008",
+            "name": "08/09"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TM-Player of the season",
+      "count": 4,
+      "details": [
+        {
+          "season": {
+            "id": null,
+            "name": "2021"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2020"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2019"
+          }
+        },
+        {
+          "season": {
+            "id": null,
+            "name": "2018"
+          }
+        }
+      ]
+    },
+    {
+      "title": "World Cup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2021",
+            "name": "2022"
+          },
+          "club": {
+            "id": "3437",
+            "name": "Argentina"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Copa América winner",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2023",
+            "name": "23/24"
+          },
+          "club": {
+            "id": "3437",
+            "name": "Argentina"
+          }
+        },
+        {
+          "season": {
+            "id": "2020",
+            "name": "20/21"
+          },
+          "club": {
+            "id": "3437",
+            "name": "Argentina"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Champions League winner",
+      "count": 4,
+      "details": [
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2008",
+            "name": "08/09"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2005",
+            "name": "05/06"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "FIFA Club World Cup winner",
+      "count": 3,
+      "details": [
+        {
+          "season": {
+            "id": "2015",
+            "name": "2016"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2011",
+            "name": "2012"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2009",
+            "name": "2010"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spanish champion",
+      "count": 10,
+      "details": [
+        {
+          "season": {
+            "id": "2018",
+            "name": "18/19"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2015",
+            "name": "15/16"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2012",
+            "name": "12/13"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2009",
+            "name": "09/10"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2008",
+            "name": "08/09"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2005",
+            "name": "05/06"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2004",
+            "name": "04/05"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "French champion",
+      "count": 2,
+      "details": [
+        {
+          "season": {
+            "id": "2022",
+            "name": "22/23"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        },
+        {
+          "season": {
+            "id": "2021",
+            "name": "21/22"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Uefa Supercup winner",
+      "count": 3,
+      "details": [
+        {
+          "season": {
+            "id": "2015",
+            "name": "15/16"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2011",
+            "name": "11/12"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2009",
+            "name": "09/10"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spanish cup winner",
+      "count": 7,
+      "details": [
+        {
+          "season": {
+            "id": "2020",
+            "name": "20/21"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2017",
+            "name": "17/18"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2016",
+            "name": "16/17"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2015",
+            "name": "15/16"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2014",
+            "name": "14/15"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2011",
+            "name": "11/12"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2008",
+            "name": "08/09"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spanish Super Cup winner",
+      "count": 8,
+      "details": [
+        {
+          "season": {
+            "id": "2018",
+            "name": "18/19"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2016",
+            "name": "16/17"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2013",
+            "name": "13/14"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2011",
+            "name": "11/12"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2010",
+            "name": "10/11"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2009",
+            "name": "09/10"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2006",
+            "name": "06/07"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        },
+        {
+          "season": {
+            "id": "2005",
+            "name": "05/06"
+          },
+          "club": {
+            "id": "131",
+            "name": "FC Barcelona"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Supporters' Shield Winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2023",
+            "name": "23/24"
+          },
+          "club": {
+            "id": "69261",
+            "name": "Inter Miami CF"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Leagues Cup Winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2022",
+            "name": "2023"
+          },
+          "club": {
+            "id": "69261",
+            "name": "Inter Miami CF"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Under-20 World Cup champion",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2004",
+            "name": "2005"
+          },
+          "club": {
+            "id": "11940",
+            "name": "Argentina U20"
+          }
+        }
+      ]
+    },
+    {
+      "title": "CONMEBOL-UEFA Cup of Champions winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2021",
+            "name": "21/22"
+          },
+          "club": {
+            "id": "3437",
+            "name": "Argentina"
+          }
+        }
+      ]
+    },
+    {
+      "title": "French Super Cup winner",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2022",
+            "name": "22/23"
+          },
+          "club": {
+            "id": "583",
+            "name": "Paris Saint-Germain"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Olympic medalist",
+      "count": 1,
+      "details": [
+        {
+          "season": {
+            "id": "2007",
+            "name": "2008"
+          },
+          "club": {
+            "id": "53819",
+            "name": "Argentina Olympic Team"
+          }
+        }
+      ]
+    }
+  ]
+}

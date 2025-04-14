@@ -1,0 +1,87 @@
+{
+  "id": "BRA1",
+  "name": "Campeonato Brasileiro Série A",
+  "seasonId": "2024",
+  "clubs": [
+    {
+      "id": "1023",
+      "name": "Sociedade Esportiva Palmeiras"
+    },
+    {
+      "id": "614",
+      "name": "CR Flamengo"
+    },
+    {
+      "id": "537",
+      "name": "Botafogo de Futebol e Regatas"
+    },
+    {
+      "id": "199",
+      "name": "Sport Club Corinthians Paulista"
+    },
+    {
+      "id": "6600",
+      "name": "Sport Club Internacional"
+    },
+    {
+      "id": "609",
+      "name": "Cruzeiro Esporte Clube"
+    },
+    {
+      "id": "10010",
+      "name": "Esporte Clube Bahia"
+    },
+    {
+      "id": "330",
+      "name": "Clube Atlético Mineiro"
+    },
+    {
+      "id": "585",
+      "name": "São Paulo Futebol Clube"
+    },
+    {
+      "id": "978",
+      "name": "Clube de Regatas Vasco da Gama"
+    },
+    {
+      "id": "210",
+      "name": "Grêmio Foot-Ball Porto Alegrense"
+    },
+    {
+      "id": "8793",
+      "name": "Red Bull Bragantino"
+    },
+    {
+      "id": "2462",
+      "name": "Fluminense Football Club"
+    },
+    {
+      "id": "10870",
+      "name": "Fortaleza Esporte Clube"
+    },
+    {
+      "id": "221",
+      "name": "Santos FC"
+    },
+    {
+      "id": "2125",
+      "name": "Esporte Clube Vitória"
+    },
+    {
+      "id": "2029",
+      "name": "Ceará Sporting Club"
+    },
+    {
+      "id": "8718",
+      "name": "Sport Club do Recife"
+    },
+    {
+      "id": "3876",
+      "name": "Mirassol Futebol Clube (SP)"
+    },
+    {
+      "id": "10492",
+      "name": "Esporte Clube Juventude"
+    }
+  ]
+}

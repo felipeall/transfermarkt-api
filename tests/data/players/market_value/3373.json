@@ -1,0 +1,147 @@
+{
+  "id": "3373",
+  "marketValue": null,
+  "marketValueHistory": [
+    {
+      "age": "24",
+      "date": "Oct 4, 2004",
+      "clubName": "FC Barcelona",
+      "marketValue": "€38.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "24",
+      "date": "Dec 20, 2004",
+      "clubName": "FC Barcelona",
+      "marketValue": "€50.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "25",
+      "date": "Jan 20, 2006",
+      "clubName": "FC Barcelona",
+      "marketValue": "€70.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "27",
+      "date": "Sep 9, 2007",
+      "clubName": "FC Barcelona",
+      "marketValue": "€80.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "27",
+      "date": "Feb 4, 2008",
+      "clubName": "FC Barcelona",
+      "marketValue": "€50.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "28",
+      "date": "Jul 10, 2008",
+      "clubName": "FC Barcelona",
+      "marketValue": "€35.00m",
+      "clubId": "131"
+    },
+    {
+      "age": "28",
+      "date": "Feb 6, 2009",
+      "clubName": "AC Milan",
+      "marketValue": "€33.00m",
+      "clubId": "5"
+    },
+    {
+      "age": "29",
+      "date": "Aug 6, 2009",
+      "clubName": "AC Milan",
+      "marketValue": "€28.50m",
+      "clubId": "5"
+    },
+    {
+      "age": "29",
+      "date": "Oct 29, 2009",
+      "clubName": "AC Milan",
+      "marketValue": "€25.00m",
+      "clubId": "5"
+    },
+    {
+      "age": "29",
+      "date": "Jan 27, 2010",
+      "clubName": "AC Milan",
+      "marketValue": "€27.50m",
+      "clubId": "5"
+    },
+    {
+      "age": "30",
+      "date": "Jan 12, 2011",
+      "clubName": "CR Flamengo",
+      "marketValue": "€12.00m",
+      "clubId": "614"
+    },
+    {
+      "age": "31",
+      "date": "May 30, 2011",
+      "clubName": "CR Flamengo",
+      "marketValue": "€8.00m",
+      "clubId": "614"
+    },
+    {
+      "age": "31",
+      "date": "Dec 8, 2011",
+      "clubName": "CR Flamengo",
+      "marketValue": "€7.00m",
+      "clubId": "614"
+    },
+    {
+      "age": "32",
+      "date": "May 24, 2012",
+      "clubName": "CR Flamengo",
+      "marketValue": "€4.00m",
+      "clubId": "614"
+    },
+    {
+      "age": "32",
+      "date": "Jul 29, 2012",
+      "clubName": "Clube Atlético Mineiro",
+      "marketValue": "€3.00m",
+      "clubId": "330"
+    },
+    {
+      "age": "32",
+      "date": "Dec 5, 2012",
+      "clubName": "Clube Atlético Mineiro",
+      "marketValue": "€2.00m",
+      "clubId": "330"
+    },
+    {
+      "age": "33",
+      "date": "Aug 26, 2013",
+      "clubName": "Clube Atlético Mineiro",
+      "marketValue": "€1.50m",
+      "clubId": "330"
+    },
+    {
+      "age": "34",
+      "date": "Mar 28, 2014",
+      "clubName": "Clube Atlético Mineiro",
+      "marketValue": "€1.50m",
+      "clubId": "330"
+    },
+    {
+      "age": "34",
+      "date": "Sep 1, 2014",
+      "clubName": "Clube Atlético Mineiro",
+      "marketValue": "€1.50m",
+      "clubId": "330"
+    },
+    {
+      "age": "36",
+      "date": "Feb 3, 2017",
+      "clubName": "Without Club",
+      "marketValue": "-",
+      "clubId": "515"
+    }
+  ],
+  "ranking": {}
+}

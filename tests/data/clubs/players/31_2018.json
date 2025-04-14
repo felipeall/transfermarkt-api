@@ -1,0 +1,761 @@
+{
+  "id": "31",
+  "players": [
+    {
+      "id": "105470",
+      "name": "Alisson",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Oct 2, 1992",
+      "age": "26",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Liverpool FC",
+      "height": "1,93m",
+      "foot": "right",
+      "joinedOn": "Jul 19, 2018",
+      "joined": "",
+      "signedFrom": "AS Roma",
+      "contract": null,
+      "marketValue": "€80.00m",
+      "status": ""
+    },
+    {
+      "id": "50219",
+      "name": "Simon Mignolet",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Mar 6, 1988",
+      "age": "31",
+      "nationality": [
+        "Belgium"
+      ],
+      "currentClub": "Club Brugge KV",
+      "height": "1,93m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2013",
+      "joined": "",
+      "signedFrom": "Sunderland AFC",
+      "contract": null,
+      "marketValue": "€8.00m",
+      "status": ""
+    },
+    {
+      "id": "85864",
+      "name": "Loris Karius",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Jun 22, 1993",
+      "age": "26",
+      "nationality": [
+        "Germany"
+      ],
+      "currentClub": "Without Club",
+      "height": "1,91m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2016",
+      "joined": "",
+      "signedFrom": ": Ablöse €6.20m",
+      "contract": null,
+      "marketValue": "€5.00m",
+      "status": ""
+    },
+    {
+      "id": "55247",
+      "name": "Ádám Bogdán",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Sep 27, 1987",
+      "age": "31",
+      "nationality": [
+        "Hungary"
+      ],
+      "currentClub": "Retired",
+      "height": "1,94m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2015",
+      "joined": "",
+      "signedFrom": "Bolton Wanderers",
+      "contract": null,
+      "marketValue": "€500k",
+      "status": ""
+    },
+    {
+      "id": "346551",
+      "name": "Kamil Grabara",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Jan 8, 1999",
+      "age": "20",
+      "nationality": [
+        "Poland"
+      ],
+      "currentClub": "VfL Wolfsburg",
+      "height": "1,95m",
+      "foot": "right",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "€400k",
+      "status": ""
+    },
+    {
+      "id": "340918",
+      "name": "Caoimhín Kelleher",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Nov 23, 1998",
+      "age": "20",
+      "nationality": [
+        "Ireland"
+      ],
+      "currentClub": "Liverpool FC",
+      "height": "1,88m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2019",
+      "joined": "",
+      "signedFrom": ": Ablöse -",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "139208",
+      "name": "Virgil van Dijk",
+      "position": "Centre-Back",
+      "dateOfBirth": "Jul 8, 1991",
+      "age": "27",
+      "nationality": [
+        "Netherlands",
+        "Suriname"
+      ],
+      "currentClub": "Liverpool FC",
+      "height": "1,95m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2018",
+      "joined": "",
+      "signedFrom": "Southampton FC",
+      "contract": null,
+      "marketValue": "€90.00m",
+      "status": "Team captain"
+    },
+    {
+      "id": "256178",
+      "name": "Joe Gomez",
+      "position": "Centre-Back",
+      "dateOfBirth": "May 23, 1997",
+      "age": "22",
+      "nationality": [
+        "England",
+        "The Gambia"
+      ],
+      "currentClub": "Liverpool FC",
+      "height": "1,88m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2015",
+      "joined": "",
+      "signedFrom": "Charlton Athletic",
+      "contract": null,
+      "marketValue": "€35.00m",
+      "status": "Hamstring injury - Return unknown"
+    },
+    {
+      "id": "82105",
+      "name": "Joel Matip",
+      "position": "Centre-Back",
+      "dateOfBirth": "Aug 8, 1991",
+      "age": "27",
+      "nationality": [
+        "Cameroon",
+        "Germany"
+      ],
+      "currentClub": "Retired",
+      "height": "1,95m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2016",
+      "joined": "",
+      "signedFrom": "FC Schalke 04",
+      "contract": null,
+      "marketValue": "€30.00m",
+      "status": ""
+    },
+    {
+      "id": "37838",
+      "name": "Dejan Lovren",
+      "position": "Centre-Back",
+      "dateOfBirth": "Jul 5, 1989",
+      "age": "29",
+      "nationality": [
+        "Croatia"
+      ],
+      "currentClub": "PAOK Thessaloniki",
+      "height": "1,88m",
+      "foot": "right",
+      "joinedOn": "Jul 27, 2014",
+      "joined": "",
+      "signedFrom": "Southampton FC",
+      "contract": null,
+      "marketValue": "€20.00m",
+      "status": "No eligibility - until Jun 30, 2025 - UEFA Europa League"
+    },
+    {
+      "id": "234803",
+      "name": "Andrew Robertson",
+      "position": "Left-Back",
+      "dateOfBirth": "Mar 11, 1994",
+      "age": "25",
+      "nationality": [
+        "Scotland"
+      ],
+      "currentClub": "Liverpool FC",
+      "height": "1,78m",
+      "foot": "left",
+      "joinedOn": "Jul 21, 2017",
+      "joined": "",
+      "signedFrom": ": Ablöse €9.00m",
+      "contract": null,
+      "marketValue": "€60.00m",
+      "status": ""
+    },
+    {
+      "id": "207917",
+      "name": "Alberto Moreno",
+      "position": "Left-Back",
+      "dateOfBirth": "Jul 5, 1992",
+      "age": "26",
+      "nationality": [
+        "Spain"
+      ],
+      "currentClub": "Como 1907",
+      "height": "1,71m",
+      "foot": "left",
+      "joinedOn": "Aug 13, 2014",
+      "joined": "",
+      "signedFrom": "Sevilla FC",
+      "contract": null,
+      "marketValue": "€9.00m",
+      "status": ""
+    },
+    {
+      "id": "314353",
+      "name": "Trent Alexander-Arnold",
+      "position": "Right-Back",
+      "dateOfBirth": "Oct 7, 1998",
+      "age": "20",
+      "nationality": [
+        "England"
+      ],
+      "currentClub": "Liverpool FC",
+      "height": "1,75m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2016",
+      "joined": "",
+      "signedFrom": ": Ablöse -",
+      "contract": null,
+      "marketValue": "€80.00m",
+      "status": ""
+    },
+    {
+      "id": "85177",
+      "name": "Nathaniel Clyne",
+      "position": "Right-Back",
+      "dateOfBirth": "Apr 5, 1991",
+      "age": "28",
+      "nationality": [
+        "England",
+        "Grenada"
+      ],
+      "currentClub": "Crystal Palace",
+      "height": "1,75m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2015",
+      "joined": "",
+      "signedFrom": "Southampton FC",
+      "contract": null,
+      "marketValue": "€12.00m",
+      "status": ""
+    },
+    {
+      "id": "262545",
+      "name": "Connor Randall",
+      "position": "Right-Back",
+      "dateOfBirth": "Oct 21, 1995",
+      "age": "23",
+      "nationality": [
+        "England"
+      ],
+      "currentClub": "Ross County FC",
+      "height": "1,80m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2015",
+      "joined": "",
+      "signedFrom": ": Ablöse -",
+      "contract": null,
+      "marketValue": "€500k",
+      "status": ""
+    },
+    {
+      "id": "485583",
+      "name": "Ki-Jana Hoever",
+      "position": "Right-Back",
+      "dateOfBirth": "Jan 18, 2002",
+      "age": "17",
+      "nationality": [
+        "Netherlands",
+        "Suriname"
+      ],
+      "currentClub": "AJ Auxerre",
+      "height": "1,83m",
+      "foot": "right",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "225693",
+      "name": "Fabinho",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "Oct 23, 1993",
+      "age": "25",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Al-Ittihad Club",
+      "height": "1,88m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2018",
+      "joined": "",
+      "signedFrom": ": Ablöse €45.00m",
+      "contract": null,
+      "marketValue": "€50.00m",
+      "status": ""
+    },
+    {
+      "id": "222813",
+      "name": "Marko Grujić",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "Apr 13, 1996",
+      "age": "23",
+      "nationality": [
+        "Serbia"
+      ],
+      "currentClub": "FC Porto",
+      "height": "1,91m",
+      "foot": "right",
+      "joinedOn": "Jan 6, 2016",
+      "joined": "",
+      "signedFrom": "Red Star Belgrade",
+      "contract": null,
+      "marketValue": "€20.00m",
+      "status": "Heel injury - Return unknown"
+    },
+    {
+      "id": "302215",
+      "name": "Naby Keïta",
+      "position": "Central Midfield",
+      "dateOfBirth": "Feb 10, 1995",
+      "age": "24",
+      "nationality": [
+        "Guinea"
+      ],
+      "currentClub": "SV Werder Bremen",
+      "height": "1,72m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2018",
+      "joined": "",
+      "signedFrom": ": Ablöse €60.00m",
+      "contract": null,
+      "marketValue": "€60.00m",
+      "status": "special leave - until Jan 15, 2025 - cross-competition"
+    },
+    {
+      "id": "49499",
+      "name": "Georginio Wijnaldum",
+      "position": "Central Midfield",
+      "dateOfBirth": "Nov 11, 1990",
+      "age": "28",
+      "nationality": [
+        "Netherlands",
+        "Suriname"
+      ],
+      "currentClub": "Al-Ettifaq FC",
+      "height": "1,75m",
+      "foot": "right",
+      "joinedOn": "Jul 22, 2016",
+      "joined": "",
+      "signedFrom": "Newcastle United",
+      "contract": null,
+      "marketValue": "€50.00m",
+      "status": ""
+    },
+    {
+      "id": "61651",
+      "name": "Jordan Henderson",
+      "position": "Central Midfield",
+      "dateOfBirth": "Jun 17, 1990",
+      "age": "29",
+      "nationality": [
+        "England"
+      ],
+      "currentClub": "Ajax Amsterdam",
+      "height": "1,82m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2011",
+      "joined": "",
+      "signedFrom": "Sunderland AFC",
+      "contract": null,
+      "marketValue": "€35.00m",
+      "status": ""
+    },
+    {
+      "id": "143424",
+      "name": "Alex Oxlade-Chamberlain",
+      "position": "Central Midfield",
+      "dateOfBirth": "Aug 15, 1993",
+      "age": "25",
+      "nationality": [
+        "England"
+      ],
+      "currentClub": "Besiktas JK",
+      "height": "1,80m",
+      "foot": "right",
+      "joinedOn": "Aug 31, 2017",
+      "joined": "",
+      "signedFrom": "Arsenal FC",
+      "contract": null,
+      "marketValue": "€35.00m",
+      "status": "No eligibility - until Jan 31, 2025 - UEFA Europa League - 8 matchdays"
+    },
+    {
+      "id": "3333",
+      "name": "James Milner",
+      "position": "Central Midfield",
+      "dateOfBirth": "Jan 4, 1986",
+      "age": "33",
+      "nationality": [
+        "England"
+      ],
+      "currentClub": "Brighton & Hove Albion",
+      "height": "1,75m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2015",
+      "joined": "",
+      "signedFrom": ": Ablöse free transfer",
+      "contract": null,
+      "marketValue": "€15.00m",
+      "status": "Thigh problems - Return unknown"
+    },
+    {
+      "id": "433188",
+      "name": "Curtis Jones",
+      "position": "Central Midfield",
+      "dateOfBirth": "Jan 30, 2001",
+      "age": "18",
+      "nationality": [
+        "England"
+      ],
+      "currentClub": "Liverpool FC",
+      "height": "1,85m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2020",
+      "joined": "",
+      "signedFrom": ": Ablöse -",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "86792",
+      "name": "Xherdan Shaqiri",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Oct 10, 1991",
+      "age": "27",
+      "nationality": [
+        "Switzerland",
+        "Kosovo"
+      ],
+      "currentClub": "FC Basel 1893",
+      "height": "1,69m",
+      "foot": "left",
+      "joinedOn": "Jul 13, 2018",
+      "joined": "",
+      "signedFrom": "Stoke City",
+      "contract": null,
+      "marketValue": "€25.00m",
+      "status": ""
+    },
+    {
+      "id": "43530",
+      "name": "Adam Lallana",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "May 10, 1988",
+      "age": "31",
+      "nationality": [
+        "England"
+      ],
+      "currentClub": "Southampton FC",
+      "height": "1,72m",
+      "foot": "both",
+      "joinedOn": "Jul 1, 2014",
+      "joined": "",
+      "signedFrom": "Southampton FC",
+      "contract": null,
+      "marketValue": "€15.00m",
+      "status": ""
+    },
+    {
+      "id": "344015",
+      "name": "Ben Woodburn",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Oct 15, 1999",
+      "age": "19",
+      "nationality": [
+        "Wales",
+        "England"
+      ],
+      "currentClub": "Salford City",
+      "height": "1,74m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2017",
+      "joined": "",
+      "signedFrom": ": Ablöse -",
+      "contract": null,
+      "marketValue": "€5.00m",
+      "status": ""
+    },
+    {
+      "id": "264660",
+      "name": "Isaac Christie-Davies",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Oct 18, 1997",
+      "age": "21",
+      "nationality": [
+        "Wales",
+        "England"
+      ],
+      "currentClub": "Without Club",
+      "height": "1,88m",
+      "foot": "right",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "200512",
+      "name": "Sadio Mané",
+      "position": "Left Winger",
+      "dateOfBirth": "Apr 10, 1992",
+      "age": "27",
+      "nationality": [
+        "Senegal"
+      ],
+      "currentClub": "Al-Nassr FC",
+      "height": "1,74m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2016",
+      "joined": "",
+      "signedFrom": "Southampton FC",
+      "contract": null,
+      "marketValue": "€120.00m",
+      "status": ""
+    },
+    {
+      "id": "148455",
+      "name": "Mohamed Salah",
+      "position": "Right Winger",
+      "dateOfBirth": "Jun 15, 1992",
+      "age": "27",
+      "nationality": [
+        "Egypt"
+      ],
+      "currentClub": "Liverpool FC",
+      "height": "1,75m",
+      "foot": "left",
+      "joinedOn": "Jul 1, 2017",
+      "joined": "",
+      "signedFrom": "AS Roma",
+      "contract": null,
+      "marketValue": "€150.00m",
+      "status": ""
+    },
+    {
+      "id": "279455",
+      "name": "Harry Wilson",
+      "position": "Right Winger",
+      "dateOfBirth": "Mar 22, 1997",
+      "age": "22",
+      "nationality": [
+        "Wales",
+        "England"
+      ],
+      "currentClub": "Fulham FC",
+      "height": "1,73m",
+      "foot": "left",
+      "joinedOn": "Jul 1, 2018",
+      "joined": "",
+      "signedFrom": ": Ablöse -",
+      "contract": null,
+      "marketValue": "€12.00m",
+      "status": ""
+    },
+    {
+      "id": "236510",
+      "name": "Sheyi Ojo",
+      "position": "Right Winger",
+      "dateOfBirth": "Jun 19, 1997",
+      "age": "22",
+      "nationality": [
+        "England",
+        "Nigeria"
+      ],
+      "currentClub": "NK Maribor",
+      "height": "1,79m",
+      "foot": "left",
+      "joinedOn": "Jul 7, 2015",
+      "joined": "",
+      "signedFrom": ": Ablöse -",
+      "contract": null,
+      "marketValue": "€2.00m",
+      "status": ""
+    },
+    {
+      "id": "400831",
+      "name": "Rafael Camacho",
+      "position": "Right Winger",
+      "dateOfBirth": "May 22, 2000",
+      "age": "19",
+      "nationality": [
+        "Portugal",
+        "Angola"
+      ],
+      "currentClub": "Without Club",
+      "height": "1,75m",
+      "foot": "both",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "131789",
+      "name": "Roberto Firmino",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Oct 2, 1991",
+      "age": "27",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Al-Ahli SFC",
+      "height": "1,81m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2015",
+      "joined": "",
+      "signedFrom": "TSG 1899 Hoffenheim",
+      "contract": null,
+      "marketValue": "€80.00m",
+      "status": ""
+    },
+    {
+      "id": "148368",
+      "name": "Divock Origi",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Apr 18, 1995",
+      "age": "24",
+      "nationality": [
+        "Belgium",
+        "Kenya"
+      ],
+      "currentClub": "Milan Futuro",
+      "height": "1,89m",
+      "foot": "right",
+      "joinedOn": "Jul 29, 2014",
+      "joined": "",
+      "signedFrom": ": Ablöse €12.63m",
+      "contract": null,
+      "marketValue": "€20.00m",
+      "status": ""
+    },
+    {
+      "id": "258889",
+      "name": "Dominic Solanke",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Sep 14, 1997",
+      "age": "21",
+      "nationality": [
+        "England",
+        "Nigeria"
+      ],
+      "currentClub": "Tottenham Hotspur",
+      "height": "1,86m",
+      "foot": "right",
+      "joinedOn": "Jul 10, 2017",
+      "joined": "",
+      "signedFrom": "Chelsea FC U23",
+      "contract": null,
+      "marketValue": "€18.00m",
+      "status": ""
+    },
+    {
+      "id": "134294",
+      "name": "Danny Ings",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Jul 23, 1992",
+      "age": "26",
+      "nationality": [
+        "England"
+      ],
+      "currentClub": "West Ham United",
+      "height": "1,77m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2015",
+      "joined": "",
+      "signedFrom": ": Ablöse €8.30m",
+      "contract": null,
+      "marketValue": "€15.00m",
+      "status": ""
+    },
+    {
+      "id": "47082",
+      "name": "Daniel Sturridge",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Sep 1, 1989",
+      "age": "29",
+      "nationality": [
+        "England"
+      ],
+      "currentClub": "Retired",
+      "height": "1,88m",
+      "foot": "left",
+      "joinedOn": "Jan 2, 2013",
+      "joined": "",
+      "signedFrom": "Chelsea FC",
+      "contract": null,
+      "marketValue": "€15.00m",
+      "status": ""
+    },
+    {
+      "id": "406560",
+      "name": "Rhian Brewster",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Apr 1, 2000",
+      "age": "19",
+      "nationality": [
+        "England",
+        "Barbados"
+      ],
+      "currentClub": "Sheffield United",
+      "height": "1,80m",
+      "foot": "right",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    }
+  ]
+}

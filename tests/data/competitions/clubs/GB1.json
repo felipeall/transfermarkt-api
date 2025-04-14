@@ -1,0 +1,87 @@
+{
+  "id": "GB1",
+  "name": "Premier League",
+  "seasonId": "2024",
+  "clubs": [
+    {
+      "id": "281",
+      "name": "Manchester City"
+    },
+    {
+      "id": "11",
+      "name": "Arsenal FC"
+    },
+    {
+      "id": "631",
+      "name": "Chelsea FC"
+    },
+    {
+      "id": "31",
+      "name": "Liverpool FC"
+    },
+    {
+      "id": "148",
+      "name": "Tottenham Hotspur"
+    },
+    {
+      "id": "985",
+      "name": "Manchester United"
+    },
+    {
+      "id": "762",
+      "name": "Newcastle United"
+    },
+    {
+      "id": "1237",
+      "name": "Brighton & Hove Albion"
+    },
+    {
+      "id": "405",
+      "name": "Aston Villa"
+    },
+    {
+      "id": "703",
+      "name": "Nottingham Forest"
+    },
+    {
+      "id": "379",
+      "name": "West Ham United"
+    },
+    {
+      "id": "873",
+      "name": "Crystal Palace"
+    },
+    {
+      "id": "1148",
+      "name": "Brentford FC"
+    },
+    {
+      "id": "543",
+      "name": "Wolverhampton Wanderers"
+    },
+    {
+      "id": "989",
+      "name": "AFC Bournemouth"
+    },
+    {
+      "id": "931",
+      "name": "Fulham FC"
+    },
+    {
+      "id": "29",
+      "name": "Everton FC"
+    },
+    {
+      "id": "180",
+      "name": "Southampton FC"
+    },
+    {
+      "id": "1003",
+      "name": "Leicester City"
+    },
+    {
+      "id": "677",
+      "name": "Ipswich Town"
+    }
+  ]
+}

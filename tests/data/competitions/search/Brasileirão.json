@@ -1,0 +1,47 @@
+{
+  "query": "Brasileirão",
+  "pageNumber": 1,
+  "lastPageNumber": 1,
+  "results": [
+    {
+      "id": "BRA1",
+      "name": "Campeonato Brasileiro Série A",
+      "country": "Brazil",
+      "clubs": "20",
+      "players": "646",
+      "totalMarketValue": "€1.68bn",
+      "meanMarketValue": "€84.21m",
+      "continent": "CONMEBOL"
+    },
+    {
+      "id": "BRA2",
+      "name": "Campeonato Brasileiro Série B",
+      "country": "Brazil",
+      "clubs": "20",
+      "players": "532",
+      "totalMarketValue": "€196.25m",
+      "meanMarketValue": "€9.81m",
+      "continent": "CONMEBOL"
+    },
+    {
+      "id": "BRA3",
+      "name": "Campeonato Brasileiro Série C",
+      "country": "Brazil",
+      "clubs": "20",
+      "players": "529",
+      "totalMarketValue": "€33.15m",
+      "meanMarketValue": "€1.66m",
+      "continent": "CONMEBOL"
+    },
+    {
+      "id": "BRA4",
+      "name": "Campeonato Brasileiro Série D",
+      "country": "Brazil",
+      "clubs": "64",
+      "players": "1708",
+      "totalMarketValue": "€21.35m",
+      "meanMarketValue": "€334k",
+      "continent": "CONMEBOL"
+    }
+  ]
+}

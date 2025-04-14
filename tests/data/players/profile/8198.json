@@ -1,0 +1,58 @@
+{
+  "id": "8198",
+  "url": "https://www.transfermarkt.com/cristiano-ronaldo/profil/spieler/8198",
+  "name": "Cristiano Ronaldo",
+  "description": "Cristiano Ronaldo, 39, from Portugal ➤ Al-Nassr FC, since 2022 ➤ Centre-Forward ➤ Market value: €12.00m ➤ * Feb 5, 1985 in Funchal, Portugal",
+  "fullName": null,
+  "nameInHomeCountry": "Cristiano Ronaldo dos Santos Aveiro",
+  "imageUrl": "https://img.a.transfermarkt.technology/portrait/header/8198-1694609670.jpg?lm=1",
+  "dateOfBirth": "Feb 5, 1985",
+  "placeOfBirth": {
+    "city": "Funchal",
+    "country": "Portugal"
+  },
+  "age": "39",
+  "height": "1,88m",
+  "citizenship": [
+    "Portugal"
+  ],
+  "isRetired": false,
+  "retiredSince": null,
+  "position": {
+    "main": "Centre-Forward",
+    "other": [
+      "Left Winger",
+      "Right Winger"
+    ]
+  },
+  "foot": "right",
+  "shirtNumber": "#7",
+  "club": {
+    "id": "18544",
+    "name": "Al-Nassr",
+    "joined": "Jan 1, 2023",
+    "contractExpires": "Jun 30, 2025",
+    "contractOption": null,
+    "lastClubId": null,
+    "lastClubName": null,
+    "mostGamesFor": null
+  },
+  "marketValue": "€12.00m",
+  "agent": {
+    "name": "Gestifute",
+    "url": "/gestifute/beraterfirma/berater/413"
+  },
+  "outfitter": "Nike",
+  "socialMedia": [
+    "http://twitter.com/Cristiano",
+    "http://www.facebook.com/Cristiano",
+    "http://www.instagram.com/cristiano",
+    "http://www.cristianoronaldo.com/"
+  ],
+  "trainerProfile": {
+    "id": null,
+    "url": null,
+    "position": null
+  },
+  "relatives": []
+}

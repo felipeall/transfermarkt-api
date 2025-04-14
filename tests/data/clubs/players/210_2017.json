@@ -1,0 +1,1274 @@
+{
+  "id": "210",
+  "players": [
+    {
+      "id": "52313",
+      "name": "Marcelo Grohe",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Jan 13, 1987",
+      "age": "29",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "Al-Kholood Club",
+      "height": "1,88m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2004",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA U20",
+      "contract": null,
+      "marketValue": "€3.50m",
+      "status": ""
+    },
+    {
+      "id": "67886",
+      "name": "Paulo Victor",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Jan 12, 1987",
+      "age": "29",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "Al-Rayyan SC",
+      "height": "1,87m",
+      "foot": "left",
+      "joinedOn": "Jul 13, 2017",
+      "joined": "",
+      "signedFrom": "CR Flamengo",
+      "contract": null,
+      "marketValue": "€2.00m",
+      "status": "No eligibility - until Jun 30, 2025 - Qatar Stars League"
+    },
+    {
+      "id": "95747",
+      "name": "Bruno Grassi",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Mar 5, 1987",
+      "age": "29",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "Radwa Club",
+      "height": "1,92m",
+      "foot": "right",
+      "joinedOn": "Apr 23, 2015",
+      "joined": "",
+      "signedFrom": "EC Cruzeiro",
+      "contract": null,
+      "marketValue": "€500k",
+      "status": ""
+    },
+    {
+      "id": "288415",
+      "name": "Léo Jardim",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Mar 20, 1995",
+      "age": "21",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "Clube de Regatas Vasco da Gama",
+      "height": "1,88m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2015",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA B (-2022)",
+      "contract": null,
+      "marketValue": "€100k",
+      "status": ""
+    },
+    {
+      "id": "555016",
+      "name": "Brenno",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Apr 1, 1999",
+      "age": "17",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "Fortaleza Esporte Clube",
+      "height": "1,90m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2019",
+      "joined": "Returned after loan spell with SSC Bari; date: Jun 30, 2024; fee: End of loan",
+      "signedFrom": "Grêmio FBPA B (-2022)",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "32568",
+      "name": "Pedro Geromel",
+      "position": "Centre-Back",
+      "dateOfBirth": "Sep 21, 1985",
+      "age": "31",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "Retired",
+      "height": "1,90m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2016",
+      "joined": "",
+      "signedFrom": "1.FC Köln",
+      "contract": null,
+      "marketValue": "€4.00m",
+      "status": ""
+    },
+    {
+      "id": "52844",
+      "name": "Marcelo Oliveira",
+      "position": "Centre-Back",
+      "dateOfBirth": "Mar 29, 1987",
+      "age": "29",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retired",
+      "height": "1,84m",
+      "foot": "left",
+      "joinedOn": "Jan 1, 2015",
+      "joined": "",
+      "signedFrom": "Cruzeiro Esporte Clube",
+      "contract": null,
+      "marketValue": "€2.75m",
+      "status": ""
+    },
+    {
+      "id": "145400",
+      "name": "Walter Kannemann",
+      "position": "Centre-Back",
+      "dateOfBirth": "Mar 14, 1991",
+      "age": "25",
+      "nationality": [
+        "Argentina",
+        "Italy"
+      ],
+      "currentClub": "Grêmio Foot-Ball Porto Alegrense",
+      "height": "1,84m",
+      "foot": "left",
+      "joinedOn": "Jul 15, 2016",
+      "joined": "",
+      "signedFrom": "Atlas Guadalajara",
+      "contract": null,
+      "marketValue": "€1.50m",
+      "status": "Hip flexor problems - Return unknown"
+    },
+    {
+      "id": "256453",
+      "name": "Bressan",
+      "position": "Centre-Back",
+      "dateOfBirth": "Jan 15, 1993",
+      "age": "23",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "OFI Crete FC",
+      "height": "1,85m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2013",
+      "joined": "",
+      "signedFrom": "Esporte Clube Juventude",
+      "contract": null,
+      "marketValue": "€1.50m",
+      "status": ""
+    },
+    {
+      "id": "68679",
+      "name": "Bruno Rodrigo",
+      "position": "Centre-Back",
+      "dateOfBirth": "Apr 12, 1985",
+      "age": "31",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retired",
+      "height": "1,86m",
+      "foot": "right",
+      "joinedOn": "Mar 8, 2017",
+      "joined": "",
+      "signedFrom": "Without Club",
+      "contract": null,
+      "marketValue": "€1.25m",
+      "status": ""
+    },
+    {
+      "id": "80499",
+      "name": "Paulo Miranda",
+      "position": "Centre-Back",
+      "dateOfBirth": "Aug 16, 1988",
+      "age": "28",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Disqualification",
+      "height": "1,84m",
+      "foot": "right",
+      "joinedOn": "Jan 5, 2018",
+      "joined": "",
+      "signedFrom": ": Ablöse €800k",
+      "contract": null,
+      "marketValue": "€1.00m",
+      "status": ""
+    },
+    {
+      "id": "292152",
+      "name": "Rafael Thyere",
+      "position": "Centre-Back",
+      "dateOfBirth": "May 17, 1993",
+      "age": "23",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Sport Club do Recife",
+      "height": "1,90m",
+      "foot": "right",
+      "joinedOn": "Oct 1, 2013",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA B (-2022)",
+      "contract": null,
+      "marketValue": "€500k",
+      "status": ""
+    },
+    {
+      "id": "216071",
+      "name": "Gabriel",
+      "position": "Centre-Back",
+      "dateOfBirth": "Feb 28, 1989",
+      "age": "27",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Without Club",
+      "height": "1,91m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2015",
+      "joined": "",
+      "signedFrom": "CE Lajeadense",
+      "contract": null,
+      "marketValue": "€250k",
+      "status": "Knee surgery - Return unknown"
+    },
+    {
+      "id": "445101",
+      "name": "Rodrigues",
+      "position": "Centre-Back",
+      "dateOfBirth": "Oct 10, 1997",
+      "age": "19",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "San Jose Earthquakes",
+      "height": "1,88m",
+      "foot": "right",
+      "joinedOn": "Aug 9, 2019",
+      "joined": "",
+      "signedFrom": "ABC Futebol Clube (RN)",
+      "contract": null,
+      "marketValue": "€100k",
+      "status": ""
+    },
+    {
+      "id": "539183",
+      "name": "Anderson",
+      "position": "Centre-Back",
+      "dateOfBirth": "Mar 2, 1995",
+      "age": "21",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Bolívar La Paz",
+      "height": "1,86m",
+      "foot": "right",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "555015",
+      "name": "Ruan",
+      "position": "Centre-Back",
+      "dateOfBirth": "Jun 7, 1999",
+      "age": "17",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "São Paulo Futebol Clube",
+      "height": "1,87m",
+      "foot": "right",
+      "joinedOn": "Aug 12, 2021",
+      "joined": "",
+      "signedFrom": "US Sassuolo",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "689524",
+      "name": "Mendonça",
+      "position": "Centre-Back",
+      "dateOfBirth": "Aug 15, 1995",
+      "age": "21",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retrô FC Brasil",
+      "height": "1,94m",
+      "foot": "left",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "555634",
+      "name": "Derlan",
+      "position": "Centre-Back",
+      "dateOfBirth": "Feb 3, 1996",
+      "age": "20",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Oita Trinita",
+      "height": "1,87m",
+      "foot": "left",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "476366",
+      "name": "Denílson",
+      "position": "Centre-Back",
+      "dateOfBirth": "Apr 18, 1995",
+      "age": "21",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retrô FC Brasil",
+      "height": "1,87m",
+      "foot": "right",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "182216",
+      "name": "Bruno Cortez",
+      "position": "Left-Back",
+      "dateOfBirth": "Mar 11, 1987",
+      "age": "29",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Without Club",
+      "height": "1,79m",
+      "foot": "left",
+      "joinedOn": "Jan 30, 2017",
+      "joined": "",
+      "signedFrom": "São Paulo Futebol Clube",
+      "contract": null,
+      "marketValue": "€700k",
+      "status": ""
+    },
+    {
+      "id": "322781",
+      "name": "Breno Lorran",
+      "position": "Left-Back",
+      "dateOfBirth": "Mar 6, 1995",
+      "age": "21",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Marília AC (SP)",
+      "height": "1,74m",
+      "foot": "left",
+      "joinedOn": "Jul 1, 2013",
+      "joined": "",
+      "signedFrom": "Red Bull Brasil (SP)",
+      "contract": null,
+      "marketValue": "€500k",
+      "status": ""
+    },
+    {
+      "id": "406676",
+      "name": "Juninho Capixaba",
+      "position": "Left-Back",
+      "dateOfBirth": "Jul 6, 1997",
+      "age": "19",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Red Bull Bragantino",
+      "height": "1,76m",
+      "foot": "left",
+      "joinedOn": "May 17, 2019",
+      "joined": "",
+      "signedFrom": "Sport Club Corinthians Paulista",
+      "contract": null,
+      "marketValue": "€50k",
+      "status": ""
+    },
+    {
+      "id": "552548",
+      "name": "Guilherme Guedes",
+      "position": "Left-Back",
+      "dateOfBirth": "May 18, 1999",
+      "age": "17",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Navbahor Namangan",
+      "height": "1,77m",
+      "foot": "left",
+      "joinedOn": "Jan 1, 2020",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA B (-2022)",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "75083",
+      "name": "Edílson",
+      "position": "Right-Back",
+      "dateOfBirth": "Jul 27, 1986",
+      "age": "30",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retired",
+      "height": "1,77m",
+      "foot": "right",
+      "joinedOn": "Apr 1, 2022",
+      "joined": "",
+      "signedFrom": "Avaí FC",
+      "contract": null,
+      "marketValue": "€1.50m",
+      "status": ""
+    },
+    {
+      "id": "177845",
+      "name": "Madson",
+      "position": "Right-Back",
+      "dateOfBirth": "Jan 13, 1992",
+      "age": "24",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Without Club",
+      "height": "1,82m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2018",
+      "joined": "",
+      "signedFrom": "Clube de Regatas Vasco da Gama",
+      "contract": null,
+      "marketValue": "€1.50m",
+      "status": "Injury to the ankle - Return unknown"
+    },
+    {
+      "id": "29368",
+      "name": "Léo Moura",
+      "position": "Right-Back",
+      "dateOfBirth": "Oct 23, 1978",
+      "age": "38",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retired",
+      "height": "1,76m",
+      "foot": "right",
+      "joinedOn": "Jan 16, 2017",
+      "joined": "",
+      "signedFrom": "Santa Cruz FC (PE)",
+      "contract": null,
+      "marketValue": "€500k",
+      "status": ""
+    },
+    {
+      "id": "347016",
+      "name": "Léo Gomes",
+      "position": "Right-Back",
+      "dateOfBirth": "Mar 30, 1996",
+      "age": "20",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Without Club",
+      "height": "1,78m",
+      "foot": "right",
+      "joinedOn": "Jan 16, 2017",
+      "joined": "",
+      "signedFrom": "Boa EC",
+      "contract": null,
+      "marketValue": "€150k",
+      "status": ""
+    },
+    {
+      "id": "555012",
+      "name": "Felipe Albuquerque",
+      "position": "Right-Back",
+      "dateOfBirth": "Sep 27, 1999",
+      "age": "17",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "AA Internacional de Limeira",
+      "height": "1,74m",
+      "foot": "right",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "366948",
+      "name": "Jailson",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "Sep 7, 1995",
+      "age": "21",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Celta de Vigo",
+      "height": "1,87m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2015",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA U20",
+      "contract": null,
+      "marketValue": "€1.00m",
+      "status": "Adductor pain - Return unknown"
+    },
+    {
+      "id": "435186",
+      "name": "Michel",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "Mar 22, 1990",
+      "age": "26",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Without Club",
+      "height": "1,75m",
+      "foot": "both",
+      "joinedOn": "Jan 1, 2018",
+      "joined": "",
+      "signedFrom": "Grêmio Novorizontino",
+      "contract": null,
+      "marketValue": "€750k",
+      "status": ""
+    },
+    {
+      "id": "405727",
+      "name": "Kaio Mendes",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "Mar 18, 1995",
+      "age": "21",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Ituano Futebol Clube (SP)",
+      "height": "1,73m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2016",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA U20",
+      "contract": null,
+      "marketValue": "€250k",
+      "status": ""
+    },
+    {
+      "id": "346705",
+      "name": "Balbino",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "Jan 19, 1997",
+      "age": "19",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "EC Cruzeiro",
+      "height": "1,82m",
+      "foot": "left",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "€100k",
+      "status": ""
+    },
+    {
+      "id": "362842",
+      "name": "Arthur Melo",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "Aug 12, 1996",
+      "age": "20",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Juventus FC",
+      "height": "1,72m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2017",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA B (-2022)",
+      "contract": null,
+      "marketValue": "€100k",
+      "status": ""
+    },
+    {
+      "id": "376867",
+      "name": "Moisés Gaúcho",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "Sep 24, 1994",
+      "age": "22",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Zakho SC",
+      "height": "1,81m",
+      "foot": "right",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "€100k",
+      "status": ""
+    },
+    {
+      "id": "520629",
+      "name": "Filipe Machado",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "Jan 20, 1996",
+      "age": "20",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Esporte Clube Vitória",
+      "height": "1,74m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2016",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA U20",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "643282",
+      "name": "Rodrigo Ancheta",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "Jan 2, 1997",
+      "age": "19",
+      "nationality": [
+        "Uruguay",
+        "Brazil"
+      ],
+      "currentClub": "Without Club",
+      "height": "1,85m",
+      "foot": "right",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "258070",
+      "name": "Ramiro",
+      "position": "Central Midfield",
+      "dateOfBirth": "May 22, 1993",
+      "age": "23",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "FC Dallas",
+      "height": "1,69m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2013",
+      "joined": "",
+      "signedFrom": "Esporte Clube Juventude",
+      "contract": null,
+      "marketValue": "€4.00m",
+      "status": ""
+    },
+    {
+      "id": "17663",
+      "name": "Cícero",
+      "position": "Central Midfield",
+      "dateOfBirth": "Aug 26, 1984",
+      "age": "32",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retired",
+      "height": "m",
+      "foot": "N/A",
+      "joinedOn": "Sep 29, 2017",
+      "joined": "",
+      "signedFrom": "Fluminense Football Club",
+      "contract": null,
+      "marketValue": "€4.00m",
+      "status": ""
+    },
+    {
+      "id": "50047",
+      "name": "Maicon",
+      "position": "Central Midfield",
+      "dateOfBirth": "Sep 14, 1985",
+      "age": "31",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retired",
+      "height": "1,84m",
+      "foot": "right",
+      "joinedOn": "Aug 30, 2021",
+      "joined": "",
+      "signedFrom": "São Paulo Futebol Clube",
+      "contract": null,
+      "marketValue": "€2.50m",
+      "status": ""
+    },
+    {
+      "id": "229736",
+      "name": "Alisson",
+      "position": "Central Midfield",
+      "dateOfBirth": "Jun 25, 1993",
+      "age": "23",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "São Paulo Futebol Clube",
+      "height": "1,74m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2018",
+      "joined": "",
+      "signedFrom": "Cruzeiro Esporte Clube",
+      "contract": null,
+      "marketValue": "€2.50m",
+      "status": ""
+    },
+    {
+      "id": "405726",
+      "name": "Felipe Tontini",
+      "position": "Central Midfield",
+      "dateOfBirth": "Jul 16, 1995",
+      "age": "21",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "EC São Luiz",
+      "height": "1,83m",
+      "foot": "both",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "€100k",
+      "status": ""
+    },
+    {
+      "id": "552549",
+      "name": "Matheus Henrique",
+      "position": "Central Midfield",
+      "dateOfBirth": "Dec 19, 1997",
+      "age": "19",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Cruzeiro Esporte Clube",
+      "height": "1,75m",
+      "foot": "right",
+      "joinedOn": "Sep 27, 2018",
+      "joined": "",
+      "signedFrom": "AD São Caetano (SP)",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "313106",
+      "name": "Luan",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Mar 27, 1993",
+      "age": "23",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Without Club",
+      "height": "1,80m",
+      "foot": "right",
+      "joinedOn": "Jul 27, 2023",
+      "joined": "",
+      "signedFrom": "Sport Club Corinthians Paulista",
+      "contract": null,
+      "marketValue": "€10.00m",
+      "status": ""
+    },
+    {
+      "id": "54183",
+      "name": "Maicosuel",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Jun 16, 1986",
+      "age": "30",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retired",
+      "height": "m",
+      "foot": "N/A",
+      "joinedOn": "Feb 8, 2018",
+      "joined": "",
+      "signedFrom": "São Paulo Futebol Clube",
+      "contract": null,
+      "marketValue": "€2.50m",
+      "status": ""
+    },
+    {
+      "id": "34332",
+      "name": "Douglas",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Feb 18, 1982",
+      "age": "34",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retired",
+      "height": "1,76m",
+      "foot": "left",
+      "joinedOn": "Jan 24, 2017",
+      "joined": "",
+      "signedFrom": "Atlético Monte Azul (SP)",
+      "contract": null,
+      "marketValue": "€1.00m",
+      "status": ""
+    },
+    {
+      "id": "351738",
+      "name": "Lincoln",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Nov 7, 1998",
+      "age": "18",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Fenerbahce",
+      "height": "1,78m",
+      "foot": "left",
+      "joinedOn": "Feb 1, 2015",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA U20",
+      "contract": null,
+      "marketValue": "€750k",
+      "status": "No eligibility -  - Süper Lig"
+    },
+    {
+      "id": "387611",
+      "name": "Lima",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Jun 11, 1996",
+      "age": "20",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Fluminense Football Club",
+      "height": "1,81m",
+      "foot": "right",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "€100k",
+      "status": ""
+    },
+    {
+      "id": "392487",
+      "name": "Thaciano",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "May 12, 1995",
+      "age": "21",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Esporte Clube Bahia",
+      "height": "1,82m",
+      "foot": "right",
+      "joinedOn": "Jul 1, 2019",
+      "joined": "",
+      "signedFrom": "Boa EC",
+      "contract": null,
+      "marketValue": "€100k",
+      "status": ""
+    },
+    {
+      "id": "529646",
+      "name": "Patrick Machado",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Nov 23, 1998",
+      "age": "18",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Volta Redonda Futebol Clube (RJ)",
+      "height": "1,75m",
+      "foot": "left",
+      "joinedOn": "May 26, 2019",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA B (-2022)",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "561214",
+      "name": "Thonny  Anderson",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Dec 27, 1997",
+      "age": "19",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Red Bull Bragantino",
+      "height": "1,84m",
+      "foot": "left",
+      "joinedOn": "Jan 3, 2019",
+      "joined": "",
+      "signedFrom": "Cruzeiro Esporte Clube",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "351903",
+      "name": "Jean Pyerre",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "May 7, 1998",
+      "age": "18",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Ypiranga FC",
+      "height": "1,87m",
+      "foot": "right",
+      "joinedOn": "Jul 16, 2018",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA U20",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "627099",
+      "name": "Isaque",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Apr 22, 1997",
+      "age": "19",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Guarani Futebol Clube (SP)",
+      "height": "1,78m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2020",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA B (-2022)",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "321239",
+      "name": "Everton",
+      "position": "Left Winger",
+      "dateOfBirth": "Mar 22, 1996",
+      "age": "20",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "CR Flamengo",
+      "height": "1,74m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2014",
+      "joined": "",
+      "signedFrom": "Fortaleza Esporte Clube",
+      "contract": null,
+      "marketValue": "€2.50m",
+      "status": "Achilles tendon rupture - Return unknown"
+    },
+    {
+      "id": "76902",
+      "name": "Fernandinho",
+      "position": "Left Winger",
+      "dateOfBirth": "Nov 25, 1985",
+      "age": "31",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retrô FC Brasil",
+      "height": "1,73m",
+      "foot": "left",
+      "joinedOn": "Jul 10, 2014",
+      "joined": "",
+      "signedFrom": "Al-Jazira Club",
+      "contract": null,
+      "marketValue": "€1.25m",
+      "status": ""
+    },
+    {
+      "id": "520636",
+      "name": "Dionathã",
+      "position": "Left Winger",
+      "dateOfBirth": "Jan 24, 1998",
+      "age": "18",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "EC São Luiz",
+      "height": "1,74m",
+      "foot": "both",
+      "joinedOn": "Jan 1, 2018",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA B (-2022)",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "552547",
+      "name": "Lucas Poletto",
+      "position": "Left Winger",
+      "dateOfBirth": "Mar 29, 1995",
+      "age": "21",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "AE Kifisias",
+      "height": "1,81m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2018",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA B (-2022)",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "520662",
+      "name": "Pepê",
+      "position": "Left Winger",
+      "dateOfBirth": "Feb 24, 1997",
+      "age": "19",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "FC Porto",
+      "height": "1,75m",
+      "foot": "right",
+      "joinedOn": "May 1, 2017",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA U20",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "74758",
+      "name": "Marinho",
+      "position": "Right Winger",
+      "dateOfBirth": "May 29, 1990",
+      "age": "26",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Fortaleza Esporte Clube",
+      "height": "1,69m",
+      "foot": "left",
+      "joinedOn": "Jun 30, 2018",
+      "joined": "",
+      "signedFrom": "Changchun Yatai",
+      "contract": null,
+      "marketValue": "€1.50m",
+      "status": ""
+    },
+    {
+      "id": "393839",
+      "name": "Léo Tilica",
+      "position": "Right Winger",
+      "dateOfBirth": "Apr 20, 1995",
+      "age": "21",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Al-Najma SC",
+      "height": "1,72m",
+      "foot": "right",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "€100k",
+      "status": ""
+    },
+    {
+      "id": "553470",
+      "name": "Vico",
+      "position": "Right Winger",
+      "dateOfBirth": "Dec 3, 1996",
+      "age": "20",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "PSS Sleman",
+      "height": "1,74m",
+      "foot": "left",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "-",
+      "status": ""
+    },
+    {
+      "id": "104509",
+      "name": "André Felipe",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Sep 27, 1990",
+      "age": "26",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Retired",
+      "height": "1,84m",
+      "foot": "right",
+      "joinedOn": "Feb 22, 2019",
+      "joined": "",
+      "signedFrom": "Sport Club do Recife",
+      "contract": null,
+      "marketValue": "€4.00m",
+      "status": ""
+    },
+    {
+      "id": "195004",
+      "name": "Hernane",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Apr 8, 1986",
+      "age": "30",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Nacional FC",
+      "height": "1,83m",
+      "foot": "right",
+      "joinedOn": "Feb 22, 2018",
+      "joined": "",
+      "signedFrom": "Esporte Clube Bahia",
+      "contract": null,
+      "marketValue": "€3.00m",
+      "status": ""
+    },
+    {
+      "id": "58516",
+      "name": "Lucas Barrios",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Nov 13, 1984",
+      "age": "32",
+      "nationality": [
+        "Paraguay",
+        "Argentina"
+      ],
+      "currentClub": "Retired",
+      "height": "1,89m",
+      "foot": "right",
+      "joinedOn": "Feb 24, 2017",
+      "joined": "",
+      "signedFrom": "Sociedade Esportiva Palmeiras",
+      "contract": null,
+      "marketValue": "€1.75m",
+      "status": ""
+    },
+    {
+      "id": "379877",
+      "name": "Luis Henrique",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Mar 17, 1998",
+      "age": "18",
+      "nationality": [
+        "Brazil",
+        "Italy"
+      ],
+      "currentClub": "Paternò Calcio",
+      "height": "1,84m",
+      "foot": "left",
+      "joinedOn": "",
+      "joined": "",
+      "signedFrom": "",
+      "contract": null,
+      "marketValue": "€750k",
+      "status": "unknown injury - Return unknown"
+    },
+    {
+      "id": "203136",
+      "name": "Yuri Mamute",
+      "position": "Centre-Forward",
+      "dateOfBirth": "May 7, 1995",
+      "age": "21",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "SHB Da Nang FC",
+      "height": "1,80m",
+      "foot": "right",
+      "joinedOn": "Jan 1, 2013",
+      "joined": "",
+      "signedFrom": "Grêmio FBPA B (-2022)",
+      "contract": null,
+      "marketValue": "€650k",
+      "status": ""
+    },
+    {
+      "id": "80815",
+      "name": "Jael",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Oct 30, 1988",
+      "age": "28",
+      "nationality": [
+        "Brazil"
+      ],
+      "currentClub": "Without Club",
+      "height": "1,86m",
+      "foot": "right",
+      "joinedOn": "Jan 18, 2017",
+      "joined": "",
+      "signedFrom": "Joinville Esporte Clube (SC)",
+      "contract": null,
+      "marketValue": "€450k",
+      "status": ""
+    }
+  ]
+}

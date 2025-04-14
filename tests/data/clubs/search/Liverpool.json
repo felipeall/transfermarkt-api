@@ -1,0 +1,87 @@
+{
+  "query": "Liverpool",
+  "pageNumber": 1,
+  "lastPageNumber": 3,
+  "results": [
+    {
+      "id": "31",
+      "url": "/fc-liverpool/startseite/verein/31",
+      "name": "Liverpool FC",
+      "country": "England",
+      "squad": "25",
+      "marketValue": "€970.00m"
+    },
+    {
+      "id": "29",
+      "url": "/fc-everton/startseite/verein/29",
+      "name": "Everton FC",
+      "country": "England",
+      "squad": "25",
+      "marketValue": "€343.60m"
+    },
+    {
+      "id": "10663",
+      "url": "/liverpool-fc-montevideo/startseite/verein/10663",
+      "name": "Liverpool FC Montevideo",
+      "country": "Uruguay",
+      "squad": "26",
+      "marketValue": "€8.18m"
+    },
+    {
+      "id": "9252",
+      "url": "/fc-liverpool-u23/startseite/verein/9252",
+      "name": "Liverpool FC U21",
+      "country": "England",
+      "squad": "29",
+      "marketValue": "€3.70m"
+    },
+    {
+      "id": "45333",
+      "url": "/fc-liverpool-uefa-u19/startseite/verein/45333",
+      "name": "Liverpool FC UEFA U19",
+      "country": "England",
+      "squad": "17",
+      "marketValue": "€500k"
+    },
+    {
+      "id": "101175",
+      "url": "/liverpool-fc-montevideo-b/startseite/verein/101175",
+      "name": "Liverpool FC Montevideo B",
+      "country": "Uruguay",
+      "squad": "6",
+      "marketValue": "€200k"
+    },
+    {
+      "id": "6922",
+      "url": "/fc-liverpool-u18/startseite/verein/6922",
+      "name": "Liverpool FC U18",
+      "country": "England",
+      "squad": "25",
+      "marketValue": "-"
+    },
+    {
+      "id": "83947",
+      "url": "/soma-sc/startseite/verein/83947",
+      "name": "Soma SC",
+      "country": "Japan",
+      "squad": "24",
+      "marketValue": "-"
+    },
+    {
+      "id": "62678",
+      "url": "/city-of-liverpool-fc/startseite/verein/62678",
+      "name": "City of Liverpool FC",
+      "country": "England",
+      "squad": "13",
+      "marketValue": "-"
+    },
+    {
+      "id": "50906",
+      "url": "/fc-liverpool-jugend/startseite/verein/50906",
+      "name": "Liverpool FC Youth",
+      "country": "England",
+      "squad": "13",
+      "marketValue": "-"
+    }
+  ]
+}

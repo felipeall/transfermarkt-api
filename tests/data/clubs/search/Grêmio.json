@@ -1,0 +1,87 @@
+{
+  "query": "Grêmio",
+  "pageNumber": 1,
+  "lastPageNumber": 4,
+  "results": [
+    {
+      "id": "210",
+      "url": "/gremio-porto-alegre/startseite/verein/210",
+      "name": "Grêmio Foot-Ball Porto Alegrense",
+      "country": "Brazil",
+      "squad": "30",
+      "marketValue": "€80.30m"
+    },
+    {
+      "id": "37474",
+      "url": "/gremio-novorizontino-sp-/startseite/verein/37474",
+      "name": "Grêmio Novorizontino",
+      "country": "Brazil",
+      "squad": "25",
+      "marketValue": "€8.23m"
+    },
+    {
+      "id": "12690",
+      "url": "/gremio-porto-alegre-u20/startseite/verein/12690",
+      "name": "Grêmio FBPA U20",
+      "country": "Brazil",
+      "squad": "51",
+      "marketValue": "€2.45m"
+    },
+    {
+      "id": "10560",
+      "url": "/gremio-esportivo-brasil-rs-/startseite/verein/10560",
+      "name": "Grêmio Esportivo Brasil (RS)",
+      "country": "Brazil",
+      "squad": "26",
+      "marketValue": "€50k"
+    },
+    {
+      "id": "94170",
+      "url": "/gremio-pague-menos/startseite/verein/94170",
+      "name": "CEFAT Tirol",
+      "country": "Brazil",
+      "squad": "16",
+      "marketValue": "-"
+    },
+    {
+      "id": "48244",
+      "url": "/gremio-osasco-audax-sp-u20/startseite/verein/48244",
+      "name": "Grêmio Osasco Audax (SP) U20",
+      "country": "Brazil",
+      "squad": "37",
+      "marketValue": "-"
+    },
+    {
+      "id": "67024",
+      "url": "/gremio-novorizontino-sp-u20/startseite/verein/67024",
+      "name": "Grêmio Novorizontino U20",
+      "country": "Brazil",
+      "squad": "28",
+      "marketValue": "-"
+    },
+    {
+      "id": "104265",
+      "url": "/gremio-pague-menos-u20/startseite/verein/104265",
+      "name": "CEFAT Tirol U20",
+      "country": "Brazil",
+      "squad": "28",
+      "marketValue": "-"
+    },
+    {
+      "id": "93762",
+      "url": "/ge-bage/startseite/verein/93762",
+      "name": "GE Bagé",
+      "country": "Brazil",
+      "squad": "26",
+      "marketValue": "-"
+    },
+    {
+      "id": "96937",
+      "url": "/gremio-esportivo-mauaense-u20/startseite/verein/96937",
+      "name": "Grêmio Esportivo Mauaense U20",
+      "country": "Brazil",
+      "squad": "25",
+      "marketValue": "-"
+    }
+  ]
+}

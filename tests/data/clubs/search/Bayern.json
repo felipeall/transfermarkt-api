@@ -1,0 +1,87 @@
+{
+  "query": "Bayern",
+  "pageNumber": 1,
+  "lastPageNumber": 4,
+  "results": [
+    {
+      "id": "27",
+      "url": "/fc-bayern-munchen/startseite/verein/27",
+      "name": "Bayern Munich",
+      "country": "Germany",
+      "squad": "27",
+      "marketValue": "€887.00m"
+    },
+    {
+      "id": "15",
+      "url": "/bayer-04-leverkusen/startseite/verein/15",
+      "name": "Bayer 04 Leverkusen",
+      "country": "Germany",
+      "squad": "25",
+      "marketValue": "€609.05m"
+    },
+    {
+      "id": "28",
+      "url": "/fc-bayern-munchen-ii/startseite/verein/28",
+      "name": "FC Bayern Munich II",
+      "country": "Germany",
+      "squad": "29",
+      "marketValue": "€16.78m"
+    },
+    {
+      "id": "41585",
+      "url": "/fc-bayern-munchen-uefa-u19/startseite/verein/41585",
+      "name": "Bayern Munich UEFA U19",
+      "country": "Germany",
+      "squad": "19",
+      "marketValue": "€7.73m"
+    },
+    {
+      "id": "248",
+      "url": "/spvgg-bayern-hof/startseite/verein/248",
+      "name": "SpVgg Bayern Hof",
+      "country": "Germany",
+      "squad": "24",
+      "marketValue": "-"
+    },
+    {
+      "id": "4900",
+      "url": "/fc-bayern-alzenau/startseite/verein/4900",
+      "name": "FC Bayern Alzenau",
+      "country": "Germany",
+      "squad": "24",
+      "marketValue": "-"
+    },
+    {
+      "id": "1462",
+      "url": "/fc-bayern-munchen-u19/startseite/verein/1462",
+      "name": "FC Bayern Munich U19",
+      "country": "Germany",
+      "squad": "29",
+      "marketValue": "-"
+    },
+    {
+      "id": "21058",
+      "url": "/fc-bayern-munchen-u17/startseite/verein/21058",
+      "name": "FC Bayern Munich U17",
+      "country": "Germany",
+      "squad": "31",
+      "marketValue": "-"
+    },
+    {
+      "id": "33771",
+      "url": "/fc-bayern-kickers-nurnberg/startseite/verein/33771",
+      "name": "FC Bayern Kickers Nürnberg",
+      "country": "Germany",
+      "squad": "13",
+      "marketValue": "-"
+    },
+    {
+      "id": "23298",
+      "url": "/fc-bayern-alzenau-ii/startseite/verein/23298",
+      "name": "FC Bayern Alzenau II",
+      "country": "Germany",
+      "squad": "9",
+      "marketValue": "-"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "5",
+  "url": "/ac-mailand/startseite/verein/5",
+  "name": "AC Milan",
+  "officialName": "Associazione Calcio Milan",
+  "image": "https://tmssl.akamaized.net//images/wappen/big/5.png",
+  "legalForm": "AG",
+  "addressLine1": "Via Aldo Rossi 8",
+  "addressLine2": "20149 Milano",
+  "addressLine3": "Italy",
+  "tel": "+39 2 62281",
+  "fax": "+39 2 6598876",
+  "website": "www.acmilan.com",
+  "foundedOn": "Dec 16, 1899",
+  "members": null,
+  "membersDate": null,
+  "otherSports": null,
+  "colors": [
+    "#B50909",
+    "#050505"
+  ],
+  "stadiumName": "Giuseppe Meazza",
+  "stadiumSeats": "75923",
+  "currentTransferRecord": "€-37.70m",
+  "currentMarketValue": "€533.00m",
+  "confederation": null,
+  "fifaWorldRanking": null,
+  "squad": {
+    "size": "26",
+    "averageAge": "26.1",
+    "foreigners": "19",
+    "nationalTeamPlayers": "14"
+  },
+  "league": {
+    "id": "IT1",
+    "name": "Serie A",
+    "countryId": "7",
+    "countryName": "Italy",
+    "tier": "First Tier"
+  },
+  "historicalCrests": [
+    "https://tmssl.akamaized.net//images/wappen/medium/5_1405345513.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/5_1405345522.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/5_1405345530.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/5_1405345538.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/5_1405345547.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/5_1405345575.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/5_1405345581.png",
+    "https://tmssl.akamaized.net//images/wappen/medium/5_1405345591.png"
+  ]
+}

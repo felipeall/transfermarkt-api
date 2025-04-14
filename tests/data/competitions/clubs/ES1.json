@@ -1,0 +1,87 @@
+{
+  "id": "ES1",
+  "name": "LaLiga",
+  "seasonId": "2024",
+  "clubs": [
+    {
+      "id": "418",
+      "name": "Real Madrid"
+    },
+    {
+      "id": "131",
+      "name": "FC Barcelona"
+    },
+    {
+      "id": "13",
+      "name": "Atlético de Madrid"
+    },
+    {
+      "id": "681",
+      "name": "Real Sociedad"
+    },
+    {
+      "id": "621",
+      "name": "Athletic Bilbao"
+    },
+    {
+      "id": "1049",
+      "name": "Valencia CF"
+    },
+    {
+      "id": "1050",
+      "name": "Villarreal CF"
+    },
+    {
+      "id": "12321",
+      "name": "Girona FC"
+    },
+    {
+      "id": "368",
+      "name": "Sevilla FC"
+    },
+    {
+      "id": "150",
+      "name": "Real Betis Balompié"
+    },
+    {
+      "id": "472",
+      "name": "UD Las Palmas"
+    },
+    {
+      "id": "331",
+      "name": "CA Osasuna"
+    },
+    {
+      "id": "940",
+      "name": "Celta de Vigo"
+    },
+    {
+      "id": "237",
+      "name": "RCD Mallorca"
+    },
+    {
+      "id": "1108",
+      "name": "Deportivo Alavés"
+    },
+    {
+      "id": "714",
+      "name": "RCD Espanyol Barcelona"
+    },
+    {
+      "id": "367",
+      "name": "Rayo Vallecano"
+    },
+    {
+      "id": "3709",
+      "name": "Getafe CF"
+    },
+    {
+      "id": "1244",
+      "name": "CD Leganés"
+    },
+    {
+      "id": "366",
+      "name": "Real Valladolid CF"
+    }
+  ]
+}
