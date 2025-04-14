@@ -1,5 +1,5 @@
 from datetime import date
-from typing import Optional
+from typing import Optional, Literal
 
 from app.schemas.base import AuditMixin, TransfermarktBaseModel
 
@@ -18,6 +18,7 @@ class PlayerTransfer(TransfermarktBaseModel):
     season: str
     market_value: Optional[int]
     fee: Optional[int]
+    transfer_type: Literal["permanent", "loan", "end_of_loan", "free_transfer"]
 
 
 class PlayerTransfers(TransfermarktBaseModel, AuditMixin):
