@@ -12,7 +12,10 @@ class PlayerStat(TransfermarktBaseModel):
     goals: Optional[int] = 0
     assists: Optional[int] = 0
     yellow_cards: Optional[int] = 0
+    second_yellow_cards: Optional[int] = 0
     red_cards: Optional[int] = 0
+    goals_conceded: Optional[int] = 0
+    clean_sheets: Optional[int] = 0
     minutes_played: Optional[int] = 0
 
 
