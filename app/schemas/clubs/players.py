@@ -24,4 +24,6 @@ class ClubPlayer(TransfermarktBaseModel):
 
 class ClubPlayers(TransfermarktBaseModel, AuditMixin):
     id: str
+    name: Optional[str] = None
+    season_id: Optional[str] = None
     players: list[ClubPlayer]

@@ -38,33 +38,52 @@ class TransfermarktPlayerSearch(TransfermarktBase):
         Returns:
             list: A list of dictionaries, with each dictionary representing a player search result.
         """
+        # Get all result rows first
         search_results: list[ElementTree] = self.page.xpath(Players.Search.RESULTS)
+
         results = []
-
         for result in search_results:
-            idx = extract_from_url(result.xpath(Players.Search.ID))
-            name = trim(result.xpath(Players.Search.NAME))
-            position = trim(result.xpath(Players.Search.POSITION))
-            club_name = trim(result.xpath(Players.Search.CLUB_NAME))
-            club_id = safe_regex(result.xpath(Players.Search.CLUB_IMAGE), REGEX_CHART_CLUB_ID, "club_id")
-            age = trim(result.xpath(Players.Search.AGE))
-            nationalities = result.xpath(Players.Search.NATIONALITIES)
-            market_value = trim(result.xpath(Players.Search.MARKET_VALUE))
+            # Extract data from each row individually (relative XPath)
+            id_list = result.xpath(Players.Search.ID)
+            idx = extract_from_url(id_list[0] if id_list else None)
 
-            results.append(
-                {
-                    "id": idx,
-                    "name": name,
-                    "position": position,
-                    "club": {
-                        "name": club_name,
-                        "id": club_id,
+            name_list = result.xpath(Players.Search.NAME)
+            name = trim(name_list[0]) if name_list and name_list[0] else None
+
+            position_list = result.xpath(Players.Search.POSITION)
+            position = trim(position_list[0]) if position_list and position_list[0] else None
+
+            club_name_list = result.xpath(Players.Search.CLUB_NAME)
+            club_name = trim(club_name_list[0]) if club_name_list and club_name_list[0] else None
+
+            club_image_list = result.xpath(Players.Search.CLUB_IMAGE)
+            club_id = safe_regex(club_image_list[0] if club_image_list else None, REGEX_CHART_CLUB_ID, "club_id")
+
+            age_list = result.xpath(Players.Search.AGE)
+            age = trim(age_list[0]) if age_list and age_list[0] else None
+
+            # Nationalities - relative to this specific row (can be multiple)
+            nationalities_list = result.xpath(Players.Search.NATIONALITIES)
+            nationalities = [trim(n) for n in nationalities_list if n and trim(n)]
+
+            market_value_list = result.xpath(Players.Search.MARKET_VALUE)
+            market_value = trim(market_value_list[0]) if market_value_list and market_value_list[0] else None
+
+            if idx:  # Only add if we have a valid ID
+                results.append(
+                    {
+                        "id": idx,
+                        "name": name,
+                        "position": position,
+                        "club": {
+                            "name": club_name,
+                            "id": club_id,
+                        },
+                        "age": age,
+                        "nationalities": nationalities,
+                        "marketValue": market_value,
                     },
-                    "age": age,
-                    "nationalities": nationalities,
-                    "marketValue": market_value,
-                },
-            )
+                )
 
         return results
 

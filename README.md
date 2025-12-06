@@ -60,3 +60,11 @@ $ open http://localhost:8000/
 |---------------------------|-----------------------------------------------------------|--------------|
 | `RATE_LIMITING_ENABLE`    | Enable rate limiting feature for API calls                | `false`      |
 | `RATE_LIMITING_FREQUENCY` | Delay allowed between each API call. See [slowapi](https://slowapi.readthedocs.io/en/latest/) for more | `2/3seconds` |
+| `TOURNAMENT_SIZE_FIWC`   | Expected number of participants for World Cup              | `32`         |
+| `TOURNAMENT_SIZE_EURO`   | Expected number of participants for UEFA Euro             | `24`         |
+| `TOURNAMENT_SIZE_COPA`   | Expected number of participants for Copa America           | `12`         |
+| `TOURNAMENT_SIZE_AFAC`   | Expected number of participants for AFC Asian Cup          | `24`         |
+| `TOURNAMENT_SIZE_GOCU`   | Expected number of participants for Gold Cup               | `16`         |
+| `TOURNAMENT_SIZE_AFCN`   | Expected number of participants for Africa Cup of Nations | `24`         |
+
+**Note:** Tournament size variables are used to limit participant lists for national team competitions, excluding non-qualified teams. If a tournament size is not configured or becomes outdated, a warning will be logged and all participants will be included without truncation.

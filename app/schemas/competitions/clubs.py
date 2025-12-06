@@ -1,3 +1,5 @@
+from typing import Optional
+
 from app.schemas.base import AuditMixin, TransfermarktBaseModel
 
 
@@ -9,5 +11,5 @@ class CompetitionClub(TransfermarktBaseModel):
 class CompetitionClubs(TransfermarktBaseModel, AuditMixin):
     id: str
     name: str
-    season_id: str
+    season_id: Optional[str] = None
     clubs: list[CompetitionClub]

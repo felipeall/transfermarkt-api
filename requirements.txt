@@ -33,3 +33,4 @@ uvloop==0.21.0 ; (sys_platform != "win32" and sys_platform != "cygwin") and plat
 watchfiles==1.0.3 ; python_version >= "3.9" and python_version < "4.0"
 websockets==14.1 ; python_version >= "3.9" and python_version < "4.0"
 wrapt==1.17.0 ; python_version >= "3.9" and python_version < "4.0"
+playwright==1.48.0 ; python_version >= "3.9" and python_version < "4.0"
