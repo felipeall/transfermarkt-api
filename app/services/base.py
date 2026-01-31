@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from typing import Optional
 from xml.etree import ElementTree
+from urllib.parse import urlencode
 
 import requests
 from bs4 import BeautifulSoup
@@ -10,6 +11,7 @@ from requests import Response, TooManyRedirects
 
 from app.utils.utils import trim
 from app.utils.xpath import Pagination
+from app.settings import settings
 
 
 @dataclass
@@ -31,6 +33,9 @@ class TransfermarktBase:
     def make_request(self, url: Optional[str] = None) -> Response:
         """
         Make an HTTP GET request to the specified URL.
+        
+        If USE_SCRAPINGBEE is enabled, routes requests through ScrapingBee
+        for rotating IP addresses and anti-blocking protection.
 
         Args:
             url (str, optional): The URL to make the request to. If not provided, the class's URL
@@ -44,6 +49,54 @@ class TransfermarktBase:
                 server error status code.
         """
         url = self.URL if not url else url
+        
+        # Route through ScrapingBee if enabled
+        if settings.USE_SCRAPINGBEE and settings.SCRAPINGBEE_API_KEY:
+            return self._make_scrapingbee_request(url)
+        else:
+            return self._make_direct_request(url)
+    
+    def _make_scrapingbee_request(self, url: str) -> Response:
+        """Make request through ScrapingBee proxy service."""
+        params = {
+            "api_key": settings.SCRAPINGBEE_API_KEY,
+            "url": url,
+            "render_js": "false",  # TransferMarkt doesn't need JS rendering
+            "premium_proxy": str(settings.SCRAPINGBEE_PREMIUM_PROXY).lower(),
+            "country_code": settings.SCRAPINGBEE_COUNTRY_CODE,
+        }
+        
+        scrapingbee_url = f"https://app.scrapingbee.com/api/v1?{urlencode(params)}"
+        
+        try:
+            response: Response = requests.get(
+                url=scrapingbee_url,
+                headers={"Accept": "text/html"},
+                timeout=60,  # ScrapingBee requests can take longer
+            )
+        except TooManyRedirects:
+            raise HTTPException(status_code=404, detail=f"Not found for url: {url}")
+        except ConnectionError:
+            raise HTTPException(status_code=500, detail=f"Connection error for url: {url}")
+        except requests.Timeout:
+            raise HTTPException(status_code=504, detail=f"Timeout for url: {url}")
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Error for url: {url}. {e}")
+        
+        if 400 <= response.status_code < 500:
+            raise HTTPException(
+                status_code=response.status_code,
+                detail=f"Client Error. {response.reason} for url: {url}",
+            )
+        elif 500 <= response.status_code < 600:
+            raise HTTPException(
+                status_code=response.status_code,
+                detail=f"Server Error. {response.reason} for url: {url}",
+            )
+        return response
+    
+    def _make_direct_request(self, url: str) -> Response:
+        """Make direct request without proxy."""
         try:
             response: Response = requests.get(
                 url=url,
