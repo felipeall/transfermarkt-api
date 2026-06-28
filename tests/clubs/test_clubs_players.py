@@ -36,6 +36,7 @@ def test_get_club_players(
                     "id": And(str, len_greater_than_0),
                     "name": And(str, len_greater_than_0),
                     "position": And(str, len_greater_than_0),
+                    "jerseyNumber": Or(None, And(str, len_greater_than_0, regex_integer)),
                     "dateOfBirth": And(str, len_greater_than_0, regex_date_mmm_dd_yyyy),
                     "age": And(str, len_greater_than_0, regex_integer),
                     "nationality": And(list, len_greater_than_0),

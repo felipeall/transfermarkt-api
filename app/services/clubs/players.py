@@ -81,12 +81,18 @@ class TransfermarktClubPlayers(TransfermarktBase):
         )
         players_marketvalues = self.get_list_by_xpath(Clubs.Players.MARKET_VALUES)
         players_statuses = ["; ".join(e.xpath(Clubs.Players.STATUSES)) for e in page_players_infos if e is not None]
+        players_jersey_numbers = self.get_list_by_xpath(Clubs.Players.JERSEY_NUMBERS)
+        if len(players_jersey_numbers) < len(players_ids):
+            players_jersey_numbers = players_jersey_numbers + [None] * (len(players_ids) - len(players_jersey_numbers))
+        elif len(players_jersey_numbers) > len(players_ids):
+            players_jersey_numbers = players_jersey_numbers[: len(players_ids)]
 
         return [
             {
                 "id": idx,
                 "name": name,
                 "position": position,
+                "jerseyNumber": jersey_number,
                 "dateOfBirth": dob,
                 "age": age,
                 "nationality": nationality,
@@ -100,10 +106,11 @@ class TransfermarktClubPlayers(TransfermarktBase):
                 "marketValue": market_value,
                 "status": status,
             }
-            for idx, name, position, dob, age, nationality, current_club, height, foot, joined_on, joined, signed_from, contract, market_value, status, in zip(  # noqa: E501
+            for idx, name, position, jersey_number, dob, age, nationality, current_club, height, foot, joined_on, joined, signed_from, contract, market_value, status, in zip(  # noqa: E501
                 players_ids,
                 players_names,
                 players_positions,
+                players_jersey_numbers,
                 players_dobs,
                 players_ages,
                 players_nationalities,
