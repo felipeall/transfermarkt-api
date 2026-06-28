@@ -1,6 +1,8 @@
 from datetime import date
 from typing import Optional
 
+from pydantic import Field
+
 from app.schemas.base import AuditMixin, TransfermarktBaseModel
 
 
@@ -8,7 +10,7 @@ class ClubPlayer(TransfermarktBaseModel):
     id: str
     name: str
     position: str
-    jersey_number: Optional[int] = None
+    jersey_number: Optional[int] = Field(default=None, alias="jerseyNumber")
     date_of_birth: Optional[date] = None
     age: Optional[int] = None
     nationality: list[str]
