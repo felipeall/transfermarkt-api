@@ -162,3 +162,4 @@ cython_debug/
 
 # Vercel
 .vercel/
+node_modules
