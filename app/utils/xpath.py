@@ -161,6 +161,7 @@ class Clubs:
         MARKET_VALUES = "//td[@class='rechts hauptlink']//text()"
         STATUSES = ".//td[@class='hauptlink']//span//@title"
         JOINED_ON = ".//text()"
+        JERSEY_NUMBERS = "//div[@id='yw1']//tbody//tr//td[1]//text()"
 
         class Present:
             PAGE_SIGNED_FROM = "//div[@id='yw1']//td[8]"
