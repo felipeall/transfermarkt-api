@@ -1,4 +1,3 @@
-from datetime import date
 from typing import Optional
 
 from pydantic import Field
@@ -10,18 +9,18 @@ class ClubPlayer(TransfermarktBaseModel):
     id: str
     name: str
     position: str
-    jersey_number: Optional[int] = Field(default=None, alias="jerseyNumber")
-    date_of_birth: Optional[date] = None
-    age: Optional[int] = None
+    jersey_number: Optional[str] = Field(default=None, alias="jerseyNumber")
+    date_of_birth: Optional[str] = None
+    age: Optional[str] = None
     nationality: list[str]
     current_club: Optional[str] = None
-    height: Optional[int] = None
+    height: Optional[str] = None
     foot: Optional[str] = None
-    joined_on: Optional[date] = None
+    joined_on: Optional[str] = None
     joined: Optional[str] = None
     signed_from: Optional[str] = None
-    contract: Optional[date] = None
-    market_value: Optional[int] = None
+    contract: Optional[str] = None
+    market_value: Optional[str] = None
     status: Optional[str] = ""
 
 

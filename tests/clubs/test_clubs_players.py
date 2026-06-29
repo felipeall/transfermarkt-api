@@ -5,7 +5,40 @@ import pytest
 from fastapi import HTTPException
 from schema import And, Or, Schema
 
+from app.schemas.clubs.players import ClubPlayers
 from app.services.clubs.players import TransfermarktClubPlayers
+
+
+def test_club_players_schema_accepts_raw_transfermarkt_payload():
+    payload = {
+        "id": "418",
+        "players": [
+            {
+                "id": "12345",
+                "name": "Player Name",
+                "position": "Midfielder",
+                "jerseyNumber": "10",
+                "dateOfBirth": "Jan 1, 2000",
+                "age": "25",
+                "nationality": ["Brazil"],
+                "currentClub": None,
+                "height": "1,75m",
+                "foot": "Right",
+                "joinedOn": "",
+                "joined": "",
+                "signedFrom": "",
+                "contract": None,
+                "marketValue": "€10m",
+                "status": "",
+            }
+        ],
+    }
+
+    model = ClubPlayers.model_validate(payload)
+
+    assert model.players[0].jersey_number == "10"
+    assert model.players[0].date_of_birth == "Jan 1, 2000"
+    assert model.players[0].market_value == "€10m"
 
 
 def test_get_club_players_not_found():
