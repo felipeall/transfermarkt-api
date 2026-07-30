@@ -1,6 +1,6 @@
 import re
-from datetime import datetime
-from typing import Optional
+from datetime import date, datetime
+from typing import Any, Optional
 
 from dateutil import parser
 from pydantic import BaseModel, ConfigDict, Field, field_validator
@@ -12,7 +12,10 @@ class AuditMixin(BaseModel):
 
 
 class TransfermarktBaseModel(BaseModel):
-    model_config = ConfigDict(alias_generator=to_camel)
+    model_config = ConfigDict(
+        alias_generator=to_camel,
+        populate_by_name=True,
+    )
 
     @field_validator(
         "date_of_birth",
@@ -29,10 +32,23 @@ class TransfermarktBaseModel(BaseModel):
         mode="before",
         check_fields=False,
     )
-    def parse_str_to_date(cls, v: str):
+    @classmethod
+    def parse_str_to_date(
+        cls,
+        value: Any,
+    ) -> Optional[date]:
+        if value is None or value == "":
+            return None
+
+        if isinstance(value, datetime):
+            return value.date()
+
+        if isinstance(value, date):
+            return value
+
         try:
-            return parser.parse(v).date() if v else None
-        except parser.ParserError:
+            return parser.parse(str(value)).date()
+        except (parser.ParserError, TypeError, ValueError):
             return None
 
     @field_validator(
@@ -54,37 +70,171 @@ class TransfermarktBaseModel(BaseModel):
         mode="before",
         check_fields=False,
     )
-    def parse_str_to_int(cls, v: str) -> Optional[int]:
-        if not v or not any(char.isdigit() for char in v):
+    @classmethod
+    def parse_str_to_int(
+        cls,
+        value: Any,
+    ) -> Optional[int]:
+        if value is None or value == "":
             return None
 
-        # Clean up HTML tags if present
-        if "<" in str(v):
-            matches = re.findall(r"€([\d,.]+[kmb]?)", v.lower())
+        # The new Transfermarkt JSON API returns actual numeric values.
+        if isinstance(value, bool):
+            return int(value)
+
+        if isinstance(value, int):
+            return value
+
+        if isinstance(value, float):
+            return int(value)
+
+        value_string = str(value).strip()
+
+        if not any(char.isdigit() for char in value_string):
+            return None
+
+        # Clean up HTML containing a market value.
+        if "<" in value_string:
+            matches = re.findall(
+                r"€([\d,.]+(?:bn|[kmb])?)",
+                value_string.lower(),
+            )
+
             if not matches:
                 return None
-            value_str = matches[0]
-        else:
-            value_str = v.lower().replace("€", "").replace("+", "").replace("'", "").strip()
 
-        if "k" in value_str:
-            return int(float(value_str.replace("k", "")) * 1_000)
-        elif "m" in value_str:
-            return int(float(value_str.replace("m", "")) * 1_000_000)
-        elif "bn" in value_str:
-            return int(float(value_str.replace("bn", "")) * 1_000_000_000)
-        elif "b" in value_str:
-            return int(float(value_str.replace("b", "")) * 1_000_000_000)
+            value_string = matches[0]
         else:
-            return int(float(value_str))
+            value_string = (
+                value_string.lower()
+                .replace("€", "")
+                .replace("+", "")
+                .replace("'", "")
+                .replace(" ", "")
+                .strip()
+            )
 
-    @field_validator("height", mode="before", check_fields=False)
-    def parse_height(cls, v: str) -> Optional[int]:
-        if not v or not any(char.isdigit() for char in v):
+        multiplier = 1
+
+        if value_string.endswith("bn"):
+            multiplier = 1_000_000_000
+            value_string = value_string[:-2]
+        elif value_string.endswith("k"):
+            multiplier = 1_000
+            value_string = value_string[:-1]
+        elif value_string.endswith("m"):
+            multiplier = 1_000_000
+            value_string = value_string[:-1]
+        elif value_string.endswith("b"):
+            multiplier = 1_000_000_000
+            value_string = value_string[:-1]
+
+        # Transfermarkt may use either comma or dot as a decimal
+        # separator depending on the domain.
+        if "," in value_string and "." not in value_string:
+            comma_parts = value_string.split(",")
+
+            if (
+                multiplier > 1
+                and len(comma_parts) == 2
+                and len(comma_parts[1]) <= 2
+            ):
+                value_string = value_string.replace(",", ".")
+            else:
+                value_string = value_string.replace(",", "")
+        else:
+            value_string = value_string.replace(",", "")
+
+        try:
+            return int(float(value_string) * multiplier)
+        except (TypeError, ValueError):
             return None
-        return int(v.replace(",", "").replace("m", "").replace("،", ""))
 
-    @field_validator("days", mode="before", check_fields=False)
-    def parse_days(cls, v: str) -> Optional[int]:
-        days = "".join(filter(str.isdigit, v))
+    @field_validator(
+        "height",
+        mode="before",
+        check_fields=False,
+    )
+    @classmethod
+    def parse_height(
+        cls,
+        value: Any,
+    ) -> Optional[int]:
+        if value is None or value == "":
+            return None
+
+        if isinstance(value, bool):
+            return int(value)
+
+        if isinstance(value, int):
+            return value
+
+        if isinstance(value, float):
+            # Handle values such as 1.75 metres.
+            if 0 < value < 3:
+                return int(round(value * 100))
+
+            return int(value)
+
+        value_string = str(value).strip()
+
+        if not any(char.isdigit() for char in value_string):
+            return None
+
+        cleaned = (
+            value_string.lower()
+            .replace("m", "")
+            .replace(" ", "")
+            .replace("،", "")
+        )
+
+        # Existing HTML values commonly look like "1,75 m".
+        if "," in cleaned and "." not in cleaned:
+            parts = cleaned.split(",")
+
+            if (
+                len(parts) == 2
+                and len(parts[0]) == 1
+                and len(parts[1]) == 2
+            ):
+                cleaned = "".join(parts)
+            else:
+                cleaned = cleaned.replace(",", "")
+        else:
+            cleaned = cleaned.replace(".", "")
+
+        try:
+            return int(cleaned)
+        except ValueError:
+            return None
+
+    @field_validator(
+        "days",
+        mode="before",
+        check_fields=False,
+    )
+    @classmethod
+    def parse_days(
+        cls,
+        value: Any,
+    ) -> Optional[int]:
+        if value is None or value == "":
+            return None
+
+        if isinstance(value, bool):
+            return int(value)
+
+        if isinstance(value, int):
+            return value
+
+        if isinstance(value, float):
+            return int(value)
+
+        days = "".join(
+            filter(
+                str.isdigit,
+                str(value),
+            )
+        )
+
         return int(days) if days else None

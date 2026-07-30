@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Optional
 from xml.etree import ElementTree
 
@@ -6,7 +7,12 @@ import requests
 from bs4 import BeautifulSoup
 from fastapi import HTTPException
 from lxml import etree
-from requests import Response, TooManyRedirects
+from requests import Response
+from requests.exceptions import (
+    ConnectionError as RequestsConnectionError,
+    Timeout,
+    TooManyRedirects,
+)
 
 from app.utils.utils import trim
 from app.utils.xpath import Pagination
@@ -15,13 +21,15 @@ from app.utils.xpath import Pagination
 @dataclass
 class TransfermarktBase:
     """
-    Base class for making HTTP requests to Transfermarkt and extracting data from the web pages.
+    Base class for making HTTP requests to Transfermarkt and extracting
+    data from web pages.
 
     Args:
-        URL (str): The URL for the web page to be fetched.
+        URL: The URL for the web page to fetch.
+
     Attributes:
-        page (ElementTree): The parsed web page content.
-        response (dict): A dictionary to store the response data.
+        page: The parsed web page content.
+        response: A dictionary used to build the API response.
     """
 
     URL: str
@@ -30,123 +38,221 @@ class TransfermarktBase:
 
     def make_request(self, url: Optional[str] = None) -> Response:
         """
-        Make an HTTP GET request to the specified URL.
-
-        Args:
-            url (str, optional): The URL to make the request to. If not provided, the class's URL
-                attribute will be used.
-
-        Returns:
-            Response: An HTTP Response object containing the server's response to the request.
+        Make an HTTP GET request to Transfermarkt.
 
         Raises:
-            HTTPException: If there are too many redirects, or if the server returns a client or
-                server error status code.
+            HTTPException: When the request times out, cannot connect,
+            redirects excessively, or returns an error status.
         """
-        url = self.URL if not url else url
+
+        request_url = self.URL if not url else url
+
         try:
-            response: Response = requests.get(
-                url=url,
+            response = requests.get(
+                url=request_url,
                 headers={
                     "User-Agent": (
                         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                         "AppleWebKit/537.36 (KHTML, like Gecko) "
-                        "Chrome/113.0.0.0 "
-                        "Safari/537.36"
+                        "Chrome/124.0.0.0 Safari/537.36"
                     ),
+                    "Accept": (
+                        "text/html,application/xhtml+xml,"
+                        "application/xml;q=0.9,image/avif,"
+                        "image/webp,*/*;q=0.8"
+                    ),
+                    "Accept-Language": "en-GB,en;q=0.9",
+                    "Cache-Control": "no-cache",
+                    "Pragma": "no-cache",
                 },
+                timeout=30,
+                allow_redirects=True,
             )
-        except TooManyRedirects:
-            raise HTTPException(status_code=404, detail=f"Not found for url: {url}")
-        except ConnectionError:
-            raise HTTPException(status_code=500, detail=f"Connection error for url: {url}")
-        except Exception as e:
-            raise HTTPException(status_code=500, detail=f"Error for url: {url}. {e}")
+        except TooManyRedirects as error:
+            raise HTTPException(
+                status_code=502,
+                detail=f"Too many redirects for URL: {request_url}",
+            ) from error
+        except Timeout as error:
+            raise HTTPException(
+                status_code=504,
+                detail=f"Request timed out for URL: {request_url}",
+            ) from error
+        except RequestsConnectionError as error:
+            raise HTTPException(
+                status_code=502,
+                detail=f"Connection error for URL: {request_url}",
+            ) from error
+        except requests.RequestException as error:
+            raise HTTPException(
+                status_code=502,
+                detail=f"Request error for URL: {request_url}. {error}",
+            ) from error
+        except Exception as error:
+            raise HTTPException(
+                status_code=500,
+                detail=f"Unexpected error for URL: {request_url}. {error}",
+            ) from error
+
         if 400 <= response.status_code < 500:
             raise HTTPException(
                 status_code=response.status_code,
-                detail=f"Client Error. {response.reason} for url: {url}",
+                detail=(
+                    f"Client error: {response.reason} "
+                    f"for URL: {request_url}"
+                ),
             )
-        elif 500 <= response.status_code < 600:
+
+        if 500 <= response.status_code < 600:
             raise HTTPException(
                 status_code=response.status_code,
-                detail=f"Server Error. {response.reason} for url: {url}",
+                detail=(
+                    f"Server error: {response.reason} "
+                    f"for URL: {request_url}"
+                ),
             )
+
         return response
 
     def request_url_bsoup(self) -> BeautifulSoup:
         """
-        Fetch the web page content and parse it using BeautifulSoup.
+        Fetch and parse a Transfermarkt page using BeautifulSoup.
 
-        Returns:
-            BeautifulSoup: A BeautifulSoup object representing the parsed web page content.
-
-        Raises:
-            HTTPException: If there are too many redirects, or if the server returns a client or
-                server error status code.
+        For player-stat requests, diagnostic response information is logged
+        and the raw HTML is saved inside the Docker container under /tmp.
         """
-        response: Response = self.make_request()
-        return BeautifulSoup(markup=response.content, features="html.parser")
+
+        response = self.make_request()
+
+        soup = BeautifulSoup(
+            markup=response.content,
+            features="html.parser",
+        )
+
+        title = (
+            soup.title.get_text(strip=True)
+            if soup.title
+            else None
+        )
+
+        diagnostic = {
+            "requested_url": self.URL,
+            "final_url": str(response.url),
+            "status": response.status_code,
+            "content_type": response.headers.get("content-type"),
+            "content_length": len(response.content),
+            "title": title,
+        }
+
+        print(
+            {
+                "transfermarkt_response": diagnostic,
+            },
+            flush=True,
+        )
+
+        # Save raw HTML only for player-stat requests.
+        if "leistungsdatendetails" in self.URL:
+            player_id = (
+                self.URL
+                .rstrip("/")
+                .split("/")[-1]
+                .split("?")[0]
+            )
+
+            debug_path = Path(
+                f"/tmp/transfermarkt-stats-{player_id}.html"
+            )
+
+            try:
+                debug_path.write_bytes(response.content)
+
+                print(
+                    {
+                        "stats_debug_html": str(debug_path),
+                    },
+                    flush=True,
+                )
+            except OSError as error:
+                print(
+                    {
+                        "stats_debug_write_error": str(error),
+                    },
+                    flush=True,
+                )
+
+            page_text = soup.get_text(
+                separator=" ",
+                strip=True,
+            )
+
+            print(
+                {
+                    "stats_page_text_preview": page_text[:500],
+                },
+                flush=True,
+            )
+
+        return soup
 
     @staticmethod
-    def convert_bsoup_to_page(bsoup: BeautifulSoup) -> ElementTree:
+    def convert_bsoup_to_page(
+        bsoup: BeautifulSoup,
+    ) -> ElementTree:
         """
-        Convert a BeautifulSoup object to an ElementTree.
-
-        Args:
-            bsoup (BeautifulSoup): The BeautifulSoup object representing the parsed web page content.
-
-        Returns:
-            ElementTree: An ElementTree representing the parsed web page content for further processing.
+        Convert a BeautifulSoup document to an lxml ElementTree.
         """
+
         return etree.HTML(str(bsoup))
 
     def request_url_page(self) -> ElementTree:
         """
-        Fetch the web page content, parse it using BeautifulSoup, and convert it to an ElementTree.
-
-        Returns:
-            ElementTree: An ElementTree representing the parsed web page content for further
-                processing.
-
-        Raises:
-            HTTPException: If there are too many redirects, or if the server returns a client or
-                server error status code.
+        Fetch, parse, and convert the page to an ElementTree.
         """
-        bsoup: BeautifulSoup = self.request_url_bsoup()
-        return self.convert_bsoup_to_page(bsoup=bsoup)
 
-    def raise_exception_if_not_found(self, xpath: str):
+        bsoup = self.request_url_bsoup()
+
+        return self.convert_bsoup_to_page(
+            bsoup=bsoup,
+        )
+
+    def raise_exception_if_not_found(
+        self,
+        xpath: str,
+    ) -> None:
         """
-        Raise an exception if the specified XPath does not yield any results on the web page.
-
-        Args:
-            xpath (str): The XPath expression to query elements on the page.
-
-        Raises:
-            HTTPException: If the specified XPath query does not yield any results, indicating an invalid request.
+        Raise an HTTP 404 when the supplied XPath matches nothing.
         """
+
         if not self.get_text_by_xpath(xpath):
-            raise HTTPException(status_code=404, detail=f"Invalid request (url: {self.URL})")
+            raise HTTPException(
+                status_code=404,
+                detail=f"Invalid request (URL: {self.URL})",
+            )
 
-    def get_list_by_xpath(self, xpath: str, remove_empty: Optional[bool] = True) -> Optional[list]:
+    def get_list_by_xpath(
+        self,
+        xpath: str,
+        remove_empty: Optional[bool] = True,
+    ) -> list:
         """
-        Extract a list of elements from the web page using the specified XPath expression.
-
-        Args:
-            xpath (str): The XPath expression to query elements on the page.
-            remove_empty (bool, optional): If True, remove empty or whitespace-only elements from
-                the list. Default is True.
-
-        Returns:
-            Optional[list]: A list of elements extracted from the web page based on the XPath query.
-                If remove_empty is True, empty or whitespace-only elements are filtered out.
+        Return all values matching an XPath expression.
         """
-        elements: list = self.page.xpath(xpath)
+
+        elements = self.page.xpath(xpath)
+
         if remove_empty:
-            elements_valid: list = [trim(e) for e in elements if trim(e)]
+            elements_valid = [
+                trim(element)
+                for element in elements
+                if trim(element)
+            ]
         else:
-            elements_valid: list = [trim(e) for e in elements]
+            elements_valid = [
+                trim(element)
+                for element in elements
+            ]
+
         return elements_valid or []
 
     def get_text_by_xpath(
@@ -159,65 +265,72 @@ class TransfermarktBase:
         join_str: Optional[str] = None,
     ) -> Optional[str]:
         """
-        Extract text content from the web page using the specified XPath expression.
-
-        Args:
-            xpath (str): The XPath expression to query elements on the page.
-            pos (int, optional): Index of the element to extract if multiple elements match the
-                XPath. Default is 0.
-            iloc (int, optional): Extract a single element by index, used as an alternative to 'pos'.
-            iloc_from (int, optional): Extract a range of elements starting from the specified
-                index (inclusive).
-            iloc_to (int, optional): Extract a range of elements up to the specified
-                index (exclusive).
-            join_str (str, optional): If provided, join multiple text elements into a single string
-                using this separator.
-
-        Returns:
-            Optional[str]: The extracted text content from the web page based on the XPath query and
-                optional parameters. If no matching element is found, None is returned.
+        Extract text content using an XPath expression.
         """
+
         element = self.page.xpath(xpath)
 
         if not element:
             return None
 
         if isinstance(element, list):
-            element = [trim(e) for e in element if trim(e)]
+            element = [
+                trim(item)
+                for item in element
+                if trim(item)
+            ]
 
         if isinstance(iloc, int):
-            element = element[iloc]
+            try:
+                element = element[iloc]
+            except IndexError:
+                return None
 
-        if isinstance(iloc_from, int) and isinstance(iloc_to, int):
+        if (
+            isinstance(iloc_from, int)
+            and isinstance(iloc_to, int)
+        ):
             element = element[iloc_from:iloc_to]
-
-        if isinstance(iloc_to, int):
+        elif isinstance(iloc_to, int):
             element = element[:iloc_to]
-
-        if isinstance(iloc_from, int):
+        elif isinstance(iloc_from, int):
             element = element[iloc_from:]
 
         if isinstance(join_str, str):
-            return join_str.join([trim(e) for e in element])
+            if not isinstance(element, list):
+                return trim(element)
+
+            return join_str.join(
+                trim(item)
+                for item in element
+            )
 
         try:
             return trim(element[pos])
-        except IndexError:
+        except (IndexError, TypeError):
             return None
 
-    def get_last_page_number(self, xpath_base: str = "") -> int:
+    def get_last_page_number(
+        self,
+        xpath_base: str = "",
+    ) -> int:
         """
-        Retrieve the last page number for a paginated result based on the provided base XPath.
-
-        Args:
-            xpath_base (str): The base XPath for extracting page number information.
-
-        Returns:
-            int: The last page number for search results. Returns 1 if no page numbers are found.
+        Return the final page number for a paginated result.
         """
 
-        for xpath in [Pagination.PAGE_NUMBER_LAST, Pagination.PAGE_NUMBER_ACTIVE]:
-            url_page = self.get_text_by_xpath(xpath_base + xpath)
+        for xpath in [
+            Pagination.PAGE_NUMBER_LAST,
+            Pagination.PAGE_NUMBER_ACTIVE,
+        ]:
+            url_page = self.get_text_by_xpath(
+                xpath_base + xpath,
+            )
+
             if url_page:
-                return int(url_page.split("=")[-1].split("/")[-1])
+                return int(
+                    url_page
+                    .split("=")[-1]
+                    .split("/")[-1]
+                )
+
         return 1

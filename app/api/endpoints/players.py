@@ -50,10 +50,31 @@ def get_player_jersey_numbers(player_id: str):
     return player_jerseynumbers
 
 
-@router.get("/{player_id}/stats", response_model=schemas.PlayerStats, response_model_exclude_none=True)
+@router.get(
+    "/{player_id}/stats",
+    response_model=schemas.PlayerStats,
+    response_model_exclude_none=True,
+)
 def get_player_stats(player_id: str):
+    print(
+        f"\nStarting stats request for player {player_id}",
+        flush=True,
+    )
+
     tfmkt = TransfermarktPlayerStats(player_id=player_id)
     player_stats = tfmkt.get_player_stats()
+
+    print(
+        f"Raw stats result for {player_id}: {player_stats!r}",
+        flush=True,
+    )
+
+    if isinstance(player_stats, dict):
+        print(
+            f"Stats count: {len(player_stats.get('stats', []))}",
+            flush=True,
+        )
+
     return player_stats
 
 
