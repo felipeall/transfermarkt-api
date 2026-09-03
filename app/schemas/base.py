@@ -31,7 +31,14 @@ class TransfermarktBaseModel(BaseModel):
     )
     def parse_str_to_date(cls, v: str):
         try:
-            return parser.parse(v).date() if v else None
+            # Transfermarkt writes numeric dates day-first: the market-value
+            # chart's datum_mw is "03/06/2026" for 3 June 2026. Without
+            # dayfirst, dateutil reads that as 6 March - a day above 12 forces
+            # its own fallback and parses correctly, but a day of 12 or under
+            # silently swaps, so roughly a third of every value history is
+            # months out and some of it lands in the future. Formats that name
+            # the month are unaffected by the flag.
+            return parser.parse(v, dayfirst=True).date() if v else None
         except parser.ParserError:
             return None
 
