@@ -259,6 +259,18 @@ def test_country_listing_empty_country(synthetic_client: tuple[TestClient, dict]
     assert response.json()["clubs"] == []
 
 
+@pytest.mark.parametrize("directory", [{}, {"clubIds": None}, {"clubIds": "131"}, {"clubIds": {}}, [], None])
+def test_country_listing_rejects_malformed_directory(
+    synthetic_client: tuple[TestClient, dict], directory: object
+) -> None:
+    """Malformed upstream directories return 502 instead of a successful empty listing."""
+    client, routes = synthetic_client
+    routes["/country/9/club"] = directory
+    response = client.get("/clubs/?country_id=9")
+    assert response.status_code == 502
+    assert response.json()["detail"] == "Unexpected upstream payload for /country/9/club"
+
+
 def test_country_listing_unknown_country(synthetic_client: tuple[TestClient, dict]) -> None:
     """Unknown countries return 404 even though upstream would answer an empty directory."""
     client, _ = synthetic_client

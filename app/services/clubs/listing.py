@@ -12,7 +12,9 @@ async def list_clubs(tfmkt: TfmktClient, country_id: int) -> dict:
         raise HTTPException(status_code=404, detail=f"Country not found: {country_id}")
 
     directory = await tfmkt.country_clubs(country_id)
-    club_ids = list(dict.fromkeys(str(club_id) for club_id in directory.get("clubIds") or []))
+    if not isinstance(directory, dict) or not isinstance(directory.get("clubIds"), list):
+        raise HTTPException(status_code=502, detail=f"Unexpected upstream payload for /country/{country_id}/club")
+    club_ids = list(dict.fromkeys(str(club_id) for club_id in directory["clubIds"]))
     clubs = await tfmkt.clubs(club_ids)
     return {
         "countryId": country_id,
