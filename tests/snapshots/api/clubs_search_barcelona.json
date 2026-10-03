@@ -1,0 +1,87 @@
+{
+  "status": 200,
+  "body": {
+    "query": "barcelona",
+    "pageNumber": 1,
+    "lastPageNumber": 4,
+    "results": [
+      {
+        "id": "131",
+        "url": "/fc-barcelona/startseite/verein/131",
+        "name": "FC Barcelona",
+        "country": "Spain",
+        "squad": 27,
+        "marketValue": 1260000000
+      },
+      {
+        "id": "714",
+        "url": "/espanyol-barcelona/startseite/verein/714",
+        "name": "RCD Espanyol Barcelona",
+        "country": "Spain",
+        "squad": 25,
+        "marketValue": 127800000
+      },
+      {
+        "id": "2464",
+        "url": "/fc-barcelona-b/startseite/verein/2464",
+        "name": "FC Barcelona Atlètic",
+        "country": "Spain",
+        "squad": 30,
+        "marketValue": 16579999
+      },
+      {
+        "id": "3523",
+        "url": "/barcelona-sc-guayaquil/startseite/verein/3523",
+        "name": "Barcelona SC Guayaquil",
+        "country": "Ecuador",
+        "squad": 34,
+        "marketValue": 16149999
+      },
+      {
+        "id": "20528",
+        "url": "/ce-europa/startseite/verein/20528",
+        "name": "CE Europa",
+        "country": "Spain",
+        "squad": 23,
+        "marketValue": 2200000
+      },
+      {
+        "id": "10773",
+        "url": "/espanyol-barcelona-b/startseite/verein/10773",
+        "name": "RCD Espanyol B",
+        "country": "Spain",
+        "squad": 24,
+        "marketValue": 1650000
+      },
+      {
+        "id": "41584",
+        "url": "/fc-barcelona-uefa-u19/startseite/verein/41584",
+        "name": "FC Barcelona UEFA U19",
+        "country": "Spain",
+        "squad": 20,
+        "marketValue": 200000
+      },
+      {
+        "id": "22587",
+        "url": "/barcelona-sc-guayaquil-u20/startseite/verein/22587",
+        "name": "Barcelona SC Guayaquil U19",
+        "country": "Ecuador",
+        "squad": 34
+      },
+      {
+        "id": "72476",
+        "url": "/barcelona-futebol-clube-ro-/startseite/verein/72476",
+        "name": "Barcelona FC (RO)",
+        "country": "Brazil",
+        "squad": 26
+      },
+      {
+        "id": "93588",
+        "url": "/barcelona-futebol-clube/startseite/verein/93588",
+        "name": "Barcelona FC (BA)",
+        "country": "Brazil",
+        "squad": 14
+      }
+    ]
+  }
+}

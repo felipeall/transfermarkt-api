@@ -1,0 +1,47 @@
+{
+  "status": 200,
+  "body": {
+    "id": "17259",
+    "url": "https://www.transfermarkt.com/manuel-neuer/profil/spieler/17259",
+    "name": "Manuel Neuer",
+    "description": "Manuel Neuer, 40, from Germany ➤ Bayern Munich, since 2011 ➤ Goalkeeper ➤ Market value: €4.00m ➤ * 27/03/1986 in Gelsenkirchen, Germany",
+    "nameInHomeCountry": "Manuel Peter Neuer",
+    "imageUrl": "https://img.a.transfermarkt.technology/portrait/header/17259-1762943283.jpg?lm=4711",
+    "placeOfBirth": {
+      "city": "Gelsenkirchen",
+      "country": "Germany"
+    },
+    "height": 193,
+    "citizenship": [
+      "Germany"
+    ],
+    "isRetired": false,
+    "position": {
+      "main": "Goalkeeper",
+      "other": []
+    },
+    "foot": "right",
+    "shirtNumber": "#1",
+    "club": {
+      "id": "27",
+      "name": "Bayern Munich",
+      "joined": "2011-01-07",
+      "contractExpires": "2027-06-30"
+    },
+    "marketValue": 4000000,
+    "agent": {
+      "name": "PRO Profil GmbH",
+      "url": "/pro-profil-gmbh/beraterfirma/berater/12"
+    },
+    "outfitter": "adidas",
+    "socialMedia": [
+      "http://twitter.com/Manuel_Neuer",
+      "http://www.facebook.com/manuel.neuer/",
+      "http://www.instagram.com/manuelneuer/",
+      "http://manuel-neuer.com/",
+      "http://www.tiktok.com/@manuelneuer"
+    ],
+    "trainerProfile": {},
+    "relatives": []
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "status": 404,
+  "body": {
+    "detail": "Invalid request (url: https://www.transfermarkt.com/-/profil/spieler/0)"
+  }
+}

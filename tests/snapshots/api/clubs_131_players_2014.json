@@ -1,0 +1,513 @@
+{
+  "status": 200,
+  "body": {
+    "id": "131",
+    "players": [
+      {
+        "id": "74857",
+        "name": "Marc ter Stegen",
+        "position": "Goalkeeper",
+        "dateOfBirth": "1992-04-30",
+        "age": 23,
+        "nationality": [
+          "Germany"
+        ],
+        "currentClub": "Ajax Amsterdam",
+        "height": 187,
+        "foot": "right",
+        "joinedOn": "2014-01-07",
+        "signedFrom": "Borussia Mönchengladbach",
+        "marketValue": 15000000
+      },
+      {
+        "id": "40423",
+        "name": "Claudio Bravo",
+        "position": "Goalkeeper",
+        "dateOfBirth": "1983-04-13",
+        "age": 32,
+        "nationality": [
+          "Chile",
+          "Spain"
+        ],
+        "currentClub": "Retired",
+        "height": 184,
+        "foot": "right",
+        "joinedOn": "2014-01-07",
+        "signedFrom": "Real Sociedad",
+        "marketValue": 12000000
+      },
+      {
+        "id": "65263",
+        "name": "Jordi Masip",
+        "position": "Goalkeeper",
+        "dateOfBirth": "1989-03-01",
+        "age": 26,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "Retired",
+        "height": 180,
+        "foot": "right",
+        "joinedOn": "2014-01-07",
+        "signedFrom": "FC Barcelona B",
+        "marketValue": 1500000
+      },
+      {
+        "id": "18944",
+        "name": "Gerard Piqué",
+        "position": "Centre-Back",
+        "dateOfBirth": "1987-02-02",
+        "age": 28,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "Retired",
+        "height": 194,
+        "foot": "right",
+        "joinedOn": "2008-01-07",
+        "signedFrom": "Manchester United",
+        "marketValue": 35000000
+      },
+      {
+        "id": "99922",
+        "name": "Marc Bartra",
+        "position": "Centre-Back",
+        "dateOfBirth": "1991-01-15",
+        "age": 24,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "Real Betis Balompié",
+        "height": 184,
+        "foot": "right",
+        "joinedOn": "2012-01-07",
+        "signedFrom": "FC Barcelona B",
+        "marketValue": 12000000,
+        "status": "Hamstring injury - Return expected on 05/10/2026"
+      },
+      {
+        "id": "15904",
+        "name": "Thomas Vermaelen",
+        "position": "Centre-Back",
+        "dateOfBirth": "1985-11-14",
+        "age": 29,
+        "nationality": [
+          "Belgium"
+        ],
+        "currentClub": "Retired",
+        "height": 183,
+        "foot": "left",
+        "joinedOn": "2014-09-08",
+        "signedFrom": "Arsenal FC",
+        "marketValue": 6000000
+      },
+      {
+        "id": "191987",
+        "name": "Edgar Ié",
+        "position": "Centre-Back",
+        "dateOfBirth": "1994-01-05",
+        "age": 21,
+        "nationality": [
+          "Guinea-Bissau",
+          "Portugal"
+        ],
+        "currentClub": "CD Feirense",
+        "height": 182,
+        "foot": "right",
+        "signedFrom": "",
+        "marketValue": 1200000
+      },
+      {
+        "id": "69751",
+        "name": "Jordi Alba",
+        "position": "Left-Back",
+        "dateOfBirth": "1989-03-21",
+        "age": 26,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "Retired",
+        "height": 170,
+        "foot": "left",
+        "joinedOn": "2012-01-07",
+        "signedFrom": "Valencia CF",
+        "marketValue": 25000000
+      },
+      {
+        "id": "5404",
+        "name": "Jérémy Mathieu",
+        "position": "Left-Back",
+        "dateOfBirth": "1983-10-29",
+        "age": 31,
+        "nationality": [
+          "France"
+        ],
+        "currentClub": "Retired",
+        "height": 189,
+        "foot": "left",
+        "joinedOn": "2014-07-23",
+        "signedFrom": "Valencia CF",
+        "marketValue": 15000000
+      },
+      {
+        "id": "34495",
+        "name": "Adriano",
+        "position": "Left-Back",
+        "dateOfBirth": "1984-10-26",
+        "age": 30,
+        "nationality": [
+          "Brazil",
+          "Spain"
+        ],
+        "currentClub": "Retired",
+        "height": 172,
+        "foot": "both",
+        "joinedOn": "2010-07-14",
+        "signedFrom": "Sevilla FC",
+        "marketValue": 8000000
+      },
+      {
+        "id": "68645",
+        "name": "Martín Montoya",
+        "position": "Right-Back",
+        "dateOfBirth": "1991-04-14",
+        "age": 24,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "Retired",
+        "height": 175,
+        "foot": "right",
+        "joinedOn": "2012-01-07",
+        "signedFrom": "FC Barcelona B",
+        "marketValue": 10000000
+      },
+      {
+        "id": "15951",
+        "name": "Dani Alves",
+        "position": "Right-Back",
+        "dateOfBirth": "1983-06-05",
+        "age": 32,
+        "nationality": [
+          "Brazil",
+          "Spain"
+        ],
+        "currentClub": "Retired",
+        "height": 172,
+        "foot": "right",
+        "joinedOn": "2021-12-11",
+        "signedFrom": "Without Club",
+        "marketValue": 10000000
+      },
+      {
+        "id": "58426",
+        "name": "Douglas",
+        "position": "Right-Back",
+        "dateOfBirth": "1990-06-08",
+        "age": 24,
+        "nationality": [
+          "Brazil"
+        ],
+        "currentClub": "Retired",
+        "height": 171,
+        "foot": "right",
+        "joinedOn": "2014-08-26",
+        "signedFrom": "São Paulo Futebol Clube",
+        "marketValue": 2000000
+      },
+      {
+        "id": "65230",
+        "name": "Sergio Busquets",
+        "position": "Defensive Midfield",
+        "dateOfBirth": "1988-07-16",
+        "age": 26,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "Retired",
+        "height": 189,
+        "foot": "right",
+        "joinedOn": "2008-01-07",
+        "signedFrom": "FC Barcelona Atlètic",
+        "marketValue": 35000000
+      },
+      {
+        "id": "19981",
+        "name": "Javier Mascherano",
+        "position": "Defensive Midfield",
+        "dateOfBirth": "1984-08-06",
+        "age": 31,
+        "nationality": [
+          "Argentina",
+          "Italy"
+        ],
+        "currentClub": "Retired",
+        "height": 174,
+        "foot": "right",
+        "joinedOn": "2010-08-28",
+        "signedFrom": ": Ablöse €20.00m",
+        "marketValue": 15000000
+      },
+      {
+        "id": "181112",
+        "name": "Sergi Samper",
+        "position": "Defensive Midfield",
+        "dateOfBirth": "1995-01-20",
+        "age": 20,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "Debreceni VSC",
+        "height": 181,
+        "foot": "right",
+        "joinedOn": "2016-01-07",
+        "signedFrom": "FC Barcelona B",
+        "marketValue": 5000000
+      },
+      {
+        "id": "228658",
+        "name": "Diawandou Diagne",
+        "position": "Defensive Midfield",
+        "dateOfBirth": "1994-07-28",
+        "age": 20,
+        "nationality": [
+          "Senegal"
+        ],
+        "currentClub": "Without Club",
+        "height": 175,
+        "foot": "right",
+        "signedFrom": "",
+        "marketValue": 800000
+      },
+      {
+        "id": "268670",
+        "name": "Gerard Gumbau",
+        "position": "Defensive Midfield",
+        "dateOfBirth": "1994-12-18",
+        "age": 20,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "Granada CF",
+        "height": 188,
+        "foot": "left",
+        "signedFrom": "",
+        "marketValue": 300000
+      },
+      {
+        "id": "7600",
+        "name": "Andrés Iniesta",
+        "position": "Central Midfield",
+        "dateOfBirth": "1984-11-05",
+        "age": 31,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "Retired",
+        "height": 171,
+        "foot": "both",
+        "joinedOn": "2002-01-07",
+        "signedFrom": "FC Barcelona B",
+        "marketValue": 35000000
+      },
+      {
+        "id": "32467",
+        "name": "Ivan Rakitic",
+        "position": "Central Midfield",
+        "dateOfBirth": "1988-10-03",
+        "age": 27,
+        "nationality": [
+          "Croatia",
+          "Switzerland"
+        ],
+        "currentClub": "Retired",
+        "height": 184,
+        "foot": "right",
+        "joinedOn": "2014-01-07",
+        "signedFrom": "Sevilla FC",
+        "marketValue": 30000000
+      },
+      {
+        "id": "85370",
+        "name": "Sergi Roberto",
+        "position": "Central Midfield",
+        "dateOfBirth": "1992-07-02",
+        "age": 23,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "Los Angeles Galaxy",
+        "height": 178,
+        "foot": "right",
+        "joinedOn": "2013-01-07",
+        "signedFrom": "FC Barcelona B",
+        "marketValue": 8000000
+      },
+      {
+        "id": "7607",
+        "name": "Xavi",
+        "position": "Central Midfield",
+        "dateOfBirth": "1980-01-25",
+        "age": 35,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "Retired",
+        "height": 170,
+        "foot": "right",
+        "joinedOn": "1998-01-07",
+        "signedFrom": ": Ablöse -",
+        "marketValue": 5000000
+      },
+      {
+        "id": "68290",
+        "name": "Neymar",
+        "position": "Attacking Midfield",
+        "dateOfBirth": "1992-05-02",
+        "age": 23,
+        "nationality": [
+          "Brazil"
+        ],
+        "currentClub": "Santos FC",
+        "height": 175,
+        "foot": "right",
+        "joinedOn": "2013-01-07",
+        "signedFrom": "Santos FC",
+        "marketValue": 80000000,
+        "status": "Hamstring injury - Return unknown"
+      },
+      {
+        "id": "129473",
+        "name": "Rafinha",
+        "position": "Attacking Midfield",
+        "dateOfBirth": "1993-12-02",
+        "age": 22,
+        "nationality": [
+          "Brazil",
+          "Spain"
+        ],
+        "currentClub": "Retired",
+        "height": 174,
+        "foot": "left",
+        "joinedOn": "2013-01-07",
+        "signedFrom": "FC Barcelona B",
+        "marketValue": 12000000
+      },
+      {
+        "id": "226074",
+        "name": "Alen Halilovic",
+        "position": "Attacking Midfield",
+        "dateOfBirth": "1996-06-18",
+        "age": 19,
+        "nationality": [
+          "Croatia"
+        ],
+        "currentClub": "Without Club",
+        "height": 169,
+        "foot": "left",
+        "joinedOn": "2015-01-07",
+        "signedFrom": "FC Barcelona B",
+        "marketValue": 5000000
+      },
+      {
+        "id": "28003",
+        "name": "Lionel Messi",
+        "position": "Right Winger",
+        "dateOfBirth": "1987-06-24",
+        "age": 28,
+        "nationality": [
+          "Argentina",
+          "Spain"
+        ],
+        "currentClub": "Inter Miami CF",
+        "height": 170,
+        "foot": "left",
+        "joinedOn": "2005-01-07",
+        "signedFrom": "FC Barcelona B",
+        "marketValue": 120000000
+      },
+      {
+        "id": "65278",
+        "name": "Pedro",
+        "position": "Right Winger",
+        "dateOfBirth": "1987-07-28",
+        "age": 27,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "Without Club",
+        "height": 167,
+        "foot": "both",
+        "joinedOn": "2008-01-01",
+        "signedFrom": "FC Barcelona B",
+        "marketValue": 20000000
+      },
+      {
+        "id": "223725",
+        "name": "Munir El Haddadi",
+        "position": "Right Winger",
+        "dateOfBirth": "1995-01-09",
+        "age": 19,
+        "nationality": [
+          "Morocco",
+          "Spain"
+        ],
+        "currentClub": "Albacete Balompié",
+        "height": 177,
+        "foot": "left",
+        "joinedOn": "2015-01-07",
+        "signedFrom": "FC Barcelona B",
+        "marketValue": 10000000
+      },
+      {
+        "id": "204103",
+        "name": "Adama Traoré",
+        "position": "Right Winger",
+        "dateOfBirth": "1996-01-25",
+        "age": 19,
+        "nationality": [
+          "Spain",
+          "Mali"
+        ],
+        "currentClub": "Deportivo A Coruña",
+        "height": 178,
+        "foot": "right",
+        "joinedOn": "2022-01-29",
+        "signedFrom": "Wolverhampton Wanderers",
+        "marketValue": 5000000
+      },
+      {
+        "id": "44352",
+        "name": "Luis Suárez",
+        "position": "Centre-Forward",
+        "dateOfBirth": "1987-01-24",
+        "age": 28,
+        "nationality": [
+          "Uruguay"
+        ],
+        "currentClub": "Inter Miami CF",
+        "height": 182,
+        "foot": "right",
+        "joinedOn": "2014-11-07",
+        "signedFrom": ": Ablöse €81.72m",
+        "marketValue": 60000000
+      },
+      {
+        "id": "199369",
+        "name": "Sandro Ramírez",
+        "position": "Centre-Forward",
+        "dateOfBirth": "1995-09-07",
+        "age": 19,
+        "nationality": [
+          "Spain"
+        ],
+        "currentClub": "UD Las Palmas",
+        "height": 175,
+        "foot": "right",
+        "joinedOn": "2015-01-07",
+        "signedFrom": "FC Barcelona B",
+        "marketValue": 5000000
+      }
+    ]
+  }
+}

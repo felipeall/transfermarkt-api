@@ -1,0 +1,90 @@
+{
+  "status": 200,
+  "body": {
+    "id": "GB1",
+    "name": "Premier League",
+    "seasonId": "2026",
+    "clubs": [
+      {
+        "id": "281",
+        "name": "Manchester City"
+      },
+      {
+        "id": "11",
+        "name": "Arsenal FC"
+      },
+      {
+        "id": "631",
+        "name": "Chelsea FC"
+      },
+      {
+        "id": "31",
+        "name": "Liverpool FC"
+      },
+      {
+        "id": "985",
+        "name": "Manchester United"
+      },
+      {
+        "id": "148",
+        "name": "Tottenham Hotspur"
+      },
+      {
+        "id": "762",
+        "name": "Newcastle United"
+      },
+      {
+        "id": "1237",
+        "name": "Brighton & Hove Albion"
+      },
+      {
+        "id": "1148",
+        "name": "Brentford FC"
+      },
+      {
+        "id": "873",
+        "name": "Crystal Palace"
+      },
+      {
+        "id": "989",
+        "name": "AFC Bournemouth"
+      },
+      {
+        "id": "405",
+        "name": "Aston Villa"
+      },
+      {
+        "id": "703",
+        "name": "Nottingham Forest"
+      },
+      {
+        "id": "289",
+        "name": "Sunderland AFC"
+      },
+      {
+        "id": "399",
+        "name": "Leeds United"
+      },
+      {
+        "id": "931",
+        "name": "Fulham FC"
+      },
+      {
+        "id": "29",
+        "name": "Everton FC"
+      },
+      {
+        "id": "677",
+        "name": "Ipswich Town"
+      },
+      {
+        "id": "990",
+        "name": "Coventry City"
+      },
+      {
+        "id": "3008",
+        "name": "Hull City"
+      }
+    ]
+  }
+}
