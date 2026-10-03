@@ -1,42 +1,33 @@
+from typing import Optional
+
 import pytest
-from schema import Regex
+from fastapi.testclient import TestClient
+from requests import Response
+
+from app.main import app
+from app.services.base import TransfermarktBase
+from tests.upstream import build_response, load_manifest
+
+
+@pytest.fixture(scope="session")
+def manifest() -> dict:
+    """Recorded website fixtures index."""
+    return load_manifest()
 
 
 @pytest.fixture
-def len_greater_than_0():
-    return lambda x: len(x) > 0
+def client(monkeypatch: pytest.MonkeyPatch, manifest: dict) -> TestClient:
+    """API client whose upstream requests are served from recorded fixtures; never touches the network."""
+
+    def offline_make_request(self: TransfermarktBase, url: Optional[str] = None) -> Response:
+        """Serve a website page from the recorded fixtures."""
+        return build_response(url or self.URL, manifest)
+
+    monkeypatch.setattr(TransfermarktBase, "make_request", offline_make_request)
+    return TestClient(app, raise_server_exceptions=False)
 
 
 @pytest.fixture
-def len_equal_to_0():
-    return lambda x: len(x) == 0
-
-
-@pytest.fixture
-def regex_club_url():
-    return Regex(r"^/\w.+/startseite/verein/\d+$")
-
-
-@pytest.fixture
-def regex_date_mmm_dd_yyyy():
-    return Regex(r"^(\w+\s\d+,\s\d+)|(-)$")
-
-
-@pytest.fixture
-def regex_market_value():
-    return Regex(r"^(€\d+\.\d+.(m|bn))|(€\d+.k)|(-)$")
-
-
-@pytest.fixture
-def regex_value_variation():
-    return Regex(r"^(\+|-)?€(\+|-)?(\d.+)(k|m)$")
-
-
-@pytest.fixture
-def regex_integer():
-    return Regex(r"^(\d+|-)$")
-
-
-@pytest.fixture
-def regex_height():
-    return Regex(r"^(\d+,\d+m)|(m)$")
+def live_client() -> TestClient:
+    """API client that calls the real upstreams."""
+    return TestClient(app, raise_server_exceptions=False)
