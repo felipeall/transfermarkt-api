@@ -84,13 +84,6 @@ class Players:
             "//div[@class='content']//text()"
         )
 
-    class Stats:
-        ROWS = "//table[@class='items']//tbody//tr"
-        HEADERS = "//table[@class='items']//thead//tr//@title"
-        COMPETITIONS_URLS = "//table[@class='items']//td[@class='hauptlink no-border-links']//a//@href"
-        CLUBS_URLS = "//table[@class='items']//td[@class='hauptlink no-border-rechts zentriert']//a//@href"
-        DATA = ".//text()"
-
     class Achievements:
         ACHIEVEMENTS = "//div[@class='box'][descendant::table[@class='auflistung']]"
         TITLE = ".//h2//text()"

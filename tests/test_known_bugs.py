@@ -58,7 +58,6 @@ def test_club_players_joined_on_is_day_first(client: TestClient) -> None:
     assert joan_garcia["joinedOn"] == "2025-07-01"
 
 
-@known_bug("stats page is now client-rendered; no HTML table to parse")
 def test_player_stats_not_empty(client: TestClient) -> None:
     """Stats are returned for a player with a long career."""
     body = client.get("/players/28003/stats").json()

@@ -1,67 +1,64 @@
-from dataclasses import dataclass
+from collections import Counter
 
-from app.services.base import TransfermarktBase
-from app.utils.utils import extract_from_url, to_camel_case, zip_lists_into_dict
-from app.utils.xpath import Players
+from app.tfmkt import TfmktClient
+
+# Competition type IDs the website's detailed stats table leaves out (national-team matches, including friendlies).
+# Mirrors `nationalTeamCompetitions` in the website's player-performance-proxy bundle.
+NATIONAL_TEAM_COMPETITION_TYPE_IDS = {11, 17, 19, 20}
 
 
-@dataclass
-class TransfermarktPlayerStats(TransfermarktBase):
+async def get_player_stats(tfmkt: TfmktClient, player_id: str) -> dict:
     """
-    A class for retrieving and parsing the players stats from Transfermarkt.
+    Aggregate a player's match records into per season, competition and club totals.
 
-    Args:
-        player_id (str): The unique identifier of the player.
-        URL (str): The URL template for the player's stats page on Transfermarkt.
+    Follows the website's own aggregation of `/player/{id}/performance-game`: appearances count matches with
+    participation state `played`, numeric statistics are summed, and each card event counts once.
+
+    Returns:
+        dict: The player ID and one stats entry per (season, competition, club), most recent season first.
     """
+    performance = (await tfmkt.player_performance_games(player_id))["performance"]
+    games = [
+        game
+        for game in performance
+        if game["gameInformation"]["competitionTypeId"] not in NATIONAL_TEAM_COMPETITION_TYPE_IDS
+    ]
 
-    player_id: str = None
-    URL: str = "https://www.transfermarkt.com/-/leistungsdatendetails/spieler/{player_id}"
+    totals: dict[tuple[str, str, str], Counter] = {}
+    for game in games:
+        info = game["gameInformation"]
+        key = (str(info["seasonId"]), info["competitionId"], str(game["clubsInformation"]["club"]["clubId"]))
+        total = totals.setdefault(key, Counter())
+        stats = game["statistics"]
+        if stats["generalStatistics"]["participationState"] != "played":
+            continue
+        cards = stats["cardStatistics"]
+        total["appearances"] += 1
+        total["goals"] += stats["goalStatistics"]["goalsScoredTotal"] or 0
+        total["assists"] += stats["goalStatistics"]["assists"] or 0
+        total["yellowCards"] += 1 if cards.get("yellowCard") else 0
+        total["secondYellowCards"] += 1 if cards.get("yellowRedCard") else 0
+        total["redCards"] += 1 if cards.get("redCard") else 0
+        total["minutesPlayed"] += stats["playingTimeStatistics"]["playedMinutes"] or 0
 
-    def __post_init__(self) -> None:
-        """Initialize the TransfermarktPlayerStats class."""
-        self.URL = self.URL.format(player_id=self.player_id)
-        self.page = self.request_url_page()
-        self.raise_exception_if_not_found(xpath=Players.Profile.URL)
+    competitions = await tfmkt.competitions(competition_id for _, competition_id, _ in totals)
 
-    def __parse_player_stats(self) -> list:
-        """
-        Parse and extract player statistics data from the Transfermarkt player stats page.
-
-        Returns:
-            list: A list of dictionaries where each dictionary represents the statistics for a specific competition.
-                Each dictionary includes keys for competition ID, club ID, season ID, competition name, and various
-                statistical values for the player.
-        """
-        rows = self.page.xpath(Players.Stats.ROWS)
-        headers = to_camel_case(
-            ["Competition id", "Club id", "Season id", "Competition name"]
-            + self.get_list_by_xpath(Players.Stats.HEADERS),
-        )
-
-        competitions_urls = self.get_list_by_xpath(Players.Stats.COMPETITIONS_URLS)
-        clubs_urls = self.get_list_by_xpath(Players.Stats.CLUBS_URLS)
-        competitions_ids = [extract_from_url(url) for url in competitions_urls]
-        clubs_ids = [extract_from_url(url) for url in clubs_urls]
-        stats = [
-            [item for text in row.xpath(Players.Stats.DATA) if text != "\xa0" for item in text.split("\xa0/\xa0")][1:]
-            for row in rows
-        ]
-        data = [
-            [comp_url, club_url] + stats for comp_url, club_url, stats in list(zip(competitions_ids, clubs_ids, stats))
-        ]
-
-        return [zip_lists_into_dict(headers, stat) for stat in data]
-
-    def get_player_stats(self) -> dict:
-        """
-        Retrieve and parse player statistics data for the specified player from Transfermarkt.
-
-        Returns:
-            dict: A dictionary containing the player's unique identifier, parsed player statistics, and the timestamp of
-            when the data was last updated.
-        """
-        self.response["id"] = self.player_id
-        self.response["stats"] = self.__parse_player_stats()
-
-        return self.response
+    return {
+        "id": player_id,
+        "stats": [
+            {
+                "competitionId": competition_id,
+                "competitionName": competitions.get(competition_id, {}).get("name"),
+                "seasonId": season_id,
+                "clubId": club_id,
+                "appearances": total["appearances"],
+                "goals": total["goals"],
+                "assists": total["assists"],
+                "yellowCards": total["yellowCards"],
+                "secondYellowCards": total["secondYellowCards"],
+                "redCards": total["redCards"],
+                "minutesPlayed": total["minutesPlayed"],
+            }
+            for (season_id, competition_id, club_id), total in totals.items()
+        ],
+    }
