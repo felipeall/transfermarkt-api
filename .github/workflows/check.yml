@@ -4,22 +4,21 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_call:
 
 jobs:
   check:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-      - name: ruff
-        run: |
-          pip install ruff
-          ruff check .
-      - name: black
-        run: |
-          pip install black
-          black --check .
-      - name: interrogate
-        run: |
-          pip install interrogate
-          interrogate app/services -vv
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: Install dependencies
+        run: uv sync --frozen
+      - name: ruff check
+        run: uv run ruff check .
+      - name: ruff format
+        run: uv run ruff format --check .
+      - name: pytest
+        run: uv run pytest

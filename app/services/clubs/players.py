@@ -100,7 +100,7 @@ class TransfermarktClubPlayers(TransfermarktBase):
                 "marketValue": market_value,
                 "status": status,
             }
-            for idx, name, position, dob, age, nationality, current_club, height, foot, joined_on, joined, signed_from, contract, market_value, status, in zip(  # noqa: E501
+            for idx, name, position, dob, age, nationality, current_club, height, foot, joined_on, joined, signed_from, contract, market_value, status in zip(  # noqa: E501
                 players_ids,
                 players_names,
                 players_positions,

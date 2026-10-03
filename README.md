@@ -12,6 +12,8 @@ https://transfermarkt-api.fly.dev/
 
 ### Running Locally
 
+Requires [uv](https://docs.astral.sh/uv/).
+
 ````bash
 # Clone the repository
 $ git clone https://github.com/felipeall/transfermarkt-api.git
@@ -19,20 +21,27 @@ $ git clone https://github.com/felipeall/transfermarkt-api.git
 # Go to the project's root folder
 $ cd transfermarkt-api
 
-# Instantiate a Poetry virtual env
-$ poetry shell
-
-# Install the dependencies
-$ poetry install --no-root
-
-# (optional) Append the current directory to PYTHONPATH
-$ export PYTHONPATH=$PYTHONPATH:$(pwd)
+# Install Python 3.12 and the dependencies
+$ uv sync
 
 # Start the API server
-$ python app/main.py
+$ uv run uvicorn app.main:app --reload
 
 # Access the API local page
 $ open http://localhost:8000/
+````
+
+### Running Tests
+
+````bash
+# Offline tests (recorded upstream pages, no network)
+$ uv run pytest
+
+# Live smoke tests against Transfermarkt
+$ uv run pytest -m live
+
+# Re-record upstream fixtures and response snapshots (needs an IP the Transfermarkt WAF does not block)
+$ uv run python scripts/capture_fixtures.py
 ````
 
 ### Running via Docker

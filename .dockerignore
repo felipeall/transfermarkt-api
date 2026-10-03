@@ -1,0 +1,13 @@
+.git
+.github
+.venv
+.env
+.idea
+.serena
+.pytest_cache
+.ruff_cache
+.coverage
+**/__pycache__
+docs
+scripts
+tests

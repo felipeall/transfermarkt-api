@@ -1,47 +1,39 @@
-[tool.poetry]
+[project]
 name = "transfermarkt-api"
 version = "3.0.0"
 description = "API service to get data from Transfermarkt"
-authors = ["Felipe Allegretti <felipe@allegretti.me>"]
-license = "MIT"
+authors = [{ name = "Felipe Allegretti", email = "felipe@allegretti.me" }]
+license = { text = "MIT" }
 readme = "README.md"
-packages = [{include = "app"}]
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "beautifulsoup4>=4.12.3",
+    "fastapi>=0.115.6",
+    "lxml>=5.3.0",
+    "pydantic>=2.10.4",
+    "pydantic-settings>=2.7.1",
+    "python-dateutil>=2.9.0.post0",
+    "requests>=2.32.3",
+    "slowapi>=0.1.9",
+    "uvicorn[standard]>=0.34.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-lxml = "==5.3.0"
-beautifulsoup4 = "==4.12.3"
-requests = "==2.32.3"
-fastapi = "==0.115.6"
-uvicorn = {extras = ["standard"], version = "==0.34.0"}
-slowapi = "==0.1.9"
-pydantic-settings = "==2.7.1"
-pydantic= "==2.10.4"
-python-dateutil = "==2.9.0.post0"
+[dependency-groups]
+dev = [
+    "httpx2>=2.13.1",
+    "pytest>=8.3",
+    "pytest-cov>=6.0",
+    "ruff>=0.8",
+]
 
-[tool.poetry.group.dev.dependencies]
-jupyter = "==1.0.0"
-setuptools = "==68.2.2"
-
-[tool.poetry.group.check.dependencies]
-black = "==24.8.0"
-ruff = "==0.6.1"
-interrogate = "==1.7.0"
-
-[tool.poetry.group.tests.dependencies]
-pytest = "==7.3.1"
-pytest-cov = "==4.1.0"
-schema = "==0.7.5"
-
-[tool.black]
-line-length = 120
-verbose = true
-preview = true
+[tool.uv]
+package = false
 
 [tool.ruff]
 preview = true
 unsafe-fixes = true
 line-length = 120
+target-version = "py312"
 lint.select = [
     "F",  # pyflakes
     "E",  # pycodestyle errors
@@ -51,14 +43,11 @@ lint.select = [
     "Q",  # flake8-quotes
     "FAST",  # fastapi
 ]
+lint.ignore = ["COM812"]  # conflicts with ruff format
 
 [tool.pytest.ini_options]
-addopts = "--cov --cov-report term-missing --exitfirst"
-testpaths = [
-    "tests",
+addopts = "--strict-markers -m 'not live'"
+testpaths = ["tests"]
+markers = [
+    "live: hits real Transfermarkt upstreams; run with `-m live`",
 ]
-
-[tool.interrogate]
-ignore-init-module = true
-ignore-module = true
-fail-under = 100

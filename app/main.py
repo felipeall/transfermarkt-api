@@ -22,7 +22,8 @@ app.include_router(api_router)
 
 
 @app.get("/", include_in_schema=False)
-def docs_redirect():
+def docs_redirect() -> RedirectResponse:
+    """Redirect the root URL to the interactive API docs."""
     return RedirectResponse(url="/docs")
 
 
