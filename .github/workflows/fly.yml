@@ -4,8 +4,11 @@ on:
     branches:
       - main
 jobs:
+  check:
+    uses: ./.github/workflows/check.yml
   deploy:
     name: Deploy app
+    needs: check
     runs-on: ubuntu-latest
     concurrency: deploy-group
     steps:

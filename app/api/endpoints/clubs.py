@@ -12,6 +12,7 @@ router = APIRouter()
 
 @router.get("/search/{club_name}", response_model=schemas.ClubSearch, response_model_exclude_none=True)
 def search_clubs(club_name: str, page_number: Optional[int] = 1) -> dict:
+    """Search clubs by name."""
     tfmkt = TransfermarktClubSearch(query=club_name, page_number=page_number)
     found_clubs = tfmkt.search_clubs()
     return found_clubs
@@ -19,6 +20,7 @@ def search_clubs(club_name: str, page_number: Optional[int] = 1) -> dict:
 
 @router.get("/{club_id}/profile", response_model=schemas.ClubProfile, response_model_exclude_defaults=True)
 def get_club_profile(club_id: str) -> dict:
+    """Get a club's profile."""
     tfmkt = TransfermarktClubProfile(club_id=club_id)
     club_profile = tfmkt.get_club_profile()
     return club_profile
@@ -26,6 +28,7 @@ def get_club_profile(club_id: str) -> dict:
 
 @router.get("/{club_id}/players", response_model=schemas.ClubPlayers, response_model_exclude_defaults=True)
 def get_club_players(club_id: str, season_id: Optional[str] = None) -> dict:
+    """Get a club's squad for a season (current squad by default)."""
     tfmkt = TransfermarktClubPlayers(club_id=club_id, season_id=season_id)
     club_players = tfmkt.get_club_players()
     return club_players

@@ -1,13 +1,21 @@
-FROM python:3.9-slim-bullseye
+FROM python:3.12-slim
 
-ENV PYTHONUNBUFFERED=1
-ENV PYTHONPATH "${PYTHONPATH}:/app"
+COPY --from=ghcr.io/astral-sh/uv:0.5 /uv /bin/uv
+
+ENV PYTHONUNBUFFERED=1 \
+    UV_COMPILE_BYTECODE=1 \
+    UV_LINK_MODE=copy \
+    PATH="/app/.venv/bin:$PATH"
 
 WORKDIR /app
-COPY requirements.txt ./
 
-RUN pip install --no-cache-dir -r requirements.txt
+COPY pyproject.toml uv.lock ./
+RUN uv sync --frozen --no-dev --no-install-project
 
-COPY . ./
+COPY app ./app
 
-CMD ["python", "app/main.py"]
+RUN useradd --create-home appuser
+USER appuser
+
+EXPOSE 8000
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--proxy-headers", "--forwarded-allow-ips", "*"]

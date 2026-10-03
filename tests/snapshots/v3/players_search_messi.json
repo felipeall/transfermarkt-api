@@ -1,0 +1,152 @@
+{
+  "status": 200,
+  "body": {
+    "query": "messi",
+    "pageNumber": 1,
+    "lastPageNumber": 26,
+    "results": [
+      {
+        "id": "28003",
+        "name": "Lionel Messi",
+        "position": "RW",
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "age": 39,
+        "nationalities": [
+          "Argentina",
+          "Spain"
+        ],
+        "marketValue": 15000000
+      },
+      {
+        "id": "113586",
+        "name": "Manoel",
+        "position": "CB",
+        "club": {
+          "id": "2863",
+          "name": "América Futebol Clube (MG)"
+        },
+        "age": 36,
+        "nationalities": [
+          "Brazil"
+        ],
+        "marketValue": 100000
+      },
+      {
+        "id": "449151",
+        "name": "Junior Messias",
+        "position": "RW",
+        "club": {
+          "id": "252",
+          "name": "Genoa CFC"
+        },
+        "age": 35,
+        "nationalities": [
+          "Brazil",
+          "Italy"
+        ],
+        "marketValue": 1100000
+      },
+      {
+        "id": "744024",
+        "name": "João Marcelo",
+        "position": "CB",
+        "club": {
+          "id": "609",
+          "name": "Cruzeiro Esporte Clube"
+        },
+        "age": 26,
+        "nationalities": [
+          "Brazil"
+        ],
+        "marketValue": 3000000
+      },
+      {
+        "id": "173617",
+        "name": "Fabrício",
+        "position": "CF",
+        "club": {
+          "id": "8433",
+          "name": "Esporte Clube São Bento (SP)"
+        },
+        "age": 36,
+        "nationalities": [
+          "Brazil"
+        ]
+      },
+      {
+        "id": "1075590",
+        "name": "Rayane Messi",
+        "position": "LW",
+        "club": {
+          "id": "7732",
+          "name": "Al-Ettifaq FC"
+        },
+        "age": 19,
+        "nationalities": [
+          "France",
+          "Cameroon"
+        ],
+        "marketValue": 2800000
+      },
+      {
+        "id": "1185913",
+        "name": "Pierre Mounguengue",
+        "position": "CF",
+        "club": {
+          "id": "338",
+          "name": "Dynamo Kyiv"
+        },
+        "age": 18,
+        "nationalities": [
+          "France",
+          "Congo"
+        ],
+        "marketValue": 2000000
+      },
+      {
+        "id": "13810",
+        "name": "Alexandre Rotweiller",
+        "position": "DM",
+        "club": {
+          "id": "123",
+          "name": "Retired"
+        },
+        "age": 47,
+        "nationalities": [
+          "Brazil"
+        ]
+      },
+      {
+        "id": "393581",
+        "name": "Bruno Almeida",
+        "position": "RW",
+        "club": {
+          "id": "786",
+          "name": "AEL Limassol"
+        },
+        "age": 30,
+        "nationalities": [
+          "Portugal"
+        ],
+        "marketValue": 300000
+      },
+      {
+        "id": "76071",
+        "name": "Leandro",
+        "position": "LB",
+        "club": {
+          "id": "123",
+          "name": "Retired"
+        },
+        "age": 42,
+        "nationalities": [
+          "Brazil",
+          "Poland"
+        ]
+      }
+    ]
+  }
+}
