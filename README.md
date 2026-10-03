@@ -26,6 +26,7 @@ https://transfermarkt-api.fly.dev/
 | `GET /players/{player_id}/achievements` | Titles and awards with season, club and competition |
 | `GET /players/{player_id}/national_career` | Senior and youth national teams |
 | `GET /players/{player_id}/jersey_numbers` | `501`: no data source |
+| `GET /clubs/?country_id=` | Available club IDs and names for a country; limited upstream coverage, no pagination |
 | `GET /clubs/search/{club_name}?page_number=` | 10 results per page |
 | `GET /clubs/{club_id}/profile` | |
 | `GET /clubs/{club_id}/players?season_id=` | Current squad by default |

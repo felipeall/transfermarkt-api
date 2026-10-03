@@ -1,13 +1,20 @@
-from typing import Optional
+from typing import Annotated, Optional
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
 
 from app.schemas import clubs as schemas
 from app.schemas.achievements import Achievements
-from app.services.clubs import achievements, players, profile, search
+from app.schemas.clubs.listing import ClubListing
+from app.services.clubs import achievements, listing, players, profile, search
 from app.tfmkt import Tfmkt
 
 router = APIRouter()
+
+
+@router.get("/", response_model=ClubListing)
+async def list_clubs(country_id: Annotated[int, Query(gt=0)], tfmkt: Tfmkt) -> dict:
+    """List available clubs for a country. Coverage is limited; this is not a complete country directory."""
+    return await listing.list_clubs(tfmkt, country_id)
 
 
 @router.get("/search/{club_name}", response_model=schemas.ClubSearch)
