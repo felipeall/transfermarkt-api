@@ -1,6 +1,7 @@
 """Behavior of the JSON-backed endpoints: recorded upstream data plus synthetic edge cases."""
 
 from collections.abc import Iterator
+from datetime import datetime
 
 import httpx
 import pytest
@@ -149,3 +150,16 @@ def test_player_without_transfer_history(synthetic_client: tuple[TestClient, dic
     body = client.get("/players/7/transfers").json()
 
     assert body["transfers"] == []
+
+
+def test_updated_at_reports_when_cached_data_was_fetched(client: TestClient) -> None:
+    """updatedAt reports when cached data was fetched."""
+    client.get("/players/28003/profile")
+    tfmkt = app.dependency_overrides[get_tfmkt]()
+    fetched_at = datetime(2026, 1, 2, 3, 4, 5)
+    for key, (_, data) in list(tfmkt.cache.items()):
+        tfmkt.cache[key] = (fetched_at, data)
+
+    body = client.get("/players/28003/profile").json()
+
+    assert body["updatedAt"] == fetched_at.isoformat()

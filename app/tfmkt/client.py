@@ -10,6 +10,7 @@ from cachetools import TTLCache
 from fastapi import HTTPException
 
 from app.settings import settings
+from app.tfmkt.freshness import record_fetch
 
 BATCH_SIZE = 100  # batch routes accepted 200 IDs in testing; stay well below
 
@@ -54,7 +55,9 @@ class TfmktClient:
         key = str(request.url)
         cache = self.reference_cache if reference else self.cache
         if key in cache:
-            return cache[key][1]
+            fetched_at, data = cache[key]
+            record_fetch(fetched_at)
+            return data
 
         async with self.semaphore:
             try:
@@ -65,7 +68,9 @@ class TfmktClient:
                 raise HTTPException(status_code=502, detail=f"Upstream connection error for {path}: {e}")
 
         data = self._parse(response, path)
-        cache[key] = (datetime.now(), data)
+        fetched_at = datetime.now()
+        cache[key] = (fetched_at, data)
+        record_fetch(fetched_at)
         return data
 
     async def get_optional(self, path: str, params: Optional[list[tuple[str, Any]]] = None) -> Any:

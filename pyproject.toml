@@ -1,21 +1,17 @@
 [project]
 name = "transfermarkt-api"
-version = "3.0.0"
+version = "4.0.0"
 description = "API service to get data from Transfermarkt"
 authors = [{ name = "Felipe Allegretti", email = "felipe@allegretti.me" }]
 license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
 dependencies = [
-    "beautifulsoup4>=4.12.3",
     "cachetools>=5.5",
     "fastapi>=0.115.6",
     "httpx>=0.28",
-    "lxml>=5.3.0",
     "pydantic>=2.10.4",
     "pydantic-settings>=2.7.1",
-    "python-dateutil>=2.9.0.post0",
-    "requests>=2.32.3",
     "slowapi>=0.1.9",
     "uvicorn[standard]>=0.34.0",
 ]
@@ -44,8 +40,15 @@ lint.select = [
     "COM",  # flake8-commas
     "Q",  # flake8-quotes
     "FAST",  # fastapi
+    "ANN",  # type hints
+    "D102",  # docstring: public method
+    "D103",  # docstring: public function
+    "D107",  # docstring: __init__
 ]
-lint.ignore = ["COM812"]  # conflicts with ruff format
+lint.ignore = [
+    "COM812",  # conflicts with ruff format
+    "ANN401",  # Any is allowed for JSON payloads
+]
 
 [tool.pytest.ini_options]
 addopts = "--strict-markers -m 'not live'"

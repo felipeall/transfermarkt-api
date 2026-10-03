@@ -1,0 +1,56 @@
+# Changelog
+
+## 4.0.0 — unreleased
+
+Data now comes from Transfermarkt's JSON API (`tmapi.transfermarkt.technology`) instead of scraped HTML pages. The website blocks most cloud and datacenter IPs, which made v3 return errors on hosted deployments (#109, #110, #117, #121).
+
+### Fixed
+
+- Dates were parsed month-first after the website switched to `dd/mm/yyyy` (#111). Affected: birth dates, market-value history, transfer dates, `retiredSince`, squad `joinedOn`. All dates now come from ISO fields.
+- Player profiles were missing `dateOfBirth` and `age`.
+- Player stats were always empty, because the website now renders them client-side. Stats are aggregated from match data using the website's own rules.
+- Club profiles failed with 500 when stadium, league or transfer data was missing (#106, #107).
+- Upstream failures (blocked or empty pages) returned `500`. They now return deliberate errors: `404`, `502`, `503`, `504`.
+- Money values are exact instead of parsed from rounded display strings.
+- Squad `signedFrom` no longer contains parsing artefacts.
+
+### Added
+
+- Stats: `secondYellowCards`.
+- Club squad: `signedFrom` and `joinedOn` for past seasons, from transfer history.
+- Club profile: `updatedAt`.
+- Response caching, an upstream concurrency cap and request timeouts (configurable, see README).
+
+### Changed (breaking)
+
+- Fields without an upstream value are returned as `null` instead of being omitted. Many fields are now nullable.
+- Market value `0` (no valuation) is returned as `null`.
+- Club names are the clubs' current full names everywhere (e.g. `Paris Saint-Germain` instead of `PSG`).
+- Stats `seasonId` is the season start year (`"2014"` for 14/15). Stats only cover club competitions; national-team matches are excluded, as on the website's detailed stats page.
+- Club squad for a past season: `age`, `contract` and `marketValue` are `null` instead of a value of uncertain date.
+- Club profile `league.countryId` is Transfermarkt's country ID (Spain: `157`).
+- `updatedAt` is when the data was fetched from Transfermarkt (oldest fetch when served from cache), not when the response was built.
+
+### Removed (no data source in the JSON API)
+
+- `GET /players/{id}/achievements` and `GET /players/{id}/jersey_numbers` return `501`.
+- Player profile: `description`, `socialMedia`, `trainerProfile`, `relatives`, `club.mostGamesFor`.
+- Market value: `ranking`.
+- Injuries: `gamesMissedClubs`.
+- Club squad: `status`, `joined`.
+- Club profile: `legalForm`, `tel`, `fax`, `website`, `foundedOn`, `members`, `membersDate`, `otherSports`, `fifaWorldRanking`, `currentTransferRecord`.
+
+### Known limitations
+
+- Past-season squads omit some youth call-ups and players who left mid-season (#79).
+- The JSON API is internal and undocumented; it can change without notice.
+
+### Development
+
+- uv and Python 3.12; Poetry and `requirements.txt` removed.
+- Offline test suite with recorded upstream responses; live smoke tests with `pytest -m live`.
+- CI runs lint and tests; deploys require passing checks.
+
+### Thanks
+
+Superseded pull requests that identified these problems: #113 and #123 (date parsing), #101 and #108 (stats), #98 (transfers), #87 (tests).
