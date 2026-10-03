@@ -163,3 +163,11 @@ def test_updated_at_reports_when_cached_data_was_fetched(client: TestClient) -> 
     body = client.get("/players/28003/profile").json()
 
     assert body["updatedAt"] == fetched_at.isoformat()
+
+
+def test_health_does_not_call_upstream(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Health answers ok without calling upstream."""
+    client, routes = synthetic_client
+    routes.clear()
+
+    assert client.get("/health").json() == {"status": "ok"}
