@@ -1,0 +1,110 @@
+{
+  "status": 200,
+  "body": {
+    "query": "premier league",
+    "pageNumber": 1,
+    "lastPageNumber": 7,
+    "results": [
+      {
+        "id": "GB1",
+        "name": "Premier League",
+        "country": "England",
+        "clubs": 20,
+        "players": 542,
+        "totalMarketValue": 13160000000,
+        "meanMarketValue": 657910000,
+        "continent": "UEFA"
+      },
+      {
+        "id": "SC1",
+        "name": "Scottish Premiership",
+        "country": "Scotland",
+        "clubs": 12,
+        "players": 325,
+        "totalMarketValue": 400400000,
+        "meanMarketValue": 33369999,
+        "continent": "UEFA"
+      },
+      {
+        "id": "EGY1",
+        "name": "Egyptian Premier League",
+        "country": "Egypt",
+        "clubs": 20,
+        "players": 685,
+        "totalMarketValue": 180880000,
+        "meanMarketValue": 9040000,
+        "continent": "CAF"
+      },
+      {
+        "id": "PLIC",
+        "name": "Premier League International Cup U21",
+        "country": "England",
+        "clubs": 33,
+        "players": 762,
+        "totalMarketValue": 158590000,
+        "meanMarketValue": 4810000,
+        "continent": "UEFA"
+      },
+      {
+        "id": "AZ1",
+        "name": "Premyer Liqa",
+        "country": "Azerbaijan",
+        "clubs": 12,
+        "players": 303,
+        "totalMarketValue": 120950000,
+        "meanMarketValue": 10080000,
+        "continent": "UEFA"
+      },
+      {
+        "id": "THA1",
+        "name": "Thai League",
+        "country": "Thailand",
+        "clubs": 16,
+        "players": 499,
+        "totalMarketValue": 95900000,
+        "meanMarketValue": 5990000,
+        "continent": "AFC"
+      },
+      {
+        "id": "LPL",
+        "name": "Libyan Premier League",
+        "country": "Libya",
+        "clubs": 28,
+        "players": 799,
+        "totalMarketValue": 95560000,
+        "meanMarketValue": 3410000,
+        "continent": "CAF"
+      },
+      {
+        "id": "GB21",
+        "name": "Premier League 2",
+        "country": "England",
+        "clubs": 31,
+        "players": 654,
+        "totalMarketValue": 63160000,
+        "meanMarketValue": 2040000,
+        "continent": "UEFA"
+      },
+      {
+        "id": "ARM1",
+        "name": "Premier League",
+        "country": "Armenia",
+        "clubs": 12,
+        "players": 319,
+        "totalMarketValue": 58150000,
+        "meanMarketValue": 4850000,
+        "continent": "UEFA"
+      },
+      {
+        "id": "MT1N",
+        "name": "Premier League Opening Round",
+        "country": "Malta",
+        "clubs": 12,
+        "players": 311,
+        "totalMarketValue": 48000000,
+        "meanMarketValue": 4000000,
+        "continent": "UEFA"
+      }
+    ]
+  }
+}

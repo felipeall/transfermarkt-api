@@ -1,0 +1,66 @@
+{
+  "status": 200,
+  "body": {
+    "id": "131",
+    "url": "/fc-barcelona/startseite/verein/131",
+    "name": "FC Barcelona",
+    "officialName": "Futbol Club Barcelona",
+    "image": "https://img.a.transfermarkt.technology/wappen/big/131.png",
+    "addressLine1": "Avinguda Arístides Maillol",
+    "addressLine2": "08028 Barcelona",
+    "addressLine3": "Spain",
+    "tel": "+34 902 189900",
+    "fax": "+34 934 112219",
+    "website": "fcbarcelona.com",
+    "foundedOn": "1899-11-29",
+    "members": 170,
+    "membersDate": "2022-01-01",
+    "otherSports": [
+      "Baseball",
+      "Basketball",
+      "Eishockey",
+      "Eiskunstlauf",
+      "Feldhockey",
+      "Futsal",
+      "Handball",
+      "Leichtathletik",
+      "Rollhockey",
+      "Rollstuhlbasketball",
+      "Rugby",
+      "Volleyball"
+    ],
+    "colors": [
+      "#004C99",
+      "#A60042",
+      "#FFEE00"
+    ],
+    "stadiumName": "Spotify Camp Nou",
+    "stadiumSeats": 62657,
+    "currentTransferRecord": -94500000,
+    "currentMarketValue": 1260000000,
+    "squad": {
+      "size": 27,
+      "averageAge": 25.3,
+      "foreigners": 13,
+      "nationalTeamPlayers": 20
+    },
+    "league": {
+      "id": "ES1",
+      "name": "LaLiga",
+      "countryId": "1",
+      "countryName": "Spain",
+      "tier": "First Tier"
+    },
+    "historicalCrests": [
+      "https://img.a.transfermarkt.technology/wappen/medium/131_1400792132.png",
+      "https://img.a.transfermarkt.technology/wappen/medium/131_1400792150.png",
+      "https://img.a.transfermarkt.technology/wappen/medium/131_1400792174.png",
+      "https://img.a.transfermarkt.technology/wappen/medium/131_1400792189.png",
+      "https://img.a.transfermarkt.technology/wappen/medium/131_1400792227.png",
+      "https://img.a.transfermarkt.technology/wappen/medium/131_1400792246.png",
+      "https://img.a.transfermarkt.technology/wappen/medium/131_1400792264.png",
+      "https://img.a.transfermarkt.technology/wappen/medium/131_1400792283.png",
+      "https://img.a.transfermarkt.technology/wappen/medium/131_1400792355.png"
+    ]
+  }
+}

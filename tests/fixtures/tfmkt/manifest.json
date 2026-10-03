@@ -1,0 +1,22 @@
+{
+  "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=AJ2&ids%5B%5D=BJ&ids%5B%5D=CL&ids%5B%5D=CLQ&ids%5B%5D=DFB&ids%5B%5D=DFBJ&ids%5B%5D=DFL&ids%5B%5D=KLUB&ids%5B%5D=L1&ids%5B%5D=LPO&ids%5B%5D=OL6&ids%5B%5D=RL3&ids%5B%5D=RN&ids%5B%5D=UEFA&ids%5B%5D=USC": {
+    "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-AJ2-ids-5B-5D-BJ-ids-5B-5D-8113c99114.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=CAMC&ids%5B%5D=CCL&ids%5B%5D=CDR&ids%5B%5D=CL&ids%5B%5D=CLQ&ids%5B%5D=ES1&ids%5B%5D=ES3C&ids%5B%5D=FR1&ids%5B%5D=FRC&ids%5B%5D=FRCH&ids%5B%5D=KLUB&ids%5B%5D=MLS1&ids%5B%5D=MLSP&ids%5B%5D=POUS&ids%5B%5D=SUC&ids%5B%5D=USC&ids%5B%5D=USMX": {
+    "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-CAMC-ids-5B-5D-CCL-ids-5B--78a796cb91.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/17259/performance-game": {
+    "file": "tmapi-transfermarkt-technology-player-17259-performance-game-a19393caf3.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/28003/performance-game": {
+    "file": "tmapi-transfermarkt-technology-player-28003-performance-game-4e5e2d3cf1.gz",
+    "status": 200,
+    "contentType": "application/json"
+  }
+}

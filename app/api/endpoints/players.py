@@ -3,14 +3,15 @@ from typing import Optional
 from fastapi import APIRouter
 
 from app.schemas import players as schemas
+from app.services.players import stats
 from app.services.players.achievements import TransfermarktPlayerAchievements
 from app.services.players.injuries import TransfermarktPlayerInjuries
 from app.services.players.jersey_numbers import TransfermarktPlayerJerseyNumbers
 from app.services.players.market_value import TransfermarktPlayerMarketValue
 from app.services.players.profile import TransfermarktPlayerProfile
 from app.services.players.search import TransfermarktPlayerSearch
-from app.services.players.stats import TransfermarktPlayerStats
 from app.services.players.transfers import TransfermarktPlayerTransfers
+from app.tfmkt import Tfmkt
 
 router = APIRouter()
 
@@ -56,11 +57,9 @@ def get_player_jersey_numbers(player_id: str) -> dict:
 
 
 @router.get("/{player_id}/stats", response_model=schemas.PlayerStats, response_model_exclude_none=True)
-def get_player_stats(player_id: str) -> dict:
+async def get_player_stats(player_id: str, tfmkt: Tfmkt) -> dict:
     """Get a player's statistics per season, competition and club."""
-    tfmkt = TransfermarktPlayerStats(player_id=player_id)
-    player_stats = tfmkt.get_player_stats()
-    return player_stats
+    return await stats.get_player_stats(tfmkt, player_id)
 
 
 @router.get("/{player_id}/injuries", response_model=schemas.PlayerInjuries, response_model_exclude_none=True)

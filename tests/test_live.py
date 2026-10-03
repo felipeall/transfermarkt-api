@@ -14,6 +14,7 @@ pytestmark = pytest.mark.live
     "path",
     [
         "/players/28003/profile",
+        "/players/28003/stats",
         "/players/search/messi",
         "/clubs/131/profile",
         "/clubs/131/players",

@@ -1,6 +1,6 @@
 import re
 from datetime import date, datetime
-from typing import Optional
+from typing import Optional, Union
 
 from dateutil import parser
 from pydantic import BaseModel, ConfigDict, Field, field_validator
@@ -55,8 +55,10 @@ class TransfermarktBaseModel(BaseModel):
         mode="before",
         check_fields=False,
     )
-    def parse_str_to_int(cls, v: str) -> Optional[int]:
+    def parse_str_to_int(cls, v: Union[str, int, float, None]) -> Optional[int]:
         """Parse a scraped amount such as '€1.5m' or '120' into an integer; non-numeric values become None."""
+        if isinstance(v, (int, float)):
+            return int(v)
         if not v or not any(char.isdigit() for char in v):
             return None
 
@@ -81,14 +83,18 @@ class TransfermarktBaseModel(BaseModel):
             return int(float(value_str))
 
     @field_validator("height", mode="before", check_fields=False)
-    def parse_height(cls, v: str) -> Optional[int]:
+    def parse_height(cls, v: Union[str, int, None]) -> Optional[int]:
         """Parse a scraped height such as '1,85m' into centimetres."""
+        if isinstance(v, int):
+            return v
         if not v or not any(char.isdigit() for char in v):
             return None
         return int(v.replace(",", "").replace("m", "").replace("،", ""))
 
     @field_validator("days", mode="before", check_fields=False)
-    def parse_days(cls, v: str) -> Optional[int]:
+    def parse_days(cls, v: Union[str, int, None]) -> Optional[int]:
         """Extract the number of days from a scraped duration string."""
+        if isinstance(v, int) or v is None:
+            return v
         days = "".join(filter(str.isdigit, v))
         return int(days) if days else None

@@ -1,0 +1,56 @@
+{
+  "status": 200,
+  "body": {
+    "id": "5023",
+    "url": "https://www.transfermarkt.com/gianluigi-buffon/profil/spieler/5023",
+    "name": "Gianluigi Buffon",
+    "description": "Gianluigi Buffon ➤ former footballer from Italy ➤ Goalkeeper ➤ last club: Parma Calcio 1913 ➤ * 28/01/1978 in Carrara, Italy",
+    "imageUrl": "https://img.a.transfermarkt.technology/portrait/header/5023-1713425275.jpg?lm=4711",
+    "placeOfBirth": {
+      "city": "Carrara",
+      "country": "Italy"
+    },
+    "height": 192,
+    "citizenship": [
+      "Italy"
+    ],
+    "isRetired": true,
+    "retiredSince": "2023-02-08",
+    "position": {
+      "main": "Goalkeeper",
+      "other": []
+    },
+    "foot": "right",
+    "club": {
+      "name": "Retired",
+      "joined": "2023-02-08",
+      "lastClubId": "130",
+      "lastClubName": "Parma Calcio 1913",
+      "mostGamesFor": "Juventus"
+    },
+    "agent": {
+      "name": "Assist",
+      "url": "/assist/beraterfirma/berater/499"
+    },
+    "outfitter": "Puma",
+    "socialMedia": [
+      "http://twitter.com/gianluigibuffon",
+      "http://www.facebook.com/GianluigiBuffon?fref=ts",
+      "http://www.instagram.com/gianluigibuffon/",
+      "http://www.gianluigibuffon.it"
+    ],
+    "trainerProfile": {
+      "id": "119055",
+      "url": "/gianluigi-buffon/profil/trainer/119055",
+      "position": "Team coordinator"
+    },
+    "relatives": [
+      {
+        "id": "1191069",
+        "url": "/louis-buffon/profil/spieler/1191069",
+        "name": "Louis Buffon",
+        "profileType": "player"
+      }
+    ]
+  }
+}

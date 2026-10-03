@@ -1,0 +1,103 @@
+{
+  "status": 200,
+  "body": {
+    "id": "5023",
+    "transfers": [
+      {
+        "id": "4552945",
+        "clubFrom": {
+          "id": "130",
+          "name": "Parma"
+        },
+        "clubTo": {
+          "id": "123",
+          "name": "Retired"
+        },
+        "date": "2023-02-08",
+        "upcoming": false,
+        "season": "23/24",
+        "marketValue": 1000000
+      },
+      {
+        "id": "3361384",
+        "clubFrom": {
+          "id": "506",
+          "name": "Juventus"
+        },
+        "clubTo": {
+          "id": "130",
+          "name": "Parma"
+        },
+        "date": "2021-01-07",
+        "upcoming": false,
+        "season": "21/22",
+        "marketValue": 1000000
+      },
+      {
+        "id": "2537963",
+        "clubFrom": {
+          "id": "583",
+          "name": "PSG"
+        },
+        "clubTo": {
+          "id": "506",
+          "name": "Juventus"
+        },
+        "date": "2019-04-07",
+        "upcoming": false,
+        "season": "19/20",
+        "marketValue": 1000000
+      },
+      {
+        "id": "2109618",
+        "clubFrom": {
+          "id": "506",
+          "name": "Juventus"
+        },
+        "clubTo": {
+          "id": "583",
+          "name": "PSG"
+        },
+        "date": "2018-06-07",
+        "upcoming": false,
+        "season": "18/19",
+        "marketValue": 2000000
+      },
+      {
+        "id": "8312",
+        "clubFrom": {
+          "id": "130",
+          "name": "AC Parma"
+        },
+        "clubTo": {
+          "id": "506",
+          "name": "Juventus"
+        },
+        "date": "2001-03-07",
+        "upcoming": false,
+        "season": "01/02",
+        "fee": 52880000
+      },
+      {
+        "id": "8829",
+        "clubFrom": {
+          "id": "5243",
+          "name": "Parma U19"
+        },
+        "clubTo": {
+          "id": "130",
+          "name": "AC Parma"
+        },
+        "date": "1994-01-07",
+        "upcoming": false,
+        "season": "94/95"
+      }
+    ],
+    "youthClubs": [
+      "USD Canaletto Sepor - La Spezia (1984–1986)",
+      "A.S.D. Perticata calcio 1960 (1986–1990)",
+      "A.S.D. Bonascola Calcio (1990–1991)",
+      "FC Parma (1991–1994)"
+    ]
+  }
+}
