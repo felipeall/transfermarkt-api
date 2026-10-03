@@ -1,8 +1,14 @@
 name: Live Smoke Tests
-# Manual only for now: GitHub runners use cloud IPs, which Transfermarkt's website WAF challenges.
-# Add a nightly schedule once endpoints are served from the JSON API.
+# Runs the `live` tests against Transfermarkt's JSON API. A failure means upstream access or payloads changed,
+# not necessarily a code regression.
 on:
+  schedule:
+    - cron: "0 6 * * *"
   workflow_dispatch:
+  pull_request:
+    paths:
+      - "app/tfmkt/**"
+      - ".github/workflows/live.yml"
 
 jobs:
   live:

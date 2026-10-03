@@ -55,5 +55,11 @@ def docs_redirect() -> RedirectResponse:
     return RedirectResponse(url="/docs")
 
 
+@app.get("/health", include_in_schema=False)
+def health() -> dict:
+    """Liveness check for the hosting platform. Does not call Transfermarkt."""
+    return {"status": "ok"}
+
+
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
