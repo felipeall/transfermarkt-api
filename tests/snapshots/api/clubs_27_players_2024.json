@@ -8,7 +8,7 @@
         "name": "Jonas Urbig",
         "position": "Goalkeeper",
         "dateOfBirth": "2003-08-08",
-        "age": 21,
+        "age": null,
         "nationality": [
           "Germany"
         ],
@@ -17,31 +17,15 @@
         "foot": "both",
         "joinedOn": "2025-01-27",
         "signedFrom": "1.FC Köln",
-        "marketValue": 12000000
-      },
-      {
-        "id": "17259",
-        "name": "Manuel Neuer",
-        "position": "Goalkeeper",
-        "dateOfBirth": "1986-03-27",
-        "age": 39,
-        "nationality": [
-          "Germany"
-        ],
-        "currentClub": "Bayern Munich",
-        "height": 193,
-        "foot": "right",
-        "joinedOn": "2011-01-07",
-        "signedFrom": "FC Schalke 04",
-        "marketValue": 4000000,
-        "status": "Team captain"
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "468539",
         "name": "Daniel Peretz",
         "position": "Goalkeeper",
-        "dateOfBirth": "2000-10-07",
-        "age": 24,
+        "dateOfBirth": "2000-07-10",
+        "age": null,
         "nationality": [
           "Israel",
           "Germany"
@@ -51,77 +35,49 @@
         "foot": "right",
         "joinedOn": "2023-08-25",
         "signedFrom": "Maccabi Tel Aviv",
-        "marketValue": 3000000,
-        "status": "Muscle tear - Return unknown"
+        "contract": null,
+        "marketValue": null
       },
       {
-        "id": "937713",
-        "name": "Max Schmitt",
+        "id": "17259",
+        "name": "Manuel Neuer",
         "position": "Goalkeeper",
-        "dateOfBirth": "2006-01-18",
-        "age": 19,
+        "dateOfBirth": "1986-03-27",
+        "age": null,
         "nationality": [
           "Germany"
         ],
-        "currentClub": "SSV Jahn Regensburg",
-        "height": 189,
+        "currentClub": "Bayern Munich",
+        "height": 193,
         "foot": "right",
-        "signedFrom": "",
-        "marketValue": 700000
+        "joinedOn": "2011-07-01",
+        "signedFrom": "FC Schalke 04",
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "40680",
         "name": "Sven Ulreich",
         "position": "Goalkeeper",
-        "dateOfBirth": "1988-03-08",
-        "age": 36,
+        "dateOfBirth": "1988-08-03",
+        "age": null,
         "nationality": [
           "Germany"
         ],
         "currentClub": "Bayern Munich",
         "height": 192,
         "foot": "right",
-        "joinedOn": "2021-01-07",
+        "joinedOn": "2021-07-01",
         "signedFrom": "Hamburger SV",
-        "marketValue": 500000
-      },
-      {
-        "id": "1104725",
-        "name": "Anthony Pavlesic",
-        "position": "Goalkeeper",
-        "dateOfBirth": "2006-01-31",
-        "age": 19,
-        "nationality": [
-          "Croatia",
-          "Australia"
-        ],
-        "currentClub": "SK Sigma Olomouc",
-        "height": 190,
-        "foot": "right",
-        "signedFrom": "",
-        "marketValue": 150000
-      },
-      {
-        "id": "1009439",
-        "name": "Leon Klanac",
-        "position": "Goalkeeper",
-        "dateOfBirth": "2007-01-03",
-        "age": 18,
-        "nationality": [
-          "Germany",
-          "Croatia"
-        ],
-        "currentClub": "FC Bayern Munich II",
-        "height": 185,
-        "foot": "right",
-        "signedFrom": ""
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "344695",
         "name": "Dayot Upamecano",
         "position": "Centre-Back",
         "dateOfBirth": "1998-10-27",
-        "age": 26,
+        "age": null,
         "nationality": [
           "France",
           "Guinea-Bissau"
@@ -129,32 +85,17 @@
         "currentClub": "Bayern Munich",
         "height": 186,
         "foot": "right",
-        "joinedOn": "2021-05-07",
+        "joinedOn": "2021-07-05",
         "signedFrom": "RB Leipzig",
-        "marketValue": 50000000
-      },
-      {
-        "id": "503482",
-        "name": "Min-jae Kim",
-        "position": "Centre-Back",
-        "dateOfBirth": "1996-11-15",
-        "age": 28,
-        "nationality": [
-          "Korea, South"
-        ],
-        "currentClub": "Bayern Munich",
-        "height": 190,
-        "foot": "right",
-        "joinedOn": "2023-07-18",
-        "signedFrom": ": Ablöse €50.00m",
-        "marketValue": 40000000
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "196357",
         "name": "Jonathan Tah",
         "position": "Centre-Back",
-        "dateOfBirth": "1996-11-02",
-        "age": 29,
+        "dateOfBirth": "1996-02-11",
+        "age": null,
         "nationality": [
           "Germany",
           "Cote d'Ivoire"
@@ -162,32 +103,51 @@
         "currentClub": "Bayern Munich",
         "height": 195,
         "foot": "right",
-        "joinedOn": "2025-09-06",
-        "signedFrom": "Bayer 04 Leverkusen",
-        "marketValue": 30000000
+        "joinedOn": null,
+        "signedFrom": null,
+        "contract": null,
+        "marketValue": null
+      },
+      {
+        "id": "503482",
+        "name": "Min-jae Kim",
+        "position": "Centre-Back",
+        "dateOfBirth": "1996-11-15",
+        "age": null,
+        "nationality": [
+          "Korea, South"
+        ],
+        "currentClub": "Bayern Munich",
+        "height": 190,
+        "foot": "right",
+        "joinedOn": "2023-07-18",
+        "signedFrom": "SSC Napoli",
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "353892",
         "name": "Hiroki Ito",
         "position": "Centre-Back",
-        "dateOfBirth": "1999-12-05",
-        "age": 26,
+        "dateOfBirth": "1999-05-12",
+        "age": null,
         "nationality": [
           "Japan"
         ],
         "currentClub": "Bayern Munich",
         "height": 188,
         "foot": "left",
-        "joinedOn": "2024-01-07",
+        "joinedOn": "2024-07-01",
         "signedFrom": "VfB Stuttgart",
-        "marketValue": 25000000
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "175722",
         "name": "Eric Dier",
         "position": "Centre-Back",
         "dateOfBirth": "1994-01-15",
-        "age": 31,
+        "age": null,
         "nationality": [
           "England",
           "Portugal"
@@ -195,34 +155,17 @@
         "currentClub": "AS Monaco",
         "height": 191,
         "foot": "right",
-        "joinedOn": "2024-01-07",
+        "joinedOn": "2024-07-01",
         "signedFrom": "Tottenham Hotspur",
-        "marketValue": 8000000
-      },
-      {
-        "id": "744729",
-        "name": "Tarek Buchmann",
-        "position": "Centre-Back",
-        "dateOfBirth": "2005-02-28",
-        "age": 20,
-        "nationality": [
-          "Germany",
-          "Togo"
-        ],
-        "currentClub": "FC Bayern Munich II",
-        "height": 188,
-        "foot": "right",
-        "joinedOn": "2023-01-07",
-        "signedFrom": ": Ablöse -",
-        "marketValue": 500000,
-        "status": "Syndesmotic ligament tear - Return unknown"
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "1259870",
         "name": "Cassiano Kiala",
         "position": "Centre-Back",
-        "dateOfBirth": "2009-11-01",
-        "age": 16,
+        "dateOfBirth": "2009-01-11",
+        "age": null,
         "nationality": [
           "Germany",
           "Angola"
@@ -230,14 +173,35 @@
         "currentClub": "FC Bayern Munich II",
         "height": 186,
         "foot": "right",
-        "signedFrom": ""
+        "joinedOn": null,
+        "signedFrom": null,
+        "contract": null,
+        "marketValue": null
+      },
+      {
+        "id": "744729",
+        "name": "Tarek Buchmann",
+        "position": "Centre-Back",
+        "dateOfBirth": "2005-02-28",
+        "age": null,
+        "nationality": [
+          "Germany",
+          "Togo"
+        ],
+        "currentClub": "FC Bayern Munich II",
+        "height": 188,
+        "foot": "right",
+        "joinedOn": "2023-07-01",
+        "signedFrom": "FC Bayern Munich U19 ",
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "424204",
         "name": "Alphonso Davies",
         "position": "Left-Back",
-        "dateOfBirth": "2000-02-11",
-        "age": 24,
+        "dateOfBirth": "2000-11-02",
+        "age": null,
         "nationality": [
           "Canada",
           "Liberia"
@@ -247,31 +211,15 @@
         "foot": "left",
         "joinedOn": "2019-01-01",
         "signedFrom": "Vancouver Whitecaps FC",
-        "marketValue": 50000000
-      },
-      {
-        "id": "170986",
-        "name": "Raphaël Guerreiro",
-        "position": "Left-Back",
-        "dateOfBirth": "1993-12-22",
-        "age": 31,
-        "nationality": [
-          "Portugal",
-          "France"
-        ],
-        "currentClub": "Without Club",
-        "height": 170,
-        "foot": "left",
-        "joinedOn": "2023-01-07",
-        "signedFrom": "Borussia Dortmund",
-        "marketValue": 8000000
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "938146",
         "name": "Adam Aznou",
         "position": "Left-Back",
-        "dateOfBirth": "2006-02-06",
-        "age": 19,
+        "dateOfBirth": "2006-06-02",
+        "age": null,
         "nationality": [
           "Morocco",
           "Spain"
@@ -279,16 +227,35 @@
         "currentClub": "Málaga CF",
         "height": 178,
         "foot": "left",
-        "joinedOn": "2024-01-07",
-        "signedFrom": "FC Bayern Munich II",
-        "marketValue": 4000000
+        "joinedOn": "2025-05-31",
+        "signedFrom": "Real Valladolid CF",
+        "contract": null,
+        "marketValue": null
+      },
+      {
+        "id": "170986",
+        "name": "Raphaël Guerreiro",
+        "position": "Left-Back",
+        "dateOfBirth": "1993-12-22",
+        "age": null,
+        "nationality": [
+          "Portugal",
+          "France"
+        ],
+        "currentClub": "Without Club",
+        "height": 170,
+        "foot": "left",
+        "joinedOn": "2023-07-01",
+        "signedFrom": "Borussia Dortmund",
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "483046",
         "name": "Josip Stanisic",
         "position": "Right-Back",
-        "dateOfBirth": "2000-02-04",
-        "age": 25,
+        "dateOfBirth": "2000-04-02",
+        "age": null,
         "nationality": [
           "Croatia",
           "Germany"
@@ -296,32 +263,34 @@
         "currentClub": "Bayern Munich",
         "height": 187,
         "foot": "both",
-        "joinedOn": "2021-01-08",
-        "signedFrom": ": Ablöse -",
-        "marketValue": 32000000
+        "joinedOn": "2024-06-30",
+        "signedFrom": "Bayer 04 Leverkusen",
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "223967",
         "name": "Konrad Laimer",
         "position": "Right-Back",
         "dateOfBirth": "1997-05-27",
-        "age": 28,
+        "age": null,
         "nationality": [
           "Austria"
         ],
         "currentClub": "Bayern Munich",
         "height": 180,
         "foot": "right",
-        "joinedOn": "2023-01-07",
+        "joinedOn": "2023-07-01",
         "signedFrom": "RB Leipzig",
-        "marketValue": 25000000
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "475413",
         "name": "Sacha Boey",
         "position": "Right-Back",
         "dateOfBirth": "2000-09-13",
-        "age": 24,
+        "age": null,
         "nationality": [
           "France",
           "Belgium"
@@ -331,14 +300,15 @@
         "foot": "right",
         "joinedOn": "2024-01-28",
         "signedFrom": "Galatasaray",
-        "marketValue": 18000000
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "792380",
         "name": "Aleksandar Pavlovic",
         "position": "Defensive Midfield",
-        "dateOfBirth": "2004-03-05",
-        "age": 21,
+        "dateOfBirth": "2004-05-03",
+        "age": null,
         "nationality": [
           "Germany",
           "Serbia"
@@ -346,65 +316,51 @@
         "currentClub": "Bayern Munich",
         "height": 188,
         "foot": "both",
-        "joinedOn": "2023-01-11",
-        "signedFrom": ": Ablöse -",
-        "marketValue": 55000000
+        "joinedOn": "2023-11-01",
+        "signedFrom": "FC Bayern Munich II",
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "161056",
         "name": "Joshua Kimmich",
         "position": "Defensive Midfield",
-        "dateOfBirth": "1995-08-02",
-        "age": 30,
+        "dateOfBirth": "1995-02-08",
+        "age": null,
         "nationality": [
           "Germany"
         ],
         "currentClub": "Bayern Munich",
         "height": 177,
         "foot": "right",
-        "joinedOn": "2015-02-07",
+        "joinedOn": "2015-07-02",
         "signedFrom": "VfB Stuttgart",
-        "marketValue": 45000000
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "257455",
         "name": "João Palhinha",
         "position": "Defensive Midfield",
-        "dateOfBirth": "1995-09-07",
-        "age": 29,
+        "dateOfBirth": "1995-07-09",
+        "age": null,
         "nationality": [
           "Portugal"
         ],
         "currentClub": "SL Benfica",
         "height": 190,
         "foot": "right",
-        "joinedOn": "2024-11-07",
+        "joinedOn": "2024-07-11",
         "signedFrom": "Fulham FC",
-        "marketValue": 30000000
-      },
-      {
-        "id": "904974",
-        "name": "Noël Aséko",
-        "position": "Defensive Midfield",
-        "dateOfBirth": "2005-11-22",
-        "age": 19,
-        "nationality": [
-          "Germany",
-          "Equatorial Guinea"
-        ],
-        "currentClub": "Eintracht Frankfurt",
-        "height": 178,
-        "foot": "right",
-        "joinedOn": "2026-02-07",
-        "signedFrom": "Hannover 96",
-        "marketValue": 700000
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "1118495",
         "name": "David Santos Daiber",
         "position": "Defensive Midfield",
-        "dateOfBirth": "2007-10-01",
-        "age": 18,
+        "dateOfBirth": "2007-01-10",
+        "age": null,
         "nationality": [
           "Portugal",
           "Germany"
@@ -412,47 +368,51 @@
         "currentClub": "FC Bayern Munich II",
         "height": 185,
         "foot": "right",
-        "signedFrom": ""
+        "joinedOn": null,
+        "signedFrom": null,
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "822959",
         "name": "Tom Bischof",
         "position": "Central Midfield",
         "dateOfBirth": "2005-06-28",
-        "age": 20,
+        "age": null,
         "nationality": [
           "Germany"
         ],
         "currentClub": "Bayern Munich",
         "height": 176,
         "foot": "left",
-        "joinedOn": "2025-09-06",
-        "signedFrom": "TSG 1899 Hoffenheim",
-        "marketValue": 30000000
+        "joinedOn": null,
+        "signedFrom": null,
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "153084",
         "name": "Leon Goretzka",
         "position": "Central Midfield",
-        "dateOfBirth": "1995-06-02",
-        "age": 30,
+        "dateOfBirth": "1995-02-06",
+        "age": null,
         "nationality": [
           "Germany"
         ],
         "currentClub": "Aston Villa",
         "height": 189,
         "foot": "right",
-        "joinedOn": "2018-01-07",
+        "joinedOn": "2018-07-01",
         "signedFrom": "FC Schalke 04",
-        "marketValue": 22000000,
-        "status": "unknown injury - Return expected on 06/10/2026"
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "580195",
         "name": "Jamal Musiala",
         "position": "Attacking Midfield",
         "dateOfBirth": "2003-02-26",
-        "age": 22,
+        "age": null,
         "nationality": [
           "Germany",
           "England"
@@ -460,65 +420,34 @@
         "currentClub": "Bayern Munich",
         "height": 184,
         "foot": "right",
-        "joinedOn": "2020-01-07",
-        "signedFrom": ": Ablöse -",
-        "marketValue": 140000000,
-        "status": "Torn muscle fiber - Return expected on 15/10/2026"
-      },
-      {
-        "id": "856274",
-        "name": "Jonathan Asp Jensen",
-        "position": "Attacking Midfield",
-        "dateOfBirth": "2006-01-14",
-        "age": 19,
-        "nationality": [
-          "Denmark"
-        ],
-        "currentClub": "Deportivo A Coruña",
-        "height": 182,
-        "foot": "right",
-        "signedFrom": "",
-        "marketValue": 1500000
+        "joinedOn": "2020-07-01",
+        "signedFrom": "FC Bayern Munich U19 ",
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "1075147",
         "name": "Lennart Karl",
         "position": "Attacking Midfield",
         "dateOfBirth": "2008-02-22",
-        "age": 17,
+        "age": null,
         "nationality": [
           "Germany"
         ],
         "currentClub": "Bayern Munich",
         "height": 168,
         "foot": "left",
-        "joinedOn": "2025-01-06",
-        "signedFrom": "FC Bayern Munich U19 ",
-        "marketValue": 1500000
-      },
-      {
-        "id": "801734",
-        "name": "Mathys Tel",
-        "position": "Left Winger",
-        "dateOfBirth": "2005-04-27",
-        "age": 20,
-        "nationality": [
-          "France",
-          "Guadeloupe"
-        ],
-        "currentClub": "Tottenham Hotspur",
-        "height": 183,
-        "foot": "right",
-        "joinedOn": "2022-07-26",
-        "signedFrom": "Stade Rennais FC",
-        "marketValue": 35000000
+        "joinedOn": null,
+        "signedFrom": null,
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "243714",
         "name": "Kingsley Coman",
         "position": "Left Winger",
         "dateOfBirth": "1996-06-13",
-        "age": 29,
+        "age": null,
         "nationality": [
           "France",
           "Guadeloupe"
@@ -526,65 +455,34 @@
         "currentClub": "Al-Nassr FC",
         "height": 181,
         "foot": "right",
-        "joinedOn": "2017-01-07",
-        "signedFrom": ": Ablöse €21.00m",
-        "marketValue": 30000000
-      },
-      {
-        "id": "744728",
-        "name": "Arijon Ibrahimovic",
-        "position": "Left Winger",
-        "dateOfBirth": "2005-11-12",
-        "age": 19,
-        "nationality": [
-          "Germany",
-          "Kosovo"
-        ],
-        "currentClub": "FC Augsburg",
-        "height": 178,
-        "foot": "right",
-        "joinedOn": "2023-01-17",
-        "signedFrom": ": Ablöse -",
-        "marketValue": 4000000
-      },
-      {
-        "id": "956920",
-        "name": "Nestory Irankunda",
-        "position": "Left Winger",
-        "dateOfBirth": "2006-09-02",
-        "age": 19,
-        "nationality": [
-          "Australia",
-          "Tanzania"
-        ],
-        "currentClub": "Sporting CP",
-        "height": 175,
-        "foot": "right",
-        "signedFrom": "",
-        "marketValue": 4000000
+        "joinedOn": "2017-07-01",
+        "signedFrom": "Juventus FC",
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "829316",
         "name": "Maurice Krattenmacher",
         "position": "Left Winger",
-        "dateOfBirth": "2005-11-08",
-        "age": 19,
+        "dateOfBirth": "2005-08-11",
+        "age": null,
         "nationality": [
           "Germany"
         ],
         "currentClub": "SV 07 Elversberg",
         "height": 180,
         "foot": "both",
-        "joinedOn": "2024-01-07",
-        "signedFrom": "SpVgg Unterhaching",
-        "marketValue": 3500000
+        "joinedOn": "2025-05-31",
+        "signedFrom": "SSV Ulm 1846",
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "604327",
         "name": "Gabriel Vidovic",
         "position": "Left Winger",
-        "dateOfBirth": "2003-01-12",
-        "age": 21,
+        "dateOfBirth": "2003-12-01",
+        "age": null,
         "nationality": [
           "Croatia",
           "Germany"
@@ -592,31 +490,17 @@
         "currentClub": "SC Paderborn 07",
         "height": 180,
         "foot": "right",
-        "joinedOn": "2022-01-07",
-        "signedFrom": ": Ablöse -",
-        "marketValue": 3000000
-      },
-      {
-        "id": "1084539",
-        "name": "Wisdom Mike",
-        "position": "Left Winger",
-        "dateOfBirth": "2008-09-24",
-        "age": 16,
-        "nationality": [
-          "Germany",
-          "Nigeria"
-        ],
-        "currentClub": "Club Brugge KV",
-        "height": 176,
-        "foot": "right",
-        "signedFrom": ""
+        "joinedOn": "2025-02-03",
+        "signedFrom": "1.FSV Mainz 05",
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "566723",
         "name": "Michael Olise",
         "position": "Right Winger",
         "dateOfBirth": "2001-12-12",
-        "age": 23,
+        "age": null,
         "nationality": [
           "France",
           "England"
@@ -626,14 +510,15 @@
         "foot": "left",
         "joinedOn": "2024-07-07",
         "signedFrom": "Crystal Palace",
-        "marketValue": 100000000
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "192565",
         "name": "Leroy Sané",
         "position": "Right Winger",
-        "dateOfBirth": "1996-11-01",
-        "age": 29,
+        "dateOfBirth": "1996-01-11",
+        "age": null,
         "nationality": [
           "Germany",
           "France"
@@ -643,14 +528,15 @@
         "foot": "left",
         "joinedOn": "2020-07-15",
         "signedFrom": "Manchester City",
-        "marketValue": 32000000
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "159471",
         "name": "Serge Gnabry",
         "position": "Second Striker",
         "dateOfBirth": "1995-07-14",
-        "age": 29,
+        "age": null,
         "nationality": [
           "Germany",
           "Cote d'Ivoire"
@@ -658,32 +544,34 @@
         "currentClub": "Bayern Munich",
         "height": 176,
         "foot": "right",
-        "joinedOn": "2017-01-07",
-        "signedFrom": ": Ablöse €8.00m",
-        "marketValue": 22000000
+        "joinedOn": "2018-06-30",
+        "signedFrom": "TSG 1899 Hoffenheim",
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "58358",
         "name": "Thomas Müller",
         "position": "Second Striker",
         "dateOfBirth": "1989-09-13",
-        "age": 35,
+        "age": null,
         "nationality": [
           "Germany"
         ],
         "currentClub": "Vancouver Whitecaps FC",
         "height": 185,
         "foot": "right",
-        "joinedOn": "2009-01-07",
-        "signedFrom": ": Ablöse -",
-        "marketValue": 6000000
+        "joinedOn": "2009-07-01",
+        "signedFrom": "FC Bayern Munich II",
+        "contract": null,
+        "marketValue": null
       },
       {
         "id": "132098",
         "name": "Harry Kane",
         "position": "Centre-Forward",
         "dateOfBirth": "1993-07-28",
-        "age": 31,
+        "age": null,
         "nationality": [
           "England",
           "Ireland"
@@ -691,26 +579,10 @@
         "currentClub": "Bayern Munich",
         "height": 188,
         "foot": "right",
-        "joinedOn": "2023-12-08",
-        "signedFrom": ": Ablöse €95.00m",
-        "marketValue": 75000000
-      },
-      {
-        "id": "1069512",
-        "name": "Jonah Kusi-Asare",
-        "position": "Centre-Forward",
-        "dateOfBirth": "2007-04-07",
-        "age": 17,
-        "nationality": [
-          "Sweden",
-          "Ghana"
-        ],
-        "currentClub": "Fulham FC",
-        "height": 196,
-        "foot": "right",
-        "joinedOn": "2025-01-07",
-        "signedFrom": "FC Bayern Munich II",
-        "marketValue": 2500000
+        "joinedOn": "2023-08-12",
+        "signedFrom": "Tottenham Hotspur",
+        "contract": null,
+        "marketValue": null
       }
     ]
   }

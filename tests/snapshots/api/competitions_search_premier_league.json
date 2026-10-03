@@ -11,8 +11,8 @@
         "country": "England",
         "clubs": 20,
         "players": 542,
-        "totalMarketValue": 13160000000,
-        "meanMarketValue": 657910000,
+        "totalMarketValue": 13158125000,
+        "meanMarketValue": 657906250,
         "continent": "UEFA"
       },
       {
@@ -22,7 +22,7 @@
         "clubs": 12,
         "players": 325,
         "totalMarketValue": 400400000,
-        "meanMarketValue": 33369999,
+        "meanMarketValue": 33366666,
         "continent": "UEFA"
       },
       {
@@ -31,8 +31,8 @@
         "country": "Egypt",
         "clubs": 20,
         "players": 685,
-        "totalMarketValue": 180880000,
-        "meanMarketValue": 9040000,
+        "totalMarketValue": 180875000,
+        "meanMarketValue": 9043750,
         "continent": "CAF"
       },
       {
@@ -42,7 +42,7 @@
         "clubs": 33,
         "players": 762,
         "totalMarketValue": 158590000,
-        "meanMarketValue": 4810000,
+        "meanMarketValue": 4805757,
         "continent": "UEFA"
       },
       {
@@ -52,7 +52,7 @@
         "clubs": 12,
         "players": 303,
         "totalMarketValue": 120950000,
-        "meanMarketValue": 10080000,
+        "meanMarketValue": 10079166,
         "continent": "UEFA"
       },
       {
@@ -62,7 +62,7 @@
         "clubs": 16,
         "players": 499,
         "totalMarketValue": 95900000,
-        "meanMarketValue": 5990000,
+        "meanMarketValue": 5993750,
         "continent": "AFC"
       },
       {
@@ -71,8 +71,8 @@
         "country": "Libya",
         "clubs": 28,
         "players": 799,
-        "totalMarketValue": 95560000,
-        "meanMarketValue": 3410000,
+        "totalMarketValue": 95555000,
+        "meanMarketValue": 3412678,
         "continent": "CAF"
       },
       {
@@ -82,7 +82,7 @@
         "clubs": 31,
         "players": 654,
         "totalMarketValue": 63160000,
-        "meanMarketValue": 2040000,
+        "meanMarketValue": 2037419,
         "continent": "UEFA"
       },
       {
@@ -92,7 +92,7 @@
         "clubs": 12,
         "players": 319,
         "totalMarketValue": 58150000,
-        "meanMarketValue": 4850000,
+        "meanMarketValue": 4845833,
         "continent": "UEFA"
       },
       {
@@ -101,8 +101,8 @@
         "country": "Malta",
         "clubs": 12,
         "players": 311,
-        "totalMarketValue": 48000000,
-        "meanMarketValue": 4000000,
+        "totalMarketValue": 47995000,
+        "meanMarketValue": 3999583,
         "continent": "UEFA"
       }
     ]

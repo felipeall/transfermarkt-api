@@ -1,6 +1,211 @@
 {
+  "https://tmapi.transfermarkt.technology/attributes": {
+    "file": "tmapi-transfermarkt-technology-attributes-25a645861c.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/131": {
+    "file": "tmapi-transfermarkt-technology-club-131-0de03f6784.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/131/squad": {
+    "file": "tmapi-transfermarkt-technology-club-131-squad-c77f803619.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/131/squad?season=2014": {
+    "file": "tmapi-transfermarkt-technology-club-131-squad-season-2014-b3ff46663d.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/131/stadium": {
+    "file": "tmapi-transfermarkt-technology-club-131-stadium-f4b929d398.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/27/squad?season=2024": {
+    "file": "tmapi-transfermarkt-technology-club-27-squad-season-2024-95525d1a9b.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/3331": {
+    "file": "tmapi-transfermarkt-technology-club-3331-1eef31b971.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/3331/squad": {
+    "file": "tmapi-transfermarkt-technology-club-3331-squad-5bba48bdfe.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/3331/stadium": {
+    "file": "tmapi-transfermarkt-technology-club-3331-stadium-3af15e29fd.gz",
+    "status": 404,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/3383": {
+    "file": "tmapi-transfermarkt-technology-club-3383-e88286d2df.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/3383/squad": {
+    "file": "tmapi-transfermarkt-technology-club-3383-squad-bd228a7bbd.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/3383/stadium": {
+    "file": "tmapi-transfermarkt-technology-club-3383-stadium-b2c7aacaf0.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=1006&ids%5B%5D=100827&ids%5B%5D=102579&ids%5B%5D=10262&ids%5B%5D=10301&ids%5B%5D=10331&ids%5B%5D=103512&ids%5B%5D=103794&ids%5B%5D=10603&ids%5B%5D=10604&ids%5B%5D=10605&ids%5B%5D=10625&ids%5B%5D=10949&ids%5B%5D=10957&ids%5B%5D=11&ids%5B%5D=11008&ids%5B%5D=110524&ids%5B%5D=111129&ids%5B%5D=113299&ids%5B%5D=113576&ids%5B%5D=11411&ids%5B%5D=1148&ids%5B%5D=114967&ids%5B%5D=117192&ids%5B%5D=1191&ids%5B%5D=11912&ids%5B%5D=120121&ids%5B%5D=12124&ids%5B%5D=1237&ids%5B%5D=124&ids%5B%5D=124908&ids%5B%5D=12533&ids%5B%5D=125436&ids%5B%5D=125790&ids%5B%5D=13446&ids%5B%5D=13504&ids%5B%5D=13505&ids%5B%5D=13506&ids%5B%5D=13508&ids%5B%5D=148&ids%5B%5D=1519&ids%5B%5D=16216&ids%5B%5D=17&ids%5B%5D=17149&ids%5B%5D=18234&ids%5B%5D=20116&ids%5B%5D=20572&ids%5B%5D=22010&ids%5B%5D=23387&ids%5B%5D=23911&ids%5B%5D=24212&ids%5B%5D=24214&ids%5B%5D=24219&ids%5B%5D=24226&ids%5B%5D=24297&ids%5B%5D=25444&ids%5B%5D=25445&ids%5B%5D=25449&ids%5B%5D=2553&ids%5B%5D=2578&ids%5B%5D=25926&ids%5B%5D=25927&ids%5B%5D=26117&ids%5B%5D=26246&ids%5B%5D=27092&ids%5B%5D=281&ids%5B%5D=289&ids%5B%5D=29&ids%5B%5D=29990&ids%5B%5D=3008&ids%5B%5D=30857&ids%5B%5D=31&ids%5B%5D=31527&ids%5B%5D=32078&ids%5B%5D=32125&ids%5B%5D=32129&ids%5B%5D=32768&ids%5B%5D=329&ids%5B%5D=33614&ids%5B%5D=3369&ids%5B%5D=34423&ids%5B%5D=35387&ids%5B%5D=36123&ids%5B%5D=36162&ids%5B%5D=36546&ids%5B%5D=36999&ids%5B%5D=370&ids%5B%5D=371&ids%5B%5D=37246&ids%5B%5D=37914&ids%5B%5D=38559&ids%5B%5D=38588&ids%5B%5D=38967&ids%5B%5D=39336&ids%5B%5D=39337&ids%5B%5D=39341&ids%5B%5D=39575&ids%5B%5D=3963&ids%5B%5D=399&ids%5B%5D=405": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-1006-ids-5B-5D-100827-ids-5B-5D-1-d3c95e04d2.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=1049&ids%5B%5D=1050&ids%5B%5D=1084&ids%5B%5D=13&ids%5B%5D=131&ids%5B%5D=1531&ids%5B%5D=1533&ids%5B%5D=16795&ids%5B%5D=3302&ids%5B%5D=3368&ids%5B%5D=367&ids%5B%5D=368&ids%5B%5D=3709&ids%5B%5D=418&ids%5B%5D=621&ids%5B%5D=681&ids%5B%5D=714&ids%5B%5D=897&ids%5B%5D=940&ids%5B%5D=993": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-1049-ids-5B-5D-1050-ids-5B-5D-108-507e1af834.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=1049&ids%5B%5D=1061&ids%5B%5D=11&ids%5B%5D=123&ids%5B%5D=150&ids%5B%5D=1532&ids%5B%5D=16795&ids%5B%5D=18&ids%5B%5D=221&ids%5B%5D=2464&ids%5B%5D=31&ids%5B%5D=3349&ids%5B%5D=368&ids%5B%5D=472&ids%5B%5D=515&ids%5B%5D=585&ids%5B%5D=610&ids%5B%5D=681&ids%5B%5D=69261&ids%5B%5D=84&ids%5B%5D=897&ids%5B%5D=940&ids%5B%5D=985": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-1049-ids-5B-5D-1061-ids-5B-5D-11--a009fda53f.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=10773&ids%5B%5D=131&ids%5B%5D=20528&ids%5B%5D=22587&ids%5B%5D=2464&ids%5B%5D=3523&ids%5B%5D=41584&ids%5B%5D=714&ids%5B%5D=72476&ids%5B%5D=93588": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-10773-ids-5B-5D-131-ids-5B-5D-205-ff06d0b5f0.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=1084&ids%5B%5D=119&ids%5B%5D=127&ids%5B%5D=141&ids%5B%5D=1462&ids%5B%5D=148&ids%5B%5D=15&ids%5B%5D=16&ids%5B%5D=162&ids%5B%5D=180&ids%5B%5D=18544&ids%5B%5D=23826&ids%5B%5D=27&ids%5B%5D=28&ids%5B%5D=281&ids%5B%5D=294&ids%5B%5D=3&ids%5B%5D=33&ids%5B%5D=366&ids%5B%5D=39&ids%5B%5D=405&ids%5B%5D=41&ids%5B%5D=506&ids%5B%5D=515&ids%5B%5D=533&ids%5B%5D=6195&ids%5B%5D=6321&ids%5B%5D=64&ids%5B%5D=69&ids%5B%5D=79&ids%5B%5D=873&ids%5B%5D=931": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-1084-ids-5B-5D-119-ids-5B-5D-127--a635386a4c.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=11&ids%5B%5D=1114&ids%5B%5D=12321&ids%5B%5D=16&ids%5B%5D=190&ids%5B%5D=2113&ids%5B%5D=23826&ids%5B%5D=2464&ids%5B%5D=2470&ids%5B%5D=281&ids%5B%5D=36&ids%5B%5D=368&ids%5B%5D=399&ids%5B%5D=43560&ids%5B%5D=472&ids%5B%5D=610&ids%5B%5D=631&ids%5B%5D=7&ids%5B%5D=714&ids%5B%5D=762": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-11-ids-5B-5D-1114-ids-5B-5D-12321-9e053cff0b.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=11&ids%5B%5D=1148&ids%5B%5D=1237&ids%5B%5D=148&ids%5B%5D=281&ids%5B%5D=289&ids%5B%5D=29&ids%5B%5D=3008&ids%5B%5D=31&ids%5B%5D=399&ids%5B%5D=405&ids%5B%5D=631&ids%5B%5D=677&ids%5B%5D=703&ids%5B%5D=762&ids%5B%5D=873&ids%5B%5D=931&ids%5B%5D=985&ids%5B%5D=989&ids%5B%5D=990": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-11-ids-5B-5D-1148-ids-5B-5D-1237--cfc2fe5b6e.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=123&ids%5B%5D=130": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-123-ids-5B-5D-130-039932113d.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=123&ids%5B%5D=130&ids%5B%5D=506&ids%5B%5D=5243&ids%5B%5D=583": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-123-ids-5B-5D-130-ids-5B-5D-506-i-4a89c2f466.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=123&ids%5B%5D=252&ids%5B%5D=2863&ids%5B%5D=338&ids%5B%5D=609&ids%5B%5D=69261&ids%5B%5D=7732&ids%5B%5D=786&ids%5B%5D=8433": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-123-ids-5B-5D-252-ids-5B-5D-2863--d33cf8ddc4.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=131&ids%5B%5D=14321&ids%5B%5D=2464&ids%5B%5D=2470&ids%5B%5D=583&ids%5B%5D=63954&ids%5B%5D=69261&ids%5B%5D=70295&ids%5B%5D=92364": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-131-ids-5B-5D-14321-ids-5B-5D-246-c3ac94d414.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=131&ids%5B%5D=2464&ids%5B%5D=583&ids%5B%5D=69261": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-131-ids-5B-5D-2464-ids-5B-5D-583--b842726233.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=1463&ids%5B%5D=27&ids%5B%5D=33": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-1463-ids-5B-5D-27-ids-5B-5D-33-432c2cb497.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=18544": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-18544-c9a289de2a.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=27": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-27-3dddffd00a.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=41107&ids%5B%5D=43&ids%5B%5D=43570&ids%5B%5D=43628&ids%5B%5D=44360&ids%5B%5D=44664&ids%5B%5D=44796&ids%5B%5D=465&ids%5B%5D=46507&ids%5B%5D=46710&ids%5B%5D=46736&ids%5B%5D=46959&ids%5B%5D=47010&ids%5B%5D=4807&ids%5B%5D=48190&ids%5B%5D=50658&ids%5B%5D=50659&ids%5B%5D=511&ids%5B%5D=53453&ids%5B%5D=55227&ids%5B%5D=55243&ids%5B%5D=55257&ids%5B%5D=55265&ids%5B%5D=55283&ids%5B%5D=57439&ids%5B%5D=60368&ids%5B%5D=6182&ids%5B%5D=62448&ids%5B%5D=62684&ids%5B%5D=62689&ids%5B%5D=631&ids%5B%5D=6335&ids%5B%5D=63993&ids%5B%5D=664&ids%5B%5D=6759&ids%5B%5D=677&ids%5B%5D=67909&ids%5B%5D=68770&ids%5B%5D=6945&ids%5B%5D=7&ids%5B%5D=703&ids%5B%5D=7090&ids%5B%5D=71005&ids%5B%5D=74661&ids%5B%5D=762&ids%5B%5D=78405&ids%5B%5D=8031&ids%5B%5D=873&ids%5B%5D=8956&ids%5B%5D=90197&ids%5B%5D=903&ids%5B%5D=90308&ids%5B%5D=9094&ids%5B%5D=9218&ids%5B%5D=9219&ids%5B%5D=9249&ids%5B%5D=9250&ids%5B%5D=9251&ids%5B%5D=9252&ids%5B%5D=9253&ids%5B%5D=9254&ids%5B%5D=9256&ids%5B%5D=9258&ids%5B%5D=9261&ids%5B%5D=9262&ids%5B%5D=9264&ids%5B%5D=9265&ids%5B%5D=9267&ids%5B%5D=931&ids%5B%5D=93343&ids%5B%5D=9526&ids%5B%5D=96139&ids%5B%5D=9668&ids%5B%5D=9715&ids%5B%5D=97462&ids%5B%5D=985&ids%5B%5D=987&ids%5B%5D=989&ids%5B%5D=9899&ids%5B%5D=990": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-41107-ids-5B-5D-43-ids-5B-5D-4357-6c3564ea32.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=69261": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-69261-fad4d96019.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/ARM1/club": {
+    "file": "tmapi-transfermarkt-technology-competition-ARM1-club-ac53fe427f.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/AZ1/club": {
+    "file": "tmapi-transfermarkt-technology-competition-AZ1-club-2f15b0fb04.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/EGY1/club": {
+    "file": "tmapi-transfermarkt-technology-competition-EGY1-club-5034abb14b.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/ES1/club?season=2014": {
+    "file": "tmapi-transfermarkt-technology-competition-ES1-club-season-2014-d5b8357238.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/GB1/club": {
+    "file": "tmapi-transfermarkt-technology-competition-GB1-club-a3e4d5f779.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/GB21/club": {
+    "file": "tmapi-transfermarkt-technology-competition-GB21-club-6a4650d85a.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/LPL/club": {
+    "file": "tmapi-transfermarkt-technology-competition-LPL-club-3a9562d53b.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/MT1N/club": {
+    "file": "tmapi-transfermarkt-technology-competition-MT1N-club-7a1a81e867.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/PLIC/club": {
+    "file": "tmapi-transfermarkt-technology-competition-PLIC-club-8e519ddeda.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/SC1/club": {
+    "file": "tmapi-transfermarkt-technology-competition-SC1-club-ed9ccf6dc6.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/THA1/club": {
+    "file": "tmapi-transfermarkt-technology-competition-THA1-club-9d03bbda8b.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=AJ2&ids%5B%5D=BJ&ids%5B%5D=CL&ids%5B%5D=CLQ&ids%5B%5D=DFB&ids%5B%5D=DFBJ&ids%5B%5D=DFL&ids%5B%5D=KLUB&ids%5B%5D=L1&ids%5B%5D=LPO&ids%5B%5D=OL6&ids%5B%5D=RL3&ids%5B%5D=RN&ids%5B%5D=UEFA&ids%5B%5D=USC": {
     "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-AJ2-ids-5B-5D-BJ-ids-5B-5D-8113c99114.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=ARM1&ids%5B%5D=AZ1&ids%5B%5D=EGY1&ids%5B%5D=GB1&ids%5B%5D=GB21&ids%5B%5D=LPL&ids%5B%5D=MT1N&ids%5B%5D=PLIC&ids%5B%5D=SC1&ids%5B%5D=THA1": {
+    "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-ARM1-ids-5B-5D-AZ1-ids-5B--34802148f4.gz",
     "status": 200,
     "contentType": "application/json"
   },
@@ -9,13 +214,563 @@
     "status": 200,
     "contentType": "application/json"
   },
+  "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=ES1": {
+    "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-ES1-0d04116d11.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=GB1": {
+    "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-GB1-66fcb67848.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=UNLB": {
+    "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-UNLB-2e50489f26.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/0": {
+    "file": "tmapi-transfermarkt-technology-player-0-46cfabcea5.gz",
+    "status": 404,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/17259": {
+    "file": "tmapi-transfermarkt-technology-player-17259-a6d5b3f618.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/17259/market-value-history": {
+    "file": "tmapi-transfermarkt-technology-player-17259-market-value-history-2ba6e26141.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/player/17259/performance-game": {
     "file": "tmapi-transfermarkt-technology-player-17259-performance-game-a19393caf3.gz",
     "status": 200,
     "contentType": "application/json"
   },
+  "https://tmapi.transfermarkt.technology/player/28003": {
+    "file": "tmapi-transfermarkt-technology-player-28003-07b86e270f.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/28003/injury": {
+    "file": "tmapi-transfermarkt-technology-player-28003-injury-a20a69546e.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/28003/market-value-history": {
+    "file": "tmapi-transfermarkt-technology-player-28003-market-value-history-fd474e6c34.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/player/28003/performance-game": {
     "file": "tmapi-transfermarkt-technology-player-28003-performance-game-4e5e2d3cf1.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/5023": {
+    "file": "tmapi-transfermarkt-technology-player-5023-280f04f70e.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/8198": {
+    "file": "tmapi-transfermarkt-technology-player-8198-19df9a90f5.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/players?ids%5B%5D=1018912&ids%5B%5D=1018920&ids%5B%5D=1105549&ids%5B%5D=1259085&ids%5B%5D=182712&ids%5B%5D=196948&ids%5B%5D=205927&ids%5B%5D=293385&ids%5B%5D=326330&ids%5B%5D=357565&ids%5B%5D=363205&ids%5B%5D=411295&ids%5B%5D=411975&ids%5B%5D=44058&ids%5B%5D=466794&ids%5B%5D=496094&ids%5B%5D=503733&ids%5B%5D=561613&ids%5B%5D=636688&ids%5B%5D=636703&ids%5B%5D=646740&ids%5B%5D=683840&ids%5B%5D=705395&ids%5B%5D=792331&ids%5B%5D=937958&ids%5B%5D=938154&ids%5B%5D=962110": {
+    "file": "tmapi-transfermarkt-technology-players-ids-5B-5D-1018912-ids-5B-5D-1018920-ids-5-d95ea43d9e.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/players?ids%5B%5D=1075147&ids%5B%5D=1118495&ids%5B%5D=1259870&ids%5B%5D=132098&ids%5B%5D=153084&ids%5B%5D=159471&ids%5B%5D=161056&ids%5B%5D=170986&ids%5B%5D=17259&ids%5B%5D=175722&ids%5B%5D=192565&ids%5B%5D=196357&ids%5B%5D=223967&ids%5B%5D=243714&ids%5B%5D=257455&ids%5B%5D=344695&ids%5B%5D=353892&ids%5B%5D=40680&ids%5B%5D=424204&ids%5B%5D=468539&ids%5B%5D=475413&ids%5B%5D=483046&ids%5B%5D=503482&ids%5B%5D=566723&ids%5B%5D=580195&ids%5B%5D=58358&ids%5B%5D=604327&ids%5B%5D=607720&ids%5B%5D=744729&ids%5B%5D=792380&ids%5B%5D=822959&ids%5B%5D=829316&ids%5B%5D=938146": {
+    "file": "tmapi-transfermarkt-technology-players-ids-5B-5D-1075147-ids-5B-5D-1118495-ids-5-e73b3a5d10.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/players?ids%5B%5D=1075590&ids%5B%5D=113586&ids%5B%5D=1185913&ids%5B%5D=13810&ids%5B%5D=173617&ids%5B%5D=28003&ids%5B%5D=393581&ids%5B%5D=449151&ids%5B%5D=744024&ids%5B%5D=76071": {
+    "file": "tmapi-transfermarkt-technology-players-ids-5B-5D-1075590-ids-5B-5D-113586-ids-5B-1b105b9f90.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/players?ids%5B%5D=129473&ids%5B%5D=15904&ids%5B%5D=15951&ids%5B%5D=181112&ids%5B%5D=18944&ids%5B%5D=191987&ids%5B%5D=199369&ids%5B%5D=19981&ids%5B%5D=204103&ids%5B%5D=223725&ids%5B%5D=226074&ids%5B%5D=228658&ids%5B%5D=268670&ids%5B%5D=28003&ids%5B%5D=32467&ids%5B%5D=34495&ids%5B%5D=40423&ids%5B%5D=44352&ids%5B%5D=5404&ids%5B%5D=58426&ids%5B%5D=65230&ids%5B%5D=65263&ids%5B%5D=65278&ids%5B%5D=68290&ids%5B%5D=68645&ids%5B%5D=69751&ids%5B%5D=74857&ids%5B%5D=7600&ids%5B%5D=7607&ids%5B%5D=85370&ids%5B%5D=99922": {
+    "file": "tmapi-transfermarkt-technology-players-ids-5B-5D-129473-ids-5B-5D-15904-ids-5B-5-abf2be1082.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/quick-search?term=barcelona&page=1": {
+    "file": "tmapi-transfermarkt-technology-quick-search-term-barcelona-page-1-b3631e13fb.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/quick-search?term=messi&page=1": {
+    "file": "tmapi-transfermarkt-technology-quick-search-term-messi-page-1-3a20acde27.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/quick-search?term=premier+league&page=1": {
+    "file": "tmapi-transfermarkt-technology-quick-search-term-premier-league-page-1-a20a29682f.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/1018912": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-1018912-b3b02a254b.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/1018920": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-1018920-da9246e5c3.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/1075147": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-1075147-5623c4e1e6.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/1105549": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-1105549-3f0a0ed8b3.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/1118495": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-1118495-3b8e3f81f0.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/1259085": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-1259085-9cabf81cd7.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/1259870": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-1259870-72ead5b03e.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/129473": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-129473-33c5bed97d.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/132098": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-132098-9c19af625a.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/153084": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-153084-ee742bda16.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/15904": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-15904-95f17c4a3f.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/159471": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-159471-2414fb38ad.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/15951": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-15951-24676dbc0b.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/161056": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-161056-199227188e.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/170986": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-170986-c6de329fd2.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/17259": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-17259-e3e1679833.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/175722": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-175722-ef99dcfef1.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/181112": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-181112-6d5f06981e.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/182712": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-182712-cb6d9cae0a.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/18944": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-18944-dd2eb3648b.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/191987": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-191987-7c6f816e76.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/192565": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-192565-7b609d05f9.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/196357": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-196357-2eb9038fe1.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/196948": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-196948-53599711f4.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/199369": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-199369-05419a5fe9.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/19981": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-19981-a95bc213d2.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/204103": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-204103-a3ce6604b9.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/205927": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-205927-00fc52fe3b.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/223725": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-223725-438cb96b54.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/223967": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-223967-8608477369.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/226074": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-226074-a4f04a4521.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/228658": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-228658-a02c7514d9.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/243714": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-243714-1bed11aa4b.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/257455": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-257455-8f2d40f926.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/268670": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-268670-2f84238f63.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/28003": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-28003-b842da4b95.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/293385": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-293385-ab8d67b291.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/32467": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-32467-e67a3fa3d1.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/326330": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-326330-1b3883b3eb.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/344695": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-344695-b31eef8059.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/34495": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-34495-334e4ba848.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/353892": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-353892-d806bda41a.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/357565": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-357565-c1c056cbd7.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/363205": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-363205-426c0fc660.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/40423": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-40423-438639b8e7.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/40680": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-40680-07e22350a7.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/411295": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-411295-ab0fb26938.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/411975": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-411975-5045283b81.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/424204": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-424204-2c26cae6cd.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/44058": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-44058-8d09df390c.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/44352": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-44352-e53a5170b8.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/466794": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-466794-d327971ee9.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/468539": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-468539-af2aca132d.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/475413": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-475413-25c74a05af.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/483046": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-483046-5183c2db8e.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/496094": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-496094-769f27b2ee.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/5023": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-5023-5f235a2cbb.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/503482": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-503482-c4bfffb7d6.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/503733": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-503733-236ddda481.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/5404": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-5404-578cda11b1.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/561613": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-561613-7b2e54e1cc.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/566723": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-566723-76d2bd9ccf.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/580195": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-580195-9eabf3f540.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/58358": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-58358-cf1b97bac6.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/58426": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-58426-02608d69a2.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/604327": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-604327-94b676b622.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/607720": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-607720-f581c19ed8.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/636688": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-636688-43c7e06564.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/636703": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-636703-184ff58040.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/646740": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-646740-24a7188a0c.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/65230": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-65230-d7f0cdc107.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/65263": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-65263-867b78cd14.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/65278": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-65278-5121301d30.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/68290": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-68290-68476307b2.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/683840": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-683840-9c4b5f8699.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/68645": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-68645-473796b126.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/69751": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-69751-47b414c3ae.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/705395": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-705395-98e736498a.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/744729": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-744729-6a388b6a5d.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/74857": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-74857-540ddfd46c.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/7600": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-7600-38451cb5f7.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/7607": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-7607-369ab75e28.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/792331": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-792331-26727ef178.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/792380": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-792380-a1d987f0fb.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/822959": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-822959-8c1b8e07d9.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/829316": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-829316-f212f7cb77.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/85370": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-85370-77eceaae5b.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/937958": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-937958-0f55d91532.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/938146": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-938146-51f2d59976.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/938154": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-938154-50a49dcc7e.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/962110": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-962110-491bcb1928.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/transfer/history/player/99922": {
+    "file": "tmapi-transfermarkt-technology-transfer-history-player-99922-832f2a6435.gz",
     "status": 200,
     "contentType": "application/json"
   }

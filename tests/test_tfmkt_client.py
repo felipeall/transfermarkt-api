@@ -136,5 +136,5 @@ async def test_batch_with_no_ids_makes_no_request() -> None:
 def test_recorded_fixture_is_valid_json(tfmkt_store: FixtureStore) -> None:
     """Recorded fixtures are valid tfmkt payloads, successful exactly when the status is 200."""
     for url in tfmkt_store.manifest:
-        _, _, content = tfmkt_store.load(url)
-        assert json.loads(content)["success"] is True, url
+        status, _, content = tfmkt_store.load(url)
+        assert json.loads(content)["success"] is (status == 200), url
