@@ -5,10 +5,10 @@ from app.schemas.base import AuditMixin, TransfermarktBaseModel
 
 class CompetitionSearchResult(TransfermarktBaseModel):
     id: str
-    name: str
-    country: str
-    clubs: int
-    players: int
+    name: Optional[str] = None
+    country: Optional[str] = None
+    clubs: Optional[int] = None
+    players: Optional[int] = None
     total_market_value: Optional[int] = None
     mean_market_value: Optional[int] = None
     continent: Optional[str] = None

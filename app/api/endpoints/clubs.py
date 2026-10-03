@@ -3,32 +3,25 @@ from typing import Optional
 from fastapi import APIRouter
 
 from app.schemas import clubs as schemas
-from app.services.clubs.players import TransfermarktClubPlayers
-from app.services.clubs.profile import TransfermarktClubProfile
-from app.services.clubs.search import TransfermarktClubSearch
+from app.services.clubs import players, profile, search
+from app.tfmkt import Tfmkt
 
 router = APIRouter()
 
 
-@router.get("/search/{club_name}", response_model=schemas.ClubSearch, response_model_exclude_none=True)
-def search_clubs(club_name: str, page_number: Optional[int] = 1) -> dict:
+@router.get("/search/{club_name}", response_model=schemas.ClubSearch)
+async def search_clubs(club_name: str, tfmkt: Tfmkt, page_number: int = 1) -> dict:
     """Search clubs by name."""
-    tfmkt = TransfermarktClubSearch(query=club_name, page_number=page_number)
-    found_clubs = tfmkt.search_clubs()
-    return found_clubs
+    return await search.search_clubs(tfmkt, club_name, page_number)
 
 
-@router.get("/{club_id}/profile", response_model=schemas.ClubProfile, response_model_exclude_defaults=True)
-def get_club_profile(club_id: str) -> dict:
+@router.get("/{club_id}/profile", response_model=schemas.ClubProfile)
+async def get_club_profile(club_id: str, tfmkt: Tfmkt) -> dict:
     """Get a club's profile."""
-    tfmkt = TransfermarktClubProfile(club_id=club_id)
-    club_profile = tfmkt.get_club_profile()
-    return club_profile
+    return await profile.get_club_profile(tfmkt, club_id)
 
 
-@router.get("/{club_id}/players", response_model=schemas.ClubPlayers, response_model_exclude_defaults=True)
-def get_club_players(club_id: str, season_id: Optional[str] = None) -> dict:
+@router.get("/{club_id}/players", response_model=schemas.ClubPlayers)
+async def get_club_players(club_id: str, tfmkt: Tfmkt, season_id: Optional[str] = None) -> dict:
     """Get a club's squad for a season (current squad by default)."""
-    tfmkt = TransfermarktClubPlayers(club_id=club_id, season_id=season_id)
-    club_players = tfmkt.get_club_players()
-    return club_players
+    return await players.get_club_players(tfmkt, club_id, season_id)

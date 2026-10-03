@@ -1,84 +1,42 @@
-from dataclasses import dataclass
-from typing import List, Optional
-from xml.etree import ElementTree
+from datetime import date
+from typing import Optional
 
-from app.services.base import TransfermarktBase
-from app.utils.utils import extract_from_url, trim
-from app.utils.xpath import Players
+from app.tfmkt import TfmktClient
+from app.tfmkt.reference import last_page_number, season_label
+
+PAGE_SIZE = 15  # the website's injury history page size, kept for pagination compatibility
 
 
-@dataclass
-class TransfermarktPlayerInjuries(TransfermarktBase):
+async def get_player_injuries(tfmkt: TfmktClient, player_id: str, page_number: int) -> dict:
     """
-    Represents a service for retrieving and parsing the injury history of a football player on Transfermarkt.
+    Injury history, most recent first, paginated locally.
 
-    Args:
-        player_id (str): The unique identifier of the player.
-        page_number (int): The page number of the player's injury history.
-
-    Attributes:
-        URL (str): The URL to fetch the player's injury history data.
+    `days` counts both the first and last day, as the website does (upstream `durationDetails.days` is one less).
     """
+    injuries = (await tfmkt.player_injuries(player_id)).get("injuries") or []
+    page = injuries[(page_number - 1) * PAGE_SIZE : page_number * PAGE_SIZE]
 
-    player_id: str = None
-    URL: str = "https://www.transfermarkt.com/player/verletzungen/spieler/{player_id}/plus/1/page/{page_number}"
-    page_number: int = 1
+    return {
+        "id": player_id,
+        "pageNumber": page_number,
+        "lastPageNumber": last_page_number(len(injuries), PAGE_SIZE),
+        "injuries": [
+            {
+                "season": season_label(injury.get("seasonId")),
+                "injury": injury.get("name"),
+                "fromDate": injury.get("start"),
+                "untilDate": injury.get("end"),
+                "days": inclusive_days(injury),
+                "gamesMissed": injury.get("missedGamesCount"),
+            }
+            for injury in page
+        ],
+    }
 
-    def __post_init__(self):
-        """Initialize the TransfermarktPlayerInjuries class."""
-        self.URL = self.URL.format(player_id=self.player_id, page_number=self.page_number)
-        self.page = self.request_url_page()
-        self.raise_exception_if_not_found(xpath=Players.Profile.URL)
 
-    def __parse_player_injuries(self) -> Optional[List[dict]]:
-        """
-        Parse the injury history of a football player from the retrieved data.
-
-        Returns:
-            list: A list of dictionaries, where each dictionary represents an injury in the
-                player's injury history. Each dictionary contains keys 'season', 'injury', 'from',
-                'until', 'days', 'gamesMissed', and 'gamesMissedClubs' with their respective values.
-
-        """
-        injuries: ElementTree = self.page.xpath(Players.Injuries.RESULTS)
-        player_injuries = []
-
-        for injury in injuries:
-            season = trim(injury.xpath(Players.Injuries.SEASONS))
-            injury_type = trim(injury.xpath(Players.Injuries.INJURY))
-            date_from = trim(injury.xpath(Players.Injuries.FROM))
-            date_until = trim(injury.xpath(Players.Injuries.UNTIL))
-            days = trim(injury.xpath(Players.Injuries.DAYS))
-            games_missed = trim(injury.xpath(Players.Injuries.GAMES_MISSED))
-            games_missed_clubs_urls = injury.xpath(Players.Injuries.GAMES_MISSED_CLUBS_URLS)
-            games_missed_clubs_ids = [extract_from_url(club_url) for club_url in games_missed_clubs_urls]
-
-            player_injuries.append(
-                {
-                    "season": season,
-                    "injury": injury_type,
-                    "fromDate": date_from,
-                    "untilDate": date_until,
-                    "days": days,
-                    "gamesMissed": games_missed,
-                    "gamesMissedClubs": games_missed_clubs_ids,
-                },
-            )
-
-        return player_injuries
-
-    def get_player_injuries(self) -> dict:
-        """
-        Retrieve and parse the injury history of a football player.
-
-        Returns:
-            dict: A dictionary containing the player's unique identifier, current page number,
-                last page number, and injury history.
-
-        """
-        self.response["id"] = self.player_id
-        self.response["pageNumber"] = self.page_number
-        self.response["lastPageNumber"] = self.get_last_page_number()
-        self.response["injuries"] = self.__parse_player_injuries()
-
-        return self.response
+def inclusive_days(injury: dict) -> Optional[int]:
+    """Injury length in days, counting both the first and the last day."""
+    if injury.get("start") and injury.get("end"):
+        return (date.fromisoformat(injury["end"]) - date.fromisoformat(injury["start"])).days + 1
+    days = (injury.get("durationDetails") or {}).get("days")
+    return days + 1 if days is not None else None

@@ -5,10 +5,10 @@ from app.schemas.base import AuditMixin, TransfermarktBaseModel
 
 class ClubSearchResult(TransfermarktBaseModel):
     id: str
-    url: str
-    name: str
-    country: str
-    squad: int
+    url: Optional[str] = None
+    name: Optional[str] = None
+    country: Optional[str] = None
+    squad: Optional[int] = None
     market_value: Optional[int] = None
 
 

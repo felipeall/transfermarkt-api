@@ -5,13 +5,12 @@ from app.schemas.base import AuditMixin, TransfermarktBaseModel
 
 
 class Injury(TransfermarktBaseModel):
-    season: str
-    injury: str
-    from_date: date
-    until_date: Optional[date]
-    days: int
-    games_missed: Optional[int]
-    games_missed_clubs: list[str]
+    season: Optional[str] = None
+    injury: Optional[str] = None
+    from_date: Optional[date] = None
+    until_date: Optional[date] = None
+    days: Optional[int] = None
+    games_missed: Optional[int] = None
 
 
 class PlayerInjuries(TransfermarktBaseModel, AuditMixin):
