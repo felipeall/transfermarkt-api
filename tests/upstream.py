@@ -1,4 +1,4 @@
-"""Offline upstream fixtures: recorded Transfermarkt responses keyed by URL."""
+"""Offline upstream fixtures: recorded tfmkt responses keyed by URL."""
 
 import gzip
 import hashlib
@@ -8,7 +8,6 @@ from pathlib import Path
 from typing import Optional
 
 import httpx
-from requests import Response
 
 FIXTURES_DIR = Path(__file__).parent / "fixtures"
 
@@ -47,17 +46,6 @@ class FixtureStore:
             raise LookupError(f"No recorded fixture for {url}. Run scripts/capture_fixtures.py.")
         content = gzip.decompress((self.directory / entry["file"]).read_bytes())
         return entry["status"], entry["contentType"] or "", content
-
-
-def web_response(store: FixtureStore, url: str) -> Response:
-    """A `requests.Response` replaying a recorded website page."""
-    status, content_type, content = store.load(url)
-    response = Response()
-    response.url = url
-    response.status_code = status
-    response.headers["Content-Type"] = content_type
-    response._content = content
-    return response
 
 
 def tfmkt_transport(store: FixtureStore) -> httpx.MockTransport:
