@@ -1,5 +1,6 @@
 """Behavior of the JSON-backed endpoints: recorded upstream data plus synthetic edge cases."""
 
+import json
 from collections.abc import Iterator
 from datetime import datetime
 
@@ -9,6 +10,7 @@ from fastapi.testclient import TestClient
 
 from app.main import app
 from app.tfmkt import TfmktClient, get_tfmkt
+from tests.snapshots import BASELINE_V3_DIR
 
 
 def ok(data: object) -> httpx.Response:
@@ -38,10 +40,9 @@ def synthetic_client() -> Iterator[tuple[TestClient, dict]]:
     app.dependency_overrides.clear()
 
 
-@pytest.mark.parametrize("path", ["/players/28003/achievements", "/players/28003/jersey_numbers"])
-def test_endpoints_without_json_source_return_501(client: TestClient, path: str) -> None:
-    """Endpoints without a JSON source answer 501."""
-    assert client.get(path).status_code == 501
+def test_jersey_numbers_without_json_source_return_501(client: TestClient) -> None:
+    """Jersey numbers have no JSON source and answer 501."""
+    assert client.get("/players/28003/jersey_numbers").status_code == 501
 
 
 def test_unknown_player_is_404(client: TestClient) -> None:
@@ -171,3 +172,62 @@ def test_health_does_not_call_upstream(synthetic_client: tuple[TestClient, dict]
     routes.clear()
 
     assert client.get("/health").json() == {"status": "ok"}
+
+
+def test_player_achievements_keep_v3_titles_and_counts(client: TestClient) -> None:
+    """Every v3 achievement title is present with the same count."""
+    v3 = json.loads((BASELINE_V3_DIR / "players_28003_achievements.json").read_text())["body"]["achievements"]
+    achievements = {a["title"].lower(): a for a in client.get("/players/28003/achievements").json()["achievements"]}
+
+    assert {a["title"].lower(): a["count"] for a in v3}.items() <= {
+        k: a["count"] for k, a in achievements.items()
+    }.items()
+    assert achievements["spanish champion"]["details"][0] == {
+        "season": {"id": "2018", "name": "18/19"},
+        "club": {"id": "131", "name": "FC Barcelona"},
+        "competition": {"id": "ES1", "name": "LaLiga"},
+    }
+
+
+def test_market_value_worldwide_ranking(client: TestClient) -> None:
+    """Market value includes the worldwide ranking."""
+    assert client.get("/players/28003/market_value").json()["ranking"] == {"Worldwide": 844}
+
+
+def test_historical_league_table(client: TestClient) -> None:
+    """A past season's table is returned for that season."""
+    body = client.get("/competitions/GB1/table?season_id=2014").json()
+    champion = body["tables"][0]["rows"][0]
+
+    assert body["seasonId"] == "2014"
+    assert (champion["clubName"], champion["points"], champion["matches"]) == ("Chelsea FC", 87, 38)
+
+
+def test_group_stage_tables(client: TestClient) -> None:
+    """Group stages return one table per group."""
+    tables = client.get("/competitions/CL/table?season_id=2020").json()["tables"]
+
+    assert [t["name"] for t in tables][:2] == ["Group A", "Group B"]
+    assert all(len(t["rows"]) == 4 for t in tables)
+
+
+def test_national_career(client: TestClient) -> None:
+    """National career lists the current national team first."""
+    argentina = client.get("/players/28003/national_career").json()["nationalTeams"][0]
+
+    assert (argentina["name"], argentina["status"], argentina["isCaptain"]) == ("Argentina", "current", True)
+
+
+def test_club_profile_includes_current_coach(client: TestClient) -> None:
+    """Club profile includes the current head coach."""
+    assert client.get("/clubs/131/profile").json()["coach"] == {
+        "id": "67",
+        "name": "Hansi Flick",
+        "since": "2024-07-01",
+    }
+
+
+@pytest.mark.parametrize("path", ["/players/0/achievements", "/clubs/0/achievements", "/coaches/0/profile"])
+def test_unknown_ids_are_404(client: TestClient, path: str) -> None:
+    """Unknown IDs answer 404 on routes that return empty data upstream."""
+    assert client.get(path).status_code == 404

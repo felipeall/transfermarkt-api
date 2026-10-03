@@ -14,6 +14,7 @@
     "stadiumSeats": null,
     "currentMarketValue": null,
     "confederation": null,
+    "coach": null,
     "squad": {
       "size": 4,
       "averageAge": 26.9,

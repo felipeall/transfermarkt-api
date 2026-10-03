@@ -140,6 +140,30 @@ class TfmktClient:
         """Fetch one performance record per match of the player's club."""
         return await self.get(f"/player/{player_id}/performance-game")
 
+    async def player_achievements(self, player_id: str) -> dict:
+        """Fetch a player's titles and awards (one record per title won)."""
+        return await self.get(f"/player/{player_id}/achievement")
+
+    async def player_market_value_ranking(self, player_id: str) -> Optional[dict]:
+        """None when the player has no ranking (upstream answers 404)."""
+        return await self.get_optional(f"/player/{player_id}/market-value-ranking")
+
+    async def player_national_career(self, player_id: str) -> dict:
+        """Fetch the national teams a player has played for."""
+        return await self.get(f"/player/{player_id}/national-career-history")
+
+    async def player_absences(self, player_id: str) -> dict:
+        """Fetch a player's non-injury absences."""
+        return await self.get(f"/player/{player_id}/absence")
+
+    async def coach(self, coach_id: str) -> dict:
+        """Fetch a coach record."""
+        return await self.get(f"/coach/{coach_id}")
+
+    async def coaches(self, ids: Iterable[str]) -> dict[str, dict]:
+        """Fetch coach records by ID, indexed by ID."""
+        return await self.get_batch("/coaches", ids)
+
     async def club(self, club_id: str) -> dict:
         """Fetch a club record."""
         return await self.get(f"/club/{club_id}")
@@ -148,6 +172,14 @@ class TfmktClient:
         """Fetch a club's squad for a season (current squad by default)."""
         return await self.get(f"/club/{club_id}/squad", params=_season(season_id))
 
+    async def club_achievements(self, club_id: str) -> dict:
+        """Fetch a club's titles (one record per title won)."""
+        return await self.get(f"/club/{club_id}/achievement")
+
+    async def club_coach(self, club_id: str) -> Optional[dict]:
+        """None when the club has no head coach on record (upstream answers 404)."""
+        return await self.get_optional(f"/club/{club_id}/coach")
+
     async def club_stadium(self, club_id: str) -> Optional[dict]:
         """None when the club has no stadium (upstream answers 404)."""
         return await self.get_optional(f"/club/{club_id}/stadium")
@@ -155,6 +187,14 @@ class TfmktClient:
     async def competition_clubs(self, competition_id: str, season_id: Optional[str] = None) -> dict:
         """Fetch the member clubs of a competition season (current by default)."""
         return await self.get(f"/competition/{competition_id}/club", params=_season(season_id))
+
+    async def competition_table(self, competition_id: str, season_id: Optional[str] = None) -> dict:
+        """Fetch a competition's league table(s) for a season (current by default)."""
+        return await self.get(f"/competition/{competition_id}/table", params=_season(season_id))
+
+    async def competition_seasons(self, competition_id: str) -> dict:
+        """Fetch the seasons available for a competition."""
+        return await self.get(f"/competition/{competition_id}/season")
 
     async def competitions(self, ids: Iterable[str]) -> dict[str, dict]:
         """Fetch competition records by ID, indexed by ID."""

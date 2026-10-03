@@ -22,13 +22,20 @@ https://transfermarkt-api.fly.dev/
 | `GET /players/{player_id}/transfers` | |
 | `GET /players/{player_id}/stats` | Per season, competition and club; club competitions only |
 | `GET /players/{player_id}/injuries?page_number=` | 15 injuries per page |
-| `GET /players/{player_id}/achievements` | `501`: no data source |
+| `GET /players/{player_id}/absences?page_number=` | Suspensions, call-ups, leave; 15 per page |
+| `GET /players/{player_id}/achievements` | Titles and awards with season, club and competition |
+| `GET /players/{player_id}/national_career` | Senior and youth national teams |
 | `GET /players/{player_id}/jersey_numbers` | `501`: no data source |
 | `GET /clubs/search/{club_name}?page_number=` | 10 results per page |
 | `GET /clubs/{club_id}/profile` | |
 | `GET /clubs/{club_id}/players?season_id=` | Current squad by default |
+| `GET /clubs/{club_id}/achievements` | Club titles by season |
+| `GET /coaches/search/{coach_name}?page_number=` | 10 results per page |
+| `GET /coaches/{coach_id}/profile` | |
 | `GET /competitions/search/{competition_name}?page_number=` | 10 results per page |
 | `GET /competitions/{competition_id}/clubs?season_id=` | Current season by default |
+| `GET /competitions/{competition_id}/table?season_id=` | League table; one table per group for group stages |
+| `GET /competitions/{competition_id}/seasons` | Valid `season_id` values |
 
 Errors: `404` unknown ID, `501` endpoint without data source, `502` unexpected upstream response, `503` upstream blocked or refused the request, `504` upstream timeout.
 

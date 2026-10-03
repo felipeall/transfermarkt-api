@@ -1,12 +1,23 @@
+import asyncio
+
 from app.tfmkt import TfmktClient
 from app.tfmkt.reference import market_value_of
 
 
 async def get_player_market_value(tfmkt: TfmktClient, player_id: str) -> dict:
-    """Current market value and valuation history, oldest first. Club names are the clubs' current names."""
-    data = await tfmkt.player_market_value_history(player_id)
+    """
+    Current market value, valuation history (oldest first) and worldwide market-value ranking.
+
+    Club names are the clubs' current names. Only the worldwide ranking is available upstream; the v3 position,
+    club and country rankings have no JSON source.
+    """
+    data, ranking = await asyncio.gather(
+        tfmkt.player_market_value_history(player_id),
+        tfmkt.player_market_value_ranking(player_id),
+    )
     history = sorted(data.get("history") or [], key=lambda e: (e.get("marketValue") or {}).get("determined") or "")
     clubs = await tfmkt.clubs(entry.get("clubId") for entry in history)
+    worldwide = (ranking or {}).get("ranking")
 
     return {
         "id": player_id,
@@ -21,4 +32,5 @@ async def get_player_market_value(tfmkt: TfmktClient, player_id: str) -> dict:
             }
             for entry in history
         ],
+        "ranking": {"Worldwide": worldwide} if worldwide else None,
     }

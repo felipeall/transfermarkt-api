@@ -1,0 +1,6 @@
+{
+  "status": 404,
+  "body": {
+    "detail": "Not found: /player/0"
+  }
+}

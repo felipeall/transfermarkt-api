@@ -11,12 +11,15 @@ async def get_club_profile(tfmkt: TfmktClient, club_id: str) -> dict:
     `officialName`, the address and the colors come from the club's superior (parent) club record. For national
     teams that record is the football association, so `officialName` is omitted for them.
     """
-    club, squad, stadium, reference = await asyncio.gather(
+    club, squad, stadium, club_coach, reference = await asyncio.gather(
         tfmkt.club(club_id),
         tfmkt.club_squad(club_id),
         tfmkt.club_stadium(club_id),
+        tfmkt.club_coach(club_id),
         get_reference(tfmkt),
     )
+    coach_id = str(club_coach["coachId"]) if club_coach and club_coach.get("coachId") else None
+    coaches = await tfmkt.coaches([coach_id]) if coach_id else {}
     base = club.get("baseDetails") or {}
     superior = base.get("superiorClub") or {}
     location = superior.get("location") or {}
@@ -43,6 +46,13 @@ async def get_club_profile(tfmkt: TfmktClient, club_id: str) -> dict:
         "confederation": (
             reference.confederation_name(country.get("confederationId")) if base.get("isNationalTeam") else None
         ),
+        "coach": {
+            "id": coach_id,
+            "name": coaches.get(coach_id, {}).get("name"),
+            "since": (club_coach.get("startDate") or "")[:10] or None,
+        }
+        if coach_id
+        else None,
         "squad": {
             "size": squad_details.get("squadSize"),
             "averageAge": float(squad_details["averageAgeDisplay"]) if squad_details.get("averageAgeDisplay") else None,

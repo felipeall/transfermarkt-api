@@ -1,0 +1,1418 @@
+{
+  "status": 200,
+  "body": {
+    "id": "131",
+    "achievements": [
+      {
+        "title": "UEFA Champions League winner",
+        "count": 4,
+        "details": [
+          {
+            "season": {
+              "id": "2014",
+              "name": "14/15"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2010",
+              "name": "10/11"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2008",
+              "name": "08/09"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2005",
+              "name": "05/06"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "European Champion Clubs' Cup winner",
+        "count": 1,
+        "details": [
+          {
+            "season": {
+              "id": "1991",
+              "name": "91/92"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "Spanish Champion",
+        "count": 29,
+        "details": [
+          {
+            "season": {
+              "id": "2025",
+              "name": "25/26"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2024",
+              "name": "24/25"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2022",
+              "name": "22/23"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2018",
+              "name": "18/19"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2017",
+              "name": "17/18"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2015",
+              "name": "15/16"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2014",
+              "name": "14/15"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2012",
+              "name": "12/13"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2010",
+              "name": "10/11"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2009",
+              "name": "09/10"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2008",
+              "name": "08/09"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2005",
+              "name": "05/06"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2004",
+              "name": "04/05"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1998",
+              "name": "98/99"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1997",
+              "name": "97/98"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1993",
+              "name": "93/94"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1992",
+              "name": "92/93"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1991",
+              "name": "91/92"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1990",
+              "name": "90/91"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1984",
+              "name": "84/85"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1973",
+              "name": "73/74"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1959",
+              "name": "59/60"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1958",
+              "name": "58/59"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1952",
+              "name": "52/53"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1951",
+              "name": "51/52"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1948",
+              "name": "48/49"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1947",
+              "name": "47/48"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1944",
+              "name": "44/45"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1928",
+              "name": "1928/29"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "UEFA Supercup Winner",
+        "count": 5,
+        "details": [
+          {
+            "season": {
+              "id": "2015",
+              "name": "15/16"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2011",
+              "name": "11/12"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2009",
+              "name": "09/10"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1997",
+              "name": "97/98"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1992",
+              "name": "92/93"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "Cup Winners Cup Winner",
+        "count": 4,
+        "details": [
+          {
+            "season": {
+              "id": "1996",
+              "name": "96/97"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1988",
+              "name": "88/89"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1981",
+              "name": "81/82"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1978",
+              "name": "78/79"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "FIFA Club World Cup winner",
+        "count": 3,
+        "details": [
+          {
+            "season": {
+              "id": "2015",
+              "name": "15/16"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2011",
+              "name": "11/12"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2009",
+              "name": "09/10"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "Spanish Cup winner",
+        "count": 32,
+        "details": [
+          {
+            "season": {
+              "id": "2024",
+              "name": "24/25"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2020",
+              "name": "20/21"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2017",
+              "name": "17/18"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2016",
+              "name": "16/17"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2015",
+              "name": "15/16"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2014",
+              "name": "14/15"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2011",
+              "name": "11/12"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2008",
+              "name": "08/09"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1997",
+              "name": "97/98"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1996",
+              "name": "96/97"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1989",
+              "name": "89/90"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1987",
+              "name": "87/88"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1982",
+              "name": "82/83"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1980",
+              "name": "80/81"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1977",
+              "name": "77/78"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1970",
+              "name": "70/71"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1967",
+              "name": "67/68"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1962",
+              "name": "62/63"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1958",
+              "name": "58/59"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1956",
+              "name": "56/57"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1952",
+              "name": "52/53"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1951",
+              "name": "51/52"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1950",
+              "name": "50/51"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1941",
+              "name": "41/42"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1927",
+              "name": "1927/28"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1925",
+              "name": "1925/26"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1924",
+              "name": "1924/25"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1921",
+              "name": "1921/22"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1919",
+              "name": "1919/20"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1912",
+              "name": "1912/13"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1911",
+              "name": "1911/12"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1909",
+              "name": "1909/10"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "Spanish Super Cup winner",
+        "count": 16,
+        "details": [
+          {
+            "season": {
+              "id": "2025",
+              "name": "25/26"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2024",
+              "name": "24/25"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2022",
+              "name": "22/23"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2018",
+              "name": "18/19"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2016",
+              "name": "16/17"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2013",
+              "name": "13/14"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2011",
+              "name": "11/12"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2010",
+              "name": "10/11"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2009",
+              "name": "09/10"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2006",
+              "name": "06/07"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2005",
+              "name": "05/06"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1996",
+              "name": "96/97"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1994",
+              "name": "94/95"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1992",
+              "name": "92/93"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1991",
+              "name": "91/92"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1983",
+              "name": "83/84"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "Inter-Cities Fairs Cup winner",
+        "count": 3,
+        "details": [
+          {
+            "season": {
+              "id": "1965",
+              "name": "65/66"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1959",
+              "name": "59/60"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1957",
+              "name": "57/58"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "Copa Eva Duarte Winner",
+        "count": 3,
+        "details": [
+          {
+            "season": {
+              "id": "1952",
+              "name": null
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1951",
+              "name": "51/52"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1948",
+              "name": "48/49"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "Spanish League Cup Winner",
+        "count": 2,
+        "details": [
+          {
+            "season": {
+              "id": "1985",
+              "name": "85/86"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1982",
+              "name": "82/83"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "Copa Catalunya",
+        "count": 8,
+        "details": [
+          {
+            "season": {
+              "id": "2013",
+              "name": "13/14"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2012",
+              "name": "12/13"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2006",
+              "name": "06/07"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2004",
+              "name": "04/05"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2003",
+              "name": "03/04"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1999",
+              "name": "99/00"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1992",
+              "name": "92/93"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1990",
+              "name": "90/91"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "",
+        "count": 1,
+        "details": [
+          {
+            "season": {
+              "id": "1992",
+              "name": "92/93"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "",
+        "count": 1,
+        "details": [
+          {
+            "season": {
+              "id": "1993",
+              "name": "93/94"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "",
+        "count": 31,
+        "details": [
+          {
+            "season": {
+              "id": "2025",
+              "name": "25/26"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2024",
+              "name": "24/25"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2023",
+              "name": "23/24"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2022",
+              "name": "22/23"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2021",
+              "name": "21/22"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2020",
+              "name": "20/21"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2019",
+              "name": "19/20"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2018",
+              "name": "18/19"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2017",
+              "name": "17/18"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2016",
+              "name": "16/17"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2015",
+              "name": "15/16"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2014",
+              "name": "14/15"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2013",
+              "name": "13/14"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2012",
+              "name": "12/13"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2011",
+              "name": "11/12"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2010",
+              "name": "10/11"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2009",
+              "name": "09/10"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2008",
+              "name": "08/09"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2007",
+              "name": "07/08"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2006",
+              "name": "06/07"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2005",
+              "name": "05/06"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2004",
+              "name": "04/05"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2002",
+              "name": "02/03"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2001",
+              "name": "01/02"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2000",
+              "name": "00/01"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1999",
+              "name": "99/00"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1998",
+              "name": "98/99"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1997",
+              "name": "97/98"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1994",
+              "name": "94/95"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1993",
+              "name": "93/94"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1992",
+              "name": "92/93"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "",
+        "count": 11,
+        "details": [
+          {
+            "season": {
+              "id": "2003",
+              "name": "03/04"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2000",
+              "name": "00/01"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1995",
+              "name": "95/96"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1987",
+              "name": "87/88"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1986",
+              "name": "86/87"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1980",
+              "name": "80/81"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1977",
+              "name": "77/78"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1976",
+              "name": "76/77"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1975",
+              "name": "75/76"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1973",
+              "name": "73/74"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1972",
+              "name": "72/73"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "",
+        "count": 2,
+        "details": [
+          {
+            "season": {
+              "id": "1985",
+              "name": "85/86"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "1960",
+              "name": "60/61"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "",
+        "count": 2,
+        "details": [
+          {
+            "season": {
+              "id": "2022",
+              "name": "22/23"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2021",
+              "name": "21/22"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      },
+      {
+        "title": "",
+        "count": 4,
+        "details": [
+          {
+            "season": {
+              "id": "2015",
+              "name": "15/16"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2011",
+              "name": "11/12"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2009",
+              "name": "09/10"
+            },
+            "club": null,
+            "competition": null
+          },
+          {
+            "season": {
+              "id": "2006",
+              "name": "06/07"
+            },
+            "club": null,
+            "competition": null
+          }
+        ]
+      }
+    ]
+  }
+}
