@@ -18,6 +18,11 @@
     "stadiumSeats": 50865,
     "currentMarketValue": 261800000,
     "confederation": "UEFA",
+    "coach": {
+      "id": "196",
+      "name": "Ralf Rangnick",
+      "since": "2022-06-01"
+    },
     "squad": {
       "size": 29,
       "averageAge": 26.5,

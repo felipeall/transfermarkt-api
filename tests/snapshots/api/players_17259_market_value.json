@@ -340,6 +340,9 @@
         "clubName": "Bayern Munich",
         "marketValue": 4000000
       }
-    ]
+    ],
+    "ranking": {
+      "Worldwide": 2847
+    }
   }
 }

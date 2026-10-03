@@ -16,6 +16,15 @@ Data now comes from Transfermarkt's JSON API (`tmapi.transfermarkt.technology`) 
 
 ### Added
 
+- New endpoints:
+  - `GET /players/{id}/national_career` (#73)
+  - `GET /players/{id}/absences`
+  - `GET /clubs/{id}/achievements`
+  - `GET /coaches/search/{name}`
+  - `GET /coaches/{id}/profile`
+  - `GET /competitions/{id}/table`
+  - `GET /competitions/{id}/seasons`
+- Club profile: `coach` (current head coach and start date).
 - Stats: `secondYellowCards`.
 - Club squad: `signedFrom` and `joinedOn` for past seasons, from transfer history.
 - Club profile: `updatedAt`.
@@ -29,13 +38,15 @@ Data now comes from Transfermarkt's JSON API (`tmapi.transfermarkt.technology`) 
 - Stats `seasonId` is the season start year (`"2014"` for 14/15). Stats only cover club competitions; national-team matches are excluded, as on the website's detailed stats page.
 - Club squad for a past season: `age`, `contract` and `marketValue` are `null` instead of a value of uncertain date.
 - Club profile `league.countryId` is Transfermarkt's country ID (Spain: `157`).
+- Achievements also list participations, runner-up and third places. Every v3 title is still present with the same count. Each detail now has both `club` and `competition` when known.
+- Market value `ranking` only has the `Worldwide` key; position, club and country rankings have no JSON source.
 - `updatedAt` is when the data was fetched from Transfermarkt (oldest fetch when served from cache), not when the response was built.
 
 ### Removed (no data source in the JSON API)
 
-- `GET /players/{id}/achievements` and `GET /players/{id}/jersey_numbers` return `501`.
+- `GET /players/{id}/jersey_numbers` returns `501`.
 - Player profile: `description`, `socialMedia`, `trainerProfile`, `relatives`, `club.mostGamesFor`.
-- Market value: `ranking`.
+- Market value: rankings other than `Worldwide`.
 - Injuries: `gamesMissedClubs`.
 - Club squad: `status`, `joined`.
 - Club profile: `legalForm`, `tel`, `fax`, `website`, `foundedOn`, `members`, `membersDate`, `otherSports`, `fifaWorldRanking`, `currentTransferRecord`.

@@ -1,7 +1,18 @@
 from fastapi import APIRouter, HTTPException
 
 from app.schemas import players as schemas
-from app.services.players import injuries, market_value, profile, search, stats, transfers
+from app.schemas.achievements import Achievements
+from app.services.players import (
+    absences,
+    achievements,
+    injuries,
+    market_value,
+    national_career,
+    profile,
+    search,
+    stats,
+    transfers,
+)
 from app.tfmkt import Tfmkt
 
 router = APIRouter()
@@ -54,10 +65,19 @@ async def get_player_injuries(player_id: str, tfmkt: Tfmkt, page_number: int = 1
     return await injuries.get_player_injuries(tfmkt, player_id, page_number)
 
 
-@router.get("/{player_id}/achievements", responses=NOT_AVAILABLE)
-async def get_player_achievements(player_id: str) -> None:
-    """Achievements: answers 501, the JSON API has no source for it."""
-    raise HTTPException(
-        status_code=501,
-        detail="Achievements are not available: Transfermarkt's JSON API has no equivalent data.",
-    )
+@router.get("/{player_id}/absences", response_model=schemas.PlayerAbsences)
+async def get_player_absences(player_id: str, tfmkt: Tfmkt, page_number: int = 1) -> dict:
+    """Get a player's non-injury absences, paginated."""
+    return await absences.get_player_absences(tfmkt, player_id, page_number)
+
+
+@router.get("/{player_id}/achievements", response_model=Achievements)
+async def get_player_achievements(player_id: str, tfmkt: Tfmkt) -> dict:
+    """Get a player's titles and awards."""
+    return await achievements.get_player_achievements(tfmkt, player_id)
+
+
+@router.get("/{player_id}/national_career", response_model=schemas.PlayerNationalCareer)
+async def get_player_national_career(player_id: str, tfmkt: Tfmkt) -> dict:
+    """Get the national teams a player has played for."""
+    return await national_career.get_player_national_career(tfmkt, player_id)

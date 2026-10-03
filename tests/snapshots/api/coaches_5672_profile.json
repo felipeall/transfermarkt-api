@@ -1,0 +1,20 @@
+{
+  "status": 200,
+  "body": {
+    "id": "5672",
+    "url": "https://www.transfermarkt.com/pep-guardiola/profil/trainer/5672",
+    "name": "Pep Guardiola",
+    "nameInHomeCountry": "Josep Guardiola i Sala",
+    "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/5672-1701335303.jpg",
+    "dateOfBirth": "1971-01-18",
+    "age": 55,
+    "placeOfBirth": {
+      "city": "Santpedor",
+      "country": "Spain"
+    },
+    "citizenship": [
+      "Spain"
+    ],
+    "license": "Licencia UEFA Pro"
+  }
+}

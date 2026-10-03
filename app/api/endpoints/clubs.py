@@ -3,7 +3,8 @@ from typing import Optional
 from fastapi import APIRouter
 
 from app.schemas import clubs as schemas
-from app.services.clubs import players, profile, search
+from app.schemas.achievements import Achievements
+from app.services.clubs import achievements, players, profile, search
 from app.tfmkt import Tfmkt
 
 router = APIRouter()
@@ -25,3 +26,9 @@ async def get_club_profile(club_id: str, tfmkt: Tfmkt) -> dict:
 async def get_club_players(club_id: str, tfmkt: Tfmkt, season_id: Optional[str] = None) -> dict:
     """Get a club's squad for a season (current squad by default)."""
     return await players.get_club_players(tfmkt, club_id, season_id)
+
+
+@router.get("/{club_id}/achievements", response_model=Achievements)
+async def get_club_achievements(club_id: str, tfmkt: Tfmkt) -> dict:
+    """Get a club's titles by season."""
+    return await achievements.get_club_achievements(tfmkt, club_id)

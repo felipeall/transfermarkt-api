@@ -18,6 +18,11 @@
     "stadiumSeats": 62657,
     "currentMarketValue": 1262600000,
     "confederation": null,
+    "coach": {
+      "id": "67",
+      "name": "Hansi Flick",
+      "since": "2024-07-01"
+    },
     "squad": {
       "size": 27,
       "averageAge": 25.3,

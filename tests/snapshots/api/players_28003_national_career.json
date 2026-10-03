@@ -1,0 +1,41 @@
+{
+  "status": 200,
+  "body": {
+    "id": "28003",
+    "nationalTeams": [
+      {
+        "id": "3437",
+        "name": "Argentina",
+        "appearances": 207,
+        "goals": 125,
+        "shirtNumber": 10,
+        "isCaptain": true,
+        "debut": "2005-08-17",
+        "lastMatch": "2026-07-19",
+        "status": "current"
+      },
+      {
+        "id": "11940",
+        "name": "Argentina U20",
+        "appearances": 18,
+        "goals": 14,
+        "shirtNumber": 18,
+        "isCaptain": false,
+        "debut": "2004-06-29",
+        "lastMatch": "2005-07-02",
+        "status": "former"
+      },
+      {
+        "id": "53819",
+        "name": "Argentina Olympic Team",
+        "appearances": 5,
+        "goals": 2,
+        "shirtNumber": 15,
+        "isCaptain": false,
+        "debut": "2008-08-07",
+        "lastMatch": "2008-08-23",
+        "status": "former"
+      }
+    ]
+  }
+}

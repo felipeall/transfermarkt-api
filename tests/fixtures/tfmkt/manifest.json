@@ -4,8 +4,28 @@
     "status": 200,
     "contentType": "application/json"
   },
+  "https://tmapi.transfermarkt.technology/club/0": {
+    "file": "tmapi-transfermarkt-technology-club-0-37f6c678a8.gz",
+    "status": 404,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/0/achievement": {
+    "file": "tmapi-transfermarkt-technology-club-0-achievement-8b3b18d7bd.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/club/131": {
     "file": "tmapi-transfermarkt-technology-club-131-0de03f6784.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/131/achievement": {
+    "file": "tmapi-transfermarkt-technology-club-131-achievement-a3d8fa386c.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/club/131/coach": {
+    "file": "tmapi-transfermarkt-technology-club-131-coach-83a736255c.gz",
     "status": 200,
     "contentType": "application/json"
   },
@@ -34,6 +54,11 @@
     "status": 200,
     "contentType": "application/json"
   },
+  "https://tmapi.transfermarkt.technology/club/3331/coach": {
+    "file": "tmapi-transfermarkt-technology-club-3331-coach-80d4086a3d.gz",
+    "status": 404,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/club/3331/squad": {
     "file": "tmapi-transfermarkt-technology-club-3331-squad-5bba48bdfe.gz",
     "status": 200,
@@ -49,6 +74,11 @@
     "status": 200,
     "contentType": "application/json"
   },
+  "https://tmapi.transfermarkt.technology/club/3383/coach": {
+    "file": "tmapi-transfermarkt-technology-club-3383-coach-6eefe67abd.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/club/3383/squad": {
     "file": "tmapi-transfermarkt-technology-club-3383-squad-bd228a7bbd.gz",
     "status": 200,
@@ -56,6 +86,11 @@
   },
   "https://tmapi.transfermarkt.technology/club/3383/stadium": {
     "file": "tmapi-transfermarkt-technology-club-3383-stadium-b2c7aacaf0.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=1003&ids%5B%5D=1039&ids%5B%5D=11&ids%5B%5D=1132&ids%5B%5D=148&ids%5B%5D=180&ids%5B%5D=2288&ids%5B%5D=281&ids%5B%5D=289&ids%5B%5D=29&ids%5B%5D=3008&ids%5B%5D=31&ids%5B%5D=379&ids%5B%5D=405&ids%5B%5D=512&ids%5B%5D=631&ids%5B%5D=762&ids%5B%5D=873&ids%5B%5D=984&ids%5B%5D=985": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-1003-ids-5B-5D-1039-ids-5B-5D-11--e83862e568.gz",
     "status": 200,
     "contentType": "application/json"
   },
@@ -94,6 +129,16 @@
     "status": 200,
     "contentType": "application/json"
   },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=11940&ids%5B%5D=131&ids%5B%5D=3437&ids%5B%5D=53819&ids%5B%5D=583&ids%5B%5D=69261": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-11940-ids-5B-5D-131-ids-5B-5D-343-5b0fec20cb.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=11940&ids%5B%5D=3437&ids%5B%5D=53819": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-11940-ids-5B-5D-3437-ids-5B-5D-53-d52ebf1461.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=123&ids%5B%5D=130": {
     "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-123-ids-5B-5D-130-039932113d.gz",
     "status": 200,
@@ -106,6 +151,11 @@
   },
   "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=123&ids%5B%5D=252&ids%5B%5D=2863&ids%5B%5D=338&ids%5B%5D=609&ids%5B%5D=69261&ids%5B%5D=7732&ids%5B%5D=786&ids%5B%5D=8433": {
     "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-123-ids-5B-5D-252-ids-5B-5D-2863--d33cf8ddc4.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=13&ids%5B%5D=131&ids%5B%5D=16&ids%5B%5D=16704&ids%5B%5D=18&ids%5B%5D=2282&ids%5B%5D=23826&ids%5B%5D=244&ids%5B%5D=27&ids%5B%5D=273&ids%5B%5D=279&ids%5B%5D=281&ids%5B%5D=31&ids%5B%5D=338&ids%5B%5D=368&ids%5B%5D=398&ids%5B%5D=409&ids%5B%5D=418&ids%5B%5D=46&ids%5B%5D=506&ids%5B%5D=583&ids%5B%5D=610&ids%5B%5D=631&ids%5B%5D=660&ids%5B%5D=683&ids%5B%5D=6890&ids%5B%5D=720&ids%5B%5D=800&ids%5B%5D=865&ids%5B%5D=932&ids%5B%5D=964&ids%5B%5D=985": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-13-ids-5B-5D-131-ids-5B-5D-16-ids-839b7ce319.gz",
     "status": 200,
     "contentType": "application/json"
   },
@@ -144,6 +194,31 @@
     "status": 200,
     "contentType": "application/json"
   },
+  "https://tmapi.transfermarkt.technology/coach/0": {
+    "file": "tmapi-transfermarkt-technology-coach-0-3efc3ecc8f.gz",
+    "status": 404,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/coach/5672": {
+    "file": "tmapi-transfermarkt-technology-coach-5672-fff4f626fe.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/coaches?ids%5B%5D=106858&ids%5B%5D=33284&ids%5B%5D=5672": {
+    "file": "tmapi-transfermarkt-technology-coaches-ids-5B-5D-106858-ids-5B-5D-33284-ids-5B-5-28ee21d9f8.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/coaches?ids%5B%5D=196": {
+    "file": "tmapi-transfermarkt-technology-coaches-ids-5B-5D-196-0422091e9f.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/coaches?ids%5B%5D=67": {
+    "file": "tmapi-transfermarkt-technology-coaches-ids-5B-5D-67-63400ee1a3.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/competition/ARM1/club": {
     "file": "tmapi-transfermarkt-technology-competition-ARM1-club-ac53fe427f.gz",
     "status": 200,
@@ -151,6 +226,11 @@
   },
   "https://tmapi.transfermarkt.technology/competition/AZ1/club": {
     "file": "tmapi-transfermarkt-technology-competition-AZ1-club-2f15b0fb04.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/CL/table?season=2020": {
+    "file": "tmapi-transfermarkt-technology-competition-CL-table-season-2020-2ced74819c.gz",
     "status": 200,
     "contentType": "application/json"
   },
@@ -166,6 +246,21 @@
   },
   "https://tmapi.transfermarkt.technology/competition/GB1/club": {
     "file": "tmapi-transfermarkt-technology-competition-GB1-club-a3e4d5f779.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/GB1/season": {
+    "file": "tmapi-transfermarkt-technology-competition-GB1-season-4e5eb4ecee.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/GB1/table": {
+    "file": "tmapi-transfermarkt-technology-competition-GB1-table-9ff82b5417.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competition/GB1/table?season=2014": {
+    "file": "tmapi-transfermarkt-technology-competition-GB1-table-season-2014-daf2d8aadf.gz",
     "status": 200,
     "contentType": "application/json"
   },
@@ -199,6 +294,11 @@
     "status": 200,
     "contentType": "application/json"
   },
+  "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=20WC&ids%5B%5D=AFT&ids%5B%5D=CA16&ids%5B%5D=CAMC&ids%5B%5D=CCL&ids%5B%5D=CDR&ids%5B%5D=CL&ids%5B%5D=COPA&ids%5B%5D=ES1&ids%5B%5D=FIWC&ids%5B%5D=FR1&ids%5B%5D=FRCH&ids%5B%5D=KLUB&ids%5B%5D=MLS1&ids%5B%5D=OLYM&ids%5B%5D=SUC&ids%5B%5D=USC&ids%5B%5D=USMX&ids%5B%5D=WMQ4": {
+    "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-20WC-ids-5B-5D-AFT-ids-5B--96a127f0b2.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=AJ2&ids%5B%5D=BJ&ids%5B%5D=CL&ids%5B%5D=CLQ&ids%5B%5D=DFB&ids%5B%5D=DFBJ&ids%5B%5D=DFL&ids%5B%5D=KLUB&ids%5B%5D=L1&ids%5B%5D=LPO&ids%5B%5D=OL6&ids%5B%5D=RL3&ids%5B%5D=RN&ids%5B%5D=UEFA&ids%5B%5D=USC": {
     "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-AJ2-ids-5B-5D-BJ-ids-5B-5D-8113c99114.gz",
     "status": 200,
@@ -211,6 +311,16 @@
   },
   "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=CAMC&ids%5B%5D=CCL&ids%5B%5D=CDR&ids%5B%5D=CL&ids%5B%5D=CLQ&ids%5B%5D=ES1&ids%5B%5D=ES3C&ids%5B%5D=FR1&ids%5B%5D=FRC&ids%5B%5D=FRCH&ids%5B%5D=KLUB&ids%5B%5D=MLS1&ids%5B%5D=MLSP&ids%5B%5D=POUS&ids%5B%5D=SUC&ids%5B%5D=USC&ids%5B%5D=USMX": {
     "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-CAMC-ids-5B-5D-CCL-ids-5B--78a796cb91.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=CDR&ids%5B%5D=ES1&ids%5B%5D=FS&ids%5B%5D=MLS1&ids%5B%5D=WMQ4": {
+    "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-CDR-ids-5B-5D-ES1-ids-5B-5-e9f063152e.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=CL": {
+    "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-CL-95c26111a2.gz",
     "status": 200,
     "contentType": "application/json"
   },
@@ -234,6 +344,11 @@
     "status": 404,
     "contentType": "application/json"
   },
+  "https://tmapi.transfermarkt.technology/player/0/achievement": {
+    "file": "tmapi-transfermarkt-technology-player-0-achievement-4857a5b699.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/player/17259": {
     "file": "tmapi-transfermarkt-technology-player-17259-a6d5b3f618.gz",
     "status": 200,
@@ -241,6 +356,11 @@
   },
   "https://tmapi.transfermarkt.technology/player/17259/market-value-history": {
     "file": "tmapi-transfermarkt-technology-player-17259-market-value-history-2ba6e26141.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/17259/market-value-ranking": {
+    "file": "tmapi-transfermarkt-technology-player-17259-market-value-ranking-5698c2fe57.gz",
     "status": 200,
     "contentType": "application/json"
   },
@@ -254,6 +374,16 @@
     "status": 200,
     "contentType": "application/json"
   },
+  "https://tmapi.transfermarkt.technology/player/28003/absence": {
+    "file": "tmapi-transfermarkt-technology-player-28003-absence-db1e231bb1.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/28003/achievement": {
+    "file": "tmapi-transfermarkt-technology-player-28003-achievement-d19fc55a0d.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/player/28003/injury": {
     "file": "tmapi-transfermarkt-technology-player-28003-injury-a20a69546e.gz",
     "status": 200,
@@ -261,6 +391,16 @@
   },
   "https://tmapi.transfermarkt.technology/player/28003/market-value-history": {
     "file": "tmapi-transfermarkt-technology-player-28003-market-value-history-fd474e6c34.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/28003/market-value-ranking": {
+    "file": "tmapi-transfermarkt-technology-player-28003-market-value-ranking-7faa954279.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/player/28003/national-career-history": {
+    "file": "tmapi-transfermarkt-technology-player-28003-national-career-history-7d7b98686e.gz",
     "status": 200,
     "contentType": "application/json"
   },
@@ -301,6 +441,11 @@
   },
   "https://tmapi.transfermarkt.technology/quick-search?term=barcelona&page=1": {
     "file": "tmapi-transfermarkt-technology-quick-search-term-barcelona-page-1-b3631e13fb.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/quick-search?term=guardiola&page=1": {
+    "file": "tmapi-transfermarkt-technology-quick-search-term-guardiola-page-1-54139aa900.gz",
     "status": 200,
     "contentType": "application/json"
   },

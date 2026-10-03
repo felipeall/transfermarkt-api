@@ -1,0 +1,184 @@
+{
+  "status": 200,
+  "body": {
+    "id": "GB1",
+    "name": "Premier League",
+    "seasons": [
+      {
+        "id": "2026",
+        "name": "26/27",
+        "matchDays": 38
+      },
+      {
+        "id": "2025",
+        "name": "25/26",
+        "matchDays": 38
+      },
+      {
+        "id": "2024",
+        "name": "24/25",
+        "matchDays": 38
+      },
+      {
+        "id": "2023",
+        "name": "23/24",
+        "matchDays": 38
+      },
+      {
+        "id": "2022",
+        "name": "22/23",
+        "matchDays": 38
+      },
+      {
+        "id": "2021",
+        "name": "21/22",
+        "matchDays": 38
+      },
+      {
+        "id": "2020",
+        "name": "20/21",
+        "matchDays": 38
+      },
+      {
+        "id": "2019",
+        "name": "19/20",
+        "matchDays": 38
+      },
+      {
+        "id": "2018",
+        "name": "18/19",
+        "matchDays": 38
+      },
+      {
+        "id": "2017",
+        "name": "17/18",
+        "matchDays": 38
+      },
+      {
+        "id": "2016",
+        "name": "16/17",
+        "matchDays": 38
+      },
+      {
+        "id": "2015",
+        "name": "15/16",
+        "matchDays": 38
+      },
+      {
+        "id": "2014",
+        "name": "14/15",
+        "matchDays": 38
+      },
+      {
+        "id": "2013",
+        "name": "13/14",
+        "matchDays": 38
+      },
+      {
+        "id": "2012",
+        "name": "12/13",
+        "matchDays": 38
+      },
+      {
+        "id": "2011",
+        "name": "11/12",
+        "matchDays": 38
+      },
+      {
+        "id": "2010",
+        "name": "10/11",
+        "matchDays": 38
+      },
+      {
+        "id": "2009",
+        "name": "09/10",
+        "matchDays": 38
+      },
+      {
+        "id": "2008",
+        "name": "08/09",
+        "matchDays": 38
+      },
+      {
+        "id": "2007",
+        "name": "07/08",
+        "matchDays": 38
+      },
+      {
+        "id": "2006",
+        "name": "06/07",
+        "matchDays": 38
+      },
+      {
+        "id": "2005",
+        "name": "05/06",
+        "matchDays": 38
+      },
+      {
+        "id": "2004",
+        "name": "04/05",
+        "matchDays": 38
+      },
+      {
+        "id": "2003",
+        "name": "03/04",
+        "matchDays": 38
+      },
+      {
+        "id": "2002",
+        "name": "02/03",
+        "matchDays": 38
+      },
+      {
+        "id": "2001",
+        "name": "01/02",
+        "matchDays": 38
+      },
+      {
+        "id": "2000",
+        "name": "00/01",
+        "matchDays": 38
+      },
+      {
+        "id": "1999",
+        "name": "99/00",
+        "matchDays": 38
+      },
+      {
+        "id": "1998",
+        "name": "98/99",
+        "matchDays": 38
+      },
+      {
+        "id": "1997",
+        "name": "97/98",
+        "matchDays": 38
+      },
+      {
+        "id": "1996",
+        "name": "96/97",
+        "matchDays": 38
+      },
+      {
+        "id": "1995",
+        "name": "95/96",
+        "matchDays": 38
+      },
+      {
+        "id": "1994",
+        "name": "94/95",
+        "matchDays": 42
+      },
+      {
+        "id": "1993",
+        "name": "93/94",
+        "matchDays": 42
+      },
+      {
+        "id": "1992",
+        "name": "92/93",
+        "matchDays": 42
+      }
+    ]
+  }
+}

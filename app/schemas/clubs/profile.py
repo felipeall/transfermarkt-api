@@ -1,3 +1,4 @@
+from datetime import date
 from typing import Optional
 
 from app.schemas.base import AuditMixin, TransfermarktBaseModel
@@ -8,6 +9,12 @@ class ClubSquad(TransfermarktBaseModel):
     average_age: Optional[float] = None
     foreigners: Optional[int] = None
     national_team_players: Optional[int] = None
+
+
+class ClubCoach(TransfermarktBaseModel):
+    id: str
+    name: Optional[str] = None
+    since: Optional[date] = None
 
 
 class ClubLeague(TransfermarktBaseModel):
@@ -32,6 +39,7 @@ class ClubProfile(TransfermarktBaseModel, AuditMixin):
     stadium_seats: Optional[int] = None
     current_market_value: Optional[int] = None
     confederation: Optional[str] = None
+    coach: Optional[ClubCoach] = None
     squad: ClubSquad
     league: ClubLeague
     historical_crests: list[str] = []

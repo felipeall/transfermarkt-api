@@ -19,6 +19,9 @@ pytestmark = pytest.mark.live
         "/clubs/131/profile",
         "/clubs/131/players",
         "/competitions/GB1/clubs",
+        "/competitions/GB1/table",
+        "/players/28003/achievements",
+        "/coaches/5672/profile",
     ],
 )
 def test_endpoint_responds(live_client: TestClient, path: str) -> None:

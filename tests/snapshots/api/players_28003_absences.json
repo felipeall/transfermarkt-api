@@ -1,0 +1,160 @@
+{
+  "status": 200,
+  "body": {
+    "id": "28003",
+    "pageNumber": 1,
+    "lastPageNumber": 2,
+    "absences": [
+      {
+        "season": "26/27",
+        "reason": "special leave",
+        "competitionId": null,
+        "competitionName": null,
+        "fromDate": "2026-07-20",
+        "untilDate": "2026-07-31",
+        "days": 12,
+        "gamesMissed": 2
+      },
+      {
+        "season": "25/26",
+        "reason": "Suspension through sports court",
+        "competitionId": "MLS1",
+        "competitionName": "Major League Soccer",
+        "fromDate": "2025-07-25",
+        "untilDate": "2025-07-28",
+        "days": 4,
+        "gamesMissed": 1
+      },
+      {
+        "season": "24/25",
+        "reason": "Called up to national team",
+        "competitionId": null,
+        "competitionName": null,
+        "fromDate": "2025-06-05",
+        "untilDate": "2025-06-12",
+        "days": 8,
+        "gamesMissed": 0
+      },
+      {
+        "season": "23/24",
+        "reason": "Called up to national team",
+        "competitionId": null,
+        "competitionName": null,
+        "fromDate": "2024-06-12",
+        "untilDate": "2024-07-15",
+        "days": 34,
+        "gamesMissed": 5
+      },
+      {
+        "season": "21/22",
+        "reason": "Called up to national team",
+        "competitionId": null,
+        "competitionName": null,
+        "fromDate": "2021-10-06",
+        "untilDate": "2021-10-17",
+        "days": 12,
+        "gamesMissed": 1
+      },
+      {
+        "season": "20/21",
+        "reason": "Red card suspension",
+        "competitionId": "ES1",
+        "competitionName": "LaLiga",
+        "fromDate": "2021-01-17",
+        "untilDate": "2021-01-25",
+        "days": 9,
+        "gamesMissed": 2
+      },
+      {
+        "season": "20/21",
+        "reason": "Red card suspension",
+        "competitionId": "CDR",
+        "competitionName": "Copa del Rey",
+        "fromDate": "2021-01-17",
+        "untilDate": "2021-01-22",
+        "days": 6,
+        "gamesMissed": 1
+      },
+      {
+        "season": "19/20",
+        "reason": "Suspension through sports court",
+        "competitionId": "FS",
+        "competitionName": "International Friendlies",
+        "fromDate": "2019-08-03",
+        "untilDate": "2019-11-03",
+        "days": 93,
+        "gamesMissed": 2
+      },
+      {
+        "season": "17/18",
+        "reason": "special leave",
+        "competitionId": "ES1",
+        "competitionName": "LaLiga",
+        "fromDate": "2018-03-09",
+        "untilDate": "2018-03-11",
+        "days": 3,
+        "gamesMissed": 1
+      },
+      {
+        "season": "17/18",
+        "reason": "Yellow card suspension",
+        "competitionId": "CDR",
+        "competitionName": "Copa del Rey",
+        "fromDate": "2017-05-28",
+        "untilDate": "2017-10-25",
+        "days": 151,
+        "gamesMissed": 1
+      },
+      {
+        "season": "16/17",
+        "reason": "Suspension through sports court",
+        "competitionId": "WMQ4",
+        "competitionName": "World Cup qualification South America",
+        "fromDate": "2017-03-27",
+        "untilDate": "2017-03-30",
+        "days": 4,
+        "gamesMissed": 1
+      },
+      {
+        "season": "16/17",
+        "reason": "Yellow card suspension",
+        "competitionId": "ES1",
+        "competitionName": "LaLiga",
+        "fromDate": "2017-03-20",
+        "untilDate": "2017-04-03",
+        "days": 15,
+        "gamesMissed": 1
+      },
+      {
+        "season": "11/12",
+        "reason": "Yellow card suspension",
+        "competitionId": "ES1",
+        "competitionName": "LaLiga",
+        "fromDate": "2012-02-27",
+        "untilDate": "2012-03-04",
+        "days": 7,
+        "gamesMissed": 1
+      },
+      {
+        "season": "08/09",
+        "reason": "Olympic games",
+        "competitionId": null,
+        "competitionName": null,
+        "fromDate": "2008-08-06",
+        "untilDate": "2008-08-24",
+        "days": 19,
+        "gamesMissed": 2
+      },
+      {
+        "season": "05/06",
+        "reason": "Red card suspension",
+        "competitionId": "FS",
+        "competitionName": "International Friendlies",
+        "fromDate": "2005-08-18",
+        "untilDate": "2005-11-12",
+        "days": 87,
+        "gamesMissed": 1
+      }
+    ]
+  }
+}

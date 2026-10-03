@@ -1,0 +1,61 @@
+{
+  "status": 200,
+  "body": {
+    "query": "guardiola",
+    "pageNumber": 1,
+    "lastPageNumber": 1,
+    "results": [
+      {
+        "id": "5672",
+        "url": "https://www.transfermarkt.com/pep-guardiola/profil/trainer/5672",
+        "name": "Pep Guardiola",
+        "nameInHomeCountry": "Josep Guardiola i Sala",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/5672-1701335303.jpg",
+        "dateOfBirth": "1971-01-18",
+        "age": 55,
+        "placeOfBirth": {
+          "city": "Santpedor",
+          "country": "Spain"
+        },
+        "citizenship": [
+          "Spain"
+        ],
+        "license": "Licencia UEFA Pro"
+      },
+      {
+        "id": "33284",
+        "url": "https://www.transfermarkt.com/vicente-dauder/profil/trainer/33284",
+        "name": "Vicente Dauder",
+        "nameInHomeCountry": "Vicente Dauder Guardiola",
+        "imageUrl": null,
+        "dateOfBirth": "1924-11-25",
+        "age": 76,
+        "placeOfBirth": {
+          "city": "Valencia",
+          "country": "Spain"
+        },
+        "citizenship": [
+          "Spain"
+        ],
+        "license": "none"
+      },
+      {
+        "id": "106858",
+        "url": "https://www.transfermarkt.com/pere-guardiola/profil/trainer/106858",
+        "name": "Pere Guardiola",
+        "nameInHomeCountry": "Pere Guardiola i Sala",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/106858-1723027488.jpg",
+        "dateOfBirth": "1976-07-16",
+        "age": 50,
+        "placeOfBirth": {
+          "city": "Santpedor",
+          "country": "Spain"
+        },
+        "citizenship": [
+          "Spain"
+        ],
+        "license": "none"
+      }
+    ]
+  }
+}

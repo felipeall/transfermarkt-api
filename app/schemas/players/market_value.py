@@ -16,3 +16,4 @@ class PlayerMarketValue(TransfermarktBaseModel, AuditMixin):
     id: str
     market_value: Optional[int] = None
     market_value_history: list[MarketValueHistory]
+    ranking: Optional[dict[str, int]] = None
