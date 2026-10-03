@@ -48,7 +48,7 @@
       },
       {
         "age": 22,
-        "date": "2008-04-06",
+        "date": "2008-06-04",
         "clubId": "33",
         "clubName": "FC Schalke 04",
         "marketValue": 7000000
@@ -62,7 +62,7 @@
       },
       {
         "age": 23,
-        "date": "2009-10-06",
+        "date": "2009-06-10",
         "clubId": "33",
         "clubName": "FC Schalke 04",
         "marketValue": 11000000
@@ -83,7 +83,7 @@
       },
       {
         "age": 24,
-        "date": "2011-12-01",
+        "date": "2011-01-12",
         "clubId": "33",
         "clubName": "FC Schalke 04",
         "marketValue": 24000000
@@ -125,28 +125,28 @@
       },
       {
         "age": 27,
-        "date": "2014-12-02",
+        "date": "2014-02-12",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 35000000
       },
       {
         "age": 28,
-        "date": "2014-10-07",
+        "date": "2014-07-10",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 40000000
       },
       {
         "age": 28,
-        "date": "2015-04-02",
+        "date": "2015-02-04",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 45000000
       },
       {
         "age": 29,
-        "date": "2015-01-07",
+        "date": "2015-07-01",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 45000000
@@ -160,7 +160,7 @@
       },
       {
         "age": 30,
-        "date": "2016-01-06",
+        "date": "2016-06-01",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 45000000
@@ -174,7 +174,7 @@
       },
       {
         "age": 30,
-        "date": "2017-07-02",
+        "date": "2017-02-07",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 45000000
@@ -195,7 +195,7 @@
       },
       {
         "age": 32,
-        "date": "2018-05-06",
+        "date": "2018-06-05",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 35000000
@@ -216,7 +216,7 @@
       },
       {
         "age": 33,
-        "date": "2019-05-06",
+        "date": "2019-06-05",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 18000000
@@ -230,7 +230,7 @@
       },
       {
         "age": 34,
-        "date": "2020-08-04",
+        "date": "2020-04-08",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 14500000
@@ -244,14 +244,14 @@
       },
       {
         "age": 34,
-        "date": "2021-10-02",
+        "date": "2021-02-10",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 18000000
       },
       {
         "age": 35,
-        "date": "2021-01-06",
+        "date": "2021-06-01",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 18000000
@@ -265,14 +265,14 @@
       },
       {
         "age": 36,
-        "date": "2022-09-06",
+        "date": "2022-06-09",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 15000000
       },
       {
         "age": 36,
-        "date": "2022-09-11",
+        "date": "2022-11-09",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 12000000
@@ -321,7 +321,7 @@
       },
       {
         "age": 39,
-        "date": "2025-05-06",
+        "date": "2025-06-05",
         "clubId": "27",
         "clubName": "Bayern Munich",
         "marketValue": 4000000
@@ -340,14 +340,6 @@
         "clubName": "Bayern Munich",
         "marketValue": 4000000
       }
-    ],
-    "ranking": {
-      "Worldwide": 2847,
-      "Bundesliga": 255,
-      "Bayern Munich": 22,
-      "Germany": 133,
-      "Goalkeeper": 145,
-      "Year 1986": 1
-    }
+    ]
   }
 }

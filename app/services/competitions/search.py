@@ -1,83 +1,61 @@
-from dataclasses import dataclass
+import asyncio
+from typing import Optional
 
-from app.services.base import TransfermarktBase
-from app.utils.utils import extract_from_url
-from app.utils.xpath import Competitions
+from app.tfmkt import TfmktClient
+from app.tfmkt.reference import get_reference, last_page_number, value_of
 
 
-@dataclass
-class TransfermarktCompetitionSearch(TransfermarktBase):
+async def search_competitions(tfmkt: TfmktClient, query: str, page_number: int) -> dict:
     """
-    A class for searching football competitions on Transfermarkt and retrieving search results.
+    Search competitions by name.
 
-    Args:
-        query (str): The search query for finding football clubs.
-        URL (str): The URL template for the search query.
-        page_number (int): The page number of search results (default is 1).
+    `clubs` and `players` count the current season's member clubs and the sum of their squad sizes, and
+    `meanMarketValue` is the total market value divided by the number of clubs. This reproduces the website's
+    figures (e.g. Premier League 2026: 20 clubs, 542 players).
     """
+    search = await tfmkt.quick_search(query, page_number)
+    competition_ids = [str(i) for i in search["result"]["competitionIds"]]
 
-    query: str = None
-    URL: str = (
-        "https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query={query}&Wettbewerb_page={page_number}"
+    competitions, reference, memberships = await asyncio.gather(
+        tfmkt.competitions(competition_ids),
+        get_reference(tfmkt),
+        # some competitions (e.g. finished tournaments) may have no current membership
+        asyncio.gather(*(tfmkt.get_optional(f"/competition/{i}/club") for i in competition_ids)),
     )
-    page_number: int = 1
+    club_ids_by_competition = {
+        i: [str(c) for c in m["clubIds"]] if m else None for i, m in zip(competition_ids, memberships)
+    }
+    clubs = await tfmkt.clubs(c for ids in club_ids_by_competition.values() for c in ids or [])
 
-    def __post_init__(self) -> None:
-        """Initialize the TransfermarktCompetitionSearch class."""
-        self.URL = self.URL.format(query=self.query, page_number=self.page_number)
-        self.page = self.request_url_page()
-
-    def __parse_search_results(self) -> list:
-        """
-        Parse and retrieve the search results for football competitions from Transfermarkt.
-
-        Returns:
-            list: A list of dictionaries, each containing details of a football competition,
-                including its unique identifier, name, country, associated clubs, number of players,
-                total market value, mean market value, and continent.
-        """
-        idx = [extract_from_url(url) for url in self.get_list_by_xpath(Competitions.Search.URLS)]
-        name = self.get_list_by_xpath(Competitions.Search.NAMES)
-        country = self.get_list_by_xpath(Competitions.Search.COUNTRIES)
-        clubs = self.get_list_by_xpath(Competitions.Search.CLUBS)
-        players = self.get_list_by_xpath(Competitions.Search.PLAYERS)
-        total_market_value = self.get_list_by_xpath(Competitions.Search.TOTAL_MARKET_VALUES)
-        mean_market_value = self.get_list_by_xpath(Competitions.Search.MEAN_MARKET_VALUES)
-        continent = self.get_list_by_xpath(Competitions.Search.CONTINENTS)
-
-        return [
+    results = []
+    for competition_id in competition_ids:
+        competition = competitions.get(competition_id, {})
+        club_ids = club_ids_by_competition[competition_id]
+        total_market_value = value_of(competition.get("totalMarketValue"))
+        origin = competition.get("originDetails") or {}
+        results.append(
             {
-                "id": idx,
-                "name": name,
-                "country": country,
-                "clubs": clubs,
-                "players": players,
+                "id": competition_id,
+                "name": competition.get("name"),
+                "country": reference.country_name(origin.get("countryId")),
+                "clubs": len(club_ids) if club_ids is not None else None,
+                "players": squad_total(clubs, club_ids),
                 "totalMarketValue": total_market_value,
-                "meanMarketValue": mean_market_value,
-                "continent": continent,
-            }
-            for idx, name, country, clubs, players, total_market_value, mean_market_value, continent in zip(
-                idx,
-                name,
-                country,
-                clubs,
-                players,
-                total_market_value,
-                mean_market_value,
-                continent,
-            )
-        ]
+                "meanMarketValue": total_market_value // len(club_ids) if total_market_value and club_ids else None,
+                "continent": reference.confederation_name(origin.get("confederationId")),
+            },
+        )
 
-    def search_competitions(self) -> dict:
-        """
-        Perform a search for football competitions and retrieve the search results.
+    return {
+        "query": query,
+        "pageNumber": page_number,
+        "lastPageNumber": last_page_number(search["totalCount"]["competitions"]),
+        "results": results,
+    }
 
-        Returns:
-            dict: A dictionary containing search results, including competition details.
-        """
-        self.response["query"] = self.query
-        self.response["pageNumber"] = self.page_number
-        self.response["lastPageNumber"] = self.get_last_page_number(Competitions.Search.BASE)
-        self.response["results"] = self.__parse_search_results()
 
-        return self.response
+def squad_total(clubs: dict, club_ids: Optional[list[str]]) -> Optional[int]:
+    """Sum the squad sizes of the given clubs; None when the membership is unknown."""
+    if club_ids is None:
+        return None
+    return sum((clubs.get(c, {}).get("squadDetails") or {}).get("squadSize") or 0 for c in club_ids)

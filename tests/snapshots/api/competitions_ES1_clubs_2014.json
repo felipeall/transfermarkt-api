@@ -18,52 +18,36 @@
         "name": "Atlético de Madrid"
       },
       {
-        "id": "1049",
-        "name": "Valencia CF"
-      },
-      {
-        "id": "368",
-        "name": "Sevilla FC"
-      },
-      {
         "id": "1050",
         "name": "Villarreal CF"
-      },
-      {
-        "id": "621",
-        "name": "Athletic Bilbao"
       },
       {
         "id": "681",
         "name": "Real Sociedad"
       },
       {
-        "id": "1084",
-        "name": "Málaga CF"
-      },
-      {
-        "id": "714",
-        "name": "RCD Espanyol Barcelona"
-      },
-      {
-        "id": "16795",
-        "name": "Granada CF"
+        "id": "621",
+        "name": "Athletic Bilbao"
       },
       {
         "id": "940",
         "name": "Celta de Vigo"
       },
       {
+        "id": "368",
+        "name": "Sevilla FC"
+      },
+      {
+        "id": "1049",
+        "name": "Valencia CF"
+      },
+      {
+        "id": "714",
+        "name": "RCD Espanyol Barcelona"
+      },
+      {
         "id": "897",
-        "name": "Deportivo de La Coruña"
-      },
-      {
-        "id": "367",
-        "name": "Rayo Vallecano"
-      },
-      {
-        "id": "993",
-        "name": "Córdoba CF"
+        "name": "Deportivo A Coruña"
       },
       {
         "id": "3709",
@@ -74,6 +58,10 @@
         "name": "Levante UD"
       },
       {
+        "id": "367",
+        "name": "Rayo Vallecano"
+      },
+      {
         "id": "1531",
         "name": "Elche CF"
       },
@@ -82,8 +70,20 @@
         "name": "UD Almería"
       },
       {
+        "id": "1084",
+        "name": "Málaga CF"
+      },
+      {
+        "id": "16795",
+        "name": "Granada CF"
+      },
+      {
         "id": "1533",
         "name": "SD Eibar"
+      },
+      {
+        "id": "993",
+        "name": "Córdoba CF"
       }
     ]
   }

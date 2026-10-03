@@ -6,8 +6,8 @@ from app.schemas.base import AuditMixin, TransfermarktBaseModel
 
 class ClubPlayer(TransfermarktBaseModel):
     id: str
-    name: str
-    position: str
+    name: Optional[str] = None
+    position: Optional[str] = None
     date_of_birth: Optional[date] = None
     age: Optional[int] = None
     nationality: list[str]
@@ -15,11 +15,9 @@ class ClubPlayer(TransfermarktBaseModel):
     height: Optional[int] = None
     foot: Optional[str] = None
     joined_on: Optional[date] = None
-    joined: Optional[str] = None
     signed_from: Optional[str] = None
     contract: Optional[date] = None
     market_value: Optional[int] = None
-    status: Optional[str] = ""
 
 
 class ClubPlayers(TransfermarktBaseModel, AuditMixin):

@@ -8,7 +8,7 @@
         "age": 17,
         "date": "2004-12-20",
         "clubId": "2464",
-        "clubName": "FC Barcelona B",
+        "clubName": "FC Barcelona Atlètic",
         "marketValue": 3000000
       },
       {
@@ -34,21 +34,21 @@
       },
       {
         "age": 20,
-        "date": "2007-12-09",
+        "date": "2007-09-12",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 60000000
       },
       {
         "age": 20,
-        "date": "2008-04-02",
+        "date": "2008-02-04",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 55000000
       },
       {
         "age": 21,
-        "date": "2008-10-07",
+        "date": "2008-07-10",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 55000000
@@ -76,21 +76,21 @@
       },
       {
         "age": 22,
-        "date": "2009-03-12",
+        "date": "2009-12-03",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 70000000
       },
       {
         "age": 22,
-        "date": "2010-07-01",
+        "date": "2010-01-07",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 80000000
       },
       {
         "age": 22,
-        "date": "2010-12-04",
+        "date": "2010-04-12",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 80000000
@@ -104,7 +104,7 @@
       },
       {
         "age": 23,
-        "date": "2011-04-02",
+        "date": "2011-02-04",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 100000000
@@ -118,28 +118,28 @@
       },
       {
         "age": 24,
-        "date": "2012-03-02",
+        "date": "2012-02-03",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 100000000
       },
       {
         "age": 25,
-        "date": "2012-07-08",
+        "date": "2012-08-07",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 120000000
       },
       {
         "age": 25,
-        "date": "2013-10-01",
+        "date": "2013-01-10",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 120000000
       },
       {
         "age": 25,
-        "date": "2013-12-06",
+        "date": "2013-06-12",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 120000000
@@ -167,7 +167,7 @@
       },
       {
         "age": 28,
-        "date": "2015-01-07",
+        "date": "2015-07-01",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 120000000
@@ -195,7 +195,7 @@
       },
       {
         "age": 29,
-        "date": "2017-05-06",
+        "date": "2017-06-05",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 120000000
@@ -223,7 +223,7 @@
       },
       {
         "age": 31,
-        "date": "2019-11-06",
+        "date": "2019-06-11",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 150000000
@@ -237,28 +237,28 @@
       },
       {
         "age": 32,
-        "date": "2020-08-04",
+        "date": "2020-04-08",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 112000000
       },
       {
         "age": 33,
-        "date": "2020-08-10",
+        "date": "2020-10-08",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 100000000
       },
       {
         "age": 33,
-        "date": "2021-05-01",
+        "date": "2021-01-05",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 80000000
       },
       {
         "age": 33,
-        "date": "2021-10-06",
+        "date": "2021-06-10",
         "clubId": "131",
         "clubName": "FC Barcelona",
         "marketValue": 80000000
@@ -279,7 +279,7 @@
       },
       {
         "age": 35,
-        "date": "2022-02-11",
+        "date": "2022-11-02",
         "clubId": "583",
         "clubName": "Paris Saint-Germain",
         "marketValue": 50000000
@@ -342,33 +342,25 @@
       },
       {
         "age": 37,
-        "date": "2025-05-06",
+        "date": "2025-06-05",
         "clubId": "69261",
         "clubName": "Inter Miami CF",
         "marketValue": 18000000
       },
       {
         "age": 38,
-        "date": "2025-11-12",
+        "date": "2025-12-11",
         "clubId": "69261",
         "clubName": "Inter Miami CF",
         "marketValue": 15000000
       },
       {
         "age": 38,
-        "date": "2026-02-06",
+        "date": "2026-06-02",
         "clubId": "69261",
         "clubName": "Inter Miami CF",
         "marketValue": 15000000
       }
-    ],
-    "ranking": {
-      "Worldwide": 844,
-      "MLS": 3,
-      "Miami": 1,
-      "Argentina": 30,
-      "Right Winger": 71,
-      "Year 1987": 1
-    }
+    ]
   }
 }
