@@ -18,6 +18,7 @@ pytestmark = pytest.mark.live
         "/players/search/messi",
         "/clubs/131/profile",
         "/clubs/?country_id=189",
+        "/countries/",
         "/clubs/131/players",
         "/competitions/GB1/clubs",
         "/competitions/GB1/table",

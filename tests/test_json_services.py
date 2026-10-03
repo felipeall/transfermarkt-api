@@ -272,3 +272,49 @@ def test_country_listing_validates_country_id(synthetic_client: tuple[TestClient
     """A positive integer country ID is required."""
     client, _ = synthetic_client
     assert client.get(f"/clubs/{query}").status_code == 422
+
+
+def test_countries_exposes_reference_metadata(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Country discovery retains historical entries and metadata, while omitting unrelated attributes."""
+    client, routes = synthetic_client
+    routes["/attributes"] = {
+        "countries": [
+            {
+                "id": 189,
+                "name": "England",
+                "fifaCode": "ENG",
+                "confederationId": 6,
+                "flagUrl": "https://example.com/england.png",
+                "isHistorical": False,
+                "identifier": "England",
+            },
+            {"id": 999, "name": "Historical country", "isHistorical": True},
+        ],
+        "positions": [{"id": 1, "name": "Goalkeeper"}],
+    }
+    response = client.get("/countries/")
+    assert response.status_code == 200
+    body = response.json()
+    assert set(body) == {"countries", "updatedAt"}
+    assert body["countries"] == [
+        {
+            "id": 189,
+            "name": "England",
+            "fifaCode": "ENG",
+            "confederationId": 6,
+            "flagUrl": "https://example.com/england.png",
+            "isHistorical": False,
+        },
+        {
+            "id": 999,
+            "name": "Historical country",
+            "fifaCode": None,
+            "confederationId": None,
+            "flagUrl": None,
+            "isHistorical": True,
+        },
+    ]
+    routes["/country/189/club"] = {"clubIds": []}
+    club_response = client.get("/clubs/?country_id=189")
+    assert club_response.status_code == 200
+    assert club_response.json()["countryName"] == "England"
