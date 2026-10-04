@@ -10,9 +10,9 @@ dependencies = [
     "cachetools>=5.5",
     "fastapi>=0.115.6",
     "httpx>=0.28",
+    "limits>=5.8",
     "pydantic>=2.10.4",
     "pydantic-settings>=2.7.1",
-    "slowapi>=0.1.9",
     "uvicorn[standard]>=0.34.0",
 ]
 

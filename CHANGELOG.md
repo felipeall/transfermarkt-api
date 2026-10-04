@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+
+- Rate limiting never applied to API routes. slowapi could not match routes from included routers on FastAPI 0.142, and counted each URL separately, so only `/`, `/docs` and `/openapi.json` were ever limited. slowapi is replaced by a small middleware on `limits`: one budget per client IP across all routes, `/health` excluded, and 429 responses carry `Retry-After`.
+
 ## 4.0.1 — 2026-10-04
 
 ### Fixed
