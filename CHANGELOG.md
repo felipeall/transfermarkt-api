@@ -1,10 +1,15 @@
 # Changelog
 
-## Unreleased
+## 4.0.2 — 2026-10-04
+
+### Changed
+
+- The hosted API caps each Fly machine at 25 requests in flight (#139). Extra requests are queued or refused by the Fly proxy instead of hanging the app.
+- Each request is logged once with the client IP from `Fly-Client-IP`, the method, the path and the status (#140). uvicorn's access log, which showed the Fly proxy's address, is turned off.
 
 ### Fixed
 
-- Rate limiting never applied to API routes. slowapi could not match routes from included routers on FastAPI 0.142, and counted each URL separately, so only `/`, `/docs` and `/openapi.json` were ever limited. slowapi is replaced by a small middleware on `limits`: one budget per client IP across all routes, `/health` excluded, and 429 responses carry `Retry-After`.
+- Rate limiting never applied to API routes. slowapi could not match routes from included routers on FastAPI 0.142, and counted each URL separately, so only `/`, `/docs` and `/openapi.json` were ever limited. slowapi is replaced by a small middleware on `limits`: one budget per client IP across all routes, `/health` excluded, and 429 responses carry `Retry-After` (#141, #142).
 
 ## 4.0.1 — 2026-10-04
 
