@@ -1,5 +1,6 @@
 """Rate limiting: per-client keys that callers cannot spoof, and a health check that is never limited."""
 
+import logging
 from collections.abc import Iterator
 
 import pytest
@@ -57,3 +58,11 @@ def test_spoofed_x_forwarded_for_shares_the_limit(limited_client: TestClient) ->
 def test_health_is_not_limited(limited_client: TestClient) -> None:
     """Platform health checks are never rate limited."""
     assert {limited_client.get("/health").status_code for _ in range(5)} == {200}
+
+
+def test_access_log_shows_client_ip(caplog: pytest.LogCaptureFixture) -> None:
+    """Each request is logged with the client IP from `Fly-Client-IP`, not the proxy's address."""
+    with TestClient(app) as client, caplog.at_level(logging.INFO, logger="uvicorn.error"):
+        client.get("/health?probe=1", headers={"Fly-Client-IP": "203.0.113.7"})
+
+    assert '203.0.113.7 - "GET /health?probe=1" 200' in caplog.messages
