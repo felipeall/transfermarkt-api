@@ -1,3 +1,4 @@
+import logging
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
@@ -13,6 +14,8 @@ from app.api.api import api_router
 from app.settings import settings
 from app.tfmkt import TfmktClient
 from app.tfmkt.freshness import track_fetches
+
+access_log = logging.getLogger("uvicorn.error")
 
 
 def client_ip(request: Request) -> str:
@@ -55,9 +58,20 @@ app.include_router(api_router)
 
 @app.middleware("http")
 async def track_upstream_fetches(request: Request, call_next: RequestResponseEndpoint) -> Response:
-    """Start a per-request record of upstream fetch times, used for `updatedAt`."""
+    """
+    Start a per-request record of upstream fetch times, used for `updatedAt`, and log the request.
+
+    Replaces uvicorn's access log, which on Fly.io shows the proxy's address: this one shows `client_ip`.
+    """
     track_fetches()
-    return await call_next(request)
+    status = 500
+    try:
+        response = await call_next(request)
+        status = response.status_code
+        return response
+    finally:
+        target = f"{request.url.path}?{request.url.query}" if request.url.query else request.url.path
+        access_log.info('%s - "%s %s" %d', client_ip(request), request.method, target, status)
 
 
 @app.get("/", include_in_schema=False)
