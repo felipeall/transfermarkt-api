@@ -15,6 +15,8 @@ class PlayerStat(TransfermarktBaseModel):
     second_yellow_cards: int
     red_cards: int
     minutes_played: int
+    goals_conceded: int
+    clean_sheets: int
 
 
 class PlayerStats(TransfermarktBaseModel, AuditMixin):

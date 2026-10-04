@@ -184,6 +184,11 @@
     "status": 200,
     "contentType": "application/json"
   },
+  "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=3437&ids%5B%5D=69261": {
+    "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-3437-ids-5B-5D-69261-e3030401ca.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/clubs?ids%5B%5D=41107&ids%5B%5D=43&ids%5B%5D=43570&ids%5B%5D=43628&ids%5B%5D=44360&ids%5B%5D=44664&ids%5B%5D=44796&ids%5B%5D=465&ids%5B%5D=46507&ids%5B%5D=46710&ids%5B%5D=46736&ids%5B%5D=46959&ids%5B%5D=47010&ids%5B%5D=4807&ids%5B%5D=48190&ids%5B%5D=50658&ids%5B%5D=50659&ids%5B%5D=511&ids%5B%5D=53453&ids%5B%5D=55227&ids%5B%5D=55243&ids%5B%5D=55257&ids%5B%5D=55265&ids%5B%5D=55283&ids%5B%5D=57439&ids%5B%5D=60368&ids%5B%5D=6182&ids%5B%5D=62448&ids%5B%5D=62684&ids%5B%5D=62689&ids%5B%5D=631&ids%5B%5D=6335&ids%5B%5D=63993&ids%5B%5D=664&ids%5B%5D=6759&ids%5B%5D=677&ids%5B%5D=67909&ids%5B%5D=68770&ids%5B%5D=6945&ids%5B%5D=7&ids%5B%5D=703&ids%5B%5D=7090&ids%5B%5D=71005&ids%5B%5D=74661&ids%5B%5D=762&ids%5B%5D=78405&ids%5B%5D=8031&ids%5B%5D=873&ids%5B%5D=8956&ids%5B%5D=90197&ids%5B%5D=903&ids%5B%5D=90308&ids%5B%5D=9094&ids%5B%5D=9218&ids%5B%5D=9219&ids%5B%5D=9249&ids%5B%5D=9250&ids%5B%5D=9251&ids%5B%5D=9252&ids%5B%5D=9253&ids%5B%5D=9254&ids%5B%5D=9256&ids%5B%5D=9258&ids%5B%5D=9261&ids%5B%5D=9262&ids%5B%5D=9264&ids%5B%5D=9265&ids%5B%5D=9267&ids%5B%5D=931&ids%5B%5D=93343&ids%5B%5D=9526&ids%5B%5D=96139&ids%5B%5D=9668&ids%5B%5D=9715&ids%5B%5D=97462&ids%5B%5D=985&ids%5B%5D=987&ids%5B%5D=989&ids%5B%5D=9899&ids%5B%5D=990": {
     "file": "tmapi-transfermarkt-technology-clubs-ids-5B-5D-41107-ids-5B-5D-43-ids-5B-5D-4357-6c3564ea32.gz",
     "status": 200,

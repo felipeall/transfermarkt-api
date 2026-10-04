@@ -14,7 +14,9 @@
         "yellowCards": 3,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2090
+        "minutesPlayed": 2090,
+        "goalsConceded": 47,
+        "cleanSheets": 2
       },
       {
         "competitionId": "CAMC",
@@ -27,7 +29,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 90
+        "minutesPlayed": 90,
+        "goalsConceded": 0,
+        "cleanSheets": 1
       },
       {
         "competitionId": "USMX",
@@ -40,7 +44,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 135
+        "minutesPlayed": 135,
+        "goalsConceded": 5,
+        "cleanSheets": 0
       },
       {
         "competitionId": "CCL",
@@ -53,7 +59,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 180
+        "minutesPlayed": 180,
+        "goalsConceded": 1,
+        "cleanSheets": 1
       },
       {
         "competitionId": "POUS",
@@ -66,7 +74,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 540
+        "minutesPlayed": 540,
+        "goalsConceded": 5,
+        "cleanSheets": 2
       },
       {
         "competitionId": "MLS1",
@@ -79,7 +89,9 @@
         "yellowCards": 3,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2420
+        "minutesPlayed": 2420,
+        "goalsConceded": 45,
+        "cleanSheets": 4
       },
       {
         "competitionId": "USMX",
@@ -92,7 +104,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 281
+        "minutesPlayed": 281,
+        "goalsConceded": 5,
+        "cleanSheets": 0
       },
       {
         "competitionId": "KLUB",
@@ -105,7 +119,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 360
+        "minutesPlayed": 360,
+        "goalsConceded": 7,
+        "cleanSheets": 1
       },
       {
         "competitionId": "CCL",
@@ -118,7 +134,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 556
+        "minutesPlayed": 556,
+        "goalsConceded": 8,
+        "cleanSheets": 2
       },
       {
         "competitionId": "POUS",
@@ -131,7 +149,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 270
+        "minutesPlayed": 270,
+        "goalsConceded": 6,
+        "cleanSheets": 0
       },
       {
         "competitionId": "MLS1",
@@ -144,7 +164,9 @@
         "yellowCards": 2,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 1486
+        "minutesPlayed": 1486,
+        "goalsConceded": 22,
+        "cleanSheets": 4
       },
       {
         "competitionId": "USMX",
@@ -157,7 +179,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 0
+        "minutesPlayed": 0,
+        "goalsConceded": 0,
+        "cleanSheets": 0
       },
       {
         "competitionId": "CCL",
@@ -170,7 +194,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 230
+        "minutesPlayed": 230,
+        "goalsConceded": 5,
+        "cleanSheets": 0
       },
       {
         "competitionId": "MLS1",
@@ -183,7 +209,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 372
+        "minutesPlayed": 372,
+        "goalsConceded": 3,
+        "cleanSheets": 3
       },
       {
         "competitionId": "MLSP",
@@ -196,7 +224,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 120
+        "minutesPlayed": 120,
+        "goalsConceded": 3,
+        "cleanSheets": 0
       },
       {
         "competitionId": "USMX",
@@ -209,7 +239,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 594
+        "minutesPlayed": 594,
+        "goalsConceded": 8,
+        "cleanSheets": 2
       },
       {
         "competitionId": "FR1",
@@ -222,7 +254,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2842
+        "minutesPlayed": 2842,
+        "goalsConceded": 31,
+        "cleanSheets": 12
       },
       {
         "competitionId": "CL",
@@ -235,7 +269,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 615
+        "minutesPlayed": 615,
+        "goalsConceded": 9,
+        "cleanSheets": 0
       },
       {
         "competitionId": "FRC",
@@ -248,7 +284,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 90
+        "minutesPlayed": 90,
+        "goalsConceded": 2,
+        "cleanSheets": 0
       },
       {
         "competitionId": "FRCH",
@@ -261,7 +299,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 90
+        "minutesPlayed": 90,
+        "goalsConceded": 0,
+        "cleanSheets": 1
       },
       {
         "competitionId": "FR1",
@@ -274,7 +314,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2152
+        "minutesPlayed": 2152,
+        "goalsConceded": 23,
+        "cleanSheets": 9
       },
       {
         "competitionId": "CL",
@@ -287,7 +329,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 630
+        "minutesPlayed": 630,
+        "goalsConceded": 9,
+        "cleanSheets": 2
       },
       {
         "competitionId": "FRC",
@@ -300,7 +344,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 90
+        "minutesPlayed": 90,
+        "goalsConceded": 0,
+        "cleanSheets": 0
       },
       {
         "competitionId": "ES1",
@@ -313,7 +359,9 @@
         "yellowCards": 4,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 3023
+        "minutesPlayed": 3023,
+        "goalsConceded": 35,
+        "cleanSheets": 12
       },
       {
         "competitionId": "CDR",
@@ -326,7 +374,9 @@
         "yellowCards": 2,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 510
+        "minutesPlayed": 510,
+        "goalsConceded": 6,
+        "cleanSheets": 2
       },
       {
         "competitionId": "CL",
@@ -339,7 +389,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 540
+        "minutesPlayed": 540,
+        "goalsConceded": 10,
+        "cleanSheets": 1
       },
       {
         "competitionId": "SUC",
@@ -352,7 +404,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 1,
-        "minutesPlayed": 120
+        "minutesPlayed": 120,
+        "goalsConceded": 3,
+        "cleanSheets": 0
       },
       {
         "competitionId": "CL",
@@ -365,7 +419,9 @@
         "yellowCards": 2,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 661
+        "minutesPlayed": 661,
+        "goalsConceded": 13,
+        "cleanSheets": 2
       },
       {
         "competitionId": "ES1",
@@ -378,7 +434,9 @@
         "yellowCards": 4,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2880
+        "minutesPlayed": 2880,
+        "goalsConceded": 30,
+        "cleanSheets": 14
       },
       {
         "competitionId": "CDR",
@@ -391,7 +449,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 180
+        "minutesPlayed": 180,
+        "goalsConceded": 1,
+        "cleanSheets": 1
       },
       {
         "competitionId": "SUC",
@@ -404,7 +464,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 90
+        "minutesPlayed": 90,
+        "goalsConceded": 3,
+        "cleanSheets": 0
       },
       {
         "competitionId": "CDR",
@@ -417,7 +479,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 387
+        "minutesPlayed": 387,
+        "goalsConceded": 3,
+        "cleanSheets": 2
       },
       {
         "competitionId": "ES1",
@@ -430,7 +494,9 @@
         "yellowCards": 3,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2710
+        "minutesPlayed": 2710,
+        "goalsConceded": 25,
+        "cleanSheets": 16
       },
       {
         "competitionId": "CL",
@@ -443,7 +509,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 837
+        "minutesPlayed": 837,
+        "goalsConceded": 9,
+        "cleanSheets": 5
       },
       {
         "competitionId": "SUC",
@@ -456,7 +524,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 90
+        "minutesPlayed": 90,
+        "goalsConceded": 1,
+        "cleanSheets": 0
       },
       {
         "competitionId": "ES1",
@@ -469,7 +539,9 @@
         "yellowCards": 3,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2996
+        "minutesPlayed": 2996,
+        "goalsConceded": 21,
+        "cleanSheets": 18
       },
       {
         "competitionId": "CDR",
@@ -482,7 +554,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 509
+        "minutesPlayed": 509,
+        "goalsConceded": 1,
+        "cleanSheets": 5
       },
       {
         "competitionId": "CL",
@@ -495,7 +569,9 @@
         "yellowCards": 2,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 783
+        "minutesPlayed": 783,
+        "goalsConceded": 6,
+        "cleanSheets": 6
       },
       {
         "competitionId": "SUC",
@@ -508,7 +584,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 180
+        "minutesPlayed": 180,
+        "goalsConceded": 5,
+        "cleanSheets": 0
       },
       {
         "competitionId": "CDR",
@@ -521,7 +599,9 @@
         "yellowCards": 3,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 630
+        "minutesPlayed": 630,
+        "goalsConceded": 8,
+        "cleanSheets": 1
       },
       {
         "competitionId": "ES1",
@@ -534,7 +614,9 @@
         "yellowCards": 6,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2832
+        "minutesPlayed": 2832,
+        "goalsConceded": 30,
+        "cleanSheets": 11
       },
       {
         "competitionId": "CL",
@@ -547,7 +629,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 810
+        "minutesPlayed": 810,
+        "goalsConceded": 11,
+        "cleanSheets": 5
       },
       {
         "competitionId": "SUC",
@@ -560,7 +644,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 180
+        "minutesPlayed": 180,
+        "goalsConceded": 0,
+        "cleanSheets": 2
       },
       {
         "competitionId": "CDR",
@@ -573,7 +659,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 480
+        "minutesPlayed": 480,
+        "goalsConceded": 2,
+        "cleanSheets": 3
       },
       {
         "competitionId": "ES1",
@@ -586,7 +674,9 @@
         "yellowCards": 3,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2729
+        "minutesPlayed": 2729,
+        "goalsConceded": 22,
+        "cleanSheets": 16
       },
       {
         "competitionId": "CL",
@@ -599,7 +689,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 630
+        "minutesPlayed": 630,
+        "goalsConceded": 7,
+        "cleanSheets": 1
       },
       {
         "competitionId": "KLUB",
@@ -612,7 +704,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 90
+        "minutesPlayed": 90,
+        "goalsConceded": 0,
+        "cleanSheets": 1
       },
       {
         "competitionId": "SUC",
@@ -625,7 +719,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 180
+        "minutesPlayed": 180,
+        "goalsConceded": 5,
+        "cleanSheets": 0
       },
       {
         "competitionId": "USC",
@@ -638,7 +734,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 120
+        "minutesPlayed": 120,
+        "goalsConceded": 4,
+        "cleanSheets": 0
       },
       {
         "competitionId": "CL",
@@ -651,7 +749,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 1146
+        "minutesPlayed": 1146,
+        "goalsConceded": 10,
+        "cleanSheets": 6
       },
       {
         "competitionId": "CDR",
@@ -664,7 +764,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 540
+        "minutesPlayed": 540,
+        "goalsConceded": 5,
+        "cleanSheets": 2
       },
       {
         "competitionId": "ES1",
@@ -677,7 +779,9 @@
         "yellowCards": 4,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 3375
+        "minutesPlayed": 3375,
+        "goalsConceded": 20,
+        "cleanSheets": 23
       },
       {
         "competitionId": "ES1",
@@ -690,7 +794,9 @@
         "yellowCards": 2,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2502
+        "minutesPlayed": 2502,
+        "goalsConceded": 27,
+        "cleanSheets": 13
       },
       {
         "competitionId": "CDR",
@@ -703,7 +809,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 476
+        "minutesPlayed": 476,
+        "goalsConceded": 4,
+        "cleanSheets": 3
       },
       {
         "competitionId": "CL",
@@ -716,7 +824,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 630
+        "minutesPlayed": 630,
+        "goalsConceded": 5,
+        "cleanSheets": 2
       },
       {
         "competitionId": "SUC",
@@ -729,7 +839,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 135
+        "minutesPlayed": 135,
+        "goalsConceded": 1,
+        "cleanSheets": 1
       },
       {
         "competitionId": "ES1",
@@ -742,7 +854,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2626
+        "minutesPlayed": 2626,
+        "goalsConceded": 35,
+        "cleanSheets": 6
       },
       {
         "competitionId": "CL",
@@ -755,7 +869,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 821
+        "minutesPlayed": 821,
+        "goalsConceded": 11,
+        "cleanSheets": 4
       },
       {
         "competitionId": "CDR",
@@ -768,7 +884,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 443
+        "minutesPlayed": 443,
+        "goalsConceded": 8,
+        "cleanSheets": 1
       },
       {
         "competitionId": "SUC",
@@ -781,7 +899,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 180
+        "minutesPlayed": 180,
+        "goalsConceded": 4,
+        "cleanSheets": 0
       },
       {
         "competitionId": "CDR",
@@ -794,7 +914,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 512
+        "minutesPlayed": 512,
+        "goalsConceded": 4,
+        "cleanSheets": 3
       },
       {
         "competitionId": "ES1",
@@ -807,7 +929,9 @@
         "yellowCards": 6,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 3269
+        "minutesPlayed": 3269,
+        "goalsConceded": 26,
+        "cleanSheets": 19
       },
       {
         "competitionId": "CL",
@@ -820,7 +944,9 @@
         "yellowCards": 2,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 990
+        "minutesPlayed": 990,
+        "goalsConceded": 10,
+        "cleanSheets": 4
       },
       {
         "competitionId": "KLUB",
@@ -833,7 +959,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 180
+        "minutesPlayed": 180,
+        "goalsConceded": 0,
+        "cleanSheets": 2
       },
       {
         "competitionId": "USC",
@@ -846,7 +974,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 90
+        "minutesPlayed": 90,
+        "goalsConceded": 0,
+        "cleanSheets": 1
       },
       {
         "competitionId": "SUC",
@@ -859,7 +989,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 180
+        "minutesPlayed": 180,
+        "goalsConceded": 4,
+        "cleanSheets": 0
       },
       {
         "competitionId": "CL",
@@ -872,7 +1004,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 1048
+        "minutesPlayed": 1048,
+        "goalsConceded": 8,
+        "cleanSheets": 5
       },
       {
         "competitionId": "ES1",
@@ -885,7 +1019,9 @@
         "yellowCards": 3,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2861
+        "minutesPlayed": 2861,
+        "goalsConceded": 18,
+        "cleanSheets": 17
       },
       {
         "competitionId": "CDR",
@@ -898,7 +1034,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 542
+        "minutesPlayed": 542,
+        "goalsConceded": 5,
+        "cleanSheets": 3
       },
       {
         "competitionId": "SUC",
@@ -911,7 +1049,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 128
+        "minutesPlayed": 128,
+        "goalsConceded": 3,
+        "cleanSheets": 1
       },
       {
         "competitionId": "ES1",
@@ -924,7 +1064,9 @@
         "yellowCards": 3,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2840
+        "minutesPlayed": 2840,
+        "goalsConceded": 20,
+        "cleanSheets": 18
       },
       {
         "competitionId": "CL",
@@ -937,7 +1079,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 986
+        "minutesPlayed": 986,
+        "goalsConceded": 10,
+        "cleanSheets": 5
       },
       {
         "competitionId": "CDR",
@@ -950,7 +1094,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 209
+        "minutesPlayed": 209,
+        "goalsConceded": 2,
+        "cleanSheets": 2
       },
       {
         "competitionId": "KLUB",
@@ -963,7 +1109,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 157
+        "minutesPlayed": 157,
+        "goalsConceded": 1,
+        "cleanSheets": 0
       },
       {
         "competitionId": "USC",
@@ -976,7 +1124,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 120
+        "minutesPlayed": 120,
+        "goalsConceded": 0,
+        "cleanSheets": 1
       },
       {
         "competitionId": "SUC",
@@ -989,7 +1139,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 90
+        "minutesPlayed": 90,
+        "goalsConceded": 0,
+        "cleanSheets": 1
       },
       {
         "competitionId": "ES1",
@@ -1002,7 +1154,9 @@
         "yellowCards": 2,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2513
+        "minutesPlayed": 2513,
+        "goalsConceded": 26,
+        "cleanSheets": 13
       },
       {
         "competitionId": "CL",
@@ -1015,7 +1169,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 927
+        "minutesPlayed": 927,
+        "goalsConceded": 7,
+        "cleanSheets": 4
       },
       {
         "competitionId": "CDR",
@@ -1028,7 +1184,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 450
+        "minutesPlayed": 450,
+        "goalsConceded": 4,
+        "cleanSheets": 3
       },
       {
         "competitionId": "CLQ",
@@ -1041,7 +1199,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 0
+        "minutesPlayed": 0,
+        "goalsConceded": 0,
+        "cleanSheets": 0
       },
       {
         "competitionId": "ES1",
@@ -1054,7 +1214,9 @@
         "yellowCards": 2,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2003
+        "minutesPlayed": 2003,
+        "goalsConceded": 23,
+        "cleanSheets": 10
       },
       {
         "competitionId": "CL",
@@ -1067,7 +1229,9 @@
         "yellowCards": 2,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 726
+        "minutesPlayed": 726,
+        "goalsConceded": 5,
+        "cleanSheets": 6
       },
       {
         "competitionId": "CDR",
@@ -1080,7 +1244,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 225
+        "minutesPlayed": 225,
+        "goalsConceded": 1,
+        "cleanSheets": 2
       },
       {
         "competitionId": "ES1",
@@ -1093,7 +1259,9 @@
         "yellowCards": 2,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 2001
+        "minutesPlayed": 2001,
+        "goalsConceded": 20,
+        "cleanSheets": 10
       },
       {
         "competitionId": "CDR",
@@ -1106,7 +1274,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 166
+        "minutesPlayed": 166,
+        "goalsConceded": 3,
+        "cleanSheets": 0
       },
       {
         "competitionId": "CL",
@@ -1119,7 +1289,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 385
+        "minutesPlayed": 385,
+        "goalsConceded": 5,
+        "cleanSheets": 1
       },
       {
         "competitionId": "KLUB",
@@ -1132,7 +1304,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 0
+        "minutesPlayed": 0,
+        "goalsConceded": 0,
+        "cleanSheets": 0
       },
       {
         "competitionId": "USC",
@@ -1145,7 +1319,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 90
+        "minutesPlayed": 90,
+        "goalsConceded": 3,
+        "cleanSheets": 0
       },
       {
         "competitionId": "SUC",
@@ -1158,7 +1334,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 121
+        "minutesPlayed": 121,
+        "goalsConceded": 0,
+        "cleanSheets": 2
       },
       {
         "competitionId": "ES1",
@@ -1171,7 +1349,9 @@
         "yellowCards": 2,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 912
+        "minutesPlayed": 912,
+        "goalsConceded": 6,
+        "cleanSheets": 8
       },
       {
         "competitionId": "CL",
@@ -1184,7 +1364,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 322
+        "minutesPlayed": 322,
+        "goalsConceded": 2,
+        "cleanSheets": 3
       },
       {
         "competitionId": "CDR",
@@ -1197,7 +1379,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 180
+        "minutesPlayed": 180,
+        "goalsConceded": 5,
+        "cleanSheets": 0
       },
       {
         "competitionId": "SUC",
@@ -1210,7 +1394,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 0
+        "minutesPlayed": 0,
+        "goalsConceded": 0,
+        "cleanSheets": 0
       },
       {
         "competitionId": "ES3C",
@@ -1223,7 +1409,9 @@
         "yellowCards": 3,
         "secondYellowCards": 0,
         "redCards": 1,
-        "minutesPlayed": 1515
+        "minutesPlayed": 1515,
+        "goalsConceded": 17,
+        "cleanSheets": 8
       },
       {
         "competitionId": "ES1",
@@ -1236,7 +1424,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 76
+        "minutesPlayed": 76,
+        "goalsConceded": 1,
+        "cleanSheets": 5
       },
       {
         "competitionId": "CL",
@@ -1249,7 +1439,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 90
+        "minutesPlayed": 90,
+        "goalsConceded": 2,
+        "cleanSheets": 0
       },
       {
         "competitionId": "CDR",
@@ -1262,7 +1454,9 @@
         "yellowCards": 0,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 73
+        "minutesPlayed": 73,
+        "goalsConceded": 0,
+        "cleanSheets": 0
       },
       {
         "competitionId": "ES3C",
@@ -1275,7 +1469,9 @@
         "yellowCards": 1,
         "secondYellowCards": 0,
         "redCards": 0,
-        "minutesPlayed": 404
+        "minutesPlayed": 404,
+        "goalsConceded": 4,
+        "cleanSheets": 2
       }
     ]
   }

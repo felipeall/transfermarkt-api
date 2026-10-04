@@ -8,6 +8,7 @@
     "nameInHomeCountry": null,
     "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/5023-1713425275.jpg",
     "dateOfBirth": "1978-01-28",
+    "dateOfDeath": null,
     "placeOfBirth": {
       "city": "Carrara",
       "country": "Italy"
@@ -21,6 +22,7 @@
     "retiredSince": "2023-08-02",
     "position": {
       "main": "Goalkeeper",
+      "group": "Goalkeeper",
       "other": []
     },
     "foot": "right",
@@ -29,12 +31,27 @@
       "id": "123",
       "name": "Retired",
       "joined": "2023-08-02",
+      "isCaptain": false,
       "contractExpires": null,
+      "lastContractRenewal": null,
       "contractOption": null,
       "lastClubId": "130",
       "lastClubName": "Parma Calcio 1913"
     },
+    "nationalTeam": null,
     "marketValue": null,
+    "marketValueDetails": {
+      "lastUpdated": "2023-08-02",
+      "trend": "decreased",
+      "previous": {
+        "value": 1000000,
+        "date": "2023-06-12"
+      },
+      "highest": {
+        "value": 35000000,
+        "date": "2005-07-28"
+      }
+    },
     "agent": {
       "name": "Assist",
       "url": "/assist/beraterfirma/berater/499"

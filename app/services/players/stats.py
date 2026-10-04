@@ -12,7 +12,10 @@ async def get_player_stats(tfmkt: TfmktClient, player_id: str) -> dict:
     Aggregate a player's match records into per season, competition and club totals.
 
     Follows the website's own aggregation of `/player/{id}/performance-game`: appearances count matches with
-    participation state `played`, numeric statistics are summed, and each card event counts once.
+    participation state `played`, numeric statistics are summed, and each card event counts once. The goalkeeper
+    columns follow the website too: `goalsConceded` sums the opponent goals scored while the player was on the pitch,
+    and `cleanSheets` counts matches the player played in which the opponent did not score at all. Both are computed
+    for every player; the website shows them only for goalkeepers.
 
     Returns:
         dict: The player ID and one stats entry per (season, competition, club), most recent season first.
@@ -39,7 +42,12 @@ async def get_player_stats(tfmkt: TfmktClient, player_id: str) -> dict:
         total["yellowCards"] += 1 if cards.get("yellowCard") else 0
         total["secondYellowCards"] += 1 if cards.get("yellowRedCard") else 0
         total["redCards"] += 1 if cards.get("redCard") else 0
-        total["minutesPlayed"] += stats["playingTimeStatistics"]["playedMinutes"] or 0
+        played_minutes = stats["playingTimeStatistics"]["playedMinutes"] or 0
+        total["minutesPlayed"] += played_minutes
+        total["goalsConceded"] += stats["goalStatistics"]["opponentGoalsOnThePitch"] or 0
+        total["cleanSheets"] += (
+            1 if played_minutes and game["clubsInformation"]["club"]["opponentGoalsTotal"] == 0 else 0
+        )
 
     competitions = await tfmkt.competitions(competition_id for _, competition_id, _ in totals)
 
@@ -58,6 +66,8 @@ async def get_player_stats(tfmkt: TfmktClient, player_id: str) -> dict:
                 "secondYellowCards": total["secondYellowCards"],
                 "redCards": total["redCards"],
                 "minutesPlayed": total["minutesPlayed"],
+                "goalsConceded": total["goalsConceded"],
+                "cleanSheets": total["cleanSheets"],
             }
             for (season_id, competition_id, club_id), total in totals.items()
         ],
