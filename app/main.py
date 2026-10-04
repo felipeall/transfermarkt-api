@@ -6,7 +6,6 @@ from fastapi import FastAPI, Request
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
-from slowapi.util import get_remote_address
 from starlette.middleware.base import RequestResponseEndpoint
 from starlette.responses import RedirectResponse, Response
 
@@ -15,8 +14,20 @@ from app.settings import settings
 from app.tfmkt import TfmktClient
 from app.tfmkt.freshness import track_fetches
 
+
+def client_ip(request: Request) -> str:
+    """
+    Address of the client calling the API, the key for rate limiting.
+
+    On Fly.io, the proxy sets `Fly-Client-IP` to the address that connected to it, replacing any value sent by the
+    client. `X-Forwarded-For` is ignored because clients can prepend arbitrary addresses to it. Without that header,
+    the address of the TCP connection is used. Outside Fly.io, clients can set `Fly-Client-IP` themselves.
+    """
+    return request.headers.get("Fly-Client-IP") or (request.client.host if request.client else "unknown")
+
+
 limiter = Limiter(
-    key_func=get_remote_address,
+    key_func=client_ip,
     default_limits=[settings.RATE_LIMITING_FREQUENCY],
     enabled=settings.RATE_LIMITING_ENABLE,
 )
@@ -56,6 +67,7 @@ def docs_redirect() -> RedirectResponse:
 
 
 @app.get("/health", include_in_schema=False)
+@limiter.exempt
 def health() -> dict:
     """Liveness check for the hosting platform. Does not call Transfermarkt."""
     return {"status": "ok"}

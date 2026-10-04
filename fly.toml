@@ -8,6 +8,10 @@ primary_region = 'ams'
 
 [build]
 
+[env]
+  RATE_LIMITING_ENABLE = 'true'
+  RATE_LIMITING_FREQUENCY = '2/3seconds'
+
 [http_service]
   internal_port = 8000
   force_https = true
