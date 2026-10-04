@@ -4,13 +4,11 @@ from contextlib import asynccontextmanager
 
 import uvicorn
 from fastapi import FastAPI, Request
-from slowapi import Limiter, _rate_limit_exceeded_handler
-from slowapi.errors import RateLimitExceeded
-from slowapi.middleware import SlowAPIMiddleware
 from starlette.middleware.base import RequestResponseEndpoint
-from starlette.responses import RedirectResponse, Response
+from starlette.responses import JSONResponse, RedirectResponse, Response
 
 from app.api.api import api_router
+from app.rate_limit import RateLimiter
 from app.settings import settings
 from app.tfmkt import TfmktClient
 from app.tfmkt.freshness import track_fetches
@@ -29,12 +27,8 @@ def client_ip(request: Request) -> str:
     return request.headers.get("Fly-Client-IP") or (request.client.host if request.client else "unknown")
 
 
-limiter = Limiter(
-    key_func=client_ip,
-    # one budget per client across all routes; default_limits would count each URL separately
-    application_limits=[settings.RATE_LIMITING_FREQUENCY],
-    enabled=settings.RATE_LIMITING_ENABLE,
-)
+limiter = RateLimiter(settings.RATE_LIMITING_FREQUENCY, enabled=settings.RATE_LIMITING_ENABLE)
+RATE_LIMIT_EXEMPT_PATHS = {"/health"}
 
 
 @asynccontextmanager
@@ -51,10 +45,22 @@ app = FastAPI(
     description="Football data from Transfermarkt's JSON API: players, clubs and competitions.",
     lifespan=lifespan,
 )
-app.state.limiter = limiter
-app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
-app.add_middleware(SlowAPIMiddleware)
 app.include_router(api_router)
+
+
+@app.middleware("http")
+async def rate_limit(request: Request, call_next: RequestResponseEndpoint) -> Response:
+    """Answer 429 when the client is over its budget. All routes share one budget; `/health` is not counted."""
+    if not limiter.enabled or request.url.path in RATE_LIMIT_EXEMPT_PATHS:
+        return await call_next(request)
+    key = client_ip(request)
+    if not limiter.hit(key):
+        return JSONResponse(
+            {"error": f"Rate limit exceeded: {settings.RATE_LIMITING_FREQUENCY}"},
+            status_code=429,
+            headers={"Retry-After": str(limiter.retry_after(key))},
+        )
+    return await call_next(request)
 
 
 @app.middleware("http")
@@ -82,7 +88,6 @@ def docs_redirect() -> RedirectResponse:
 
 
 @app.get("/health", include_in_schema=False)
-@limiter.exempt
 def health() -> dict:
     """Liveness check for the hosting platform. Does not call Transfermarkt."""
     return {"status": "ok"}
