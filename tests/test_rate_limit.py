@@ -37,24 +37,18 @@ def limited_client(client: TestClient) -> Iterator[TestClient]:
     limiter.reset()
 
 
+API_PATH = "/players/28003/profile"
+
+
 def test_requests_over_the_limit_get_429(limited_client: TestClient) -> None:
     """The default limit (2 per 3 seconds) answers 429 to the third request from the same client."""
-    statuses = [limited_client.get("/", follow_redirects=False).status_code for _ in range(3)]
+    statuses = [limited_client.get(API_PATH).status_code for _ in range(3)]
 
-    assert statuses == [307, 307, 429]
-
-
-def test_limit_is_shared_across_urls(limited_client: TestClient) -> None:
-    """Requests to different URLs count against one budget, so walking through IDs is limited too."""
-    statuses = [
-        limited_client.get(path, follow_redirects=False).status_code for path in ("/", "/docs", "/openapi.json")
-    ]
-
-    assert statuses == [307, 200, 429]
+    assert statuses == [200, 200, 429]
 
 
-def test_api_routes_are_limited(limited_client: TestClient) -> None:
-    """Routes from the API routers count too, with a Retry-After header on the 429."""
+def test_api_routes_share_one_budget(limited_client: TestClient) -> None:
+    """Different API URLs count against one budget, so walking through IDs is limited, with a Retry-After header."""
     paths = ["/players/28003/market_value", "/players/17259/market_value", "/players/28003/profile"]
     responses = [limited_client.get(path) for path in paths]
 
@@ -65,26 +59,29 @@ def test_api_routes_are_limited(limited_client: TestClient) -> None:
 def test_clients_have_separate_budgets(limited_client: TestClient) -> None:
     """One client over its limit does not block another."""
     for _ in range(3):
-        limited_client.get("/", headers={"Fly-Client-IP": "203.0.113.7"}, follow_redirects=False)
+        limited_client.get(API_PATH, headers={"Fly-Client-IP": "203.0.113.7"})
 
-    other = limited_client.get("/", headers={"Fly-Client-IP": "203.0.113.8"}, follow_redirects=False)
+    other = limited_client.get(API_PATH, headers={"Fly-Client-IP": "203.0.113.8"})
 
-    assert other.status_code == 307
+    assert other.status_code == 200
 
 
 def test_spoofed_x_forwarded_for_shares_the_limit(limited_client: TestClient) -> None:
     """Changing X-Forwarded-For on each request does not reset the limit."""
     statuses = [
-        limited_client.get("/", headers={"X-Forwarded-For": f"198.51.100.{i}"}, follow_redirects=False).status_code
-        for i in range(3)
+        limited_client.get(API_PATH, headers={"X-Forwarded-For": f"198.51.100.{i}"}).status_code for i in range(3)
     ]
 
     assert statuses[-1] == 429
 
 
-def test_health_is_not_limited(limited_client: TestClient) -> None:
-    """Platform health checks are never rate limited."""
-    assert {limited_client.get("/health").status_code for _ in range(5)} == {200}
+@pytest.mark.parametrize("path", ["/health", "/", "/docs", "/docs/oauth2-redirect", "/redoc", "/openapi.json"])
+def test_health_and_docs_are_not_limited(limited_client: TestClient, path: str) -> None:
+    """Health checks, the interactive docs and the schema they load never count against the budget."""
+    statuses = {limited_client.get(path, follow_redirects=False).status_code for _ in range(5)}
+
+    assert 429 not in statuses
+    assert limited_client.get(API_PATH).status_code == 200
 
 
 def test_access_log_shows_client_ip(caplog: pytest.LogCaptureFixture) -> None:
@@ -99,6 +96,6 @@ def test_access_log_includes_429(limited_client: TestClient, caplog: pytest.LogC
     """Requests refused with 429 are logged too."""
     with caplog.at_level(logging.INFO, logger="uvicorn.error"):
         for _ in range(3):
-            limited_client.get("/", headers={"Fly-Client-IP": "203.0.113.7"}, follow_redirects=False)
+            limited_client.get(API_PATH, headers={"Fly-Client-IP": "203.0.113.7"})
 
-    assert '203.0.113.7 - "GET /" 429' in caplog.messages
+    assert f'203.0.113.7 - "GET {API_PATH}" 429' in caplog.messages

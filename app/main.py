@@ -28,7 +28,6 @@ def client_ip(request: Request) -> str:
 
 
 limiter = RateLimiter(settings.RATE_LIMITING_FREQUENCY, enabled=settings.RATE_LIMITING_ENABLE)
-RATE_LIMIT_EXEMPT_PATHS = {"/health"}
 
 
 @asynccontextmanager
@@ -45,12 +44,18 @@ app = FastAPI(
     description="Football data from Transfermarkt's JSON API: players, clubs and competitions.",
     lifespan=lifespan,
 )
+# health checks and the interactive docs (the root redirect, Swagger UI and the schema it loads) are not counted
+RATE_LIMIT_EXEMPT_PATHS = {
+    "/",
+    "/health",
+    *filter(None, (app.docs_url, app.swagger_ui_oauth2_redirect_url, app.redoc_url, app.openapi_url)),
+}
 app.include_router(api_router)
 
 
 @app.middleware("http")
 async def rate_limit(request: Request, call_next: RequestResponseEndpoint) -> Response:
-    """Answer 429 when the client is over its budget. All routes share one budget; `/health` is not counted."""
+    """Answer 429 when the client is over its budget. All API routes share one budget; see `RATE_LIMIT_EXEMPT_PATHS`."""
     if not limiter.enabled or request.url.path in RATE_LIMIT_EXEMPT_PATHS:
         return await call_next(request)
     key = client_ip(request)
