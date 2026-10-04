@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+
+- `page_number` below 1 now answers 422. Before, it returned records from the end of the list.
+- Club squads no longer fail with 500 when the current squad lists members that are not of type `current`.
+- National-team club profiles resolve `confederation` when upstream sends the country ID as a string.
+- The hosted API is rate limited per client IP, as the README says. Rate-limit keys come from `Fly-Client-IP`, so a spoofed `X-Forwarded-For` no longer bypasses them; `/health` is exempt.
+
 ## 4.0.0 — 2026-10-04
 
 Data now comes from Transfermarkt's JSON API (`tmapi.transfermarkt.technology`) instead of scraped HTML pages. The website blocks most cloud and datacenter IPs, which made v3 return errors on hosted deployments (#109, #110, #117, #121).
