@@ -1,6 +1,0 @@
-{
-  "status": 501,
-  "body": {
-    "detail": "Jersey number history is not available: Transfermarkt's JSON API has no equivalent data."
-  }
-}
