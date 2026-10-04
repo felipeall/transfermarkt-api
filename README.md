@@ -107,7 +107,8 @@ $ open http://localhost:8000/
 | `CACHE_REFERENCE_TTL_SECONDS` | Cache duration for reference data (countries, positions, ...)                                          | `86400`                                  |
 | `CACHE_MAX_ENTRIES`           | Maximum number of cached upstream responses                                                            | `2000`                                   |
 
-Rate limits are counted per client IP: the `Fly-Client-IP` header set by the Fly.io proxy, or the address of the
+Rate limits apply to the API routes only: `/health`, the docs (`/`, `/docs`, `/redoc`) and `/openapi.json` are not
+counted. They are counted per client IP: the `Fly-Client-IP` header set by the Fly.io proxy, or the address of the
 connection when that header is missing. `X-Forwarded-For` is not trusted. Behind another reverse proxy, all
 requests share the proxy's address, and outside Fly.io clients can send `Fly-Client-IP` themselves, so adjust
 `client_ip` in `app/main.py` before enabling rate limiting on another host.
