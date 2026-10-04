@@ -31,7 +31,8 @@ def client_ip(request: Request) -> str:
 
 limiter = Limiter(
     key_func=client_ip,
-    default_limits=[settings.RATE_LIMITING_FREQUENCY],
+    # one budget per client across all routes; default_limits would count each URL separately
+    application_limits=[settings.RATE_LIMITING_FREQUENCY],
     enabled=settings.RATE_LIMITING_ENABLE,
 )
 

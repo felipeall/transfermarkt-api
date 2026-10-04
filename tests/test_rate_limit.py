@@ -45,6 +45,15 @@ def test_requests_over_the_limit_get_429(limited_client: TestClient) -> None:
     assert statuses == [307, 307, 429]
 
 
+def test_limit_is_shared_across_urls(limited_client: TestClient) -> None:
+    """Requests to different URLs count against one budget, so walking through IDs is limited too."""
+    statuses = [
+        limited_client.get(path, follow_redirects=False).status_code for path in ("/", "/docs", "/openapi.json")
+    ]
+
+    assert statuses == [307, 200, 429]
+
+
 def test_spoofed_x_forwarded_for_shares_the_limit(limited_client: TestClient) -> None:
     """Changing X-Forwarded-For on each request does not reset the limit."""
     statuses = [
