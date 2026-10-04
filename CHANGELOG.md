@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.0.0 — unreleased
+## 4.0.0 — 2026-10-04
 
 Data now comes from Transfermarkt's JSON API (`tmapi.transfermarkt.technology`) instead of scraped HTML pages. The website blocks most cloud and datacenter IPs, which made v3 return errors on hosted deployments (#109, #110, #117, #121).
 
