@@ -164,6 +164,10 @@ class TfmktClient:
         """Fetch coach records by ID, indexed by ID."""
         return await self.get_batch("/coaches", ids)
 
+    async def country_clubs(self, country_id: int) -> dict:
+        """Fetch the limited club directory for a country; no upstream pagination is available."""
+        return await self.get(f"/country/{country_id}/club")
+
     async def club(self, club_id: str) -> dict:
         """Fetch a club record."""
         return await self.get(f"/club/{club_id}")

@@ -233,6 +233,105 @@ def test_unknown_ids_are_404(client: TestClient, path: str) -> None:
     assert client.get(path).status_code == 404
 
 
+def test_country_listing_keeps_order_and_missing_clubs(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Directory order is preserved, duplicates removed and missing records retained with null names."""
+    client, routes = synthetic_client
+    routes["/country/9/club"] = {"clubIds": ["20", "10", "20", "30"]}
+    routes["/clubs"] = [{"id": "10", "name": "Second"}, {"id": "20", "name": "First"}]
+    response = client.get("/clubs/?country_id=9")
+    assert response.status_code == 200
+    body = response.json()
+    assert (body["countryId"], body["countryName"]) == (9, "Argentina")
+    assert body["clubs"] == [
+        {"id": "20", "name": "First"},
+        {"id": "10", "name": "Second"},
+        {"id": "30", "name": None},
+    ]
+    assert "updatedAt" in body
+
+
+def test_country_listing_empty_country(synthetic_client: tuple[TestClient, dict]) -> None:
+    """A known country with no listed clubs returns an empty list."""
+    client, routes = synthetic_client
+    routes["/country/9/club"] = {"clubIds": []}
+    response = client.get("/clubs/?country_id=9")
+    assert response.status_code == 200
+    assert response.json()["clubs"] == []
+
+
+@pytest.mark.parametrize("directory", [{}, {"clubIds": None}, {"clubIds": "131"}, {"clubIds": {}}, [], None])
+def test_country_listing_rejects_malformed_directory(
+    synthetic_client: tuple[TestClient, dict], directory: object
+) -> None:
+    """Malformed upstream directories return 502 instead of a successful empty listing."""
+    client, routes = synthetic_client
+    routes["/country/9/club"] = directory
+    response = client.get("/clubs/?country_id=9")
+    assert response.status_code == 502
+    assert response.json()["detail"] == "Unexpected upstream payload for /country/9/club"
+
+
+def test_country_listing_unknown_country(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Unknown countries return 404 even though upstream would answer an empty directory."""
+    client, _ = synthetic_client
+    response = client.get("/clubs/?country_id=999999")
+    assert response.status_code == 404
+    assert response.json()["detail"] == "Country not found: 999999"
+
+
+@pytest.mark.parametrize("query", ["", "?country_id=0", "?country_id=-1", "?country_id=abc"])
+def test_country_listing_validates_country_id(synthetic_client: tuple[TestClient, dict], query: str) -> None:
+    """A positive integer country ID is required."""
+    client, _ = synthetic_client
+    assert client.get(f"/clubs/{query}").status_code == 422
+
+
+def test_countries_exposes_reference_metadata(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Country discovery retains historical entries and metadata, while omitting unrelated attributes."""
+    client, routes = synthetic_client
+    routes["/attributes"] = {
+        "countries": [
+            {
+                "id": 189,
+                "name": "England",
+                "fifaCode": "ENG",
+                "confederationId": 6,
+                "flagUrl": "https://example.com/england.png",
+                "isHistorical": False,
+                "identifier": "England",
+            },
+            {"id": 999, "name": "Historical country", "isHistorical": True},
+        ],
+        "positions": [{"id": 1, "name": "Goalkeeper"}],
+    }
+    response = client.get("/countries/")
+    assert response.status_code == 200
+    body = response.json()
+    assert set(body) == {"countries", "updatedAt"}
+    assert body["countries"] == [
+        {
+            "id": 189,
+            "name": "England",
+            "fifaCode": "ENG",
+            "confederationId": 6,
+            "flagUrl": "https://example.com/england.png",
+            "isHistorical": False,
+        },
+        {
+            "id": 999,
+            "name": "Historical country",
+            "fifaCode": None,
+            "confederationId": None,
+            "flagUrl": None,
+            "isHistorical": True,
+        },
+    ]
+    routes["/country/189/club"] = {"clubIds": []}
+    club_response = client.get("/clubs/?country_id=189")
+    assert club_response.status_code == 200
+    assert club_response.json()["countryName"] == "England"
+
+
 @pytest.mark.parametrize(
     "path",
     [
@@ -280,3 +379,15 @@ def test_national_team_confederation_with_string_country_id(synthetic_client: tu
     body = client.get("/clubs/3437/profile").json()
 
     assert body["confederation"] == "CONMEBOL"
+
+
+@pytest.mark.parametrize("attributes", [{}, {"countries": "Argentina"}, {"countries": ["Argentina"]}])
+def test_countries_with_malformed_reference_data_are_502(
+    synthetic_client: tuple[TestClient, dict],
+    attributes: dict,
+) -> None:
+    """A reference payload without a list of country records is an upstream error, not a server error."""
+    client, routes = synthetic_client
+    routes["/attributes"] = attributes
+
+    assert client.get("/countries/").status_code == 502
