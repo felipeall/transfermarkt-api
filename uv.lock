@@ -512,21 +512,21 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "cachetools", specifier = ">=5.5" },
-    { name = "fastapi", specifier = ">=0.115.6" },
-    { name = "httpx", specifier = ">=0.28" },
-    { name = "limits", specifier = ">=5.8" },
-    { name = "pydantic", specifier = ">=2.10.4" },
-    { name = "pydantic-settings", specifier = ">=2.7.1" },
-    { name = "uvicorn", extras = ["standard"], specifier = ">=0.34.0" },
+    { name = "cachetools", specifier = "==7.2.0" },
+    { name = "fastapi", specifier = "==0.142.2" },
+    { name = "httpx", specifier = "==0.28.1" },
+    { name = "limits", specifier = "==5.8.0" },
+    { name = "pydantic", specifier = "==2.13.5" },
+    { name = "pydantic-settings", specifier = "==2.15.0" },
+    { name = "uvicorn", extras = ["standard"], specifier = "==0.54.0" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "httpx2", specifier = ">=2.13.1" },
-    { name = "pytest", specifier = ">=8.3" },
-    { name = "pytest-cov", specifier = ">=6.0" },
-    { name = "ruff", specifier = ">=0.8" },
+    { name = "httpx2", specifier = "==2.13.1" },
+    { name = "pytest", specifier = "==9.1.1" },
+    { name = "pytest-cov", specifier = "==7.1.0" },
+    { name = "ruff", specifier = "==0.16.10" },
 ]
 
 [[package]]
