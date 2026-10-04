@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- `GET /countries/` lists country IDs and metadata (name, FIFA code, confederation, flag, historical status) (#130).
+- `GET /clubs/?country_id={id}` lists the clubs Transfermarkt has for a country. The list is incomplete upstream: youth and national teams and some senior clubs are missing, with no pagination or season filter (#130, partly addresses #56).
+
 ## 4.0.4 — 2026-10-04
 
 ### Fixed

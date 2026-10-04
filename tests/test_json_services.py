@@ -379,3 +379,15 @@ def test_national_team_confederation_with_string_country_id(synthetic_client: tu
     body = client.get("/clubs/3437/profile").json()
 
     assert body["confederation"] == "CONMEBOL"
+
+
+@pytest.mark.parametrize("attributes", [{}, {"countries": "Argentina"}, {"countries": ["Argentina"]}])
+def test_countries_with_malformed_reference_data_are_502(
+    synthetic_client: tuple[TestClient, dict],
+    attributes: dict,
+) -> None:
+    """A reference payload without a list of country records is an upstream error, not a server error."""
+    client, routes = synthetic_client
+    routes["/attributes"] = attributes
+
+    assert client.get("/countries/").status_code == 502
