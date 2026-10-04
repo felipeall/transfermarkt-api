@@ -39,7 +39,7 @@ https://transfermarkt-api.fly.dev/
 | `GET /competitions/{competition_id}/clubs?season_id=` | Current season by default |
 | `GET /competitions/{competition_id}/table?season_id=` | League table; one table per group for group stages |
 | `GET /competitions/{competition_id}/seasons` | Valid `season_id` values |
-| `GET /games/{game_id}` | Score, lineups, coaches, stadium, goals, cards and substitutions |
+| `GET /games/{game_id}` | Score, lineups, coaches, stadium, team stats, goals, cards and substitutions |
 
 Errors: `404` unknown ID, `501` endpoint without data source, `502` unexpected upstream response, `503` upstream blocked or refused the request, `504` upstream timeout.
 

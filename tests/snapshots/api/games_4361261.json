@@ -25,6 +25,29 @@
         "id": "3816",
         "name": "Erik ten Hag"
       },
+      "stats": {
+        "possession": 55.4,
+        "shots": 14,
+        "shotsOnTarget": 5,
+        "shotsOffTarget": 7,
+        "shotsBlocked": 2,
+        "passes": 482,
+        "accuratePasses": 408,
+        "tackles": 21,
+        "tacklesWon": 14,
+        "clearances": 20,
+        "saves": 2,
+        "offsides": 3,
+        "corners": 7,
+        "foulsCommitted": 12,
+        "foulsSuffered": 10,
+        "yellowCards": 2,
+        "secondYellowCards": 0,
+        "redCards": 0,
+        "penaltiesWon": 0,
+        "penaltiesSaved": 0,
+        "ownGoals": 0
+      },
       "startingLineup": [
         {
           "id": "234509",
@@ -178,6 +201,29 @@
       "coach": {
         "id": "19631",
         "name": "Marco Silva"
+      },
+      "stats": {
+        "possession": 44.6,
+        "shots": 10,
+        "shotsOnTarget": 2,
+        "shotsOffTarget": 4,
+        "shotsBlocked": 4,
+        "passes": 384,
+        "accuratePasses": 306,
+        "tackles": 24,
+        "tacklesWon": 17,
+        "clearances": 19,
+        "saves": 4,
+        "offsides": 1,
+        "corners": 8,
+        "foulsCommitted": 10,
+        "foulsSuffered": 11,
+        "yellowCards": 3,
+        "secondYellowCards": 0,
+        "redCards": 0,
+        "penaltiesWon": 0,
+        "penaltiesSaved": 0,
+        "ownGoals": 0
       },
       "startingLineup": [
         {

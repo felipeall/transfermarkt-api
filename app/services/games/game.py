@@ -5,14 +5,39 @@ from app.tfmkt import TfmktClient
 from app.tfmkt.reference import full_url
 
 EVENT_TYPES = {"GOAL": "goal", "CARD": "card", "SUBSTITUTE": "substitution"}
+# team stat -> (clubStatistics group, upstream field)
+TEAM_STATS = {
+    "possession": ("gameStatistics", "possessionPercentage"),
+    "shots": ("goalStatistics", "totalShotAttempts"),
+    "shotsOnTarget": ("goalStatistics", "onTargetShotAttempts"),
+    "shotsOffTarget": ("goalStatistics", "offTargetShotAttempts"),
+    "shotsBlocked": ("goalStatistics", "blockedShotAttempts"),
+    "passes": ("passingStatistics", "totalPasses"),
+    "accuratePasses": ("passingStatistics", "accuratePasses"),
+    "tackles": ("defensiveStatistics", "totalTackles"),
+    "tacklesWon": ("defensiveStatistics", "successfulTackles"),
+    "clearances": ("defensiveStatistics", "clearances"),
+    "saves": ("defensiveStatistics", "saves"),
+    "offsides": ("defensiveStatistics", "offsides"),
+    "corners": ("setPieceStatistics", "cornersTaken"),
+    "foulsCommitted": ("penaltyStatistics", "freeKicksConcededFromFouls"),
+    "foulsSuffered": ("penaltyStatistics", "freeKicksWonFromFouls"),
+    "yellowCards": ("gameStatistics", "yellowCards"),
+    "secondYellowCards": ("gameStatistics", "secondYellowCards"),
+    "redCards": ("gameStatistics", "redCards"),
+    "penaltiesWon": ("penaltyStatistics", "penaltiesWon"),
+    "penaltiesSaved": ("penaltyStatistics", "penaltiesSaved"),
+    "ownGoals": ("penaltyStatistics", "ownGoals"),
+}
 
 
 async def get_game(tfmkt: TfmktClient, game_id: str) -> dict:
     """
     A match with both lineups, coaches, score and events.
 
-    Events are goals, cards and substitutions in match order. For a goal, `relatedPlayer` is the assist; for a
-    substitution, `player` goes off and `relatedPlayer` comes on.
+    `stats` holds team statistics (possession, shots, passes, ...) when upstream recorded them, mostly for recent
+    matches in major competitions; otherwise it is null. Events are goals, cards and substitutions in match order.
+    For a goal, `relatedPlayer` is the assist; for a substitution, `player` goes off and `relatedPlayer` comes on.
     """
     game = await tfmkt.game(game_id)
     base = game.get("baseDetails") or {}
@@ -69,6 +94,7 @@ async def get_game(tfmkt: TfmktClient, game_id: str) -> dict:
                 "score": score.get(name),
                 "formation": (side.get("tactic") or {}).get("tactic"),
                 "coach": entity(side.get("coachId"), coaches),
+                "stats": team_stats(side.get("clubStatistics")),
                 "startingLineup": [lineup_player(p) for p in lineups[name]["players"]],
                 "substitutes": [lineup_player(p) for p in lineups[name]["substitutes"]],
             }
@@ -100,3 +126,10 @@ def card_type(action: dict) -> Optional[str]:
     if "Yellow" in keys:
         return "yellow"
     return None
+
+
+def team_stats(statistics: Optional[dict]) -> Optional[dict]:
+    """A side's match statistics, or None when upstream has none for the match."""
+    if not statistics:
+        return None
+    return {name: (statistics.get(group) or {}).get(field) for name, (group, field) in TEAM_STATS.items()}

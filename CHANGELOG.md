@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- `/games/{game_id}`: each side has `stats`, the team statistics upstream records for the match (possession, shots on/off target and blocked, passes and accurate passes, tackles and tackles won, clearances, saves, offsides, corners, fouls committed and suffered, cards, penalties won and saved, own goals). Null when upstream has none, which is common for older matches and smaller competitions.
+- `/players/{player_id}/matches`: each match adds the player's `shirtNumber`, `isCaptain`, `position`, `substitutedInMinute`, `substitutedOutMinute` and `teamPoints`, plus detailed stats when recorded (`shots`, `shotsOnTarget`, `passes`, `accuratePasses`, `tackles`, `tacklesWon`, `foulsCommitted`, `foulsSuffered`, `offsides`, `ownGoals`, `penaltyGoals`, `penaltiesMissed`, `penaltiesSaved`). They are null when not recorded, which is common before 2018.
+
 ## 4.1.0 — 2026-10-04
 
 ### Added

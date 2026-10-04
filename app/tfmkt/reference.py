@@ -19,6 +19,7 @@ class Reference:
         self.confederations = {c["id"]: c for c in attributes.get("confederations", [])}
         self.competition_types = {c["id"]: c for c in attributes.get("competitionTypes", [])}
         self.contracts = {c["id"]: c for c in attributes.get("contracts", [])}
+        self.positions = {p["id"]: p for p in attributes.get("positions", [])}
 
     def country(self, country_id: Optional[Union[int, str]]) -> dict:
         """Record of a country, or an empty dict if unknown."""
@@ -39,6 +40,10 @@ class Reference:
     def competition_type_name(self, type_id: Optional[Union[int, str]]) -> Optional[str]:
         """Name of a competition type (e.g. First Tier), or None if unknown."""
         return self.competition_types.get(_int(type_id), {}).get("name")
+
+    def position_name(self, position_id: Optional[Union[int, str]]) -> Optional[str]:
+        """Name of a position (e.g. Right Winger), or None if unknown."""
+        return self.positions.get(_int(position_id), {}).get("name")
 
     def contract_option_name(self, option_id: Optional[Union[int, str]]) -> Optional[str]:
         """Name of a contract option, or None if unknown."""

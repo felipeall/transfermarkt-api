@@ -624,3 +624,65 @@ def test_player_matches(synthetic_client: tuple[TestClient, dict]) -> None:
         "yellowCard": True,
         "isStarting": True,
     }
+
+
+def test_game_team_stats(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Team statistics are mapped when upstream has them, and null when it does not."""
+    client, routes = synthetic_client
+    lineup = {"lineup": {"players": [], "substitutes": []}}
+    routes["/game/6"] = {
+        "id": "6",
+        "baseDetails": {"competitionId": "L1"},
+        "homeClub": {
+            "clubId": "1",
+            **lineup,
+            "clubStatistics": {
+                "gameStatistics": {"possessionPercentage": 61.5, "yellowCards": 2},
+                "goalStatistics": {"totalShotAttempts": 12, "onTargetShotAttempts": 4},
+                "passingStatistics": {"totalPasses": 500, "accuratePasses": 450},
+                "penaltyStatistics": {"freeKicksConcededFromFouls": 9, "freeKicksWonFromFouls": 11},
+            },
+        },
+        "awayClub": {"clubId": "2", **lineup},
+        "actions": [],
+    }
+
+    body = client.get("/games/6").json()
+
+    stats = body["home"]["stats"]
+    assert (stats["possession"], stats["shots"], stats["shotsOnTarget"], stats["passes"]) == (61.5, 12, 4, 500)
+    assert (stats["foulsCommitted"], stats["foulsSuffered"], stats["yellowCards"]) == (9, 11, 2)
+    assert stats["clearances"] is None
+    assert body["away"]["stats"] is None
+
+
+def test_player_match_role_and_detailed_stats(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Each match carries the player's shirt, position, substitution minutes and detailed stats when recorded."""
+    client, routes = synthetic_client
+    routes["/attributes"] = {"positions": [{"id": 12, "name": "Right Winger"}]}
+    record = match_record("1", "2024-08-01T18:00:00+00:00", 2024, "played")
+    record["clubsInformation"]["club"]["points"] = 3
+    record["statistics"]["generalStatistics"] |= {"shirtNumber": 10, "isCaptain": True, "positionId": 12}
+    record["statistics"]["playingTimeStatistics"]["substitutedOut"] = {"minute": 80}
+    record["statistics"]["goalStatistics"] |= {"scoringAttempts": 6, "scoringAttemptsOnGoal": 4}
+    record["statistics"]["distributionStatistics"] = {"passes": 37, "passesReached": 30}
+    record["statistics"]["duelStatistics"] = {"tacklesWon": 2, "foulsGained": 1}
+    old_record = match_record("2", "2014-08-01T18:00:00+00:00", 2014, "played")
+    routes["/player/7/performance-game"] = {"performance": [record, old_record]}
+
+    recent, old = client.get("/players/7/matches").json()["matches"]
+
+    assert {
+        k: recent[k]
+        for k in ("shirtNumber", "isCaptain", "position", "substitutedOutMinute", "teamPoints", "shots", "passes")
+    } == {
+        "shirtNumber": 10,
+        "isCaptain": True,
+        "position": "Right Winger",
+        "substitutedOutMinute": 80,
+        "teamPoints": 3,
+        "shots": 6,
+        "passes": 37,
+    }
+    assert (recent["accuratePasses"], recent["tacklesWon"], recent["foulsSuffered"]) == (30, 2, 1)
+    assert (old["passes"], old["shots"], old["position"]) == (None, None, None)
