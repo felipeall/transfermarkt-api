@@ -1,5 +1,5 @@
 import datetime
-from typing import Optional
+from typing import Literal, Optional
 
 from app.schemas.base import AuditMixin, TransfermarktBaseModel
 
@@ -15,6 +15,7 @@ class PlayerTransfer(TransfermarktBaseModel):
     club_to: PlayerTransferClub
     date: Optional[datetime.date] = None
     upcoming: bool
+    transfer_type: Optional[Literal["transfer", "freeTransfer", "internal", "loan", "endOfLoan"]] = None
     season: Optional[str] = None
     market_value: Optional[int] = None
     fee: Optional[int] = None

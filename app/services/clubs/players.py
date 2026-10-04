@@ -47,6 +47,7 @@ async def get_club_players(tfmkt: TfmktClient, club_id: str, season_id: Optional
         entry = {
             "id": player_id,
             "name": player.get("name"),
+            "imageUrl": player.get("portraitUrl"),
             "position": (attributes.get("position") or {}).get("name"),
             "dateOfBirth": date_of_birth(player),
             "nationality": reference.country_names(*nationality_ids(player)),

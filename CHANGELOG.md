@@ -6,6 +6,9 @@
 
 - `GET /countries/` lists country IDs and metadata (name, FIFA code, confederation, flag, historical status) (#130).
 - `GET /clubs/?country_id={id}` lists the clubs Transfermarkt has for a country. The list is incomplete upstream: youth and national teams and some senior clubs are missing, with no pagination or season filter (#130, partly addresses #56).
+- Club squads include each player's `imageUrl` (from #114).
+- Player transfers include `transferType`: `transfer`, `freeTransfer`, `internal` (youth or reserve team to first team, and similar), `loan` or `endOfLoan`. An unknown fee stays a `transfer` with a null `fee` (from #98).
+- Player stats include `goalsConceded` and `cleanSheets`, computed as on the website: goals conceded while the player was on the pitch, and matches played in which the opponent did not score. They are returned for every player, although the website shows them only for goalkeepers (from #108).
 
 ## 4.0.4 — 2026-10-04
 

@@ -1,12 +1,15 @@
 from datetime import date
 from typing import Optional
 
+from pydantic import HttpUrl
+
 from app.schemas.base import AuditMixin, TransfermarktBaseModel
 
 
 class ClubPlayer(TransfermarktBaseModel):
     id: str
     name: Optional[str] = None
+    image_url: Optional[HttpUrl] = None
     position: Optional[str] = None
     date_of_birth: Optional[date] = None
     age: Optional[int] = None

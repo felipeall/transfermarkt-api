@@ -6,6 +6,7 @@
       {
         "id": "561613",
         "name": "Joan García",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/561613-1747386081.jpg",
         "position": "Goalkeeper",
         "dateOfBirth": "2001-05-04",
         "age": 25,
@@ -23,6 +24,7 @@
       {
         "id": "205927",
         "name": "Dominik Livakovic",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/205927-1757500641.jpg",
         "position": "Goalkeeper",
         "dateOfBirth": "1995-01-09",
         "age": 31,
@@ -40,6 +42,7 @@
       {
         "id": "44058",
         "name": "Wojciech Szczesny",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/44058-1744278078.jpg",
         "position": "Goalkeeper",
         "dateOfBirth": "1990-04-18",
         "age": 36,
@@ -57,6 +60,7 @@
       {
         "id": "962110",
         "name": "Pau Cubarsí",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/962110-1712779232.jpg",
         "position": "Centre-Back",
         "dateOfBirth": "2007-01-22",
         "age": 19,
@@ -74,6 +78,7 @@
       {
         "id": "466794",
         "name": "Eric García",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/466794-1788248040.jpg",
         "position": "Centre-Back",
         "dateOfBirth": "2001-01-09",
         "age": 25,
@@ -91,6 +96,7 @@
       {
         "id": "705395",
         "name": "Gerard Martín",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/705395-1730119053.jpg",
         "position": "Centre-Back",
         "dateOfBirth": "2002-02-26",
         "age": 24,
@@ -108,6 +114,7 @@
       {
         "id": "196948",
         "name": "Andreas Christensen",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/196948-1668183241.jpg",
         "position": "Centre-Back",
         "dateOfBirth": "1996-04-10",
         "age": 30,
@@ -125,6 +132,7 @@
       {
         "id": "636688",
         "name": "Alejandro Balde",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/636688-1662836200.jpg",
         "position": "Left-Back",
         "dateOfBirth": "2003-10-18",
         "age": 22,
@@ -142,6 +150,7 @@
       {
         "id": "411975",
         "name": "Jules Koundé",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/411975-1702502639.jpg",
         "position": "Right-Back",
         "dateOfBirth": "1998-11-12",
         "age": 27,
@@ -160,6 +169,7 @@
       {
         "id": "182712",
         "name": "João Cancelo",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/182712-1675080937.jpg",
         "position": "Right-Back",
         "dateOfBirth": "1994-05-27",
         "age": 32,
@@ -177,6 +187,7 @@
       {
         "id": "1018912",
         "name": "Xavi Espart",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/1018912-1768246502.jpg",
         "position": "Right-Back",
         "dateOfBirth": "2007-05-21",
         "age": 19,
@@ -194,6 +205,7 @@
       {
         "id": "357565",
         "name": "Rodri",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/357565-1788247677.jpg",
         "position": "Defensive Midfield",
         "dateOfBirth": "1996-06-22",
         "age": 30,
@@ -211,6 +223,7 @@
       {
         "id": "683840",
         "name": "Pedri",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/683840-1744278342.jpg",
         "position": "Central Midfield",
         "dateOfBirth": "2002-11-25",
         "age": 23,
@@ -228,6 +241,7 @@
       {
         "id": "326330",
         "name": "Frenkie de Jong",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/326330-1746041680.jpg",
         "position": "Central Midfield",
         "dateOfBirth": "1997-05-12",
         "age": 29,
@@ -245,6 +259,7 @@
       {
         "id": "646740",
         "name": "Gavi",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/646740-1682685701.jpg",
         "position": "Central Midfield",
         "dateOfBirth": "2004-08-05",
         "age": 22,
@@ -262,6 +277,7 @@
       {
         "id": "1018920",
         "name": "Marc Bernal",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/1018920-1724052540.jpg",
         "position": "Central Midfield",
         "dateOfBirth": "2007-05-26",
         "age": 19,
@@ -279,6 +295,7 @@
       {
         "id": "938154",
         "name": "Brian Fariñas",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/938154-1787555540.jpg",
         "position": "Central Midfield",
         "dateOfBirth": "2006-02-09",
         "age": 20,
@@ -296,6 +313,7 @@
       {
         "id": "636703",
         "name": "Fermín López",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/636703-1698086824.jpg",
         "position": "Attacking Midfield",
         "dateOfBirth": "2003-05-11",
         "age": 23,
@@ -313,6 +331,7 @@
       {
         "id": "293385",
         "name": "Dani Olmo",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/293385-1780663091.jpg",
         "position": "Attacking Midfield",
         "dateOfBirth": "1998-05-07",
         "age": 28,
@@ -330,6 +349,7 @@
       {
         "id": "503733",
         "name": "Anthony Gordon",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/503733-1761080304.jpg",
         "position": "Left Winger",
         "dateOfBirth": "2001-02-24",
         "age": 25,
@@ -348,6 +368,7 @@
       {
         "id": "1105549",
         "name": "Jesse Bisiwu",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/1105549-1788247960.jpg",
         "position": "Left Winger",
         "dateOfBirth": "2008-01-22",
         "age": 18,
@@ -366,6 +387,7 @@
       {
         "id": "937958",
         "name": "Lamine Yamal",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/937958-1773173768.jpg",
         "position": "Right Winger",
         "dateOfBirth": "2007-07-13",
         "age": 19,
@@ -383,6 +405,7 @@
       {
         "id": "496094",
         "name": "Karim Adeyemi",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/496094-1788248133.jpg",
         "position": "Right Winger",
         "dateOfBirth": "2002-01-18",
         "age": 24,
@@ -401,6 +424,7 @@
       {
         "id": "792331",
         "name": "Roony Bardghji",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/792331-1667420074.jpg",
         "position": "Right Winger",
         "dateOfBirth": "2005-11-15",
         "age": 20,
@@ -419,6 +443,7 @@
       {
         "id": "411295",
         "name": "Raphinha",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/411295-1729754479.png",
         "position": "Centre-Forward",
         "dateOfBirth": "1996-12-14",
         "age": 29,
@@ -437,6 +462,7 @@
       {
         "id": "363205",
         "name": "Gabriel Jesus",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/363205-1669711141.jpg",
         "position": "Centre-Forward",
         "dateOfBirth": "1997-04-03",
         "age": 29,
@@ -454,6 +480,7 @@
       {
         "id": "1259085",
         "name": "Hamza Abdelkarim",
+        "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/1259085-1780899447.jpg",
         "position": "Centre-Forward",
         "dateOfBirth": "2008-01-01",
         "age": 18,

@@ -391,3 +391,92 @@ def test_countries_with_malformed_reference_data_are_502(
     routes["/attributes"] = attributes
 
     assert client.get("/countries/").status_code == 502
+
+
+def keeper_game(minutes: int, conceded_on_pitch: int, opponent_total: int) -> dict:
+    """A Bundesliga match record for a goalkeeper of club 27."""
+    return {
+        "gameInformation": {"competitionTypeId": 1, "seasonId": 2025, "competitionId": "L1"},
+        "clubsInformation": {"club": {"clubId": 27, "opponentGoalsTotal": opponent_total}},
+        "statistics": {
+            "generalStatistics": {"participationState": "played" if minutes else "not_in_squad"},
+            "cardStatistics": {},
+            "goalStatistics": {"goalsScoredTotal": 0, "assists": 0, "opponentGoalsOnThePitch": conceded_on_pitch},
+            "playingTimeStatistics": {"playedMinutes": minutes},
+        },
+    }
+
+
+def test_goalkeeper_stats_follow_the_website(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Goals conceded count only while on the pitch; a clean sheet is a played match the opponent did not score in."""
+    client, routes = synthetic_client
+    routes["/player/7/performance-game"] = {
+        "performance": [
+            keeper_game(minutes=90, conceded_on_pitch=0, opponent_total=0),  # clean sheet
+            keeper_game(minutes=90, conceded_on_pitch=2, opponent_total=2),
+            keeper_game(minutes=45, conceded_on_pitch=0, opponent_total=1),  # conceded after being replaced
+            keeper_game(minutes=0, conceded_on_pitch=0, opponent_total=0),  # did not play
+        ],
+    }
+
+    stat = client.get("/players/7/stats").json()["stats"][0]
+
+    assert (stat["appearances"], stat["goalsConceded"], stat["cleanSheets"]) == (3, 2, 1)
+
+
+@pytest.mark.parametrize(
+    ("upstream_type", "fee_label", "expected"),
+    [
+        ("STANDARD", "Free Transfer", "freeTransfer"),
+        ("STANDARD", "-", "transfer"),
+        ("STANDARD", "?", "transfer"),
+        ("INTERNAL_TRANSFER", "-", "internal"),
+        ("ACTIVE_LOAN_TRANSFER", "Loan fee", "loan"),
+        ("RETURNED_FROM_PREVIOUS_LOAN", None, "endOfLoan"),
+        ("SOMETHING_NEW", None, None),
+    ],
+)
+def test_transfer_types(
+    synthetic_client: tuple[TestClient, dict],
+    upstream_type: str,
+    fee_label: str | None,
+    expected: str | None,
+) -> None:
+    """Upstream transfer types map to transferType; an unknown fee is never a free transfer."""
+    client, routes = synthetic_client
+    routes["/player/7"] = {"id": "7", "attributes": {}}
+    routes["/transfer/history/player/7"] = {
+        "history": {
+            "terminated": [
+                {
+                    "id": "1",
+                    "typeDetails": {"type": upstream_type},
+                    "transferSource": {"clubId": "2"},
+                    "transferDestination": {"clubId": "3"},
+                    "details": {"fee": {"value": None, "compact": {"content": fee_label}}},
+                },
+            ],
+        },
+    }
+
+    transfer = client.get("/players/7/transfers").json()["transfers"][0]
+
+    assert transfer["transferType"] == expected
+    assert transfer["fee"] is None
+
+
+def test_squad_includes_player_images(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Squad entries carry the player's portrait, or null when upstream has none."""
+    client, routes = synthetic_client
+    routes["/club/1/squad"] = {
+        "clubId": "1",
+        "squad": [{"playerId": "10", "type": "current"}, {"playerId": "11", "type": "current"}],
+    }
+    routes["/players"] = [
+        {"id": "10", "name": "Pictured", "portraitUrl": "https://img.a.transfermarkt.technology/portrait/big/10.jpg"},
+        {"id": "11", "name": "Unpictured"},
+    ]
+
+    players = client.get("/clubs/1/players").json()["players"]
+
+    assert [p["imageUrl"] for p in players] == ["https://img.a.transfermarkt.technology/portrait/big/10.jpg", None]
