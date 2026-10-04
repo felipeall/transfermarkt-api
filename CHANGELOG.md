@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.4 — 2026-10-04
+
+### Fixed
+
+- The interactive docs failed to load their schema on the hosted API: opening `/` takes three requests (`/`, `/docs`, `/openapi.json`), and the third got 429. The docs pages and `/openapi.json` are no longer rate limited, like `/health`. API routes still share one budget per client IP (#145).
+
 ## 4.0.3 — 2026-10-04
 
 ### Changed
