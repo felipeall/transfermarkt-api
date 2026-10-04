@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.0.3 — 2026-10-04
+
+### Changed
+
+- Direct dependencies are pinned to exact versions, all at their latest releases (#143).
+- The Docker image is pinned to `python:3.12.15-slim-trixie` and builds with uv `0.12.23`. uv is mounted only while dependencies are installed, so it is no longer in the final image (#143).
+- CI uses uv `0.12.23`, `astral-sh/setup-uv` `v10.2.0` and `actions/checkout` `v7.0.1` (#143, #144).
+
 ## 4.0.2 — 2026-10-04
 
 ### Changed

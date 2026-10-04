@@ -41,7 +41,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 app = FastAPI(
     title="Transfermarkt API",
-    version="4.0.2",
+    version="4.0.3",
     description="Football data from Transfermarkt's JSON API: players, clubs and competitions.",
     lifespan=lifespan,
 )

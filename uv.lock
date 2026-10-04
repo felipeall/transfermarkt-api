@@ -490,7 +490,7 @@ wheels = [
 
 [[package]]
 name = "transfermarkt-api"
-version = "4.0.2"
+version = "4.0.3"
 source = { virtual = "." }
 dependencies = [
     { name = "cachetools" },
