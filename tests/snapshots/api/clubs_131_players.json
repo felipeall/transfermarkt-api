@@ -8,6 +8,8 @@
         "name": "Joan García",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/561613-1747386081.jpg",
         "position": "Goalkeeper",
+        "shirtNumber": 1,
+        "isCaptain": false,
         "dateOfBirth": "2001-05-04",
         "age": 25,
         "nationality": [
@@ -26,6 +28,8 @@
         "name": "Dominik Livakovic",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/205927-1757500641.jpg",
         "position": "Goalkeeper",
+        "shirtNumber": 25,
+        "isCaptain": false,
         "dateOfBirth": "1995-01-09",
         "age": 31,
         "nationality": [
@@ -44,6 +48,8 @@
         "name": "Wojciech Szczesny",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/44058-1744278078.jpg",
         "position": "Goalkeeper",
+        "shirtNumber": 13,
+        "isCaptain": false,
         "dateOfBirth": "1990-04-18",
         "age": 36,
         "nationality": [
@@ -62,6 +68,8 @@
         "name": "Pau Cubarsí",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/962110-1712779232.jpg",
         "position": "Centre-Back",
+        "shirtNumber": 5,
+        "isCaptain": false,
         "dateOfBirth": "2007-01-22",
         "age": 19,
         "nationality": [
@@ -80,6 +88,8 @@
         "name": "Eric García",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/466794-1788248040.jpg",
         "position": "Centre-Back",
+        "shirtNumber": 24,
+        "isCaptain": false,
         "dateOfBirth": "2001-01-09",
         "age": 25,
         "nationality": [
@@ -98,6 +108,8 @@
         "name": "Gerard Martín",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/705395-1730119053.jpg",
         "position": "Centre-Back",
+        "shirtNumber": 18,
+        "isCaptain": false,
         "dateOfBirth": "2002-02-26",
         "age": 24,
         "nationality": [
@@ -116,6 +128,8 @@
         "name": "Andreas Christensen",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/196948-1668183241.jpg",
         "position": "Centre-Back",
+        "shirtNumber": 15,
+        "isCaptain": false,
         "dateOfBirth": "1996-04-10",
         "age": 30,
         "nationality": [
@@ -134,6 +148,8 @@
         "name": "Alejandro Balde",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/636688-1662836200.jpg",
         "position": "Left-Back",
+        "shirtNumber": 3,
+        "isCaptain": false,
         "dateOfBirth": "2003-10-18",
         "age": 22,
         "nationality": [
@@ -152,6 +168,8 @@
         "name": "Jules Koundé",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/411975-1702502639.jpg",
         "position": "Right-Back",
+        "shirtNumber": 23,
+        "isCaptain": false,
         "dateOfBirth": "1998-11-12",
         "age": 27,
         "nationality": [
@@ -171,6 +189,8 @@
         "name": "João Cancelo",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/182712-1675080937.jpg",
         "position": "Right-Back",
+        "shirtNumber": 2,
+        "isCaptain": false,
         "dateOfBirth": "1994-05-27",
         "age": 32,
         "nationality": [
@@ -189,6 +209,8 @@
         "name": "Xavi Espart",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/1018912-1768246502.jpg",
         "position": "Right-Back",
+        "shirtNumber": 12,
+        "isCaptain": false,
         "dateOfBirth": "2007-05-21",
         "age": 19,
         "nationality": [
@@ -207,6 +229,8 @@
         "name": "Rodri",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/357565-1788247677.jpg",
         "position": "Defensive Midfield",
+        "shirtNumber": 16,
+        "isCaptain": false,
         "dateOfBirth": "1996-06-22",
         "age": 30,
         "nationality": [
@@ -225,6 +249,8 @@
         "name": "Pedri",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/683840-1744278342.jpg",
         "position": "Central Midfield",
+        "shirtNumber": 8,
+        "isCaptain": false,
         "dateOfBirth": "2002-11-25",
         "age": 23,
         "nationality": [
@@ -243,6 +269,8 @@
         "name": "Frenkie de Jong",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/326330-1746041680.jpg",
         "position": "Central Midfield",
+        "shirtNumber": 21,
+        "isCaptain": false,
         "dateOfBirth": "1997-05-12",
         "age": 29,
         "nationality": [
@@ -261,6 +289,8 @@
         "name": "Gavi",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/646740-1682685701.jpg",
         "position": "Central Midfield",
+        "shirtNumber": 6,
+        "isCaptain": false,
         "dateOfBirth": "2004-08-05",
         "age": 22,
         "nationality": [
@@ -279,6 +309,8 @@
         "name": "Marc Bernal",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/1018920-1724052540.jpg",
         "position": "Central Midfield",
+        "shirtNumber": 22,
+        "isCaptain": false,
         "dateOfBirth": "2007-05-26",
         "age": 19,
         "nationality": [
@@ -297,6 +329,8 @@
         "name": "Brian Fariñas",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/938154-1787555540.jpg",
         "position": "Central Midfield",
+        "shirtNumber": 4,
+        "isCaptain": false,
         "dateOfBirth": "2006-02-09",
         "age": 20,
         "nationality": [
@@ -315,6 +349,8 @@
         "name": "Fermín López",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/636703-1698086824.jpg",
         "position": "Attacking Midfield",
+        "shirtNumber": 7,
+        "isCaptain": false,
         "dateOfBirth": "2003-05-11",
         "age": 23,
         "nationality": [
@@ -333,6 +369,8 @@
         "name": "Dani Olmo",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/293385-1780663091.jpg",
         "position": "Attacking Midfield",
+        "shirtNumber": 20,
+        "isCaptain": false,
         "dateOfBirth": "1998-05-07",
         "age": 28,
         "nationality": [
@@ -351,6 +389,8 @@
         "name": "Anthony Gordon",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/503733-1761080304.jpg",
         "position": "Left Winger",
+        "shirtNumber": 17,
+        "isCaptain": false,
         "dateOfBirth": "2001-02-24",
         "age": 25,
         "nationality": [
@@ -370,6 +410,8 @@
         "name": "Jesse Bisiwu",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/1105549-1788247960.jpg",
         "position": "Left Winger",
+        "shirtNumber": 27,
+        "isCaptain": false,
         "dateOfBirth": "2008-01-22",
         "age": 18,
         "nationality": [
@@ -389,6 +431,8 @@
         "name": "Lamine Yamal",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/937958-1773173768.jpg",
         "position": "Right Winger",
+        "shirtNumber": 10,
+        "isCaptain": false,
         "dateOfBirth": "2007-07-13",
         "age": 19,
         "nationality": [
@@ -407,6 +451,8 @@
         "name": "Karim Adeyemi",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/496094-1788248133.jpg",
         "position": "Right Winger",
+        "shirtNumber": 14,
+        "isCaptain": false,
         "dateOfBirth": "2002-01-18",
         "age": 24,
         "nationality": [
@@ -426,6 +472,8 @@
         "name": "Roony Bardghji",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/792331-1667420074.jpg",
         "position": "Right Winger",
+        "shirtNumber": 19,
+        "isCaptain": false,
         "dateOfBirth": "2005-11-15",
         "age": 20,
         "nationality": [
@@ -445,6 +493,8 @@
         "name": "Raphinha",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/411295-1729754479.png",
         "position": "Centre-Forward",
+        "shirtNumber": 11,
+        "isCaptain": true,
         "dateOfBirth": "1996-12-14",
         "age": 29,
         "nationality": [
@@ -464,6 +514,8 @@
         "name": "Gabriel Jesus",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/363205-1669711141.jpg",
         "position": "Centre-Forward",
+        "shirtNumber": 9,
+        "isCaptain": false,
         "dateOfBirth": "1997-04-03",
         "age": 29,
         "nationality": [
@@ -482,6 +534,8 @@
         "name": "Hamza Abdelkarim",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/1259085-1780899447.jpg",
         "position": "Centre-Forward",
+        "shirtNumber": 29,
+        "isCaptain": false,
         "dateOfBirth": "2008-01-01",
         "age": 18,
         "nationality": [

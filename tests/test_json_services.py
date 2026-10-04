@@ -227,6 +227,104 @@ def test_club_profile_includes_current_coach(client: TestClient) -> None:
     }
 
 
+def test_club_profile_richer_data(client: TestClient) -> None:
+    """Recorded club data exposes exact squad values, historical names and the full stadium."""
+    response = client.get("/clubs/131/profile")
+    assert response.status_code == 200
+    body = response.json()
+    assert (body["shortName"], body["abbreviation"], body["clubCode"]) == ("Barcelona", "Barça", "BAR")
+    assert body["squad"]["domesticPlayers"] == 14
+    assert body["squad"]["averageMarketValue"] == 46762964
+    assert body["squad"]["acquisitionValue"] == 489500000
+    assert body["squad"]["top18PlayersMarketValue"] == 1204000000
+    assert body["squad"]["top18SharePercentage"] == 95.36
+    assert {"name": "CF Barcelona", "shortName": "Barcelona", "abbreviation": "Barça", "seasonId": "1972"} in body[
+        "historicalNames"
+    ]
+    stadium = body["stadium"]
+    assert stadium["name"] == body["stadiumName"] == "Spotify Camp Nou"
+    assert stadium["capacity"] == body["stadiumSeats"] == 62657
+    assert stadium["internationalCapacity"] == 62657
+    assert stadium["countryName"] == "Spain"
+    assert (stadium["latitude"], stadium["longitude"]) == (41.380896, 2.1228198)
+    assert (stadium["buildYear"], stadium["renovationYear"]) == (1957, 1994)
+    assert (stadium["fieldLength"], stadium["fieldWidth"], stadium["fieldSurface"]) == (105, 68, "Hybridrasen")
+    assert stadium["website"] == "www.fcbarcelona.com/web/index_idiomes.html"
+    assert len(stadium["images"]) == 7
+
+
+@pytest.mark.parametrize("has_stadium", [False, True])
+def test_club_profile_missing_optional_details(
+    synthetic_client: tuple[TestClient, dict],
+    has_stadium: bool,
+) -> None:
+    """Absent details stay nullable; meaningful zeros and stadium coordinates survive."""
+    client, routes = synthetic_client
+    routes["/club/1"] = {
+        "id": "1",
+        "name": "Club",
+        "squadDetails": {"acquisitionValue": {"value": 0}, "top18SharePercentage": {"value": 0}},
+    }
+    routes["/club/1/squad"] = {"squad": [], "localCount": 0}
+    if has_stadium:
+        routes["/club/1/stadium"] = {
+            "id": "2",
+            "capacity": 0,
+            "internationalCapacity": 0,
+            "location": {"latitude": 0, "longitude": 0},
+            "buildingDetails": {"buildYear": 0, "renovationYear": 0, "fieldSurface": ""},
+            "images": [{"url": "https://example.test/stadium.jpg"}, {"url": "https://example.test/stadium.jpg"}, {}],
+        }
+    response = client.get("/clubs/1/profile")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["shortName"] is None
+    assert body["abbreviation"] is None
+    assert body["clubCode"] is None
+    assert body["historicalNames"] == []
+    assert body["squad"]["domesticPlayers"] == 0
+    assert body["squad"]["acquisitionValue"] == 0
+    assert body["squad"]["averageMarketValue"] is None
+    assert body["squad"]["top18PlayersMarketValue"] is None
+    assert body["squad"]["top18SharePercentage"] == 0
+    if has_stadium:
+        assert body["stadium"]["capacity"] == 0
+        assert body["stadium"]["latitude"] == body["stadium"]["longitude"] == 0
+        assert body["stadium"]["buildYear"] is None
+        assert body["stadium"]["website"] is None
+        assert body["stadium"]["fieldSurface"] is None
+        assert body["stadium"]["images"] == ["https://example.test/stadium.jpg"]
+    else:
+        assert body["stadium"] is None
+
+
+@pytest.mark.parametrize("season_id", [None, "2014"])
+def test_squad_role_comes_from_selected_season(
+    synthetic_client: tuple[TestClient, dict],
+    season_id: str | None,
+) -> None:
+    """Shirt numbers and captaincy come from the selected squad even without a player record."""
+    client, routes = synthetic_client
+    routes["/club/1/squad"] = {
+        "squad": [
+            {"playerId": "10", "type": "historical" if season_id else "current", "shirtNumber": 8, "isCaptain": True},
+            {"playerId": "11", "type": "historical" if season_id else "current", "shirtNumber": 0, "isCaptain": False},
+            {"playerId": "12", "type": "historical" if season_id else "current"},
+        ],
+    }
+    routes["/players"] = [
+        {
+            "id": "10",
+            "name": "Player",
+            "clubAssignment": {"clubId": "2", "shirtNumber": 99, "isCaptain": False},
+        }
+    ]
+    response = client.get("/clubs/1/players", params={"season_id": season_id} if season_id else {})
+    assert response.status_code == 200
+    players = response.json()["players"]
+    assert [(p["shirtNumber"], p["isCaptain"]) for p in players] == [(8, True), (0, False), (None, None)]
+
+
 @pytest.mark.parametrize("path", ["/players/0/achievements", "/clubs/0/achievements", "/coaches/0/profile"])
 def test_unknown_ids_are_404(client: TestClient, path: str) -> None:
     """Unknown IDs answer 404 on routes that return empty data upstream."""

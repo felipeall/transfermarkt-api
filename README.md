@@ -30,8 +30,8 @@ https://transfermarkt-api.fly.dev/
 | `GET /countries/` | Country IDs and metadata, including historical entries; cached for 24 hours |
 | `GET /clubs/?country_id=` | Available club IDs and names for a country; limited upstream coverage, no pagination |
 | `GET /clubs/search/{club_name}?page_number=` | 10 results per page |
-| `GET /clubs/{club_id}/profile` | |
-| `GET /clubs/{club_id}/players?season_id=` | Current squad by default |
+| `GET /clubs/{club_id}/profile` | Squad value details, historical names and stadium details |
+| `GET /clubs/{club_id}/players?season_id=` | Current squad by default; shirt number and captaincy for the selected season |
 | `GET /clubs/{club_id}/achievements` | Club titles by season |
 | `GET /coaches/search/{coach_name}?page_number=` | 10 results per page |
 | `GET /coaches/{coach_id}/profile` | |

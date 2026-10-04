@@ -33,6 +33,7 @@ async def get_club_players(tfmkt: TfmktClient, club_id: str, season_id: Optional
     max_season = int(season_id) if season_id and not is_current else None
     arrivals = {i: latest_arrival(history, club_id, max_season) for i, history in zip(player_ids, histories)}
     assignments = {i: current_assignment(players.get(i, {})) for i in player_ids}
+    squad_members = {str(member["playerId"]): member for member in members}
     clubs = await tfmkt.clubs(
         [a["transferSource"]["clubId"] for a in arrivals.values() if a]
         + ([] if is_current else [a["clubId"] for a in assignments.values() if a]),
@@ -48,6 +49,8 @@ async def get_club_players(tfmkt: TfmktClient, club_id: str, season_id: Optional
             "id": player_id,
             "name": player.get("name"),
             "imageUrl": player.get("portraitUrl"),
+            "shirtNumber": squad_members[player_id].get("shirtNumber"),
+            "isCaptain": squad_members[player_id].get("isCaptain"),
             "position": (attributes.get("position") or {}).get("name"),
             "dateOfBirth": date_of_birth(player),
             "nationality": reference.country_names(*nationality_ids(player)),

@@ -5,6 +5,9 @@
     "url": "/fc-barcelona/startseite/verein/131",
     "name": "FC Barcelona",
     "officialName": "Futbol Club Barcelona",
+    "shortName": "Barcelona",
+    "abbreviation": "Barça",
+    "clubCode": "BAR",
     "image": "https://img.a.transfermarkt.technology/wappen/big/131.png?lm=1789459175",
     "addressLine1": "Avinguda Arístides Maillol",
     "addressLine2": "08028 Barcelona",
@@ -16,6 +19,33 @@
     ],
     "stadiumName": "Spotify Camp Nou",
     "stadiumSeats": 62657,
+    "stadium": {
+      "id": "56",
+      "name": "Spotify Camp Nou",
+      "capacity": 62657,
+      "internationalCapacity": 62657,
+      "website": "www.fcbarcelona.com/web/index_idiomes.html",
+      "addressLine1": "Carrer d´Aristides Maillol, entrance no 7",
+      "addressLine2": "08028 Barcelona",
+      "countryId": "157",
+      "countryName": "Spain",
+      "latitude": 41.380896,
+      "longitude": 2.1228198,
+      "buildYear": 1957,
+      "renovationYear": 1994,
+      "fieldLength": 105,
+      "fieldWidth": 68,
+      "fieldSurface": "Hybridrasen",
+      "images": [
+        "https://img.a.transfermarkt.technology/foto/newsansicht/spotify-camp-nou-fc-barcelona-2025-1763391077-183033.jpg",
+        "https://img.a.transfermarkt.technology/foto/newsansicht/marc-andre-ter-stegen-beim-clasico-im-camp-nou-zwischen-fc-barcelona-und-real-madrid-2021-22-1635247856-73573.jpg",
+        "https://img.a.transfermarkt.technology/foto/newsansicht/camp-nou-2012-flutlicht-1604657248-50650.jpg",
+        "https://img.a.transfermarkt.technology/foto/newsansicht/fc-barcelona-choreo-1585318105-35014.jpg",
+        "https://img.a.transfermarkt.technology/foto/newsansicht/camp-nou-1576852399-28802.jpg",
+        "https://img.a.transfermarkt.technology/foto/newsansicht/camp-nou-stadion-des-fc-barcelona-1555495891-21808.jpg",
+        "https://img.a.transfermarkt.technology/foto/newsansicht/camp-nou-1509630263-12525.jpg"
+      ]
+    },
     "currentMarketValue": 1262600000,
     "confederation": null,
     "coach": {
@@ -27,7 +57,12 @@
       "size": 27,
       "averageAge": 25.3,
       "foreigners": 13,
-      "nationalTeamPlayers": 20
+      "nationalTeamPlayers": 20,
+      "domesticPlayers": 14,
+      "averageMarketValue": 46762964,
+      "acquisitionValue": 489500000,
+      "top18PlayersMarketValue": 1204000000,
+      "top18SharePercentage": 95.36
     },
     "league": {
       "id": "ES1",
@@ -47,6 +82,62 @@
       "https://img.a.transfermarkt.technology/wappen/big/131_1400792174.png?lm=1789459175",
       "https://img.a.transfermarkt.technology/wappen/big/131_1400792150.png?lm=1789459175",
       "https://img.a.transfermarkt.technology/wappen/big/131_1400792132.png?lm=1789459175"
+    ],
+    "historicalNames": [
+      {
+        "name": "FC Barcelona",
+        "shortName": "FC Barcelona",
+        "abbreviation": "Barça",
+        "seasonId": "1974"
+      },
+      {
+        "name": "FC Barcelona",
+        "shortName": "FC Barcelona",
+        "abbreviation": "Barça",
+        "seasonId": "1973"
+      },
+      {
+        "name": "CF Barcelona",
+        "shortName": "Barcelona",
+        "abbreviation": "Barça",
+        "seasonId": "1972"
+      },
+      {
+        "name": "CF Barcelona",
+        "shortName": "Barcelona",
+        "abbreviation": "Barça",
+        "seasonId": "1959"
+      },
+      {
+        "name": "CF Barcelona",
+        "shortName": "Barcelona",
+        "abbreviation": "Barça",
+        "seasonId": "1945"
+      },
+      {
+        "name": "FC Barcelona",
+        "shortName": "FC Barcelona",
+        "abbreviation": "Barça",
+        "seasonId": "1939"
+      },
+      {
+        "name": "FC Barcelona",
+        "shortName": "FC Barcelona",
+        "abbreviation": "Barça",
+        "seasonId": "1935"
+      },
+      {
+        "name": "FC Barcelona",
+        "shortName": "FC Barcelona",
+        "abbreviation": "Barça",
+        "seasonId": "1919"
+      },
+      {
+        "name": "FC Barcelona",
+        "shortName": "FC Barcelona",
+        "abbreviation": "Barça",
+        "seasonId": "1905"
+      }
     ]
   }
 }

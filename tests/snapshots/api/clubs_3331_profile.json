@@ -5,6 +5,9 @@
     "url": "/desportivo-de-ronfe/startseite/verein/3331",
     "name": "Desportivo de Ronfe",
     "officialName": "Juventude Ronfe",
+    "shortName": "Desp. Ronfe",
+    "abbreviation": "Ronfe",
+    "clubCode": null,
     "image": "https://img.a.transfermarkt.technology/wappen/big/3331.png?lm=1789459343",
     "addressLine1": null,
     "addressLine2": null,
@@ -12,6 +15,7 @@
     "colors": [],
     "stadiumName": null,
     "stadiumSeats": null,
+    "stadium": null,
     "currentMarketValue": null,
     "confederation": null,
     "coach": null,
@@ -19,7 +23,12 @@
       "size": 4,
       "averageAge": 26.9,
       "foreigners": 1,
-      "nationalTeamPlayers": null
+      "nationalTeamPlayers": null,
+      "domesticPlayers": 3,
+      "averageMarketValue": null,
+      "acquisitionValue": 0,
+      "top18PlayersMarketValue": null,
+      "top18SharePercentage": null
     },
     "league": {
       "id": null,
@@ -30,6 +39,7 @@
     },
     "historicalCrests": [
       "https://img.a.transfermarkt.technology/wappen/big/3331.png?lm=1789459343"
-    ]
+    ],
+    "historicalNames": []
   }
 }
