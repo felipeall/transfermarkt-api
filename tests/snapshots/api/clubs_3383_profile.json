@@ -1,40 +1,4 @@
 {
-  "status": 200,
-  "body": {
-    "id": "3383",
-    "url": "/austria/startseite/verein/3383",
-    "name": "Austria",
-    "officialName": null,
-    "image": "https://img.a.transfermarkt.technology/flagge/original/127.png",
-    "addressLine1": "Meiereistraße 7",
-    "addressLine2": "1020 Wien",
-    "addressLine3": "Austria",
-    "colors": [
-      "#EE2737",
-      "#000000",
-      "#21a5ef"
-    ],
-    "stadiumName": "Ernst-Happel-Stadion",
-    "stadiumSeats": 50865,
-    "currentMarketValue": 261800000,
-    "confederation": "UEFA",
-    "squad": {
-      "size": 29,
-      "averageAge": 26.5,
-      "foreigners": 0,
-      "nationalTeamPlayers": 29
-    },
-    "league": {
-      "id": "UNLB",
-      "name": "UEFA Nations League B",
-      "countryId": null,
-      "countryName": null,
-      "tier": "National Team"
-    },
-    "historicalCrests": [
-      "https://img.a.transfermarkt.technology/flagge/original/127.png",
-      "https://img.a.transfermarkt.technology/wappen/big/3383_1761142046.png?lm=1789469343",
-      "https://img.a.transfermarkt.technology/wappen/big/3383_1669902047.png?lm=1789469343"
-    ]
-  }
+  "status": 500,
+  "body": "Internal Server Error"
 }

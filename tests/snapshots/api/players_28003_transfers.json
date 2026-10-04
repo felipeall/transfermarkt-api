@@ -7,129 +7,116 @@
         "id": "4418847",
         "clubFrom": {
           "id": "583",
-          "name": "Paris Saint-Germain"
+          "name": "PSG"
         },
         "clubTo": {
           "id": "69261",
-          "name": "Inter Miami CF"
+          "name": "Miami"
         },
         "date": "2023-07-15",
         "upcoming": false,
         "season": "23/24",
-        "marketValue": 35000000,
-        "fee": null
+        "marketValue": 35000000
       },
       {
         "id": "3489998",
         "clubFrom": {
           "id": "131",
-          "name": "FC Barcelona"
+          "name": "Barcelona"
         },
         "clubTo": {
           "id": "583",
-          "name": "Paris Saint-Germain"
+          "name": "PSG"
         },
-        "date": "2021-08-10",
+        "date": "2021-10-08",
         "upcoming": false,
         "season": "21/22",
-        "marketValue": 80000000,
-        "fee": null
+        "marketValue": 80000000
       },
       {
         "id": "48265",
         "clubFrom": {
           "id": "2464",
-          "name": "FC Barcelona Atlètic"
+          "name": "Barcelona B"
         },
         "clubTo": {
           "id": "131",
-          "name": "FC Barcelona"
+          "name": "Barcelona"
         },
-        "date": "2005-07-01",
+        "date": "2005-01-07",
         "upcoming": false,
         "season": "05/06",
-        "marketValue": 3000000,
-        "fee": null
+        "marketValue": 3000000
       },
       {
         "id": "153557",
         "clubFrom": {
           "id": "63954",
-          "name": "FC Barcelona C (- 2007)"
+          "name": "Barcelona C"
         },
         "clubTo": {
           "id": "2464",
-          "name": "FC Barcelona Atlètic"
+          "name": "Barcelona B"
         },
-        "date": "2004-03-05",
+        "date": "2004-05-03",
         "upcoming": false,
-        "season": "03/04",
-        "marketValue": null,
-        "fee": null
+        "season": "03/04"
       },
       {
         "id": "1993882",
         "clubFrom": {
           "id": "2470",
-          "name": "FC Barcelona U19"
+          "name": "Barça U19"
         },
         "clubTo": {
           "id": "63954",
-          "name": "FC Barcelona C (- 2007)"
+          "name": "Barcelona C"
         },
         "date": "2003-11-28",
         "upcoming": false,
-        "season": "03/04",
-        "marketValue": null,
-        "fee": null
+        "season": "03/04"
       },
       {
         "id": "1136539",
         "clubFrom": {
           "id": "14321",
-          "name": "FC Barcelona U16"
+          "name": "Barça U16"
         },
         "clubTo": {
           "id": "2470",
-          "name": "FC Barcelona U19"
+          "name": "Barça U19"
         },
         "date": "2003-09-13",
         "upcoming": false,
-        "season": "03/04",
-        "marketValue": null,
-        "fee": null
+        "season": "03/04"
       },
       {
         "id": "2326361",
         "clubFrom": {
           "id": "70295",
-          "name": "FC Barcelona Youth"
+          "name": "Barça Youth"
         },
         "clubTo": {
           "id": "14321",
-          "name": "FC Barcelona U16"
+          "name": "Barça U16"
         },
-        "date": "2002-07-01",
+        "date": "2002-01-07",
         "upcoming": false,
-        "season": "02/03",
-        "marketValue": null,
-        "fee": null
+        "season": "02/03"
       },
       {
         "id": "181327",
         "clubFrom": {
           "id": "92364",
-          "name": "CA Newell's Old Boys Juveniles"
+          "name": "Newell's JV"
         },
         "clubTo": {
           "id": "70295",
-          "name": "FC Barcelona Youth"
+          "name": "Barça Youth"
         },
-        "date": "2000-07-01",
+        "date": "2000-01-07",
         "upcoming": false,
-        "season": "00/01",
-        "marketValue": null,
-        "fee": null
+        "season": "00/01"
       }
     ],
     "youthClubs": [

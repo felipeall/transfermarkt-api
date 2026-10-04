@@ -7,97 +7,90 @@
         "id": "4552945",
         "clubFrom": {
           "id": "130",
-          "name": "Parma Calcio 1913"
+          "name": "Parma"
         },
         "clubTo": {
           "id": "123",
           "name": "Retired"
         },
-        "date": "2023-08-02",
+        "date": "2023-02-08",
         "upcoming": false,
         "season": "23/24",
-        "marketValue": 1000000,
-        "fee": null
+        "marketValue": 1000000
       },
       {
         "id": "3361384",
         "clubFrom": {
           "id": "506",
-          "name": "Juventus FC"
+          "name": "Juventus"
         },
         "clubTo": {
           "id": "130",
-          "name": "Parma Calcio 1913"
+          "name": "Parma"
         },
-        "date": "2021-07-01",
+        "date": "2021-01-07",
         "upcoming": false,
         "season": "21/22",
-        "marketValue": 1000000,
-        "fee": null
+        "marketValue": 1000000
       },
       {
         "id": "2537963",
         "clubFrom": {
           "id": "583",
-          "name": "Paris Saint-Germain"
+          "name": "PSG"
         },
         "clubTo": {
           "id": "506",
-          "name": "Juventus FC"
+          "name": "Juventus"
         },
-        "date": "2019-07-04",
+        "date": "2019-04-07",
         "upcoming": false,
         "season": "19/20",
-        "marketValue": 1000000,
-        "fee": null
+        "marketValue": 1000000
       },
       {
         "id": "2109618",
         "clubFrom": {
           "id": "506",
-          "name": "Juventus FC"
+          "name": "Juventus"
         },
         "clubTo": {
           "id": "583",
-          "name": "Paris Saint-Germain"
+          "name": "PSG"
         },
-        "date": "2018-07-06",
+        "date": "2018-06-07",
         "upcoming": false,
         "season": "18/19",
-        "marketValue": 2000000,
-        "fee": null
+        "marketValue": 2000000
       },
       {
         "id": "8312",
         "clubFrom": {
           "id": "130",
-          "name": "Parma Calcio 1913"
+          "name": "AC Parma"
         },
         "clubTo": {
           "id": "506",
-          "name": "Juventus FC"
+          "name": "Juventus"
         },
-        "date": "2001-07-03",
+        "date": "2001-03-07",
         "upcoming": false,
         "season": "01/02",
-        "marketValue": null,
-        "fee": 52884000
+        "fee": 52880000
       },
       {
         "id": "8829",
         "clubFrom": {
           "id": "5243",
-          "name": "Parma Primavera"
+          "name": "Parma U19"
         },
         "clubTo": {
           "id": "130",
-          "name": "Parma Calcio 1913"
+          "name": "AC Parma"
         },
-        "date": "1994-07-01",
+        "date": "1994-01-07",
         "upcoming": false,
-        "season": "94/95",
-        "marketValue": null,
-        "fee": null
+        "season": "94/95"
       }
     ],
     "youthClubs": [

@@ -74,8 +74,7 @@
         "age": 36,
         "nationalities": [
           "Brazil"
-        ],
-        "marketValue": null
+        ]
       },
       {
         "id": "1075590",
@@ -118,8 +117,7 @@
         "age": 47,
         "nationalities": [
           "Brazil"
-        ],
-        "marketValue": null
+        ]
       },
       {
         "id": "393581",
@@ -147,8 +145,7 @@
         "nationalities": [
           "Brazil",
           "Poland"
-        ],
-        "marketValue": null
+        ]
       }
     ]
   }
