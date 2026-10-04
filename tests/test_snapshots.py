@@ -25,5 +25,8 @@ def test_response_matches_snapshot(client: TestClient, name: str, path: str) -> 
     expected = json.loads((SNAPSHOTS_DIR / f"{name}.json").read_text())
 
     response = client.get(path)
+    body = parse_body(response)
 
-    assert {"status": response.status_code, "body": normalize(parse_body(response))} == expected
+    if response.status_code == 200:
+        assert "updatedAt" in body  # dropped by normalize(), so checked here
+    assert {"status": response.status_code, "body": normalize(body)} == expected
