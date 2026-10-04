@@ -7,21 +7,21 @@ license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
 dependencies = [
-    "cachetools>=5.5",
-    "fastapi>=0.115.6",
-    "httpx>=0.28",
-    "limits>=5.8",
-    "pydantic>=2.10.4",
-    "pydantic-settings>=2.7.1",
-    "uvicorn[standard]>=0.34.0",
+    "cachetools==7.2.0",
+    "fastapi==0.142.2",
+    "httpx==0.28.1",
+    "limits==5.8.0",
+    "pydantic==2.13.5",
+    "pydantic-settings==2.15.0",
+    "uvicorn[standard]==0.54.0",
 ]
 
 [dependency-groups]
 dev = [
-    "httpx2>=2.13.1",
-    "pytest>=8.3",
-    "pytest-cov>=6.0",
-    "ruff>=0.8",
+    "httpx2==2.13.1",
+    "pytest==9.1.1",
+    "pytest-cov==7.1.0",
+    "ruff==0.16.10",
 ]
 
 [tool.uv]
