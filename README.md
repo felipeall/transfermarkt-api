@@ -21,6 +21,7 @@ https://transfermarkt-api.fly.dev/
 | `GET /players/{player_id}/market_value` | |
 | `GET /players/{player_id}/transfers` | |
 | `GET /players/{player_id}/stats` | Per season, competition and club; club competitions only |
+| `GET /players/{player_id}/matches?season_id=&page_number=` | Past matches of the player's teams, most recent first, 50 per page; no upcoming fixtures |
 | `GET /players/{player_id}/injuries?page_number=` | 15 injuries per page |
 | `GET /players/{player_id}/absences?page_number=` | Suspensions, call-ups, leave; 15 per page |
 | `GET /players/{player_id}/achievements` | Titles and awards with season, club and competition |
@@ -38,6 +39,7 @@ https://transfermarkt-api.fly.dev/
 | `GET /competitions/{competition_id}/clubs?season_id=` | Current season by default |
 | `GET /competitions/{competition_id}/table?season_id=` | League table; one table per group for group stages |
 | `GET /competitions/{competition_id}/seasons` | Valid `season_id` values |
+| `GET /games/{game_id}` | Score, lineups, coaches, stadium, goals, cards and substitutions |
 
 Errors: `404` unknown ID, `501` endpoint without data source, `502` unexpected upstream response, `503` upstream blocked or refused the request, `504` upstream timeout.
 

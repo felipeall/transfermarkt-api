@@ -1,0 +1,1460 @@
+{
+  "status": 200,
+  "body": {
+    "id": "28003",
+    "pageNumber": 1,
+    "lastPageNumber": 32,
+    "matches": [
+      {
+        "gameId": "5052863",
+        "date": "2026-10-04T00:00:00Z",
+        "season": "26/27",
+        "competition": {
+          "id": "FS",
+          "name": "International Friendlies"
+        },
+        "matchDay": 2,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "5872",
+          "name": "Burkina Faso"
+        },
+        "venue": "home",
+        "clubGoals": 7,
+        "opponentGoals": 0,
+        "participation": "notInSquad",
+        "isStarting": false,
+        "minutesPlayed": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "5052835",
+        "date": "2026-10-01T00:00:00Z",
+        "season": "26/27",
+        "competition": {
+          "id": "FS",
+          "name": "International Friendlies"
+        },
+        "matchDay": 2,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "5233",
+          "name": "Bolivia"
+        },
+        "venue": "home",
+        "clubGoals": 4,
+        "opponentGoals": 0,
+        "participation": "notInSquad",
+        "isStarting": false,
+        "minutesPlayed": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4975963",
+        "date": "2026-09-27T23:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 28,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "813",
+          "name": "Columbus Crew"
+        },
+        "venue": "away",
+        "clubGoals": 1,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4975948",
+        "date": "2026-09-20T23:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 27,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "114977",
+          "name": "San Diego FC"
+        },
+        "venue": "home",
+        "clubGoals": 2,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "5050184",
+        "date": "2026-09-17T00:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "CAMC",
+          "name": "Campeones Cup"
+        },
+        "matchDay": 1,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "3711",
+          "name": "CD Cruz Azul"
+        },
+        "venue": "home",
+        "clubGoals": 2,
+        "opponentGoals": 0,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 1,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4975922",
+        "date": "2026-09-12T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 26,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "63966",
+          "name": "Nashville SC"
+        },
+        "venue": "home",
+        "clubGoals": 2,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 1,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4975911",
+        "date": "2026-09-10T00:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 25,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "432",
+          "name": "Chicago Fire FC"
+        },
+        "venue": "away",
+        "clubGoals": 1,
+        "opponentGoals": 1,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 0,
+        "assists": 1,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4865072",
+        "date": "2026-09-05T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 24,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "51663",
+          "name": "Atlanta United FC"
+        },
+        "venue": "home",
+        "clubGoals": 2,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 0,
+        "assists": 1,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4865057",
+        "date": "2026-08-29T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 23,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "4078",
+          "name": "CF Montréal"
+        },
+        "venue": "home",
+        "clubGoals": 7,
+        "opponentGoals": 1,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 4,
+        "assists": 1,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4865041",
+        "date": "2026-08-22T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 22,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "11141",
+          "name": "Toronto FC"
+        },
+        "venue": "home",
+        "clubGoals": 1,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4865028",
+        "date": "2026-08-19T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 21,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "25467",
+          "name": "Philadelphia Union"
+        },
+        "venue": "away",
+        "clubGoals": 2,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4865015",
+        "date": "2026-08-16T00:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 20,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "63966",
+          "name": "Nashville SC"
+        },
+        "venue": "away",
+        "clubGoals": 1,
+        "opponentGoals": 4,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 0,
+        "assists": 1,
+        "yellowCard": true,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4944230",
+        "date": "2026-08-12T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "USMX",
+          "name": "Leagues Cup"
+        },
+        "matchDay": 3,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "4941",
+          "name": "Club León FC"
+        },
+        "venue": "home",
+        "clubGoals": 2,
+        "opponentGoals": 3,
+        "participation": "played",
+        "isStarting": false,
+        "minutesPlayed": 45,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4944212",
+        "date": "2026-08-09T00:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "USMX",
+          "name": "Leagues Cup"
+        },
+        "matchDay": 2,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "2407",
+          "name": "CF Monterrey"
+        },
+        "venue": "home",
+        "clubGoals": 1,
+        "opponentGoals": 2,
+        "participation": "notInSquad",
+        "isStarting": false,
+        "minutesPlayed": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4944194",
+        "date": "2026-08-05T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "USMX",
+          "name": "Leagues Cup"
+        },
+        "matchDay": 1,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "40188",
+          "name": "Atlético de San Luis"
+        },
+        "venue": "home",
+        "clubGoals": 4,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 2,
+        "assists": 1,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4864997",
+        "date": "2026-08-01T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 19,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "813",
+          "name": "Columbus Crew"
+        },
+        "venue": "home",
+        "clubGoals": 2,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": false,
+        "minutesPlayed": 37,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4850816",
+        "date": "2026-07-25T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 18,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "4078",
+          "name": "CF Montréal"
+        },
+        "venue": "away",
+        "clubGoals": 1,
+        "opponentGoals": 0,
+        "participation": "absent",
+        "isStarting": false,
+        "minutesPlayed": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4850800",
+        "date": "2026-07-22T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 16,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "432",
+          "name": "Chicago Fire FC"
+        },
+        "venue": "home",
+        "clubGoals": 3,
+        "opponentGoals": 2,
+        "participation": "absent",
+        "isStarting": false,
+        "minutesPlayed": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4776710",
+        "date": "2026-07-19T19:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "FIWC",
+          "name": "World Cup"
+        },
+        "matchDay": 9,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "3375",
+          "name": "Spain"
+        },
+        "venue": "neutral",
+        "clubGoals": 0,
+        "opponentGoals": 1,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 120,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4776708",
+        "date": "2026-07-15T19:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "FIWC",
+          "name": "World Cup"
+        },
+        "matchDay": 7,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "3299",
+          "name": "England"
+        },
+        "venue": "away",
+        "clubGoals": 2,
+        "opponentGoals": 1,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 0,
+        "assists": 2,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4776705",
+        "date": "2026-07-12T01:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "FIWC",
+          "name": "World Cup"
+        },
+        "matchDay": 6,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "3384",
+          "name": "Switzerland"
+        },
+        "venue": "away",
+        "clubGoals": 3,
+        "opponentGoals": 1,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 120,
+        "goals": 0,
+        "assists": 1,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4776701",
+        "date": "2026-07-07T16:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "FIWC",
+          "name": "World Cup"
+        },
+        "matchDay": 5,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "3672",
+          "name": "Egypt"
+        },
+        "venue": "away",
+        "clubGoals": 3,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 1,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4776692",
+        "date": "2026-07-03T22:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "FIWC",
+          "name": "World Cup"
+        },
+        "matchDay": 4,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "4311",
+          "name": "Cape Verde"
+        },
+        "venue": "away",
+        "clubGoals": 3,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 120,
+        "goals": 1,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4776665",
+        "date": "2026-06-28T02:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "FIWC",
+          "name": "World Cup"
+        },
+        "matchDay": 3,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "15737",
+          "name": "Jordan"
+        },
+        "venue": "away",
+        "clubGoals": 3,
+        "opponentGoals": 1,
+        "participation": "played",
+        "isStarting": false,
+        "minutesPlayed": 30,
+        "goals": 1,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4776641",
+        "date": "2026-06-22T17:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "FIWC",
+          "name": "World Cup"
+        },
+        "matchDay": 2,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "3383",
+          "name": "Austria"
+        },
+        "venue": "away",
+        "clubGoals": 2,
+        "opponentGoals": 0,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 2,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4776617",
+        "date": "2026-06-17T01:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "FIWC",
+          "name": "World Cup"
+        },
+        "matchDay": 1,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "3614",
+          "name": "Algeria"
+        },
+        "venue": "away",
+        "clubGoals": 3,
+        "opponentGoals": 0,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 80,
+        "goals": 3,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4881787",
+        "date": "2026-06-10T01:00:00Z",
+        "season": "25/26",
+        "competition": {
+          "id": "FS",
+          "name": "International Friendlies"
+        },
+        "matchDay": 26,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "3574",
+          "name": "Iceland"
+        },
+        "venue": "away",
+        "clubGoals": 3,
+        "opponentGoals": 0,
+        "participation": "played",
+        "isStarting": false,
+        "minutesPlayed": 20,
+        "goals": 1,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4881786",
+        "date": "2026-06-07T00:00:00Z",
+        "season": "25/26",
+        "competition": {
+          "id": "FS",
+          "name": "International Friendlies"
+        },
+        "matchDay": 25,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "3590",
+          "name": "Honduras"
+        },
+        "venue": "away",
+        "clubGoals": 2,
+        "opponentGoals": 0,
+        "participation": "onBench",
+        "isStarting": false,
+        "minutesPlayed": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4850795",
+        "date": "2026-05-24T23:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 15,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "25467",
+          "name": "Philadelphia Union"
+        },
+        "venue": "home",
+        "clubGoals": 6,
+        "opponentGoals": 4,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 73,
+        "goals": 0,
+        "assists": 2,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4850780",
+        "date": "2026-05-17T22:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 14,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "4291",
+          "name": "Portland Timbers"
+        },
+        "venue": "home",
+        "clubGoals": 2,
+        "opponentGoals": 0,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 1,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4850756",
+        "date": "2026-05-13T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 13,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "51772",
+          "name": "FC Cincinnati"
+        },
+        "venue": "away",
+        "clubGoals": 5,
+        "opponentGoals": 3,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 2,
+        "assists": 1,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4850738",
+        "date": "2026-05-09T17:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 12,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "11141",
+          "name": "Toronto FC"
+        },
+        "venue": "away",
+        "clubGoals": 4,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 2,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4850726",
+        "date": "2026-05-02T23:15:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 11,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "45604",
+          "name": "Orlando City SC"
+        },
+        "venue": "home",
+        "clubGoals": 3,
+        "opponentGoals": 4,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 1,
+        "yellowCard": true,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4850712",
+        "date": "2026-04-25T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 10,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "626",
+          "name": "New England Revolution"
+        },
+        "venue": "home",
+        "clubGoals": 1,
+        "opponentGoals": 1,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4850702",
+        "date": "2026-04-23T01:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 9,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "6643",
+          "name": "Real Salt Lake City"
+        },
+        "venue": "away",
+        "clubGoals": 2,
+        "opponentGoals": 0,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4803000",
+        "date": "2026-04-18T20:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 8,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "1247",
+          "name": "Colorado Rapids"
+        },
+        "venue": "away",
+        "clubGoals": 3,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 2,
+        "assists": 0,
+        "yellowCard": true,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4802987",
+        "date": "2026-04-11T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 7,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "623",
+          "name": "Red Bull New York"
+        },
+        "venue": "home",
+        "clubGoals": 2,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4802971",
+        "date": "2026-04-04T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 6,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "72309",
+          "name": "Austin FC"
+        },
+        "venue": "home",
+        "clubGoals": 2,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4848050",
+        "date": "2026-03-31T23:30:00Z",
+        "season": "25/26",
+        "competition": {
+          "id": "FS",
+          "name": "International Friendlies"
+        },
+        "matchDay": 17,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "3703",
+          "name": "Zambia"
+        },
+        "venue": "home",
+        "clubGoals": 5,
+        "opponentGoals": 0,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4847948",
+        "date": "2026-03-27T23:15:00Z",
+        "season": "25/26",
+        "competition": {
+          "id": "FS",
+          "name": "International Friendlies"
+        },
+        "matchDay": 45,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "14238",
+          "name": "Mauritania"
+        },
+        "venue": "home",
+        "clubGoals": 2,
+        "opponentGoals": 1,
+        "participation": "played",
+        "isStarting": false,
+        "minutesPlayed": 45,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4785707",
+        "date": "2026-03-27T18:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "AFT",
+          "name": "CONMEBOL-UEFA Cup of Champions"
+        },
+        "matchDay": 1,
+        "club": {
+          "id": "3437",
+          "name": "Argentina"
+        },
+        "opponent": {
+          "id": "3375",
+          "name": "Spain"
+        },
+        "venue": "away",
+        "clubGoals": 0,
+        "opponentGoals": 0,
+        "participation": "notInSquad",
+        "isStarting": false,
+        "minutesPlayed": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4802964",
+        "date": "2026-03-22T17:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 5,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "40058",
+          "name": "New York City FC"
+        },
+        "venue": "away",
+        "clubGoals": 3,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4846693",
+        "date": "2026-03-18T23:00:00Z",
+        "season": "25/26",
+        "competition": {
+          "id": "CCL",
+          "name": "CONCACAF Champions Cup"
+        },
+        "matchDay": 4,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "63966",
+          "name": "Nashville SC"
+        },
+        "venue": "home",
+        "clubGoals": 1,
+        "opponentGoals": 1,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4802943",
+        "date": "2026-03-14T23:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 4,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "78435",
+          "name": "Charlotte FC"
+        },
+        "venue": "away",
+        "clubGoals": 0,
+        "opponentGoals": 0,
+        "participation": "injured",
+        "isStarting": false,
+        "minutesPlayed": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4846692",
+        "date": "2026-03-10T23:30:00Z",
+        "season": "25/26",
+        "competition": {
+          "id": "CCL",
+          "name": "CONCACAF Champions Cup"
+        },
+        "matchDay": 3,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "63966",
+          "name": "Nashville SC"
+        },
+        "venue": "away",
+        "clubGoals": 0,
+        "opponentGoals": 0,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4802925",
+        "date": "2026-03-07T21:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 3,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "2440",
+          "name": "D.C. United"
+        },
+        "venue": "away",
+        "clubGoals": 2,
+        "opponentGoals": 1,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 1,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4802921",
+        "date": "2026-03-02T00:00:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 2,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "45604",
+          "name": "Orlando City SC"
+        },
+        "venue": "away",
+        "clubGoals": 4,
+        "opponentGoals": 2,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 2,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4770603",
+        "date": "2026-02-22T02:30:00Z",
+        "season": "2026",
+        "competition": {
+          "id": "MLS1",
+          "name": "Major League Soccer"
+        },
+        "matchDay": 1,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "51828",
+          "name": "Los Angeles FC"
+        },
+        "venue": "away",
+        "clubGoals": 0,
+        "opponentGoals": 3,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 0,
+        "assists": 0,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4777678",
+        "date": "2025-12-06T19:30:00Z",
+        "season": "2025",
+        "competition": {
+          "id": "POUS",
+          "name": "MLS Cup Playoffs"
+        },
+        "matchDay": 7,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "6321",
+          "name": "Vancouver Whitecaps FC"
+        },
+        "venue": "home",
+        "clubGoals": 3,
+        "opponentGoals": 1,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 0,
+        "assists": 2,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      },
+      {
+        "gameId": "4774723",
+        "date": "2025-11-29T23:00:00Z",
+        "season": "2025",
+        "competition": {
+          "id": "POUS",
+          "name": "MLS Cup Playoffs"
+        },
+        "matchDay": 6,
+        "club": {
+          "id": "69261",
+          "name": "Inter Miami CF"
+        },
+        "opponent": {
+          "id": "40058",
+          "name": "New York City FC"
+        },
+        "venue": "home",
+        "clubGoals": 5,
+        "opponentGoals": 1,
+        "participation": "played",
+        "isStarting": true,
+        "minutesPlayed": 90,
+        "goals": 0,
+        "assists": 1,
+        "yellowCard": false,
+        "secondYellowCard": false,
+        "redCard": false
+      }
+    ]
+  }
+}

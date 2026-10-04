@@ -1,3 +1,5 @@
+from typing import Optional
+
 from fastapi import APIRouter, HTTPException
 
 from app.api.params import PageNumber
@@ -8,6 +10,7 @@ from app.services.players import (
     achievements,
     injuries,
     market_value,
+    matches,
     national_career,
     profile,
     search,
@@ -58,6 +61,17 @@ async def get_player_jersey_numbers(player_id: str) -> None:
 async def get_player_stats(player_id: str, tfmkt: Tfmkt) -> dict:
     """Get a player's statistics per season, competition and club."""
     return await stats.get_player_stats(tfmkt, player_id)
+
+
+@router.get("/{player_id}/matches", response_model=schemas.PlayerMatches)
+async def get_player_matches(
+    player_id: str,
+    tfmkt: Tfmkt,
+    page_number: PageNumber = 1,
+    season_id: Optional[str] = None,
+) -> dict:
+    """Get the matches of a player's teams with the player's part in each, most recent first, paginated."""
+    return await matches.get_player_matches(tfmkt, player_id, page_number, season_id)
 
 
 @router.get("/{player_id}/injuries", response_model=schemas.PlayerInjuries)

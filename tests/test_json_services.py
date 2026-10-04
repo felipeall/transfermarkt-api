@@ -510,3 +510,117 @@ def test_profile_extra_fields_edge_cases(synthetic_client: tuple[TestClient, dic
         "previous": None,
         "highest": None,
     }
+
+
+def test_game_events_and_lineups(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Events come in match order with card colours, goal assists and substitution direction resolved."""
+    client, routes = synthetic_client
+    side = {"lineup": {"players": [{"id": "10", "shirtNumber": 1, "isCaptain": True}], "substitutes": []}}
+    routes["/game/5"] = {
+        "id": "5",
+        "baseDetails": {"competitionId": "L1", "seasonId": 2025, "gameDay": 3},
+        "homeClub": {"clubId": "1", **side},
+        "awayClub": {"clubId": "2", "lineup": {"players": [], "substitutes": []}},
+        "score": {"home": 1, "away": 0},
+        "actions": [
+            {"type": "SUBSTITUTE", "minute": 80, "clubId": "1", "activePlayerId": "10", "passivePlayerId": "11"},
+            {"type": "PLACEHOLDER", "minute": 90},
+            {"type": "CARD", "minute": 30, "clubId": "2", "activePlayerId": "20", "details": {"seasonYellowCard": 1}},
+            {
+                "type": "CARD",
+                "minute": 60,
+                "clubId": "2",
+                "activePlayerId": "21",
+                "details": {"seasonYellowRedCard": 1},
+            },
+            {
+                "type": "GOAL",
+                "minute": 10,
+                "clubId": "1",
+                "activePlayerId": "10",
+                "passivePlayerId": "11",
+                "score": {"home": 1, "away": 0},
+            },
+        ],
+    }
+    routes["/players"] = [{"id": "10", "name": "Starter"}, {"id": "11", "name": "Sub"}]
+    routes["/clubs"] = [{"id": "1", "name": "Home FC"}, {"id": "2", "name": "Away FC"}]
+
+    body = client.get("/games/5").json()
+
+    assert (body["home"]["name"], body["home"]["score"], body["away"]["score"]) == ("Home FC", 1, 0)
+    assert body["home"]["startingLineup"][0] == {
+        "id": "10",
+        "name": "Starter",
+        "shirtNumber": 1,
+        "position": None,
+        "isCaptain": True,
+    }
+    events = [(e["type"], e["minute"], e["card"]) for e in body["events"]]
+    assert events == [
+        ("goal", 10, None),
+        ("card", 30, "yellow"),
+        ("card", 60, "secondYellow"),
+        ("substitution", 80, None),
+    ]
+    goal, substitution = body["events"][0], body["events"][-1]
+    assert (goal["player"]["name"], goal["relatedPlayer"]["name"], goal["score"]) == (
+        "Starter",
+        "Sub",
+        {"home": 1, "away": 0},
+    )
+    assert (substitution["player"]["id"], substitution["relatedPlayer"]["id"]) == ("10", "11")  # off, on
+
+
+def match_record(game_id: str, date: str, season_id: int, state: str) -> dict:
+    """A performance-game record of player 7 for club 1 against club 2."""
+    return {
+        "gameInformation": {
+            "gameId": game_id,
+            "competitionId": "L1",
+            "competitionTypeId": 1,
+            "seasonId": season_id,
+            "date": {"dateTimeUTC": date},
+        },
+        "clubsInformation": {
+            "club": {"clubId": "1", "venue": "home", "goalsTotal": 2},
+            "opponent": {"clubId": "2", "goalsTotal": 1},
+        },
+        "statistics": {
+            "generalStatistics": {"participationState": state},
+            "cardStatistics": {"yellowCard": state == "played"},
+            "goalStatistics": {"goalsScoredTotal": 1 if state == "played" else 0},
+            "playingTimeStatistics": {"playedMinutes": 90 if state == "played" else 0, "isStarting": state == "played"},
+        },
+    }
+
+
+def test_player_matches(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Matches are most recent first, filtered by season, with participation in API terms."""
+    client, routes = synthetic_client
+    routes["/player/7/performance-game"] = {
+        "performance": [
+            match_record("1", "2024-08-01T18:00:00+00:00", 2024, "played"),
+            match_record("2", "2025-08-01T18:00:00+00:00", 2025, "in squad"),
+            match_record("3", "2025-09-01T18:00:00+00:00", 2025, "not in squad"),
+        ],
+    }
+    routes["/clubs"] = [{"id": "1", "name": "Club"}, {"id": "2", "name": "Opponent"}]
+
+    all_matches = client.get("/players/7/matches").json()["matches"]
+    season = client.get("/players/7/matches?season_id=2024").json()["matches"]
+
+    assert [(m["gameId"], m["participation"]) for m in all_matches] == [
+        ("3", "notInSquad"),
+        ("2", "onBench"),
+        ("1", "played"),
+    ]
+    assert len(season) == 1
+    assert {k: season[0][k] for k in ("opponent", "venue", "clubGoals", "goals", "yellowCard", "isStarting")} == {
+        "opponent": {"id": "2", "name": "Opponent"},
+        "venue": "home",
+        "clubGoals": 2,
+        "goals": 1,
+        "yellowCard": True,
+        "isStarting": True,
+    }
