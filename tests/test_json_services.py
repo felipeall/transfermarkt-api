@@ -227,6 +227,104 @@ def test_club_profile_includes_current_coach(client: TestClient) -> None:
     }
 
 
+def test_club_profile_richer_data(client: TestClient) -> None:
+    """Recorded club data exposes exact squad values, historical names and the full stadium."""
+    response = client.get("/clubs/131/profile")
+    assert response.status_code == 200
+    body = response.json()
+    assert (body["shortName"], body["abbreviation"], body["clubCode"]) == ("Barcelona", "Barça", "BAR")
+    assert body["squad"]["domesticPlayers"] == 14
+    assert body["squad"]["averageMarketValue"] == 46762964
+    assert body["squad"]["acquisitionValue"] == 489500000
+    assert body["squad"]["top18PlayersMarketValue"] == 1204000000
+    assert body["squad"]["top18SharePercentage"] == 95.36
+    assert {"name": "CF Barcelona", "shortName": "Barcelona", "abbreviation": "Barça", "seasonId": "1972"} in body[
+        "historicalNames"
+    ]
+    stadium = body["stadium"]
+    assert stadium["name"] == body["stadiumName"] == "Spotify Camp Nou"
+    assert stadium["capacity"] == body["stadiumSeats"] == 62657
+    assert stadium["internationalCapacity"] == 62657
+    assert stadium["countryName"] == "Spain"
+    assert (stadium["latitude"], stadium["longitude"]) == (41.380896, 2.1228198)
+    assert (stadium["buildYear"], stadium["renovationYear"]) == (1957, 1994)
+    assert (stadium["fieldLength"], stadium["fieldWidth"], stadium["fieldSurface"]) == (105, 68, "Hybridrasen")
+    assert stadium["website"] == "www.fcbarcelona.com/web/index_idiomes.html"
+    assert len(stadium["images"]) == 7
+
+
+@pytest.mark.parametrize("has_stadium", [False, True])
+def test_club_profile_missing_optional_details(
+    synthetic_client: tuple[TestClient, dict],
+    has_stadium: bool,
+) -> None:
+    """Absent details stay nullable; meaningful zeros and stadium coordinates survive."""
+    client, routes = synthetic_client
+    routes["/club/1"] = {
+        "id": "1",
+        "name": "Club",
+        "squadDetails": {"acquisitionValue": {"value": 0}, "top18SharePercentage": {"value": 0}},
+    }
+    routes["/club/1/squad"] = {"squad": [], "localCount": 0}
+    if has_stadium:
+        routes["/club/1/stadium"] = {
+            "id": "2",
+            "capacity": 0,
+            "internationalCapacity": 0,
+            "location": {"latitude": 0, "longitude": 0},
+            "buildingDetails": {"buildYear": 0, "renovationYear": 0, "fieldSurface": ""},
+            "images": [{"url": "https://example.test/stadium.jpg"}, {"url": "https://example.test/stadium.jpg"}, {}],
+        }
+    response = client.get("/clubs/1/profile")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["shortName"] is None
+    assert body["abbreviation"] is None
+    assert body["clubCode"] is None
+    assert body["historicalNames"] == []
+    assert body["squad"]["domesticPlayers"] == 0
+    assert body["squad"]["acquisitionValue"] == 0
+    assert body["squad"]["averageMarketValue"] is None
+    assert body["squad"]["top18PlayersMarketValue"] is None
+    assert body["squad"]["top18SharePercentage"] == 0
+    if has_stadium:
+        assert body["stadium"]["capacity"] == 0
+        assert body["stadium"]["latitude"] == body["stadium"]["longitude"] == 0
+        assert body["stadium"]["buildYear"] is None
+        assert body["stadium"]["website"] is None
+        assert body["stadium"]["fieldSurface"] is None
+        assert body["stadium"]["images"] == ["https://example.test/stadium.jpg"]
+    else:
+        assert body["stadium"] is None
+
+
+@pytest.mark.parametrize("season_id", [None, "2014"])
+def test_squad_role_comes_from_selected_season(
+    synthetic_client: tuple[TestClient, dict],
+    season_id: str | None,
+) -> None:
+    """Shirt numbers and captaincy come from the selected squad even without a player record."""
+    client, routes = synthetic_client
+    routes["/club/1/squad"] = {
+        "squad": [
+            {"playerId": "10", "type": "historical" if season_id else "current", "shirtNumber": 8, "isCaptain": True},
+            {"playerId": "11", "type": "historical" if season_id else "current", "shirtNumber": 0, "isCaptain": False},
+            {"playerId": "12", "type": "historical" if season_id else "current"},
+        ],
+    }
+    routes["/players"] = [
+        {
+            "id": "10",
+            "name": "Player",
+            "clubAssignment": {"clubId": "2", "shirtNumber": 99, "isCaptain": False},
+        }
+    ]
+    response = client.get("/clubs/1/players", params={"season_id": season_id} if season_id else {})
+    assert response.status_code == 200
+    players = response.json()["players"]
+    assert [(p["shirtNumber"], p["isCaptain"]) for p in players] == [(8, True), (0, False), (None, None)]
+
+
 @pytest.mark.parametrize("path", ["/players/0/achievements", "/clubs/0/achievements", "/coaches/0/profile"])
 def test_unknown_ids_are_404(client: TestClient, path: str) -> None:
     """Unknown IDs answer 404 on routes that return empty data upstream."""
@@ -465,6 +563,97 @@ def test_transfer_types(
     assert transfer["fee"] is None
 
 
+def test_transfer_details_use_historical_club_context(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Transfers retain their recorded league, country and contract data rather than today's club context."""
+    client, routes = synthetic_client
+    routes["/attributes"]["countries"].append({"id": 157, "name": "Spain"})
+    routes["/player/7"] = {"id": "7", "attributes": {}}
+    routes["/clubs"] = [
+        {"id": "2", "name": "Old club", "baseDetails": {"primaryCompetitionId": "NEW", "countryId": 157}},
+        {"id": "3", "name": "New club"},
+    ]
+    routes["/competitions"] = [{"id": "OLD", "name": "Former league"}]
+    routes["/transfer/history/player/7"] = {
+        "history": {
+            "pending": [
+                {
+                    "id": "2",
+                    "transferSource": {"clubId": "2", "competitionId": "OLD", "countryId": 9},
+                    "transferDestination": {"clubId": "3", "competitionId": "MISSING", "countryId": 157},
+                    "details": {
+                        "isPending": True,
+                        "age": 30,
+                        "contractUntilDate": "2028-06-30T00:00:00+02:00",
+                        "remainingContractPeriod": {"days": 0},
+                    },
+                }
+            ],
+            "terminated": [
+                {
+                    "id": "1",
+                    "transferSource": {"clubId": "2"},
+                    "transferDestination": {"clubId": "3"},
+                    "details": {
+                        "age": 22,
+                        "contractUntilDate": "2026-06-30T00:00:00+02:00",
+                        "remainingContractPeriod": {"days": 729},
+                    },
+                }
+            ],
+        }
+    }
+    response = client.get("/players/7/transfers")
+    assert response.status_code == 200
+    pending, completed = response.json()["transfers"]
+    assert pending["upcoming"] is True
+    assert (pending["age"], pending["contractUntil"], pending["remainingContractDays"]) == (30, "2028-06-30", 0)
+    assert pending["clubFrom"] == {
+        "id": "2",
+        "name": "Old club",
+        "countryId": "9",
+        "countryName": "Argentina",
+        "league": {"id": "OLD", "name": "Former league"},
+    }
+    assert pending["clubTo"] == {
+        "id": "3",
+        "name": "New club",
+        "countryId": "157",
+        "countryName": "Spain",
+        "league": {"id": "MISSING", "name": None},
+    }
+    assert (completed["age"], completed["contractUntil"], completed["remainingContractDays"]) == (22, "2026-06-30", 729)
+    assert completed["clubFrom"]["league"] is None
+    assert completed["clubFrom"]["countryId"] is None
+    assert completed["clubFrom"]["countryName"] is None
+
+
+def test_transfer_extra_details_missing(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Absent transfer details remain null, including a missing country or league record."""
+    client, routes = synthetic_client
+    routes["/player/7"] = {"id": "7"}
+    routes["/transfer/history/player/7"] = {
+        "history": {
+            "terminated": [
+                {
+                    "id": "1",
+                    "transferSource": {"clubId": "2", "countryId": 999},
+                    "transferDestination": {"clubId": "3"},
+                    "details": {},
+                }
+            ]
+        }
+    }
+    response = client.get("/players/7/transfers")
+    assert response.status_code == 200
+    transfer = response.json()["transfers"][0]
+    assert transfer["age"] is None
+    assert transfer["contractUntil"] is None
+    assert transfer["remainingContractDays"] is None
+    assert transfer["clubFrom"]["countryId"] == "999"
+    assert transfer["clubFrom"]["countryName"] is None
+    assert transfer["clubFrom"]["league"] is None
+
+
 def test_squad_includes_player_images(synthetic_client: tuple[TestClient, dict]) -> None:
     """Squad entries carry the player's portrait, or null when upstream has none."""
     client, routes = synthetic_client
@@ -624,3 +813,65 @@ def test_player_matches(synthetic_client: tuple[TestClient, dict]) -> None:
         "yellowCard": True,
         "isStarting": True,
     }
+
+
+def test_game_team_stats(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Team statistics are mapped when upstream has them, and null when it does not."""
+    client, routes = synthetic_client
+    lineup = {"lineup": {"players": [], "substitutes": []}}
+    routes["/game/6"] = {
+        "id": "6",
+        "baseDetails": {"competitionId": "L1"},
+        "homeClub": {
+            "clubId": "1",
+            **lineup,
+            "clubStatistics": {
+                "gameStatistics": {"possessionPercentage": 61.5, "yellowCards": 2},
+                "goalStatistics": {"totalShotAttempts": 12, "onTargetShotAttempts": 4},
+                "passingStatistics": {"totalPasses": 500, "accuratePasses": 450},
+                "penaltyStatistics": {"freeKicksConcededFromFouls": 9, "freeKicksWonFromFouls": 11},
+            },
+        },
+        "awayClub": {"clubId": "2", **lineup},
+        "actions": [],
+    }
+
+    body = client.get("/games/6").json()
+
+    stats = body["home"]["stats"]
+    assert (stats["possession"], stats["shots"], stats["shotsOnTarget"], stats["passes"]) == (61.5, 12, 4, 500)
+    assert (stats["foulsCommitted"], stats["foulsSuffered"], stats["yellowCards"]) == (9, 11, 2)
+    assert stats["clearances"] is None
+    assert body["away"]["stats"] is None
+
+
+def test_player_match_role_and_detailed_stats(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Each match carries the player's shirt, position, substitution minutes and detailed stats when recorded."""
+    client, routes = synthetic_client
+    routes["/attributes"] = {"positions": [{"id": 12, "name": "Right Winger"}]}
+    record = match_record("1", "2024-08-01T18:00:00+00:00", 2024, "played")
+    record["clubsInformation"]["club"]["points"] = 3
+    record["statistics"]["generalStatistics"] |= {"shirtNumber": 10, "isCaptain": True, "positionId": 12}
+    record["statistics"]["playingTimeStatistics"]["substitutedOut"] = {"minute": 80}
+    record["statistics"]["goalStatistics"] |= {"scoringAttempts": 6, "scoringAttemptsOnGoal": 4}
+    record["statistics"]["distributionStatistics"] = {"passes": 37, "passesReached": 30}
+    record["statistics"]["duelStatistics"] = {"tacklesWon": 2, "foulsGained": 1}
+    old_record = match_record("2", "2014-08-01T18:00:00+00:00", 2014, "played")
+    routes["/player/7/performance-game"] = {"performance": [record, old_record]}
+
+    recent, old = client.get("/players/7/matches").json()["matches"]
+
+    assert {
+        k: recent[k]
+        for k in ("shirtNumber", "isCaptain", "position", "substitutedOutMinute", "teamPoints", "shots", "passes")
+    } == {
+        "shirtNumber": 10,
+        "isCaptain": True,
+        "position": "Right Winger",
+        "substitutedOutMinute": 80,
+        "teamPoints": 3,
+        "shots": 6,
+        "passes": 37,
+    }
+    assert (recent["accuratePasses"], recent["tacklesWon"], recent["foulsSuffered"]) == (30, 2, 1)
+    assert (old["passes"], old["shots"], old["position"]) == (None, None, None)

@@ -5,6 +5,9 @@
     "url": "/austria/startseite/verein/3383",
     "name": "Austria",
     "officialName": null,
+    "shortName": "Austria",
+    "abbreviation": "AUT",
+    "clubCode": "AUT",
     "image": "https://img.a.transfermarkt.technology/flagge/original/127.png",
     "addressLine1": "Meiereistraße 7",
     "addressLine2": "1020 Wien",
@@ -16,6 +19,27 @@
     ],
     "stadiumName": "Ernst-Happel-Stadion",
     "stadiumSeats": 50865,
+    "stadium": {
+      "id": "349",
+      "name": "Ernst-Happel-Stadion",
+      "capacity": 50865,
+      "internationalCapacity": 50865,
+      "website": "www.wien.gv.at/freizeit/sportamt/sportstaetten/stadien/happel.html",
+      "addressLine1": "Meiereistraße 7",
+      "addressLine2": "1020 Wien",
+      "countryId": "127",
+      "countryName": "Austria",
+      "latitude": 48.2072078,
+      "longitude": 16.4209847,
+      "buildYear": 1931,
+      "renovationYear": 2008,
+      "fieldLength": 105,
+      "fieldWidth": 68,
+      "fieldSurface": "Naturrasen",
+      "images": [
+        "https://img.a.transfermarkt.technology/foto/newsansicht/ernst-happel-stadion-1487790043-8555.jpg"
+      ]
+    },
     "currentMarketValue": 261800000,
     "confederation": "UEFA",
     "coach": {
@@ -27,7 +51,12 @@
       "size": 29,
       "averageAge": 26.5,
       "foreigners": 0,
-      "nationalTeamPlayers": 29
+      "nationalTeamPlayers": 29,
+      "domesticPlayers": 29,
+      "averageMarketValue": 9027586,
+      "acquisitionValue": 0,
+      "top18PlayersMarketValue": 236500000,
+      "top18SharePercentage": 90.34
     },
     "league": {
       "id": "UNLB",
@@ -40,6 +69,14 @@
       "https://img.a.transfermarkt.technology/flagge/original/127.png",
       "https://img.a.transfermarkt.technology/wappen/big/3383_1761142046.png?lm=1789469343",
       "https://img.a.transfermarkt.technology/wappen/big/3383_1669902047.png?lm=1789469343"
+    ],
+    "historicalNames": [
+      {
+        "name": "German-Austria",
+        "shortName": "German-Austria",
+        "abbreviation": "AUT",
+        "seasonId": "1918"
+      }
     ]
   }
 }

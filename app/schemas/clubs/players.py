@@ -11,6 +11,8 @@ class ClubPlayer(TransfermarktBaseModel):
     name: Optional[str] = None
     image_url: Optional[HttpUrl] = None
     position: Optional[str] = None
+    shirt_number: Optional[int] = None
+    is_captain: Optional[bool] = None
     date_of_birth: Optional[date] = None
     age: Optional[int] = None
     nationality: list[str]

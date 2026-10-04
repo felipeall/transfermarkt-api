@@ -8,6 +8,8 @@
         "name": "Marc ter Stegen",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/74857-1674465246.jpg",
         "position": "Goalkeeper",
+        "shirtNumber": 1,
+        "isCaptain": false,
         "dateOfBirth": "1992-04-30",
         "age": null,
         "nationality": [
@@ -26,6 +28,8 @@
         "name": "Claudio Bravo",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/40423-1691751378.jpg",
         "position": "Goalkeeper",
+        "shirtNumber": 13,
+        "isCaptain": false,
         "dateOfBirth": "1983-04-13",
         "age": null,
         "nationality": [
@@ -45,6 +49,8 @@
         "name": "Jordi Masip",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/65263-1447322331.jpg",
         "position": "Goalkeeper",
+        "shirtNumber": 25,
+        "isCaptain": false,
         "dateOfBirth": "1989-01-03",
         "age": null,
         "nationality": [
@@ -63,6 +69,8 @@
         "name": "Marc Bartra",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/99922-1724053472.jpg",
         "position": "Centre-Back",
+        "shirtNumber": 15,
+        "isCaptain": false,
         "dateOfBirth": "1991-01-15",
         "age": null,
         "nationality": [
@@ -81,6 +89,8 @@
         "name": "Edgar Ié",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/191987-1695643979.png",
         "position": "Centre-Back",
+        "shirtNumber": 32,
+        "isCaptain": false,
         "dateOfBirth": "1994-05-01",
         "age": null,
         "nationality": [
@@ -100,6 +110,8 @@
         "name": "Gerard Piqué",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/18944-1667548226.jpg",
         "position": "Centre-Back",
+        "shirtNumber": 3,
+        "isCaptain": false,
         "dateOfBirth": "1987-02-02",
         "age": null,
         "nationality": [
@@ -118,6 +130,8 @@
         "name": "Thomas Vermaelen",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/15904-1464867040.jpg",
         "position": "Centre-Back",
+        "shirtNumber": 23,
+        "isCaptain": false,
         "dateOfBirth": "1985-11-14",
         "age": null,
         "nationality": [
@@ -136,6 +150,8 @@
         "name": "Jordi Alba",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/69751-1740774854.jpg",
         "position": "Left-Back",
+        "shirtNumber": 18,
+        "isCaptain": false,
         "dateOfBirth": "1989-03-21",
         "age": null,
         "nationality": [
@@ -154,6 +170,8 @@
         "name": "Adriano",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/34495-1538046358.JPG",
         "position": "Left-Back",
+        "shirtNumber": 21,
+        "isCaptain": false,
         "dateOfBirth": "1984-10-26",
         "age": null,
         "nationality": [
@@ -173,6 +191,8 @@
         "name": "Jérémy Mathieu",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/5404-1744010770.jpg",
         "position": "Left-Back",
+        "shirtNumber": 24,
+        "isCaptain": false,
         "dateOfBirth": "1983-10-29",
         "age": null,
         "nationality": [
@@ -191,6 +211,8 @@
         "name": "Martín Montoya",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/68645-1691487947.jpg",
         "position": "Right-Back",
+        "shirtNumber": 2,
+        "isCaptain": false,
         "dateOfBirth": "1991-04-14",
         "age": null,
         "nationality": [
@@ -209,6 +231,8 @@
         "name": "Douglas",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/58426-1568212194.JPG",
         "position": "Right-Back",
+        "shirtNumber": 16,
+        "isCaptain": false,
         "dateOfBirth": "1990-08-06",
         "age": null,
         "nationality": [
@@ -227,6 +251,8 @@
         "name": "Dani Alves",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/15951-1635327520.jpg",
         "position": "Right-Back",
+        "shirtNumber": 22,
+        "isCaptain": false,
         "dateOfBirth": "1983-05-06",
         "age": null,
         "nationality": [
@@ -246,6 +272,8 @@
         "name": "Gerard Gumbau",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/268670-1790828857.png",
         "position": "Defensive Midfield",
+        "shirtNumber": 35,
+        "isCaptain": false,
         "dateOfBirth": "1994-12-18",
         "age": null,
         "nationality": [
@@ -264,6 +292,8 @@
         "name": "Sergi Samper",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/181112-1752827035.JPG",
         "position": "Defensive Midfield",
+        "shirtNumber": 26,
+        "isCaptain": false,
         "dateOfBirth": "1995-01-20",
         "age": null,
         "nationality": [
@@ -282,6 +312,8 @@
         "name": "Sergio Busquets",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/65230-1740775050.jpg",
         "position": "Defensive Midfield",
+        "shirtNumber": 5,
+        "isCaptain": false,
         "dateOfBirth": "1988-07-16",
         "age": null,
         "nationality": [
@@ -300,6 +332,8 @@
         "name": "Javier Mascherano",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/19981-1684312374.jpg",
         "position": "Defensive Midfield",
+        "shirtNumber": 14,
+        "isCaptain": false,
         "dateOfBirth": "1984-06-08",
         "age": null,
         "nationality": [
@@ -319,6 +353,8 @@
         "name": "Diawandou Diagne",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/228658-1476369205.jpg",
         "position": "Defensive Midfield",
+        "shirtNumber": 33,
+        "isCaptain": false,
         "dateOfBirth": "1994-07-28",
         "age": null,
         "nationality": [
@@ -337,6 +373,8 @@
         "name": "Sergi Roberto",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/85370-1790102065.jpg",
         "position": "Central Midfield",
+        "shirtNumber": 20,
+        "isCaptain": false,
         "dateOfBirth": "1992-02-07",
         "age": null,
         "nationality": [
@@ -355,6 +393,8 @@
         "name": "Ivan Rakitic",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/32467-1688726103.jpg",
         "position": "Central Midfield",
+        "shirtNumber": 4,
+        "isCaptain": false,
         "dateOfBirth": "1988-03-10",
         "age": null,
         "nationality": [
@@ -374,6 +414,8 @@
         "name": "Xavi",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/7607-1476882942.jpg",
         "position": "Central Midfield",
+        "shirtNumber": 6,
+        "isCaptain": false,
         "dateOfBirth": "1980-01-25",
         "age": null,
         "nationality": [
@@ -392,6 +434,8 @@
         "name": "Andrés Iniesta",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/7600-1685447666.jpg",
         "position": "Central Midfield",
+        "shirtNumber": 8,
+        "isCaptain": false,
         "dateOfBirth": "1984-05-11",
         "age": null,
         "nationality": [
@@ -410,6 +454,8 @@
         "name": "Neymar",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/68290-1692601435.jpg",
         "position": "Attacking Midfield",
+        "shirtNumber": 11,
+        "isCaptain": false,
         "dateOfBirth": "1992-02-05",
         "age": null,
         "nationality": [
@@ -428,6 +474,8 @@
         "name": "Alen Halilovic",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/226074-1764153180.png",
         "position": "Attacking Midfield",
+        "shirtNumber": 30,
+        "isCaptain": false,
         "dateOfBirth": "1996-06-18",
         "age": null,
         "nationality": [
@@ -446,6 +494,8 @@
         "name": "Rafinha",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/129473-1766496549.jpg",
         "position": "Attacking Midfield",
+        "shirtNumber": 12,
+        "isCaptain": false,
         "dateOfBirth": "1993-02-12",
         "age": null,
         "nationality": [
@@ -465,6 +515,8 @@
         "name": "Lionel Messi",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/28003-1771694720.jpg",
         "position": "Right Winger",
+        "shirtNumber": 10,
+        "isCaptain": false,
         "dateOfBirth": "1987-06-24",
         "age": null,
         "nationality": [
@@ -484,6 +536,8 @@
         "name": "Adama Traoré",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/204103-1736153427.jpg",
         "position": "Right Winger",
+        "shirtNumber": 27,
+        "isCaptain": false,
         "dateOfBirth": "1996-01-25",
         "age": null,
         "nationality": [
@@ -503,6 +557,8 @@
         "name": "Pedro",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/65278-1695027154.jpg",
         "position": "Right Winger",
+        "shirtNumber": 7,
+        "isCaptain": false,
         "dateOfBirth": "1987-07-28",
         "age": null,
         "nationality": [
@@ -521,6 +577,8 @@
         "name": "Munir El Haddadi",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/223725-1687272900.jpg",
         "position": "Right Winger",
+        "shirtNumber": 31,
+        "isCaptain": false,
         "dateOfBirth": "1995-09-01",
         "age": null,
         "nationality": [
@@ -540,6 +598,8 @@
         "name": "Luis Suárez",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/44352-1771695059.jpg",
         "position": "Centre-Forward",
+        "shirtNumber": 9,
+        "isCaptain": false,
         "dateOfBirth": "1987-01-24",
         "age": null,
         "nationality": [
@@ -558,6 +618,8 @@
         "name": "Sandro Ramírez",
         "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/199369-1726230862.jpg",
         "position": "Centre-Forward",
+        "shirtNumber": 29,
+        "isCaptain": false,
         "dateOfBirth": "1995-07-09",
         "age": null,
         "nationality": [
