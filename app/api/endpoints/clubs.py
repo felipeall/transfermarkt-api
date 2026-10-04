@@ -2,6 +2,7 @@ from typing import Optional
 
 from fastapi import APIRouter
 
+from app.api.params import PageNumber
 from app.schemas import clubs as schemas
 from app.schemas.achievements import Achievements
 from app.services.clubs import achievements, players, profile, search
@@ -11,7 +12,7 @@ router = APIRouter()
 
 
 @router.get("/search/{club_name}", response_model=schemas.ClubSearch)
-async def search_clubs(club_name: str, tfmkt: Tfmkt, page_number: int = 1) -> dict:
+async def search_clubs(club_name: str, tfmkt: Tfmkt, page_number: PageNumber = 1) -> dict:
     """Search clubs by name."""
     return await search.search_clubs(tfmkt, club_name, page_number)
 
