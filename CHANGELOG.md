@@ -1,6 +1,40 @@
 # Changelog
 
-## 4.0.0 — unreleased
+## 4.0.4 — 2026-10-04
+
+### Fixed
+
+- The interactive docs failed to load their schema on the hosted API: opening `/` takes three requests (`/`, `/docs`, `/openapi.json`), and the third got 429. The docs pages and `/openapi.json` are no longer rate limited, like `/health`. API routes still share one budget per client IP (#145).
+
+## 4.0.3 — 2026-10-04
+
+### Changed
+
+- Direct dependencies are pinned to exact versions, all at their latest releases (#143).
+- The Docker image is pinned to `python:3.12.15-slim-trixie` and builds with uv `0.12.23`. uv is mounted only while dependencies are installed, so it is no longer in the final image (#143).
+- CI uses uv `0.12.23`, `astral-sh/setup-uv` `v10.2.0` and `actions/checkout` `v7.0.1` (#143, #144).
+
+## 4.0.2 — 2026-10-04
+
+### Changed
+
+- The hosted API caps each Fly machine at 25 requests in flight (#139). Extra requests are queued or refused by the Fly proxy instead of hanging the app.
+- Each request is logged once with the client IP from `Fly-Client-IP`, the method, the path and the status (#140). uvicorn's access log, which showed the Fly proxy's address, is turned off.
+
+### Fixed
+
+- Rate limiting never applied to API routes. slowapi could not match routes from included routers on FastAPI 0.142, and counted each URL separately, so only `/`, `/docs` and `/openapi.json` were ever limited. slowapi is replaced by a small middleware on `limits`: one budget per client IP across all routes, `/health` excluded, and 429 responses carry `Retry-After` (#141, #142).
+
+## 4.0.1 — 2026-10-04
+
+### Fixed
+
+- `page_number` below 1 now answers 422. Before, it returned records from the end of the list.
+- Club squads no longer fail with 500 when the current squad lists members that are not of type `current`.
+- National-team club profiles resolve `confederation` when upstream sends the country ID as a string.
+- The hosted API is rate limited per client IP, as the README says. Rate-limit keys come from `Fly-Client-IP`, so a spoofed `X-Forwarded-For` no longer bypasses them; `/health` is exempt.
+
+## 4.0.0 — 2026-10-04
 
 Data now comes from Transfermarkt's JSON API (`tmapi.transfermarkt.technology`) instead of scraped HTML pages. The website blocks most cloud and datacenter IPs, which made v3 return errors on hosted deployments (#109, #110, #117, #121).
 

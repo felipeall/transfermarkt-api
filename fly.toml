@@ -8,6 +8,10 @@ primary_region = 'ams'
 
 [build]
 
+[env]
+  RATE_LIMITING_ENABLE = 'true'
+  RATE_LIMITING_FREQUENCY = '2/3seconds'
+
 [http_service]
   internal_port = 8000
   force_https = true
@@ -15,6 +19,13 @@ primary_region = 'ams'
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
+
+  # Cap in-flight requests per machine so a burst is queued or refused by the Fly proxy
+  # instead of starving the app and failing the health check.
+  [http_service.concurrency]
+    type = 'requests'
+    soft_limit = 20
+    hard_limit = 25
 
   [[http_service.checks]]
     grace_period = '10s'

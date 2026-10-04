@@ -1,5 +1,6 @@
 from fastapi import APIRouter, HTTPException
 
+from app.api.params import PageNumber
 from app.schemas import players as schemas
 from app.schemas.achievements import Achievements
 from app.services.players import (
@@ -21,7 +22,7 @@ NOT_AVAILABLE = {501: {"description": "No JSON data source available for this en
 
 
 @router.get("/search/{player_name}", response_model=schemas.PlayerSearch)
-async def search_players(player_name: str, tfmkt: Tfmkt, page_number: int = 1) -> dict:
+async def search_players(player_name: str, tfmkt: Tfmkt, page_number: PageNumber = 1) -> dict:
     """Search players by name."""
     return await search.search_players(tfmkt, player_name, page_number)
 
@@ -60,13 +61,13 @@ async def get_player_stats(player_id: str, tfmkt: Tfmkt) -> dict:
 
 
 @router.get("/{player_id}/injuries", response_model=schemas.PlayerInjuries)
-async def get_player_injuries(player_id: str, tfmkt: Tfmkt, page_number: int = 1) -> dict:
+async def get_player_injuries(player_id: str, tfmkt: Tfmkt, page_number: PageNumber = 1) -> dict:
     """Get a player's injury history, paginated."""
     return await injuries.get_player_injuries(tfmkt, player_id, page_number)
 
 
 @router.get("/{player_id}/absences", response_model=schemas.PlayerAbsences)
-async def get_player_absences(player_id: str, tfmkt: Tfmkt, page_number: int = 1) -> dict:
+async def get_player_absences(player_id: str, tfmkt: Tfmkt, page_number: PageNumber = 1) -> dict:
     """Get a player's non-injury absences, paginated."""
     return await absences.get_player_absences(tfmkt, player_id, page_number)
 

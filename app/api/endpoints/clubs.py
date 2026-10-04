@@ -2,6 +2,7 @@ from typing import Annotated, Optional
 
 from fastapi import APIRouter, Query
 
+from app.api.params import PageNumber
 from app.schemas import clubs as schemas
 from app.schemas.achievements import Achievements
 from app.schemas.clubs.listing import ClubListing
@@ -18,7 +19,7 @@ async def list_clubs(country_id: Annotated[int, Query(gt=0)], tfmkt: Tfmkt) -> d
 
 
 @router.get("/search/{club_name}", response_model=schemas.ClubSearch)
-async def search_clubs(club_name: str, tfmkt: Tfmkt, page_number: int = 1) -> dict:
+async def search_clubs(club_name: str, tfmkt: Tfmkt, page_number: PageNumber = 1) -> dict:
     """Search clubs by name."""
     return await search.search_clubs(tfmkt, club_name, page_number)
 

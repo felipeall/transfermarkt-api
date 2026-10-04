@@ -330,3 +330,52 @@ def test_countries_exposes_reference_metadata(synthetic_client: tuple[TestClient
     club_response = client.get("/clubs/?country_id=189")
     assert club_response.status_code == 200
     assert club_response.json()["countryName"] == "England"
+
+
+@pytest.mark.parametrize(
+    "path",
+    [
+        "/players/search/x?page_number=0",
+        "/players/7/injuries?page_number=-1",
+        "/players/7/absences?page_number=0",
+        "/clubs/search/x?page_number=0",
+        "/coaches/search/x?page_number=0",
+        "/competitions/search/x?page_number=0",
+    ],
+)
+def test_page_number_below_one_is_rejected(synthetic_client: tuple[TestClient, dict], path: str) -> None:
+    """Page numbers start at 1; lower values answer 422 instead of slicing from the end of the list."""
+    client, _ = synthetic_client
+
+    assert client.get(path).status_code == 422
+
+
+def test_current_squad_with_non_current_members(synthetic_client: tuple[TestClient, dict]) -> None:
+    """A current squad listing members of another type is served as a past-style squad instead of failing."""
+    client, routes = synthetic_client
+    routes["/club/1/squad"] = {"clubId": "1", "squad": [{"playerId": "10", "type": "loan"}]}
+    routes["/players"] = [{"id": "10", "name": "Loaned Player"}]
+
+    response = client.get("/clubs/1/players")
+
+    assert response.status_code == 200
+    assert [p["name"] for p in response.json()["players"]] == ["Loaned Player"]
+
+
+def test_national_team_confederation_with_string_country_id(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Country IDs sent as strings still resolve the national team's confederation."""
+    client, routes = synthetic_client
+    routes["/attributes"] = {
+        "countries": [{"id": 9, "name": "Argentina", "confederationId": 3}],
+        "confederations": [{"id": 3, "name": "CONMEBOL"}],
+    }
+    routes["/club/3437"] = {
+        "id": "3437",
+        "name": "Argentina",
+        "baseDetails": {"isNationalTeam": True, "countryId": "9"},
+    }
+    routes["/club/3437/squad"] = {"clubId": "3437", "squad": []}
+
+    body = client.get("/clubs/3437/profile").json()
+
+    assert body["confederation"] == "CONMEBOL"

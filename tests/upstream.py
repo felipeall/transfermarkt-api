@@ -20,6 +20,7 @@ class FixtureStore:
         self.directory = FIXTURES_DIR / name
         self.manifest_path = self.directory / "manifest.json"
         self.manifest: dict = json.loads(self.manifest_path.read_text()) if self.manifest_path.exists() else {}
+        self.pending: dict[str, tuple[dict, bytes]] = {}
 
     @staticmethod
     def file_name(url: str) -> str:
@@ -29,14 +30,17 @@ class FixtureStore:
         return f"{slug}-{digest}.gz"
 
     def save(self, url: str, status: int, content_type: Optional[str], content: bytes) -> None:
-        """Store a response body gzipped and index it by URL."""
-        self.directory.mkdir(parents=True, exist_ok=True)
-        name = self.file_name(url)
-        (self.directory / name).write_bytes(gzip.compress(content, mtime=0))
-        self.manifest[url] = {"file": name, "status": status, "contentType": content_type}
+        """Stage a response for `commit`. Nothing is written to disk until then."""
+        entry = {"file": self.file_name(url), "status": status, "contentType": content_type}
+        self.pending[url] = (entry, content)
 
-    def write_manifest(self) -> None:
-        """Write the URL index to `manifest.json`, sorted."""
+    def commit(self) -> None:
+        """Write the staged responses gzipped and update `manifest.json`, sorted by URL."""
+        self.directory.mkdir(parents=True, exist_ok=True)
+        for url, (entry, content) in self.pending.items():
+            (self.directory / entry["file"]).write_bytes(gzip.compress(content, mtime=0))
+            self.manifest[url] = entry
+        self.pending.clear()
         self.manifest_path.write_text(json.dumps(dict(sorted(self.manifest.items())), indent=2) + "\n")
 
     def load(self, url: str) -> tuple[int, str, bytes]:

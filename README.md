@@ -4,8 +4,8 @@ A RESTful API (FastAPI) for football data from [Transfermarkt](https://www.trans
 
 Since version 4.0.0, data comes from Transfermarkt's JSON API (`tmapi.transfermarkt.technology`), the same API the website uses, instead of scraping HTML pages. The website blocks requests from most cloud hosts, which broke v3 deployments; the JSON API does not. See [CHANGELOG.md](CHANGELOG.md) for what changed in the response format.
 
-Please note that the deployed application is used only for testing purposes and has a rate limiting
-feature enabled. If you'd like to customize it, consider hosting in your own cloud service.
+Please note that the deployed application is used only for testing purposes and is rate limited to 2 requests
+every 3 seconds per client IP. If you'd like to customize it, consider hosting in your own cloud service.
 
 The JSON API is internal to Transfermarkt and undocumented: it can change without notice. This project's MIT license covers its code, not the data; check [Transfermarkt's terms](https://www.transfermarkt.com/intern/) before using the data in your own services.
 
@@ -101,10 +101,16 @@ $ open http://localhost:8000/
 | Variable                      | Description                                                                                            | Default                                  |
 |-------------------------------|--------------------------------------------------------------------------------------------------------|------------------------------------------|
 | `RATE_LIMITING_ENABLE`        | Enable rate limiting feature for API calls                                                             | `false`                                  |
-| `RATE_LIMITING_FREQUENCY`     | Delay allowed between each API call. See [slowapi](https://slowapi.readthedocs.io/en/latest/) for more | `2/3seconds`                             |
+| `RATE_LIMITING_FREQUENCY`     | Requests allowed per client IP across all routes, in [limits notation](https://limits.readthedocs.io/en/stable/quickstart.html#rate-limit-string-notation) | `2/3seconds`                             |
 | `TFMKT_BASE_URL`              | Transfermarkt JSON API base URL                                                                        | `https://tmapi.transfermarkt.technology` |
 | `TFMKT_TIMEOUT_SECONDS`       | Timeout for each upstream request                                                                      | `15`                                     |
 | `TFMKT_MAX_CONCURRENCY`       | Maximum concurrent upstream requests across the whole server                                          | `10`                                     |
 | `CACHE_TTL_SECONDS`           | How long successful upstream responses are cached                                                      | `600`                                    |
 | `CACHE_REFERENCE_TTL_SECONDS` | Cache duration for reference data (countries, positions, ...)                                          | `86400`                                  |
 | `CACHE_MAX_ENTRIES`           | Maximum number of cached upstream responses                                                            | `2000`                                   |
+
+Rate limits apply to the API routes only: `/health`, the docs (`/`, `/docs`, `/redoc`) and `/openapi.json` are not
+counted. They are counted per client IP: the `Fly-Client-IP` header set by the Fly.io proxy, or the address of the
+connection when that header is missing. `X-Forwarded-For` is not trusted. Behind another reverse proxy, all
+requests share the proxy's address, and outside Fly.io clients can send `Fly-Client-IP` themselves, so adjust
+`client_ip` in `app/main.py` before enabling rate limiting on another host.

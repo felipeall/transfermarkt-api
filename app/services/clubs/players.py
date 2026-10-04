@@ -30,7 +30,7 @@ async def get_club_players(tfmkt: TfmktClient, club_id: str, season_id: Optional
         tfmkt.players(player_ids),
         asyncio.gather(*(tfmkt.player_transfer_history(i) for i in player_ids)),
     )
-    max_season = None if is_current else int(season_id)
+    max_season = int(season_id) if season_id and not is_current else None
     arrivals = {i: latest_arrival(history, club_id, max_season) for i, history in zip(player_ids, histories)}
     assignments = {i: current_assignment(players.get(i, {})) for i in player_ids}
     clubs = await tfmkt.clubs(
