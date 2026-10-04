@@ -1,0 +1,574 @@
+{
+  "status": 200,
+  "body": {
+    "id": "4361261",
+    "url": "https://www.transfermarkt.com/spielbericht/index/spielbericht/4361261",
+    "competition": {
+      "id": "GB1",
+      "name": "Premier League"
+    },
+    "seasonId": "2024",
+    "season": "24/25",
+    "matchDay": 1,
+    "date": "2024-08-16T19:00:00Z",
+    "stadium": {
+      "id": "78",
+      "name": "Old Trafford"
+    },
+    "attendance": 73297,
+    "home": {
+      "id": "985",
+      "name": "Manchester United",
+      "score": 1,
+      "formation": "4-2-3-1",
+      "coach": {
+        "id": "3816",
+        "name": "Erik ten Hag"
+      },
+      "startingLineup": [
+        {
+          "id": "234509",
+          "name": "André Onana",
+          "shirtNumber": 24,
+          "position": "Goalkeeper",
+          "isCaptain": false
+        },
+        {
+          "id": "177907",
+          "name": "Harry Maguire",
+          "shirtNumber": 5,
+          "position": "Centre-Back",
+          "isCaptain": false
+        },
+        {
+          "id": "480762",
+          "name": "Lisandro Martínez",
+          "shirtNumber": 6,
+          "position": "Centre-Back",
+          "isCaptain": false
+        },
+        {
+          "id": "357147",
+          "name": "Diogo Dalot",
+          "shirtNumber": 20,
+          "position": "Left-Back",
+          "isCaptain": false
+        },
+        {
+          "id": "340456",
+          "name": "Noussair Mazraoui",
+          "shirtNumber": 3,
+          "position": "Right-Back",
+          "isCaptain": false
+        },
+        {
+          "id": "16306",
+          "name": "Casemiro",
+          "shirtNumber": 18,
+          "position": "Defensive Midfield",
+          "isCaptain": false
+        },
+        {
+          "id": "820374",
+          "name": "Kobbie Mainoo",
+          "shirtNumber": 37,
+          "position": "Central Midfield",
+          "isCaptain": false
+        },
+        {
+          "id": "536835",
+          "name": "Amad Diallo",
+          "shirtNumber": 16,
+          "position": "Right Winger",
+          "isCaptain": false
+        },
+        {
+          "id": "258923",
+          "name": "Marcus Rashford",
+          "shirtNumber": 10,
+          "position": "Left Winger",
+          "isCaptain": false
+        },
+        {
+          "id": "346483",
+          "name": "Mason Mount",
+          "shirtNumber": 7,
+          "position": "Attacking Midfield",
+          "isCaptain": false
+        },
+        {
+          "id": "240306",
+          "name": "Bruno Fernandes",
+          "shirtNumber": 8,
+          "position": "Centre-Forward",
+          "isCaptain": true
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "326031",
+          "name": "Matthijs de Ligt",
+          "shirtNumber": 4,
+          "position": "Centre-Back",
+          "isCaptain": false
+        },
+        {
+          "id": "654253",
+          "name": "Toby Collyer",
+          "shirtNumber": 43,
+          "position": null,
+          "isCaptain": false
+        },
+        {
+          "id": "435648",
+          "name": "Joshua Zirkzee",
+          "shirtNumber": 11,
+          "position": "Centre-Forward",
+          "isCaptain": false
+        },
+        {
+          "id": "336077",
+          "name": "Altay Bayındır",
+          "shirtNumber": 1,
+          "position": null,
+          "isCaptain": false
+        },
+        {
+          "id": "42412",
+          "name": "Jonny Evans",
+          "shirtNumber": 35,
+          "position": "Centre-Back",
+          "isCaptain": false
+        },
+        {
+          "id": "315969",
+          "name": "Scott McTominay",
+          "shirtNumber": 39,
+          "position": "Central Midfield",
+          "isCaptain": false
+        },
+        {
+          "id": "69633",
+          "name": "Christian Eriksen",
+          "shirtNumber": 14,
+          "position": null,
+          "isCaptain": false
+        },
+        {
+          "id": "811779",
+          "name": "Alejandro Garnacho",
+          "shirtNumber": 17,
+          "position": "Right Winger",
+          "isCaptain": false
+        },
+        {
+          "id": "602105",
+          "name": "Antony",
+          "shirtNumber": 21,
+          "position": null,
+          "isCaptain": false
+        }
+      ]
+    },
+    "away": {
+      "id": "931",
+      "name": "Fulham FC",
+      "score": 0,
+      "formation": "4-2-3-1",
+      "coach": {
+        "id": "19631",
+        "name": "Marco Silva"
+      },
+      "startingLineup": [
+        {
+          "id": "72476",
+          "name": "Bernd Leno",
+          "shirtNumber": 1,
+          "position": "Goalkeeper",
+          "isCaptain": true
+        },
+        {
+          "id": "461883",
+          "name": "Calvin Bassey",
+          "shirtNumber": 3,
+          "position": "Centre-Back",
+          "isCaptain": false
+        },
+        {
+          "id": "272622",
+          "name": "Issa Diop",
+          "shirtNumber": 31,
+          "position": "Centre-Back",
+          "isCaptain": false
+        },
+        {
+          "id": "349701",
+          "name": "Antonee Robinson",
+          "shirtNumber": 33,
+          "position": "Left-Back",
+          "isCaptain": false
+        },
+        {
+          "id": "206746",
+          "name": "Kenny Tete",
+          "shirtNumber": 2,
+          "position": "Right-Back",
+          "isCaptain": false
+        },
+        {
+          "id": "203394",
+          "name": "Andreas Pereira",
+          "shirtNumber": 18,
+          "position": "Central Midfield",
+          "isCaptain": false
+        },
+        {
+          "id": "245056",
+          "name": "Saša Lukić",
+          "shirtNumber": 20,
+          "position": "Defensive Midfield",
+          "isCaptain": false
+        },
+        {
+          "id": "204103",
+          "name": "Adama Traoré",
+          "shirtNumber": 11,
+          "position": "Right Winger",
+          "isCaptain": false
+        },
+        {
+          "id": "242631",
+          "name": "Alex Iwobi",
+          "shirtNumber": 17,
+          "position": "Left Winger",
+          "isCaptain": false
+        },
+        {
+          "id": "392765",
+          "name": "Emile Smith Rowe",
+          "shirtNumber": 32,
+          "position": "Attacking Midfield",
+          "isCaptain": false
+        },
+        {
+          "id": "735571",
+          "name": "Rodrigo Muniz",
+          "shirtNumber": 9,
+          "position": "Centre-Forward",
+          "isCaptain": false
+        }
+      ],
+      "substitutes": [
+        {
+          "id": "1011131",
+          "name": "Josh King",
+          "shirtNumber": 24,
+          "position": null,
+          "isCaptain": false
+        },
+        {
+          "id": "206040",
+          "name": "Raúl Jiménez",
+          "shirtNumber": 7,
+          "position": "Centre-Forward",
+          "isCaptain": false
+        },
+        {
+          "id": "226973",
+          "name": "Harrison Reed",
+          "shirtNumber": 6,
+          "position": "Central Midfield",
+          "isCaptain": false
+        },
+        {
+          "id": "696346",
+          "name": "Jay Stansfield",
+          "shirtNumber": 28,
+          "position": "Centre-Forward",
+          "isCaptain": false
+        },
+        {
+          "id": "494880",
+          "name": "Jorge Cuenca",
+          "shirtNumber": 15,
+          "position": null,
+          "isCaptain": false
+        },
+        {
+          "id": "123275",
+          "name": "Tom Cairney",
+          "shirtNumber": 10,
+          "position": "Central Midfield",
+          "isCaptain": false
+        },
+        {
+          "id": "279455",
+          "name": "Harry Wilson",
+          "shirtNumber": 8,
+          "position": "Right Winger",
+          "isCaptain": false
+        },
+        {
+          "id": "381469",
+          "name": "Steven Benda",
+          "shirtNumber": 23,
+          "position": null,
+          "isCaptain": false
+        },
+        {
+          "id": "262226",
+          "name": "Timothy Castagne",
+          "shirtNumber": 21,
+          "position": null,
+          "isCaptain": false
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "card",
+        "minute": 18,
+        "addedTime": null,
+        "clubId": "985",
+        "player": {
+          "id": "346483",
+          "name": "Mason Mount"
+        },
+        "relatedPlayer": null,
+        "card": "yellow",
+        "score": null
+      },
+      {
+        "type": "card",
+        "minute": 25,
+        "addedTime": null,
+        "clubId": "931",
+        "player": {
+          "id": "461883",
+          "name": "Calvin Bassey"
+        },
+        "relatedPlayer": null,
+        "card": "yellow",
+        "score": null
+      },
+      {
+        "type": "card",
+        "minute": 40,
+        "addedTime": null,
+        "clubId": "985",
+        "player": {
+          "id": "177907",
+          "name": "Harry Maguire"
+        },
+        "relatedPlayer": null,
+        "card": "yellow",
+        "score": null
+      },
+      {
+        "type": "substitution",
+        "minute": 61,
+        "addedTime": null,
+        "clubId": "985",
+        "player": {
+          "id": "536835",
+          "name": "Amad Diallo"
+        },
+        "relatedPlayer": {
+          "id": "811779",
+          "name": "Alejandro Garnacho"
+        },
+        "card": null,
+        "score": null
+      },
+      {
+        "type": "substitution",
+        "minute": 61,
+        "addedTime": null,
+        "clubId": "985",
+        "player": {
+          "id": "346483",
+          "name": "Mason Mount"
+        },
+        "relatedPlayer": {
+          "id": "435648",
+          "name": "Joshua Zirkzee"
+        },
+        "card": null,
+        "score": null
+      },
+      {
+        "type": "substitution",
+        "minute": 64,
+        "addedTime": null,
+        "clubId": "931",
+        "player": {
+          "id": "392765",
+          "name": "Emile Smith Rowe"
+        },
+        "relatedPlayer": {
+          "id": "123275",
+          "name": "Tom Cairney"
+        },
+        "card": null,
+        "score": null
+      },
+      {
+        "type": "card",
+        "minute": 70,
+        "addedTime": null,
+        "clubId": "931",
+        "player": {
+          "id": "203394",
+          "name": "Andreas Pereira"
+        },
+        "relatedPlayer": null,
+        "card": "yellow",
+        "score": null
+      },
+      {
+        "type": "card",
+        "minute": 73,
+        "addedTime": null,
+        "clubId": "931",
+        "player": {
+          "id": "123275",
+          "name": "Tom Cairney"
+        },
+        "relatedPlayer": null,
+        "card": "yellow",
+        "score": null
+      },
+      {
+        "type": "substitution",
+        "minute": 78,
+        "addedTime": null,
+        "clubId": "931",
+        "player": {
+          "id": "735571",
+          "name": "Rodrigo Muniz"
+        },
+        "relatedPlayer": {
+          "id": "206040",
+          "name": "Raúl Jiménez"
+        },
+        "card": null,
+        "score": null
+      },
+      {
+        "type": "substitution",
+        "minute": 78,
+        "addedTime": null,
+        "clubId": "931",
+        "player": {
+          "id": "204103",
+          "name": "Adama Traoré"
+        },
+        "relatedPlayer": {
+          "id": "279455",
+          "name": "Harry Wilson"
+        },
+        "card": null,
+        "score": null
+      },
+      {
+        "type": "substitution",
+        "minute": 81,
+        "addedTime": null,
+        "clubId": "985",
+        "player": {
+          "id": "340456",
+          "name": "Noussair Mazraoui"
+        },
+        "relatedPlayer": {
+          "id": "326031",
+          "name": "Matthijs de Ligt"
+        },
+        "card": null,
+        "score": null
+      },
+      {
+        "type": "substitution",
+        "minute": 81,
+        "addedTime": null,
+        "clubId": "985",
+        "player": {
+          "id": "177907",
+          "name": "Harry Maguire"
+        },
+        "relatedPlayer": {
+          "id": "42412",
+          "name": "Jonny Evans"
+        },
+        "card": null,
+        "score": null
+      },
+      {
+        "type": "substitution",
+        "minute": 84,
+        "addedTime": null,
+        "clubId": "985",
+        "player": {
+          "id": "820374",
+          "name": "Kobbie Mainoo"
+        },
+        "relatedPlayer": {
+          "id": "315969",
+          "name": "Scott McTominay"
+        },
+        "card": null,
+        "score": null
+      },
+      {
+        "type": "goal",
+        "minute": 87,
+        "addedTime": null,
+        "clubId": "985",
+        "player": {
+          "id": "435648",
+          "name": "Joshua Zirkzee"
+        },
+        "relatedPlayer": {
+          "id": "811779",
+          "name": "Alejandro Garnacho"
+        },
+        "card": null,
+        "score": {
+          "home": 1,
+          "away": 0
+        }
+      },
+      {
+        "type": "substitution",
+        "minute": 90,
+        "addedTime": 1,
+        "clubId": "931",
+        "player": {
+          "id": "203394",
+          "name": "Andreas Pereira"
+        },
+        "relatedPlayer": {
+          "id": "226973",
+          "name": "Harrison Reed"
+        },
+        "card": null,
+        "score": null
+      },
+      {
+        "type": "substitution",
+        "minute": 90,
+        "addedTime": 1,
+        "clubId": "931",
+        "player": {
+          "id": "245056",
+          "name": "Saša Lukić"
+        },
+        "relatedPlayer": {
+          "id": "696346",
+          "name": "Jay Stansfield"
+        },
+        "card": null,
+        "score": null
+      }
+    ]
+  }
+}

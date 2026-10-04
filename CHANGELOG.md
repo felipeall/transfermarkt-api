@@ -4,6 +4,8 @@
 
 ### Added
 
+- `GET /games/{game_id}`: a match with competition, season, matchday, kickoff, stadium, attendance, score, formations, coaches, starting lineups, substitutes, and goals (with assist), cards and substitutions in match order (#112).
+- `GET /players/{player_id}/matches`: past matches of the player's teams, most recent first, 50 per page, optionally for one season. Each match gives the opponent, venue, result and the player's part: played, on the bench, not in the squad, injured or absent, plus minutes, goals, assists and cards (#112). Transfermarkt's API has no fixture list, so upcoming matches are not available.
 - `GET /countries/` lists country IDs and metadata (name, FIFA code, confederation, flag, historical status) (#130).
 - `GET /clubs/?country_id={id}` lists the clubs Transfermarkt has for a country. The list is incomplete upstream: youth and national teams and some senior clubs are missing, with no pagination or season filter (#130, partly addresses #56).
 - Club squads include each player's `imageUrl` (from #114).

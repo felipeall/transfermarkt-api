@@ -43,4 +43,9 @@ CASES: list[tuple[str, str]] = [
     ("competitions_GB1_table_2014", "/competitions/GB1/table?season_id=2014"),
     ("competitions_CL_table_2020", "/competitions/CL/table?season_id=2020"),
     ("competitions_GB1_seasons", "/competitions/GB1/seasons"),
+    # Games
+    ("games_4361261", "/games/4361261"),
+    ("games_999999999", "/games/999999999"),
+    ("players_28003_matches", "/players/28003/matches"),
+    ("players_28003_matches_2014", "/players/28003/matches?season_id=2014"),
 ]

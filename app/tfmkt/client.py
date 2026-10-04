@@ -200,6 +200,14 @@ class TfmktClient:
         """Fetch the seasons available for a competition."""
         return await self.get(f"/competition/{competition_id}/season")
 
+    async def game(self, game_id: str) -> dict:
+        """Fetch a match: lineups, events, score and officials."""
+        return await self.get(f"/game/{game_id}")
+
+    async def stadium(self, stadium_id: str) -> Optional[dict]:
+        """None when the stadium is unknown (upstream answers 404)."""
+        return await self.get_optional(f"/stadium/{stadium_id}")
+
     async def competitions(self, ids: Iterable[str]) -> dict[str, dict]:
         """Fetch competition records by ID, indexed by ID."""
         return await self.get_batch("/competitions", ids)
