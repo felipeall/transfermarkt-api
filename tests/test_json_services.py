@@ -480,3 +480,33 @@ def test_squad_includes_player_images(synthetic_client: tuple[TestClient, dict])
     players = client.get("/clubs/1/players").json()["players"]
 
     assert [p["imageUrl"] for p in players] == ["https://img.a.transfermarkt.technology/portrait/big/10.jpg", None]
+
+
+def test_profile_extra_fields_edge_cases(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Unknown or invalid upstream values for the extra profile fields become null instead of failing."""
+    client, routes = synthetic_client
+    routes["/player/7"] = {
+        "id": "7",
+        "name": "Historic Player",
+        "lifeDates": {"dateOfDeath": "1990-01-01", "isDateOfDeathUnknown": True},
+        "attributes": {"lastContractRenewal": {"year": 2025, "month": 2, "day": 30}},
+        "marketValueDetails": {
+            "current": {"value": 0, "determined": "2020-01-01"},
+            "delta": {"type": "SOMETHING_NEW"},
+            "highest": {"value": 0},
+        },
+        "clubAssignments": [{"type": "current", "clubId": "1", "isCaptain": False}],
+    }
+
+    body = client.get("/players/7/profile").json()
+
+    assert body["dateOfDeath"] is None
+    assert body["club"]["lastContractRenewal"] is None
+    assert body["club"]["isCaptain"] is False
+    assert body["nationalTeam"] is None
+    assert body["marketValueDetails"] == {
+        "lastUpdated": "2020-01-01",
+        "trend": None,
+        "previous": None,
+        "highest": None,
+    }

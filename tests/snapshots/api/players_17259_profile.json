@@ -8,6 +8,7 @@
     "nameInHomeCountry": "Manuel Peter Neuer",
     "imageUrl": "https://img.a.transfermarkt.technology/portrait/big/17259-1762943283.jpg",
     "dateOfBirth": "1986-03-27",
+    "dateOfDeath": null,
     "placeOfBirth": {
       "city": "Gelsenkirchen",
       "country": "Germany"
@@ -21,6 +22,7 @@
     "retiredSince": null,
     "position": {
       "main": "Goalkeeper",
+      "group": "Goalkeeper",
       "other": []
     },
     "foot": "right",
@@ -29,12 +31,27 @@
       "id": "27",
       "name": "Bayern Munich",
       "joined": "2011-07-01",
+      "isCaptain": true,
       "contractExpires": "2027-06-30",
+      "lastContractRenewal": "2026-05-15",
       "contractOption": null,
       "lastClubId": null,
       "lastClubName": null
     },
+    "nationalTeam": null,
     "marketValue": 4000000,
+    "marketValueDetails": {
+      "lastUpdated": "2026-05-27",
+      "trend": "unchanged",
+      "previous": {
+        "value": 4000000,
+        "date": "2025-12-19"
+      },
+      "highest": {
+        "value": 45000000,
+        "date": "2017-02-07"
+      }
+    },
     "agent": {
       "name": "PRO Profil GmbH",
       "url": "/pro-profil-gmbh/beraterfirma/berater/12"

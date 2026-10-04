@@ -9,6 +9,12 @@
 - Club squads include each player's `imageUrl` (from #114).
 - Player transfers include `transferType`: `transfer`, `freeTransfer`, `internal` (youth or reserve team to first team, and similar), `loan` or `endOfLoan`. An unknown fee stays a `transfer` with a null `fee` (from #98).
 - Player stats include `goalsConceded` and `cleanSheets`, computed as on the website: goals conceded while the player was on the pitch, and matches played in which the opponent did not score. They are returned for every player, although the website shows them only for goalkeepers (from #108).
+- Player profiles include:
+  - `dateOfDeath`;
+  - `position.group` (Goalkeeper, Defender, Midfielder or Striker);
+  - `club.isCaptain` and `club.lastContractRenewal`;
+  - `nationalTeam` (`id`, `name`, `shirtNumber`, `isCaptain`, `debut`);
+  - `marketValueDetails`: `lastUpdated`, `trend` (`increased`, `decreased` or `unchanged`), `previous` and `highest`, each with its value and date.
 
 ## 4.0.4 — 2026-10-04
 
