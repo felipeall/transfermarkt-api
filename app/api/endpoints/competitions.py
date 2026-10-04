@@ -2,6 +2,7 @@ from typing import Optional
 
 from fastapi import APIRouter
 
+from app.api.params import PageNumber
 from app.schemas import competitions as schemas
 from app.services.competitions import clubs, search, seasons, table
 from app.tfmkt import Tfmkt
@@ -10,7 +11,7 @@ router = APIRouter()
 
 
 @router.get("/search/{competition_name}", response_model=schemas.CompetitionSearch)
-async def search_competitions(competition_name: str, tfmkt: Tfmkt, page_number: int = 1) -> dict:
+async def search_competitions(competition_name: str, tfmkt: Tfmkt, page_number: PageNumber = 1) -> dict:
     """Search competitions by name."""
     return await search.search_competitions(tfmkt, competition_name, page_number)
 

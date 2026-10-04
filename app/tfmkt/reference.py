@@ -20,9 +20,13 @@ class Reference:
         self.competition_types = {c["id"]: c for c in attributes.get("competitionTypes", [])}
         self.contracts = {c["id"]: c for c in attributes.get("contracts", [])}
 
+    def country(self, country_id: Optional[Union[int, str]]) -> dict:
+        """Record of a country, or an empty dict if unknown."""
+        return self.countries.get(_int(country_id)) or {}
+
     def country_name(self, country_id: Optional[Union[int, str]]) -> Optional[str]:
         """Name of a country, or None if unknown."""
-        return self.countries.get(_int(country_id), {}).get("name")
+        return self.country(country_id).get("name")
 
     def country_names(self, *country_ids: Optional[Union[int, str]]) -> list[str]:
         """Names of the known countries among the given IDs, in order."""

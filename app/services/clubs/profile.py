@@ -27,7 +27,7 @@ async def get_club_profile(tfmkt: TfmktClient, club_id: str) -> dict:
     competition_id = base.get("primaryCompetitionId") or None
     competition = (await tfmkt.competitions([competition_id])).get(competition_id, {}) if competition_id else {}
     competition_origin = competition.get("originDetails") or {}
-    country = reference.countries.get(base.get("countryId")) or {}
+    country = reference.country(base.get("countryId"))
     postcode_city = " ".join(part for part in (location.get("postcode"), location.get("city")) if part)
 
     return {
