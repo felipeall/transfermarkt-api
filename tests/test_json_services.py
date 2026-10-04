@@ -563,6 +563,97 @@ def test_transfer_types(
     assert transfer["fee"] is None
 
 
+def test_transfer_details_use_historical_club_context(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Transfers retain their recorded league, country and contract data rather than today's club context."""
+    client, routes = synthetic_client
+    routes["/attributes"]["countries"].append({"id": 157, "name": "Spain"})
+    routes["/player/7"] = {"id": "7", "attributes": {}}
+    routes["/clubs"] = [
+        {"id": "2", "name": "Old club", "baseDetails": {"primaryCompetitionId": "NEW", "countryId": 157}},
+        {"id": "3", "name": "New club"},
+    ]
+    routes["/competitions"] = [{"id": "OLD", "name": "Former league"}]
+    routes["/transfer/history/player/7"] = {
+        "history": {
+            "pending": [
+                {
+                    "id": "2",
+                    "transferSource": {"clubId": "2", "competitionId": "OLD", "countryId": 9},
+                    "transferDestination": {"clubId": "3", "competitionId": "MISSING", "countryId": 157},
+                    "details": {
+                        "isPending": True,
+                        "age": 30,
+                        "contractUntilDate": "2028-06-30T00:00:00+02:00",
+                        "remainingContractPeriod": {"days": 0},
+                    },
+                }
+            ],
+            "terminated": [
+                {
+                    "id": "1",
+                    "transferSource": {"clubId": "2"},
+                    "transferDestination": {"clubId": "3"},
+                    "details": {
+                        "age": 22,
+                        "contractUntilDate": "2026-06-30T00:00:00+02:00",
+                        "remainingContractPeriod": {"days": 729},
+                    },
+                }
+            ],
+        }
+    }
+    response = client.get("/players/7/transfers")
+    assert response.status_code == 200
+    pending, completed = response.json()["transfers"]
+    assert pending["upcoming"] is True
+    assert (pending["age"], pending["contractUntil"], pending["remainingContractDays"]) == (30, "2028-06-30", 0)
+    assert pending["clubFrom"] == {
+        "id": "2",
+        "name": "Old club",
+        "countryId": "9",
+        "countryName": "Argentina",
+        "league": {"id": "OLD", "name": "Former league"},
+    }
+    assert pending["clubTo"] == {
+        "id": "3",
+        "name": "New club",
+        "countryId": "157",
+        "countryName": "Spain",
+        "league": {"id": "MISSING", "name": None},
+    }
+    assert (completed["age"], completed["contractUntil"], completed["remainingContractDays"]) == (22, "2026-06-30", 729)
+    assert completed["clubFrom"]["league"] is None
+    assert completed["clubFrom"]["countryId"] is None
+    assert completed["clubFrom"]["countryName"] is None
+
+
+def test_transfer_extra_details_missing(synthetic_client: tuple[TestClient, dict]) -> None:
+    """Absent transfer details remain null, including a missing country or league record."""
+    client, routes = synthetic_client
+    routes["/player/7"] = {"id": "7"}
+    routes["/transfer/history/player/7"] = {
+        "history": {
+            "terminated": [
+                {
+                    "id": "1",
+                    "transferSource": {"clubId": "2", "countryId": 999},
+                    "transferDestination": {"clubId": "3"},
+                    "details": {},
+                }
+            ]
+        }
+    }
+    response = client.get("/players/7/transfers")
+    assert response.status_code == 200
+    transfer = response.json()["transfers"][0]
+    assert transfer["age"] is None
+    assert transfer["contractUntil"] is None
+    assert transfer["remainingContractDays"] is None
+    assert transfer["clubFrom"]["countryId"] == "999"
+    assert transfer["clubFrom"]["countryName"] is None
+    assert transfer["clubFrom"]["league"] is None
+
+
 def test_squad_includes_player_images(synthetic_client: tuple[TestClient, dict]) -> None:
     """Squad entries carry the player's portrait, or null when upstream has none."""
     client, routes = synthetic_client

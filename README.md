@@ -19,7 +19,7 @@ https://transfermarkt-api.fly.dev/
 | `GET /players/search/{player_name}?page_number=` | 10 results per page |
 | `GET /players/{player_id}/profile` | |
 | `GET /players/{player_id}/market_value` | |
-| `GET /players/{player_id}/transfers` | |
+| `GET /players/{player_id}/transfers` | Transfer type, age, contract dates, remaining contract days, and each club's league and country at the time |
 | `GET /players/{player_id}/stats` | Per season, competition and club; club competitions only |
 | `GET /players/{player_id}/matches?season_id=&page_number=` | Past matches of the player's teams, most recent first, 50 per page; no upcoming fixtures |
 | `GET /players/{player_id}/injuries?page_number=` | 15 injuries per page |

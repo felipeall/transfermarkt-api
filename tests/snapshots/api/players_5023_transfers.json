@@ -7,103 +7,187 @@
         "id": "4552945",
         "clubFrom": {
           "id": "130",
-          "name": "Parma Calcio 1913"
+          "name": "Parma Calcio 1913",
+          "countryId": "75",
+          "countryName": "Italy",
+          "league": {
+            "id": "IT2",
+            "name": "Serie B"
+          }
         },
         "clubTo": {
           "id": "123",
-          "name": "Retired"
+          "name": "Retired",
+          "countryId": "0",
+          "countryName": null,
+          "league": null
         },
         "date": "2023-08-02",
         "upcoming": false,
         "transferType": "transfer",
         "season": "23/24",
         "marketValue": 1000000,
-        "fee": null
+        "fee": null,
+        "age": 45,
+        "contractUntil": null,
+        "remainingContractDays": 333
       },
       {
         "id": "3361384",
         "clubFrom": {
           "id": "506",
-          "name": "Juventus FC"
+          "name": "Juventus FC",
+          "countryId": "75",
+          "countryName": "Italy",
+          "league": {
+            "id": "IT1",
+            "name": "Serie A"
+          }
         },
         "clubTo": {
           "id": "130",
-          "name": "Parma Calcio 1913"
+          "name": "Parma Calcio 1913",
+          "countryId": "75",
+          "countryName": "Italy",
+          "league": {
+            "id": "IT2",
+            "name": "Serie B"
+          }
         },
         "date": "2021-07-01",
         "upcoming": false,
         "transferType": "freeTransfer",
         "season": "21/22",
         "marketValue": 1000000,
-        "fee": null
+        "fee": null,
+        "age": 43,
+        "contractUntil": "2024-06-30",
+        "remainingContractDays": null
       },
       {
         "id": "2537963",
         "clubFrom": {
           "id": "583",
-          "name": "Paris Saint-Germain"
+          "name": "Paris Saint-Germain",
+          "countryId": "50",
+          "countryName": "France",
+          "league": {
+            "id": "FR1",
+            "name": "Ligue 1"
+          }
         },
         "clubTo": {
           "id": "506",
-          "name": "Juventus FC"
+          "name": "Juventus FC",
+          "countryId": "75",
+          "countryName": "Italy",
+          "league": {
+            "id": "IT1",
+            "name": "Serie A"
+          }
         },
         "date": "2019-07-04",
         "upcoming": false,
         "transferType": "freeTransfer",
         "season": "19/20",
         "marketValue": 1000000,
-        "fee": null
+        "fee": null,
+        "age": 41,
+        "contractUntil": "2021-06-30",
+        "remainingContractDays": null
       },
       {
         "id": "2109618",
         "clubFrom": {
           "id": "506",
-          "name": "Juventus FC"
+          "name": "Juventus FC",
+          "countryId": "75",
+          "countryName": "Italy",
+          "league": {
+            "id": "IT1",
+            "name": "Serie A"
+          }
         },
         "clubTo": {
           "id": "583",
-          "name": "Paris Saint-Germain"
+          "name": "Paris Saint-Germain",
+          "countryId": "50",
+          "countryName": "France",
+          "league": {
+            "id": "FR1",
+            "name": "Ligue 1"
+          }
         },
         "date": "2018-07-06",
         "upcoming": false,
         "transferType": "freeTransfer",
         "season": "18/19",
         "marketValue": 2000000,
-        "fee": null
+        "fee": null,
+        "age": 40,
+        "contractUntil": "2019-06-30",
+        "remainingContractDays": null
       },
       {
         "id": "8312",
         "clubFrom": {
           "id": "130",
-          "name": "Parma Calcio 1913"
+          "name": "Parma Calcio 1913",
+          "countryId": "75",
+          "countryName": "Italy",
+          "league": {
+            "id": "IT1",
+            "name": "Serie A"
+          }
         },
         "clubTo": {
           "id": "506",
-          "name": "Juventus FC"
+          "name": "Juventus FC",
+          "countryId": "75",
+          "countryName": "Italy",
+          "league": {
+            "id": "IT1",
+            "name": "Serie A"
+          }
         },
         "date": "2001-07-03",
         "upcoming": false,
         "transferType": "transfer",
         "season": "01/02",
         "marketValue": null,
-        "fee": 52884000
+        "fee": 52884000,
+        "age": 23,
+        "contractUntil": "2018-06-30",
+        "remainingContractDays": null
       },
       {
         "id": "8829",
         "clubFrom": {
           "id": "5243",
-          "name": "Parma Primavera"
+          "name": "Parma Primavera",
+          "countryId": "75",
+          "countryName": "Italy",
+          "league": null
         },
         "clubTo": {
           "id": "130",
-          "name": "Parma Calcio 1913"
+          "name": "Parma Calcio 1913",
+          "countryId": "75",
+          "countryName": "Italy",
+          "league": {
+            "id": "IT1",
+            "name": "Serie A"
+          }
         },
         "date": "1994-07-01",
         "upcoming": false,
         "transferType": "internal",
         "season": "94/95",
         "marketValue": null,
-        "fee": null
+        "fee": null,
+        "age": 16,
+        "contractUntil": null,
+        "remainingContractDays": null
       }
     ],
     "youthClubs": [

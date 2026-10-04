@@ -364,6 +364,16 @@
     "status": 200,
     "contentType": "application/json"
   },
+  "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=ES1&ids%5B%5D=ES3C&ids%5B%5D=FR1&ids%5B%5D=MLS1": {
+    "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-ES1-ids-5B-5D-ES3C-ids-5B--bb3b0b0ce8.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
+  "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=FR1&ids%5B%5D=IT1&ids%5B%5D=IT2": {
+    "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-FR1-ids-5B-5D-IT1-ids-5B-5-41440e5933.gz",
+    "status": 200,
+    "contentType": "application/json"
+  },
   "https://tmapi.transfermarkt.technology/competitions?ids%5B%5D=GB1": {
     "file": "tmapi-transfermarkt-technology-competitions-ids-5B-5D-GB1-66fcb67848.gz",
     "status": 200,

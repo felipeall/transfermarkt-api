@@ -7,137 +7,230 @@
         "id": "4418847",
         "clubFrom": {
           "id": "583",
-          "name": "Paris Saint-Germain"
+          "name": "Paris Saint-Germain",
+          "countryId": "50",
+          "countryName": "France",
+          "league": {
+            "id": "FR1",
+            "name": "Ligue 1"
+          }
         },
         "clubTo": {
           "id": "69261",
-          "name": "Inter Miami CF"
+          "name": "Inter Miami CF",
+          "countryId": "184",
+          "countryName": "United States",
+          "league": {
+            "id": "MLS1",
+            "name": "Major League Soccer"
+          }
         },
         "date": "2023-07-15",
         "upcoming": false,
         "transferType": "freeTransfer",
         "season": "23/24",
         "marketValue": 35000000,
-        "fee": null
+        "fee": null,
+        "age": 36,
+        "contractUntil": "2028-12-31",
+        "remainingContractDays": null
       },
       {
         "id": "3489998",
         "clubFrom": {
           "id": "131",
-          "name": "FC Barcelona"
+          "name": "FC Barcelona",
+          "countryId": "157",
+          "countryName": "Spain",
+          "league": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
         },
         "clubTo": {
           "id": "583",
-          "name": "Paris Saint-Germain"
+          "name": "Paris Saint-Germain",
+          "countryId": "50",
+          "countryName": "France",
+          "league": {
+            "id": "FR1",
+            "name": "Ligue 1"
+          }
         },
         "date": "2021-08-10",
         "upcoming": false,
         "transferType": "freeTransfer",
         "season": "21/22",
         "marketValue": 80000000,
-        "fee": null
+        "fee": null,
+        "age": 34,
+        "contractUntil": "2023-06-30",
+        "remainingContractDays": null
       },
       {
         "id": "48265",
         "clubFrom": {
           "id": "2464",
-          "name": "FC Barcelona Atlètic"
+          "name": "FC Barcelona Atlètic",
+          "countryId": "157",
+          "countryName": "Spain",
+          "league": {
+            "id": "ES3C",
+            "name": "Segunda División B - Grupo III (-20/21)"
+          }
         },
         "clubTo": {
           "id": "131",
-          "name": "FC Barcelona"
+          "name": "FC Barcelona",
+          "countryId": "157",
+          "countryName": "Spain",
+          "league": {
+            "id": "ES1",
+            "name": "LaLiga"
+          }
         },
         "date": "2005-07-01",
         "upcoming": false,
         "transferType": "internal",
         "season": "05/06",
         "marketValue": 3000000,
-        "fee": null
+        "fee": null,
+        "age": 18,
+        "contractUntil": "2021-06-30",
+        "remainingContractDays": null
       },
       {
         "id": "153557",
         "clubFrom": {
           "id": "63954",
-          "name": "FC Barcelona C (- 2007)"
+          "name": "FC Barcelona C (- 2007)",
+          "countryId": "157",
+          "countryName": "Spain",
+          "league": null
         },
         "clubTo": {
           "id": "2464",
-          "name": "FC Barcelona Atlètic"
+          "name": "FC Barcelona Atlètic",
+          "countryId": "157",
+          "countryName": "Spain",
+          "league": {
+            "id": "ES3C",
+            "name": "Segunda División B - Grupo III (-20/21)"
+          }
         },
         "date": "2004-03-05",
         "upcoming": false,
         "transferType": "internal",
         "season": "03/04",
         "marketValue": null,
-        "fee": null
+        "fee": null,
+        "age": 16,
+        "contractUntil": null,
+        "remainingContractDays": null
       },
       {
         "id": "1993882",
         "clubFrom": {
           "id": "2470",
-          "name": "FC Barcelona U19"
+          "name": "FC Barcelona U19",
+          "countryId": "157",
+          "countryName": "Spain",
+          "league": null
         },
         "clubTo": {
           "id": "63954",
-          "name": "FC Barcelona C (- 2007)"
+          "name": "FC Barcelona C (- 2007)",
+          "countryId": "157",
+          "countryName": "Spain",
+          "league": null
         },
         "date": "2003-11-28",
         "upcoming": false,
         "transferType": "internal",
         "season": "03/04",
         "marketValue": null,
-        "fee": null
+        "fee": null,
+        "age": 16,
+        "contractUntil": null,
+        "remainingContractDays": null
       },
       {
         "id": "1136539",
         "clubFrom": {
           "id": "14321",
-          "name": "FC Barcelona U16"
+          "name": "FC Barcelona U16",
+          "countryId": "157",
+          "countryName": "Spain",
+          "league": null
         },
         "clubTo": {
           "id": "2470",
-          "name": "FC Barcelona U19"
+          "name": "FC Barcelona U19",
+          "countryId": "157",
+          "countryName": "Spain",
+          "league": null
         },
         "date": "2003-09-13",
         "upcoming": false,
         "transferType": "internal",
         "season": "03/04",
         "marketValue": null,
-        "fee": null
+        "fee": null,
+        "age": 16,
+        "contractUntil": null,
+        "remainingContractDays": null
       },
       {
         "id": "2326361",
         "clubFrom": {
           "id": "70295",
-          "name": "FC Barcelona Youth"
+          "name": "FC Barcelona Youth",
+          "countryId": "157",
+          "countryName": "Spain",
+          "league": null
         },
         "clubTo": {
           "id": "14321",
-          "name": "FC Barcelona U16"
+          "name": "FC Barcelona U16",
+          "countryId": "157",
+          "countryName": "Spain",
+          "league": null
         },
         "date": "2002-07-01",
         "upcoming": false,
         "transferType": "internal",
         "season": "02/03",
         "marketValue": null,
-        "fee": null
+        "fee": null,
+        "age": 15,
+        "contractUntil": null,
+        "remainingContractDays": null
       },
       {
         "id": "181327",
         "clubFrom": {
           "id": "92364",
-          "name": "CA Newell's Old Boys Juveniles"
+          "name": "CA Newell's Old Boys Juveniles",
+          "countryId": "9",
+          "countryName": "Argentina",
+          "league": null
         },
         "clubTo": {
           "id": "70295",
-          "name": "FC Barcelona Youth"
+          "name": "FC Barcelona Youth",
+          "countryId": "157",
+          "countryName": "Spain",
+          "league": null
         },
         "date": "2000-07-01",
         "upcoming": false,
         "transferType": "freeTransfer",
         "season": "00/01",
         "marketValue": null,
-        "fee": null
+        "fee": null,
+        "age": 13,
+        "contractUntil": null,
+        "remainingContractDays": null
       }
     ],
     "youthClubs": [

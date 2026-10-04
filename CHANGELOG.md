@@ -9,6 +9,7 @@
 - Club profiles add `shortName`, `abbreviation`, `clubCode`, and `historicalNames` with season IDs. `squad` adds `domesticPlayers`, `averageMarketValue`, `acquisitionValue`, `top18PlayersMarketValue` and `top18SharePercentage`. Domestic players are those with the club country's nationality, not a count of locally trained players; acquisition value is the cost of the current squad, not all historical transfer spending.
 - Club profiles add `stadium`: address, country, coordinates, construction and renovation years, pitch dimensions and surface, capacity (including international capacity), website and images. `stadiumName` and `stadiumSeats` remain available. Missing stadiums and unavailable details are null.
 - Club squads add each player's `shirtNumber` and `isCaptain` from the selected season's squad, including past seasons and players whose individual record is missing.
+- Player transfers add `age`, `contractUntil` (the agreed contract end date) and `remainingContractDays` (the remaining contract at the time of the transfer). `clubFrom` and `clubTo` add country IDs and names and `league` (ID and name), using the country and league recorded for that transfer rather than the club's current league. Missing data stays null.
 
 ## 4.1.0 — 2026-10-04
 

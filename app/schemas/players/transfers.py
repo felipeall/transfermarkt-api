@@ -4,9 +4,17 @@ from typing import Literal, Optional
 from app.schemas.base import AuditMixin, TransfermarktBaseModel
 
 
+class PlayerTransferLeague(TransfermarktBaseModel):
+    id: str
+    name: Optional[str] = None
+
+
 class PlayerTransferClub(TransfermarktBaseModel):
     id: str
     name: Optional[str] = None
+    country_id: Optional[str] = None
+    country_name: Optional[str] = None
+    league: Optional[PlayerTransferLeague] = None
 
 
 class PlayerTransfer(TransfermarktBaseModel):
@@ -19,6 +27,9 @@ class PlayerTransfer(TransfermarktBaseModel):
     season: Optional[str] = None
     market_value: Optional[int] = None
     fee: Optional[int] = None
+    age: Optional[int] = None
+    contract_until: Optional[datetime.date] = None
+    remaining_contract_days: Optional[int] = None
 
 
 class PlayerTransfers(TransfermarktBaseModel, AuditMixin):
