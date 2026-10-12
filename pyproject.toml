@@ -1,6 +1,6 @@
 [project]
 name = "transfermarkt-api"
-version = "4.3.0"
+version = "5.0.0"
 description = "Async Python SDK and HTTP service for Transfermarkt data"
 authors = [{ name = "Felipe Allegretti", email = "felipe@allegretti.me" }]
 license = { text = "MIT" }

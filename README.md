@@ -19,6 +19,8 @@ pip install transfermarkt-api
 # pip install .
 ```
 
+Release setup and the publishing procedure are documented in [Python package releases](docs/releases.md).
+
 ```python
 import asyncio
 
