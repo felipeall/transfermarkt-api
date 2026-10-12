@@ -21,12 +21,11 @@ under `transfermarkt_api.exceptions`, also re-exported from the package root. Pr
 nullability and camel-case JSON aliases. Methods return validated Pydantic models, not the dictionaries currently
 returned by services. `model_dump(mode="json", by_alias=True)` produces the HTTP representation.
 
-Proposed constructor contract:
+Proposed constructor contract (omitting `base_url` uses the built-in upstream endpoint):
 
 ```python
 Transfermarkt(
     *,
-    base_url="https://tmapi.transfermarkt.technology",
     timeout=15.0,
     max_concurrency=10,
     transport=None,

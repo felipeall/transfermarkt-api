@@ -11,7 +11,7 @@ the consumer is itself a Python program that could call the same code in-process
 
 Calling the service also hides the upstream traffic. One `/clubs/{id}/players` call fans out to `/club/{id}/squad`,
 `/attributes`, batched `/players` and `/clubs`, and one `/transfer/history/player/{id}` per player. A consumer that
-wants to rate-limit, proxy, record or replay requests to `tmapi.transfermarkt.technology` cannot, because it only
+wants to rate-limit, proxy, record or replay upstream requests cannot, because it only
 sees the service's assembled output.
 
 Most of what an SDK needs already exists. `TfmktClient` accepts an `httpx.AsyncBaseTransport`. Services are plain
