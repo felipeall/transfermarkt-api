@@ -157,8 +157,9 @@ for the same recorded responses and timestamps. Server shutdown closes the share
 
 ### 5. Package and release
 
-- Add a PEP 517 build backend, remove `tool.uv.package = false`, and explicitly include `transfermarkt_api`, `app`
-  and `transfermarkt_api/py.typed` in distribution artifacts. Exclude tests, fixtures and local configuration.
+- Add a PEP 517 build backend, remove `tool.uv.package = false`, and include only `transfermarkt_api` and its
+  `py.typed` marker in the wheel. Retain `app` in the source distribution and Docker image for running the service
+  from source; never install a generic top-level `app` package. Exclude tests, fixtures and local configuration.
 - Core dependency ranges cover `httpx`, `pydantic` and `cachetools`; put FastAPI, uvicorn, `limits` and
   `pydantic-settings` in `[project.optional-dependencies].server`. Use the ADR's `pydantic>=2.13,<3` baseline;
   choose compatible bounds for the remaining dependencies from the APIs actually used. Regenerate `uv.lock`.

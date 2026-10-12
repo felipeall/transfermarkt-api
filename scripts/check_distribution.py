@@ -23,6 +23,10 @@ async def main() -> None:
     installed = distribution("transfermarkt-api")
     assert installed.version == __version__
     assert any(str(path) == "transfermarkt_api/py.typed" for path in installed.files or [])
+    package_roots = {
+        path.parts[0] for path in installed.files or [] if path.suffix == ".py" and ".dist-info" not in path.parts[0]
+    }
+    assert package_roots == {"transfermarkt_api"}, package_roots
     core_requirements = [requirement for requirement in installed.requires or [] if ";" not in requirement]
     assert len(core_requirements) == 3
     assert all("==" not in requirement for requirement in core_requirements)

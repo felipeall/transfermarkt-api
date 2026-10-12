@@ -25,7 +25,7 @@ requires = ["hatchling>=1.27,<2"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["transfermarkt_api", "app"]
+packages = ["transfermarkt_api"]
 
 [tool.hatch.build.targets.sdist]
 include = ["transfermarkt_api", "app", "README.md", "LICENSE", "pyproject.toml"]

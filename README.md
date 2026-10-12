@@ -100,8 +100,9 @@ async with Transfermarkt(transport=ReplayTransport(records), cache=None) as tm:
 assert captured == replayed
 ```
 
-The examples are repository files, not modules installed by the wheel. To run the HTTP service from a package
-installation, install `transfermarkt-api[server]` and use `uvicorn app.main:app`.
+The examples and HTTP server are repository files. The wheel installs only the `transfermarkt_api` package,
+avoiding collisions with a consumer's own `app` package. The `server` extra installs the server dependencies;
+run `uvicorn app.main:app` from a repository checkout, or use the Docker image.
 
 ### API Swagger
 https://transfermarkt-api.fly.dev/
