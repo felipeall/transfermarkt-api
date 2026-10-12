@@ -1,13 +1,12 @@
 from fastapi import APIRouter
 
-from app.schemas.games import Game
-from app.services.games import game
-from app.tfmkt import Tfmkt
+from app.api.dependencies import Tfmkt
+from transfermarkt_api.schemas.games import Game
 
 router = APIRouter()
 
 
-@router.get("/{game_id}", response_model=Game)
-async def get_game(game_id: str, tfmkt: Tfmkt) -> dict:
+@router.get("/{game_id}")
+async def get_game(game_id: str, tfmkt: Tfmkt) -> Game:
     """Get a match: score, lineups, coaches, stadium and events (goals, cards, substitutions)."""
-    return await game.get_game(tfmkt, game_id)
+    return await tfmkt.game(game_id)

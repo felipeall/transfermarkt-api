@@ -1,5 +1,19 @@
 # Changelog
 
+## 5.0.0 — 2026-10-12
+
+### Added
+
+- Installable async Python SDK: `from transfermarkt_api import Transfermarkt`, with typed response models for every data endpoint, async context management, explicit configuration, and caller-supplied `httpx` transports.
+- `CacheConfig` for per-client cache settings; `cache=None` disables ordinary and reference caches.
+- Public SDK exceptions distinguish unknown entities, blocked requests, timeouts, invalid upstream responses and unavailable endpoints. Custom transport exceptions and cancellation propagate unchanged.
+- Transport timestamp metadata and recording/replay examples preserve `updatedAt` when reassembling stored upstream responses. Fan-out cancels and awaits sibling work before propagating failures.
+
+### Changed
+
+- The HTTP service consumes the SDK while retaining its routes, response models, error statuses, environment settings and rate limits. Schemas, services and upstream internals moved out of `app`; the supported library API is the facade, models, exceptions and cache configuration.
+- Core installations require only httpx, Pydantic and cachetools, with compatible dependency ranges. Install the `server` extra for FastAPI, uvicorn, rate limiting and environment settings. The existing `app.main:app` server entry point is retained.
+
 ## 4.2.0 — 2026-10-04
 
 ### Added

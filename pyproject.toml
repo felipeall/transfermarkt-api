@@ -1,20 +1,34 @@
 [project]
 name = "transfermarkt-api"
-version = "4.2.0"
-description = "API service to get data from Transfermarkt"
+version = "5.0.0"
+description = "Async Python SDK and HTTP service for Transfermarkt data"
 authors = [{ name = "Felipe Allegretti", email = "felipe@allegretti.me" }]
 license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
 dependencies = [
-    "cachetools==7.2.0",
-    "fastapi==0.142.2",
-    "httpx==0.28.1",
-    "limits==5.8.0",
-    "pydantic==2.13.5",
-    "pydantic-settings==2.15.0",
-    "uvicorn[standard]==0.54.0",
+    "cachetools>=7.2,<8",
+    "httpx>=0.28.1,<1",
+    "pydantic>=2.13,<3",
 ]
+
+[project.optional-dependencies]
+server = [
+    "fastapi>=0.142.2,<1",
+    "limits>=5.8,<6",
+    "pydantic-settings>=2.15,<3",
+    "uvicorn[standard]>=0.54,<1",
+]
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["transfermarkt_api"]
+
+[tool.hatch.build.targets.sdist]
+include = ["transfermarkt_api", "app", "README.md", "LICENSE", "pyproject.toml"]
 
 [dependency-groups]
 dev = [
@@ -22,10 +36,8 @@ dev = [
     "pytest==9.1.1",
     "pytest-cov==7.1.0",
     "ruff==0.16.10",
+    "pyright>=1.1.400,<2",
 ]
-
-[tool.uv]
-package = false
 
 [tool.ruff]
 preview = true

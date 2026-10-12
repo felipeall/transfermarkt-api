@@ -1,0 +1,9 @@
+from transfermarkt_api.schemas.players.absences import PlayerAbsences as PlayerAbsences
+from transfermarkt_api.schemas.players.injuries import PlayerInjuries as PlayerInjuries
+from transfermarkt_api.schemas.players.market_value import PlayerMarketValue as PlayerMarketValue
+from transfermarkt_api.schemas.players.matches import PlayerMatches as PlayerMatches
+from transfermarkt_api.schemas.players.national_career import PlayerNationalCareer as PlayerNationalCareer
+from transfermarkt_api.schemas.players.profile import PlayerProfile as PlayerProfile
+from transfermarkt_api.schemas.players.search import PlayerSearch as PlayerSearch
+from transfermarkt_api.schemas.players.stats import PlayerStats as PlayerStats
+from transfermarkt_api.schemas.players.transfers import PlayerTransfers as PlayerTransfers

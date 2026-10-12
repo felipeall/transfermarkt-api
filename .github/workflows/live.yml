@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - "app/tfmkt/**"
+      - "transfermarkt_api/**"
       - ".github/workflows/live.yml"
 
 jobs:
@@ -19,6 +19,6 @@ jobs:
         with:
           version: "0.12.23"
           enable-cache: true
-      - run: uv sync --frozen
+      - run: uv sync --frozen --extra server
       - name: pytest -m live
         run: uv run pytest -m live

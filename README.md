@@ -1,6 +1,6 @@
 # transfermarkt-api
 
-A RESTful API (FastAPI) for football data from [Transfermarkt](https://www.transfermarkt.com/): players, clubs and competitions.
+An async Python SDK and RESTful API (FastAPI) for football data from [Transfermarkt](https://www.transfermarkt.com/): players, clubs and competitions.
 
 Since version 4.0.0, data comes from Transfermarkt's JSON API (`tmapi.transfermarkt.technology`), the same API the website uses, instead of scraping HTML pages. The website blocks requests from most cloud hosts, which broke v3 deployments; the JSON API does not. See [CHANGELOG.md](CHANGELOG.md) for what changed in the response format.
 
@@ -8,6 +8,104 @@ Please note that the deployed application is used only for testing purposes and 
 every 3 seconds per client IP. If you'd like to customize it, consider hosting in your own cloud service.
 
 The JSON API is internal to Transfermarkt and undocumented: it can change without notice. This project's MIT license covers its code, not the data; check [Transfermarkt's terms](https://www.transfermarkt.com/intern/) before using the data in your own services.
+
+### Python SDK
+
+Install the library without server dependencies:
+
+```bash
+pip install transfermarkt-api
+# Until the SDK release is published, install from this repository:
+# pip install .
+```
+
+Release setup and the publishing procedure are documented in [Python package releases](docs/releases.md).
+
+```python
+import asyncio
+
+from transfermarkt_api import Transfermarkt
+
+
+async def main() -> None:
+    async with Transfermarkt() as tm:
+        squad = await tm.club_players("985")
+        for player in squad.players:
+            print(player.shirt_number, player.name, player.position, player.market_value)
+        print(squad.model_dump(mode="json", by_alias=True))
+
+
+asyncio.run(main())
+```
+
+The facade has one method per data endpoint: `player_profile`, `player_transfers`, `club_players`,
+`competition_clubs`, `competition_table`, `game`, and the remaining methods listed in the
+[SDK method table](docs/plans/0001-python-sdk.md#public-contract). Methods return typed Pydantic models exported
+from `transfermarkt_api.schemas`. Nested models remain available in their resource modules. Use string entity
+and season IDs, integer country IDs, and 1-based page numbers. Calls return one page; callers control pagination.
+
+Constructor settings are explicit: `base_url`, `timeout` (seconds, `httpx.Timeout`, or `None`),
+`max_concurrency` (default `10`), `transport`, and `cache`. The SDK reads no `.env` or environment settings on import.
+`CacheConfig(ttl=600, reference_ttl=86400, max_entries=2000)` configures per-client caching. Pass `cache=None` to
+disable both response and reference caches so every request reaches the transport.
+
+One client supports concurrent calls within one event loop. Its async context manager, or explicit `aclose()`,
+closes the HTTP client and supplied transport. Do not share a supplied transport across client lifetimes unless
+your wrapper owns and controls its closure. Cache hits remain local to each SDK instance.
+
+The SDK raises `NotFound`, `UpstreamBlocked`, `UpstreamTimeout`, `UpstreamError`, or `EndpointUnavailable`, all
+derived from `TransfermarktError` and exported at the package root. Available upstream URL/status metadata lives
+on `error.url` and `error.status_code`; the status is the upstream status, not the server's mapped HTTP status.
+The unsupported `player_jersey_numbers` method raises `EndpointUnavailable` without fetching data.
+Invalid constructor/page/country arguments raise `ValueError`. Custom transport exceptions propagate unchanged.
+
+### Custom transports and replay
+
+Supply an `httpx.AsyncBaseTransport` to control every upstream request, including reference lookups, batches,
+and per-player fan-out. The SDK bounds in-flight concurrency; the caller's transport owns rate limits, retries,
+proxy selection, recording and circuit breakers. The SDK performs no automatic retries.
+
+```python
+import httpx
+
+from transfermarkt_api import Transfermarkt
+
+# Run inside an async function. A custom browser-capable backend can implement the same transport interface.
+async with Transfermarkt(
+    transport=httpx.AsyncHTTPTransport(proxy="http://127.0.0.1:8080"),
+    cache=None,
+) as tm:
+    squad = await tm.club_players("985", season_id="2024")
+```
+
+[Recording and replay examples](examples/transports.py) wrap a caller-selected backend and save the response
+before SDK parsing. Persist the method, full URL with repeated query parameters, status, relevant headers (including
+`x-amzn-waf-action`), decoded body, and original fetch timestamp. The example store is in memory; replace it with
+durable storage in your application. When reconstructing decoded responses, drop content-encoding/content-length
+headers so the body is not decoded twice.
+
+A replay transport returns an `httpx.Response` with
+`extensions={"transfermarkt_fetched_at": captured_datetime}`. This optional metadata accepts naive or timezone-aware
+datetimes. Aware inputs are converted to UTC; naive inputs are interpreted as UTC. `updatedAt` retains its existing
+JSON shape without a timezone suffix and always represents UTC. Without metadata, it reports the current UTC fetch
+time. Each model reports the oldest fetch time used in that call, including cache hits. Exact replay
+needs the same response bodies and timestamps. Missing recordings must raise a transport error rather than fetch
+live data. Batch URLs are stable; concurrent request completion order is not part of the replay key.
+
+```python
+from examples.transports import RecordingTransport, ReplayTransport
+
+records = {}
+async with Transfermarkt(transport=RecordingTransport(httpx.AsyncHTTPTransport(), records), cache=None) as tm:
+    captured = await tm.club_players("985")
+async with Transfermarkt(transport=ReplayTransport(records), cache=None) as tm:
+    replayed = await tm.club_players("985")
+assert captured == replayed
+```
+
+The examples and HTTP server are repository files. The wheel installs only the `transfermarkt_api` package,
+avoiding collisions with a consumer's own `app` package. The `server` extra installs the server dependencies;
+run `uvicorn app.main:app` from a repository checkout, or use the Docker image.
 
 ### API Swagger
 https://transfermarkt-api.fly.dev/
@@ -57,7 +155,7 @@ $ git clone https://github.com/felipeall/transfermarkt-api.git
 $ cd transfermarkt-api
 
 # Install Python 3.12 and the dependencies
-$ uv sync
+$ uv sync --extra server
 
 # Start the API server
 $ uv run uvicorn app.main:app --reload
@@ -70,10 +168,10 @@ $ open http://localhost:8000/
 
 ````bash
 # Offline tests (recorded upstream responses, no network)
-$ uv run pytest
+$ uv run --extra server pytest
 
 # Live smoke tests against Transfermarkt's JSON API
-$ uv run pytest -m live
+$ uv run --extra server pytest -m live
 
 # Re-record upstream fixtures and response snapshots
 $ rm -rf tests/fixtures/tfmkt && uv run python scripts/capture_fixtures.py
