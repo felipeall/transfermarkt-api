@@ -11,7 +11,7 @@ from fastapi.testclient import TestClient
 from app.api.dependencies import get_tfmkt
 from app.main import app
 from tests.snapshots import BASELINE_V3_DIR
-from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api import Transfermarkt
 
 
 def ok(data: object) -> httpx.Response:
@@ -34,11 +34,14 @@ def synthetic_client() -> Iterator[tuple[TestClient, dict]]:
             return httpx.Response(404, json={"success": False, "message": "not found"})
         return ok(routes[path])
 
-    tfmkt = TfmktClient(base_url="https://tfmkt.test", transport=httpx.MockTransport(handler))
+    tfmkt = Transfermarkt(base_url="https://tfmkt.test", transport=httpx.MockTransport(handler))
     app.dependency_overrides[get_tfmkt] = lambda: tfmkt
     with TestClient(app, raise_server_exceptions=False) as client:
-        yield client, routes
-    app.dependency_overrides.clear()
+        try:
+            yield client, routes
+        finally:
+            client.portal.call(tfmkt.aclose)
+            app.dependency_overrides.clear()
 
 
 def test_jersey_numbers_without_json_source_return_501(client: TestClient) -> None:
@@ -159,8 +162,8 @@ def test_updated_at_reports_when_cached_data_was_fetched(client: TestClient) -> 
     client.get("/players/28003/profile")
     tfmkt = app.dependency_overrides[get_tfmkt]()
     fetched_at = datetime(2026, 1, 2, 3, 4, 5)
-    for key, (_, data) in list(tfmkt.cache.items()):
-        tfmkt.cache[key] = (fetched_at, data)
+    for key, (_, data) in list(tfmkt._client.cache.items()):
+        tfmkt._client.cache[key] = (fetched_at, data)
 
     body = client.get("/players/28003/profile").json()
 

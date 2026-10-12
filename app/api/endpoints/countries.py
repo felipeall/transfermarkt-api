@@ -1,15 +1,12 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 
 from app.api.dependencies import Tfmkt
-from transfermarkt_api.schemas.countries import Countries
+from transfermarkt_api.schemas import Countries
 
 router = APIRouter()
 
 
-@router.get("/", response_model=Countries)
-async def list_countries(tfmkt: Tfmkt) -> dict:
-    """List country reference IDs, including historical entries, for use in country-filtered endpoints."""
-    countries = (await tfmkt.attributes()).get("countries")
-    if not isinstance(countries, list) or not all(isinstance(country, dict) for country in countries):
-        raise HTTPException(status_code=502, detail="Unexpected upstream payload for /attributes countries")
-    return {"countries": countries}
+@router.get("/")
+async def list_countries(tfmkt: Tfmkt) -> Countries:
+    """List country reference metadata, including historical entries."""
+    return await tfmkt.countries()

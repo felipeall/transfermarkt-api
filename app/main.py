@@ -10,10 +10,9 @@ from starlette.responses import JSONResponse, RedirectResponse, Response
 from app.api.api import api_router
 from app.rate_limit import RateLimiter
 from app.settings import settings
+from transfermarkt_api import Transfermarkt
 from transfermarkt_api.cache import CacheConfig
 from transfermarkt_api.exceptions import EndpointUnavailable, NotFound, UpstreamBlocked, UpstreamError, UpstreamTimeout
-from transfermarkt_api.tfmkt import TfmktClient
-from transfermarkt_api.tfmkt.freshness import track_fetches
 
 access_log = logging.getLogger("uvicorn.error")
 
@@ -35,7 +34,7 @@ limiter = RateLimiter(settings.RATE_LIMITING_FREQUENCY, enabled=settings.RATE_LI
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     """Create the shared tfmkt client on startup and close it on shutdown."""
-    app.state.tfmkt = TfmktClient(
+    app.state.tfmkt = Transfermarkt(
         base_url=settings.TFMKT_BASE_URL,
         timeout=settings.TFMKT_TIMEOUT_SECONDS,
         max_concurrency=settings.TFMKT_MAX_CONCURRENCY,
@@ -45,8 +44,10 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
             max_entries=settings.CACHE_MAX_ENTRIES,
         ),
     )
-    yield
-    await app.state.tfmkt.aclose()
+    try:
+        yield
+    finally:
+        await app.state.tfmkt.aclose()
 
 
 app = FastAPI(
@@ -67,7 +68,10 @@ app.include_router(api_router)
 async def sdk_error_response(request: Request, error: Exception) -> JSONResponse:
     """Translate SDK failures into the existing HTTP error contract."""
     statuses = {NotFound: 404, UpstreamBlocked: 503, UpstreamTimeout: 504, UpstreamError: 502, EndpointUnavailable: 501}
-    return JSONResponse({"detail": str(error)}, status_code=statuses[type(error)])
+    return JSONResponse(
+        {"detail": str(error)},
+        status_code=next(status for error_type, status in statuses.items() if isinstance(error, error_type)),
+    )
 
 
 for error_type in (NotFound, UpstreamBlocked, UpstreamTimeout, UpstreamError, EndpointUnavailable):
@@ -90,13 +94,8 @@ async def rate_limit(request: Request, call_next: RequestResponseEndpoint) -> Re
 
 
 @app.middleware("http")
-async def track_upstream_fetches(request: Request, call_next: RequestResponseEndpoint) -> Response:
-    """
-    Start a per-request record of upstream fetch times, used for `updatedAt`, and log the request.
-
-    Replaces uvicorn's access log, which on Fly.io shows the proxy's address: this one shows `client_ip`.
-    """
-    track_fetches()
+async def log_request(request: Request, call_next: RequestResponseEndpoint) -> Response:
+    """Log HTTP requests using the client address resolved for rate limiting."""
     status = 500
     try:
         response = await call_next(request)

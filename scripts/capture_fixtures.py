@@ -18,18 +18,18 @@ from typing import Any
 
 import httpx2
 
-from app.api.dependencies import get_tfmkt
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from fastapi.testclient import TestClient  # noqa: E402
 
+from app.api.dependencies import get_tfmkt  # noqa: E402
 from app.main import app  # noqa: E402
 from tests.cases import CASES  # noqa: E402
 from tests.snapshots import SNAPSHOTS_DIR, normalize  # noqa: E402
 from tests.upstream import FixtureStore, RecordingTransport  # noqa: E402
-from transfermarkt_api.tfmkt import TfmktClient  # noqa: E402
+from transfermarkt_api import Transfermarkt  # noqa: E402
 
 
 def parse_body(response: httpx2.Response) -> Any:
@@ -48,17 +48,21 @@ def is_failure(status: int) -> bool:
 def main(filters: list[str]) -> int:
     """Serve every matching case against live upstreams, then record fixtures and snapshots if none failed."""
     tfmkt_store = FixtureStore("tfmkt")
-    tfmkt = TfmktClient(transport=RecordingTransport(tfmkt_store))
+    tfmkt = Transfermarkt(transport=RecordingTransport(tfmkt_store))
     app.dependency_overrides[get_tfmkt] = lambda: tfmkt
 
     snapshots = {}
     with TestClient(app, raise_server_exceptions=False) as client:
-        for name, path in CASES:
-            if filters and not any(f in name for f in filters):
-                continue
-            response = client.get(path)
-            snapshots[name] = {"status": response.status_code, "body": normalize(parse_body(response))}
-            print(f"{response.status_code} {path}")
+        try:
+            for name, path in CASES:
+                if filters and not any(f in name for f in filters):
+                    continue
+                response = client.get(path)
+                snapshots[name] = {"status": response.status_code, "body": normalize(parse_body(response))}
+                print(f"{response.status_code} {path}")
+        finally:
+            client.portal.call(tfmkt.aclose)
+            app.dependency_overrides.clear()
 
     failed = [name for name, snapshot in snapshots.items() if is_failure(snapshot["status"])]
     if failed:

@@ -2,12 +2,12 @@ from typing import Annotated
 
 from fastapi import Depends, Request
 
-from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api import Transfermarkt
 
 
-def get_tfmkt(request: Request) -> TfmktClient:
+def get_tfmkt(request: Request) -> Transfermarkt:
     """Return the shared upstream client created during server startup."""
     return request.app.state.tfmkt
 
 
-Tfmkt = Annotated[TfmktClient, Depends(get_tfmkt)]
+Tfmkt = Annotated[Transfermarkt, Depends(get_tfmkt)]
