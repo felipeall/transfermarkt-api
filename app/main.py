@@ -10,7 +10,7 @@ from starlette.responses import JSONResponse, RedirectResponse, Response
 from app.api.api import api_router
 from app.rate_limit import RateLimiter
 from app.settings import settings
-from transfermarkt_api import Transfermarkt
+from transfermarkt_api import Transfermarkt, __version__
 from transfermarkt_api.cache import CacheConfig
 from transfermarkt_api.exceptions import EndpointUnavailable, NotFound, UpstreamBlocked, UpstreamError, UpstreamTimeout
 
@@ -52,7 +52,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 app = FastAPI(
     title="Transfermarkt API",
-    version="4.2.0",
+    version=__version__,
     description="Football data from Transfermarkt's JSON API: players, clubs and competitions.",
     lifespan=lifespan,
 )

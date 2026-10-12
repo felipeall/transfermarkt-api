@@ -8,17 +8,40 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12", "3.13"]
     steps:
       - uses: actions/checkout@v7.0.1
       - uses: astral-sh/setup-uv@v10.2.0
         with:
           version: "0.12.23"
           enable-cache: true
+          python-version: ${{ matrix.python-version }}
       - name: Install dependencies
-        run: uv sync --frozen
+        run: uv sync --frozen --extra server
       - name: ruff check
-        run: uv run ruff check .
+        run: uv run --extra server ruff check .
       - name: ruff format
-        run: uv run ruff format --check .
+        run: uv run --extra server ruff format --check .
       - name: pytest
-        run: uv run pytest
+        run: uv run --extra server pytest
+      - name: Public SDK types
+        run: uv run --extra server pyright examples/sdk_types.py
+      - name: Build wheel and sdist
+        run: uv build
+      - name: Check core-only wheel outside the checkout
+        shell: bash
+        run: |
+          uv venv "$RUNNER_TEMP/sdk-core"
+          uv pip install --python "$RUNNER_TEMP/sdk-core/bin/python" dist/*.whl
+          cp scripts/check_distribution.py "$RUNNER_TEMP/check_distribution.py"
+          cd "$RUNNER_TEMP"
+          "$RUNNER_TEMP/sdk-core/bin/python" check_distribution.py
+      - name: Rebuild wheel from sdist
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/sdk-sdist"
+          tar -xzf dist/*.tar.gz -C "$RUNNER_TEMP/sdk-sdist"
+          sources=("$RUNNER_TEMP/sdk-sdist"/*)
+          uv build --wheel "${sources[0]}" --out-dir "$RUNNER_TEMP/rebuilt"

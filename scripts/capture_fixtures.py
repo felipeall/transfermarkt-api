@@ -18,7 +18,6 @@ from typing import Any
 
 import httpx2
 
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 

@@ -11,6 +11,7 @@ import httpx
 import pytest
 from pydantic import BaseModel
 
+from examples.transports import RecordedResponse, RecordingTransport, ReplayTransport
 from tests.cases import CASES
 from tests.snapshots import SNAPSHOTS_DIR, normalize
 from tests.upstream import FixtureStore
@@ -88,6 +89,39 @@ async def test_uncached_squad_replays_complete_request_graph(tfmkt_store: Fixtur
     paths = {urlsplit(url).path for url in calls}
     assert {"/attributes", "/club/131/squad", "/players", "/clubs"} <= paths
     assert any(path.startswith("/transfer/history/player/") for path in paths)
+
+
+async def test_record_then_replay_exact_models(tfmkt_store: FixtureStore) -> None:
+    """The documented adapters capture upstream bytes and replay full models, including fetch time."""
+    records: dict[tuple[str, str], RecordedResponse] = {}
+    recording = RecordingTransport(fixture_transport(tfmkt_store, []), records)
+    async with Transfermarkt(transport=recording, cache=None) as tm:
+        original = await tm.club_players("131", season_id="2014")
+    assert records
+    async with Transfermarkt(transport=ReplayTransport(records), cache=None) as tm:
+        replayed = await tm.club_players("131", season_id="2014")
+    assert original.model_dump(mode="json", by_alias=True) == replayed.model_dump(mode="json", by_alias=True)
+    assert original.updated_at == min(record.fetched_at for record in records.values())
+
+
+async def test_recording_preserves_failures_before_parsing() -> None:
+    """Even malformed or blocked responses are recorded before SDK classification."""
+    records: dict[tuple[str, str], RecordedResponse] = {}
+    backend = httpx.MockTransport(
+        lambda request: httpx.Response(
+            200,
+            content=b"blocked",
+            headers={"x-amzn-waf-action": "challenge"},
+        )
+    )
+    from transfermarkt_api import UpstreamBlocked
+
+    async with Transfermarkt(transport=RecordingTransport(backend, records), cache=None) as tm:
+        with pytest.raises(UpstreamBlocked):
+            await tm.countries()
+    record = records[("GET", "https://tmapi.transfermarkt.technology/attributes")]
+    assert record.body == b"blocked"
+    assert ("x-amzn-waf-action", "challenge") in record.headers
 
 
 async def test_default_cache_and_client_isolation(tfmkt_store: FixtureStore) -> None:
