@@ -8,7 +8,9 @@ from typing import Any, Optional
 import httpx
 from cachetools import TTLCache
 
+from transfermarkt_api.cache import CacheConfig
 from transfermarkt_api.exceptions import NotFound, UpstreamBlocked, UpstreamError, UpstreamTimeout
+from transfermarkt_api.tfmkt.concurrency import gather
 from transfermarkt_api.tfmkt.freshness import record_fetch
 
 BATCH_SIZE = 100  # batch routes accepted 200 IDs in testing; stay well below
@@ -27,13 +29,16 @@ class TfmktClient:
         base_url: str = "https://tmapi.transfermarkt.technology",
         transport: Optional[httpx.AsyncBaseTransport] = None,
         *,
-        timeout: float | httpx.Timeout = 15.0,
+        timeout: float | httpx.Timeout | None = 15.0,
         max_concurrency: int = 10,
-        cache_ttl: int = 600,
-        reference_ttl: int = 86_400,
-        cache_max_entries: int = 2_000,
+        cache: CacheConfig | None = CacheConfig(),
     ) -> None:
         """Create the HTTP client, concurrency cap and response caches."""
+        url = httpx.URL(base_url)
+        if url.scheme not in ("http", "https") or not url.host or url.query or url.fragment:
+            raise ValueError("base_url must be an absolute HTTP(S) URL without query or fragment")
+        if not isinstance(max_concurrency, int) or isinstance(max_concurrency, bool) or max_concurrency < 1:
+            raise ValueError("max_concurrency must be a positive integer")
         self.http = httpx.AsyncClient(
             base_url=base_url,
             headers={"Accept": "application/json", "User-Agent": "transfermarkt-api"},
@@ -41,8 +46,8 @@ class TfmktClient:
             transport=transport,
         )
         self.semaphore = asyncio.Semaphore(max_concurrency)
-        self.cache: TTLCache = TTLCache(maxsize=cache_max_entries, ttl=cache_ttl)
-        self.reference_cache: TTLCache = TTLCache(maxsize=8, ttl=reference_ttl)
+        self.cache: TTLCache | None = TTLCache(maxsize=cache.max_entries, ttl=cache.ttl) if cache else None
+        self.reference_cache: TTLCache | None = TTLCache(maxsize=8, ttl=cache.reference_ttl) if cache else None
 
     async def aclose(self) -> None:
         """Close the underlying HTTP client."""
@@ -56,10 +61,12 @@ class TfmktClient:
             TransfermarktError: 404 when upstream does not know the entity, 503 when upstream challenges or rejects the
                 request, 504 on timeout and 502 for any other unexpected upstream response.
         """
+        if self.http.is_closed:
+            raise RuntimeError("Transfermarkt client is closed")
         request = self.http.build_request("GET", path, params=params)
         key = str(request.url)
         cache = self.reference_cache if reference else self.cache
-        if key in cache:
+        if cache is not None and key in cache:
             fetched_at, data = cache[key]
             record_fetch(fetched_at)
             return data
@@ -73,8 +80,11 @@ class TfmktClient:
                 raise UpstreamError(f"Upstream connection error for {path}: {e}", url=str(request.url)) from e
 
         data = self._parse(response, path)
-        fetched_at = datetime.now()
-        cache[key] = (fetched_at, data)
+        fetched_at = response.extensions.get("transfermarkt_fetched_at", datetime.now())
+        if not isinstance(fetched_at, datetime) or fetched_at.tzinfo is not None:
+            raise UpstreamError("transfermarkt_fetched_at must be a naive datetime", url=key)
+        if cache is not None:
+            cache[key] = (fetched_at, data)
         record_fetch(fetched_at)
         return data
 
@@ -113,7 +123,7 @@ class TfmktClient:
         """
         unique_ids = sorted({str(i) for i in ids if i not in (None, "")})
         chunks = [unique_ids[i : i + BATCH_SIZE] for i in range(0, len(unique_ids), BATCH_SIZE)]
-        results = await asyncio.gather(*(self.get(route, params=[("ids[]", i) for i in chunk]) for chunk in chunks))
+        results = await gather(*(self.get(route, params=[("ids[]", i) for i in chunk]) for chunk in chunks))
         return {str(entity["id"]): entity for data in results for entity in data or []}
 
     async def attributes(self) -> dict:

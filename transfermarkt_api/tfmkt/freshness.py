@@ -7,6 +7,8 @@ mutable list shared through a context variable, so fetches made inside `asyncio.
 the request.
 """
 
+from collections.abc import Iterator
+from contextlib import contextmanager
 from contextvars import ContextVar
 from datetime import datetime
 from typing import Optional
@@ -17,6 +19,16 @@ _fetch_times: ContextVar[Optional[list[datetime]]] = ContextVar("tfmkt_fetch_tim
 def track_fetches() -> None:
     """Start recording upstream fetch times for the current request."""
     _fetch_times.set([])
+
+
+@contextmanager
+def fetch_scope() -> Iterator[None]:
+    """Isolate one assembly operation, restoring the calling context even on failure."""
+    token = _fetch_times.set([])
+    try:
+        yield
+    finally:
+        _fetch_times.reset(token)
 
 
 def record_fetch(fetched_at: datetime) -> None:

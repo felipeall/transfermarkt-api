@@ -1,7 +1,7 @@
-import asyncio
 from typing import Optional
 
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 from transfermarkt_api.tfmkt.reference import (
     current_assignment,
     date_of_birth,
@@ -21,14 +21,14 @@ async def get_club_players(tfmkt: TfmktClient, club_id: str, season_id: Optional
     market value) are null rather than today's values, and `currentClub` names where the player is now.
     Every squad member is returned, even if its player record is missing upstream.
     """
-    squad, reference = await asyncio.gather(tfmkt.club_squad(club_id, season_id), get_reference(tfmkt))
+    squad, reference = await gather(tfmkt.club_squad(club_id, season_id), get_reference(tfmkt))
     members = squad.get("squad") or []
     player_ids = [str(m["playerId"]) for m in members]
     is_current = all(m.get("type") == "current" for m in members)
 
-    players, histories = await asyncio.gather(
+    players, histories = await gather(
         tfmkt.players(player_ids),
-        asyncio.gather(*(tfmkt.player_transfer_history(i) for i in player_ids)),
+        gather(*(tfmkt.player_transfer_history(i) for i in player_ids)),
     )
     max_season = int(season_id) if season_id and not is_current else None
     arrivals = {i: latest_arrival(history, club_id, max_season) for i, history in zip(player_ids, histories)}

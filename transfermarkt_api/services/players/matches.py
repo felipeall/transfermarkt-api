@@ -1,7 +1,7 @@
-import asyncio
 from typing import Optional
 
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 from transfermarkt_api.tfmkt.reference import get_reference, last_page_number
 
 PAGE_SIZE = 50
@@ -53,7 +53,7 @@ async def get_player_matches(
     games.sort(key=lambda game: (game["gameInformation"].get("date") or {}).get("dateTimeUTC") or "", reverse=True)
     page = games[(page_number - 1) * PAGE_SIZE : page_number * PAGE_SIZE]
 
-    competitions, clubs, reference = await asyncio.gather(
+    competitions, clubs, reference = await gather(
         tfmkt.competitions(game["gameInformation"]["competitionId"] for game in page),
         tfmkt.clubs(game["clubsInformation"][side]["clubId"] for game in page for side in ("club", "opponent")),
         get_reference(tfmkt),

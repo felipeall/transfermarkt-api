@@ -1,7 +1,7 @@
-import asyncio
 from typing import Optional
 
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 from transfermarkt_api.tfmkt.reference import get_reference, last_page_number, value_of
 
 
@@ -16,11 +16,11 @@ async def search_competitions(tfmkt: TfmktClient, query: str, page_number: int) 
     search = await tfmkt.quick_search(query, page_number)
     competition_ids = [str(i) for i in search["result"]["competitionIds"]]
 
-    competitions, reference, memberships = await asyncio.gather(
+    competitions, reference, memberships = await gather(
         tfmkt.competitions(competition_ids),
         get_reference(tfmkt),
         # some competitions (e.g. finished tournaments) may have no current membership
-        asyncio.gather(*(tfmkt.get_optional(f"/competition/{i}/club") for i in competition_ids)),
+        gather(*(tfmkt.get_optional(f"/competition/{i}/club") for i in competition_ids)),
     )
     club_ids_by_competition = {
         i: [str(c) for c in m["clubIds"]] if m else None for i, m in zip(competition_ids, memberships)

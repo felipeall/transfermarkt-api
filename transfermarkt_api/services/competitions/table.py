@@ -1,8 +1,8 @@
-import asyncio
 from typing import Optional
 
 from transfermarkt_api.exceptions import NotFound
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 
 
 async def get_competition_table(tfmkt: TfmktClient, competition_id: str, season_id: Optional[str] = None) -> dict:
@@ -11,7 +11,7 @@ async def get_competition_table(tfmkt: TfmktClient, competition_id: str, season_
 
     Group-stage competitions return one table per group; knockout-only competitions (cups) return no tables.
     """
-    data, competitions = await asyncio.gather(
+    data, competitions = await gather(
         tfmkt.competition_table(competition_id, season_id),
         tfmkt.competitions([competition_id]),
     )

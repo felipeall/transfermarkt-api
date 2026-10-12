@@ -1,6 +1,5 @@
-import asyncio
-
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 from transfermarkt_api.tfmkt.reference import (
     current_assignment,
     get_reference,
@@ -15,7 +14,7 @@ async def search_players(tfmkt: TfmktClient, query: str, page_number: int) -> di
     search = await tfmkt.quick_search(query, page_number)
     player_ids = [str(i) for i in search["result"]["playerIds"]]
 
-    players, reference = await asyncio.gather(tfmkt.players(player_ids), get_reference(tfmkt))
+    players, reference = await gather(tfmkt.players(player_ids), get_reference(tfmkt))
     assignments = {i: current_assignment(players.get(i, {})) for i in player_ids}
     clubs = await tfmkt.clubs(a["clubId"] for a in assignments.values() if a)
 

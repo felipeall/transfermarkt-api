@@ -1,8 +1,8 @@
-import asyncio
 from datetime import date
 from typing import Optional
 
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 from transfermarkt_api.tfmkt.reference import (
     RETIRED_CLUB_ID,
     current_assignment,
@@ -22,7 +22,7 @@ async def get_player_profile(tfmkt: TfmktClient, player_id: str) -> dict:
     A player is retired when assigned to Transfermarkt's special "Retired" club (ID 123); `retiredSince` is the start
     of that assignment and `club.lastClubId` names the club before it.
     """
-    player, reference = await asyncio.gather(tfmkt.player(player_id), get_reference(tfmkt))
+    player, reference = await gather(tfmkt.player(player_id), get_reference(tfmkt))
     attributes = player.get("attributes") or {}
     birth = player.get("birthPlaceDetails") or {}
     assignment = current_assignment(player) or {}

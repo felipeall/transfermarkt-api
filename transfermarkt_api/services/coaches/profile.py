@@ -1,6 +1,5 @@
-import asyncio
-
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 from transfermarkt_api.tfmkt.reference import Reference, date_of_birth, full_url, get_reference, nationality_ids
 
 
@@ -26,5 +25,5 @@ def coach_summary(coach: dict, reference: Reference) -> dict:
 
 async def get_coach_profile(tfmkt: TfmktClient, coach_id: str) -> dict:
     """Coach profile. The upstream record has no current club; use a club profile's `coach` for that."""
-    coach, reference = await asyncio.gather(tfmkt.coach(coach_id), get_reference(tfmkt))
+    coach, reference = await gather(tfmkt.coach(coach_id), get_reference(tfmkt))
     return coach_summary(coach, reference)

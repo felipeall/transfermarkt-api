@@ -1,6 +1,5 @@
-import asyncio
-
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 from transfermarkt_api.tfmkt.reference import get_reference, market_value_of, value_of
 
 
@@ -11,7 +10,7 @@ async def get_club_profile(tfmkt: TfmktClient, club_id: str) -> dict:
     `officialName`, the address and the colors come from the club's superior (parent) club record. For national
     teams that record is the football association, so `officialName` is omitted for them.
     """
-    club, squad, stadium, club_coach, reference = await asyncio.gather(
+    club, squad, stadium, club_coach, reference = await gather(
         tfmkt.club(club_id),
         tfmkt.club_squad(club_id),
         tfmkt.club_stadium(club_id),

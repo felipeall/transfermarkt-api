@@ -1,7 +1,6 @@
-import asyncio
-
 from transfermarkt_api.services.coaches.profile import coach_summary
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 from transfermarkt_api.tfmkt.reference import get_reference, last_page_number
 
 
@@ -9,7 +8,7 @@ async def search_coaches(tfmkt: TfmktClient, query: str, page_number: int) -> di
     """Search coaches by name. Results keep the upstream search ranking."""
     search = await tfmkt.quick_search(query, page_number)
     coach_ids = [str(i) for i in search["result"]["coachIds"]]
-    coaches, reference = await asyncio.gather(tfmkt.coaches(coach_ids), get_reference(tfmkt))
+    coaches, reference = await gather(tfmkt.coaches(coach_ids), get_reference(tfmkt))
 
     return {
         "query": query,

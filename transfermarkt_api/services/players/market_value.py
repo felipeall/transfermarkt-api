@@ -1,6 +1,5 @@
-import asyncio
-
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 from transfermarkt_api.tfmkt.reference import market_value_of
 
 
@@ -11,7 +10,7 @@ async def get_player_market_value(tfmkt: TfmktClient, player_id: str) -> dict:
     Club names are the clubs' current names. Only the worldwide ranking is available upstream; the v3 position,
     club and country rankings have no JSON source.
     """
-    data, ranking = await asyncio.gather(
+    data, ranking = await gather(
         tfmkt.player_market_value_history(player_id),
         tfmkt.player_market_value_ranking(player_id),
     )

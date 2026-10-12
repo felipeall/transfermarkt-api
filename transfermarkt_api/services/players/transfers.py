@@ -1,8 +1,8 @@
-import asyncio
 import re
 from typing import Optional
 
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 from transfermarkt_api.tfmkt.reference import get_reference, market_value_of, value_of
 
 # upstream typeDetails.type -> transferType; STANDARD is split into transfer and freeTransfer by its fee label
@@ -24,7 +24,7 @@ async def get_player_transfers(tfmkt: TfmktClient, player_id: str) -> dict:
     `fee` is null when upstream has no numeric fee: free transfers, loans without fee and unknown fees (`-`).
     `transferType` tells these apart: an unknown fee is a `transfer` with a null fee, never a `freeTransfer`.
     """
-    player, history, reference = await asyncio.gather(
+    player, history, reference = await gather(
         tfmkt.player(player_id),
         tfmkt.player_transfer_history(player_id),
         get_reference(tfmkt),
@@ -32,7 +32,7 @@ async def get_player_transfers(tfmkt: TfmktClient, player_id: str) -> dict:
     transfers = (history or {}).get("history") or {}
     records = (transfers.get("pending") or []) + (transfers.get("terminated") or [])
     sides = [side for record in records for side in (record["transferSource"], record["transferDestination"])]
-    clubs, competitions = await asyncio.gather(
+    clubs, competitions = await gather(
         tfmkt.clubs(side["clubId"] for side in sides),
         tfmkt.competitions(side.get("competitionId") for side in sides),
     )

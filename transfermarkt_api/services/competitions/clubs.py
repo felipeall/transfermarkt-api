@@ -1,8 +1,8 @@
-import asyncio
 from typing import Optional
 
 from transfermarkt_api.exceptions import NotFound
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 
 
 async def get_competition_clubs(tfmkt: TfmktClient, competition_id: str, season_id: Optional[str] = None) -> dict:
@@ -11,7 +11,7 @@ async def get_competition_clubs(tfmkt: TfmktClient, competition_id: str, season_
 
     Club names are the clubs' current names; the membership itself is historical.
     """
-    membership, competitions = await asyncio.gather(
+    membership, competitions = await gather(
         tfmkt.competition_clubs(competition_id, season_id),
         tfmkt.competitions([competition_id]),
     )

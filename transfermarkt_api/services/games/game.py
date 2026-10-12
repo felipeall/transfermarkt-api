@@ -2,6 +2,7 @@ import asyncio
 from typing import Optional
 
 from transfermarkt_api.tfmkt import TfmktClient
+from transfermarkt_api.tfmkt.concurrency import gather
 from transfermarkt_api.tfmkt.reference import full_url
 
 EVENT_TYPES = {"GOAL": "goal", "CARD": "card", "SUBSTITUTE": "substitution"}
@@ -52,7 +53,7 @@ async def get_game(tfmkt: TfmktClient, game_id: str) -> dict:
     ]
     stadium_id = base.get("stadiumId")
 
-    players, clubs, coaches, stadium = await asyncio.gather(
+    players, clubs, coaches, stadium = await gather(
         tfmkt.players(player_ids),
         tfmkt.clubs(side.get("clubId") for side in sides.values()),
         tfmkt.coaches(side.get("coachId") for side in sides.values()),

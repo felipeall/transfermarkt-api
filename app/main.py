@@ -10,6 +10,7 @@ from starlette.responses import JSONResponse, RedirectResponse, Response
 from app.api.api import api_router
 from app.rate_limit import RateLimiter
 from app.settings import settings
+from transfermarkt_api.cache import CacheConfig
 from transfermarkt_api.exceptions import EndpointUnavailable, NotFound, UpstreamBlocked, UpstreamError, UpstreamTimeout
 from transfermarkt_api.tfmkt import TfmktClient
 from transfermarkt_api.tfmkt.freshness import track_fetches
@@ -38,9 +39,11 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
         base_url=settings.TFMKT_BASE_URL,
         timeout=settings.TFMKT_TIMEOUT_SECONDS,
         max_concurrency=settings.TFMKT_MAX_CONCURRENCY,
-        cache_ttl=settings.CACHE_TTL_SECONDS,
-        reference_ttl=settings.CACHE_REFERENCE_TTL_SECONDS,
-        cache_max_entries=settings.CACHE_MAX_ENTRIES,
+        cache=CacheConfig(
+            ttl=settings.CACHE_TTL_SECONDS,
+            reference_ttl=settings.CACHE_REFERENCE_TTL_SECONDS,
+            max_entries=settings.CACHE_MAX_ENTRIES,
+        ),
     )
     yield
     await app.state.tfmkt.aclose()
