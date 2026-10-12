@@ -69,14 +69,14 @@ async def get_player_profile(tfmkt: TfmktClient, player_id: str) -> dict:
         "shirtNumber": shirt_number_label(assignment.get("shirtNumber")),
         "club": {
             "id": club_id,
-            "name": clubs.get(club_id, {}).get("name"),
+            "name": clubs.get(club_id or "", {}).get("name"),
             "joined": assignment.get("start"),
             "isCaptain": assignment.get("isCaptain"),
             "contractExpires": attributes.get("contractUntil"),
             "lastContractRenewal": date_from_parts(attributes.get("lastContractRenewal")),
             "contractOption": reference.contract_option_name(attributes.get("contractOptionId")),
             "lastClubId": last_club_id,
-            "lastClubName": clubs.get(last_club_id, {}).get("name"),
+            "lastClubName": clubs.get(last_club_id or "", {}).get("name"),
         },
         "nationalTeam": {
             "id": national_id,
@@ -85,7 +85,7 @@ async def get_player_profile(tfmkt: TfmktClient, player_id: str) -> dict:
             "isCaptain": national.get("isCaptain"),
             "debut": national.get("debut"),
         }
-        if national_id
+        if national_id and national
         else None,
         "marketValue": market_value_of(values.get("current")),
         "marketValueDetails": {
@@ -109,11 +109,13 @@ def shirt_number_label(number: Optional[int]) -> Optional[str]:
 def dated_value(money: Optional[dict]) -> Optional[dict]:
     """`{value, date}` for a market value with the date it was set, or None when there is no valuation."""
     value = market_value_of(money)
-    return {"value": value, "date": money.get("determined")} if value else None
+    return {"value": value, "date": money.get("determined")} if value and money else None
 
 
 def date_from_parts(parts: Optional[dict]) -> Optional[str]:
     """ISO date from upstream `{year, month, day}`, or None when incomplete or invalid."""
+    if parts is None:
+        return None
     try:
         return date(parts["year"], parts["month"], parts["day"]).isoformat()
     except (TypeError, KeyError, ValueError):

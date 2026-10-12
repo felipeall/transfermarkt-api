@@ -1,5 +1,5 @@
 import asyncio
-from typing import Optional
+from typing import Optional, cast
 
 from transfermarkt_api.tfmkt import TfmktClient
 from transfermarkt_api.tfmkt.concurrency import gather
@@ -69,7 +69,7 @@ async def get_game(tfmkt: TfmktClient, game_id: str) -> dict:
     def lineup_player(player: dict) -> dict:
         """A lineup entry with the player's name."""
         return {
-            **entity(player["id"], players),
+            **cast(dict, entity(player["id"], players)),
             "shirtNumber": player.get("shirtNumber"),
             "position": (player.get("position") or {}).get("name"),
             "isCaptain": bool(player.get("isCaptain")),
@@ -91,7 +91,7 @@ async def get_game(tfmkt: TfmktClient, game_id: str) -> dict:
         "attendance": (game.get("extendedDetails") or {}).get("crowdSize") or None,
         **{
             name: {
-                **entity(side.get("clubId"), clubs),
+                **cast(dict, entity(side.get("clubId"), clubs)),
                 "score": score.get(name),
                 "formation": (side.get("tactic") or {}).get("tactic"),
                 "coach": entity(side.get("coachId"), coaches),

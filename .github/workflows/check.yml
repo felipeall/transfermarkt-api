@@ -26,8 +26,8 @@ jobs:
         run: uv run --extra server ruff format --check .
       - name: pytest
         run: uv run --extra server pytest
-      - name: Public SDK types
-        run: uv run --extra server pyright examples/sdk_types.py
+      - name: SDK and public consumer types
+        run: uv run --extra server pyright transfermarkt_api examples/sdk_types.py
       - name: Build wheel and sdist
         run: uv build
       - name: Check core-only wheel outside the checkout

@@ -82,7 +82,7 @@ async def get_player_transfers(tfmkt: TfmktClient, player_id: str) -> dict:
 
 def transfer_type(record: dict) -> Optional[str]:
     """Kind of transfer, or None for an upstream type this API does not know."""
-    kind = TRANSFER_TYPES.get((record.get("typeDetails") or {}).get("type"))
+    kind = TRANSFER_TYPES.get((record.get("typeDetails") or {}).get("type") or "")
     fee_label = ((record["details"].get("fee") or {}).get("compact") or {}).get("content") or ""
     if kind == "transfer" and fee_label.strip().lower() == "free transfer":
         return "freeTransfer"

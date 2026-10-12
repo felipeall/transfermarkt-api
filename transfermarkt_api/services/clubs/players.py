@@ -62,7 +62,7 @@ async def get_club_players(tfmkt: TfmktClient, club_id: str, season_id: Optional
             in_this_club = assignment is not None and str(assignment.get("clubId")) == str(club_id)
             entry |= {
                 "age": (player.get("lifeDates") or {}).get("age"),
-                "joinedOn": assignment.get("start") if in_this_club else None,
+                "joinedOn": assignment.get("start") if assignment is not None and in_this_club else None,
                 "contract": attributes.get("contractUntil"),
                 "marketValue": market_value_of((player.get("marketValueDetails") or {}).get("current")),
             }

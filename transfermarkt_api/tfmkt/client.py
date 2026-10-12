@@ -124,7 +124,7 @@ class TfmktClient:
             raise UpstreamError(f"Unexpected upstream payload for {path}", **metadata)
         return body["data"]
 
-    async def get_batch(self, route: str, ids: Iterable[str]) -> dict[str, dict]:
+    async def get_batch(self, route: str, ids: Iterable[str | int | None]) -> dict[str, dict]:
         """
         Fetch entities from a batch route (`/players`, `/clubs`, `/competitions`) and index them by ID.
 
@@ -183,7 +183,7 @@ class TfmktClient:
         """Fetch a coach record."""
         return await self.get(f"/coach/{coach_id}")
 
-    async def coaches(self, ids: Iterable[str]) -> dict[str, dict]:
+    async def coaches(self, ids: Iterable[str | int | None]) -> dict[str, dict]:
         """Fetch coach records by ID, indexed by ID."""
         return await self.get_batch("/coaches", ids)
 
@@ -231,15 +231,15 @@ class TfmktClient:
         """None when the stadium is unknown (upstream answers 404)."""
         return await self.get_optional(f"/stadium/{stadium_id}")
 
-    async def competitions(self, ids: Iterable[str]) -> dict[str, dict]:
+    async def competitions(self, ids: Iterable[str | int | None]) -> dict[str, dict]:
         """Fetch competition records by ID, indexed by ID."""
         return await self.get_batch("/competitions", ids)
 
-    async def clubs(self, ids: Iterable[str]) -> dict[str, dict]:
+    async def clubs(self, ids: Iterable[str | int | None]) -> dict[str, dict]:
         """Fetch club records by ID, indexed by ID."""
         return await self.get_batch("/clubs", ids)
 
-    async def players(self, ids: Iterable[str]) -> dict[str, dict]:
+    async def players(self, ids: Iterable[str | int | None]) -> dict[str, dict]:
         """Fetch player records by ID, indexed by ID."""
         return await self.get_batch("/players", ids)
 

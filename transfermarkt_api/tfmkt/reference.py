@@ -1,7 +1,7 @@
 """Lookups into tfmkt reference data (`/attributes`) and small helpers shared by JSON-backed services."""
 
 import math
-from typing import Optional, Union
+from typing import Any, Optional, Union
 
 from transfermarkt_api.tfmkt.client import TfmktClient
 
@@ -55,7 +55,7 @@ async def get_reference(tfmkt: TfmktClient) -> Reference:
     return Reference(await tfmkt.attributes())
 
 
-def _int(value: object) -> Optional[int]:
+def _int(value: Any) -> Optional[int]:
     """Convert to int, or None when the value is not a number."""
     try:
         return int(value)
