@@ -18,16 +18,18 @@ from typing import Any
 
 import httpx2
 
+from app.api.dependencies import get_tfmkt
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from fastapi.testclient import TestClient  # noqa: E402
 
 from app.main import app  # noqa: E402
-from app.tfmkt import TfmktClient, get_tfmkt  # noqa: E402
 from tests.cases import CASES  # noqa: E402
 from tests.snapshots import SNAPSHOTS_DIR, normalize  # noqa: E402
 from tests.upstream import FixtureStore, RecordingTransport  # noqa: E402
+from transfermarkt_api.tfmkt import TfmktClient  # noqa: E402
 
 
 def parse_body(response: httpx2.Response) -> Any:

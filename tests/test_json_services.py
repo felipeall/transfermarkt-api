@@ -8,9 +8,10 @@ import httpx
 import pytest
 from fastapi.testclient import TestClient
 
+from app.api.dependencies import get_tfmkt
 from app.main import app
-from app.tfmkt import TfmktClient, get_tfmkt
 from tests.snapshots import BASELINE_V3_DIR
+from transfermarkt_api.tfmkt import TfmktClient
 
 
 def ok(data: object) -> httpx.Response:

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
-from app.schemas.countries import Countries
-from app.tfmkt import Tfmkt
+from app.api.dependencies import Tfmkt
+from transfermarkt_api.schemas.countries import Countries
 
 router = APIRouter()
 

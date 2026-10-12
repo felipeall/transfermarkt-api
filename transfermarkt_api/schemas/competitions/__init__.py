@@ -1,0 +1,4 @@
+from transfermarkt_api.schemas.competitions.clubs import CompetitionClubs as CompetitionClubs
+from transfermarkt_api.schemas.competitions.search import CompetitionSearch as CompetitionSearch
+from transfermarkt_api.schemas.competitions.seasons import CompetitionSeasons as CompetitionSeasons
+from transfermarkt_api.schemas.competitions.table import CompetitionTable as CompetitionTable

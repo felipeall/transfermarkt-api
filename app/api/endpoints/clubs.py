@@ -2,12 +2,12 @@ from typing import Annotated, Optional
 
 from fastapi import APIRouter, Query
 
+from app.api.dependencies import Tfmkt
 from app.api.params import PageNumber
-from app.schemas import clubs as schemas
-from app.schemas.achievements import Achievements
-from app.schemas.clubs.listing import ClubListing
-from app.services.clubs import achievements, listing, players, profile, search
-from app.tfmkt import Tfmkt
+from transfermarkt_api.schemas import clubs as schemas
+from transfermarkt_api.schemas.achievements import Achievements
+from transfermarkt_api.schemas.clubs.listing import ClubListing
+from transfermarkt_api.services.clubs import achievements, listing, players, profile, search
 
 router = APIRouter()
 

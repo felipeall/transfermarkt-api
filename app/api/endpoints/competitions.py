@@ -2,10 +2,10 @@ from typing import Optional
 
 from fastapi import APIRouter
 
+from app.api.dependencies import Tfmkt
 from app.api.params import PageNumber
-from app.schemas import competitions as schemas
-from app.services.competitions import clubs, search, seasons, table
-from app.tfmkt import Tfmkt
+from transfermarkt_api.schemas import competitions as schemas
+from transfermarkt_api.services.competitions import clubs, search, seasons, table
 
 router = APIRouter()
 

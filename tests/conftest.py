@@ -3,9 +3,10 @@ from collections.abc import Iterator
 import pytest
 from fastapi.testclient import TestClient
 
+from app.api.dependencies import get_tfmkt
 from app.main import app
-from app.tfmkt import TfmktClient, get_tfmkt
 from tests.upstream import FixtureStore, tfmkt_transport
+from transfermarkt_api.tfmkt import TfmktClient
 
 
 @pytest.fixture(scope="session")

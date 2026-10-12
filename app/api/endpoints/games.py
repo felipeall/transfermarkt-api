@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 
-from app.schemas.games import Game
-from app.services.games import game
-from app.tfmkt import Tfmkt
+from app.api.dependencies import Tfmkt
+from transfermarkt_api.schemas.games import Game
+from transfermarkt_api.services.games import game
 
 router = APIRouter()
 

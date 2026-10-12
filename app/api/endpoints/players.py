@@ -2,10 +2,11 @@ from typing import Optional
 
 from fastapi import APIRouter, HTTPException
 
+from app.api.dependencies import Tfmkt
 from app.api.params import PageNumber
-from app.schemas import players as schemas
-from app.schemas.achievements import Achievements
-from app.services.players import (
+from transfermarkt_api.schemas import players as schemas
+from transfermarkt_api.schemas.achievements import Achievements
+from transfermarkt_api.services.players import (
     absences,
     achievements,
     injuries,
@@ -17,7 +18,6 @@ from app.services.players import (
     stats,
     transfers,
 )
-from app.tfmkt import Tfmkt
 
 router = APIRouter()
 

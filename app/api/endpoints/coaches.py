@@ -1,9 +1,9 @@
 from fastapi import APIRouter
 
+from app.api.dependencies import Tfmkt
 from app.api.params import PageNumber
-from app.schemas import coaches as schemas
-from app.services.coaches import profile, search
-from app.tfmkt import Tfmkt
+from transfermarkt_api.schemas import coaches as schemas
+from transfermarkt_api.services.coaches import profile, search
 
 router = APIRouter()
 

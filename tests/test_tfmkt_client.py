@@ -4,10 +4,10 @@ from typing import NoReturn
 
 import httpx
 import pytest
-from fastapi import HTTPException
 
-from app.tfmkt.client import BATCH_SIZE, TfmktClient
 from tests.upstream import FixtureStore
+from transfermarkt_api.exceptions import NotFound, TransfermarktError, UpstreamBlocked, UpstreamError, UpstreamTimeout
+from transfermarkt_api.tfmkt.client import BATCH_SIZE, TfmktClient
 
 pytestmark = pytest.mark.anyio
 
@@ -52,10 +52,10 @@ async def test_maps_upstream_failures(response: httpx.Response, status: int) -> 
     """Upstream failures map to the documented HTTP errors."""
     tfmkt = client_for(lambda request: response)
 
-    with pytest.raises(HTTPException) as error:
+    with pytest.raises(TransfermarktError) as error:
         await tfmkt.get("/player/28003")
 
-    assert error.value.status_code == status
+    assert isinstance(error.value, {404: NotFound, 503: UpstreamBlocked, 502: UpstreamError}[status])
 
 
 async def test_timeout_maps_to_504() -> None:
@@ -65,10 +65,10 @@ async def test_timeout_maps_to_504() -> None:
         """Simulate a read timeout."""
         raise httpx.ReadTimeout("slow", request=request)
 
-    with pytest.raises(HTTPException) as error:
+    with pytest.raises(TransfermarktError) as error:
         await client_for(handler).get("/player/28003")
 
-    assert error.value.status_code == 504
+    assert isinstance(error.value, UpstreamTimeout)
 
 
 async def test_caches_successful_responses() -> None:
@@ -98,7 +98,7 @@ async def test_does_not_cache_failures() -> None:
 
     tfmkt = client_for(handler)
     for _ in range(2):
-        with pytest.raises(HTTPException):
+        with pytest.raises(TransfermarktError):
             await tfmkt.get("/player/28003")
 
     assert len(calls) == 2
