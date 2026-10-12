@@ -2,7 +2,7 @@
 
 An async Python SDK and RESTful API (FastAPI) for football data from [Transfermarkt](https://www.transfermarkt.com/): players, clubs, coaches, competitions and matches.
 
-Since version 4.0.0, data comes from Transfermarkt's JSON API (`tmapi.transfermarkt.technology`), the same API the website uses, instead of scraping HTML pages. Upstream requests can still be blocked or fail; the SDK and service distinguish these failures. See [CHANGELOG.md](CHANGELOG.md) for changes to the response format.
+Since version 4.0.0, data comes from Transfermarkt's JSON API, the same API the website uses, instead of scraping HTML pages. Upstream requests can still be blocked or fail; the SDK and service distinguish these failures. See [CHANGELOG.md](CHANGELOG.md) for changes to the response format.
 
 Please note that the deployed application is used only for testing purposes and is rate limited to 2 requests
 every 3 seconds per client IP. If you'd like to customize it, consider hosting in your own cloud service.
@@ -229,7 +229,7 @@ These settings configure the HTTP server and can be loaded from `.env`. SDK call
 |-------------------------------|--------------------------------------------------------------------------------------------------------|------------------------------------------|
 | `RATE_LIMITING_ENABLE`        | Enable rate limiting feature for API calls                                                             | `false`                                  |
 | `RATE_LIMITING_FREQUENCY`     | Requests allowed per client IP across all routes, in [limits notation](https://limits.readthedocs.io/en/stable/quickstart.html#rate-limit-string-notation) | `2/3seconds`                             |
-| `TFMKT_BASE_URL`              | Transfermarkt JSON API base URL                                                                        | `https://tmapi.transfermarkt.technology` |
+| `TFMKT_BASE_URL`              | Transfermarkt JSON API base URL                                                                        | Built-in upstream endpoint |
 | `TFMKT_TIMEOUT_SECONDS`       | Timeout for each upstream request                                                                      | `15`                                     |
 | `TFMKT_MAX_CONCURRENCY`       | Maximum concurrent upstream requests across the whole server                                          | `10`                                     |
 | `CACHE_TTL_SECONDS`           | How long successful upstream responses are cached                                                      | `600`                                    |
