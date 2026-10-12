@@ -96,8 +96,9 @@ types are supported public API; service modules and the low-level upstream clien
   `EndpointUnavailable`. Preserve current messages. Include optional upstream URL and status metadata where
   available, without importing HTTP server types. Chain the original `httpx` exception as the cause.
 - Replace `HTTPException` in the client, optional-fetch logic, competition services and club listing. Catch only
-  `NotFound` for optional resources. Map timeout before the broader `httpx.HTTPError`; leave custom transport
-  exceptions and cancellation untouched. Do not catch arbitrary `Exception` around assembly.
+  `NotFound` for optional resources. With the default transport, map timeout before the broader `httpx.HTTPError`;
+  injected transport exceptions (including `httpx` errors) and cancellation propagate unchanged. Do not catch
+  arbitrary `Exception` around assembly.
 - In the server, register explicit mappings to `404`, `503`, `504`, `502` and `501`, retaining `{"detail": ...}`.
   Preserve the existing WAF-header, empty `202`, `403`, `429`, malformed JSON and invalid envelope behavior.
 
@@ -130,8 +131,8 @@ defaults still cache; concurrency bounds, instance isolation and transport closu
 - Validate the final model before leaving that scope, so `AuditMixin.updated_at` uses the oldest response actually
   used in that call, including cache hits. Do not depend on HTTP middleware to establish SDK freshness.
 - Add the proposed optional `httpx.Response.extensions["transfermarkt_fetched_at"]` contract, containing a
-  naive `datetime`. A replay transport supplies the original capture clock's timestamp verbatim; ordinary responses
-  use the current fetch time. Validate supplied metadata, retaining the server's existing naive timestamp convention.
+  `datetime`. Normalize aware input to UTC and interpret naive input as UTC; ordinary responses use the current UTC
+  fetch time. Retain the server's existing naive JSON representation while making its UTC meaning explicit.
 - Retain stable URL construction and assembly order. Replay matches by method and full URL, including repeated
   query parameters, rather than request completion order. Missing recordings raise a caller transport exception
   and never fall back to live traffic. Exact model replay requires the same response bytes and fetch metadata;

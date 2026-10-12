@@ -37,16 +37,18 @@ Publish the services and schemas as an importable async library. The FastAPI app
    upstream request reaches the transport. `CacheConfig` configures ordinary/reference TTLs and cache capacity.
 5. **Library exceptions, not `HTTPException`.** The client and services raise SDK exceptions: `NotFound`,
    `UpstreamBlocked` (WAF challenge, 403, 429), `UpstreamTimeout` and `UpstreamError`. The server maps them to
-   404, 503, 504 and 502 as today. Callers need the distinction to choose which failures to retry. Exceptions raised
-   by a caller's transport that are not `httpx` errors (for example, a caller-defined "circuit open" error) propagate
-   unchanged, never wrapped in an SDK exception.
+   404, 503, 504 and 502 as today. The default transport's `httpx` timeouts and connection errors map to SDK exceptions.
+   Exceptions from an injected transport propagate unchanged, including native `httpx` exceptions and caller-defined
+   errors. Callers supplying a transport classify `httpx.TimeoutException` / `httpx.TransportError` themselves.
    `EndpointUnavailable` covers routes without an upstream data source and maps to the existing server `501`.
 6. **Configuration by argument.** Base URL, timeout and concurrency cap are constructor arguments with today's
    defaults. Importing the library reads no `.env` and no environment variables.
 7. **Replayable assembly.** Given the same upstream responses, a service produces the same output. Requests are built
    deterministically (batch IDs already sorted), so a caller can re-run assembly by serving stored responses keyed by
    request method and full URL. Replay transports can set `httpx.Response.extensions["transfermarkt_fetched_at"]`
-   to the original naive capture datetime; without it, `updatedAt` reflects the current fetch time.
+   to the original capture datetime. Aware timestamps are normalized to UTC; naive timestamps are interpreted as UTC.
+   `updatedAt` retains the existing naive JSON representation and represents UTC. Without metadata, it reflects the
+   current UTC fetch time.
 8. **Versioning.** The facade, response models, exceptions and cache configuration are the public API, under semantic
    versioning. A breaking change to any of them is a major release.
 

@@ -3,7 +3,7 @@
 import asyncio
 import json
 from collections.abc import Awaitable
-from datetime import datetime
+from datetime import UTC, datetime, timedelta, timezone
 from typing import Any
 from urllib.parse import parse_qs, unquote, urlsplit
 
@@ -101,7 +101,33 @@ async def test_record_then_replay_exact_models(tfmkt_store: FixtureStore) -> Non
     async with Transfermarkt(transport=ReplayTransport(records), cache=None) as tm:
         replayed = await tm.club_players("131", season_id="2014")
     assert original.model_dump(mode="json", by_alias=True) == replayed.model_dump(mode="json", by_alias=True)
-    assert original.updated_at == min(record.fetched_at for record in records.values())
+    assert original.updated_at == min(record.fetched_at for record in records.values()).replace(tzinfo=None)
+
+
+@pytest.mark.parametrize(
+    "fetched_at",
+    [
+        FETCHED_AT,
+        FETCHED_AT.replace(tzinfo=UTC),
+        datetime(2025, 1, 1, 14, tzinfo=timezone(timedelta(hours=2))),
+    ],
+)
+async def test_replay_timestamps_normalize_to_naive_utc(fetched_at: datetime) -> None:
+    """Naive and aware timestamps for the same instant yield the same HTTP-compatible UTC value."""
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        """Return recorded country data with the supplied capture timestamp."""
+        return httpx.Response(
+            200,
+            json={"success": True, "data": {"countries": []}},
+            extensions={"transfermarkt_fetched_at": fetched_at},
+        )
+
+    async with Transfermarkt(transport=httpx.MockTransport(handler)) as tm:
+        first = await tm.countries()
+        second = await tm.countries()
+    assert first.updated_at == second.updated_at == FETCHED_AT
+    assert first.model_dump(mode="json", by_alias=True)["updatedAt"] == "2025-01-01T12:00:00"
 
 
 async def test_recording_preserves_failures_before_parsing() -> None:

@@ -1,7 +1,7 @@
 """Minimal recording/replay adapters; real consumers provide their own durable store."""
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import UTC, datetime
 
 import httpx
 
@@ -41,7 +41,7 @@ class RecordingTransport(httpx.AsyncBaseTransport):
             for key, value in response.headers.multi_items()
             if key.lower() not in ("content-encoding", "content-length")
         )
-        record = RecordedResponse(response.status_code, headers, body, datetime.now())
+        record = RecordedResponse(response.status_code, headers, body, datetime.now(UTC))
         self.records[(request.method, str(request.url))] = record
         return httpx.Response(
             record.status,

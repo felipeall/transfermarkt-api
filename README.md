@@ -83,9 +83,10 @@ durable storage in your application. When reconstructing decoded responses, drop
 headers so the body is not decoded twice.
 
 A replay transport returns an `httpx.Response` with
-`extensions={"transfermarkt_fetched_at": captured_datetime}`. This optional metadata accepts a **naive datetime**,
-using the original capture clock's convention, and is retained verbatim. Without it, `updatedAt` reports the
-current fetch time. Each model reports the oldest fetch time used in that call, including cache hits. Exact replay
+`extensions={"transfermarkt_fetched_at": captured_datetime}`. This optional metadata accepts naive or timezone-aware
+datetimes. Aware inputs are converted to UTC; naive inputs are interpreted as UTC. `updatedAt` retains its existing
+JSON shape without a timezone suffix and always represents UTC. Without metadata, it reports the current UTC fetch
+time. Each model reports the oldest fetch time used in that call, including cache hits. Exact replay
 needs the same response bodies and timestamps. Missing recordings must raise a transport error rather than fetch
 live data. Batch URLs are stable; concurrent request completion order is not part of the replay key.
 

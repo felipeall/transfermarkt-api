@@ -10,7 +10,7 @@ the request.
 from collections.abc import Iterator
 from contextlib import contextmanager
 from contextvars import ContextVar
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Optional
 
 _fetch_times: ContextVar[Optional[list[datetime]]] = ContextVar("tfmkt_fetch_times", default=None)
@@ -35,4 +35,4 @@ def record_fetch(fetched_at: datetime) -> None:
 
 def data_fetched_at() -> datetime:
     """Oldest fetch time recorded for the current request, or now when nothing was fetched."""
-    return min(_fetch_times.get() or [], default=None) or datetime.now()
+    return min(_fetch_times.get() or [], default=None) or datetime.now(UTC).replace(tzinfo=None)

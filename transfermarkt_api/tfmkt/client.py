@@ -2,7 +2,7 @@
 
 import asyncio
 from collections.abc import Iterable
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any, Optional
 
 import httpx
@@ -87,9 +87,11 @@ class TfmktClient:
                 raise UpstreamError(f"Upstream connection error for {path}: {e}", url=str(request.url)) from e
 
         data = self._parse(response, path)
-        fetched_at = response.extensions.get("transfermarkt_fetched_at", datetime.now())
-        if not isinstance(fetched_at, datetime) or fetched_at.tzinfo is not None:
-            raise UpstreamError("transfermarkt_fetched_at must be a naive datetime", url=key)
+        fetched_at = response.extensions.get("transfermarkt_fetched_at", datetime.now(UTC).replace(tzinfo=None))
+        if not isinstance(fetched_at, datetime):
+            raise UpstreamError("transfermarkt_fetched_at must be a datetime", url=key)
+        if fetched_at.utcoffset() is not None:
+            fetched_at = fetched_at.astimezone(UTC).replace(tzinfo=None)
         if cache is not None:
             cache[key] = (fetched_at, data)
         record_fetch(fetched_at)
