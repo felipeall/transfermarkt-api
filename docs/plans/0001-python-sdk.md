@@ -1,6 +1,7 @@
 # Python SDK implementation plan
 
-Implements [ADR 0001](../adr/0001-python-sdk.md). Status: ready for implementation; the ADR remains proposed.
+Implements [ADR 0001](../adr/0001-python-sdk.md). The implementation accompanies this plan; the ADR remains
+proposed until review. The steps below describe the implementation boundaries and verification gates.
 
 ## Outcome and scope
 
@@ -75,10 +76,9 @@ Use string entity and season IDs, integer country IDs, and 1-based page numbers.
 IDs below `1` locally. Preserve single-page behavior, search ranking, upstream squad order, missing batch members,
 and historical-season semantics. Health and documentation routes are server-only.
 
-Two details extend the ADR and should be recorded there during implementation: `EndpointUnavailable` preserves the
-existing unsupported endpoint, and replay timestamps need an explicit transport metadata contract. Also clarify
-that the facade, schemas, exceptions and configuration types are supported public API; service modules and the
-low-level upstream client remain implementation details.
+The ADR records two additional details: `EndpointUnavailable` preserves the existing unsupported endpoint, and
+replay timestamps have an explicit transport metadata contract. The facade, schemas, exceptions and configuration
+types are supported public API; service modules and the low-level upstream client remain implementation details.
 
 ## Implementation sequence
 
@@ -130,9 +130,8 @@ defaults still cache; concurrency bounds, instance isolation and transport closu
 - Validate the final model before leaving that scope, so `AuditMixin.updated_at` uses the oldest response actually
   used in that call, including cache hits. Do not depend on HTTP middleware to establish SDK freshness.
 - Add the proposed optional `httpx.Response.extensions["transfermarkt_fetched_at"]` contract, containing a
-  `datetime`. A replay transport supplies the original fetch timestamp; ordinary responses use the current fetch
-  time. Validate supplied metadata and normalize comparisons while preserving the server's existing serialized
-  timestamp convention. Document the accepted timezone convention explicitly.
+  naive `datetime`. A replay transport supplies the original capture clock's timestamp verbatim; ordinary responses
+  use the current fetch time. Validate supplied metadata, retaining the server's existing naive timestamp convention.
 - Retain stable URL construction and assembly order. Replay matches by method and full URL, including repeated
   query parameters, rather than request completion order. Missing recordings raise a caller transport exception
   and never fall back to live traffic. Exact model replay requires the same response bytes and fetch metadata;

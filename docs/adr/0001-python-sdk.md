@@ -34,18 +34,20 @@ Publish the services and schemas as an importable async library. The FastAPI app
    through it: reference data, batch routes and fan-out calls included. That transport is where the caller applies
    rate limits, retries, proxies or response recording.
 4. **Caching is optional.** The in-memory TTL caches stay on by default and turn off with `cache=None`, so every
-   upstream request reaches the transport.
+   upstream request reaches the transport. `CacheConfig` configures ordinary/reference TTLs and cache capacity.
 5. **Library exceptions, not `HTTPException`.** The client and services raise SDK exceptions: `NotFound`,
    `UpstreamBlocked` (WAF challenge, 403, 429), `UpstreamTimeout` and `UpstreamError`. The server maps them to
    404, 503, 504 and 502 as today. Callers need the distinction to choose which failures to retry. Exceptions raised
    by a caller's transport that are not `httpx` errors (for example, a caller-defined "circuit open" error) propagate
    unchanged, never wrapped in an SDK exception.
+   `EndpointUnavailable` covers routes without an upstream data source and maps to the existing server `501`.
 6. **Configuration by argument.** Base URL, timeout and concurrency cap are constructor arguments with today's
    defaults. Importing the library reads no `.env` and no environment variables.
 7. **Replayable assembly.** Given the same upstream responses, a service produces the same output. Requests are built
    deterministically (batch IDs already sorted), so a caller can re-run assembly by serving stored responses keyed by
-   request URL.
-8. **Versioning.** The facade, the response models and the exceptions are the public API, under semantic
+   request method and full URL. Replay transports can set `httpx.Response.extensions["transfermarkt_fetched_at"]`
+   to the original naive capture datetime; without it, `updatedAt` reflects the current fetch time.
+8. **Versioning.** The facade, response models, exceptions and cache configuration are the public API, under semantic
    versioning. A breaking change to any of them is a major release.
 
 ### Basic usage
@@ -72,8 +74,9 @@ asyncio.run(main())
 
 - Python consumers use the library in-process: no service to run, and full control over every upstream request.
 - The server keeps its behaviour, its rate limiting and its caches; it moves on top of the library.
-- Services, schemas and exceptions become a public API. Refactors that change them need a major release, and the
+- The facade, schemas, exceptions and cache configuration become a public API. Breaking changes need a major release, and the
   CHANGELOG has to call out changes to response models.
+- Service modules and the low-level upstream client are implementation details.
 - Moving out of the `app` package and replacing `HTTPException` in services touches most modules in one change.
 - A parser fix reaches consumers as a release; callers that stored upstream responses can re-run assembly instead of
   re-fetching.
