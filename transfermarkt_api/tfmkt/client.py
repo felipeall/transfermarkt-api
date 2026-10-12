@@ -39,6 +39,7 @@ class TfmktClient:
             raise ValueError("base_url must be an absolute HTTP(S) URL without query or fragment")
         if not isinstance(max_concurrency, int) or isinstance(max_concurrency, bool) or max_concurrency < 1:
             raise ValueError("max_concurrency must be a positive integer")
+        self._transport_injected = transport is not None
         self.http = httpx.AsyncClient(
             base_url=base_url,
             headers={"Accept": "application/json", "User-Agent": "transfermarkt-api"},
@@ -56,6 +57,8 @@ class TfmktClient:
     async def get(self, path: str, params: Optional[list[tuple[str, Any]]] = None, reference: bool = False) -> Any:
         """
         Fetch a tfmkt route and return its `data` payload.
+
+        Exceptions from an injected transport propagate unchanged, including httpx errors.
 
         Raises:
             TransfermarktError: 404 when upstream does not know the entity, 503 when upstream challenges or rejects the
@@ -75,8 +78,12 @@ class TfmktClient:
             try:
                 response = await self.http.send(request)
             except httpx.TimeoutException as e:
+                if self._transport_injected:
+                    raise
                 raise UpstreamTimeout(f"Upstream timeout for {path}", url=str(request.url)) from e
             except httpx.HTTPError as e:
+                if self._transport_injected:
+                    raise
                 raise UpstreamError(f"Upstream connection error for {path}: {e}", url=str(request.url)) from e
 
         data = self._parse(response, path)

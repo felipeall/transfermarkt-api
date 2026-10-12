@@ -58,17 +58,46 @@ async def test_maps_upstream_failures(response: httpx.Response, status: int) -> 
     assert isinstance(error.value, {404: NotFound, 503: UpstreamBlocked, 502: UpstreamError}[status])
 
 
-async def test_timeout_maps_to_504() -> None:
-    """Upstream timeouts become 504."""
+@pytest.mark.parametrize("injected", [False, True], ids=["default", "injected"])
+@pytest.mark.parametrize(
+    "native_error,sdk_error",
+    [(httpx.ReadTimeout, UpstreamTimeout), (httpx.ConnectError, UpstreamError)],
+)
+async def test_request_errors_respect_transport_ownership(
+    injected: bool,
+    native_error: type[httpx.HTTPError],
+    sdk_error: type[TransfermarktError],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Injected errors retain identity; default transport errors retain SDK mappings and causes."""
+    request = httpx.Request("GET", "https://tfmkt.test/player/28003")
+    failure = native_error("transport failed", request=request)
 
     def handler(request: httpx.Request) -> NoReturn:
-        """Simulate a read timeout."""
-        raise httpx.ReadTimeout("slow", request=request)
+        """Raise the exact error supplied by the transport."""
+        raise failure
 
-    with pytest.raises(TransfermarktError) as error:
-        await client_for(handler).get("/player/28003")
+    if injected:
+        tfmkt = client_for(handler)
+    else:
+        tfmkt = TfmktClient(base_url="https://tfmkt.test")
 
-    assert isinstance(error.value, UpstreamTimeout)
+        async def send(request: httpx.Request) -> NoReturn:
+            """Simulate default transport failure without performing network I/O."""
+            raise failure
+
+        monkeypatch.setattr(tfmkt.http, "send", send)
+
+    try:
+        with pytest.raises(native_error if injected else sdk_error) as error:
+            await tfmkt.get("/player/28003")
+        if injected:
+            assert error.value is failure
+        else:
+            assert error.value.__cause__ is failure
+            assert error.value.url == str(request.url)
+    finally:
+        await tfmkt.aclose()
 
 
 async def test_caches_successful_responses() -> None:
